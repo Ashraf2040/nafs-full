@@ -54,7 +54,7 @@ export const authOptions: NextAuthOptions = {
           name: user.name,
           email: user.email,
           role: user.role,
-          gradeId: user.gradeId, // ✅ FIX HERE
+          gradeId: user.gradeId,
           className: user.className,
         };
       },
@@ -71,7 +71,7 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id;
         token.role = (user as any).role;
-        token.gradeId = (user as any).gradeId; // ✅ FIX
+        token.gradeId = (user as any).gradeId;
         token.className = (user as any).className;
       }
       return token;
@@ -81,7 +81,7 @@ export const authOptions: NextAuthOptions = {
       if (session.user) {
         (session.user as any).id = token.id;
         (session.user as any).role = token.role;
-        (session.user as any).gradeId = token.gradeId; // ✅ FIX
+        (session.user as any).gradeId = token.gradeId;
         (session.user as any).className = token.className;
       }
       return session;
