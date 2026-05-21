@@ -5,8 +5,8 @@ import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcrypt";
 import prisma from "@/lib/prisma";
 
-// Dynamically set NEXTAUTH_URL for Vercel/local
-if (!process.env.NEXTAUTH_URL && process.env.VERCEL_URL) {
+// Always use VERCEL_URL on Vercel (overrides any manual NEXTAUTH_URL set via env)
+if (process.env.VERCEL_URL) {
   const url = process.env.VERCEL_URL.trim();
   process.env.NEXTAUTH_URL = url.startsWith("http") ? url : `https://${url}`;
 }
