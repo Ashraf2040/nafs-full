@@ -5,27 +5,25 @@ import { PrismaPg } from "@prisma/adapter-pg";
 
 const connectionString = `${process.env.DATABASE_URL}`;
 
-// Cache both the PrismaClient and the Postgres Pool in development
 const globalForPrisma = global as unknown as { 
   prisma: PrismaClient;
   pool: Pool;
 };
 
-// 1. Initialize the Postgres connection pool (only once)
-const pool = globalForPrisma.pool || new Pool({ connectionString });
-if (process.env.NODE_ENV !== "production") globalForPrisma.pool = pool;
+const pool = globalForPrisma.pool || new Pool({ 
+  connectionString,
+  max: 3,
+  idleTimeoutMillis: 15000,
+  connectionTimeoutMillis: 10000,
+});
+globalForPrisma.pool = pool;
 
-// 2. Wrap the pool in the Prisma Adapter
 const adapter = new PrismaPg(pool);
 
-// 3. Pass the adapter to the Prisma Client
 export const prisma =
   globalForPrisma.prisma ||
-  new PrismaClient({
-    adapter,
-    log: ["query"],
-  });
+  new PrismaClient({ adapter });
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+globalForPrisma.prisma = prisma;
 
 export default prisma;
