@@ -51,7 +51,7 @@ export default async function LandingPage() {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
             <a href="#subjects" className="hover:text-slate-900 transition-colors">Subjects</a>
             <a href="#features" className="hover:text-slate-900 transition-colors">Features</a>
-            <a href="/statistics" className="hover:text-slate-900 transition-colors">Statistics</a>
+            <a href="/dashboard/statistics" className="hover:text-slate-900 transition-colors">Statistics</a>
           </div>
         </div>
       </nav>
@@ -151,7 +151,7 @@ export default async function LandingPage() {
               <p className="text-slate-500 mt-2 text-lg">Real-time performance across the entire platform</p>
             </div>
             
-            <Link href="/statistics" className="mt-6 md:mt-0 inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium group">
+            <Link href="/dashboard/statistics" className="mt-6 md:mt-0 inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-medium group">
               Detailed Analytics
               <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
             </Link>
