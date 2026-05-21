@@ -7,7 +7,8 @@ import prisma from "@/lib/prisma";
 
 // Dynamically set NEXTAUTH_URL for Vercel/local
 if (!process.env.NEXTAUTH_URL && process.env.VERCEL_URL) {
-  process.env.NEXTAUTH_URL = `https://${process.env.VERCEL_URL}`;
+  const url = process.env.VERCEL_URL.trim();
+  process.env.NEXTAUTH_URL = url.startsWith("http") ? url : `https://${url}`;
 }
 
 export const authOptions: NextAuthOptions = {
