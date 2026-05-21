@@ -61,6 +61,12 @@ export default function StudentsPage() {
     try {
       const res = await fetch('/api/students');
       const data = await res.json();
+      if (!res.ok || !Array.isArray(data)) {
+        console.error("Failed to fetch students:", data);
+        setStudents([]);
+        setStats({ total: 0, active: 0, struggling: 0 });
+        return;
+      }
       setStudents(data);
 
       const total = data.length;
