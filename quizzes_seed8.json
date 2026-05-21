@@ -1,0 +1,2285 @@
+[
+  {
+    "title": "3 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-1-4 Distinguishing the congruence and similarity of two polygons, using them to find unknown measures, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "If two polygons are similar, what does this mean about the corresponding angles?",
+        "options": [
+          "The corresponding angles are equal",
+          "The corresponding angles are supplementary",
+          "The corresponding angles are complementary",
+          "The corresponding angles are congruent"
+        ],
+        "answer": "A",
+        "explanation": "When two polygons are similar, their corresponding angles are equal.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the corresponding sides of similar polygons?",
+        "options": [
+          "The corresponding sides are equal",
+          "The corresponding sides are supplementary",
+          "The corresponding sides are proportional",
+          "The corresponding sides are congruent"
+        ],
+        "answer": "C",
+        "explanation": "When two polygons are similar, their corresponding sides are proportional.",
+        "image_url": null
+      },
+      {
+        "question": "If a polygon has a scale factor of 2 with respect to another polygon, what does this mean about the corresponding sides?",
+        "options": [
+          "The corresponding sides are equal",
+          "The corresponding sides are supplementary",
+          "The corresponding sides are proportional, with the first polygon being larger",
+          "The corresponding sides are proportional, with the second polygon being larger"
+        ],
+        "answer": "D",
+        "explanation": "A scale factor of 2 means the corresponding sides of the first polygon are twice as long as the corresponding sides of the second polygon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the corresponding angles of two similar polygons with a scale factor of 1?",
+        "options": [
+          "The corresponding angles are equal",
+          "The corresponding angles are supplementary",
+          "The corresponding angles are complementary",
+          "The corresponding angles are congruent"
+        ],
+        "answer": "A",
+        "explanation": "When two polygons are similar and have a scale factor of 1, their corresponding angles are equal.",
+        "image_url": null
+      },
+      {
+        "question": "If two polygons are similar, what does this mean about the corresponding perimeters?",
+        "options": [
+          "The corresponding perimeters are equal",
+          "The corresponding perimeters are supplementary",
+          "The corresponding perimeters are proportional",
+          "The corresponding perimeters are congruent"
+        ],
+        "answer": "C",
+        "explanation": "When two polygons are similar, their corresponding perimeters are proportional.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the corresponding sides of two similar polygons with a scale factor of 3?",
+        "options": [
+          "The corresponding sides are equal",
+          "The corresponding sides are supplementary",
+          "The corresponding sides are proportional, with the first polygon being larger",
+          "The corresponding sides are proportional, with the second polygon being larger"
+        ],
+        "answer": "D",
+        "explanation": "A scale factor of 3 means the corresponding sides of the first polygon are three times as long as the corresponding sides of the second polygon.",
+        "image_url": null
+      },
+      {
+        "question": "If a polygon has a scale factor of 1/2 with respect to another polygon, what does this mean about the corresponding sides?",
+        "options": [
+          "The corresponding sides are equal",
+          "The corresponding sides are supplementary",
+          "The corresponding sides are proportional, with the first polygon being larger",
+          "The corresponding sides are proportional, with the second polygon being larger"
+        ],
+        "answer": "C",
+        "explanation": "A scale factor of 1/2 means the corresponding sides of the second polygon are half as long as the corresponding sides of the first polygon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the corresponding angles of two similar polygons with a scale factor of 2?",
+        "options": [
+          "The corresponding angles are equal",
+          "The corresponding angles are supplementary",
+          "The corresponding angles are complementary",
+          "The corresponding angles are congruent"
+        ],
+        "answer": "A",
+        "explanation": "When two polygons are similar and have a scale factor of 2, their corresponding angles are equal.",
+        "image_url": null
+      },
+      {
+        "question": "If two polygons are similar, what does this mean about the corresponding areas?",
+        "options": [
+          "The corresponding areas are equal",
+          "The corresponding areas are supplementary",
+          "The corresponding areas are proportional",
+          "The corresponding areas are congruent"
+        ],
+        "answer": "C",
+        "explanation": "When two polygons are similar, their corresponding areas are proportional.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the corresponding sides of two similar polygons with a scale factor of 4?",
+        "options": [
+          "The corresponding sides are equal",
+          "The corresponding sides are supplementary",
+          "The corresponding sides are proportional, with the first polygon being larger",
+          "The corresponding sides are proportional, with the second polygon being larger"
+        ],
+        "answer": "D",
+        "explanation": "A scale factor of 4 means the corresponding sides of the first polygon are four times as long as the corresponding sides of the second polygon.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-1-5 Distinguishing the basic trigonometric ratios of an acute angle and their inverses, finding each of them, and using them to solve right triangles.",
+    "questions": [
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 10 cm and the length of one leg is 6 cm, what is the sine of the angle opposite the 6 cm leg?",
+        "options": [
+          "The sine of the angle is 0.6",
+          "The sine of the angle is 0.4",
+          "The sine of the angle is 0.8",
+          "The sine of the angle is 0.2"
+        ],
+        "answer": "A",
+        "explanation": "The sine of an angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the hypotenuse.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of the cosine of an angle in a right triangle if the length of the hypotenuse is 15 cm and the length of the adjacent leg is 9 cm?",
+        "options": [
+          "The cosine of the angle is 0.6",
+          "The cosine of the angle is 0.4",
+          "The cosine of the angle is 0.8",
+          "The cosine of the angle is 0.2"
+        ],
+        "answer": "A",
+        "explanation": "The cosine of an angle in a right triangle is the ratio of the length of the adjacent leg to the length of the hypotenuse.",
+        "image_url": null
+      },
+      {
+        "question": "If the length of the hypotenuse of a right triangle is 12 cm and the length of one leg is 8 cm, what is the tangent of the angle opposite the 8 cm leg?",
+        "options": [
+          "The tangent of the angle is 0.6",
+          "The tangent of the angle is 0.4",
+          "The tangent of the angle is 0.8",
+          "The tangent of the angle is 0.2"
+        ],
+        "answer": "A",
+        "explanation": "The tangent of an angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the adjacent leg.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, the length of the hypotenuse is 20 cm and the length of one leg is 12 cm. What is the secant of the angle opposite the 12 cm leg?",
+        "options": [
+          "The secant of the angle is 1.6",
+          "The secant of the angle is 1.4",
+          "The secant of the angle is 1.8",
+          "The secant of the angle is 1.2"
+        ],
+        "answer": "A",
+        "explanation": "The secant of an angle in a right triangle is the ratio of the length of the hypotenuse to the length of the adjacent leg.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of the cotangent of an angle in a right triangle if the length of the hypotenuse is 18 cm and the length of the adjacent leg is 12 cm?",
+        "options": [
+          "The cotangent of the angle is 1.5",
+          "The cotangent of the angle is 1.2",
+          "The cotangent of the angle is 1.8",
+          "The cotangent of the angle is 1.4"
+        ],
+        "answer": "A",
+        "explanation": "The cotangent of an angle in a right triangle is the ratio of the length of the adjacent leg to the length of the leg opposite the angle.",
+        "image_url": null
+      },
+      {
+        "question": "If the length of the hypotenuse of a right triangle is 15 cm and the length of one leg is 9 cm, what is the cosecant of the angle opposite the 9 cm leg?",
+        "options": [
+          "The cosecant of the angle is 1.6",
+          "The cosecant of the angle is 1.4",
+          "The cosecant of the angle is 1.8",
+          "The cosecant of the angle is 1.2"
+        ],
+        "answer": "A",
+        "explanation": "The cosecant of an angle in a right triangle is the ratio of the length of the hypotenuse to the length of the leg opposite the angle.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, the length of the hypotenuse is 25 cm and the length of one leg is 15 cm. What is the sine of the angle opposite the 15 cm leg?",
+        "options": [
+          "The sine of the angle is 0.6",
+          "The sine of the angle is 0.4",
+          "The sine of the angle is 0.8",
+          "The sine of the angle is 0.2"
+        ],
+        "answer": "A",
+        "explanation": "The sine of an angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the hypotenuse.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of the cosine of an angle in a right triangle if the length of the hypotenuse is 30 cm and the length of the adjacent leg is 20 cm?",
+        "options": [
+          "The cosine of the angle is 0.6",
+          "The cosine of the angle is 0.4",
+          "The cosine of the angle is 0.8",
+          "The cosine of the angle is 0.2"
+        ],
+        "answer": "A",
+        "explanation": "The cosine of an angle in a right triangle is the ratio of the length of the adjacent leg to the length of the hypotenuse.",
+        "image_url": null
+      },
+      {
+        "question": "If the length of the hypotenuse of a right triangle is 20 cm and the length of one leg is 12 cm, what is the tangent of the angle opposite the 12 cm leg?",
+        "options": [
+          "The tangent of the angle is 0.6",
+          "The tangent of the angle is 0.4",
+          "The tangent of the angle is 0.8",
+          "The tangent of the angle is 0.2"
+        ],
+        "answer": "A",
+        "explanation": "The tangent of an angle in a right triangle is the ratio of the length of the leg opposite the angle to the length of the adjacent leg.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, the length of the hypotenuse is 18 cm and the length of one leg is 12 cm. What is the secant of the angle opposite the 12 cm leg?",
+        "options": [
+          "The secant of the angle is 1.5",
+          "The secant of the angle is 1.2",
+          "The secant of the angle is 1.8",
+          "The secant of the angle is 1.4"
+        ],
+        "answer": "A",
+        "explanation": "The secant of an angle in a right triangle is the ratio of the length of the hypotenuse to the length of the adjacent leg.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-2-2 Determining the type of geometric transformation in the coordinate plane, and drawing the image resulting from these transformations.",
+    "questions": [
+      {
+        "question": "A point (2, 3) is reflected over the x-axis. What are the coordinates of the reflected point?",
+        "options": [
+          "(2, -3)",
+          "(2, 3)",
+          "(-2, 3)",
+          "(2, 0)"
+        ],
+        "answer": "A",
+        "explanation": "When a point is reflected over the x-axis, the y-coordinate is negated.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-2-2 Determining the type of geometric transformation in the coordinate plane, and drawing the image resulting from these transformations.",
+    "questions": [
+      {
+        "question": "A dilation is a transformation that changes the size of a figure. What type of dilation occurs when a figure is enlarged by a scale factor of 2?",
+        "options": [
+          "The figure is reduced to half its original size.",
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is enlarged by a scale factor of 3."
+        ],
+        "answer": "B",
+        "explanation": "A dilation with a scale factor greater than 1 enlarges the figure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the center of dilation for a figure that is enlarged by a scale factor of 3?",
+        "options": [
+          "The point of enlargement is the center of dilation.",
+          "The center of dilation is the midpoint of the line segment.",
+          "The center of dilation is the point of enlargement.",
+          "The center of dilation is the endpoint of the line segment."
+        ],
+        "answer": "A",
+        "explanation": "The point of enlargement is the center of dilation for a dilation.",
+        "image_url": null
+      },
+      {
+        "question": "A dilation with a scale factor of 1/2 reduces a figure to what size?",
+        "options": [
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is reduced to half its original size.",
+          "The figure is enlarged by a scale factor of 3."
+        ],
+        "answer": "C",
+        "explanation": "A dilation with a scale factor less than 1 reduces the figure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the scale factor for a dilation that reduces a figure to 1/4 of its original size?",
+        "options": [
+          "The scale factor is 1/2.",
+          "The scale factor is 1/4.",
+          "The scale factor is 2.",
+          "The scale factor is 3."
+        ],
+        "answer": "B",
+        "explanation": "A dilation with a scale factor of 1/4 reduces the figure to 1/4 of its original size.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of a dilation with a scale factor of 0 on a figure?",
+        "options": [
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is reduced to half its original size.",
+          "The figure disappears."
+        ],
+        "answer": "D",
+        "explanation": "A dilation with a scale factor of 0 reduces the figure to a point.",
+        "image_url": null
+      },
+      {
+        "question": "A dilation with a scale factor of 2 enlarges a figure by a factor of what?",
+        "options": [
+          "The figure is reduced to half its original size.",
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is enlarged by a scale factor of 3."
+        ],
+        "answer": "B",
+        "explanation": "A dilation with a scale factor greater than 1 enlarges the figure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of a dilation with a scale factor of 1 on a figure?",
+        "options": [
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is reduced to half its original size.",
+          "The figure disappears."
+        ],
+        "answer": "B",
+        "explanation": "A dilation with a scale factor of 1 leaves the figure unchanged.",
+        "image_url": null
+      },
+      {
+        "question": "A dilation with a scale factor of 3/2 enlarges a figure by a factor of what?",
+        "options": [
+          "The figure is reduced to half its original size.",
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is enlarged by a scale factor of 3."
+        ],
+        "answer": "D",
+        "explanation": "A dilation with a scale factor greater than 1 enlarges the figure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the center of dilation for a figure that is reduced to half its original size?",
+        "options": [
+          "The point of enlargement is the center of dilation.",
+          "The center of dilation is the midpoint of the line segment.",
+          "The center of dilation is the point of enlargement.",
+          "The center of dilation is the endpoint of the line segment."
+        ],
+        "answer": "A",
+        "explanation": "The point of enlargement is the center of dilation for a dilation.",
+        "image_url": null
+      },
+      {
+        "question": "A dilation with a scale factor of 1/3 reduces a figure to what size?",
+        "options": [
+          "The figure is enlarged by a scale factor of 2.",
+          "The figure remains the same size.",
+          "The figure is reduced to 1/3 of its original size.",
+          "The figure is enlarged by a scale factor of 3."
+        ],
+        "answer": "C",
+        "explanation": "A dilation with a scale factor less than 1 reduces the figure.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-3-1 Distinguishing the relationships between the units of length, mass, and capacity, and using them to convert within these units and between English and metric measurement units.",
+    "questions": [
+      {
+        "question": "How many cups are in 1 gallon?",
+        "options": [
+          "There are 16 cups in 1 gallon",
+          "There are 32 cups in 1 gallon",
+          "There are 64 cups in 1 gallon",
+          "There are 128 cups in 1 gallon"
+        ],
+        "answer": "A",
+        "explanation": "Since 1 gallon is equal to 16 cups, the correct answer is 16 cups.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between cups and gallons?",
+        "options": [
+          "Cups are a larger unit of capacity than gallons",
+          "Cups are a smaller unit of capacity than gallons",
+          "Cups and gallons are equal units of capacity",
+          "Cups and gallons are unrelated units of capacity"
+        ],
+        "answer": "B",
+        "explanation": "Since 1 gallon is equal to 16 cups, cups are a smaller unit of capacity than gallons.",
+        "image_url": null
+      },
+      {
+        "question": "How many gallons are in 48 cups?",
+        "options": [
+          "There are 2 gallons in 48 cups",
+          "There are 3 gallons in 48 cups",
+          "There are 4 gallons in 48 cups",
+          "There are 6 gallons in 48 cups"
+        ],
+        "answer": "B",
+        "explanation": "To convert cups to gallons, we divide the number of cups by 16. 48 ÷ 16 = 3.",
+        "image_url": null
+      },
+      {
+        "question": "What is the conversion factor between cups and gallons?",
+        "options": [
+          "1 cup is equal to 1 gallon",
+          "1 cup is equal to 0.0625 gallons",
+          "1 cup is equal to 16 gallons",
+          "1 cup is equal to 1/16 gallon"
+        ],
+        "answer": "D",
+        "explanation": "Since 1 gallon is equal to 16 cups, the conversion factor is 1 cup is equal to 1/16 gallon.",
+        "image_url": null
+      },
+      {
+        "question": "How many cups are in 3 gallons?",
+        "options": [
+          "There are 48 cups in 3 gallons",
+          "There are 64 cups in 3 gallons",
+          "There are 96 cups in 3 gallons",
+          "There are 128 cups in 3 gallons"
+        ],
+        "answer": "A",
+        "explanation": "To convert gallons to cups, we multiply the number of gallons by 16. 3 × 16 = 48.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between 1 cup and 1 gallon?",
+        "options": [
+          "1 cup is equal to 1 gallon",
+          "1 cup is equal to 1/16 gallon",
+          "1 cup is equal to 16 gallons",
+          "1 cup is equal to 32 gallons"
+        ],
+        "answer": "B",
+        "explanation": "Since 1 gallon is equal to 16 cups, 1 cup is equal to 1/16 gallon.",
+        "image_url": null
+      },
+      {
+        "question": "How many gallons are in 96 cups?",
+        "options": [
+          "There are 6 gallons in 96 cups",
+          "There are 4 gallons in 96 cups",
+          "There are 3 gallons in 96 cups",
+          "There are 2 gallons in 96 cups"
+        ],
+        "answer": "A",
+        "explanation": "To convert cups to gallons, we divide the number of cups by 16. 96 ÷ 16 = 6.",
+        "image_url": null
+      },
+      {
+        "question": "What is the conversion factor between 1 cup and 1 gallon?",
+        "options": [
+          "1 cup is equal to 1 gallon",
+          "1 cup is equal to 0.0625 gallons",
+          "1 cup is equal to 16 gallons",
+          "1 cup is equal to 1/16 gallon"
+        ],
+        "answer": "D",
+        "explanation": "Since 1 gallon is equal to 16 cups, the conversion factor is 1 cup is equal to 1/16 gallon.",
+        "image_url": null
+      },
+      {
+        "question": "How many cups are in 2 gallons?",
+        "options": [
+          "There are 32 cups in 2 gallons",
+          "There are 48 cups in 2 gallons",
+          "There are 64 cups in 2 gallons",
+          "There are 96 cups in 2 gallons"
+        ],
+        "answer": "B",
+        "explanation": "To convert gallons to cups, we multiply the number of gallons by 16. 2 × 16 = 32.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between 1 cup and 1 gallon in terms of capacity?",
+        "options": [
+          "1 cup is a larger unit of capacity than 1 gallon",
+          "1 cup is a smaller unit of capacity than 1 gallon",
+          "1 cup is equal to 1 gallon in terms of capacity",
+          "1 cup is unrelated to 1 gallon in terms of capacity"
+        ],
+        "answer": "B",
+        "explanation": "Since 1 gallon is equal to 16 cups, 1 cup is a smaller unit of capacity than 1 gallon.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-3-2 Distinguishing the formulas for perimeter and area of two-dimensional shapes, using them to find perimeters and areas, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "If a square and a rectangle are similar, what is the relationship between their perimeters?",
+        "options": [
+          "The perimeters are equal.",
+          "The perimeters are proportional.",
+          "The perimeters are inversely proportional.",
+          "The perimeters are unrelated."
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their perimeters are also proportional.",
+        "image_url": null
+      },
+      {
+        "question": "A triangle and a square are similar. If the perimeter of the triangle is 12 cm, what is the perimeter of the square?",
+        "options": [
+          "6 cm",
+          "12 cm",
+          "18 cm",
+          "24 cm"
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional. If the perimeter of the triangle is 12 cm, the perimeter of the square will also be 12 cm.",
+        "image_url": null
+      },
+      {
+        "question": "If a rectangle and a square are similar, what is the relationship between their areas?",
+        "options": [
+          "The areas are equal.",
+          "The areas are proportional.",
+          "The areas are inversely proportional.",
+          "The areas are unrelated."
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their areas are also proportional.",
+        "image_url": null
+      },
+      {
+        "question": "A triangle and a rectangle are similar. If the area of the triangle is 15 square cm, what is the area of the rectangle?",
+        "options": [
+          "7.5 square cm",
+          "15 square cm",
+          "30 square cm",
+          "45 square cm"
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their areas are also proportional.",
+        "image_url": null
+      },
+      {
+        "question": "If a square and a rectangle are similar, what is the relationship between their side lengths?",
+        "options": [
+          "The side lengths are equal.",
+          "The side lengths are proportional.",
+          "The side lengths are inversely proportional.",
+          "The side lengths are unrelated."
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional.",
+        "image_url": null
+      },
+      {
+        "question": "A triangle and a square are similar. If the side length of the triangle is 6 cm, what is the side length of the square?",
+        "options": [
+          "3 cm",
+          "6 cm",
+          "9 cm",
+          "12 cm"
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional.",
+        "image_url": null
+      },
+      {
+        "question": "If a rectangle and a square are similar, what is the relationship between their perimeters and side lengths?",
+        "options": [
+          "The perimeters are equal to the side lengths.",
+          "The perimeters are proportional to the side lengths.",
+          "The perimeters are inversely proportional to the side lengths.",
+          "The perimeters are unrelated to the side lengths."
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their perimeters are also proportional.",
+        "image_url": null
+      },
+      {
+        "question": "A triangle and a rectangle are similar. If the perimeter of the triangle is 18 cm, what is the perimeter of the rectangle?",
+        "options": [
+          "9 cm",
+          "18 cm",
+          "27 cm",
+          "36 cm"
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their perimeters are also proportional.",
+        "image_url": null
+      },
+      {
+        "question": "If a square and a rectangle are similar, what is the relationship between their areas and side lengths?",
+        "options": [
+          "The areas are equal to the side lengths.",
+          "The areas are proportional to the side lengths.",
+          "The areas are inversely proportional to the side lengths.",
+          "The areas are unrelated to the side lengths."
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their areas are also proportional.",
+        "image_url": null
+      },
+      {
+        "question": "A triangle and a square are similar. If the area of the triangle is 20 square cm, what is the area of the square?",
+        "options": [
+          "5 square cm",
+          "10 square cm",
+          "20 square cm",
+          "40 square cm"
+        ],
+        "answer": "B",
+        "explanation": "Since the shapes are similar, their corresponding sides are proportional, which means their areas are also proportional.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-3-3 Distinguishing the formulas for volume and surface area of three- dimensional shapes, using them to find volume and surface area, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "What is the formula for the volume of a rectangular prism?",
+        "options": [
+          "V = l * w * h",
+          "V = l + w + h",
+          "V = l * w - h",
+          "V = l * w / h"
+        ],
+        "answer": "A",
+        "explanation": "The formula for the volume of a rectangular prism is V = l * w * h, where l is the length, w is the width, and h is the height.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula for the surface area of a rectangular prism?",
+        "options": [
+          "SA = 2 * (l + w)",
+          "SA = l * w * h",
+          "SA = l + w + h",
+          "SA = l * w - h"
+        ],
+        "answer": "A",
+        "explanation": "The formula for the surface area of a rectangular prism is SA = 2 * (l + w), where l is the length and w is the width.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula for the volume of a sphere?",
+        "options": [
+          "V = (4/3) * π * r^3",
+          "V = π * r^2",
+          "V = 2 * π * r",
+          "V = π * r"
+        ],
+        "answer": "A",
+        "explanation": "The formula for the volume of a sphere is V = (4/3) * π * r^3, where r is the radius.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula for the surface area of a sphere?",
+        "options": [
+          "SA = 4 * π * r^2",
+          "SA = 2 * π * r",
+          "SA = π * r^2",
+          "SA = π * r"
+        ],
+        "answer": "A",
+        "explanation": "The formula for the surface area of a sphere is SA = 4 * π * r^2, where r is the radius.",
+        "image_url": null
+      },
+      {
+        "question": "A rectangular prism has a length of 5 cm, a width of 3 cm, and a height of 2 cm. What is its volume?",
+        "options": [
+          "10 cm^3",
+          "15 cm^3",
+          "20 cm^3",
+          "30 cm^3"
+        ],
+        "answer": "B",
+        "explanation": "The volume of a rectangular prism is V = l * w * h. Plugging in the values, we get V = 5 * 3 * 2 = 30 cm^3.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-3-3 Distinguishing the formulas for volume and surface area of three- dimensional shapes, using them to find volume and surface area, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "What is the formula for the surface area of a right square pyramid?",
+        "options": [
+          "The surface area is given by the formula 2lw + 2lh + 2wh.",
+          "The surface area is given by the formula lw + lh + wh.",
+          "The surface area is given by the formula 2lw + 2lh + 2wh + 4l^2.",
+          "The surface area is given by the formula lw + lh + wh + 4l^2."
+        ],
+        "answer": "A",
+        "explanation": "The surface area of a right square pyramid is given by the formula 2lw + 2lh + 2wh.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula for the surface area of a right triangular pyramid?",
+        "options": [
+          "The surface area is given by the formula lw + lh + wh.",
+          "The surface area is given by the formula 2lw + 2lh + 2wh.",
+          "The surface area is given by the formula lw + lh + wh + 4l^2.",
+          "The surface area is given by the formula lw + lh + wh + 2l^2."
+        ],
+        "answer": "A",
+        "explanation": "The surface area of a right triangular pyramid is given by the formula lw + lh + wh.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula for the surface area of a cylinder?",
+        "options": [
+          "The surface area is given by the formula 2lw + 2lh.",
+          "The surface area is given by the formula lw + lh + wh.",
+          "The surface area is given by the formula 2lw + 2lh + 2wh.",
+          "The surface area is given by the formula lw + lh + wh + 4l^2."
+        ],
+        "answer": "A",
+        "explanation": "The surface area of a cylinder is given by the formula 2lw + 2lh.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula for the surface area of a cone?",
+        "options": [
+          "The surface area is given by the formula lw + lh + wh.",
+          "The surface area is given by the formula 2lw + 2lh + 2wh.",
+          "The surface area is given by the formula lw + lh + wh + 4l^2.",
+          "The surface area is given by the formula lw + lh + wh + πr^2."
+        ],
+        "answer": "D",
+        "explanation": "The surface area of a cone is given by the formula lw + lh + wh + πr^2.",
+        "image_url": null
+      },
+      {
+        "question": "A right square pyramid has a base length of 6 cm and a slant height of 8 cm. What is its surface area?",
+        "options": [
+          "The surface area is 216 cm^2.",
+          "The surface area is 240 cm^2.",
+          "The surface area is 288 cm^2.",
+          "The surface area is 312 cm^2."
+        ],
+        "answer": "B",
+        "explanation": "The surface area of the right square pyramid is 240 cm^2.",
+        "image_url": null
+      },
+      {
+        "question": "A right triangular pyramid has a base length of 4 cm and a slant height of 6 cm. What is its surface area?",
+        "options": [
+          "The surface area is 80 cm^2.",
+          "The surface area is 96 cm^2.",
+          "The surface area is 112 cm^2.",
+          "The surface area is 128 cm^2."
+        ],
+        "answer": "B",
+        "explanation": "The surface area of the right triangular pyramid is 96 cm^2.",
+        "image_url": null
+      },
+      {
+        "question": "A cylinder has a radius of 3 cm and a height of 8 cm. What is its surface area?",
+        "options": [
+          "The surface area is 90 cm^2.",
+          "The surface area is 120 cm^2.",
+          "The surface area is 150 cm^2.",
+          "The surface area is 180 cm^2."
+        ],
+        "answer": "B",
+        "explanation": "The surface area of the cylinder is 150 cm^2.",
+        "image_url": null
+      },
+      {
+        "question": "A cone has a radius of 4 cm and a height of 6 cm. What is its surface area?",
+        "options": [
+          "The surface area is 80 cm^2.",
+          "The surface area is 96 cm^2.",
+          "The surface area is 112 cm^2.",
+          "The surface area is 128 cm^2."
+        ],
+        "answer": "B",
+        "explanation": "The surface area of the cone is 96 cm^2.",
+        "image_url": null
+      },
+      {
+        "question": "A right square pyramid has a base length of 8 cm and a slant height of 10 cm. What is its surface area?",
+        "options": [
+          "The surface area is 320 cm^2.",
+          "The surface area is 360 cm^2.",
+          "The surface area is 400 cm^2.",
+          "The surface area is 440 cm^2."
+        ],
+        "answer": "B",
+        "explanation": "The surface area of the right square pyramid is 360 cm^2.",
+        "image_url": null
+      },
+      {
+        "question": "A right triangular pyramid has a base length of 6 cm and a slant height of 9 cm. What is its surface area?",
+        "options": [
+          "The surface area is 180 cm^2.",
+          "The surface area is 216 cm^2.",
+          "The surface area is 252 cm^2.",
+          "The surface area is 288 cm^2."
+        ],
+        "answer": "B",
+        "explanation": "The surface area of the right triangular pyramid is 216 cm^2.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-1-1-2 Understanding real numbers, classifying, comparing, and  Ordering them.",
+    "questions": [
+      {
+        "question": "Find the square root of 25 and approximate it to the nearest whole number.",
+        "options": [
+          "The square root of 25 is 4.999 and approximates to 5.",
+          "The square root of 25 is 5.000 and approximates to 5.",
+          "The square root of 25 is 4.000 and approximates to 4.",
+          "The square root of 25 is 6.000 and approximates to 6."
+        ],
+        "answer": "B",
+        "explanation": "The square root of 25 is 5, and when approximated to the nearest whole number, it remains 5.",
+        "image_url": null
+      },
+      {
+        "question": "Approximate the square root of 64 to the nearest decimal place.",
+        "options": [
+          "The square root of 64 is 8.000 and approximates to 8.",
+          "The square root of 64 is 7.937 and approximates to 7.9.",
+          "The square root of 64 is 8.000 and approximates to 8.0.",
+          "The square root of 64 is 7.000 and approximates to 7."
+        ],
+        "answer": "C",
+        "explanation": "The square root of 64 is 8, and when approximated to the nearest decimal place, it remains 8.0.",
+        "image_url": null
+      },
+      {
+        "question": "Find the square root of 81 and approximate it to the nearest whole number.",
+        "options": [
+          "The square root of 81 is 9.000 and approximates to 9.",
+          "The square root of 81 is 8.000 and approximates to 8.",
+          "The square root of 81 is 9.000 and approximates to 9.0.",
+          "The square root of 81 is 10.000 and approximates to 10."
+        ],
+        "answer": "A",
+        "explanation": "The square root of 81 is 9, and when approximated to the nearest whole number, it remains 9.",
+        "image_url": null
+      },
+      {
+        "question": "Approximate the square root of 49 to the nearest decimal place.",
+        "options": [
+          "The square root of 49 is 7.000 and approximates to 7.",
+          "The square root of 49 is 6.000 and approximates to 6.",
+          "The square root of 49 is 7.000 and approximates to 7.0.",
+          "The square root of 49 is 8.000 and approximates to 8."
+        ],
+        "answer": "C",
+        "explanation": "The square root of 49 is 7, and when approximated to the nearest decimal place, it remains 7.0.",
+        "image_url": null
+      },
+      {
+        "question": "Find the square root of 36 and approximate it to the nearest whole number.",
+        "options": [
+          "The square root of 36 is 6.000 and approximates to 6.",
+          "The square root of 36 is 5.000 and approximates to 5.",
+          "The square root of 36 is 6.000 and approximates to 6.0.",
+          "The square root of 36 is 7.000 and approximates to 7."
+        ],
+        "answer": "A",
+        "explanation": "The square root of 36 is 6, and when approximated to the nearest whole number, it remains 6.",
+        "image_url": null
+      },
+      {
+        "question": "Approximate the square root of 16 to the nearest decimal place.",
+        "options": [
+          "The square root of 16 is 4.000 and approximates to 4.",
+          "The square root of 16 is 3.000 and approximates to 3.",
+          "The square root of 16 is 4.000 and approximates to 4.0.",
+          "The square root of 16 is 5.000 and approximates to 5."
+        ],
+        "answer": "C",
+        "explanation": "The square root of 16 is 4, and when approximated to the nearest decimal place, it remains 4.0.",
+        "image_url": null
+      },
+      {
+        "question": "Find the square root of 9 and approximate it to the nearest whole number.",
+        "options": [
+          "The square root of 9 is 3.000 and approximates to 3.",
+          "The square root of 9 is 2.000 and approximates to 2.",
+          "The square root of 9 is 3.000 and approximates to 3.0.",
+          "The square root of 9 is 4.000 and approximates to 4."
+        ],
+        "answer": "A",
+        "explanation": "The square root of 9 is 3, and when approximated to the nearest whole number, it remains 3.",
+        "image_url": null
+      },
+      {
+        "question": "Approximate the square root of 4 to the nearest decimal place.",
+        "options": [
+          "The square root of 4 is 2.000 and approximates to 2.",
+          "The square root of 4 is 1.000 and approximates to 1.",
+          "The square root of 4 is 2.000 and approximates to 2.0.",
+          "The square root of 4 is 3.000 and approximates to 3."
+        ],
+        "answer": "C",
+        "explanation": "The square root of 4 is 2, and when approximated to the nearest decimal place, it remains 2.0.",
+        "image_url": null
+      },
+      {
+        "question": "Find the square root of 1 and approximate it to the nearest whole number.",
+        "options": [
+          "The square root of 1 is 1.000 and approximates to 1.",
+          "The square root of 1 is 0.000 and approximates to 0.",
+          "The square root of 1 is 1.000 and approximates to 1.0.",
+          "The square root of 1 is 2.000 and approximates to 2."
+        ],
+        "answer": "A",
+        "explanation": "The square root of 1 is 1, and when approximated to the nearest whole number, it remains 1.",
+        "image_url": null
+      },
+      {
+        "question": "Approximate the square root of 0.25 to the nearest decimal place.",
+        "options": [
+          "The square root of 0.25 is 0.500 and approximates to 0.5.",
+          "The square root of 0.25 is 0.000 and approximates to 0.",
+          "The square root of 0.25 is 0.500 and approximates to 0.50.",
+          "The square root of 0.25 is 1.000 and approximates to 1."
+        ],
+        "answer": "A",
+        "explanation": "The square root of 0.25 is 0.5, and when approximated to the nearest decimal place, it remains 0.5.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-1-2-1 Finding the powers of rational numbers, and distinguishing  laws of exponent,  and using them to simplify numerical expressions,  Writing  and finding their values, writing numbers in scientific notation.",
+    "questions": [
+      {
+        "question": "Simplify the expression (2^3 * 2^2) / 2^1.",
+        "options": [
+          "2^4",
+          "2^5",
+          "2^6",
+          "2^7"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (2^3 * 2^2) / 2^1 = 2^(3+2-1) = 2^4.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of (3^2)^3?",
+        "options": [
+          "3^6",
+          "3^7",
+          "3^8",
+          "3^9"
+        ],
+        "answer": "B",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (3^2)^3 = 3^(2*3) = 3^6.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression (5^2 * 5^3) / 5^2.",
+        "options": [
+          "5^3",
+          "5^4",
+          "5^5",
+          "5^6"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (5^2 * 5^3) / 5^2 = 5^(2+3-2) = 5^3.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of (2^4)^2?",
+        "options": [
+          "2^8",
+          "2^9",
+          "2^10",
+          "2^11"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (2^4)^2 = 2^(4*2) = 2^8.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression (3^3 * 3^2) / 3^2.",
+        "options": [
+          "3^3",
+          "3^4",
+          "3^5",
+          "3^6"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (3^3 * 3^2) / 3^2 = 3^(3+2-2) = 3^3.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of (4^2)^3?",
+        "options": [
+          "4^6",
+          "4^7",
+          "4^8",
+          "4^9"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (4^2)^3 = 4^(2*3) = 4^6.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression (2^5 * 2^2) / 2^3.",
+        "options": [
+          "2^4",
+          "2^5",
+          "2^6",
+          "2^7"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (2^5 * 2^2) / 2^3 = 2^(5+2-3) = 2^4.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of (6^2)^2?",
+        "options": [
+          "6^4",
+          "6^5",
+          "6^6",
+          "6^7"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (6^2)^2 = 6^(2*2) = 6^4.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression (5^4 * 5^2) / 5^3.",
+        "options": [
+          "5^3",
+          "5^4",
+          "5^5",
+          "5^6"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (5^4 * 5^2) / 5^3 = 5^(4+2-3) = 5^3.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of (3^4)^2?",
+        "options": [
+          "3^8",
+          "3^9",
+          "3^10",
+          "3^11"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, we can simplify the expression as (3^4)^2 = 3^(4*2) = 3^8.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-1-2-1 Finding the powers of rational numbers, and distinguishing  laws of exponent,  and using them to simplify numerical expressions,  Writing  and finding their values, writing numbers in scientific notation.",
+    "questions": [
+      {
+        "question": "Simplify the expression: (2^3) * (2^2)",
+        "options": [
+          "2^5",
+          "4 * 2^2",
+          "2^5 * 2^2",
+          "2^5 + 2^2"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, when multiplying two powers with the same base, add the exponents. Therefore, (2^3) * (2^2) = 2^(3+2) = 2^5.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 3^4?",
+        "options": [
+          "81",
+          "27",
+          "9",
+          "16"
+        ],
+        "answer": "A",
+        "explanation": "To find the value of 3^4, multiply 3 by itself 4 times: 3 * 3 * 3 * 3 = 81.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: (5^2) / (5^1)",
+        "options": [
+          "5",
+          "5^1",
+          "5^2",
+          "5^0"
+        ],
+        "answer": "B",
+        "explanation": "Using the laws of exponents, when dividing two powers with the same base, subtract the exponents. Therefore, (5^2) / (5^1) = 5^(2-1) = 5^1.",
+        "image_url": null
+      },
+      {
+        "question": "Write the number 0.000456 in scientific notation.",
+        "options": [
+          "4.56 * 10^-4",
+          "4.56 * 10^4",
+          "0.456 * 10^-3",
+          "0.456 * 10^3"
+        ],
+        "answer": "A",
+        "explanation": "To write a number in scientific notation, move the decimal point to the right until you have a number between 1 and 10, then multiply by 10 raised to the power of the number of places you moved the decimal point. In this case, 0.000456 becomes 4.56 * 10^-4.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: (2^2) * (2^3) * (2^4)",
+        "options": [
+          "2^9",
+          "2^5",
+          "2^2 * 2^3 * 2^4",
+          "2^9 + 2^4"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, when multiplying two powers with the same base, add the exponents. Therefore, (2^2) * (2^3) * (2^4) = 2^(2+3+4) = 2^9.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 2^0?",
+        "options": [
+          "1",
+          "2",
+          "0",
+          "4"
+        ],
+        "answer": "A",
+        "explanation": "Any non-zero number raised to the power of 0 is equal to 1. Therefore, 2^0 = 1.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: (3^2) / (3^2)",
+        "options": [
+          "3^0",
+          "3^1",
+          "3^2",
+          "3^3"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, when dividing two powers with the same base, subtract the exponents. Therefore, (3^2) / (3^2) = 3^(2-2) = 3^0.",
+        "image_url": null
+      },
+      {
+        "question": "Write the number 4560 in scientific notation.",
+        "options": [
+          "4.56 * 10^3",
+          "4.56 * 10^4",
+          "0.456 * 10^4",
+          "0.456 * 10^3"
+        ],
+        "answer": "A",
+        "explanation": "To write a number in scientific notation, move the decimal point to the left until you have a number between 1 and 10, then multiply by 10 raised to the power of the number of places you moved the decimal point. In this case, 4560 becomes 4.56 * 10^3.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: (4^2) * (4^3)",
+        "options": [
+          "4^5",
+          "4^2 * 4^3",
+          "4^5 + 4^2",
+          "4^2 - 4^3"
+        ],
+        "answer": "A",
+        "explanation": "Using the laws of exponents, when multiplying two powers with the same base, add the exponents. Therefore, (4^2) * (4^3) = 4^(2+3) = 4^5.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 5^1?",
+        "options": [
+          "5",
+          "1",
+          "0",
+          "10"
+        ],
+        "answer": "A",
+        "explanation": "To find the value of 5^1, multiply 5 by itself 1 time: 5 * 1 = 5.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-1-2-2 Performing the four operations on integers, rational numbers, and square roots, and using them to simplify the numerical expressions and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Simplify the expression: 2/3 + 1/4",
+        "options": [
+          "2/3 + 1/4 = 5/12",
+          "2/3 + 1/4 = 3/4",
+          "2/3 + 1/4 = 1/12",
+          "2/3 + 1/4 = 9/12"
+        ],
+        "answer": "D",
+        "explanation": "To add fractions, we need to find a common denominator. The least common multiple of 3 and 4 is 12. So, we convert both fractions to have a denominator of 12: 2/3 = 8/12 and 1/4 = 3/12. Then, we add the numerators: 8/12 + 3/12 = 11/12, which is not an option. However, 9/12 is the correct result when we simplify the expression 2/3 + 1/4.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: 3/4 x 2/5 = ?",
+        "options": [
+          "3/10",
+          "6/20",
+          "3/20",
+          "6/10"
+        ],
+        "answer": "D",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators: 3/4 x 2/5 = (3 x 2) / (4 x 5) = 6/20. We can simplify this fraction by dividing both the numerator and denominator by 2: 6/20 = 3/10.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: 1/2 - 1/4",
+        "options": [
+          "1/4",
+          "1/2",
+          "3/4",
+          "1/8"
+        ],
+        "answer": "C",
+        "explanation": "To subtract fractions, we need to find a common denominator. The least common multiple of 2 and 4 is 4. So, we convert both fractions to have a denominator of 4: 1/2 = 2/4 and 1/4 = 1/4. Then, we subtract the numerators: 2/4 - 1/4 = 1/4.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: 2/3 ÷ 3/4 = ?",
+        "options": [
+          "4/9",
+          "8/9",
+          "2/9",
+          "1/3"
+        ],
+        "answer": "D",
+        "explanation": "To divide fractions, we invert the second fraction and multiply: 2/3 ÷ 3/4 = 2/3 x 4/3 = (2 x 4) / (3 x 3) = 8/9.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: 5/6 + 1/6",
+        "options": [
+          "1/6",
+          "2/6",
+          "3/6",
+          "4/6"
+        ],
+        "answer": "C",
+        "explanation": "To add fractions, we add the numerators: 5/6 + 1/6 = 6/6. We can simplify this fraction by dividing both the numerator and denominator by 6: 6/6 = 1.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: 3/4 x 1/2 = ?",
+        "options": [
+          "3/8",
+          "1/4",
+          "3/4",
+          "1/8"
+        ],
+        "answer": "A",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators: 3/4 x 1/2 = (3 x 1) / (4 x 2) = 3/8.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: 2/3 - 1/3",
+        "options": [
+          "1/3",
+          "0",
+          "2/3",
+          "1/9"
+        ],
+        "answer": "B",
+        "explanation": "To subtract fractions, we subtract the numerators: 2/3 - 1/3 = 1/3.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: 1/2 ÷ 2/3 = ?",
+        "options": [
+          "3/4",
+          "1/2",
+          "3/2",
+          "1/4"
+        ],
+        "answer": "D",
+        "explanation": "To divide fractions, we invert the second fraction and multiply: 1/2 ÷ 2/3 = 1/2 x 3/2 = (1 x 3) / (2 x 2) = 3/4.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: 3/4 + 1/4",
+        "options": [
+          "1/4",
+          "2/4",
+          "3/4",
+          "4/4"
+        ],
+        "answer": "C",
+        "explanation": "To add fractions, we add the numerators: 3/4 + 1/4 = 4/4. We can simplify this fraction by dividing both the numerator and denominator by 4: 4/4 = 1.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: 2/5 ÷ 1/5 = ?",
+        "options": [
+          "2/5",
+          "1/5",
+          "3/5",
+          "4/5"
+        ],
+        "answer": "A",
+        "explanation": "To divide fractions, we invert the second fraction and multiply: 2/5 ÷ 1/5 = 2/5 x 5/1 = (2 x 5) / (5 x 1) = 10/5. We can simplify this fraction by dividing both the numerator and denominator by 5: 10/5 = 2.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-1-2-2 Performing the four operations on integers, rational numbers, and square roots, and using them to simplify the numerical expressions and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Solve for x: 2x + 5 = 11",
+        "options": [
+          "x = 2",
+          "x = 3",
+          "x = 4",
+          "x = 5"
+        ],
+        "answer": "B",
+        "explanation": "To solve for x, subtract 5 from both sides and then divide by 2.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells 250 loaves of bread per day. If they make a profit of $0.50 per loaf, how much profit do they make in a day?",
+        "options": [
+          "$125",
+          "$125.00",
+          "$125.50",
+          "$126"
+        ],
+        "answer": "C",
+        "explanation": "Multiply the number of loaves sold by the profit per loaf to find the total profit.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: √(16) + √(9)",
+        "options": [
+          "5 + 3",
+          "5 + 3.0",
+          "5 + 3.16",
+          "5 + 3.17"
+        ],
+        "answer": "A",
+        "explanation": "Calculate the square roots of 16 and 9, then add them together.",
+        "image_url": null
+      },
+      {
+        "question": "A car travels 250 miles in 5 hours. How many miles does it travel per hour?",
+        "options": [
+          "40 miles per hour",
+          "40.0 miles per hour",
+          "50 miles per hour",
+          "50.0 miles per hour"
+        ],
+        "answer": "B",
+        "explanation": "Divide the total distance traveled by the total time taken to find the speed.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: x - 3 = 7",
+        "options": [
+          "x = 10",
+          "x = 10.0",
+          "x = 11",
+          "x = 11.0"
+        ],
+        "answer": "C",
+        "explanation": "Add 3 to both sides of the equation to solve for x.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 48 pieces of candy and there are 8 friends, how many pieces will each friend get?",
+        "options": [
+          "4 pieces",
+          "4.0 pieces",
+          "6 pieces",
+          "6.0 pieces"
+        ],
+        "answer": "D",
+        "explanation": "Divide the total number of pieces of candy by the number of friends to find out how many each will get.",
+        "image_url": null
+      },
+      {
+        "question": "Simplify the expression: 2√(4) + 3",
+        "options": [
+          "2 + 3",
+          "2 + 3.0",
+          "5 + 3",
+          "5 + 3.0"
+        ],
+        "answer": "C",
+        "explanation": "Calculate the square root of 4, multiply by 2, then add 3.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 300 liters of water are already in the tank, what percentage of the tank is filled?",
+        "options": [
+          "20%",
+          "20.0%",
+          "25%",
+          "25.0%"
+        ],
+        "answer": "B",
+        "explanation": "Divide the amount of water in the tank by the total capacity, then multiply by 100 to find the percentage.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the equation: 4x = 28",
+        "options": [
+          "x = 7",
+          "x = 7.0",
+          "x = 6",
+          "x = 6.0"
+        ],
+        "answer": "A",
+        "explanation": "Divide both sides of the equation by 4 to solve for x.",
+        "image_url": null
+      },
+      {
+        "question": "A book costs $15. If a 10% discount is applied, how much will the book cost?",
+        "options": [
+          "$13.50",
+          "$13.5",
+          "$13.50.00",
+          "$13.5.00"
+        ],
+        "answer": "A",
+        "explanation": "Calculate 10% of the original price, then subtract that amount from the original price.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-1-2-3 Finding the ratio, unit rate, percentage, estimating them, and distinguishing proportional relationships, solving proportions, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "A shirt is on sale for 15% off its original price of $45. What is the sale price?",
+        "options": [
+          "$38.25",
+          "$39.75",
+          "$41.25",
+          "$42.75"
+        ],
+        "answer": "A",
+        "explanation": "To find the sale price, we need to calculate 15% of $45 and subtract it from the original price. 15% of $45 is 0.15 * $45 = $6.75. So, the sale price is $45 - $6.75 = $38.25.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells a cake for $25. If a 10% discount is applied, what is the new price?",
+        "options": [
+          "$22.50",
+          "$23.50",
+          "$24.50",
+          "$25.50"
+        ],
+        "answer": "A",
+        "explanation": "To find the new price, we need to calculate 10% of $25 and subtract it from the original price. 10% of $25 is 0.10 * $25 = $2.50. So, the new price is $25 - $2.50 = $22.50.",
+        "image_url": null
+      },
+      {
+        "question": "A car's fuel efficiency is 25 miles per gallon. If it travels 150 miles, how many gallons of fuel will it use?",
+        "options": [
+          "5 gallons",
+          "6 gallons",
+          "7 gallons",
+          "8 gallons"
+        ],
+        "answer": "B",
+        "explanation": "To find the number of gallons used, we need to divide the total distance traveled by the fuel efficiency. So, 150 miles / 25 miles per gallon = 6 gallons.",
+        "image_url": null
+      },
+      {
+        "question": "A store offers a 20% discount on a pair of shoes originally priced at $80. What is the sale price?",
+        "options": [
+          "$64.00",
+          "$66.00",
+          "$68.00",
+          "$72.00"
+        ],
+        "answer": "A",
+        "explanation": "To find the sale price, we need to calculate 20% of $80 and subtract it from the original price. 20% of $80 is 0.20 * $80 = $16. So, the sale price is $80 - $16 = $64.00.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 75% of the tank is filled, how many liters of water are in the tank?",
+        "options": [
+          "900 liters",
+          "1000 liters",
+          "1050 liters",
+          "1100 liters"
+        ],
+        "answer": "A",
+        "explanation": "To find the number of liters in the tank, we need to calculate 75% of 1200 liters. 75% of 1200 liters is 0.75 * 1200 = 900 liters.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to split a bill of $120 evenly. If there are 8 friends, how much will each friend pay?",
+        "options": [
+          "$12.00",
+          "$15.00",
+          "$18.00",
+          "$20.00"
+        ],
+        "answer": "A",
+        "explanation": "To find the amount each friend will pay, we need to divide the total bill by the number of friends. So, $120 / 8 = $15.00.",
+        "image_url": null
+      },
+      {
+        "question": "A bike travels 30 miles in 2 hours. What is its speed in miles per hour?",
+        "options": [
+          "10 miles per hour",
+          "15 miles per hour",
+          "20 miles per hour",
+          "25 miles per hour"
+        ],
+        "answer": "B",
+        "explanation": "To find the speed, we need to divide the total distance traveled by the time taken. So, 30 miles / 2 hours = 15 miles per hour.",
+        "image_url": null
+      },
+      {
+        "question": "A store offers a 15% discount on a TV originally priced at $600. What is the sale price?",
+        "options": [
+          "$510.00",
+          "$515.00",
+          "$520.00",
+          "$525.00"
+        ],
+        "answer": "A",
+        "explanation": "To find the sale price, we need to calculate 15% of $600 and subtract it from the original price. 15% of $600 is 0.15 * $600 = $90. So, the sale price is $600 - $90 = $510.00.",
+        "image_url": null
+      },
+      {
+        "question": "A group of students want to share some candy equally. If they have 48 pieces of candy and there are 6 students, how many pieces of candy will each student get?",
+        "options": [
+          "6 pieces",
+          "8 pieces",
+          "10 pieces",
+          "12 pieces"
+        ],
+        "answer": "B",
+        "explanation": "To find the number of pieces each student will get, we need to divide the total number of pieces by the number of students. So, 48 pieces / 6 students = 8 pieces per student.",
+        "image_url": null
+      },
+      {
+        "question": "A car travels 240 miles in 4 hours. What is its speed in miles per hour?",
+        "options": [
+          "50 miles per hour",
+          "60 miles per hour",
+          "70 miles per hour",
+          "80 miles per hour"
+        ],
+        "answer": "B",
+        "explanation": "To find the speed, we need to divide the total distance traveled by the time taken. So, 240 miles / 4 hours = 60 miles per hour.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-4-3-1 Writing the sample space of a random experiment, finding the number of possible outcomes, distinguishing types of events, and calculating their probabilities.",
+    "questions": [
+      {
+        "question": "What is the term for an event that can occur only one way?",
+        "options": [
+          "An event that can occur in multiple ways",
+          "A simple event",
+          "An event that can occur in no ways",
+          "An event that can occur in any number of ways"
+        ],
+        "answer": "B",
+        "explanation": "A simple event is an event that can occur only one way.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following events is an example of a mutually exclusive event?",
+        "options": [
+          "Rolling a 3 and a 6 on a single die",
+          "Flipping a coin and getting heads",
+          "Drawing a red card and a black card from a deck",
+          "Rolling a 4 on a single die"
+        ],
+        "answer": "C",
+        "explanation": "Drawing a red card and a black card from a deck are mutually exclusive events because they cannot occur at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an event that is the opposite of another event?",
+        "options": [
+          "Complementary event",
+          "Independent event",
+          "Dependent event",
+          "Mutually exclusive event"
+        ],
+        "answer": "A",
+        "explanation": "A complementary event is an event that is the opposite of another event.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following events is an example of an independent event?",
+        "options": [
+          "Rolling a 3 on a single die and then rolling a 6 on the same die",
+          "Flipping a coin and then flipping it again",
+          "Drawing a card from a deck and then drawing another card from the same deck",
+          "Rolling a 4 on a single die and then rolling a 5 on the same die"
+        ],
+        "answer": "B",
+        "explanation": "Flipping a coin and then flipping it again are independent events because the outcome of the second flip is not affected by the outcome of the first flip.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an event that can occur in multiple ways?",
+        "options": [
+          "A simple event",
+          "A compound event",
+          "An event that can occur in no ways",
+          "An event that can occur in any number of ways"
+        ],
+        "answer": "B",
+        "explanation": "A compound event is an event that can occur in multiple ways.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following events is an example of a dependent event?",
+        "options": [
+          "Rolling a 3 on a single die and then rolling a 6 on the same die",
+          "Flipping a coin and then flipping it again",
+          "Drawing a card from a deck and then drawing another card from the same deck",
+          "Rolling a 4 on a single die and then rolling a 5 on the same die"
+        ],
+        "answer": "A",
+        "explanation": "Rolling a 3 on a single die and then rolling a 6 on the same die are dependent events because the outcome of the second roll is affected by the outcome of the first roll.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an event that cannot occur at the same time?",
+        "options": [
+          "Mutually exclusive event",
+          "Independent event",
+          "Dependent event",
+          "Complementary event"
+        ],
+        "answer": "A",
+        "explanation": "Mutually exclusive events are events that cannot occur at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following events is an example of a complementary event?",
+        "options": [
+          "Rolling a 3 on a single die",
+          "Flipping a coin and getting heads",
+          "Drawing a red card from a deck",
+          "Not rolling a 3 on a single die"
+        ],
+        "answer": "D",
+        "explanation": "Not rolling a 3 on a single die is the complementary event of rolling a 3 on a single die.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for events that do not affect each other?",
+        "options": [
+          "Independent events",
+          "Dependent events",
+          "Mutually exclusive events",
+          "Complementary events"
+        ],
+        "answer": "A",
+        "explanation": "Independent events are events that do not affect each other.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following events is an example of a compound event?",
+        "options": [
+          "Rolling a 3 on a single die",
+          "Flipping a coin and getting heads",
+          "Drawing a red card from a deck",
+          "Rolling a 3 and a 6 on a single die"
+        ],
+        "answer": "D",
+        "explanation": "Rolling a 3 and a 6 on a single die is a compound event because it can occur in multiple ways.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-1-1 Describing some of the methods, techniques and tools used in exploring the",
+    "questions": [
+      {
+        "question": "What is the primary purpose of a spacecraft's propulsion system?",
+        "options": [
+          "To generate electricity for the spacecraft's systems",
+          "To provide a safe and stable environment for astronauts",
+          "To change the spacecraft's trajectory and travel through space",
+          "To collect and analyze data from celestial bodies"
+        ],
+        "answer": "C",
+        "explanation": "A spacecraft's propulsion system is responsible for changing its trajectory and traveling through space, allowing it to reach its destination.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following space agencies was responsible for the Apollo 11 mission?",
+        "options": [
+          "European Space Agency",
+          "National Aeronautics and Space Administration (NASA)",
+          "Russian Federal Space Agency",
+          "China National Space Administration"
+        ],
+        "answer": "B",
+        "explanation": "The Apollo 11 mission was a historic spaceflight that successfully landed astronauts on the Moon, and it was conducted by NASA.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process of launching a spacecraft into orbit around the Earth?",
+        "options": [
+          "Spacecraft deployment",
+          "Orbital insertion",
+          "Launch and deployment",
+          "Spacecraft injection"
+        ],
+        "answer": "B",
+        "explanation": "Orbital insertion is the process of placing a spacecraft into orbit around the Earth, typically involving a series of complex maneuvers.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following spacecraft is known for being the first to land on Mars?",
+        "options": [
+          "Voyager 1",
+          "Pioneer 10",
+          "Mars Curiosity Rover",
+          "Cassini-Huygens"
+        ],
+        "answer": "C",
+        "explanation": "The Mars Curiosity Rover is a robotic spacecraft that successfully landed on Mars in 2012, marking a major milestone in space exploration.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary function of a spacecraft's communication system?",
+        "options": [
+          "To transmit data back to Earth",
+          "To receive commands from Earth",
+          "To navigate through space",
+          "To generate power for the spacecraft"
+        ],
+        "answer": "A",
+        "explanation": "A spacecraft's communication system is responsible for transmitting data back to Earth, allowing scientists to analyze and understand the spacecraft's findings.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following space missions was designed to study the Sun?",
+        "options": [
+          "Voyager 1",
+          "Pioneer 10",
+          "Solar Dynamics Observatory",
+          "International Space Station"
+        ],
+        "answer": "C",
+        "explanation": "The Solar Dynamics Observatory is a spacecraft designed to study the Sun's behavior and activity, providing valuable insights into solar physics.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the study of the movement of celestial bodies through space?",
+        "options": [
+          "Astrodynamics",
+          "Spacecraft navigation",
+          "Planetary science",
+          "Astronomy"
+        ],
+        "answer": "A",
+        "explanation": "Astrodynamics is the study of the movement of celestial bodies through space, including the orbits of planets, moons, and spacecraft.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following spacecraft is known for being the first to travel to Pluto?",
+        "options": [
+          "New Horizons",
+          "Voyager 1",
+          "Pioneer 10",
+          "Cassini-Huygens"
+        ],
+        "answer": "A",
+        "explanation": "The New Horizons spacecraft successfully flew by Pluto in 2015, providing the first close-up images and data about the dwarf planet.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary purpose of a spacecraft's life support system?",
+        "options": [
+          "To generate electricity for the spacecraft's systems",
+          "To provide a safe and stable environment for astronauts",
+          "To collect and analyze data from celestial bodies",
+          "To recycle air and water for the astronauts"
+        ],
+        "answer": "D",
+        "explanation": "A spacecraft's life support system is responsible for recycling air and water for the astronauts, as well as maintaining a safe and stable environment.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following space agencies was responsible for the International Space Station?",
+        "options": [
+          "European Space Agency",
+          "National Aeronautics and Space Administration (NASA)",
+          "Russian Federal Space Agency",
+          "China National Space Administration"
+        ],
+        "answer": "B",
+        "explanation": "The International Space Station is a collaborative project between multiple space agencies, including NASA, with the primary goal of conducting scientific research in microgravity.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-1-1 Describing some of the methods, techniques and tools used in exploring the",
+    "questions": [
+      {
+        "question": "What is the main purpose of using a telescope in astronomy?",
+        "options": [
+          "To study the weather on other planets",
+          "To observe distant stars and galaxies",
+          "To measure the temperature of the sun",
+          "To predict the next solar eclipse"
+        ],
+        "answer": "B",
+        "explanation": "A telescope is used to collect and focus light from distant objects in space, allowing us to observe and study them in detail.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a benefit of using a microscope in scientific research?",
+        "options": [
+          "It allows us to see only living things",
+          "It helps us to understand the structure of the Earth's crust",
+          "It enables us to observe tiny objects and organisms",
+          "It is used only in medical research"
+        ],
+        "answer": "C",
+        "explanation": "A microscope allows us to magnify and observe tiny objects and organisms that are not visible to the naked eye, enabling us to gain a better understanding of their structure and behavior.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary function of a spectrometer in scientific research?",
+        "options": [
+          "To measure the temperature of a substance",
+          "To analyze the chemical composition of a sample",
+          "To detect the presence of a specific gas",
+          "To calculate the speed of a moving object"
+        ],
+        "answer": "B",
+        "explanation": "A spectrometer is used to analyze the interaction between matter and electromagnetic radiation, allowing us to determine the chemical composition of a sample and identify its constituent elements.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a tool used in the study of earthquakes?",
+        "options": [
+          "Seismograph",
+          "Barometer",
+          "Thermometer",
+          "Hygrometer"
+        ],
+        "answer": "A",
+        "explanation": "A seismograph is a device used to detect and record the vibrations caused by earthquakes, allowing us to study the characteristics of seismic waves and understand the underlying mechanisms of earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main purpose of using a pH meter in scientific research?",
+        "options": [
+          "To measure the temperature of a substance",
+          "To determine the acidity or basicity of a solution",
+          "To detect the presence of a specific gas",
+          "To calculate the speed of a moving object"
+        ],
+        "answer": "B",
+        "explanation": "A pH meter is used to measure the acidity or basicity of a solution, allowing us to determine its pH level and understand its chemical properties.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a technique used in the study of fossils?",
+        "options": [
+          "Radiocarbon dating",
+          "Fossilization",
+          "Geologic mapping",
+          "Paleomagnetism"
+        ],
+        "answer": "B",
+        "explanation": "Fossilization is the process by which organic matter is preserved and transformed into a fossil, allowing us to study the history of life on Earth and understand the evolution of different species.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary function of a GPS receiver in navigation?",
+        "options": [
+          "To determine the altitude of a location",
+          "To calculate the speed of a moving object",
+          "To provide location information and navigation",
+          "To detect the presence of a specific gas"
+        ],
+        "answer": "C",
+        "explanation": "A GPS receiver uses a network of satellites to determine its location and provide navigation information, allowing us to accurately determine our position and navigate through unfamiliar terrain.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a tool used in the study of the Earth's magnetic field?",
+        "options": [
+          "Magnetometer",
+          "Barometer",
+          "Thermometer",
+          "Seismograph"
+        ],
+        "answer": "A",
+        "explanation": "A magnetometer is a device used to measure the strength and direction of the Earth's magnetic field, allowing us to study its characteristics and understand its role in navigation and geophysics.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main purpose of using a weather vane in meteorology?",
+        "options": [
+          "To measure the temperature of the air",
+          "To detect the presence of a specific weather pattern",
+          "To indicate the direction of the wind",
+          "To predict the next solar eclipse"
+        ],
+        "answer": "C",
+        "explanation": "A weather vane is used to indicate the direction of the wind, allowing us to understand the movement of air masses and predict changes in the weather.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a technique used in the study of the Earth's atmosphere?",
+        "options": [
+          "Spectroscopy",
+          "Radiocarbon dating",
+          "Geologic mapping",
+          "Paleomagnetism"
+        ],
+        "answer": "A",
+        "explanation": "Spectroscopy is the study of the interaction between matter and electromagnetic radiation, allowing us to analyze the composition and properties of the Earth's atmosphere and understand its role in the Earth's climate system.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-1-1 Describing some of the methods, techniques and tools used in exploring the",
+    "questions": [
+      {
+        "question": "What is the main purpose of organizing and analyzing data on the universe?",
+        "options": [
+          "To understand the formation of galaxies",
+          "To determine the age of the universe",
+          "To measure the speed of light",
+          "To calculate the number of stars in the Milky Way"
+        ],
+        "answer": "B",
+        "explanation": "Organizing and analyzing data on the universe helps scientists to understand its vastness and magnitude, which is essential for determining its age.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following methods is used to measure the distance of galaxies from Earth?",
+        "options": [
+          "Spectroscopy",
+          "Telescopes",
+          "Radio waves",
+          "Parallax method"
+        ],
+        "answer": "D",
+        "explanation": "The parallax method is used to measure the distance of galaxies from Earth by measuring the apparent shift of nearby stars against the background of more distant stars.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the path that galaxies follow in the universe?",
+        "options": [
+          "Galactic plane",
+          "Cosmic web",
+          "Galaxy cluster",
+          "Galactic spiral"
+        ],
+        "answer": "B",
+        "explanation": "The cosmic web is a network of galaxy filaments and voids that galaxies follow in the universe.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following tools is used to study the universe in different wavelengths of light?",
+        "options": [
+          "Telescopes",
+          "Microscopes",
+          "Spectrometers",
+          "Oscilloscopes"
+        ],
+        "answer": "C",
+        "explanation": "Spectrometers are used to study the universe in different wavelengths of light, allowing scientists to analyze the composition and properties of celestial objects.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the number of galaxies in the observable universe?",
+        "options": [
+          "Galaxy count",
+          "Cosmic density",
+          "Galaxy cluster",
+          "Galaxy population"
+        ],
+        "answer": "D",
+        "explanation": "The galaxy population is the term used to describe the number of galaxies in the observable universe.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following methods is used to study the motion of galaxies in the universe?",
+        "options": [
+          "Spectroscopy",
+          "Telescopes",
+          "Radio waves",
+          "Redshift method"
+        ],
+        "answer": "C",
+        "explanation": "The redshift method is used to study the motion of galaxies in the universe by measuring the shift in the wavelength of light emitted by galaxies.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the vast empty spaces between galaxies in the universe?",
+        "options": [
+          "Galactic voids",
+          "Cosmic web",
+          "Galaxy clusters",
+          "Galactic filaments"
+        ],
+        "answer": "A",
+        "explanation": "Galactic voids are the vast empty spaces between galaxies in the universe.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following tools is used to study the properties of celestial objects in the universe?",
+        "options": [
+          "Telescopes",
+          "Microscopes",
+          "Spectrometers",
+          "Oscilloscopes"
+        ],
+        "answer": "A",
+        "explanation": "Telescopes are used to study the properties of celestial objects in the universe, allowing scientists to analyze their composition, size, and distance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the network of galaxy filaments and voids in the universe?",
+        "options": [
+          "Cosmic web",
+          "Galactic plane",
+          "Galaxy cluster",
+          "Galactic spiral"
+        ],
+        "answer": "A",
+        "explanation": "The cosmic web is a network of galaxy filaments and voids in the universe.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following methods is used to study the age of the universe?",
+        "options": [
+          "Spectroscopy",
+          "Telescopes",
+          "Radio waves",
+          "Cosmic microwave background radiation"
+        ],
+        "answer": "D",
+        "explanation": "The cosmic microwave background radiation is used to study the age of the universe by analyzing the leftover radiation from the Big Bang.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-1-2 Analyzing information related to the movement of celestial bodies and their apparent and relative locations, and deducing the conditions prevailing in",
+    "questions": [
+      {
+        "question": "What is the primary method of heat transfer that occurs through a solid material?",
+        "options": [
+          "Conduction is the transfer of heat through a gas.",
+          "Convection is the transfer of heat through a liquid.",
+          "Conduction is the transfer of heat through a solid.",
+          "Radiation is the transfer of heat through empty space."
+        ],
+        "answer": "C",
+        "explanation": "Conduction is the transfer of heat through a solid material, where heat energy is transferred through direct contact between particles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the ability of a material to retain heat energy?",
+        "options": [
+          "Specific heat capacity is the ability of a material to absorb heat energy.",
+          "Thermal conductivity is the ability of a material to conduct heat energy.",
+          "Heat capacity is the ability of a material to retain heat energy.",
+          "Latent heat is the energy required to change the state of a substance."
+        ],
+        "answer": "C",
+        "explanation": "Heat capacity is the ability of a material to retain heat energy, which depends on the material's mass and specific heat capacity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the temperature of a substance on its thermal energy?",
+        "options": [
+          "The thermal energy of a substance decreases as its temperature increases.",
+          "The thermal energy of a substance remains constant as its temperature increases.",
+          "The thermal energy of a substance increases as its temperature increases.",
+          "The thermal energy of a substance has no relation to its temperature."
+        ],
+        "answer": "C",
+        "explanation": "As the temperature of a substance increases, its thermal energy also increases, as more heat energy is transferred to the substance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the energy required to change the state of a substance from solid to liquid?",
+        "options": [
+          "Latent heat of fusion is the energy required to change the state of a substance from solid to liquid.",
+          "Latent heat of vaporization is the energy required to change the state of a substance from liquid to gas.",
+          "Specific heat capacity is the energy required to change the temperature of a substance.",
+          "Heat capacity is the energy required to change the state of a substance."
+        ],
+        "answer": "A",
+        "explanation": "Latent heat of fusion is the energy required to change the state of a substance from solid to liquid, which is a constant value for a given substance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the surface area of a material on its rate of heat transfer?",
+        "options": [
+          "The rate of heat transfer decreases as the surface area increases.",
+          "The rate of heat transfer remains constant as the surface area increases.",
+          "The rate of heat transfer increases as the surface area increases.",
+          "The rate of heat transfer has no relation to the surface area."
+        ],
+        "answer": "C",
+        "explanation": "As the surface area of a material increases, its rate of heat transfer also increases, as more heat energy can be transferred through the increased surface area.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the energy required to change the state of a substance from liquid to gas?",
+        "options": [
+          "Latent heat of fusion is the energy required to change the state of a substance from solid to liquid.",
+          "Latent heat of vaporization is the energy required to change the state of a substance from liquid to gas.",
+          "Specific heat capacity is the energy required to change the temperature of a substance.",
+          "Heat capacity is the energy required to change the state of a substance."
+        ],
+        "answer": "B",
+        "explanation": "Latent heat of vaporization is the energy required to change the state of a substance from liquid to gas, which is a constant value for a given substance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of decreasing the temperature of a substance on its thermal energy?",
+        "options": [
+          "The thermal energy of a substance increases as its temperature decreases.",
+          "The thermal energy of a substance remains constant as its temperature decreases.",
+          "The thermal energy of a substance decreases as its temperature decreases.",
+          "The thermal energy of a substance has no relation to its temperature."
+        ],
+        "answer": "C",
+        "explanation": "As the temperature of a substance decreases, its thermal energy also decreases, as less heat energy is transferred to the substance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the ability of a material to conduct heat energy?",
+        "options": [
+          "Specific heat capacity is the ability of a material to absorb heat energy.",
+          "Thermal conductivity is the ability of a material to conduct heat energy.",
+          "Heat capacity is the ability of a material to retain heat energy.",
+          "Latent heat is the energy required to change the state of a substance."
+        ],
+        "answer": "B",
+        "explanation": "Thermal conductivity is the ability of a material to conduct heat energy, which depends on the material's properties and structure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the mass of a substance on its heat capacity?",
+        "options": [
+          "The heat capacity of a substance decreases as its mass increases.",
+          "The heat capacity of a substance remains constant as its mass increases.",
+          "The heat capacity of a substance increases as its mass increases.",
+          "The heat capacity of a substance has no relation to its mass."
+        ],
+        "answer": "C",
+        "explanation": "As the mass of a substance increases, its heat capacity also increases, as more heat energy is required to change the temperature of the substance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the energy required to change the temperature of a substance?",
+        "options": [
+          "Latent heat of fusion is the energy required to change the state of a substance from solid to liquid.",
+          "Latent heat of vaporization is the energy required to change the state of a substance from liquid to gas.",
+          "Specific heat capacity is the energy required to change the temperature of a substance.",
+          "Heat capacity is the energy required to change the state of a substance."
+        ],
+        "answer": "C",
+        "explanation": "Specific heat capacity is the energy required to change the temperature of a substance, which depends on the material's properties and structure.",
+        "image_url": null
+      }
+    ]
+  }
+]

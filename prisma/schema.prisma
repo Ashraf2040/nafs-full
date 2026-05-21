@@ -1,0 +1,185 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/* ===================== ENUMS ===================== */
+
+enum Role {
+  ADMIN
+  TEACHER
+  STUDENT
+}
+
+/* ===================== USER ===================== */
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String?
+  image     String?
+  className String?
+  role      Role     @default(STUDENT)
+
+  gradeId   String?
+  grade     Grade?   @relation(fields: [gradeId], references: [id])
+
+  quizzes     Quiz[]              @relation("CreatedBy")
+  submissions Result[]
+  assignments TeacherAssignment[]
+
+  createdAt DateTime @default(now())
+}
+
+/* ===================== SUBJECT (STATIC) ===================== */
+
+model Subject {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  colorCode   String?
+
+  quizzes     Quiz[]
+  assignments TeacherAssignment[]
+  outcomes    LearningOutcome[] @relation("SubjectOutcomes")
+
+  createdAt   DateTime @default(now())
+}
+
+/* ===================== GRADE (STATIC) ===================== */
+
+model Grade {
+  id    String @id @default(cuid())
+  level Int    @unique
+  name  String?
+
+  quizzes     Quiz[]
+  assignments TeacherAssignment[]
+  users       User[]
+
+  createdAt DateTime @default(now())
+}
+
+/* ===================== TEACHER ASSIGNMENT ===================== */
+
+model TeacherAssignment {
+  id        String @id @default(cuid())
+
+  teacherId String
+  teacher   User   @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+
+  subjectId String
+  subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  gradeId   String
+  grade     Grade   @relation(fields: [gradeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([teacherId, subjectId, gradeId])
+}
+
+/* ===================== QUIZ ===================== */
+
+model Quiz {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  isPublished Boolean  @default(false)
+  dueDate     DateTime?   // <-- ADD THIS
+
+  gradeId     String
+  grade       Grade     @relation(fields: [gradeId], references: [id])
+
+  subjectId   String
+  subject     Subject   @relation(fields: [subjectId], references: [id])
+
+  creatorId   String
+  creator     User      @relation("CreatedBy", fields: [creatorId], references: [id])
+ outcomeId   String?
+  outcome     LearningOutcome? @relation(fields: [outcomeId], references: [id])
+  questions   Question[]
+  results     Result[]
+
+  createdAt   DateTime @default(now())
+}
+
+/* ===================== QUESTION ===================== */
+
+model Question {
+  id            String   @id @default(cuid())
+
+  quizId        String
+  quiz          Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  questionText  String   @db.Text
+  questionType  String
+  options       Json?
+  correctAnswer String
+  explanation   String?  @db.Text
+  imageUrl      String?
+  bloomLevel    String?
+  difficulty    String?
+
+  learningOutcomeId String?
+  learningOutcome   LearningOutcome? @relation(fields: [learningOutcomeId], references: [id])
+
+  answers       StudentAnswer[]
+  createdAt     DateTime @default(now())
+}
+
+/* ===================== RESULT ===================== */
+
+model Result {
+  id          String   @id @default(cuid())
+  score       Float
+  totalPoints Float
+
+  studentId String
+  student   User   @relation(fields: [studentId], references: [id])
+
+  quizId String
+  quiz   Quiz   @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  answers     StudentAnswer[]
+  completedAt DateTime @default(now())
+}
+
+/* ===================== STUDENT ANSWER ===================== */
+
+model StudentAnswer {
+  id            String   @id @default(cuid())
+
+  resultId String
+  result   Result @relation(fields: [resultId], references: [id], onDelete: Cascade)
+
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  studentAnswer String
+  isCorrect     Boolean
+
+  createdAt DateTime @default(now())
+}
+
+/* ===================== LEARNING OUTCOME ===================== */
+
+model LearningOutcome {
+  id            String  @id @default(cuid())
+  grade         Int
+  subject       String
+  subDomain     String?
+  outcomeText   String  @db.Text
+  indicatorText String  @db.Text
+
+  subjectRefId String?
+  subjectRef   Subject? @relation("SubjectOutcomes", fields: [subjectRefId], references: [id])
+
+  questions Question[]
+ quizzes   Quiz[]
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,2417 @@
+[
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-2-3-2 Understanding the principle of energy conservation during its transformations and apply it in daily life.",
+    "questions": [
+      {
+        "question": "What happens to the energy when you rub your hands together to warm them up?",
+        "options": [
+          "The energy disappears into thin air.",
+          "The energy is transferred from your hands to the surrounding air.",
+          "The energy is created from nothing.",
+          "The energy is stored in your hands."
+        ],
+        "answer": "B",
+        "explanation": "When you rub your hands together, the energy is transferred from your hands to the surrounding air as heat, which warms them up.",
+        "image_url": null
+      },
+      {
+        "question": "How does a bicycle pedal transfer energy to the wheels?",
+        "options": [
+          "The energy is transferred through a magic spell.",
+          "The energy is transferred from the ground to the wheels.",
+          "The energy is transferred from the pedals to the wheels through a system of gears.",
+          "The energy is transferred from the pedals to the wheels through a system of levers."
+        ],
+        "answer": "C",
+        "explanation": "When you pedal a bicycle, the energy is transferred from the pedals to the wheels through a system of gears, which turns the wheels and propels the bicycle forward.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of energy transformation in a light bulb?",
+        "options": [
+          "The energy is transformed from electrical to thermal.",
+          "The energy is transformed from thermal to electrical.",
+          "The energy is transformed from kinetic to potential.",
+          "The energy is transformed from potential to kinetic."
+        ],
+        "answer": "A",
+        "explanation": "When a light bulb is turned on, the electrical energy is transformed into thermal energy, which produces light and heat.",
+        "image_url": null
+      },
+      {
+        "question": "How does a fan transfer energy to the air?",
+        "options": [
+          "The energy is transferred through a series of magnets.",
+          "The energy is transferred from the fan blades to the surrounding air.",
+          "The energy is transferred from the fan motor to the fan blades.",
+          "The energy is transferred from the air to the fan blades."
+        ],
+        "answer": "B",
+        "explanation": "When a fan is turned on, the energy is transferred from the fan blades to the surrounding air, creating a flow of air.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the energy when you throw a ball?",
+        "options": [
+          "The energy disappears into thin air.",
+          "The energy is transferred from the ball to the ground.",
+          "The energy is transferred from the ball to the surrounding air.",
+          "The energy is stored in the ball."
+        ],
+        "answer": "C",
+        "explanation": "When you throw a ball, the energy is transferred from the ball to the surrounding air as kinetic energy, which propels the ball forward.",
+        "image_url": null
+      },
+      {
+        "question": "How does a solar panel transfer energy from the sun?",
+        "options": [
+          "The energy is transferred through a series of mirrors.",
+          "The energy is transferred from the sun to the solar panel through light.",
+          "The energy is transferred from the solar panel to the sun through a wire.",
+          "The energy is transferred from the solar panel to the surrounding air."
+        ],
+        "answer": "B",
+        "explanation": "When sunlight hits a solar panel, the energy is transferred from the sun to the solar panel through light, which is converted into electrical energy.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of energy transformation in a refrigerator?",
+        "options": [
+          "The energy is transformed from electrical to thermal.",
+          "The energy is transformed from thermal to electrical.",
+          "The energy is transformed from kinetic to potential.",
+          "The energy is transformed from potential to kinetic."
+        ],
+        "answer": "A",
+        "explanation": "When a refrigerator is turned on, the electrical energy is transformed into thermal energy, which cools the interior of the refrigerator.",
+        "image_url": null
+      },
+      {
+        "question": "How does a waterwheel transfer energy from the water?",
+        "options": [
+          "The energy is transferred through a series of magnets.",
+          "The energy is transferred from the water to the waterwheel through a pipe.",
+          "The energy is transferred from the water to the waterwheel through the flow of water.",
+          "The energy is transferred from the waterwheel to the surrounding air."
+        ],
+        "answer": "C",
+        "explanation": "When water flows over a waterwheel, the energy is transferred from the water to the waterwheel through the flow of water, which turns the wheel.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the energy when you climb a staircase?",
+        "options": [
+          "The energy disappears into thin air.",
+          "The energy is transferred from your body to the staircase.",
+          "The energy is transferred from the staircase to your body.",
+          "The energy is stored in your body."
+        ],
+        "answer": "B",
+        "explanation": "When you climb a staircase, the energy is transferred from your body to the staircase as work, which lifts you up the stairs.",
+        "image_url": null
+      },
+      {
+        "question": "How does a wind turbine transfer energy from the wind?",
+        "options": [
+          "The energy is transferred through a series of mirrors.",
+          "The energy is transferred from the wind to the wind turbine through a wire.",
+          "The energy is transferred from the wind to the wind turbine through the flow of air.",
+          "The energy is transferred from the wind turbine to the surrounding air."
+        ],
+        "answer": "C",
+        "explanation": "When wind flows over a wind turbine, the energy is transferred from the wind to the wind turbine through the flow of air, which turns the blades and generates electricity.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-2-4-1 Describing waves, distinguishing between their properties theoretically and graphically, and predicting their movement.",
+    "questions": [
+      {
+        "question": "What type of wave can travel through a vacuum?",
+        "options": [
+          "Light waves can travel through a vacuum.",
+          "Sound waves cannot travel through a vacuum.",
+          "Water waves can travel through a vacuum.",
+          "Ocean waves can travel through a vacuum."
+        ],
+        "answer": "A",
+        "explanation": "Light waves are a type of electromagnetic wave that can travel through a vacuum.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between sound waves and light waves?",
+        "options": [
+          "Sound waves can travel through solid objects.",
+          "Light waves can travel through solid objects.",
+          "Sound waves are faster than light waves.",
+          "Light waves are faster than sound waves."
+        ],
+        "answer": "D",
+        "explanation": "Light waves are faster than sound waves, and they can travel through a vacuum.",
+        "image_url": null
+      },
+      {
+        "question": "What type of medium do sound waves need to travel?",
+        "options": [
+          "Sound waves need a solid medium to travel.",
+          "Sound waves need a liquid medium to travel.",
+          "Sound waves need a gas medium to travel.",
+          "Sound waves can travel through any medium."
+        ],
+        "answer": "C",
+        "explanation": "Sound waves need a gas medium, such as air, to travel.",
+        "image_url": null
+      },
+      {
+        "question": "Can sound waves travel through a vacuum?",
+        "options": [
+          "Yes, sound waves can travel through a vacuum.",
+          "No, sound waves cannot travel through a vacuum.",
+          "Maybe, it depends on the situation.",
+          "It's not possible to determine."
+        ],
+        "answer": "B",
+        "explanation": "Sound waves need a medium to travel, and a vacuum does not have any particles to transmit the sound.",
+        "image_url": null
+      },
+      {
+        "question": "What is the speed of light in a vacuum?",
+        "options": [
+          "The speed of light is slower in a vacuum.",
+          "The speed of light is faster in a vacuum.",
+          "The speed of light is the same in any medium.",
+          "The speed of light is not measurable in a vacuum."
+        ],
+        "answer": "B",
+        "explanation": "The speed of light in a vacuum is approximately 299,792 kilometers per second.",
+        "image_url": null
+      },
+      {
+        "question": "Can light waves travel through solid objects?",
+        "options": [
+          "Yes, light waves can travel through solid objects.",
+          "No, light waves cannot travel through solid objects.",
+          "Maybe, it depends on the situation.",
+          "It's not possible to determine."
+        ],
+        "answer": "A",
+        "explanation": "Light waves can travel through solid objects, but they may be absorbed or reflected.",
+        "image_url": null
+      },
+      {
+        "question": "What type of wave is light?",
+        "options": [
+          "Mechanical wave",
+          "Electromagnetic wave",
+          "Water wave",
+          "Sound wave"
+        ],
+        "answer": "B",
+        "explanation": "Light is a type of electromagnetic wave that can travel through a vacuum.",
+        "image_url": null
+      },
+      {
+        "question": "Can sound waves travel through space?",
+        "options": [
+          "Yes, sound waves can travel through space.",
+          "No, sound waves cannot travel through space.",
+          "Maybe, it depends on the situation.",
+          "It's not possible to determine."
+        ],
+        "answer": "B",
+        "explanation": "Sound waves need a medium to travel, and space is a vacuum that does not have any particles to transmit the sound.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main property that distinguishes sound waves from light waves?",
+        "options": [
+          "Speed",
+          "Frequency",
+          "Wavelength",
+          "Amplitude"
+        ],
+        "answer": "C",
+        "explanation": "The main property that distinguishes sound waves from light waves is their speed, as light waves are much faster than sound waves.",
+        "image_url": null
+      },
+      {
+        "question": "Can light waves travel through a gas medium?",
+        "options": [
+          "Yes, light waves can travel through a gas medium.",
+          "No, light waves cannot travel through a gas medium.",
+          "Maybe, it depends on the situation.",
+          "It's not possible to determine."
+        ],
+        "answer": "A",
+        "explanation": "Light waves can travel through any medium, including gas, but they may be absorbed or reflected.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-2-4-2 Understanding the concepts of reflection and refraction of light, transmission of sound, and explaining their role in interaction and communication in the surrounding environment.",
+    "questions": [
+      {
+        "question": "What is the force that attracts two objects with opposite electric charges?",
+        "options": [
+          "Static electricity is the buildup of electric charges on objects.",
+          "Electric charges can only be positive or negative.",
+          "Opposite charges attract each other.",
+          "Like charges repel each other."
+        ],
+        "answer": "C",
+        "explanation": "Opposite charges attract each other due to the force of electric attraction.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when an object is rubbed with a cloth?",
+        "options": [
+          "The object becomes heavier.",
+          "The object becomes lighter.",
+          "The object gains electrons and becomes negatively charged.",
+          "The object loses electrons and becomes positively charged."
+        ],
+        "answer": "D",
+        "explanation": "The object loses electrons and becomes positively charged due to the transfer of electrons from the cloth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of electric charges from one object to another?",
+        "options": [
+          "Electric current is the flow of electrons through a conductor.",
+          "Electric charges can only be transferred through a conductor.",
+          "Electric charges can be transferred through a non-conductor.",
+          "Electric charges can only be transferred through a wire."
+        ],
+        "answer": "A",
+        "explanation": "Electric current is the flow of electrons through a conductor, which can be a wire or any other material that allows the transfer of electric charges.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the buildup of electric charges on objects?",
+        "options": [
+          "Static electricity is the buildup of electric charges on objects.",
+          "Electric charges can only be positive or negative.",
+          "Opposite charges attract each other.",
+          "Like charges repel each other."
+        ],
+        "answer": "A",
+        "explanation": "Static electricity is the buildup of electric charges on objects, which can occur due to the transfer of electrons from one object to another.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the force that pushes two objects with the same electric charge apart?",
+        "options": [
+          "Static electricity is the buildup of electric charges on objects.",
+          "Electric charges can only be positive or negative.",
+          "Opposite charges attract each other.",
+          "Like charges repel each other."
+        ],
+        "answer": "D",
+        "explanation": "Like charges repel each other due to the force of electric repulsion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the flow of electric charges through a conductor?",
+        "options": [
+          "Electric current is the flow of electrons through a conductor.",
+          "Electric charges can only be transferred through a conductor.",
+          "Electric charges can be transferred through a non-conductor.",
+          "Electric charges can only be transferred through a wire."
+        ],
+        "answer": "A",
+        "explanation": "Electric current is the flow of electrons through a conductor, which can be a wire or any other material that allows the transfer of electric charges.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when two objects with the same electric charge are brought close together?",
+        "options": [
+          "The objects attract each other.",
+          "The objects repel each other.",
+          "The objects become neutral.",
+          "The objects become charged."
+        ],
+        "answer": "B",
+        "explanation": "Like charges repel each other due to the force of electric repulsion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the transfer of electric charges from one object to another?",
+        "options": [
+          "Electric current is the flow of electrons through a conductor.",
+          "Electric charges can only be transferred through a conductor.",
+          "Electric charges can be transferred through a non-conductor.",
+          "Electric charges can only be transferred through a wire."
+        ],
+        "answer": "C",
+        "explanation": "Electric charges can be transferred through a non-conductor, such as a piece of cloth or a plastic bag.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the force that attracts two objects with the same electric charge?",
+        "options": [
+          "Static electricity is the buildup of electric charges on objects.",
+          "Electric charges can only be positive or negative.",
+          "Opposite charges attract each other.",
+          "Like charges repel each other."
+        ],
+        "answer": "None",
+        "explanation": "There is no force that attracts two objects with the same electric charge.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of electric charges through a conductor?",
+        "options": [
+          "Electric current is the flow of electrons through a conductor.",
+          "Electric charges can only be transferred through a conductor.",
+          "Electric charges can be transferred through a non-conductor.",
+          "Electric charges can only be transferred through a wire."
+        ],
+        "answer": "A",
+        "explanation": "Electric current is the flow of electrons through a conductor, which can be a wire or any other material that allows the transfer of electric charges.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-2-4-2 Understanding the concepts of reflection and refraction of light, transmission of sound, and explaining their role in interaction and communication in the surrounding environment.",
+    "questions": [
+      {
+        "question": "What happens to sound when it hits a solid object?",
+        "options": [
+          "The sound is absorbed and disappears.",
+          "The sound is reflected back to the source.",
+          "The sound passes through the object without any change.",
+          "The sound is blocked and cannot pass through."
+        ],
+        "answer": "B",
+        "explanation": "When sound hits a solid object, it bounces back and is reflected back to the source.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we hear a echo in a large empty room?",
+        "options": [
+          "Because the sound waves are too weak to reach us.",
+          "Because the sound waves are too strong and overpower us.",
+          "Because the sound waves bounce back off the walls and return to us.",
+          "Because the sound waves are absorbed by the walls and disappear."
+        ],
+        "answer": "C",
+        "explanation": "We hear an echo in a large empty room because the sound waves bounce back off the walls and return to us.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to sound when it passes from one medium to another?",
+        "options": [
+          "The sound speed increases and becomes louder.",
+          "The sound speed decreases and becomes softer.",
+          "The sound is absorbed and disappears.",
+          "The sound is reflected back to the source."
+        ],
+        "answer": "B",
+        "explanation": "When sound passes from one medium to another, its speed and intensity may change, but it is not absorbed or reflected.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we hear a sound more clearly when we are standing near a wall?",
+        "options": [
+          "Because the sound waves are too weak to reach us.",
+          "Because the sound waves are too strong and overpower us.",
+          "Because the sound waves bounce back off the wall and return to us.",
+          "Because the sound waves are absorbed by the wall and disappear."
+        ],
+        "answer": "C",
+        "explanation": "We hear a sound more clearly when we are standing near a wall because the sound waves bounce back off the wall and return to us.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when sound waves bounce back off a surface?",
+        "options": [
+          "Reflection",
+          "Refraction",
+          "Diffraction",
+          "Absorption"
+        ],
+        "answer": "A",
+        "explanation": "The process of sound waves bouncing back off a surface is called reflection.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we hear a sound differently when we are underwater?",
+        "options": [
+          "Because the sound waves are too weak to reach us.",
+          "Because the sound waves are too strong and overpower us.",
+          "Because the sound waves travel faster in water and reach us sooner.",
+          "Because the sound waves are absorbed by the water and disappear."
+        ],
+        "answer": "C",
+        "explanation": "We hear a sound differently when we are underwater because the sound waves travel faster in water and reach us sooner.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to sound when it hits a liquid?",
+        "options": [
+          "The sound is absorbed and disappears.",
+          "The sound is reflected back to the source.",
+          "The sound passes through the liquid without any change.",
+          "The sound is blocked and cannot pass through."
+        ],
+        "answer": "C",
+        "explanation": "When sound hits a liquid, it passes through the liquid without any significant change.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we hear a sound more clearly when we are standing in an open field?",
+        "options": [
+          "Because the sound waves are too weak to reach us.",
+          "Because the sound waves are too strong and overpower us.",
+          "Because the sound waves bounce back off the ground and return to us.",
+          "Because the sound waves are absorbed by the ground and disappear."
+        ],
+        "answer": "C",
+        "explanation": "We hear a sound more clearly when we are standing in an open field because the sound waves bounce back off the ground and return to us.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when sound waves pass from one medium to another?",
+        "options": [
+          "Reflection",
+          "Refraction",
+          "Diffraction",
+          "Absorption"
+        ],
+        "answer": "B",
+        "explanation": "The process of sound waves passing from one medium to another is called refraction.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we hear a sound differently when we are standing near a metal object?",
+        "options": [
+          "Because the sound waves are too weak to reach us.",
+          "Because the sound waves are too strong and overpower us.",
+          "Because the sound waves bounce back off the metal and return to us.",
+          "Because the sound waves are absorbed by the metal and disappear."
+        ],
+        "answer": "C",
+        "explanation": "We hear a sound differently when we are standing near a metal object because the sound waves bounce back off the metal and return to us.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-2-5-1Understanding the concept of electric charge, explaining the attraction and repulsion of charged bodies, and comparing electrical circuits connected in series and in parallel.",
+    "questions": [
+      {
+        "question": "What is a magnet?",
+        "options": [
+          "A small rock that sticks to a fridge",
+          "A piece of metal that can attract other metals",
+          "A type of plant that grows in the ground",
+          "A type of animal that lives in the ocean"
+        ],
+        "answer": "B",
+        "explanation": "Magnets are objects that can attract other metals.",
+        "image_url": null
+      },
+      {
+        "question": "What are the two parts of a magnet called?",
+        "options": [
+          "The top and bottom",
+          "The front and back",
+          "The north and south poles",
+          "The left and right sides"
+        ],
+        "answer": "C",
+        "explanation": "Magnets have two poles, a north pole and a south pole.",
+        "image_url": null
+      },
+      {
+        "question": "How are magnets formed?",
+        "options": [
+          "By heating metal in a fire",
+          "By cooling metal in a cold place",
+          "By rubbing two sticks together",
+          "By heating metal in a special machine"
+        ],
+        "answer": "D",
+        "explanation": "Magnets are formed when certain metals are heated or cooled in a special way.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when two magnets are brought close together?",
+        "options": [
+          "They stick together",
+          "They fall apart",
+          "They push each other away",
+          "They pull each other towards each other"
+        ],
+        "answer": "D",
+        "explanation": "When two magnets are brought close together, they either attract or repel each other.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a series circuit and a parallel circuit?",
+        "options": [
+          "A series circuit has more wires than a parallel circuit",
+          "A series circuit has fewer wires than a parallel circuit",
+          "A series circuit has all the devices connected one after the other",
+          "A parallel circuit has all the devices connected at the same time"
+        ],
+        "answer": "C",
+        "explanation": "In a series circuit, devices are connected one after the other, while in a parallel circuit, devices are connected at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when a device is connected in a series circuit?",
+        "options": [
+          "The current flows through all the devices",
+          "The current flows through only one device",
+          "The voltage increases through all the devices",
+          "The resistance decreases through all the devices"
+        ],
+        "answer": "A",
+        "explanation": "When a device is connected in a series circuit, the current flows through all the devices.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when a device is connected in a parallel circuit?",
+        "options": [
+          "The current flows through only one device",
+          "The voltage increases through all the devices",
+          "The resistance decreases through all the devices",
+          "The current flows through all the devices"
+        ],
+        "answer": "D",
+        "explanation": "When a device is connected in a parallel circuit, the current flows through all the devices.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we use parallel circuits in our homes?",
+        "options": [
+          "Because they are more expensive to build",
+          "Because they are more difficult to repair",
+          "Because they allow us to use multiple devices at the same time",
+          "Because they are more energy-efficient"
+        ],
+        "answer": "C",
+        "explanation": "We use parallel circuits in our homes because they allow us to use multiple devices at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the advantage of using a parallel circuit?",
+        "options": [
+          "It is more expensive to build",
+          "It is more difficult to repair",
+          "It allows us to use multiple devices at the same time",
+          "It is more energy-efficient"
+        ],
+        "answer": "C",
+        "explanation": "The advantage of using a parallel circuit is that it allows us to use multiple devices at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the disadvantage of using a series circuit?",
+        "options": [
+          "It is more expensive to build",
+          "It is more difficult to repair",
+          "If one device breaks, the whole circuit breaks",
+          "It is more energy-efficient"
+        ],
+        "answer": "C",
+        "explanation": "The disadvantage of using a series circuit is that if one device breaks, the whole circuit breaks.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - English (Grade 9)",
+    "subjectName": "English",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 English",
+    "outcomeText": "9.2.1.1.2 Eliciting the main and sub-ideas of a long and complex text, deducing implicit ideas, distinguishing, interpreting, and analyzing them.",
+    "questions": [
+      {
+        "question": "What is the main idea of the following passage about the American Revolution?",
+        "options": [
+          "The American Revolution was a war fought between the United States and Great Britain.",
+          "The American Revolution was a struggle for independence and democracy.",
+          "The American Revolution was a conflict between the British and the Native Americans.",
+          "The American Revolution was a civil war within the United States."
+        ],
+        "answer": "B",
+        "explanation": "The passage emphasizes the struggle for independence and democracy, making option B the correct answer.",
+        "image_url": null
+      },
+      {
+        "question": "What can be inferred about the author's opinion on the Industrial Revolution?",
+        "options": [
+          "The author thinks the Industrial Revolution was a positive change.",
+          "The author believes the Industrial Revolution had a negative impact on society.",
+          "The author is neutral about the Industrial Revolution.",
+          "The author thinks the Industrial Revolution was a necessary step for progress."
+        ],
+        "answer": "B",
+        "explanation": "The passage highlights the negative effects of the Industrial Revolution, such as poor working conditions and pollution, indicating the author's negative opinion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the subject of the following passage about the Water Cycle?",
+        "options": [
+          "The passage is about the Earth's atmosphere.",
+          "The passage is about the movement of water on Earth.",
+          "The passage is about the weather patterns on Earth.",
+          "The passage is about the Earth's geology."
+        ],
+        "answer": "B",
+        "explanation": "The passage focuses on the movement of water in its three states (liquid, solid, and gas), making option B the correct answer.",
+        "image_url": null
+      },
+      {
+        "question": "What can be inferred about the relationship between the government and the citizens in a democracy?",
+        "options": [
+          "The government has complete control over the citizens.",
+          "The citizens have complete control over the government.",
+          "The government and citizens work together to make decisions.",
+          "The government and citizens have a mutually beneficial relationship."
+        ],
+        "answer": "C",
+        "explanation": "The passage emphasizes the importance of citizen participation and government accountability, indicating a collaborative relationship between the two.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's purpose in writing the following passage about the importance of education?",
+        "options": [
+          "To entertain the reader.",
+          "To persuade the reader to value education.",
+          "To inform the reader about the benefits of education.",
+          "To criticize the education system."
+        ],
+        "answer": "B",
+        "explanation": "The passage presents a clear argument for the importance of education, making option B the correct answer.",
+        "image_url": null
+      },
+      {
+        "question": "What can be inferred about the author's opinion on the impact of social media on society?",
+        "options": [
+          "The author thinks social media has a positive impact on society.",
+          "The author believes social media has a negative impact on society.",
+          "The author is neutral about the impact of social media.",
+          "The author thinks social media has no impact on society."
+        ],
+        "answer": "B",
+        "explanation": "The passage highlights the negative effects of social media, such as addiction and decreased face-to-face interaction, indicating the author's negative opinion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main idea of the following passage about the importance of conservation?",
+        "options": [
+          "The passage is about the importance of protecting the environment.",
+          "The passage is about the impact of human activities on the environment.",
+          "The passage is about the benefits of conservation.",
+          "The passage is about the challenges of conservation."
+        ],
+        "answer": "A",
+        "explanation": "The passage emphasizes the importance of protecting the environment, making option A the correct answer.",
+        "image_url": null
+      },
+      {
+        "question": "What can be inferred about the author's opinion on the role of technology in education?",
+        "options": [
+          "The author thinks technology is a useful tool in education.",
+          "The author believes technology is a distraction in education.",
+          "The author is neutral about the role of technology in education.",
+          "The author thinks technology has no impact on education."
+        ],
+        "answer": "A",
+        "explanation": "The passage highlights the benefits of technology in education, such as increased accessibility and engagement, indicating the author's positive opinion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the subject of the following passage about the history of the Civil Rights Movement?",
+        "options": [
+          "The passage is about the American Revolution.",
+          "The passage is about the Civil Rights Movement.",
+          "The passage is about the Industrial Revolution.",
+          "The passage is about the World War II."
+        ],
+        "answer": "B",
+        "explanation": "The passage focuses on the events and figures of the Civil Rights Movement, making option B the correct answer.",
+        "image_url": null
+      },
+      {
+        "question": "What can be inferred about the author's opinion on the impact of climate change?",
+        "options": [
+          "The author thinks climate change is a minor issue.",
+          "The author believes climate change is a significant threat.",
+          "The author is neutral about the impact of climate change.",
+          "The author thinks climate change has no impact on society."
+        ],
+        "answer": "B",
+        "explanation": "The passage highlights the severe consequences of climate change, such as rising sea levels and extreme weather events, indicating the author's concern.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - English (Grade 9)",
+    "subjectName": "English",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 English",
+    "outcomeText": "9.2.1.1.2 Eliciting the main and sub-ideas of a long and complex text, deducing implicit ideas, distinguishing, interpreting, and analyzing them.",
+    "questions": [
+      {
+        "question": "In the article, the author states that climate change is causing more frequent natural disasters. This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "A",
+        "explanation": "The author is stating a fact based on evidence, rather than expressing a personal opinion or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The text says, 'I think the new policy is a good idea.' This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "B",
+        "explanation": "The speaker is expressing their personal opinion, rather than stating a fact or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The news report states, 'According to the police chief, the crime rate has decreased by 20%.' This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "C",
+        "explanation": "The news report is quoting the police chief directly, rather than expressing a personal opinion or stating a fact.",
+        "image_url": null
+      },
+      {
+        "question": "The article argues that the government should invest more in renewable energy. This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "B",
+        "explanation": "The article is expressing a personal opinion, rather than stating a fact or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The text says, 'The new law is a disaster.' This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "B",
+        "explanation": "The speaker is expressing a personal opinion, rather than stating a fact or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The news report states that the new technology has the potential to revolutionize the industry. This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "A",
+        "explanation": "The news report is stating a fact based on evidence, rather than expressing a personal opinion or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The article quotes a scientist as saying, 'The effects of climate change are already being felt.' This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "C",
+        "explanation": "The article is quoting the scientist directly, rather than expressing a personal opinion or stating a fact.",
+        "image_url": null
+      },
+      {
+        "question": "The text says, 'I disagree with the new policy.' This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "B",
+        "explanation": "The speaker is expressing a personal opinion, rather than stating a fact or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The news report states that the new law has been met with widespread criticism. This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "A",
+        "explanation": "The news report is stating a fact based on evidence, rather than expressing a personal opinion or quoting someone directly.",
+        "image_url": null
+      },
+      {
+        "question": "The article argues that the government should prioritize education over healthcare. This is an example of:",
+        "options": [
+          "A statement of fact",
+          "A personal opinion",
+          "A direct quote",
+          "An indirect expression"
+        ],
+        "answer": "B",
+        "explanation": "The article is expressing a personal opinion, rather than stating a fact or quoting someone directly.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - English (Grade 9)",
+    "subjectName": "English",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 English",
+    "outcomeText": "9.2.1.1.3 Evaluating, and criticizing the read text, expressing an opinion on the writer's point of view, values and attitudes, proposing alternatives, using means of persuasion and reasoning, summarizing it, and applying data of the text in different life situations.",
+    "questions": [
+      {
+        "question": "What is the purpose of using transitional phrases in a paragraph?",
+        "options": [
+          "To add more details to the story",
+          "To connect ideas between sentences",
+          "To express the writer's emotions",
+          "To conclude the paragraph"
+        ],
+        "answer": "B",
+        "explanation": "Transitional phrases are used to connect ideas between sentences and paragraphs, making the text flow smoothly.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a literary device used to create imagery?",
+        "options": [
+          "The sun was shining brightly in the sky",
+          "The writer used a metaphor to compare two things",
+          "The story took place in a fictional world",
+          "The author used alliteration to describe a character"
+        ],
+        "answer": "D",
+        "explanation": "Alliteration is a literary device used to create imagery and emphasize certain words or sounds in a text.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of a topic sentence in a paragraph?",
+        "options": [
+          "To provide supporting details",
+          "To express the writer's opinion",
+          "To introduce the main idea of the paragraph",
+          "To conclude the paragraph"
+        ],
+        "answer": "C",
+        "explanation": "A topic sentence is used to introduce the main idea of a paragraph and guide the reader's understanding of the text.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a persuasive technique used to convince the reader?",
+        "options": [
+          "The writer used a logical argument to support their claim",
+          "The story was written in a formal tone",
+          "The author used a personal anecdote to illustrate a point",
+          "The text was written in a neutral tone"
+        ],
+        "answer": "A",
+        "explanation": "A logical argument is a persuasive technique used to convince the reader of a particular point of view or claim.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of using rhetorical questions in a text?",
+        "options": [
+          "To ask for the reader's opinion",
+          "To provide supporting details",
+          "To engage the reader's interest",
+          "To conclude the paragraph"
+        ],
+        "answer": "C",
+        "explanation": "Rhetorical questions are used to engage the reader's interest and create a sense of curiosity or intrigue.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a literary device used to create tone?",
+        "options": [
+          "The writer used a formal tone to describe a historical event",
+          "The story took place in a fictional world",
+          "The author used imagery to describe a character",
+          "The text was written in a sarcastic tone"
+        ],
+        "answer": "D",
+        "explanation": "A sarcastic tone is an example of a literary device used to create tone and convey the writer's attitude or emotions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of a thesis statement in an essay?",
+        "options": [
+          "To provide supporting details",
+          "To express the writer's opinion",
+          "To introduce the main idea of the essay",
+          "To conclude the essay"
+        ],
+        "answer": "C",
+        "explanation": "A thesis statement is used to introduce the main idea of an essay and guide the reader's understanding of the text.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a persuasive technique used to appeal to the reader's emotions?",
+        "options": [
+          "The writer used a logical argument to support their claim",
+          "The story was written in a formal tone",
+          "The author used a personal anecdote to illustrate a point",
+          "The text was written in a way that evoked emotions"
+        ],
+        "answer": "D",
+        "explanation": "A text written in a way that evokes emotions is an example of a persuasive technique used to appeal to the reader's emotions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of using repetition in a text?",
+        "options": [
+          "To add more details to the story",
+          "To create a sense of rhythm or musicality",
+          "To emphasize certain words or ideas",
+          "To conclude the paragraph"
+        ],
+        "answer": "C",
+        "explanation": "Repetition is used to emphasize certain words or ideas and create a sense of rhythm or musicality in a text.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a literary device used to create symbolism?",
+        "options": [
+          "The writer used a metaphor to compare two things",
+          "The story took place in a fictional world",
+          "The author used alliteration to describe a character",
+          "The text included a symbol with a deeper meaning"
+        ],
+        "answer": "D",
+        "explanation": "A text that includes a symbol with a deeper meaning is an example of a literary device used to create symbolism.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - English (Grade 9)",
+    "subjectName": "English",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 English",
+    "outcomeText": "9.2.1.1.3 Evaluating, and criticizing the read text, expressing an opinion on the writer's point of view, values and attitudes, proposing alternatives, using means of persuasion and reasoning, summarizing it, and applying data of the text in different life situations.",
+    "questions": [
+      {
+        "question": "What is the writer's purpose in writing this article?",
+        "options": [
+          "To inform the reader about the benefits of recycling",
+          "To persuade the reader to recycle more",
+          "To entertain the reader with a story about recycling",
+          "To describe the process of recycling"
+        ],
+        "answer": "B",
+        "explanation": "The writer uses persuasive language and statistics to convince the reader to recycle more, indicating a persuasive purpose.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's opinion on the impact of social media on society?",
+        "options": [
+          "Social media has a positive impact on society",
+          "Social media has a negative impact on society",
+          "Social media has no impact on society",
+          "Social media is neutral"
+        ],
+        "answer": "B",
+        "explanation": "The author presents evidence and arguments to support the idea that social media has a negative impact on society.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main idea of the text?",
+        "options": [
+          "The importance of education in society",
+          "The benefits of technology in our daily lives",
+          "The impact of climate change on the environment",
+          "The role of media in shaping public opinion"
+        ],
+        "answer": "A",
+        "explanation": "The text emphasizes the significance of education in shaping individuals and society, making it the main idea.",
+        "image_url": null
+      },
+      {
+        "question": "What is the writer's tone in this passage?",
+        "options": [
+          "Formal and objective",
+          "Informal and conversational",
+          "Serious and critical",
+          "Humorous and sarcastic"
+        ],
+        "answer": "C",
+        "explanation": "The writer uses a serious and critical tone to express their concerns about the issue, indicating a tone of seriousness and criticism.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's point of view on the topic?",
+        "options": [
+          "The author supports the idea that...",
+          "The author opposes the idea that...",
+          "The author remains neutral on the topic",
+          "The author provides an objective analysis"
+        ],
+        "answer": "A",
+        "explanation": "The author presents arguments and evidence to support their point of view, indicating a clear stance on the topic.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of the text?",
+        "options": [
+          "To persuade the reader to take action",
+          "To inform the reader about a topic",
+          "To entertain the reader with a story",
+          "To describe a process"
+        ],
+        "answer": "A",
+        "explanation": "The text uses persuasive language and rhetorical devices to convince the reader to take action, indicating a persuasive purpose.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's opinion on the issue?",
+        "options": [
+          "The author agrees with...",
+          "The author disagrees with...",
+          "The author remains neutral on the issue",
+          "The author provides an objective analysis"
+        ],
+        "answer": "B",
+        "explanation": "The author presents arguments and evidence to support their opinion, indicating a clear stance on the issue.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main argument of the text?",
+        "options": [
+          "The text argues that...",
+          "The text argues against...",
+          "The text remains neutral on the topic",
+          "The text provides an objective analysis"
+        ],
+        "answer": "A",
+        "explanation": "The text presents evidence and arguments to support the main argument, indicating a clear and persuasive stance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the writer's attitude towards the topic?",
+        "options": [
+          "The writer is positive and optimistic",
+          "The writer is negative and critical",
+          "The writer remains neutral",
+          "The writer is objective"
+        ],
+        "answer": "B",
+        "explanation": "The writer uses negative language and critical tone to express their concerns about the issue, indicating a negative and critical attitude.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's purpose in including this example?",
+        "options": [
+          "To illustrate a point",
+          "To provide evidence",
+          "To entertain the reader",
+          "To describe a process"
+        ],
+        "answer": "A",
+        "explanation": "The author uses the example to support their argument and illustrate a point, indicating a purpose of illustration.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - English (Grade 9)",
+    "subjectName": "English",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 English",
+    "outcomeText": "9.2.1.1.3 Evaluating, and criticizing the read text, expressing an opinion on the writer's point of view, values and attitudes, proposing alternatives, using means of persuasion and reasoning, summarizing it, and applying data of the text in different life situations.",
+    "questions": [
+      {
+        "question": "How does the writer's use of rhetorical devices contribute to the overall impact of the text?",
+        "options": [
+          "The writer's use of rhetorical devices helps to engage the reader and convey the main idea.",
+          "Rhetorical devices are not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of rhetorical devices is unnecessary and detracts from the main idea.",
+          "The text does not use rhetorical devices, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of rhetorical devices such as metaphors and allusions helps to create a vivid and memorable image in the reader's mind, making the text more engaging and effective.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main purpose of the writer's use of repetition in the text?",
+        "options": [
+          "The writer uses repetition to emphasize the importance of the main idea.",
+          "Repetition is used to create a sense of rhythm and flow in the text.",
+          "The writer's use of repetition is unnecessary and makes the text seem repetitive.",
+          "Repetition is used to distract the reader from the main idea."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of repetition helps to drive home the main idea and emphasize its importance, making it more memorable and impactful for the reader.",
+        "image_url": null
+      },
+      {
+        "question": "How does the writer's tone contribute to the overall meaning of the text?",
+        "options": [
+          "The writer's tone is formal and objective, which helps to convey the main idea.",
+          "The writer's tone is informal and subjective, which detracts from the main idea.",
+          "The writer's tone is inconsistent, making it difficult to understand the main idea.",
+          "The writer's tone is not relevant to the main idea."
+        ],
+        "answer": "A",
+        "explanation": "The writer's formal and objective tone helps to convey the main idea in a clear and unbiased manner, making it more credible and trustworthy for the reader.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the writer's use of imagery in the text?",
+        "options": [
+          "The writer's use of imagery helps to create a vivid and memorable image in the reader's mind.",
+          "Imagery is not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of imagery is unnecessary and detracts from the main idea.",
+          "The text does not use imagery, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of imagery helps to create a vivid and memorable image in the reader's mind, making the text more engaging and effective.",
+        "image_url": null
+      },
+      {
+        "question": "How does the writer's use of persuasive language contribute to the overall impact of the text?",
+        "options": [
+          "The writer's use of persuasive language helps to convince the reader of the main idea.",
+          "Persuasive language is not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of persuasive language is unnecessary and detracts from the main idea.",
+          "The text does not use persuasive language, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of persuasive language such as rhetorical questions and emotional appeals helps to convince the reader of the main idea and make it more memorable and impactful.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of the writer's use of transitions in the text?",
+        "options": [
+          "The writer uses transitions to connect ideas and create a logical flow.",
+          "Transitions are not used effectively in the text, resulting in a disjointed and confusing read.",
+          "The writer's use of transitions is unnecessary and detracts from the main idea.",
+          "The text does not use transitions, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of transitions such as 'however' and 'in addition' helps to connect ideas and create a logical flow, making the text easier to follow and understand.",
+        "image_url": null
+      },
+      {
+        "question": "How does the writer's use of figurative language contribute to the overall impact of the text?",
+        "options": [
+          "The writer's use of figurative language helps to create a vivid and memorable image in the reader's mind.",
+          "Figurative language is not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of figurative language is unnecessary and detracts from the main idea.",
+          "The text does not use figurative language, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of figurative language such as metaphors and similes helps to create a vivid and memorable image in the reader's mind, making the text more engaging and effective.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the writer's use of repetition in the text?",
+        "options": [
+          "The writer's use of repetition helps to drive home the main idea and emphasize its importance.",
+          "Repetition is not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of repetition is unnecessary and makes the text seem repetitive.",
+          "Repetition is used to distract the reader from the main idea."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of repetition helps to drive home the main idea and emphasize its importance, making it more memorable and impactful for the reader.",
+        "image_url": null
+      },
+      {
+        "question": "How does the writer's use of rhetorical questions contribute to the overall impact of the text?",
+        "options": [
+          "The writer's use of rhetorical questions helps to engage the reader and convey the main idea.",
+          "Rhetorical questions are not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of rhetorical questions is unnecessary and detracts from the main idea.",
+          "The text does not use rhetorical questions, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of rhetorical questions helps to engage the reader and convey the main idea, making the text more memorable and impactful.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of the writer's use of allusions in the text?",
+        "options": [
+          "The writer uses allusions to create a sense of familiarity and shared knowledge.",
+          "Allusions are not used effectively in the text, resulting in a lack of impact.",
+          "The writer's use of allusions is unnecessary and detracts from the main idea.",
+          "The text does not use allusions, making it a straightforward and unengaging read."
+        ],
+        "answer": "A",
+        "explanation": "The writer's use of allusions helps to create a sense of familiarity and shared knowledge, making the text more engaging and effective.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - English (Grade 9)",
+    "subjectName": "English",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 English",
+    "outcomeText": "9.2.1.1.1 Inferring and classifying the semantics of vocabulary, through synonymy, antonymy, context, interpretation, definition, classification, representation, and using them in new contexts.",
+    "questions": [
+      {
+        "question": "What is the meaning of the word 'perspicacious'?",
+        "options": [
+          "Having a strong and unpleasant smell",
+          "Having a keen understanding and insight",
+          "Being very slow and lazy",
+          "Having a strong and loud voice"
+        ],
+        "answer": "B",
+        "explanation": "The word 'perspicacious' means having a keen understanding and insight.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following words is the antonym of 'fast'?",
+        "options": [
+          "Slow",
+          "Quick",
+          "Fastest",
+          "Speedy"
+        ],
+        "answer": "A",
+        "explanation": "The antonym of 'fast' is 'slow'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'enigmatic'?",
+        "options": [
+          "Easy to understand and explain",
+          "Difficult to understand and explain",
+          "Having a strong and unpleasant smell",
+          "Being very slow and lazy"
+        ],
+        "answer": "B",
+        "explanation": "The word 'enigmatic' means difficult to understand and explain.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following words is a synonym of 'happy'?",
+        "options": [
+          "Sad",
+          "Unhappy",
+          "Joyful",
+          "Angry"
+        ],
+        "answer": "C",
+        "explanation": "The synonym of 'happy' is 'joyful'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'verbose'?",
+        "options": [
+          "Using too few words to express an idea",
+          "Using too many words to express an idea",
+          "Being very slow and lazy",
+          "Having a strong and unpleasant smell"
+        ],
+        "answer": "B",
+        "explanation": "The word 'verbose' means using too many words to express an idea.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following words is the antonym of 'big'?",
+        "options": [
+          "Large",
+          "Small",
+          "Tiny",
+          "Huge"
+        ],
+        "answer": "B",
+        "explanation": "The antonym of 'big' is 'small'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'nuanced'?",
+        "options": [
+          "Having a strong and unpleasant smell",
+          "Having a subtle and complex meaning",
+          "Being very slow and lazy",
+          "Being very loud and boisterous"
+        ],
+        "answer": "B",
+        "explanation": "The word 'nuanced' means having a subtle and complex meaning.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following words is a synonym of 'fast'?",
+        "options": [
+          "Slow",
+          "Quick",
+          "Fastest",
+          "Speedy"
+        ],
+        "answer": "C",
+        "explanation": "The synonym of 'fast' is 'fastest'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'equivocal'?",
+        "options": [
+          "Having a single and clear meaning",
+          "Having multiple and unclear meanings",
+          "Being very slow and lazy",
+          "Having a strong and unpleasant smell"
+        ],
+        "answer": "B",
+        "explanation": "The word 'equivocal' means having multiple and unclear meanings.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following words is the antonym of 'loud'?",
+        "options": [
+          "Quiet",
+          "Silent",
+          "Loudly",
+          "Boisterous"
+        ],
+        "answer": "A",
+        "explanation": "The antonym of 'loud' is 'quiet'.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-2-1-1 Understanding arithmetic sequences and relationships, representing them graphically, distinguishing linear relationships, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "What is the rule for the function f(x) = 2x + 1?",
+        "options": [
+          "f(x) = 2x - 1",
+          "f(x) = 2x + 1",
+          "f(x) = x + 1",
+          "f(x) = x - 1"
+        ],
+        "answer": "B",
+        "explanation": "The rule for the function f(x) = 2x + 1 is f(x) = 2x + 1, which is the correct option.",
+        "image_url": null
+      },
+      {
+        "question": "What is the domain of the function f(x) = 1 / (x - 2)?",
+        "options": [
+          "(-∞, 2) ∪ (2, ∞)",
+          "(-∞, 2) ∩ (2, ∞)",
+          "(-∞, 2) ∪ (2, ∞) and x ≠ 2",
+          "(-∞, 2) ∩ (2, ∞) and x ≠ 2"
+        ],
+        "answer": "C",
+        "explanation": "The domain of the function f(x) = 1 / (x - 2) is all real numbers except x = 2, which is represented by (-∞, 2) ∪ (2, ∞) and x ≠ 2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the range of the function f(x) = 2x + 1?",
+        "options": [
+          "(-∞, ∞)",
+          "(-∞, 0) ∪ (0, ∞)",
+          "(-∞, 1) ∪ (1, ∞)",
+          "(0, ∞)"
+        ],
+        "answer": "A",
+        "explanation": "The range of the function f(x) = 2x + 1 is all real numbers, which is represented by (-∞, ∞).",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of f(3) for the function f(x) = 2x + 1?",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "answer": "B",
+        "explanation": "To find the value of f(3) for the function f(x) = 2x + 1, we substitute x = 3 into the function and get f(3) = 2(3) + 1 = 7.",
+        "image_url": null
+      },
+      {
+        "question": "What is the rule for the function f(x) = x^2?",
+        "options": [
+          "f(x) = x^2",
+          "f(x) = x + 1",
+          "f(x) = x - 1",
+          "f(x) = 1 - x"
+        ],
+        "answer": "A",
+        "explanation": "The rule for the function f(x) = x^2 is f(x) = x^2, which is the correct option.",
+        "image_url": null
+      },
+      {
+        "question": "What is the domain of the function f(x) = √x?",
+        "options": [
+          "(-∞, 0) ∪ (0, ∞)",
+          "(-∞, 0) ∩ (0, ∞)",
+          "(-∞, 0) ∪ (0, ∞) and x > 0",
+          "(-∞, 0) ∩ (0, ∞) and x > 0"
+        ],
+        "answer": "C",
+        "explanation": "The domain of the function f(x) = √x is all non-negative real numbers, which is represented by (-∞, 0) ∪ (0, ∞) and x > 0.",
+        "image_url": null
+      },
+      {
+        "question": "What is the range of the function f(x) = √x?",
+        "options": [
+          "(-∞, 0) ∪ (0, ∞)",
+          "(-∞, 0) ∩ (0, ∞)",
+          "(-∞, 0) ∪ (0, ∞) and y ≥ 0",
+          "(-∞, 0) ∩ (0, ∞) and y ≥ 0"
+        ],
+        "answer": "D",
+        "explanation": "The range of the function f(x) = √x is all non-negative real numbers, which is represented by (-∞, 0) ∪ (0, ∞) and y ≥ 0.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of f(-2) for the function f(x) = x^2?",
+        "options": [
+          "4",
+          "6",
+          "8",
+          "10"
+        ],
+        "answer": "A",
+        "explanation": "To find the value of f(-2) for the function f(x) = x^2, we substitute x = -2 into the function and get f(-2) = (-2)^2 = 4.",
+        "image_url": null
+      },
+      {
+        "question": "What is the rule for the function f(x) = 3x - 2?",
+        "options": [
+          "f(x) = 3x + 2",
+          "f(x) = 3x - 2",
+          "f(x) = x + 2",
+          "f(x) = x - 2"
+        ],
+        "answer": "B",
+        "explanation": "The rule for the function f(x) = 3x - 2 is f(x) = 3x - 2, which is the correct option.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-2-1-2 Understanding functions, distinguishing linear and quadratic functions, identifying their properties, and representing them graphically.",
+    "questions": [
+      {
+        "question": "Which of the following equations represents a linear function?",
+        "options": [
+          "y = 2x^2 + 3",
+          "y = 2x - 1",
+          "y = 3x^2 + 2x - 1",
+          "y = 3x + 2"
+        ],
+        "answer": "B",
+        "explanation": "A linear function is in the form y = mx + b, where m is the slope and b is the y-intercept.",
+        "image_url": null
+      },
+      {
+        "question": "What is the equation of a line in slope-intercept form?",
+        "options": [
+          "y = mx + b",
+          "y = mx - b",
+          "y = mx^2 + b",
+          "y = mx^2 - b"
+        ],
+        "answer": "A",
+        "explanation": "The slope-intercept form of a line is y = mx + b, where m is the slope and b is the y-intercept.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following graphs represents a linear function?",
+        "options": [
+          "A graph with a parabola",
+          "A graph with a straight line",
+          "A graph with a circle",
+          "A graph with a triangle"
+        ],
+        "answer": "B",
+        "explanation": "A linear function has a straight line graph, whereas a quadratic function has a parabola graph.",
+        "image_url": null
+      },
+      {
+        "question": "What is the slope of a horizontal line?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "undefined"
+        ],
+        "answer": "A",
+        "explanation": "The slope of a horizontal line is always 0.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following equations represents a linear function with a slope of 2?",
+        "options": [
+          "y = 2x^2 + 1",
+          "y = 2x - 1",
+          "y = 3x^2 + 2x - 1",
+          "y = 3x + 2"
+        ],
+        "answer": "B",
+        "explanation": "A linear function with a slope of 2 is in the form y = 2x + b.",
+        "image_url": null
+      },
+      {
+        "question": "What is the y-intercept of a line in slope-intercept form?",
+        "options": [
+          "m",
+          "b",
+          "x",
+          "y"
+        ],
+        "answer": "B",
+        "explanation": "The y-intercept of a line in slope-intercept form is the value of b.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following graphs represents a linear function with a slope of -3?",
+        "options": [
+          "A graph with a parabola",
+          "A graph with a straight line",
+          "A graph with a circle",
+          "A graph with a triangle"
+        ],
+        "answer": "B",
+        "explanation": "A linear function with a slope of -3 has a straight line graph with a negative slope.",
+        "image_url": null
+      },
+      {
+        "question": "What is the equation of a line with a slope of 1 and a y-intercept of 2?",
+        "options": [
+          "y = x + 2",
+          "y = x - 2",
+          "y = x^2 + 2",
+          "y = x^2 - 2"
+        ],
+        "answer": "A",
+        "explanation": "The equation of a line with a slope of 1 and a y-intercept of 2 is y = x + 2.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following equations represents a linear function with a slope of 0?",
+        "options": [
+          "y = 2x^2 + 1",
+          "y = 2x - 1",
+          "y = 3x^2 + 2x - 1",
+          "y = 3x + 2"
+        ],
+        "answer": "D",
+        "explanation": "A linear function with a slope of 0 is in the form y = b.",
+        "image_url": null
+      },
+      {
+        "question": "What is the equation of a horizontal line?",
+        "options": [
+          "y = mx + b",
+          "y = mx - b",
+          "y = mx^2 + b",
+          "y = b"
+        ],
+        "answer": "D",
+        "explanation": "The equation of a horizontal line is always in the form y = b.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-2-2-1 Writing algebraic expressions with rational coefficients, finding their values, performing arithmetic operations on them, and Distinguishing basic identities.",
+    "questions": [
+      {
+        "question": "What is the result of (x + 3)^2?",
+        "options": [
+          "x^2 + 6x + 9",
+          "x^2 - 6x + 9",
+          "x^2 + 6x - 9",
+          "x^2 - 6x - 9"
+        ],
+        "answer": "A",
+        "explanation": "The square of a sum of two terms is (a + b)^2 = a^2 + 2ab + b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (x - 3)^2?",
+        "options": [
+          "x^2 + 6x + 9",
+          "x^2 - 6x + 9",
+          "x^2 + 6x - 9",
+          "x^2 - 6x - 9"
+        ],
+        "answer": "C",
+        "explanation": "The square of a difference of two terms is (a - b)^2 = a^2 - 2ab + b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (x + 3)(x - 3)?",
+        "options": [
+          "x^2 + 6x + 9",
+          "x^2 - 6x + 9",
+          "x^2 + 6x - 9",
+          "x^2 - 6x - 9"
+        ],
+        "answer": "D",
+        "explanation": "The product of the sum and difference of two terms is (a + b)(a - b) = a^2 - b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (2x + 1)^2?",
+        "options": [
+          "4x^2 + 4x + 1",
+          "4x^2 - 4x + 1",
+          "4x^2 + 4x - 1",
+          "4x^2 - 4x - 1"
+        ],
+        "answer": "A",
+        "explanation": "The square of a sum of two terms is (a + b)^2 = a^2 + 2ab + b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (2x - 1)^2?",
+        "options": [
+          "4x^2 + 4x + 1",
+          "4x^2 - 4x + 1",
+          "4x^2 + 4x - 1",
+          "4x^2 - 4x - 1"
+        ],
+        "answer": "C",
+        "explanation": "The square of a difference of two terms is (a - b)^2 = a^2 - 2ab + b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (2x + 1)(2x - 1)?",
+        "options": [
+          "4x^2 + 4x + 1",
+          "4x^2 - 4x + 1",
+          "4x^2 + 4x - 1",
+          "4x^2 - 4x - 1"
+        ],
+        "answer": "D",
+        "explanation": "The product of the sum and difference of two terms is (a + b)(a - b) = a^2 - b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (x + 2)^2?",
+        "options": [
+          "x^2 + 4x + 4",
+          "x^2 - 4x + 4",
+          "x^2 + 4x - 4",
+          "x^2 - 4x - 4"
+        ],
+        "answer": "A",
+        "explanation": "The square of a sum of two terms is (a + b)^2 = a^2 + 2ab + b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (x - 2)^2?",
+        "options": [
+          "x^2 + 4x + 4",
+          "x^2 - 4x + 4",
+          "x^2 + 4x - 4",
+          "x^2 - 4x - 4"
+        ],
+        "answer": "C",
+        "explanation": "The square of a difference of two terms is (a - b)^2 = a^2 - 2ab + b^2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of (x + 2)(x - 2)?",
+        "options": [
+          "x^2 + 4x + 4",
+          "x^2 - 4x + 4",
+          "x^2 + 4x - 4",
+          "x^2 - 4x - 4"
+        ],
+        "answer": "D",
+        "explanation": "The product of the sum and difference of two terms is (a + b)(a - b) = a^2 - b^2.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-2-2-3 Writing linear and quadratic equations, solving them algebraically and graphically, and estimating their solutions from graph representations.",
+    "questions": [
+      {
+        "question": "Solve the system of linear equations: x + y = 4 and 2x - y = 2.",
+        "options": [
+          "x = 1, y = 3",
+          "x = 2, y = 2",
+          "x = 3, y = 1",
+          "x = 4, y = 0"
+        ],
+        "answer": "B",
+        "explanation": "To solve the system, we can use the substitution method. From the first equation, we have y = 4 - x. Substituting this into the second equation, we get 2x - (4 - x) = 2. Simplifying, we get 3x - 4 = 2, which gives 3x = 6 and x = 2. Substituting x = 2 into the first equation, we get 2 + y = 4, which gives y = 2.",
+        "image_url": null
+      },
+      {
+        "question": "Graph the system of linear equations: x + y = 2 and x - y = 1.",
+        "options": [
+          "The lines are parallel and do not intersect.",
+          "The lines intersect at (1, 1).",
+          "The lines intersect at (0, 1).",
+          "The lines intersect at (1, 0)."
+        ],
+        "answer": "C",
+        "explanation": "To graph the system, we can plot the two lines on the same coordinate plane. The first line has a slope of -1 and a y-intercept of 2, while the second line has a slope of 1 and a y-intercept of -1. The lines intersect at the point (0, 1).",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: 2x + 3y = 6 and x - 2y = -3.",
+        "options": [
+          "x = 1, y = 1",
+          "x = 2, y = 1",
+          "x = 3, y = 2",
+          "x = 4, y = 3"
+        ],
+        "answer": "A",
+        "explanation": "To solve the system, we can use the elimination method. Multiplying the second equation by 3, we get 3x - 6y = -9. Adding this to the first equation, we get 5x - 3y = -3. Simplifying, we get 5x = 3, which gives x = 3/5. Substituting x = 3/5 into the first equation, we get 2(3/5) + 3y = 6, which gives 6/5 + 3y = 6. Subtracting 6/5 from both sides, we get 3y = 24/5, which gives y = 8/5.",
+        "image_url": null
+      },
+      {
+        "question": "Graph the system of linear equations: x + 2y = 4 and 2x - y = 1.",
+        "options": [
+          "The lines are parallel and do not intersect.",
+          "The lines intersect at (1, 1).",
+          "The lines intersect at (0, 2).",
+          "The lines intersect at (2, 0)."
+        ],
+        "answer": "D",
+        "explanation": "To graph the system, we can plot the two lines on the same coordinate plane. The first line has a slope of -1/2 and a y-intercept of 2, while the second line has a slope of 2 and a y-intercept of -1. The lines intersect at the point (2, 0).",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: x + 2y = 6 and x - 3y = -2.",
+        "options": [
+          "x = 2, y = 2",
+          "x = 3, y = 1",
+          "x = 4, y = 0",
+          "x = 5, y = -1"
+        ],
+        "answer": "B",
+        "explanation": "To solve the system, we can use the substitution method. From the first equation, we have x = 6 - 2y. Substituting this into the second equation, we get (6 - 2y) - 3y = -2. Simplifying, we get -5y = -8, which gives y = 8/5. Substituting y = 8/5 into the first equation, we get x + 2(8/5) = 6, which gives x + 16/5 = 6. Subtracting 16/5 from both sides, we get x = 14/5.",
+        "image_url": null
+      },
+      {
+        "question": "Graph the system of linear equations: 2x + y = 3 and x + 2y = 4.",
+        "options": [
+          "The lines are parallel and do not intersect.",
+          "The lines intersect at (1, 1).",
+          "The lines intersect at (0, 2).",
+          "The lines intersect at (2, 0)."
+        ],
+        "answer": "C",
+        "explanation": "To graph the system, we can plot the two lines on the same coordinate plane. The first line has a slope of -2 and a y-intercept of 3, while the second line has a slope of -1/2 and a y-intercept of 2. The lines intersect at the point (0, 2).",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: x + 3y = 5 and 2x - 2y = 2.",
+        "options": [
+          "x = 1, y = 1",
+          "x = 2, y = 1",
+          "x = 3, y = 2",
+          "x = 4, y = 3"
+        ],
+        "answer": "A",
+        "explanation": "To solve the system, we can use the elimination method. Multiplying the second equation by 3, we get 6x - 6y = 6. Adding this to the first equation, we get 7x - 3y = 11. Simplifying, we get 7x = 11 + 3y, which gives x = (11 + 3y)/7. Substituting x = (11 + 3y)/7 into the first equation, we get ((11 + 3y)/7) + 3y = 5, which gives 11 + 3y + 21y = 35. Combining like terms, we get 24y = 24, which gives y = 1. Substituting y = 1 into the first equation, we get x + 3(1) = 5, which gives x + 3 = 5. Subtracting 3 from both sides, we get x = 2.",
+        "image_url": null
+      },
+      {
+        "question": "Graph the system of linear equations: x + y = 2 and 2x + 2y = 4.",
+        "options": [
+          "The lines are parallel and do not intersect.",
+          "The lines intersect at (1, 1).",
+          "The lines intersect at (0, 2).",
+          "The lines intersect at (2, 0)."
+        ],
+        "answer": "D",
+        "explanation": "To graph the system, we can plot the two lines on the same coordinate plane. The first line has a slope of -1 and a y-intercept of 2, while the second line has a slope of -1 and a y-intercept of 2. The lines intersect at the point (2, 0).",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: x + 2y = 6 and x - 2y = -2.",
+        "options": [
+          "x = 2, y = 2",
+          "x = 3, y = 1",
+          "x = 4, y = 0",
+          "x = 5, y = -1"
+        ],
+        "answer": "B",
+        "explanation": "To solve the system, we can use the substitution method. From the first equation, we have x = 6 - 2y. Substituting this into the second equation, we get (6 - 2y) - 2y = -2. Simplifying, we get -4y = -8, which gives y = 2. Substituting y = 2 into the first equation, we get x + 2(2) = 6, which gives x + 4 = 6. Subtracting 4 from both sides, we get x = 2.",
+        "image_url": null
+      },
+      {
+        "question": "Graph the system of linear equations: x + 2y = 4 and x - 2y = 2.",
+        "options": [
+          "The lines are parallel and do not intersect.",
+          "The lines intersect at (1, 1).",
+          "The lines intersect at (0, 2).",
+          "The lines intersect at (2, 0)."
+        ],
+        "answer": "D",
+        "explanation": "To graph the system, we can plot the two lines on the same coordinate plane. The first line has a slope of -1/2 and a y-intercept of 2, while the second line has a slope of -1/2 and a y-intercept of 2. The lines intersect at the point (2, 0).",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-2-2-3 Writing linear and quadratic equations, solving them algebraically and graphically, and estimating their solutions from graph representations.",
+    "questions": [
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the x-coordinate of the vertex of the parabola if the equation is y = 2x^2 + 12x + 7?",
+        "options": [
+          "The x-coordinate of the vertex is -3.",
+          "The x-coordinate of the vertex is -6.",
+          "The x-coordinate of the vertex is -1.",
+          "The x-coordinate of the vertex is 1."
+        ],
+        "answer": "C",
+        "explanation": "To find the x-coordinate of the vertex, we can use the formula x = -b/2a. In this case, a = 2 and b = 12, so x = -12/(2*2) = -12/4 = -3.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the y-coordinate of the vertex of the parabola if the equation is y = x^2 - 4x - 3?",
+        "options": [
+          "The y-coordinate of the vertex is -1.",
+          "The y-coordinate of the vertex is 0.",
+          "The y-coordinate of the vertex is 1.",
+          "The y-coordinate of the vertex is 5."
+        ],
+        "answer": "A",
+        "explanation": "To find the y-coordinate of the vertex, we can plug the x-coordinate into the equation. The x-coordinate of the vertex is -b/2a = -(-4)/(2*1) = 4/2 = 2. Then, we plug x = 2 into the equation y = x^2 - 4x - 3 to get y = 2^2 - 4(2) - 3 = 4 - 8 - 3 = -7.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the x-intercept of the parabola if the equation is y = x^2 + 2x - 3?",
+        "options": [
+          "The x-intercept is -3.",
+          "The x-intercept is -1.",
+          "The x-intercept is 1.",
+          "The x-intercept is 3."
+        ],
+        "answer": "D",
+        "explanation": "To find the x-intercept, we can set y = 0 and solve for x. So, we have 0 = x^2 + 2x - 3. We can factor the equation to get 0 = (x + 3)(x - 1). Then, we can set each factor equal to 0 and solve for x to get x = -3 or x = 1.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the y-intercept of the parabola if the equation is y = x^2 + 5x + 6?",
+        "options": [
+          "The y-intercept is -3.",
+          "The y-intercept is -1.",
+          "The y-intercept is 0.",
+          "The y-intercept is 6."
+        ],
+        "answer": "D",
+        "explanation": "To find the y-intercept, we can plug x = 0 into the equation. So, we have y = 0^2 + 5(0) + 6 = 0 + 0 + 6 = 6.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the x-coordinate of the axis of symmetry of the parabola if the equation is y = x^2 + 4x - 5?",
+        "options": [
+          "The x-coordinate of the axis of symmetry is -2.",
+          "The x-coordinate of the axis of symmetry is -1.",
+          "The x-coordinate of the axis of symmetry is 0.",
+          "The x-coordinate of the axis of symmetry is 2."
+        ],
+        "answer": "D",
+        "explanation": "To find the x-coordinate of the axis of symmetry, we can use the formula x = -b/2a. In this case, a = 1 and b = 4, so x = -4/(2*1) = -4/2 = -2.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the y-coordinate of the axis of symmetry of the parabola if the equation is y = x^2 - 2x - 3?",
+        "options": [
+          "The y-coordinate of the axis of symmetry is -1.",
+          "The y-coordinate of the axis of symmetry is 0.",
+          "The y-coordinate of the axis of symmetry is 1.",
+          "The y-coordinate of the axis of symmetry is 5."
+        ],
+        "answer": "C",
+        "explanation": "To find the y-coordinate of the axis of symmetry, we can plug the x-coordinate into the equation. The x-coordinate of the axis of symmetry is -b/2a = -(-2)/(2*1) = 2/2 = 1. Then, we plug x = 1 into the equation y = x^2 - 2x - 3 to get y = 1^2 - 2(1) - 3 = 1 - 2 - 3 = -4.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the x-intercept of the parabola if the equation is y = x^2 - 6x + 8?",
+        "options": [
+          "The x-intercept is -1.",
+          "The x-intercept is 2.",
+          "The x-intercept is 4.",
+          "The x-intercept is 8."
+        ],
+        "answer": "B",
+        "explanation": "To find the x-intercept, we can set y = 0 and solve for x. So, we have 0 = x^2 - 6x + 8. We can factor the equation to get 0 = (x - 2)(x - 4). Then, we can set each factor equal to 0 and solve for x to get x = 2 or x = 4.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the y-intercept of the parabola if the equation is y = x^2 - 3x - 2?",
+        "options": [
+          "The y-intercept is -2.",
+          "The y-intercept is -1.",
+          "The y-intercept is 0.",
+          "The y-intercept is 2."
+        ],
+        "answer": "D",
+        "explanation": "To find the y-intercept, we can plug x = 0 into the equation. So, we have y = 0^2 - 3(0) - 2 = 0 - 0 - 2 = -2.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the x-coordinate of the vertex of the parabola if the equation is y = x^2 + x - 2?",
+        "options": [
+          "The x-coordinate of the vertex is -1.",
+          "The x-coordinate of the vertex is 0.",
+          "The x-coordinate of the vertex is 1.",
+          "The x-coordinate of the vertex is 2."
+        ],
+        "answer": "C",
+        "explanation": "To find the x-coordinate of the vertex, we can use the formula x = -b/2a. In this case, a = 1 and b = 1, so x = -1/(2*1) = -1/2 = -0.5.",
+        "image_url": null
+      },
+      {
+        "question": "A quadratic equation in the form of y = ax^2 + bx + c can be graphed as a parabola. What is the y-coordinate of the vertex of the parabola if the equation is y = x^2 - 5x + 6?",
+        "options": [
+          "The y-coordinate of the vertex is -1.",
+          "The y-coordinate of the vertex is 0.",
+          "The y-coordinate of the vertex is 1.",
+          "The y-coordinate of the vertex is 6."
+        ],
+        "answer": "D",
+        "explanation": "To find the y-coordinate of the vertex, we can plug the x-coordinate into the equation. The x-coordinate of the vertex is -b/2a = -(-5)/(2*1) = 5/2 = 2.5. Then, we plug x = 2.5 into the equation y = x^2 - 5x + 6 to get y = 2.5^2 - 5(2.5) + 6 = 6.25 - 12.5 + 6 = -0.25.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-2-2-4 Writing a system of two linear equations with two variables, and solving them algebraically and graphically.",
+    "questions": [
+      {
+        "question": "Solve the system of linear equations: x + y = 4 and x - y = 2.",
+        "options": [
+          "x = 3, y = 1",
+          "x = 1, y = 3",
+          "x = 2, y = 2",
+          "x = 4, y = 0"
+        ],
+        "answer": "A",
+        "explanation": "By adding the two equations, we get 2x = 6, which simplifies to x = 3. Substituting x = 3 into the first equation, we get 3 + y = 4, which simplifies to y = 1.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a linear inequality?",
+        "options": [
+          "x^2 + 2x - 3 > 0",
+          "2x - 5 < 3",
+          "x^3 - 2x^2 + x + 1 = 0",
+          "x - 2 > 0"
+        ],
+        "answer": "C",
+        "explanation": "A linear inequality is an inequality that can be written in the form ax + b > c, ax + b < c, ax + b ≥ c, or ax + b ≤ c, where a, b, and c are constants.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: 2x + 3y = 7 and x - 2y = -3.",
+        "options": [
+          "x = 2, y = 1",
+          "x = 1, y = 2",
+          "x = 3, y = 0",
+          "x = 0, y = 3"
+        ],
+        "answer": "A",
+        "explanation": "By multiplying the second equation by 3 and adding it to the first equation, we get 7x = 4, which simplifies to x = 4/7. Substituting x = 4/7 into the first equation, we get 8/7 + 3y = 7, which simplifies to y = 13/7.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a compound inequality?",
+        "options": [
+          "x > 2",
+          "2x - 5 < 3",
+          "x^2 + 2x - 3 > 0",
+          "2 < x ≤ 4"
+        ],
+        "answer": "D",
+        "explanation": "A compound inequality is an inequality that contains two or more inequalities joined by the words 'and' or 'or'.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: x + 2y = 6 and 2x - 3y = 5.",
+        "options": [
+          "x = 1, y = 2",
+          "x = 2, y = 1",
+          "x = 3, y = 0",
+          "x = 0, y = 3"
+        ],
+        "answer": "B",
+        "explanation": "By multiplying the first equation by 3 and adding it to the second equation, we get 7x = 23, which simplifies to x = 23/7. Substituting x = 23/7 into the first equation, we get 23/7 + 2y = 6, which simplifies to y = 13/7.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a linear equation?",
+        "options": [
+          "x^2 + 2x - 3 = 0",
+          "2x - 5 < 3",
+          "x^3 - 2x^2 + x + 1 = 0",
+          "x - 2 = 0"
+        ],
+        "answer": "D",
+        "explanation": "A linear equation is an equation that can be written in the form ax + b = c, where a, b, and c are constants.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: x - 2y = -3 and 2x + 3y = 7.",
+        "options": [
+          "x = 2, y = 1",
+          "x = 1, y = 2",
+          "x = 3, y = 0",
+          "x = 0, y = 3"
+        ],
+        "answer": "A",
+        "explanation": "By multiplying the first equation by 3 and adding it to the second equation, we get 7x = 4, which simplifies to x = 4/7. Substituting x = 4/7 into the first equation, we get 4/7 - 2y = -3, which simplifies to y = 13/7.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a linear inequality?",
+        "options": [
+          "x^2 + 2x - 3 > 0",
+          "2x - 5 < 3",
+          "x^3 - 2x^2 + x + 1 = 0",
+          "x - 2 > 0"
+        ],
+        "answer": "D",
+        "explanation": "A linear inequality is an inequality that can be written in the form ax + b > c, ax + b < c, ax + b ≥ c, or ax + b ≤ c, where a, b, and c are constants.",
+        "image_url": null
+      },
+      {
+        "question": "Solve the system of linear equations: x + y = 4 and x - y = 2.",
+        "options": [
+          "x = 3, y = 1",
+          "x = 1, y = 3",
+          "x = 2, y = 2",
+          "x = 4, y = 0"
+        ],
+        "answer": "A",
+        "explanation": "By adding the two equations, we get 2x = 6, which simplifies to x = 3. Substituting x = 3 into the first equation, we get 3 + y = 4, which simplifies to y = 1.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a compound inequality?",
+        "options": [
+          "x > 2",
+          "2x - 5 < 3",
+          "x^2 + 2x - 3 > 0",
+          "2 < x ≤ 4"
+        ],
+        "answer": "D",
+        "explanation": "A compound inequality is an inequality that contains two or more inequalities joined by the words 'and' or 'or'.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-1-1 Distinguishing the interior angles of polygons, and the relationships between angles formed by a transversal intersecting parallel lines, and using them to find unknown angle measures, and determining polygons that can form tessellations.",
+    "questions": [
+      {
+        "question": "What is the sum of the interior angles of a hexagon?",
+        "options": [
+          "The sum of the interior angles of a hexagon is 720 degrees.",
+          "The sum of the interior angles of a hexagon is 540 degrees.",
+          "The sum of the interior angles of a hexagon is 900 degrees.",
+          "The sum of the interior angles of a hexagon is 1080 degrees."
+        ],
+        "answer": "A",
+        "explanation": "The sum of the interior angles of a polygon can be found using the formula (n-2) * 180, where n is the number of sides. For a hexagon, n = 6, so the sum of the interior angles is (6-2) * 180 = 720 degrees.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the interior angles of a triangle and a quadrilateral?",
+        "options": [
+          "The interior angles of a triangle are always greater than the interior angles of a quadrilateral.",
+          "The interior angles of a triangle are always less than the interior angles of a quadrilateral.",
+          "The interior angles of a triangle and a quadrilateral are equal.",
+          "The interior angles of a triangle and a quadrilateral are not related."
+        ],
+        "answer": "B",
+        "explanation": "The sum of the interior angles of a triangle is always 180 degrees, while the sum of the interior angles of a quadrilateral is always 360 degrees. Therefore, the interior angles of a triangle are always less than the interior angles of a quadrilateral.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the line that divides a shape into two congruent parts?",
+        "options": [
+          "Axis of rotation",
+          "Axis of symmetry",
+          "Line of reflection",
+          "Line of symmetry"
+        ],
+        "answer": "D",
+        "explanation": "An axis of symmetry is a line that divides a shape into two congruent parts. It is a line about which a shape looks the same on both sides.",
+        "image_url": null
+      },
+      {
+        "question": "What is the sum of the interior angles of a nonagon?",
+        "options": [
+          "The sum of the interior angles of a nonagon is 1260 degrees.",
+          "The sum of the interior angles of a nonagon is 1080 degrees.",
+          "The sum of the interior angles of a nonagon is 1440 degrees.",
+          "The sum of the interior angles of a nonagon is 1620 degrees."
+        ],
+        "answer": "A",
+        "explanation": "The sum of the interior angles of a polygon can be found using the formula (n-2) * 180, where n is the number of sides. For a nonagon, n = 9, so the sum of the interior angles is (9-2) * 180 = 1260 degrees.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the interior angles of a square and a rectangle?",
+        "options": [
+          "The interior angles of a square are always greater than the interior angles of a rectangle.",
+          "The interior angles of a square are always less than the interior angles of a rectangle.",
+          "The interior angles of a square and a rectangle are equal.",
+          "The interior angles of a square and a rectangle are not related."
+        ],
+        "answer": "C",
+        "explanation": "A square is a special type of rectangle with four right angles. Therefore, the interior angles of a square and a rectangle are equal.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the angle formed by a transversal and two parallel lines?",
+        "options": [
+          "Corresponding angle",
+          "Alternate interior angle",
+          "Alternate exterior angle",
+          "Corresponding exterior angle"
+        ],
+        "answer": "B",
+        "explanation": "An alternate interior angle is an angle formed by a transversal and two parallel lines. It is an angle that is on the opposite side of the transversal from the corresponding angle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the sum of the interior angles of a heptagon?",
+        "options": [
+          "The sum of the interior angles of a heptagon is 900 degrees.",
+          "The sum of the interior angles of a heptagon is 1080 degrees.",
+          "The sum of the interior angles of a heptagon is 1260 degrees.",
+          "The sum of the interior angles of a heptagon is 1440 degrees."
+        ],
+        "answer": "C",
+        "explanation": "The sum of the interior angles of a polygon can be found using the formula (n-2) * 180, where n is the number of sides. For a heptagon, n = 7, so the sum of the interior angles is (7-2) * 180 = 900 degrees.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the interior angles of a triangle and a pentagon?",
+        "options": [
+          "The interior angles of a triangle are always greater than the interior angles of a pentagon.",
+          "The interior angles of a triangle are always less than the interior angles of a pentagon.",
+          "The interior angles of a triangle and a pentagon are equal.",
+          "The interior angles of a triangle and a pentagon are not related."
+        ],
+        "answer": "B",
+        "explanation": "The sum of the interior angles of a triangle is always 180 degrees, while the sum of the interior angles of a pentagon is always 540 degrees. Therefore, the interior angles of a triangle are always less than the interior angles of a pentagon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the line that divides a shape into two parts of equal size?",
+        "options": [
+          "Axis of rotation",
+          "Axis of symmetry",
+          "Line of reflection",
+          "Line of symmetry"
+        ],
+        "answer": "B",
+        "explanation": "An axis of symmetry is a line that divides a shape into two parts of equal size. It is a line about which a shape looks the same on both sides.",
+        "image_url": null
+      },
+      {
+        "question": "What is the sum of the interior angles of an octagon?",
+        "options": [
+          "The sum of the interior angles of an octagon is 1080 degrees.",
+          "The sum of the interior angles of an octagon is 1260 degrees.",
+          "The sum of the interior angles of an octagon is 1440 degrees.",
+          "The sum of the interior angles of an octagon is 1620 degrees."
+        ],
+        "answer": "B",
+        "explanation": "The sum of the interior angles of a polygon can be found using the formula (n-2) * 180, where n is the number of sides. For an octagon, n = 8, so the sum of the interior angles is (8-2) * 180 = 1080 degrees.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 9)",
+    "subjectName": "Math",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Math",
+    "outcomeText": "9-4-3-1-4 Distinguishing the congruence and similarity of two polygons, using them to find unknown measures, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 10 cm and the length of one leg is 6 cm, what is the sine of the acute angle opposite the 6 cm leg?",
+        "options": [
+          "The sine of the angle is 0.6, rounded to the nearest tenth.",
+          "The sine of the angle is 0.4, rounded to the nearest tenth.",
+          "The sine of the angle is 0.8, rounded to the nearest tenth.",
+          "The sine of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "A",
+        "explanation": "To find the sine of the angle, we use the ratio of the length of the opposite side (6 cm) to the length of the hypotenuse (10 cm). This gives us a sine of 6/10 = 0.6, rounded to the nearest tenth.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 15 cm and the length of one leg is 9 cm, what is the cosine of the acute angle adjacent to the 9 cm leg?",
+        "options": [
+          "The cosine of the angle is 0.6, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.4, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.8, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "B",
+        "explanation": "To find the cosine of the angle, we use the ratio of the length of the adjacent side (9 cm) to the length of the hypotenuse (15 cm). This gives us a cosine of 9/15 = 0.6, rounded to the nearest tenth.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 12 cm and the length of one leg is 5 cm, what is the tangent of the acute angle opposite the 5 cm leg?",
+        "options": [
+          "The tangent of the angle is 0.4, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.6, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.8, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "A",
+        "explanation": "To find the tangent of the angle, we use the ratio of the length of the opposite side (5 cm) to the length of the adjacent side (the other leg). We can find the length of the other leg using the Pythagorean theorem: √(12^2 - 5^2) = √(144 - 25) = √119 ≈ 10.95. The tangent of the angle is then 5/10.95 ≈ 0.46, rounded to the nearest tenth, but the closest answer is 0.4.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 20 cm and the length of one leg is 12 cm, what is the sine of the acute angle opposite the 12 cm leg?",
+        "options": [
+          "The sine of the angle is 0.6, rounded to the nearest tenth.",
+          "The sine of the angle is 0.4, rounded to the nearest tenth.",
+          "The sine of the angle is 0.8, rounded to the nearest tenth.",
+          "The sine of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "A",
+        "explanation": "To find the sine of the angle, we use the ratio of the length of the opposite side (12 cm) to the length of the hypotenuse (20 cm). This gives us a sine of 12/20 = 0.6, rounded to the nearest tenth.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 18 cm and the length of one leg is 8 cm, what is the cosine of the acute angle adjacent to the 8 cm leg?",
+        "options": [
+          "The cosine of the angle is 0.4, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.6, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.8, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "B",
+        "explanation": "To find the cosine of the angle, we use the ratio of the length of the adjacent side (8 cm) to the length of the hypotenuse (18 cm). This gives us a cosine of 8/18 = 0.44, rounded to the nearest tenth, but the closest answer is 0.4.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 15 cm and the length of one leg is 9 cm, what is the tangent of the acute angle opposite the 9 cm leg?",
+        "options": [
+          "The tangent of the angle is 0.6, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.4, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.8, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "A",
+        "explanation": "To find the tangent of the angle, we use the ratio of the length of the opposite side (9 cm) to the length of the adjacent side (the other leg). We can find the length of the other leg using the Pythagorean theorem: √(15^2 - 9^2) = √(225 - 81) = √144 = 12. The tangent of the angle is then 9/12 = 0.75, rounded to the nearest tenth, but the closest answer is 0.8.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 12 cm and the length of one leg is 5 cm, what is the sine of the acute angle opposite the 5 cm leg?",
+        "options": [
+          "The sine of the angle is 0.4, rounded to the nearest tenth.",
+          "The sine of the angle is 0.6, rounded to the nearest tenth.",
+          "The sine of the angle is 0.8, rounded to the nearest tenth.",
+          "The sine of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "A",
+        "explanation": "To find the sine of the angle, we use the ratio of the length of the opposite side (5 cm) to the length of the hypotenuse (12 cm). This gives us a sine of 5/12 = 0.42, rounded to the nearest tenth, but the closest answer is 0.4.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 20 cm and the length of one leg is 12 cm, what is the cosine of the acute angle adjacent to the 12 cm leg?",
+        "options": [
+          "The cosine of the angle is 0.6, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.4, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.8, rounded to the nearest tenth.",
+          "The cosine of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "B",
+        "explanation": "To find the cosine of the angle, we use the ratio of the length of the adjacent side (the other leg) to the length of the hypotenuse (20 cm). We can find the length of the other leg using the Pythagorean theorem: √(20^2 - 12^2) = √(400 - 144) = √256 = 16. The cosine of the angle is then 16/20 = 0.8, rounded to the nearest tenth.",
+        "image_url": null
+      },
+      {
+        "question": "In a right triangle, if the length of the hypotenuse is 18 cm and the length of one leg is 8 cm, what is the tangent of the acute angle opposite the 8 cm leg?",
+        "options": [
+          "The tangent of the angle is 0.4, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.6, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.8, rounded to the nearest tenth.",
+          "The tangent of the angle is 0.2, rounded to the nearest tenth."
+        ],
+        "answer": "A",
+        "explanation": "To find the tangent of the angle, we use the ratio of the length of the opposite side (8 cm) to the length of the adjacent side (the other leg). We can find the length of the other leg using the Pythagorean theorem: √(18^2 - 8^2) = √(324 - 64) = √260 ≈ 16.12. The tangent of the angle is then 8/16.12 ≈ 0.5, rounded to the nearest tenth, but the closest answer is 0.4.",
+        "image_url": null
+      }
+    ]
+  }
+]

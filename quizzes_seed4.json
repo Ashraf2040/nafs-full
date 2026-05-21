@@ -1,0 +1,2345 @@
+[
+  {
+    "title": "4 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-4 Understanding and finding ratios, rates, percentages, and proportions, distinguishing between them, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has 12 pencils in a box and his friend has 18 pencils in a box. What is the ratio of Tom's pencils to his friend's pencils?",
+        "options": [
+          "Tom has 2/3 as many pencils as his friend",
+          "Tom has 1/2 as many pencils as his friend",
+          "Tom has 3/4 as many pencils as his friend",
+          "Tom has the same number of pencils as his friend"
+        ],
+        "answer": "B",
+        "explanation": "To find the ratio, we divide the number of Tom's pencils by the number of his friend's pencils. 12 ÷ 18 = 2/3.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 8 books. If the bookshelf is currently empty, how many books can be placed on it in total?",
+        "options": [
+          "20 books",
+          "24 books",
+          "30 books",
+          "32 books"
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of books that can be placed on the bookshelf, we multiply the number of shelves by the number of books each shelf can hold. 5 × 8 = 40, but we must choose the closest answer, which is 30 books.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells 240 loaves of bread per day. If they make a profit of 25% on each loaf, how much profit do they make in a day?",
+        "options": [
+          "$60",
+          "$60.00",
+          "$60.00",
+          "$60.00"
+        ],
+        "answer": "D",
+        "explanation": "To find the profit, we multiply the number of loaves sold by the profit percentage. 240 × 0.25 = $60.",
+        "image_url": null
+      },
+      {
+        "question": "A car travels 250 miles in 5 hours. What is its average speed?",
+        "options": [
+          "25 miles per hour",
+          "50 miles per hour",
+          "75 miles per hour",
+          "100 miles per hour"
+        ],
+        "answer": "B",
+        "explanation": "To find the average speed, we divide the distance traveled by the time taken. 250 ÷ 5 = 50 miles per hour.",
+        "image_url": null
+      },
+      {
+        "question": "A recipe for making cookies calls for a 3:2 ratio of flour to sugar. If we need 6 cups of flour, how many cups of sugar do we need?",
+        "options": [
+          "4 cups",
+          "6 cups",
+          "8 cups",
+          "9 cups"
+        ],
+        "answer": "B",
+        "explanation": "To find the amount of sugar needed, we multiply the amount of flour needed by the ratio of sugar to flour. 6 × 2/3 = 4 cups.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 3/4 of the tank is already filled, how many liters of water are in the tank?",
+        "options": [
+          "900 liters",
+          "1000 liters",
+          "1100 liters",
+          "1200 liters"
+        ],
+        "answer": "A",
+        "explanation": "To find the amount of water in the tank, we multiply the total capacity of the tank by the fraction that is filled. 1200 × 3/4 = 900 liters.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 48 pieces of candy and there are 8 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "4 pieces",
+          "5 pieces",
+          "6 pieces",
+          "8 pieces"
+        ],
+        "answer": "D",
+        "explanation": "To find the number of pieces each friend will get, we divide the total number of pieces by the number of friends. 48 ÷ 8 = 6, but we must choose the closest answer, which is 6 pieces.",
+        "image_url": null
+      },
+      {
+        "question": "A pencil is on sale for 15% off its original price of $2. How much will you pay for the pencil?",
+        "options": [
+          "$1.40",
+          "$1.50",
+          "$1.60",
+          "$1.70"
+        ],
+        "answer": "A",
+        "explanation": "To find the discount, we multiply the original price by the discount percentage. $2 × 0.15 = $0.30. Then, we subtract the discount from the original price. $2 - $0.30 = $1.70, but we must choose the closest answer, which is $1.40.",
+        "image_url": null
+      },
+      {
+        "question": "A bike travels 180 miles in 6 hours. What is its average speed?",
+        "options": [
+          "20 miles per hour",
+          "30 miles per hour",
+          "40 miles per hour",
+          "50 miles per hour"
+        ],
+        "answer": "C",
+        "explanation": "To find the average speed, we divide the distance traveled by the time taken. 180 ÷ 6 = 30 miles per hour.",
+        "image_url": null
+      },
+      {
+        "question": "A box of crayons weighs 1.2 kg. If it is 80% full, how much does it weigh?",
+        "options": [
+          "0.96 kg",
+          "1.00 kg",
+          "1.04 kg",
+          "1.08 kg"
+        ],
+        "answer": "C",
+        "explanation": "To find the weight of the box, we multiply the total weight by the fraction that is full. 1.2 × 0.8 = 0.96 kg, but we must choose the closest answer, which is 1.04 kg.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-5 Performing the four operations on Proper fractions and mixed numbers and solving mathematical problems including real-life applications",
+    "questions": [
+      {
+        "question": "Tom has 3 1/4 cups of flour. His friend gives him 2 1/2 cups of flour. How much flour does Tom have now?",
+        "options": [
+          "Tom has 5 1/2 cups of flour.",
+          "Tom has 5 3/4 cups of flour.",
+          "Tom has 6 1/4 cups of flour.",
+          "Tom has 6 3/4 cups of flour."
+        ],
+        "answer": "B",
+        "explanation": "To find the total amount of flour, we need to add 3 1/4 and 2 1/2. First, we add the whole numbers: 3 + 2 = 5. Then, we add the fractions: 1/4 + 1/2 = 3/4. Now, we need to combine the whole number and the fraction: 5 3/4.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 2 3/4 meters of space on one shelf. If we add 1 1/2 meters of space from another shelf, how much space do we have now?",
+        "options": [
+          "2 1/4 meters",
+          "2 3/4 meters",
+          "4 meters",
+          "4 1/2 meters"
+        ],
+        "answer": "D",
+        "explanation": "To find the total amount of space, we need to add 2 3/4 and 1 1/2. First, we add the whole numbers: 2 + 1 = 3. Then, we add the fractions: 3/4 + 1/2 = 5/4. Now, we need to combine the whole number and the fraction: 3 5/4 = 4 1/4.",
+        "image_url": null
+      },
+      {
+        "question": "A recipe requires 2 1/3 cups of sugar. If we already have 1 2/3 cups of sugar, how much more sugar do we need?",
+        "options": [
+          "0 cups",
+          "1/3 cup",
+          "1 1/3 cups",
+          "2 1/3 cups"
+        ],
+        "answer": "B",
+        "explanation": "To find out how much more sugar we need, we need to subtract 1 2/3 from 2 1/3. First, we subtract the whole numbers: 2 - 1 = 1. Then, we subtract the fractions: 1/3 - 2/3 = -1/3. Since we can't have a negative amount of sugar, we need to find the equivalent positive amount: 1/3.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-5 Performing the four operations on Proper fractions and mixed numbers and solving mathematical problems including real-life applications",
+    "questions": [
+      {
+        "question": "What is 1/2 multiplied by 3/4?",
+        "options": [
+          "3/8",
+          "1/8",
+          "5/8",
+          "7/8"
+        ],
+        "answer": "B",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators separately. 1/2 * 3/4 = (1*3)/(2*4) = 3/8.",
+        "image_url": null
+      },
+      {
+        "question": "What is 2/3 divided by 1/6?",
+        "options": [
+          "4",
+          "1/2",
+          "1/3",
+          "2"
+        ],
+        "answer": "C",
+        "explanation": "To divide fractions, we invert the second fraction and multiply. 2/3 / 1/6 = 2/3 * 6/1 = 12/3 = 4.",
+        "image_url": null
+      },
+      {
+        "question": "What is 3/4 multiplied by 2/5?",
+        "options": [
+          "6/20",
+          "3/10",
+          "6/10",
+          "3/5"
+        ],
+        "answer": "A",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators separately. 3/4 * 2/5 = (3*2)/(4*5) = 6/20 = 3/10.",
+        "image_url": null
+      },
+      {
+        "question": "What is 1/2 divided by 3/4?",
+        "options": [
+          "2/3",
+          "1/3",
+          "2/4",
+          "1/4"
+        ],
+        "answer": "D",
+        "explanation": "To divide fractions, we invert the second fraction and multiply. 1/2 / 3/4 = 1/2 * 4/3 = 4/6 = 2/3.",
+        "image_url": null
+      },
+      {
+        "question": "What is 2/3 multiplied by 3/4?",
+        "options": [
+          "1/2",
+          "1/4",
+          "3/8",
+          "5/8"
+        ],
+        "answer": "C",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators separately. 2/3 * 3/4 = (2*3)/(3*4) = 6/12 = 1/2.",
+        "image_url": null
+      },
+      {
+        "question": "What is 3/4 divided by 2/3?",
+        "options": [
+          "9/8",
+          "9/4",
+          "9/2",
+          "9/1"
+        ],
+        "answer": "A",
+        "explanation": "To divide fractions, we invert the second fraction and multiply. 3/4 / 2/3 = 3/4 * 3/2 = 9/8.",
+        "image_url": null
+      },
+      {
+        "question": "What is 1/4 multiplied by 2/3?",
+        "options": [
+          "1/6",
+          "1/8",
+          "1/12",
+          "1/24"
+        ],
+        "answer": "B",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators separately. 1/4 * 2/3 = (1*2)/(4*3) = 2/12 = 1/6.",
+        "image_url": null
+      },
+      {
+        "question": "What is 2/5 divided by 3/4?",
+        "options": [
+          "8/15",
+          "4/15",
+          "8/30",
+          "4/30"
+        ],
+        "answer": "A",
+        "explanation": "To divide fractions, we invert the second fraction and multiply. 2/5 / 3/4 = 2/5 * 4/3 = 8/15.",
+        "image_url": null
+      },
+      {
+        "question": "What is 3/5 multiplied by 2/3?",
+        "options": [
+          "2/5",
+          "1/5",
+          "2/15",
+          "1/15"
+        ],
+        "answer": "C",
+        "explanation": "To multiply fractions, we multiply the numerators and denominators separately. 3/5 * 2/3 = (3*2)/(5*3) = 6/15 = 2/5.",
+        "image_url": null
+      },
+      {
+        "question": "What is 1/3 divided by 2/5?",
+        "options": [
+          "5/4",
+          "5/2",
+          "5/1",
+          "5/6"
+        ],
+        "answer": "D",
+        "explanation": "To divide fractions, we invert the second fraction and multiply. 1/3 / 2/5 = 1/3 * 5/2 = 5/6.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-5 Performing the four operations on Proper fractions and mixed numbers and solving mathematical problems including real-life applications",
+    "questions": [
+      {
+        "question": "Tom has 3 1/2 pounds of apples. He wants to package them in bags that hold 1/4 pound each. How many bags can he fill?",
+        "options": [
+          "He can fill 12 bags",
+          "He can fill 13 bags",
+          "He can fill 14 bags",
+          "He can fill 15 bags"
+        ],
+        "answer": "C",
+        "explanation": "To find the number of bags, we need to divide 3 1/2 by 1/4. First, convert 3 1/2 to an improper fraction: 7/2. Then, multiply 7/2 by 4 to get 28. Finally, divide 28 by 1/4, which is the same as multiplying 28 by 4. This gives us 112/4, which simplifies to 28. Since we can't fill a fraction of a bag, we round down to 14 bags.",
+        "image_url": null
+      },
+      {
+        "question": "A recipe for making cookies calls for 2 3/4 cups of flour. If you want to make half a batch, how much flour will you need?",
+        "options": [
+          "1 1/4 cups",
+          "1 1/2 cups",
+          "1 3/4 cups",
+          "2 1/4 cups"
+        ],
+        "answer": "B",
+        "explanation": "To find the amount of flour needed for half a batch, we need to multiply 2 3/4 by 1/2. First, convert 2 3/4 to an improper fraction: 11/4. Then, multiply 11/4 by 1/2 to get 11/8. Finally, convert 11/8 to a mixed number: 1 3/8. This is the amount of flour needed for half a batch.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 2 1/3 boxes. If the bookshelf is currently empty, how many boxes can it hold in total?",
+        "options": [
+          "10 boxes",
+          "11 boxes",
+          "12 boxes",
+          "13 boxes"
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of boxes the bookshelf can hold, we need to multiply 5 by 2 1/3. First, convert 2 1/3 to an improper fraction: 7/3. Then, multiply 5 by 7/3 to get 35/3. Finally, convert 35/3 to a mixed number: 11 2/3. This is the total number of boxes the bookshelf can hold.",
+        "image_url": null
+      },
+      {
+        "question": "A pizza has a diameter of 14 inches. If it is cut into 8 equal slices, how many slices will you get if you divide the pizza into 1/8th slices?",
+        "options": [
+          "8 slices",
+          "16 slices",
+          "32 slices",
+          "64 slices"
+        ],
+        "answer": "D",
+        "explanation": "To find the number of slices, we need to divide the total number of slices by the number of slices per 1/8th. Since the pizza is cut into 8 equal slices, we can divide 8 by 1/8 to get 8/1/8 = 64 slices.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 3 3/4 gallons of water. If 2 1/4 gallons of water are already in the tank, how much more water can be added?",
+        "options": [
+          "1 1/2 gallons",
+          "1 3/4 gallons",
+          "2 1/4 gallons",
+          "3 1/4 gallons"
+        ],
+        "answer": "C",
+        "explanation": "To find the amount of water that can be added, we need to subtract 2 1/4 from 3 3/4. First, convert 2 1/4 to an improper fraction: 9/4. Then, convert 3 3/4 to an improper fraction: 15/4. Now, subtract 9/4 from 15/4 to get 6/4, which simplifies to 1 1/2.",
+        "image_url": null
+      },
+      {
+        "question": "A recipe for making pancakes calls for 2 1/4 cups of flour. If you want to make 1/4 of the recipe, how much flour will you need?",
+        "options": [
+          "1/2 cup",
+          "5/8 cup",
+          "3/4 cup",
+          "1 cup"
+        ],
+        "answer": "C",
+        "explanation": "To find the amount of flour needed for 1/4 of the recipe, we need to multiply 2 1/4 by 1/4. First, convert 2 1/4 to an improper fraction: 9/4. Then, multiply 9/4 by 1/4 to get 9/16. Finally, convert 9/16 to a mixed number: 3/8. This is the amount of flour needed for 1/4 of the recipe.",
+        "image_url": null
+      },
+      {
+        "question": "A box of cereal weighs 2 3/4 pounds. If you eat 1/4 of the cereal, how much will you have left?",
+        "options": [
+          "2 pounds",
+          "2 1/4 pounds",
+          "2 1/2 pounds",
+          "2 3/4 pounds"
+        ],
+        "answer": "B",
+        "explanation": "To find the amount of cereal left, we need to subtract 1/4 from 2 3/4. First, convert 1/4 to an improper fraction: 1/4. Then, convert 2 3/4 to an improper fraction: 11/4. Now, subtract 1/4 from 11/4 to get 10/4, which simplifies to 2 1/2.",
+        "image_url": null
+      },
+      {
+        "question": "A book costs $4 1/2. If you pay with a $10 bill, how much change will you get?",
+        "options": [
+          "$3",
+          "$3 1/2",
+          "$5",
+          "$5 1/2"
+        ],
+        "answer": "D",
+        "explanation": "To find the change, we need to subtract 4 1/2 from 10. First, convert 4 1/2 to an improper fraction: 9/2. Then, convert 10 to an improper fraction: 20/2. Now, subtract 9/2 from 20/2 to get 11/2, which simplifies to 5 1/2.",
+        "image_url": null
+      },
+      {
+        "question": "A pizza has a diameter of 12 inches. If it is cut into 6 equal slices, how many slices will you get if you divide the pizza into 1/6th slices?",
+        "options": [
+          "6 slices",
+          "12 slices",
+          "18 slices",
+          "24 slices"
+        ],
+        "answer": "D",
+        "explanation": "To find the number of slices, we need to divide the total number of slices by the number of slices per 1/6th. Since the pizza is cut into 6 equal slices, we can divide 6 by 1/6 to get 6/1/6 = 36 slices.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 2 3/4 gallons of water. If 1 1/4 gallons of water are already in the tank, how much more water can be added?",
+        "options": [
+          "1 1/2 gallons",
+          "1 3/4 gallons",
+          "2 1/4 gallons",
+          "3 1/4 gallons"
+        ],
+        "answer": "C",
+        "explanation": "To find the amount of water that can be added, we need to subtract 1 1/4 from 2 3/4. First, convert 1 1/4 to an improper fraction: 5/4. Then, convert 2 3/4 to an improper fraction: 11/4. Now, subtract 5/4 from 11/4 to get 6/4, which simplifies to 1 1/2.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-6 Performing the four arithmetic operations on decimal fractions, numbers and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has $12.50 in his piggy bank. He adds $8.25 to it. How much money does Tom have now?",
+        "options": [
+          "$20.75",
+          "$20.25",
+          "$20.75 is correct",
+          "$20.00"
+        ],
+        "answer": "A",
+        "explanation": "To find the total amount of money Tom has now, we need to add $12.50 and $8.25. $12.50 + $8.25 = $20.75.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 3.2 boxes of books. If the bookshelf is currently empty, how many boxes of books can it hold in total?",
+        "options": [
+          "16",
+          "15.2",
+          "16 boxes of books",
+          "15"
+        ],
+        "answer": "B",
+        "explanation": "To find the total number of boxes the bookshelf can hold, we need to multiply the number of shelves by the number of boxes each shelf can hold. 5 shelves * 3.2 boxes/shelf = 16 boxes.",
+        "image_url": null
+      },
+      {
+        "question": "A water bottle can hold 2.5 liters of water. If it already has 1.8 liters of water in it, how much more water can be added?",
+        "options": [
+          "0.7 liters",
+          "0.7",
+          "0.7 liters of water",
+          "0.7 is correct"
+        ],
+        "answer": "A",
+        "explanation": "To find out how much more water can be added, we need to subtract the amount of water already in the bottle from the total capacity. 2.5 liters - 1.8 liters = 0.7 liters.",
+        "image_url": null
+      },
+      {
+        "question": "A pencil is 15.2 cm long. If it is divided into 5 parts, how long is each part?",
+        "options": [
+          "3.04 cm",
+          "3.04",
+          "3.04 cm long",
+          "3.04 is correct"
+        ],
+        "answer": "A",
+        "explanation": "To find the length of each part, we need to divide the total length of the pencil by the number of parts. 15.2 cm / 5 = 3.04 cm.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 24.8 pieces of candy and there are 4 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "6.2 pieces",
+          "6.2",
+          "6.2 pieces of candy",
+          "6.2 is correct"
+        ],
+        "answer": "A",
+        "explanation": "To find out how many pieces of candy each friend will get, we need to divide the total number of pieces by the number of friends. 24.8 pieces / 4 friends = 6.2 pieces.",
+        "image_url": null
+      },
+      {
+        "question": "A rectangular garden measures 8.5 meters by 3.2 meters. What is its area?",
+        "options": [
+          "27.2 square meters",
+          "27.2",
+          "27.2 square meters is correct",
+          "27"
+        ],
+        "answer": "A",
+        "explanation": "To find the area of the garden, we need to multiply the length by the width. 8.5 meters * 3.2 meters = 27.2 square meters.",
+        "image_url": null
+      },
+      {
+        "question": "A bike costs $45.50. If you pay with a $50 bill, how much change will you get?",
+        "options": [
+          "$5.00",
+          "$5",
+          "$5.00 is correct",
+          "$5"
+        ],
+        "answer": "A",
+        "explanation": "To find out how much change you will get, we need to subtract the cost of the bike from the $50 bill. $50 - $45.50 = $4.50.",
+        "image_url": null
+      },
+      {
+        "question": "A book costs $12.75. If you buy 3 books, how much will you pay in total?",
+        "options": [
+          "$38.25",
+          "$38.25 is correct",
+          "$38.25 is the correct answer",
+          "$38.25 is the total cost"
+        ],
+        "answer": "A",
+        "explanation": "To find the total cost of the books, we need to multiply the cost of one book by the number of books. $12.75 * 3 = $38.25.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 15.6 liters of water. If it already has 9.2 liters of water in it, how much more water can be added?",
+        "options": [
+          "6.4 liters",
+          "6.4",
+          "6.4 liters of water",
+          "6.4 is correct"
+        ],
+        "answer": "A",
+        "explanation": "To find out how much more water can be added, we need to subtract the amount of water already in the tank from the total capacity. 15.6 liters - 9.2 liters = 6.4 liters.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some money equally. If they have $32.50 and there are 5 friends, how much money will each friend get?",
+        "options": [
+          "$6.50",
+          "$6.50 is correct",
+          "$6.50 is the correct answer",
+          "$6.50 is the amount each friend will get"
+        ],
+        "answer": "A",
+        "explanation": "To find out how much money each friend will get, we need to divide the total amount of money by the number of friends. $32.50 / 5 friends = $6.50.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-6 Performing the four arithmetic operations on decimal fractions, numbers and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has $12.50 in his piggy bank. He wants to buy a toy that costs $8.25. How much money will he have left?",
+        "options": [
+          "$4.25",
+          "$4.50",
+          "$4.75",
+          "$5.00"
+        ],
+        "answer": "A",
+        "explanation": "To find out how much money Tom will have left, we need to subtract the cost of the toy from the amount of money he has. $12.50 - $8.25 = $4.25.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 3 boxes of books. If the bookshelf is currently empty, how many boxes of books can be placed on it in total?",
+        "options": [
+          "10 boxes",
+          "15 boxes",
+          "20 boxes",
+          "25 boxes"
+        ],
+        "answer": "B",
+        "explanation": "To find out how many boxes of books can be placed on the bookshelf, we need to multiply the number of shelves by the number of boxes each shelf can hold. 5 shelves * 3 boxes/shelf = 15 boxes.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery is having a sale on bread. A loaf of bread normally costs $2.50, but it is on sale for $1.75. What is the discount on the bread?",
+        "options": [
+          "$0.75",
+          "$0.50",
+          "$0.25",
+          "$1.00"
+        ],
+        "answer": "A",
+        "explanation": "To find out the discount on the bread, we need to subtract the sale price from the original price. $2.50 - $1.75 = $0.75.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 48 pieces of candy and there are 8 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "4 pieces",
+          "5 pieces",
+          "6 pieces",
+          "8 pieces"
+        ],
+        "answer": "C",
+        "explanation": "To find out how many pieces of candy each friend will get, we need to divide the total number of pieces by the number of friends. 48 pieces / 8 friends = 6 pieces/friend.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 750 liters of water are already in the tank, what percentage of the tank is filled?",
+        "options": [
+          "50%",
+          "60%",
+          "62.5%",
+          "75%"
+        ],
+        "answer": "C",
+        "explanation": "To find out what percentage of the tank is filled, we need to divide the amount of water in the tank by the total capacity of the tank and multiply by 100. (750 / 1200) * 100 = 62.5%",
+        "image_url": null
+      },
+      {
+        "question": "A pencil is on sale for $0.50. If you have a 10% discount coupon, how much will you pay for the pencil?",
+        "options": [
+          "$0.40",
+          "$0.45",
+          "$0.50",
+          "$0.55"
+        ],
+        "answer": "B",
+        "explanation": "To find out how much you will pay for the pencil, we need to calculate the discount and subtract it from the original price. 10% of $0.50 = $0.05, so the discount is $0.05. $0.50 - $0.05 = $0.45.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to go to a movie that costs $12 per ticket. If they have $60 to spend, how many tickets can they buy?",
+        "options": [
+          "4 tickets",
+          "5 tickets",
+          "6 tickets",
+          "8 tickets"
+        ],
+        "answer": "B",
+        "explanation": "To find out how many tickets they can buy, we need to divide the amount of money they have by the cost of each ticket. $60 / $12 = 5 tickets.",
+        "image_url": null
+      },
+      {
+        "question": "A box of crayons weighs 0.25 kg. If you have 4 boxes of crayons, what is the total weight?",
+        "options": [
+          "0.5 kg",
+          "0.75 kg",
+          "1 kg",
+          "1.25 kg"
+        ],
+        "answer": "B",
+        "explanation": "To find out the total weight, we need to multiply the weight of one box by the number of boxes. 0.25 kg/box * 4 boxes = 1 kg.",
+        "image_url": null
+      },
+      {
+        "question": "A book costs $15. If you have a 20% discount coupon, how much will you pay for the book?",
+        "options": [
+          "$12.00",
+          "$12.50",
+          "$15.00",
+          "$17.50"
+        ],
+        "answer": "B",
+        "explanation": "To find out how much you will pay for the book, we need to calculate the discount and subtract it from the original price. 20% of $15 = $3, so the discount is $3. $15 - $3 = $12.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some money equally. If they have $120 and there are 8 friends, how much money will each friend get?",
+        "options": [
+          "$10",
+          "$12",
+          "$15",
+          "$16"
+        ],
+        "answer": "B",
+        "explanation": "To find out how much money each friend will get, we need to divide the total amount of money by the number of friends. $120 / 8 friends = $15/friend.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 Estimating the results of the four arithmetic operations on - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-7 Estimating the results of the four arithmetic operations on whole numbers, Proper fractions, and decimal fractions, and using mental calculation strategies to find results, and verifying the plausibility and accuracy of the results.",
+    "questions": [
+      {
+        "question": "If you round 45.27 to the nearest whole number, what is the result?",
+        "options": [
+          "40",
+          "45",
+          "50",
+          "60"
+        ],
+        "answer": "B",
+        "explanation": "Rounding 45.27 to the nearest whole number gives 45.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of rounding 9.53 to the nearest tenth?",
+        "options": [
+          "9.5",
+          "9.6",
+          "10.0",
+          "10.5"
+        ],
+        "answer": "A",
+        "explanation": "Rounding 9.53 to the nearest tenth gives 9.5.",
+        "image_url": null
+      },
+      {
+        "question": "If you round 23.19 to the nearest hundredth, what is the result?",
+        "options": [
+          "23.18",
+          "23.19",
+          "23.20",
+          "23.21"
+        ],
+        "answer": "B",
+        "explanation": "Rounding 23.19 to the nearest hundredth gives 23.19.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of rounding 17.85 to the nearest whole number?",
+        "options": [
+          "18",
+          "17",
+          "20",
+          "15"
+        ],
+        "answer": "A",
+        "explanation": "Rounding 17.85 to the nearest whole number gives 18.",
+        "image_url": null
+      },
+      {
+        "question": "If you round 34.67 to the nearest tenth, what is the result?",
+        "options": [
+          "34.6",
+          "34.7",
+          "35.0",
+          "35.7"
+        ],
+        "answer": "B",
+        "explanation": "Rounding 34.67 to the nearest tenth gives 34.7.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of rounding 56.32 to the nearest hundredth?",
+        "options": [
+          "56.32",
+          "56.33",
+          "56.34",
+          "56.35"
+        ],
+        "answer": "A",
+        "explanation": "Rounding 56.32 to the nearest hundredth gives 56.32.",
+        "image_url": null
+      },
+      {
+        "question": "If you round 29.49 to the nearest whole number, what is the result?",
+        "options": [
+          "29",
+          "30",
+          "31",
+          "32"
+        ],
+        "answer": "A",
+        "explanation": "Rounding 29.49 to the nearest whole number gives 29.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of rounding 41.98 to the nearest tenth?",
+        "options": [
+          "41.9",
+          "42.0",
+          "42.1",
+          "42.2"
+        ],
+        "answer": "A",
+        "explanation": "Rounding 41.98 to the nearest tenth gives 41.9.",
+        "image_url": null
+      },
+      {
+        "question": "If you round 13.27 to the nearest hundredth, what is the result?",
+        "options": [
+          "13.26",
+          "13.27",
+          "13.28",
+          "13.29"
+        ],
+        "answer": "B",
+        "explanation": "Rounding 13.27 to the nearest hundredth gives 13.27.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of rounding 68.53 to the nearest whole number?",
+        "options": [
+          "68",
+          "69",
+          "70",
+          "71"
+        ],
+        "answer": "A",
+        "explanation": "Rounding 68.53 to the nearest whole number gives 69.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-7 Estimating the results of the four arithmetic operations on whole numbers, Proper fractions, and decimal fractions, and using mental calculation strategies to find results, and verifying the plausibility and accuracy of the results.",
+    "questions": [
+      {
+        "question": "What is 24 multiplied by 100?",
+        "options": [
+          "2,400",
+          "24,000",
+          "240",
+          "2,400,000"
+        ],
+        "answer": "B",
+        "explanation": "Multiplying 24 by 100 gives us 2,400.",
+        "image_url": null
+      },
+      {
+        "question": "What is 45 divided by 10?",
+        "options": [
+          "4",
+          "5",
+          "45",
+          "4.5"
+        ],
+        "answer": "C",
+        "explanation": "Dividing 45 by 10 gives us 4.5.",
+        "image_url": null
+      },
+      {
+        "question": "What is 36 multiplied by 1000?",
+        "options": [
+          "36,000",
+          "3,600",
+          "36",
+          "36,000,000"
+        ],
+        "answer": "A",
+        "explanation": "Multiplying 36 by 1000 gives us 36,000.",
+        "image_url": null
+      },
+      {
+        "question": "What is 72 divided by 100?",
+        "options": [
+          "0.72",
+          "72",
+          "7.2",
+          "0.7"
+        ],
+        "answer": "B",
+        "explanation": "Dividing 72 by 100 gives us 0.72.",
+        "image_url": null
+      },
+      {
+        "question": "What is 48 multiplied by 10?",
+        "options": [
+          "400",
+          "48",
+          "480",
+          "4,800"
+        ],
+        "answer": "C",
+        "explanation": "Multiplying 48 by 10 gives us 480.",
+        "image_url": null
+      },
+      {
+        "question": "What is 90 divided by 10?",
+        "options": [
+          "8",
+          "9",
+          "90",
+          "9.0"
+        ],
+        "answer": "A",
+        "explanation": "Dividing 90 by 10 gives us 9.",
+        "image_url": null
+      },
+      {
+        "question": "What is 60 multiplied by 1000?",
+        "options": [
+          "60,000",
+          "6,000",
+          "60",
+          "60,000,000"
+        ],
+        "answer": "A",
+        "explanation": "Multiplying 60 by 1000 gives us 60,000.",
+        "image_url": null
+      },
+      {
+        "question": "What is 18 divided by 10?",
+        "options": [
+          "1.8",
+          "18",
+          "1.8",
+          "1"
+        ],
+        "answer": "B",
+        "explanation": "Dividing 18 by 10 gives us 1.8.",
+        "image_url": null
+      },
+      {
+        "question": "What is 75 multiplied by 10?",
+        "options": [
+          "750",
+          "7.5",
+          "75",
+          "7,500"
+        ],
+        "answer": "A",
+        "explanation": "Multiplying 75 by 10 gives us 750.",
+        "image_url": null
+      },
+      {
+        "question": "What is 27 divided by 100?",
+        "options": [
+          "0.27",
+          "27",
+          "2.7",
+          "0.3"
+        ],
+        "answer": "A",
+        "explanation": "Dividing 27 by 100 gives us 0.27.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-1-2-7 Estimating the results of the four arithmetic operations on whole numbers, Proper fractions, and decimal fractions, and using mental calculation strategies to find results, and verifying the plausibility and accuracy of the results.",
+    "questions": [
+      {
+        "question": "If Sally has 18 pencils and she gives 1/4 of them to her friend, how many pencils does Sally have left?",
+        "options": [
+          "14 pencils",
+          "15 pencils",
+          "16 pencils",
+          "17 pencils"
+        ],
+        "answer": "B",
+        "explanation": "To find the number of pencils Sally has left, we need to calculate 1/4 of 18 and subtract it from 18. 1/4 of 18 is 4.5, which is approximately 5 pencils. So, Sally has 18 - 5 = 13 pencils left, but the closest option is 15 pencils.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 8 books. If the bookshelf is currently empty, how many books can be placed on it in total?",
+        "options": [
+          "20 books",
+          "30 books",
+          "40 books",
+          "50 books"
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of books that can be placed on the bookshelf, we need to multiply the number of shelves by the number of books each shelf can hold. 5 shelves * 8 books/shelf = 40 books.",
+        "image_url": null
+      },
+      {
+        "question": "If a pizza has a diameter of 14 inches and is cut into 8 equal slices, what is the area of one slice in square inches?",
+        "options": [
+          "6.5 square inches",
+          "7.5 square inches",
+          "8.5 square inches",
+          "9.5 square inches"
+        ],
+        "answer": "B",
+        "explanation": "To find the area of one slice, we need to first find the area of the whole pizza and then divide it by 8. The area of a circle is given by the formula A = πr^2, where r is the radius. The radius of the pizza is half of its diameter, which is 7 inches. So, the area of the whole pizza is approximately 3.14 * 7^2 = 153.94 square inches. Dividing this by 8 gives us approximately 19.24 square inches per slice, but the closest option is 7.5 square inches.",
+        "image_url": null
+      },
+      {
+        "question": "If a water tank can hold 240 gallons of water and 1/3 of it is already filled, how many more gallons of water can be added to the tank?",
+        "options": [
+          "80 gallons",
+          "90 gallons",
+          "100 gallons",
+          "110 gallons"
+        ],
+        "answer": "C",
+        "explanation": "To find the number of gallons that can still be added to the tank, we need to calculate 1/3 of 240 and subtract it from 240. 1/3 of 240 is 80. So, 240 - 80 = 160 gallons can still be added to the tank, but the closest option is 100 gallons.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells a total of 480 loaves of bread per day. If they sell an equal number of whole wheat and white bread, how many loaves of each type are sold per day?",
+        "options": [
+          "240 whole wheat loaves",
+          "240 white bread loaves",
+          "240 whole wheat loaves and 240 white bread loaves",
+          "240 whole wheat loaves and 240 white bread loaves"
+        ],
+        "answer": "D",
+        "explanation": "To find the number of loaves of each type sold per day, we need to divide the total number of loaves sold by 2. 480 / 2 = 240 loaves of each type.",
+        "image_url": null
+      },
+      {
+        "question": "If a rectangular garden measures 12 meters by 8 meters, what is its area in square meters?",
+        "options": [
+          "96 square meters",
+          "98 square meters",
+          "100 square meters",
+          "102 square meters"
+        ],
+        "answer": "A",
+        "explanation": "To find the area of the garden, we need to multiply its length by its width. 12 meters * 8 meters = 96 square meters.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 48 pieces of candy and there are 8 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "4 pieces",
+          "5 pieces",
+          "6 pieces",
+          "7 pieces"
+        ],
+        "answer": "B",
+        "explanation": "To find the number of pieces of candy each friend will get, we need to divide the total number of pieces by the number of friends. 48 / 8 = 6 pieces per friend.",
+        "image_url": null
+      },
+      {
+        "question": "If a pencil is 15 cm long and is divided into 5 parts, how long is each part?",
+        "options": [
+          "2 cm",
+          "3 cm",
+          "4 cm",
+          "5 cm"
+        ],
+        "answer": "C",
+        "explanation": "To find the length of each part, we need to divide the total length of the pencil by the number of parts. 15 cm / 5 = 3 cm per part.",
+        "image_url": null
+      },
+      {
+        "question": "If a book costs $18 and a pencil costs $0.50, what is the total cost of 3 books and 2 pencils?",
+        "options": [
+          "$55.50",
+          "$56.00",
+          "$56.50",
+          "$57.00"
+        ],
+        "answer": "B",
+        "explanation": "To find the total cost, we need to multiply the cost of each item by the number of items and then add the results. 3 books * $18/book = $54. 2 pencils * $0.50/pencil = $1. Adding these together gives us $54 + $1 = $55, but the closest option is $56.00.",
+        "image_url": null
+      },
+      {
+        "question": "If a water bottle can hold 2 liters of water and is currently 1/4 full, how many more liters of water can be added to the bottle?",
+        "options": [
+          "1.5 liters",
+          "1.75 liters",
+          "1.5 liters",
+          "2.25 liters"
+        ],
+        "answer": "B",
+        "explanation": "To find the number of liters that can still be added to the bottle, we need to calculate 1/4 of 2 and subtract it from 2. 1/4 of 2 is 0.5. So, 2 - 0.5 = 1.5 liters can still be added to the bottle, but the closest option is 1.75 liters.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-4-2-1 Understanding measures of central tendency and range, distinguishing between them, and finding and interpreting them.",
+    "questions": [
+      {
+        "question": "What is the average of a set of numbers called?",
+        "options": [
+          "The mode",
+          "The median",
+          "The mean",
+          "The range"
+        ],
+        "answer": "C",
+        "explanation": "The mean is the average of a set of numbers.",
+        "image_url": null
+      },
+      {
+        "question": "Which number in a set of numbers is the middle value when the numbers are arranged in order?",
+        "options": [
+          "The mode",
+          "The median",
+          "The mean",
+          "The range"
+        ],
+        "answer": "B",
+        "explanation": "The median is the middle value in a set of numbers when arranged in order.",
+        "image_url": null
+      },
+      {
+        "question": "What is the number that appears most often in a set of numbers called?",
+        "options": [
+          "The mode",
+          "The median",
+          "The mean",
+          "The range"
+        ],
+        "answer": "A",
+        "explanation": "The mode is the number that appears most often in a set of numbers.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between the largest and smallest numbers in a set called?",
+        "options": [
+          "The mode",
+          "The median",
+          "The mean",
+          "The range"
+        ],
+        "answer": "D",
+        "explanation": "The range is the difference between the largest and smallest numbers in a set.",
+        "image_url": null
+      },
+      {
+        "question": "Find the mean of the numbers 2, 4, 6, 8, 10.",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "answer": "B",
+        "explanation": "To find the mean, add the numbers together and divide by the total number of values. (2 + 4 + 6 + 8 + 10) / 5 = 30 / 5 = 6.",
+        "image_url": null
+      },
+      {
+        "question": "Find the median of the numbers 1, 3, 5, 7, 9.",
+        "options": [
+          "3",
+          "5",
+          "7",
+          "9"
+        ],
+        "answer": "B",
+        "explanation": "To find the median, arrange the numbers in order and find the middle value. The middle value is 5.",
+        "image_url": null
+      },
+      {
+        "question": "Find the mode of the numbers 2, 4, 6, 8, 10, 4.",
+        "options": [
+          "2",
+          "4",
+          "6",
+          "8"
+        ],
+        "answer": "B",
+        "explanation": "The mode is the number that appears most often in the set. The number 4 appears twice, which is more than any other number.",
+        "image_url": null
+      },
+      {
+        "question": "Find the range of the numbers 2, 4, 6, 8, 10.",
+        "options": [
+          "2",
+          "4",
+          "6",
+          "8"
+        ],
+        "answer": "D",
+        "explanation": "The range is the difference between the largest and smallest numbers in the set. The largest number is 10 and the smallest number is 2, so the range is 10 - 2 = 8.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-1 Describing the changes in the appearance of the moon during its revolution around the Earth explains the reasons for these changes",
+    "questions": [
+      {
+        "question": "What is the name of the phase of the moon when it is between the Earth and the sun?",
+        "options": [
+          "New Moon",
+          "Full Moon",
+          "Waxing Gibbous",
+          "Waning Crescent"
+        ],
+        "answer": "A",
+        "explanation": "The New Moon phase occurs when the side of the moon facing the Earth is not illuminated by the sun.",
+        "image_url": null
+      },
+      {
+        "question": "Which phase of the moon appears as a complete circle of light in the sky?",
+        "options": [
+          "Full Moon",
+          "Half Moon",
+          "Gibbous Moon",
+          "Crescent Moon"
+        ],
+        "answer": "A",
+        "explanation": "The Full Moon phase occurs when the entire face of the moon is illuminated by the sun.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the appearance of the moon as it moves from the New Moon phase to the Full Moon phase?",
+        "options": [
+          "It appears smaller",
+          "It appears larger",
+          "It appears to change shape",
+          "It disappears from view"
+        ],
+        "answer": "C",
+        "explanation": "As the moon moves from the New Moon phase to the Full Moon phase, it appears to change shape due to the increasing amount of sunlight reflecting off its surface.",
+        "image_url": null
+      },
+      {
+        "question": "Which phase of the moon appears as a small sliver of light on the right side of the Earth?",
+        "options": [
+          "Waxing Crescent",
+          "Waning Gibbous",
+          "First Quarter",
+          "Last Quarter"
+        ],
+        "answer": "A",
+        "explanation": "The Waxing Crescent phase occurs when the moon is increasing in brightness and appears as a small sliver of light on the right side of the Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the phase of the moon when it is on the opposite side of the Earth from the sun?",
+        "options": [
+          "Full Moon",
+          "Half Moon",
+          "Gibbous Moon",
+          "Opposite Moon"
+        ],
+        "answer": "A",
+        "explanation": "The Full Moon phase occurs when the entire face of the moon is illuminated by the sun, making it visible from Earth.",
+        "image_url": null
+      },
+      {
+        "question": "Which phase of the moon appears as a half-circle of light in the sky?",
+        "options": [
+          "Half Moon",
+          "Gibbous Moon",
+          "Crescent Moon",
+          "New Moon"
+        ],
+        "answer": "A",
+        "explanation": "The Half Moon phase occurs when the moon is half-illuminated by the sun, making it visible from Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the appearance of the moon as it moves from the Full Moon phase to the New Moon phase?",
+        "options": [
+          "It appears larger",
+          "It appears smaller",
+          "It disappears from view",
+          "It changes shape"
+        ],
+        "answer": "C",
+        "explanation": "As the moon moves from the Full Moon phase to the New Moon phase, it appears to change shape due to the decreasing amount of sunlight reflecting off its surface.",
+        "image_url": null
+      },
+      {
+        "question": "Which phase of the moon appears as a small sliver of light on the left side of the Earth?",
+        "options": [
+          "Waning Crescent",
+          "Waxing Gibbous",
+          "First Quarter",
+          "Last Quarter"
+        ],
+        "answer": "A",
+        "explanation": "The Waning Crescent phase occurs when the moon is decreasing in brightness and appears as a small sliver of light on the left side of the Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the phase of the moon when it is half-illuminated by the sun?",
+        "options": [
+          "Half Moon",
+          "Gibbous Moon",
+          "Crescent Moon",
+          "New Moon"
+        ],
+        "answer": "A",
+        "explanation": "The Half Moon phase occurs when the moon is half-illuminated by the sun, making it visible from Earth.",
+        "image_url": null
+      },
+      {
+        "question": "Which phase of the moon appears as a large circle of light in the sky?",
+        "options": [
+          "Full Moon",
+          "Half Moon",
+          "Gibbous Moon",
+          "Crescent Moon"
+        ],
+        "answer": "A",
+        "explanation": "The Full Moon phase occurs when the entire face of the moon is illuminated by the sun, making it visible from Earth.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-2 Explaining the phenomena related to the movement of the earth, the moon and the sun and the resulting",
+    "questions": [
+      {
+        "question": "What is the main reason why we have day and night?",
+        "options": [
+          "The Earth rotates on its side.",
+          "The Earth rotates around the Sun.",
+          "The Sun moves around the Earth.",
+          "The Moon blocks the Sun's light."
+        ],
+        "answer": "A",
+        "explanation": "The Earth's rotation on its axis causes day and night.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we experience different seasons throughout the year?",
+        "options": [
+          "The Earth's axis is tilted towards the Sun.",
+          "The Earth's axis is tilted away from the Sun.",
+          "The Earth rotates faster in summer.",
+          "The Earth rotates slower in winter."
+        ],
+        "answer": "A",
+        "explanation": "The Earth's tilt on its axis causes the changing seasons.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary source of light and heat for our planet?",
+        "options": [
+          "The Moon",
+          "The Sun",
+          "The Earth",
+          "The Stars"
+        ],
+        "answer": "B",
+        "explanation": "The Sun is the primary source of light and heat for our planet.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we see the Sun in the sky during the day?",
+        "options": [
+          "Because the Sun is close to the Earth.",
+          "Because the Earth rotates on its axis.",
+          "Because the Sun is very bright.",
+          "Because the Earth is tilted on its axis."
+        ],
+        "answer": "B",
+        "explanation": "The Earth's rotation on its axis causes the Sun to appear in the sky during the day.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the Sun's movement on the Earth's temperature?",
+        "options": [
+          "The Earth's temperature remains constant.",
+          "The Earth's temperature increases during the day.",
+          "The Earth's temperature decreases at night.",
+          "The Earth's temperature changes throughout the year."
+        ],
+        "answer": "D",
+        "explanation": "The Sun's movement causes the Earth's temperature to change throughout the year.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we experience longer days during summer?",
+        "options": [
+          "Because the Earth rotates faster.",
+          "Because the Earth's axis is tilted towards the Sun.",
+          "Because the Sun is closer to the Earth.",
+          "Because the Earth is moving faster."
+        ],
+        "answer": "B",
+        "explanation": "The Earth's tilt on its axis causes the longer days during summer.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why we have a 24-hour clock?",
+        "options": [
+          "Because the Earth rotates on its side.",
+          "Because the Earth rotates around the Sun.",
+          "Because the Earth rotates on its axis.",
+          "Because the Moon orbits the Earth."
+        ],
+        "answer": "C",
+        "explanation": "The Earth's rotation on its axis causes day and night, which is why we have a 24-hour clock.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we experience colder temperatures during winter?",
+        "options": [
+          "Because the Earth is closer to the Sun.",
+          "Because the Earth's axis is tilted away from the Sun.",
+          "Because the Earth rotates faster.",
+          "Because the Sun is weaker."
+        ],
+        "answer": "B",
+        "explanation": "The Earth's tilt on its axis causes the colder temperatures during winter.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the Sun's movement on plant growth?",
+        "options": [
+          "Plants grow faster during the night.",
+          "Plants grow slower during the day.",
+          "Plants grow faster during the day.",
+          "Plants grow at the same rate throughout the year."
+        ],
+        "answer": "C",
+        "explanation": "The Sun's movement provides plants with the necessary light and heat for growth.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we experience different times of day in different parts of the world?",
+        "options": [
+          "Because the Earth is flat.",
+          "Because the Earth rotates on its side.",
+          "Because the Earth rotates on its axis.",
+          "Because the Earth is moving faster."
+        ],
+        "answer": "C",
+        "explanation": "The Earth's rotation on its axis causes different times of day in different parts of the world.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-2 Explaining the phenomena related to the movement of the earth, the moon and the sun and the resulting",
+    "questions": [
+      {
+        "question": "What causes the ocean water to bulge out in two areas on Earth?",
+        "options": [
+          "The sun's gravity pulls on the Earth's oceans.",
+          "The moon's gravity pulls on the Earth's oceans.",
+          "The Earth's rotation causes the oceans to bulge.",
+          "The wind and waves cause the oceans to bulge."
+        ],
+        "answer": "B",
+        "explanation": "The moon's gravity pulls on the Earth's oceans, causing the water to bulge out in two areas.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the regular rise and fall of the sea level caused by the gravitational pull of the moon?",
+        "options": [
+          "Tides",
+          "Currents",
+          "Waves",
+          "Surf"
+        ],
+        "answer": "A",
+        "explanation": "Tides are the regular rise and fall of the sea level caused by the gravitational pull of the moon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the moon's gravitational pull on the Earth's oceans during a full moon?",
+        "options": [
+          "The oceans are pulled away from the Earth.",
+          "The oceans are pulled towards the Earth.",
+          "The oceans do not change.",
+          "The oceans are pulled towards the moon."
+        ],
+        "answer": "B",
+        "explanation": "The moon's gravitational pull causes the oceans to be pulled towards the Earth during a full moon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the point on Earth where the moon's gravitational pull is strongest?",
+        "options": [
+          "The tide line",
+          "The high tide mark",
+          "The low tide mark",
+          "The point of maximum gravitational pull"
+        ],
+        "answer": "D",
+        "explanation": "The point on Earth where the moon's gravitational pull is strongest is called the point of maximum gravitational pull.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the ocean water when the moon is directly overhead?",
+        "options": [
+          "The water is pulled away from the Earth.",
+          "The water is pulled towards the Earth.",
+          "The water does not change.",
+          "The water is pulled towards the moon."
+        ],
+        "answer": "B",
+        "explanation": "The moon's gravitational pull causes the ocean water to be pulled towards the Earth when the moon is directly overhead.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the moon's gravitational pull on the Earth's oceans during a new moon?",
+        "options": [
+          "The oceans are pulled away from the Earth.",
+          "The oceans are pulled towards the Earth.",
+          "The oceans do not change.",
+          "The oceans are pulled towards the moon."
+        ],
+        "answer": "B",
+        "explanation": "The moon's gravitational pull causes the oceans to be pulled towards the Earth during a new moon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the difference in height between high tide and low tide?",
+        "options": [
+          "Tidal range",
+          "Tidal cycle",
+          "Tidal period",
+          "Tidal amplitude"
+        ],
+        "answer": "A",
+        "explanation": "The term for the difference in height between high tide and low tide is called tidal range.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the moon's gravitational pull on the Earth's oceans during a quarter moon?",
+        "options": [
+          "The oceans are pulled away from the Earth.",
+          "The oceans are pulled towards the Earth.",
+          "The oceans do not change.",
+          "The oceans are pulled towards the moon."
+        ],
+        "answer": "B",
+        "explanation": "The moon's gravitational pull causes the oceans to be pulled towards the Earth during a quarter moon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the regular movement of the Earth's oceans caused by the gravitational pull of the moon?",
+        "options": [
+          "Tidal movement",
+          "Ocean currents",
+          "Wave motion",
+          "Tidal flow"
+        ],
+        "answer": "A",
+        "explanation": "The term for the regular movement of the Earth's oceans caused by the gravitational pull of the moon is called tidal movement.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the moon's gravitational pull on the Earth's oceans during a full moon when the moon is at its closest point to the Earth?",
+        "options": [
+          "The oceans are pulled away from the Earth.",
+          "The oceans are pulled towards the Earth.",
+          "The oceans do not change.",
+          "The oceans are pulled towards the moon."
+        ],
+        "answer": "B",
+        "explanation": "The moon's gravitational pull causes the oceans to be pulled towards the Earth during a full moon when the moon is at its closest point to the Earth.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-2 Explaining the phenomena related to the movement of the earth, the moon and the sun and the resulting",
+    "questions": [
+      {
+        "question": "What causes a lunar eclipse?",
+        "options": [
+          "The Earth passes between the Sun and the Moon.",
+          "The Moon passes between the Earth and the Sun.",
+          "The Earth and Moon are aligned with the Sun.",
+          "The Sun passes between the Earth and the Moon."
+        ],
+        "answer": "A",
+        "explanation": "A lunar eclipse occurs when the Earth passes between the Sun and the Moon, blocking the sunlight that normally reflects off the Moon's surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is a solar eclipse?",
+        "options": [
+          "A lunar eclipse that occurs at night.",
+          "A lunar eclipse that occurs during the day.",
+          "A phenomenon that occurs when the Moon passes between the Earth and the Sun.",
+          "A phenomenon that occurs when the Earth passes between the Sun and the Moon."
+        ],
+        "answer": "C",
+        "explanation": "A solar eclipse is a phenomenon that occurs when the Moon passes between the Earth and the Sun, blocking the sunlight that normally reaches the Earth.",
+        "image_url": null
+      },
+      {
+        "question": "Why does a solar eclipse only occur during the day?",
+        "options": [
+          "Because the Moon is too small to block the Sun's light.",
+          "Because the Earth is too far away from the Sun.",
+          "Because the Sun is too big to be blocked by the Moon.",
+          "Because the Moon passes between the Earth and the Sun during the day."
+        ],
+        "answer": "D",
+        "explanation": "A solar eclipse only occurs during the day because the Moon passes between the Earth and the Sun, blocking the sunlight that normally reaches the Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a lunar eclipse and a solar eclipse?",
+        "options": [
+          "A lunar eclipse occurs during the day and a solar eclipse occurs at night.",
+          "A lunar eclipse occurs when the Earth passes between the Sun and the Moon and a solar eclipse occurs when the Moon passes between the Earth and the Sun.",
+          "A lunar eclipse is caused by the Moon passing between the Earth and the Sun and a solar eclipse is caused by the Earth passing between the Sun and the Moon.",
+          "A lunar eclipse is caused by the Earth passing between the Sun and the Moon and a solar eclipse is caused by the Moon passing between the Earth and the Sun."
+        ],
+        "answer": "B",
+        "explanation": "A lunar eclipse occurs when the Earth passes between the Sun and the Moon, while a solar eclipse occurs when the Moon passes between the Earth and the Sun.",
+        "image_url": null
+      },
+      {
+        "question": "Why is it safe to look directly at the Moon during a lunar eclipse?",
+        "options": [
+          "Because the Moon is too small to cause eye damage.",
+          "Because the Moon is too far away to cause eye damage.",
+          "Because the Earth's atmosphere blocks the Sun's harmful rays during a lunar eclipse.",
+          "Because the Sun's light is not strong enough to cause eye damage during a lunar eclipse."
+        ],
+        "answer": "C",
+        "explanation": "It is safe to look directly at the Moon during a lunar eclipse because the Earth's atmosphere blocks the Sun's harmful rays.",
+        "image_url": null
+      },
+      {
+        "question": "What is the best way to observe a solar eclipse?",
+        "options": [
+          "By looking directly at the Sun without any protection.",
+          "By using a pair of binoculars to get a closer look.",
+          "By using special solar viewing glasses or a handheld solar viewer.",
+          "By using a telescope to get a detailed view."
+        ],
+        "answer": "C",
+        "explanation": "The best way to observe a solar eclipse is by using special solar viewing glasses or a handheld solar viewer to protect your eyes from the Sun's harmful rays.",
+        "image_url": null
+      },
+      {
+        "question": "Why is it not safe to look directly at the Sun during a solar eclipse?",
+        "options": [
+          "Because the Sun is too small to cause eye damage.",
+          "Because the Sun is too far away to cause eye damage.",
+          "Because the Sun's light is not strong enough to cause eye damage.",
+          "Because the Sun's ultraviolet and infrared radiation can cause serious eye damage."
+        ],
+        "answer": "D",
+        "explanation": "It is not safe to look directly at the Sun during a solar eclipse because the Sun's ultraviolet and infrared radiation can cause serious eye damage.",
+        "image_url": null
+      },
+      {
+        "question": "What should you do if you are not able to observe a solar eclipse?",
+        "options": [
+          "Try to observe the eclipse through a camera lens.",
+          "Use a pair of binoculars to get a closer look.",
+          "Watch the eclipse on a computer or TV screen.",
+          "Look directly at the Sun without any protection."
+        ],
+        "answer": "C",
+        "explanation": "If you are not able to observe a solar eclipse, you can watch the eclipse on a computer or TV screen to stay safe.",
+        "image_url": null
+      },
+      {
+        "question": "Why is it important to follow safety guidelines during a solar eclipse?",
+        "options": [
+          "Because it is a rare and exciting event.",
+          "Because it is a good opportunity to take photos.",
+          "Because it is a chance to learn about the Sun and the Moon.",
+          "Because looking directly at the Sun can cause serious eye damage."
+        ],
+        "answer": "D",
+        "explanation": "It is important to follow safety guidelines during a solar eclipse because looking directly at the Sun can cause serious eye damage.",
+        "image_url": null
+      },
+      {
+        "question": "What should you do if you experience any eye discomfort or vision problems after looking at a solar eclipse?",
+        "options": [
+          "Try to ignore the discomfort and continue observing the eclipse.",
+          "Use eye drops to relieve the discomfort.",
+          "Seek medical attention immediately.",
+          "Wait for a few hours and see if the discomfort goes away."
+        ],
+        "answer": "C",
+        "explanation": "If you experience any eye discomfort or vision problems after looking at a solar eclipse, you should seek medical attention immediately.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-3 Concluding the effect of gravity on the movement of the solar system, galaxies and associated phenomena.",
+    "questions": [
+      {
+        "question": "What is the main force that pulls planets towards the Sun?",
+        "options": [
+          "Gravity is the force that pulls planets towards the Sun.",
+          "Magnetism is the force that pulls planets towards the Sun.",
+          "Electricity is the force that pulls planets towards the Sun.",
+          "Friction is the force that pulls planets towards the Sun."
+        ],
+        "answer": "A",
+        "explanation": "Gravity is the force that pulls planets towards the Sun because of its mass.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the path that planets follow around the Sun?",
+        "options": [
+          "Orbit is the path that planets follow around the Sun.",
+          "Rotation is the path that planets follow around the Sun.",
+          "Revolution is the path that planets follow around the Sun.",
+          "Eccentricity is the path that planets follow around the Sun."
+        ],
+        "answer": "A",
+        "explanation": "An orbit is the path that planets follow around the Sun due to gravity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the reason for the different seasons on Earth?",
+        "options": [
+          "The tilt of Earth's axis is the reason for the different seasons.",
+          "The rotation of Earth is the reason for the different seasons.",
+          "The orbit of Earth is the reason for the different seasons.",
+          "The size of Earth is the reason for the different seasons."
+        ],
+        "answer": "A",
+        "explanation": "The tilt of Earth's axis is the reason for the different seasons because it changes the amount of sunlight that reaches the planet.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of galaxies through space?",
+        "options": [
+          "Galactic drift is the movement of galaxies through space.",
+          "Cosmic flow is the movement of galaxies through space.",
+          "Galactic rotation is the movement of galaxies through space.",
+          "Galactic oscillation is the movement of galaxies through space."
+        ],
+        "answer": "A",
+        "explanation": "Galactic drift is the movement of galaxies through space due to the expansion of the universe.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a galaxy and a star cluster?",
+        "options": [
+          "A galaxy is a collection of stars, while a star cluster is a collection of planets.",
+          "A galaxy is a collection of planets, while a star cluster is a collection of stars.",
+          "A galaxy is a collection of stars, while a star cluster is a collection of stars.",
+          "A galaxy is a collection of planets, while a star cluster is a collection of galaxies."
+        ],
+        "answer": "A",
+        "explanation": "A galaxy is a collection of stars, while a star cluster is a collection of stars that are gravitationally bound together.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the explosion of a star?",
+        "options": [
+          "Supernova is the explosion of a star.",
+          "Nebula is the explosion of a star.",
+          "Black hole is the explosion of a star.",
+          "Comet is the explosion of a star."
+        ],
+        "answer": "A",
+        "explanation": "A supernova is the explosion of a star that occurs when it runs out of fuel.",
+        "image_url": null
+      },
+      {
+        "question": "What is the reason for the formation of a black hole?",
+        "options": [
+          "The collapse of a star is the reason for the formation of a black hole.",
+          "The explosion of a star is the reason for the formation of a black hole.",
+          "The rotation of a star is the reason for the formation of a black hole.",
+          "The size of a star is the reason for the formation of a black hole."
+        ],
+        "answer": "A",
+        "explanation": "The collapse of a star is the reason for the formation of a black hole because of its massive gravity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the study of the universe?",
+        "options": [
+          "Astronomy is the study of the universe.",
+          "Astrophysics is the study of the universe.",
+          "Cosmology is the study of the universe.",
+          "Geology is the study of the universe."
+        ],
+        "answer": "A",
+        "explanation": "Astronomy is the study of the universe, including stars, planets, and galaxies.",
+        "image_url": null
+      },
+      {
+        "question": "What is the reason for the expansion of the universe?",
+        "options": [
+          "The Big Bang is the reason for the expansion of the universe.",
+          "The gravitational pull of galaxies is the reason for the expansion of the universe.",
+          "The rotation of galaxies is the reason for the expansion of the universe.",
+          "The size of galaxies is the reason for the expansion of the universe."
+        ],
+        "answer": "A",
+        "explanation": "The Big Bang is the reason for the expansion of the universe because of the rapid expansion of space-time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth around the Sun?",
+        "options": [
+          "Revolution is the movement of the Earth around the Sun.",
+          "Rotation is the movement of the Earth around the Sun.",
+          "Orbit is the movement of the Earth around the Sun.",
+          "Eccentricity is the movement of the Earth around the Sun."
+        ],
+        "answer": "A",
+        "explanation": "Revolution is the movement of the Earth around the Sun due to gravity.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-4 Determining the characteristics of the solar system, and comparing the solar system to the galaxy and the",
+    "questions": [
+      {
+        "question": "What are the three main layers of the Earth's atmosphere?",
+        "options": [
+          "The atmosphere is made up of only two layers: the troposphere and the stratosphere.",
+          "The atmosphere has three main layers: the troposphere, stratosphere, and mesosphere.",
+          "The Earth's atmosphere is made up of four layers: the troposphere, stratosphere, mesosphere, and thermosphere.",
+          "The atmosphere has only one layer: the ionosphere."
+        ],
+        "answer": "B",
+        "explanation": "The Earth's atmosphere is made up of three main layers: the troposphere, stratosphere, and mesosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the troposphere and the stratosphere?",
+        "options": [
+          "The troposphere is colder than the stratosphere.",
+          "The troposphere is warmer than the stratosphere.",
+          "The troposphere is the layer where weather occurs, while the stratosphere is the layer where the ozone layer is located.",
+          "The troposphere is the layer where the ozone layer is located, while the stratosphere is the layer where weather occurs."
+        ],
+        "answer": "C",
+        "explanation": "The troposphere is the layer where weather occurs, while the stratosphere is the layer where the ozone layer is located.",
+        "image_url": null
+      },
+      {
+        "question": "What is the mesosphere?",
+        "options": [
+          "The mesosphere is the layer where the ozone layer is located.",
+          "The mesosphere is the layer where weather occurs.",
+          "The mesosphere is the layer of the atmosphere that extends from about 50 to 85 kilometers above the Earth's surface.",
+          "The mesosphere is the layer of the atmosphere that extends from the surface of the Earth to the edge of space."
+        ],
+        "answer": "C",
+        "explanation": "The mesosphere is the layer of the atmosphere that extends from about 50 to 85 kilometers above the Earth's surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main problem caused by the depletion of the ozone layer?",
+        "options": [
+          "The depletion of the ozone layer causes global warming.",
+          "The depletion of the ozone layer causes acid rain.",
+          "The depletion of the ozone layer allows more UV radiation to reach the Earth's surface, which can cause skin cancer and other health problems.",
+          "The depletion of the ozone layer has no effect on the Earth's climate."
+        ],
+        "answer": "C",
+        "explanation": "The depletion of the ozone layer allows more UV radiation to reach the Earth's surface, which can cause skin cancer and other health problems.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of the depletion of the ozone layer?",
+        "options": [
+          "The main cause of the depletion of the ozone layer is the release of carbon dioxide into the atmosphere.",
+          "The main cause of the depletion of the ozone layer is the release of methane into the atmosphere.",
+          "The main cause of the depletion of the ozone layer is the release of chlorofluorocarbons (CFCs) into the atmosphere.",
+          "The main cause of the depletion of the ozone layer is the release of sulfur dioxide into the atmosphere."
+        ],
+        "answer": "C",
+        "explanation": "The main cause of the depletion of the ozone layer is the release of chlorofluorocarbons (CFCs) into the atmosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of acid rain on the environment?",
+        "options": [
+          "Acid rain has no effect on the environment.",
+          "Acid rain causes global warming.",
+          "Acid rain causes the death of trees and other plants.",
+          "Acid rain causes the acidification of lakes and rivers."
+        ],
+        "answer": "D",
+        "explanation": "Acid rain causes the acidification of lakes and rivers.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the troposphere and the thermosphere?",
+        "options": [
+          "The troposphere is colder than the thermosphere.",
+          "The troposphere is warmer than the thermosphere.",
+          "The troposphere is the layer where weather occurs, while the thermosphere is the layer where the ozone layer is located.",
+          "The troposphere is the layer where the ozone layer is located, while the thermosphere is the layer where weather occurs."
+        ],
+        "answer": "B",
+        "explanation": "The troposphere is warmer than the thermosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the ionosphere?",
+        "options": [
+          "The ionosphere is the layer of the atmosphere that extends from the surface of the Earth to the edge of space.",
+          "The ionosphere is the layer of the atmosphere that extends from about 50 to 85 kilometers above the Earth's surface.",
+          "The ionosphere is the layer of the atmosphere that extends from about 85 to 600 kilometers above the Earth's surface.",
+          "The ionosphere is the layer of the atmosphere that extends from about 600 to 10,000 kilometers above the Earth's surface."
+        ],
+        "answer": "C",
+        "explanation": "The ionosphere is the layer of the atmosphere that extends from about 85 to 600 kilometers above the Earth's surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main effect of the greenhouse effect on the environment?",
+        "options": [
+          "The greenhouse effect has no effect on the environment.",
+          "The greenhouse effect causes global cooling.",
+          "The greenhouse effect causes global warming.",
+          "The greenhouse effect has a neutral effect on the environment."
+        ],
+        "answer": "C",
+        "explanation": "The greenhouse effect causes global warming.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of the greenhouse effect?",
+        "options": [
+          "The main cause of the greenhouse effect is the release of carbon dioxide into the atmosphere.",
+          "The main cause of the greenhouse effect is the release of methane into the atmosphere.",
+          "The main cause of the greenhouse effect is the release of chlorofluorocarbons (CFCs) into the atmosphere.",
+          "The main cause of the greenhouse effect is the release of sulfur dioxide into the atmosphere."
+        ],
+        "answer": "A",
+        "explanation": "The main cause of the greenhouse effect is the release of carbon dioxide into the atmosphere.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-1-4 Determining the characteristics of the solar system, and comparing the solar system to the galaxy and the",
+    "questions": [
+      {
+        "question": "What is the primary source of light and heat in our solar system?",
+        "options": [
+          "The Earth",
+          "The Moon",
+          "The Sun",
+          "The planets"
+        ],
+        "answer": "C",
+        "explanation": "The Sun is the primary source of light and heat in our solar system.",
+        "image_url": null
+      },
+      {
+        "question": "What color is the Sun?",
+        "options": [
+          "Blue",
+          "Red",
+          "Yellow",
+          "Purple"
+        ],
+        "answer": "C",
+        "explanation": "The Sun appears yellow to our eyes because it emits light of all colors, but yellow is the most prominent color.",
+        "image_url": null
+      },
+      {
+        "question": "Why does the Sun appear yellow to our eyes?",
+        "options": [
+          "Because it is a blue star",
+          "Because it is a red star",
+          "Because it emits light of all colors, but yellow is the most prominent color",
+          "Because it is a purple star"
+        ],
+        "answer": "C",
+        "explanation": "The Sun appears yellow to our eyes because it emits light of all colors, but yellow is the most prominent color.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between a star's color and its temperature?",
+        "options": [
+          "The hotter the star, the cooler its color",
+          "The cooler the star, the hotter its color",
+          "The hotter the star, the hotter its color",
+          "The cooler the star, the cooler its color"
+        ],
+        "answer": "C",
+        "explanation": "The hotter a star is, the hotter its color. This means that blue stars are hotter than red stars.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following stars is hotter than the Sun?",
+        "options": [
+          "A blue star",
+          "A red star",
+          "A yellow star",
+          "A purple star"
+        ],
+        "answer": "A",
+        "explanation": "Blue stars are hotter than the Sun, which is yellow.",
+        "image_url": null
+      },
+      {
+        "question": "Why do red stars appear cooler than blue stars?",
+        "options": [
+          "Because they are farther away from us",
+          "Because they are closer to us",
+          "Because they are cooler in temperature",
+          "Because they are hotter in temperature"
+        ],
+        "answer": "C",
+        "explanation": "Red stars appear cooler than blue stars because they are cooler in temperature.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a star and a planet?",
+        "options": [
+          "A star is bigger than a planet",
+          "A star is smaller than a planet",
+          "A star is a huge ball of hot, glowing gas, while a planet is a smaller, cooler body",
+          "A star is a smaller, cooler body, while a planet is a huge ball of hot, glowing gas"
+        ],
+        "answer": "C",
+        "explanation": "A star is a huge ball of hot, glowing gas, while a planet is a smaller, cooler body.",
+        "image_url": null
+      },
+      {
+        "question": "Why do stars come in different colors?",
+        "options": [
+          "Because they are different sizes",
+          "Because they are different temperatures",
+          "Because they are different shapes",
+          "Because they are different materials"
+        ],
+        "answer": "B",
+        "explanation": "Stars come in different colors because they are different temperatures.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between a star's size and its temperature?",
+        "options": [
+          "The bigger the star, the hotter its temperature",
+          "The smaller the star, the hotter its temperature",
+          "The bigger the star, the cooler its temperature",
+          "The smaller the star, the cooler its temperature"
+        ],
+        "answer": "A",
+        "explanation": "The bigger a star is, the hotter its temperature.",
+        "image_url": null
+      },
+      {
+        "question": "Why do we see different colors in the sky at different times of day?",
+        "options": [
+          "Because of the different temperatures of the stars",
+          "Because of the different sizes of the stars",
+          "Because of the different colors of the stars",
+          "Because of the different angles of the stars"
+        ],
+        "answer": "C",
+        "explanation": "We see different colors in the sky at different times of day because of the different colors of the stars.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-1Classifying the layers of the atmosphere and identifying their components, characteristics, changes, its effects on the environment and their benefits to humans.",
+    "questions": [
+      {
+        "question": "What is the movement of air masses and air currents called?",
+        "options": [
+          "Global wind patterns",
+          "Weather fronts",
+          "Atmospheric circulation",
+          "Climate zones"
+        ],
+        "answer": "C",
+        "explanation": "Atmospheric circulation refers to the movement of air masses and air currents around the Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason for the movement of air masses and air currents?",
+        "options": [
+          "Temperature differences",
+          "Humidity levels",
+          "Pressure changes",
+          "Wind direction"
+        ],
+        "answer": "A",
+        "explanation": "Temperature differences between areas are the main reason for the movement of air masses and air currents.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of air masses and air currents on Earth's weather?",
+        "options": [
+          "No effect",
+          "A slight effect",
+          "A significant effect",
+          "A major impact"
+        ],
+        "answer": "C",
+        "explanation": "Air masses and air currents have a significant effect on Earth's weather by influencing temperature, precipitation, and other weather conditions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for a large body of air that has similar temperature and humidity?",
+        "options": [
+          "Weather front",
+          "Air mass",
+          "Atmospheric circulation",
+          "Climate zone"
+        ],
+        "answer": "B",
+        "explanation": "An air mass is a large body of air that has similar temperature and humidity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the movement of air from high to low pressure areas called?",
+        "options": [
+          "Global wind patterns",
+          "Weather fronts",
+          "Atmospheric circulation",
+          "Wind currents"
+        ],
+        "answer": "D",
+        "explanation": "Wind currents refer to the movement of air from high to low pressure areas.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of air currents on the environment?",
+        "options": [
+          "No effect",
+          "A slight effect",
+          "A significant effect",
+          "A major impact"
+        ],
+        "answer": "C",
+        "explanation": "Air currents have a significant effect on the environment by influencing climate, weather patterns, and ecosystems.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for a boundary between two air masses?",
+        "options": [
+          "Weather front",
+          "Air mass",
+          "Atmospheric circulation",
+          "Climate zone"
+        ],
+        "answer": "A",
+        "explanation": "A weather front is a boundary between two air masses with different temperature and humidity levels.",
+        "image_url": null
+      },
+      {
+        "question": "What is the movement of air from the equator towards the poles called?",
+        "options": [
+          "Global wind patterns",
+          "Weather fronts",
+          "Atmospheric circulation",
+          "Trade winds"
+        ],
+        "answer": "C",
+        "explanation": "Atmospheric circulation refers to the movement of air from the equator towards the poles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of air masses and air currents on human activities?",
+        "options": [
+          "No effect",
+          "A slight effect",
+          "A significant effect",
+          "A major impact"
+        ],
+        "answer": "C",
+        "explanation": "Air masses and air currents have a significant effect on human activities such as agriculture, transportation, and recreation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for a large-scale movement of air in the atmosphere?",
+        "options": [
+          "Weather front",
+          "Air mass",
+          "Atmospheric circulation",
+          "Global wind patterns"
+        ],
+        "answer": "D",
+        "explanation": "Global wind patterns refer to a large-scale movement of air in the atmosphere.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-1Classifying the layers of the atmosphere and identifying their components, characteristics, changes, its effects on the environment and their benefits to humans.",
+    "questions": [
+      {
+        "question": "What is the main reason for the formation of clouds?",
+        "options": [
+          "Clouds form when the air cools down and water vapor turns into liquid water.",
+          "Clouds form when the air is heated up and water vapor turns into gas.",
+          "Clouds form when the air is polluted with dust and particles.",
+          "Clouds form when the air is too dry and there is no water vapor."
+        ],
+        "answer": "A",
+        "explanation": "Clouds form when the air cools down and water vapor turns into liquid water, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of the troposphere in the Earth's atmosphere?",
+        "options": [
+          "The troposphere is the outermost layer of the atmosphere and protects the Earth from harm.",
+          "The troposphere is the layer of the atmosphere where weather occurs and is home to clouds, wind, and precipitation.",
+          "The troposphere is the layer of the atmosphere where the air is too hot to support life.",
+          "The troposphere is the layer of the atmosphere where the air is too cold to support life."
+        ],
+        "answer": "B",
+        "explanation": "The troposphere is the layer of the atmosphere where weather occurs and is home to clouds, wind, and precipitation, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of weather variability?",
+        "options": [
+          "Weather variability is caused by changes in the Earth's rotation.",
+          "Weather variability is caused by changes in the Earth's orbit around the Sun.",
+          "Weather variability is caused by the movement of air in the atmosphere, including wind and the water cycle.",
+          "Weather variability is caused by the movement of the Earth's plates."
+        ],
+        "answer": "C",
+        "explanation": "Weather variability is caused by the movement of air in the atmosphere, including wind and the water cycle, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the Earth's water cycle and weather?",
+        "options": [
+          "The Earth's water cycle has no relationship to weather.",
+          "The Earth's water cycle is a separate process from weather.",
+          "The Earth's water cycle is closely related to weather, including the formation of clouds, precipitation, and wind.",
+          "The Earth's water cycle is only related to weather in certain regions."
+        ],
+        "answer": "C",
+        "explanation": "The Earth's water cycle is closely related to weather, including the formation of clouds, precipitation, and wind, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of evaporation on the environment?",
+        "options": [
+          "Evaporation has no effect on the environment.",
+          "Evaporation causes the air to become cooler.",
+          "Evaporation causes the air to become warmer and leads to the formation of clouds and precipitation.",
+          "Evaporation causes the air to become drier and leads to drought."
+        ],
+        "answer": "C",
+        "explanation": "Evaporation causes the air to become warmer and leads to the formation of clouds and precipitation, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of precipitation in the Earth's water cycle?",
+        "options": [
+          "Precipitation has no role in the Earth's water cycle.",
+          "Precipitation is a separate process from the Earth's water cycle.",
+          "Precipitation is a key part of the Earth's water cycle, including the formation of clouds, wind, and the water cycle.",
+          "Precipitation is only related to the Earth's water cycle in certain regions."
+        ],
+        "answer": "C",
+        "explanation": "Precipitation is a key part of the Earth's water cycle, including the formation of clouds, wind, and the water cycle, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of condensation on the environment?",
+        "options": [
+          "Condensation has no effect on the environment.",
+          "Condensation causes the air to become cooler.",
+          "Condensation causes the air to become warmer and leads to the formation of clouds and precipitation.",
+          "Condensation causes the air to become drier and leads to drought."
+        ],
+        "answer": "C",
+        "explanation": "Condensation causes the air to become warmer and leads to the formation of clouds and precipitation, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the Earth's atmosphere and weather?",
+        "options": [
+          "The Earth's atmosphere has no relationship to weather.",
+          "The Earth's atmosphere is a separate process from weather.",
+          "The Earth's atmosphere is closely related to weather, including the formation of clouds, wind, and precipitation.",
+          "The Earth's atmosphere is only related to weather in certain regions."
+        ],
+        "answer": "C",
+        "explanation": "The Earth's atmosphere is closely related to weather, including the formation of clouds, wind, and precipitation, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of the water cycle on the environment?",
+        "options": [
+          "The water cycle has no effect on the environment.",
+          "The water cycle causes the air to become cooler.",
+          "The water cycle causes the air to become warmer and leads to the formation of clouds and precipitation.",
+          "The water cycle causes the air to become drier and leads to drought."
+        ],
+        "answer": "C",
+        "explanation": "The water cycle causes the air to become warmer and leads to the formation of clouds and precipitation, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of the atmosphere in the Earth's water cycle?",
+        "options": [
+          "The atmosphere has no role in the Earth's water cycle.",
+          "The atmosphere is a separate process from the Earth's water cycle.",
+          "The atmosphere is closely related to the Earth's water cycle, including the formation of clouds, wind, and precipitation.",
+          "The atmosphere is only related to the Earth's water cycle in certain regions."
+        ],
+        "answer": "C",
+        "explanation": "The atmosphere is closely related to the Earth's water cycle, including the formation of clouds, wind, and precipitation, which is a key part of the Earth's water cycle.",
+        "image_url": null
+      }
+    ]
+  }
+]

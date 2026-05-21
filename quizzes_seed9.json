@@ -1,0 +1,2453 @@
+[
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-1-2 Analyzing information related to the movement of celestial bodies and their apparent and relative locations, and deducing the conditions prevailing in",
+    "questions": [
+      {
+        "question": "What is the term for the apparent path of a star or planet across the sky?",
+        "options": [
+          "The ecliptic",
+          "The equator",
+          "The celestial equator",
+          "The horizon"
+        ],
+        "answer": "A",
+        "explanation": "The ecliptic is the apparent path of the Sun, Moon, and planets across the sky.",
+        "image_url": null
+      },
+      {
+        "question": "Why do stars appear to rise and set in the sky?",
+        "options": [
+          "Because they are moving away from us",
+          "Because they are moving towards us",
+          "Because of the Earth's rotation",
+          "Because of the Sun's gravity"
+        ],
+        "answer": "C",
+        "explanation": "The Earth's rotation causes the stars to appear to rise and set in the sky.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the angle between the position of a star or planet and the position of the Sun?",
+        "options": [
+          "Right ascension",
+          "Declination",
+          "Altitude",
+          "Azimuth"
+        ],
+        "answer": "A",
+        "explanation": "Right ascension is the angle between the position of a star or planet and the position of the Sun.",
+        "image_url": null
+      },
+      {
+        "question": "Why do planets appear to move in a retrograde motion?",
+        "options": [
+          "Because they are moving away from us",
+          "Because they are moving towards us",
+          "Because of the Earth's rotation",
+          "Because of the Earth's orbit around the Sun"
+        ],
+        "answer": "D",
+        "explanation": "The Earth's orbit around the Sun causes the planets to appear to move in a retrograde motion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the distance between the Earth and the Sun?",
+        "options": [
+          "Astronomical unit",
+          "Light year",
+          "Parsec",
+          "Kilometer"
+        ],
+        "answer": "A",
+        "explanation": "An astronomical unit is the average distance between the Earth and the Sun.",
+        "image_url": null
+      },
+      {
+        "question": "Why do stars appear to twinkle in the sky?",
+        "options": [
+          "Because of the Earth's rotation",
+          "Because of the Sun's gravity",
+          "Because of the atmosphere's refraction",
+          "Because of the star's size"
+        ],
+        "answer": "C",
+        "explanation": "The atmosphere's refraction causes the stars to appear to twinkle in the sky.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the apparent shift of a star or planet due to the Earth's rotation?",
+        "options": [
+          "Parallax",
+          "Refraction",
+          "Aberration",
+          "Scintillation"
+        ],
+        "answer": "A",
+        "explanation": "Parallax is the apparent shift of a star or planet due to the Earth's rotation.",
+        "image_url": null
+      },
+      {
+        "question": "Why do planets appear to change their brightness in the sky?",
+        "options": [
+          "Because of the Earth's rotation",
+          "Because of the Sun's gravity",
+          "Because of the planet's size",
+          "Because of the planet's distance from the Sun"
+        ],
+        "answer": "D",
+        "explanation": "The planet's distance from the Sun causes the planet to appear to change its brightness in the sky.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the apparent path of the Sun across the sky?",
+        "options": [
+          "The ecliptic",
+          "The equator",
+          "The celestial equator",
+          "The horizon"
+        ],
+        "answer": "A",
+        "explanation": "The ecliptic is the apparent path of the Sun across the sky.",
+        "image_url": null
+      },
+      {
+        "question": "Why do stars appear to have different colors in the sky?",
+        "options": [
+          "Because of the Earth's rotation",
+          "Because of the Sun's gravity",
+          "Because of the atmosphere's refraction",
+          "Because of the star's temperature"
+        ],
+        "answer": "D",
+        "explanation": "The star's temperature causes the star to appear to have different colors in the sky.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-1 Explaining the causes of climate change, its effects and associated",
+    "questions": [
+      {
+        "question": "What is the main cause of the increase in global temperatures?",
+        "options": [
+          "The burning of fossil fuels such as coal, oil, and natural gas",
+          "The release of greenhouse gases from landfills",
+          "The deforestation of large areas of the Amazon rainforest",
+          "The melting of polar ice caps due to seasonal changes"
+        ],
+        "answer": "A",
+        "explanation": "The burning of fossil fuels releases carbon dioxide and other greenhouse gases into the atmosphere, leading to an increase in global temperatures.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of climate change on polar bears?",
+        "options": [
+          "Their populations are increasing due to the availability of more food",
+          "Their habitats are expanding due to the melting of sea ice",
+          "Their populations are declining due to the loss of sea ice and hunting",
+          "Their behavior is changing due to the warmer temperatures"
+        ],
+        "answer": "C",
+        "explanation": "Climate change is causing the loss of sea ice, making it harder for polar bears to hunt and feed, leading to a decline in their populations.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of climate change on global sea levels?",
+        "options": [
+          "They are decreasing due to the melting of ice caps",
+          "They are remaining stable due to the balance of ocean currents",
+          "They are increasing due to the melting of glaciers and ice caps",
+          "They are fluctuating due to seasonal changes"
+        ],
+        "answer": "C",
+        "explanation": "Climate change is causing the melting of glaciers and ice caps, leading to an increase in global sea levels.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of deforestation in climate change?",
+        "options": [
+          "It releases oxygen into the atmosphere",
+          "It absorbs carbon dioxide from the atmosphere",
+          "It releases carbon dioxide and other greenhouse gases into the atmosphere",
+          "It has no impact on climate change"
+        ],
+        "answer": "C",
+        "explanation": "Deforestation releases carbon dioxide and other greenhouse gases into the atmosphere, contributing to climate change.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of climate change on weather patterns?",
+        "options": [
+          "They are becoming more predictable due to the increase in global temperatures",
+          "They are becoming more extreme due to the increase in global temperatures",
+          "They are remaining the same due to the balance of atmospheric conditions",
+          "They are becoming less frequent due to the decrease in global temperatures"
+        ],
+        "answer": "B",
+        "explanation": "Climate change is leading to more extreme weather events such as heatwaves, droughts, and heavy rainfall.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of the increase in ocean acidification?",
+        "options": [
+          "The release of carbon dioxide from the ocean",
+          "The increase in global temperatures",
+          "The burning of fossil fuels",
+          "The melting of polar ice caps"
+        ],
+        "answer": "C",
+        "explanation": "The burning of fossil fuels releases carbon dioxide into the atmosphere, which is then absorbed by the ocean, leading to ocean acidification.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of climate change on coral reefs?",
+        "options": [
+          "They are becoming more diverse due to the increase in global temperatures",
+          "They are remaining stable due to the balance of ocean conditions",
+          "They are becoming less diverse due to the increase in global temperatures and ocean acidification",
+          "They are disappearing due to the decrease in global temperatures"
+        ],
+        "answer": "C",
+        "explanation": "Climate change is causing coral bleaching and ocean acidification, leading to a decline in coral reef diversity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of climate change on agriculture?",
+        "options": [
+          "It is becoming more productive due to the increase in global temperatures",
+          "It is remaining stable due to the balance of weather conditions",
+          "It is becoming less productive due to the increase in global temperatures and changing precipitation patterns",
+          "It is disappearing due to the decrease in global temperatures"
+        ],
+        "answer": "C",
+        "explanation": "Climate change is leading to changing precipitation patterns and increased temperatures, making it harder for crops to grow and leading to a decline in agricultural productivity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of methane in climate change?",
+        "options": [
+          "It is a greenhouse gas that contributes to climate change",
+          "It is a natural gas that is not related to climate change",
+          "It is a pollutant that has no impact on climate change",
+          "It is a byproduct of human activity that has no impact on climate change"
+        ],
+        "answer": "A",
+        "explanation": "Methane is a potent greenhouse gas that contributes to climate change, particularly in the short-term.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of climate change on human health?",
+        "options": [
+          "It is having no impact on human health",
+          "It is leading to an increase in respiratory diseases due to poor air quality",
+          "It is leading to an increase in heat-related illnesses due to extreme temperatures",
+          "It is leading to an increase in water-borne diseases due to changing precipitation patterns"
+        ],
+        "answer": "C",
+        "explanation": "Climate change is leading to an increase in heat-related illnesses and other health problems due to extreme temperatures and changing weather patterns.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-2 Understanding the importance of the carbon cycle, its geological utility and describing the phenomena associated",
+    "questions": [
+      {
+        "question": "What is the primary method by which carbon is transported from the atmosphere to the Earth's crust?",
+        "options": [
+          "Photosynthesis and respiration",
+          "Weathering and erosion",
+          "Plate tectonics and volcanic activity",
+          "Human activities and industrial processes"
+        ],
+        "answer": "A",
+        "explanation": "Photosynthesis and respiration are the primary methods by which carbon is transported from the atmosphere to the Earth's crust, as plants absorb carbon dioxide through photosynthesis and release it through respiration.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a geological process that transports carbon through the Earth's layers?",
+        "options": [
+          "Weathering of rocks and minerals",
+          "Formation of sedimentary rocks",
+          "Plate tectonics and mountain building",
+          "Volcanic eruptions and lava flows"
+        ],
+        "answer": "A",
+        "explanation": "Weathering of rocks and minerals is an example of a geological process that transports carbon through the Earth's layers, as it breaks down rocks and releases carbon dioxide into the atmosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of the ocean in the carbon cycle?",
+        "options": [
+          "To absorb and store carbon dioxide from the atmosphere",
+          "To release carbon dioxide into the atmosphere",
+          "To transport carbon through the Earth's layers",
+          "To have no impact on the carbon cycle"
+        ],
+        "answer": "A",
+        "explanation": "The ocean plays a crucial role in the carbon cycle by absorbing and storing carbon dioxide from the atmosphere, which helps to regulate the Earth's climate.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a human activity that affects the carbon cycle?",
+        "options": [
+          "Deforestation and land use changes",
+          "Industrial processes and fossil fuel burning",
+          "Agricultural practices and soil management",
+          "All of the above"
+        ],
+        "answer": "D",
+        "explanation": "All of the above human activities affect the carbon cycle, as deforestation and land use changes release carbon stored in trees, industrial processes and fossil fuel burning release stored carbon into the atmosphere, and agricultural practices and soil management can affect the amount of carbon stored in soils.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which carbon is transported through the Earth's crust and released into the atmosphere?",
+        "options": [
+          "Weathering and erosion",
+          "Plate tectonics and volcanic activity",
+          "Human activities and industrial processes",
+          "Biological processes and decomposition"
+        ],
+        "answer": "A",
+        "explanation": "Weathering and erosion are the processes by which carbon is transported through the Earth's crust and released into the atmosphere, as rocks and minerals are broken down and release carbon dioxide into the atmosphere.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a natural process that transports carbon through the Earth's layers?",
+        "options": [
+          "Weathering of rocks and minerals",
+          "Formation of sedimentary rocks",
+          "Plate tectonics and mountain building",
+          "Volcanic eruptions and lava flows"
+        ],
+        "answer": "A",
+        "explanation": "Weathering of rocks and minerals is an example of a natural process that transports carbon through the Earth's layers, as it breaks down rocks and releases carbon dioxide into the atmosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of the atmosphere in the carbon cycle?",
+        "options": [
+          "To absorb and store carbon dioxide from the Earth's crust",
+          "To release carbon dioxide into the Earth's crust",
+          "To transport carbon through the Earth's layers",
+          "To have no impact on the carbon cycle"
+        ],
+        "answer": "A",
+        "explanation": "The atmosphere plays a crucial role in the carbon cycle by absorbing and storing carbon dioxide from the Earth's crust, which helps to regulate the Earth's climate.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a geological process that affects the carbon cycle?",
+        "options": [
+          "Weathering of rocks and minerals",
+          "Formation of sedimentary rocks",
+          "Plate tectonics and mountain building",
+          "Volcanic eruptions and lava flows"
+        ],
+        "answer": "A",
+        "explanation": "Weathering of rocks and minerals is an example of a geological process that affects the carbon cycle, as it breaks down rocks and releases carbon dioxide into the atmosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which carbon is transported from the Earth's crust to the atmosphere?",
+        "options": [
+          "Weathering and erosion",
+          "Plate tectonics and volcanic activity",
+          "Human activities and industrial processes",
+          "Biological processes and decomposition"
+        ],
+        "answer": "A",
+        "explanation": "Weathering and erosion are the processes by which carbon is transported from the Earth's crust to the atmosphere, as rocks and minerals are broken down and release carbon dioxide into the atmosphere.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a human activity that affects the carbon cycle?",
+        "options": [
+          "Deforestation and land use changes",
+          "Industrial processes and fossil fuel burning",
+          "Agricultural practices and soil management",
+          "All of the above"
+        ],
+        "answer": "D",
+        "explanation": "All of the above human activities affect the carbon cycle, as deforestation and land use changes release carbon stored in trees, industrial processes and fossil fuel burning release stored carbon into the atmosphere, and agricultural practices and soil management can affect the amount of carbon stored in soils.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-4 Describing the types of rocks and minerals, their characteristics and",
+    "questions": [
+      {
+        "question": "What is the primary difference between an igneous rock and a sedimentary rock?",
+        "options": [
+          "Igneous rocks are formed from the cooling of magma, while sedimentary rocks are formed from the compression of sediments.",
+          "Sedimentary rocks are formed from the cooling of magma, while igneous rocks are formed from the compression of sediments.",
+          "Igneous rocks are formed from the compression of sediments, while sedimentary rocks are formed from the cooling of magma.",
+          "Sedimentary rocks are formed from the erosion of existing rocks, while igneous rocks are formed from the cooling of magma."
+        ],
+        "answer": "A",
+        "explanation": "Igneous rocks are formed from the cooling of magma, while sedimentary rocks are formed from the compression of sediments.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following minerals is known for its hardness of 10 on the Mohs scale?",
+        "options": [
+          "Quartz",
+          "Feldspar",
+          "Mica",
+          "Diamond"
+        ],
+        "answer": "D",
+        "explanation": "Diamond is known for its hardness of 10 on the Mohs scale.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when rocks are broken down into smaller pieces?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Plate Tectonics"
+        ],
+        "answer": "A",
+        "explanation": "Weathering is the process called when rocks are broken down into smaller pieces.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of rock is formed from the cooling and solidification of magma or lava?",
+        "options": [
+          "Igneous",
+          "Sedimentary",
+          "Metamorphic",
+          "Foliated"
+        ],
+        "answer": "A",
+        "explanation": "Igneous rock is formed from the cooling and solidification of magma or lava.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the study of the composition, properties, and uses of minerals?",
+        "options": [
+          "Mineralogy",
+          "Geology",
+          "Petroleum Science",
+          "Earth Science"
+        ],
+        "answer": "A",
+        "explanation": "Mineralogy is the term for the study of the composition, properties, and uses of minerals.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following minerals is commonly used in electronics?",
+        "options": [
+          "Copper",
+          "Silver",
+          "Gold",
+          "Aluminum"
+        ],
+        "answer": "A",
+        "explanation": "Copper is commonly used in electronics.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when sediments are compressed and cemented together?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Lithification"
+        ],
+        "answer": "D",
+        "explanation": "Lithification is the process called when sediments are compressed and cemented together.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of rock is formed from the alteration of existing rocks under high pressure and temperature?",
+        "options": [
+          "Igneous",
+          "Sedimentary",
+          "Metamorphic",
+          "Foliated"
+        ],
+        "answer": "C",
+        "explanation": "Metamorphic rock is formed from the alteration of existing rocks under high pressure and temperature.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the arrangement of minerals in a rock?",
+        "options": [
+          "Texture",
+          "Mineralogy",
+          "Geology",
+          "Crystal Structure"
+        ],
+        "answer": "A",
+        "explanation": "Texture is the term for the arrangement of minerals in a rock.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following minerals is commonly used in jewelry?",
+        "options": [
+          "Quartz",
+          "Feldspar",
+          "Mica",
+          "Diamond"
+        ],
+        "answer": "D",
+        "explanation": "Diamond is commonly used in jewelry.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-4 Describing the types of rocks and minerals, their characteristics and",
+    "questions": [
+      {
+        "question": "What is the main difference between a mineral and a rock?",
+        "options": [
+          "A mineral is a naturally occurring inorganic solid with a specific chemical composition, whereas a rock is a naturally occurring solid mass of mineral material.",
+          "A rock is a naturally occurring inorganic solid with a specific chemical composition, whereas a mineral is a naturally occurring solid mass of mineral material.",
+          "A mineral is a naturally occurring solid mass of mineral material, whereas a rock is a naturally occurring inorganic solid with a specific chemical composition.",
+          "A rock is a naturally occurring solid mass of mineral material, whereas a mineral is a naturally occurring inorganic solid with a specific chemical composition."
+        ],
+        "answer": "A",
+        "explanation": "A mineral has a specific chemical composition, whereas a rock is a collection of minerals.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a characteristic of a mineral?",
+        "options": [
+          "It is a naturally occurring solid mass of mineral material.",
+          "It has a specific chemical composition and a crystalline structure.",
+          "It is a naturally occurring inorganic solid with a specific chemical composition.",
+          "It is a naturally occurring solid with a specific chemical composition and a crystalline structure."
+        ],
+        "answer": "B",
+        "explanation": "A mineral has a specific chemical composition and a crystalline structure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the arrangement of atoms in a mineral?",
+        "options": [
+          "Crystal lattice",
+          "Mineral structure",
+          "Atomic arrangement",
+          "Molecular pattern"
+        ],
+        "answer": "A",
+        "explanation": "The arrangement of atoms in a mineral is called a crystal lattice.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a mineral?",
+        "options": [
+          "Quartz is a type of rock.",
+          "Quartz is a type of mineral.",
+          "Quartz is a type of metal.",
+          "Quartz is a type of gas."
+        ],
+        "answer": "B",
+        "explanation": "Quartz is a naturally occurring inorganic solid with a specific chemical composition and a crystalline structure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process of forming a new mineral?",
+        "options": [
+          "Mineralization",
+          "Crystallization",
+          "Metamorphism",
+          "Weathering"
+        ],
+        "answer": "B",
+        "explanation": "The process of forming a new mineral is called crystallization.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a characteristic of a mineral?",
+        "options": [
+          "It is a naturally occurring solid with a specific chemical composition and a crystalline structure.",
+          "It is a naturally occurring inorganic solid with a specific chemical composition.",
+          "It is a naturally occurring solid mass of mineral material.",
+          "It is a naturally occurring solid with a specific chemical composition."
+        ],
+        "answer": "A",
+        "explanation": "A mineral has a specific chemical composition and a crystalline structure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the study of minerals?",
+        "options": [
+          "Mineralogy",
+          "Geology",
+          "Crystallography",
+          "Petroleum science"
+        ],
+        "answer": "A",
+        "explanation": "The study of minerals is called mineralogy.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a mineral group?",
+        "options": [
+          "Quartz and feldspar are types of rocks.",
+          "Quartz and feldspar are types of minerals.",
+          "Quartz and feldspar are types of metals.",
+          "Quartz and feldspar are types of gases."
+        ],
+        "answer": "B",
+        "explanation": "Quartz and feldspar are examples of minerals that belong to the same mineral group.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process of changing the mineral composition of a rock?",
+        "options": [
+          "Metamorphism",
+          "Weathering",
+          "Erosion",
+          "Plate tectonics"
+        ],
+        "answer": "A",
+        "explanation": "The process of changing the mineral composition of a rock is called metamorphism.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a characteristic of a mineral?",
+        "options": [
+          "It is a naturally occurring solid with a specific chemical composition.",
+          "It is a naturally occurring inorganic solid with a specific chemical composition and a crystalline structure.",
+          "It is a naturally occurring solid mass of mineral material.",
+          "It is a naturally occurring solid with a specific chemical composition and a crystalline structure."
+        ],
+        "answer": "B",
+        "explanation": "A mineral has a specific chemical composition and a crystalline structure.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-5 Explaining the characteristics of different rocks, their classification methods, and the cycle of their change from one type to another.",
+    "questions": [
+      {
+        "question": "What is the primary process that transforms sedimentary rocks into metamorphic rocks?",
+        "options": [
+          "The rocks are subjected to high temperatures and pressures over a long period of time.",
+          "The rocks are exposed to water and wind erosion.",
+          "The rocks are melted and reformed into new minerals.",
+          "The rocks are affected by chemical reactions with surrounding rocks."
+        ],
+        "answer": "A",
+        "explanation": "Metamorphic rocks are formed when sedimentary or igneous rocks are subjected to high temperatures and pressures, causing changes in their mineral composition and structure.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following metamorphic rocks is formed from the alteration of shale?",
+        "options": [
+          "Marble",
+          "Slate",
+          "Gneiss",
+          "Schist"
+        ],
+        "answer": "B",
+        "explanation": "Slate is a type of metamorphic rock that forms from the alteration of shale, which is a type of sedimentary rock.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary characteristic that distinguishes marble from other metamorphic rocks?",
+        "options": [
+          "Its high density",
+          "Its high hardness",
+          "Its high calcium content",
+          "Its banded or foliated structure"
+        ],
+        "answer": "C",
+        "explanation": "Marble is a type of metamorphic rock that is characterized by its high calcium content, which is derived from the alteration of limestone or dolostone.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following metamorphic rocks is formed from the alteration of mica minerals?",
+        "options": [
+          "Gneiss",
+          "Schist",
+          "Phyllite",
+          "Quartzite"
+        ],
+        "answer": "B",
+        "explanation": "Schist is a type of metamorphic rock that forms from the alteration of mica minerals, which are common in igneous and sedimentary rocks.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary process that transforms igneous rocks into metamorphic rocks?",
+        "options": [
+          "The rocks are subjected to high temperatures and pressures over a long period of time.",
+          "The rocks are exposed to water and wind erosion.",
+          "The rocks are melted and reformed into new minerals.",
+          "The rocks are affected by chemical reactions with surrounding rocks."
+        ],
+        "answer": "A",
+        "explanation": "Metamorphic rocks can form from the alteration of igneous rocks, which are subjected to high temperatures and pressures, causing changes in their mineral composition and structure.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following metamorphic rocks is formed from the alteration of quartz minerals?",
+        "options": [
+          "Marble",
+          "Slate",
+          "Gneiss",
+          "Quartzite"
+        ],
+        "answer": "D",
+        "explanation": "Quartzite is a type of metamorphic rock that forms from the alteration of quartz minerals, which are common in igneous and sedimentary rocks.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary characteristic that distinguishes gneiss from other metamorphic rocks?",
+        "options": [
+          "Its high density",
+          "Its high hardness",
+          "Its banded or foliated structure",
+          "Its high calcium content"
+        ],
+        "answer": "C",
+        "explanation": "Gneiss is a type of metamorphic rock that is characterized by its banded or foliated structure, which is formed from the alteration of igneous or sedimentary rocks.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following metamorphic rocks is formed from the alteration of limestone?",
+        "options": [
+          "Marble",
+          "Slate",
+          "Gneiss",
+          "Schist"
+        ],
+        "answer": "A",
+        "explanation": "Marble is a type of metamorphic rock that forms from the alteration of limestone, which is a type of sedimentary rock.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary process that transforms sedimentary rocks into foliated metamorphic rocks?",
+        "options": [
+          "The rocks are subjected to high temperatures and pressures over a long period of time.",
+          "The rocks are exposed to water and wind erosion.",
+          "The rocks are melted and reformed into new minerals.",
+          "The rocks are affected by chemical reactions with surrounding rocks."
+        ],
+        "answer": "A",
+        "explanation": "Foliated metamorphic rocks, such as gneiss and schist, form from the alteration of sedimentary rocks, which are subjected to high temperatures and pressures, causing changes in their mineral composition and structure.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following metamorphic rocks is formed from the alteration of quartz and feldspar minerals?",
+        "options": [
+          "Marble",
+          "Slate",
+          "Gneiss",
+          "Granulite"
+        ],
+        "answer": "C",
+        "explanation": "Gneiss is a type of metamorphic rock that forms from the alteration of quartz and feldspar minerals, which are common in igneous and sedimentary rocks.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-5 Explaining the characteristics of different rocks, their classification methods, and the cycle of their change from one type to another.",
+    "questions": [
+      {
+        "question": "What is the primary method of sedimentary rock formation?",
+        "options": [
+          "Weathering and erosion of existing rocks",
+          "Magma cooling and solidifying",
+          "Pressure and heat from the Earth's crust",
+          "Volcanic eruptions and lava cooling"
+        ],
+        "answer": "A",
+        "explanation": "Sedimentary rocks are formed through the weathering and erosion of existing rocks, which are then compacted and cemented together.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a characteristic of sedimentary rocks?",
+        "options": [
+          "They are formed from the cooling and solidification of magma",
+          "They are composed of minerals that are not found in igneous rocks",
+          "They are formed from the remains of plants and animals",
+          "They are always hard and dense"
+        ],
+        "answer": "C",
+        "explanation": "Sedimentary rocks are often composed of the remains of plants and animals, such as sand, silt, and clay.",
+        "image_url": null
+      },
+      {
+        "question": "How are sedimentary rocks typically classified?",
+        "options": [
+          "Based on their texture and composition",
+          "Based on their color and hardness",
+          "Based on their origin and formation process",
+          "Based on their shape and size"
+        ],
+        "answer": "C",
+        "explanation": "Sedimentary rocks are typically classified based on their origin and formation process, such as clastic, chemical, or organic sedimentary rocks.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when existing rocks are broken down into smaller particles?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Plate tectonics"
+        ],
+        "answer": "A",
+        "explanation": "Weathering is the process of breaking down existing rocks into smaller particles through exposure to wind, water, and ice.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a sedimentary rock?",
+        "options": [
+          "Granite",
+          "Basalt",
+          "Sandstone",
+          "Quartzite"
+        ],
+        "answer": "C",
+        "explanation": "Sandstone is a type of sedimentary rock that is formed from sand-sized particles of minerals and rock fragments.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the compaction of sedimentary particles?",
+        "options": [
+          "The formation of a new igneous rock",
+          "The creation of a new sedimentary rock",
+          "The increase in the size of the sedimentary particles",
+          "The decrease in the porosity of the sedimentary rock"
+        ],
+        "answer": "D",
+        "explanation": "The compaction of sedimentary particles results in a decrease in the porosity of the sedimentary rock, making it more dense and solid.",
+        "image_url": null
+      },
+      {
+        "question": "How do sedimentary rocks differ from igneous rocks?",
+        "options": [
+          "Sedimentary rocks are formed from the cooling and solidification of magma",
+          "Sedimentary rocks are composed of minerals that are not found in igneous rocks",
+          "Sedimentary rocks are formed from the remains of plants and animals",
+          "Sedimentary rocks are always hard and dense"
+        ],
+        "answer": "B",
+        "explanation": "Sedimentary rocks are often composed of minerals that are not found in igneous rocks, such as calcium carbonate and silica.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when sedimentary particles are cemented together?",
+        "options": [
+          "Lithification",
+          "Compaction",
+          "Weathering",
+          "Erosion"
+        ],
+        "answer": "A",
+        "explanation": "Lithification is the process of cementing sedimentary particles together to form a new sedimentary rock.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a characteristic of clastic sedimentary rocks?",
+        "options": [
+          "They are formed from the remains of plants and animals",
+          "They are composed of minerals that are not found in igneous rocks",
+          "They are formed from the cementation of sedimentary particles",
+          "They are always soft and porous"
+        ],
+        "answer": "C",
+        "explanation": "Clastic sedimentary rocks are formed from the cementation of sedimentary particles, such as sand and silt.",
+        "image_url": null
+      },
+      {
+        "question": "How do sedimentary rocks contribute to the formation of new rocks?",
+        "options": [
+          "Through the process of weathering and erosion",
+          "Through the process of plate tectonics",
+          "Through the process of metamorphism",
+          "Through the process of sedimentation"
+        ],
+        "answer": "D",
+        "explanation": "Sedimentary rocks contribute to the formation of new rocks through the process of sedimentation, where existing rocks are broken down and reformed into new sedimentary rocks.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-5 Explaining the characteristics of different rocks, their classification methods, and the cycle of their change from one type to another.",
+    "questions": [
+      {
+        "question": "What is the process by which rocks are transformed from one type to another?",
+        "options": [
+          "The rock cycle is a series of changes that occur over millions of years.",
+          "The rock cycle is a process that only occurs on Earth's surface.",
+          "The rock cycle is a type of chemical reaction.",
+          "The rock cycle is a type of physical change."
+        ],
+        "answer": "A",
+        "explanation": "The rock cycle is a series of changes that occur over millions of years, including the transformation of igneous, sedimentary, and metamorphic rocks.",
+        "image_url": null
+      },
+      {
+        "question": "What type of rock is formed from the cooling and solidification of magma or lava?",
+        "options": [
+          "Sedimentary rock",
+          "Igneous rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "B",
+        "explanation": "Igneous rock is formed from the cooling and solidification of magma or lava.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which existing rocks are changed by heat and pressure?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Metamorphism",
+          "Plate tectonics"
+        ],
+        "answer": "C",
+        "explanation": "Metamorphism is the process by which existing rocks are changed by heat and pressure.",
+        "image_url": null
+      },
+      {
+        "question": "What type of rock is formed from the accumulation and compression of sediments?",
+        "options": [
+          "Igneous rock",
+          "Sedimentary rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "B",
+        "explanation": "Sedimentary rock is formed from the accumulation and compression of sediments.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's crust that can cause rocks to change?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Metamorphism"
+        ],
+        "answer": "C",
+        "explanation": "Plate tectonics is the movement of the Earth's crust that can cause rocks to change.",
+        "image_url": null
+      },
+      {
+        "question": "What type of rock is formed from the alteration of existing rocks by heat and pressure?",
+        "options": [
+          "Igneous rock",
+          "Sedimentary rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "C",
+        "explanation": "Metamorphic rock is formed from the alteration of existing rocks by heat and pressure.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which rocks are broken down into smaller particles?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Metamorphism"
+        ],
+        "answer": "A",
+        "explanation": "Weathering is the process by which rocks are broken down into smaller particles.",
+        "image_url": null
+      },
+      {
+        "question": "What type of rock is formed from the cooling and solidification of magma or lava beneath the Earth's surface?",
+        "options": [
+          "Sedimentary rock",
+          "Igneous rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "B",
+        "explanation": "Igneous rock is formed from the cooling and solidification of magma or lava beneath the Earth's surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of rocks and sediments from one location to another?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Deposition"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the movement of rocks and sediments from one location to another.",
+        "image_url": null
+      },
+      {
+        "question": "What type of rock is formed from the alteration of existing rocks by heat and pressure, resulting in a new rock with a different mineral composition?",
+        "options": [
+          "Igneous rock",
+          "Sedimentary rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "C",
+        "explanation": "Metamorphic rock is formed from the alteration of existing rocks by heat and pressure, resulting in a new rock with a different mineral composition.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-6 Explaining the causes of stresses affecting the rocks that make up the Earth’s interior, and describing the resulting effects.",
+    "questions": [
+      {
+        "question": "What is the theory that explains the movement of the Earth's surface?",
+        "options": [
+          "The theory of continental drift",
+          "The theory of plate tectonics",
+          "The theory of erosion",
+          "The theory of weathering"
+        ],
+        "answer": "B",
+        "explanation": "The theory of plate tectonics explains how the Earth's surface is divided into moving plates that can cause earthquakes, volcanoes, and the creation of mountain ranges.",
+        "image_url": null
+      },
+      {
+        "question": "What is the lithosphere?",
+        "options": [
+          "The outermost layer of the Earth's crust",
+          "The innermost layer of the Earth's core",
+          "The layer of the Earth's mantle that surrounds the core",
+          "The layer of the Earth's crust that is broken into plates"
+        ],
+        "answer": "A",
+        "explanation": "The lithosphere is the outermost layer of the Earth's crust, which is broken into several large plates that move relative to each other.",
+        "image_url": null
+      },
+      {
+        "question": "What are the two main types of tectonic plates?",
+        "options": [
+          "Oceanic and continental plates",
+          "Continental and atmospheric plates",
+          "Oceanic and terrestrial plates",
+          "Continental and oceanic plates"
+        ],
+        "answer": "A",
+        "explanation": "The two main types of tectonic plates are oceanic plates, which are denser and heavier, and continental plates, which are less dense and lighter.",
+        "image_url": null
+      },
+      {
+        "question": "What is the fluid layer of the Earth's interior?",
+        "options": [
+          "The mantle",
+          "The core",
+          "The crust",
+          "The hydrosphere"
+        ],
+        "answer": "B",
+        "explanation": "The fluid layer of the Earth's interior is the mantle, which is a thick layer of hot, viscous rock that surrounds the core.",
+        "image_url": null
+      },
+      {
+        "question": "What is the shape of the Earth's core?",
+        "options": [
+          "Spherical",
+          "Elliptical",
+          "Cylindrical",
+          "Irregular"
+        ],
+        "answer": "A",
+        "explanation": "The Earth's core is a sphere, which is a perfect ball shape.",
+        "image_url": null
+      },
+      {
+        "question": "What is the layer of the Earth's interior that surrounds the core?",
+        "options": [
+          "The crust",
+          "The mantle",
+          "The lithosphere",
+          "The hydrosphere"
+        ],
+        "answer": "B",
+        "explanation": "The layer of the Earth's interior that surrounds the core is the mantle, which is a thick layer of hot, viscous rock.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which the Earth's surface is broken into plates?",
+        "options": [
+          "Plate tectonics",
+          "Continental drift",
+          "Weathering",
+          "Erosion"
+        ],
+        "answer": "A",
+        "explanation": "Plate tectonics is the process by which the Earth's surface is broken into plates that move relative to each other.",
+        "image_url": null
+      },
+      {
+        "question": "What is the type of plate that is less dense and lighter?",
+        "options": [
+          "Oceanic plate",
+          "Continental plate",
+          "Mantle plate",
+          "Crust plate"
+        ],
+        "answer": "B",
+        "explanation": "Continental plates are less dense and lighter than oceanic plates.",
+        "image_url": null
+      },
+      {
+        "question": "What is the layer of the Earth's interior that is broken into plates?",
+        "options": [
+          "The core",
+          "The mantle",
+          "The crust",
+          "The lithosphere"
+        ],
+        "answer": "D",
+        "explanation": "The lithosphere is the layer of the Earth's interior that is broken into plates.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which the Earth's surface is shaped by the movement of plates?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Continental drift"
+        ],
+        "answer": "C",
+        "explanation": "Plate tectonics is the process by which the Earth's surface is shaped by the movement of plates.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-6 Explaining the causes of stresses affecting the rocks that make up the Earth’s interior, and describing the resulting effects.",
+    "questions": [
+      {
+        "question": "What is the main cause of earthquakes?",
+        "options": [
+          "Movement of the Earth's crust due to plate tectonics",
+          "Volcanic eruptions",
+          "Weathering and erosion",
+          "Human activities"
+        ],
+        "answer": "A",
+        "explanation": "Earthquakes are primarily caused by the movement of the Earth's crust due to plate tectonics.",
+        "image_url": null
+      },
+      {
+        "question": "What type of seismic wave travels through the Earth's surface?",
+        "options": [
+          "P-waves",
+          "S-waves",
+          "Surface waves",
+          "Body waves"
+        ],
+        "answer": "C",
+        "explanation": "Surface waves travel through the Earth's surface and are responsible for most of the damage caused by earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the point on the Earth's surface directly above the epicenter of an earthquake?",
+        "options": [
+          "Epicenter",
+          "Hypocenter",
+          "Focal point",
+          "Seismic station"
+        ],
+        "answer": "A",
+        "explanation": "The epicenter is the point on the Earth's surface directly above the hypocenter of an earthquake.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the point inside the Earth where an earthquake occurs?",
+        "options": [
+          "Epicenter",
+          "Hypocenter",
+          "Focal point",
+          "Seismic station"
+        ],
+        "answer": "B",
+        "explanation": "The hypocenter is the point inside the Earth where an earthquake occurs.",
+        "image_url": null
+      },
+      {
+        "question": "What type of seismic wave travels through the Earth's interior?",
+        "options": [
+          "P-waves",
+          "S-waves",
+          "Surface waves",
+          "Body waves"
+        ],
+        "answer": "A",
+        "explanation": "P-waves travel through the Earth's interior and are the fastest type of seismic wave.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the point on the Earth's surface where seismic waves are detected?",
+        "options": [
+          "Epicenter",
+          "Hypocenter",
+          "Seismic station",
+          "Focal point"
+        ],
+        "answer": "C",
+        "explanation": "A seismic station is the point on the Earth's surface where seismic waves are detected.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main effect of earthquakes on the Earth's surface?",
+        "options": [
+          "Volcanic eruptions",
+          "Weathering and erosion",
+          "Landslides and soil liquefaction",
+          "Human activities"
+        ],
+        "answer": "C",
+        "explanation": "Earthquakes can cause landslides and soil liquefaction, which can lead to significant damage and loss of life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the point on the Earth's surface where seismic waves are recorded?",
+        "options": [
+          "Epicenter",
+          "Hypocenter",
+          "Seismic station",
+          "Focal point"
+        ],
+        "answer": "D",
+        "explanation": "A focal point is the point on the Earth's surface where seismic waves are recorded.",
+        "image_url": null
+      },
+      {
+        "question": "What type of seismic wave is responsible for most of the damage caused by earthquakes?",
+        "options": [
+          "P-waves",
+          "S-waves",
+          "Surface waves",
+          "Body waves"
+        ],
+        "answer": "C",
+        "explanation": "Surface waves are responsible for most of the damage caused by earthquakes due to their ability to cause buildings to sway and collapse.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's crust that causes earthquakes?",
+        "options": [
+          "Plate tectonics",
+          "Volcanic eruptions",
+          "Weathering and erosion",
+          "Human activities"
+        ],
+        "answer": "A",
+        "explanation": "Plate tectonics is the movement of the Earth's crust that causes earthquakes.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-6 Explaining the causes of stresses affecting the rocks that make up the Earth’s interior, and describing the resulting effects.",
+    "questions": [
+      {
+        "question": "What is the main cause of earthquakes?",
+        "options": [
+          "Movement of the Earth's crust due to plate tectonics",
+          "Volcanic eruptions",
+          "Weathering and erosion",
+          "Human activities"
+        ],
+        "answer": "A",
+        "explanation": "Earthquakes are primarily caused by the movement of the Earth's crust due to plate tectonics.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the Earth's surface during an earthquake?",
+        "options": [
+          "The Earth's surface becomes smoother",
+          "The Earth's surface becomes more rugged",
+          "The Earth's surface experiences sudden shaking and trembling",
+          "The Earth's surface remains unchanged"
+        ],
+        "answer": "C",
+        "explanation": "During an earthquake, the Earth's surface experiences sudden shaking and trembling due to the release of energy.",
+        "image_url": null
+      },
+      {
+        "question": "Why do earthquakes often occur in certain regions?",
+        "options": [
+          "Because of the presence of mountains",
+          "Because of the presence of oceans",
+          "Because of the movement of tectonic plates",
+          "Because of the climate"
+        ],
+        "answer": "C",
+        "explanation": "Earthquakes often occur in regions where tectonic plates are moving, such as near fault lines.",
+        "image_url": null
+      },
+      {
+        "question": "What is one way to be safe from earthquakes?",
+        "options": [
+          "By building structures that can withstand strong winds",
+          "By building structures that can withstand floods",
+          "By securing heavy objects and having an emergency plan",
+          "By ignoring the earthquake warning systems"
+        ],
+        "answer": "C",
+        "explanation": "Securing heavy objects and having an emergency plan can help reduce the risk of injury or damage during an earthquake.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the sudden release of energy that causes an earthquake?",
+        "options": [
+          "Seismic wave",
+          "Tectonic shift",
+          "Earthquake rupture",
+          "Ground tremor"
+        ],
+        "answer": "C",
+        "explanation": "The sudden release of energy that causes an earthquake is called an earthquake rupture.",
+        "image_url": null
+      },
+      {
+        "question": "Why are earthquakes often destructive?",
+        "options": [
+          "Because of the beauty of the earthquake",
+          "Because of the noise of the earthquake",
+          "Because of the damage to buildings and infrastructure",
+          "Because of the loss of life"
+        ],
+        "answer": "C",
+        "explanation": "Earthquakes are often destructive because they can cause significant damage to buildings and infrastructure, leading to loss of life and property.",
+        "image_url": null
+      },
+      {
+        "question": "What is one way to prepare for an earthquake?",
+        "options": [
+          "By having a first aid kit",
+          "By having a fire extinguisher",
+          "By having a emergency kit and a family emergency plan",
+          "By ignoring the earthquake warning systems"
+        ],
+        "answer": "C",
+        "explanation": "Having a emergency kit and a family emergency plan can help you prepare for an earthquake and reduce the risk of injury or damage.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the shaking of the Earth's surface during an earthquake?",
+        "options": [
+          "Seismic wave",
+          "Tectonic shift",
+          "Earthquake rupture",
+          "Ground tremor"
+        ],
+        "answer": "A",
+        "explanation": "The shaking of the Earth's surface during an earthquake is called a seismic wave.",
+        "image_url": null
+      },
+      {
+        "question": "Why is it essential to have an emergency plan during an earthquake?",
+        "options": [
+          "Because of the beauty of the earthquake",
+          "Because of the noise of the earthquake",
+          "Because of the damage to buildings and infrastructure",
+          "Because it can help reduce the risk of injury or damage"
+        ],
+        "answer": "D",
+        "explanation": "Having an emergency plan during an earthquake can help reduce the risk of injury or damage by providing a clear plan of action.",
+        "image_url": null
+      },
+      {
+        "question": "What is one way to reduce the risk of injury or damage during an earthquake?",
+        "options": [
+          "By ignoring the earthquake warning systems",
+          "By not securing heavy objects",
+          "By not having an emergency kit",
+          "By securing heavy objects and having an emergency plan"
+        ],
+        "answer": "D",
+        "explanation": "Securing heavy objects and having an emergency plan can help reduce the risk of injury or damage during an earthquake.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-6 Explaining the causes of stresses affecting the rocks that make up the Earth’s interior, and describing the resulting effects.",
+    "questions": [
+      {
+        "question": "What are the main types of volcanoes?",
+        "options": [
+          "Volcanoes that are gently sloping and have a broad base, such as shield volcanoes.",
+          "Volcanoes that are steep-sided and have a narrow base, such as conical volcanoes.",
+          "Volcanoes that have multiple vents and produce a variety of eruption styles, such as compound volcanoes.",
+          "Volcanoes that produce long, narrow fissures in the Earth's surface, such as fissure eruptions."
+        ],
+        "answer": "A",
+        "explanation": "Shield volcanoes are characterized by their gently sloping shape and broad base, which is typical of volcanoes that produce fluid lava flows.",
+        "image_url": null
+      },
+      {
+        "question": "What is a shield volcano?",
+        "options": [
+          "A volcano that produces explosive eruptions and forms a steep-sided cone.",
+          "A volcano that is gently sloping and has a broad base, producing fluid lava flows.",
+          "A volcano that has multiple vents and produces a variety of eruption styles.",
+          "A volcano that produces long, narrow fissures in the Earth's surface."
+        ],
+        "answer": "B",
+        "explanation": "Shield volcanoes are characterized by their gently sloping shape and broad base, which is typical of volcanoes that produce fluid lava flows.",
+        "image_url": null
+      },
+      {
+        "question": "What is a conical volcano?",
+        "options": [
+          "A volcano that is gently sloping and has a broad base, producing fluid lava flows.",
+          "A volcano that has multiple vents and produces a variety of eruption styles.",
+          "A volcano that produces long, narrow fissures in the Earth's surface.",
+          "A volcano that is steep-sided and has a narrow base, producing explosive eruptions."
+        ],
+        "answer": "D",
+        "explanation": "Conical volcanoes are characterized by their steep-sided shape and narrow base, which is typical of volcanoes that produce explosive eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is a compound volcano?",
+        "options": [
+          "A volcano that is a single, large vent.",
+          "A volcano that has multiple vents and produces a variety of eruption styles.",
+          "A volcano that produces long, narrow fissures in the Earth's surface.",
+          "A volcano that is gently sloping and has a broad base, producing fluid lava flows."
+        ],
+        "answer": "B",
+        "explanation": "Compound volcanoes are characterized by their multiple vents and varied eruption styles, which can produce a range of lava flows and explosive eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is a fissure eruption?",
+        "options": [
+          "A type of eruption that produces a single, large vent.",
+          "A type of eruption that produces long, narrow fissures in the Earth's surface.",
+          "A type of eruption that is characterized by a gentle slope and broad base.",
+          "A type of eruption that is characterized by a steep-sided shape and narrow base."
+        ],
+        "answer": "B",
+        "explanation": "Fissure eruptions produce long, narrow fissures in the Earth's surface, which can produce a range of lava flows and explosive eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main characteristic of a shield volcano?",
+        "options": [
+          "A steep-sided shape and narrow base.",
+          "A gently sloping shape and broad base.",
+          "A single, large vent.",
+          "Multiple vents and varied eruption styles."
+        ],
+        "answer": "B",
+        "explanation": "Shield volcanoes are characterized by their gently sloping shape and broad base, which is typical of volcanoes that produce fluid lava flows.",
+        "image_url": null
+      },
+      {
+        "question": "What type of volcano produces long, narrow fissures in the Earth's surface?",
+        "options": [
+          "Shield volcano.",
+          "Conical volcano.",
+          "Compound volcano.",
+          "Fissure eruption."
+        ],
+        "answer": "D",
+        "explanation": "Fissure eruptions produce long, narrow fissures in the Earth's surface, which can produce a range of lava flows and explosive eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main characteristic of a conical volcano?",
+        "options": [
+          "A gently sloping shape and broad base.",
+          "A steep-sided shape and narrow base.",
+          "A single, large vent.",
+          "Multiple vents and varied eruption styles."
+        ],
+        "answer": "B",
+        "explanation": "Conical volcanoes are characterized by their steep-sided shape and narrow base, which is typical of volcanoes that produce explosive eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What type of volcano has multiple vents and produces a variety of eruption styles?",
+        "options": [
+          "Shield volcano.",
+          "Conical volcano.",
+          "Compound volcano.",
+          "Fissure eruption."
+        ],
+        "answer": "C",
+        "explanation": "Compound volcanoes are characterized by their multiple vents and varied eruption styles, which can produce a range of lava flows and explosive eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main characteristic of a fissure eruption?",
+        "options": [
+          "A single, large vent.",
+          "A gently sloping shape and broad base.",
+          "A steep-sided shape and narrow base.",
+          "Long, narrow fissures in the Earth's surface."
+        ],
+        "answer": "D",
+        "explanation": "Fissure eruptions produce long, narrow fissures in the Earth's surface, which can produce a range of lava flows and explosive eruptions.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-2-7 Analyzing information and data related to the theory of plate motion and continental drift and predicting its results and benefits.",
+    "questions": [
+      {
+        "question": "What is meant by moving plate boundaries in the theory of plate motion?",
+        "options": [
+          "Areas where the Earth's plates are stationary",
+          "Regions where the Earth's plates are moving apart",
+          "Boundaries where the Earth's plates are colliding",
+          "Locations where the Earth's plates are sliding past each other"
+        ],
+        "answer": "C",
+        "explanation": "Moving plate boundaries refer to areas where the Earth's plates are interacting with each other, such as colliding, moving apart, or sliding past each other.",
+        "image_url": null
+      },
+      {
+        "question": "What type of plate boundary is characterized by the Earth's plates moving apart?",
+        "options": [
+          "Convergence boundary",
+          "Divergence boundary",
+          "Lateral or transformational boundary",
+          "Continental boundary"
+        ],
+        "answer": "B",
+        "explanation": "Divergence boundaries are characterized by the Earth's plates moving apart, resulting in the creation of new crust.",
+        "image_url": null
+      },
+      {
+        "question": "What type of plate boundary is characterized by the Earth's plates sliding past each other?",
+        "options": [
+          "Convergence boundary",
+          "Divergence boundary",
+          "Lateral or transformational boundary",
+          "Oceanic boundary"
+        ],
+        "answer": "C",
+        "explanation": "Lateral or transformational boundaries are characterized by the Earth's plates sliding past each other, resulting in the creation of fault lines.",
+        "image_url": null
+      },
+      {
+        "question": "What type of plate boundary is characterized by the Earth's plates colliding?",
+        "options": [
+          "Convergence boundary",
+          "Divergence boundary",
+          "Lateral or transformational boundary",
+          "Continental boundary"
+        ],
+        "answer": "A",
+        "explanation": "Convergence boundaries are characterized by the Earth's plates colliding, resulting in the formation of mountains.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the Earth's plates moving apart at a divergence boundary?",
+        "options": [
+          "The creation of new oceanic crust",
+          "The formation of mountains",
+          "The creation of fault lines",
+          "The destruction of the Earth's crust"
+        ],
+        "answer": "A",
+        "explanation": "At a divergence boundary, the Earth's plates moving apart results in the creation of new oceanic crust.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the Earth's plates sliding past each other at a lateral or transformational boundary?",
+        "options": [
+          "The creation of new oceanic crust",
+          "The formation of mountains",
+          "The creation of fault lines",
+          "The destruction of the Earth's crust"
+        ],
+        "answer": "C",
+        "explanation": "At a lateral or transformational boundary, the Earth's plates sliding past each other results in the creation of fault lines.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the Earth's plates colliding at a convergence boundary?",
+        "options": [
+          "The creation of new oceanic crust",
+          "The formation of mountains",
+          "The creation of fault lines",
+          "The destruction of the Earth's crust"
+        ],
+        "answer": "B",
+        "explanation": "At a convergence boundary, the Earth's plates colliding results in the formation of mountains.",
+        "image_url": null
+      },
+      {
+        "question": "What type of plate boundary is characterized by the Earth's plates moving apart and creating new crust?",
+        "options": [
+          "Convergence boundary",
+          "Divergence boundary",
+          "Lateral or transformational boundary",
+          "Continental boundary"
+        ],
+        "answer": "B",
+        "explanation": "Divergence boundaries are characterized by the Earth's plates moving apart and creating new crust.",
+        "image_url": null
+      },
+      {
+        "question": "What type of plate boundary is characterized by the Earth's plates sliding past each other and creating fault lines?",
+        "options": [
+          "Convergence boundary",
+          "Divergence boundary",
+          "Lateral or transformational boundary",
+          "Oceanic boundary"
+        ],
+        "answer": "C",
+        "explanation": "Lateral or transformational boundaries are characterized by the Earth's plates sliding past each other and creating fault lines.",
+        "image_url": null
+      },
+      {
+        "question": "What type of plate boundary is characterized by the Earth's plates colliding and forming mountains?",
+        "options": [
+          "Convergence boundary",
+          "Divergence boundary",
+          "Lateral or transformational boundary",
+          "Continental boundary"
+        ],
+        "answer": "A",
+        "explanation": "Convergence boundaries are characterized by the Earth's plates colliding and forming mountains.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-3-1 Tracking some of the changes that occurred to the Earth as a result of human activity and exploring the natural hazards that may occur on Earth and how to predict them.",
+    "questions": [
+      {
+        "question": "What is the main cause of climate change?",
+        "options": [
+          "The burning of fossil fuels and deforestation",
+          "The melting of polar ice caps",
+          "The increase in global temperature",
+          "The decrease in greenhouse gases"
+        ],
+        "answer": "A",
+        "explanation": "The burning of fossil fuels and deforestation release large amounts of carbon dioxide and other greenhouse gases into the atmosphere, leading to global warming and climate change.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of pollution on water resources?",
+        "options": [
+          "Pollution helps to maintain water quality",
+          "Pollution has no effect on water resources",
+          "Pollution can lead to the depletion of water resources",
+          "Pollution is necessary for aquatic life"
+        ],
+        "answer": "C",
+        "explanation": "Pollution can lead to the contamination of water resources, making them unsafe for human consumption and aquatic life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of deforestation on biodiversity?",
+        "options": [
+          "Deforestation increases biodiversity",
+          "Deforestation has no effect on biodiversity",
+          "Deforestation decreases biodiversity",
+          "Deforestation is necessary for biodiversity"
+        ],
+        "answer": "C",
+        "explanation": "Deforestation leads to the loss of habitats and the extinction of many plant and animal species, resulting in a decrease in biodiversity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of soil erosion?",
+        "options": [
+          "Overgrazing",
+          "Deforestation",
+          "Urbanization",
+          "Climate change"
+        ],
+        "answer": "B",
+        "explanation": "Deforestation leads to the removal of tree roots, which hold the soil in place, making it more susceptible to erosion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of human activity on natural disasters?",
+        "options": [
+          "Human activity reduces the frequency of natural disasters",
+          "Human activity has no effect on natural disasters",
+          "Human activity increases the frequency and severity of natural disasters",
+          "Human activity is necessary for natural disasters"
+        ],
+        "answer": "C",
+        "explanation": "Human activities such as deforestation, pollution, and climate change can increase the frequency and severity of natural disasters such as floods, landslides, and wildfires.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of pollution on human health?",
+        "options": [
+          "Pollution has no effect on human health",
+          "Pollution improves human health",
+          "Pollution can lead to various health problems",
+          "Pollution is necessary for human health"
+        ],
+        "answer": "C",
+        "explanation": "Pollution can lead to various health problems such as respiratory diseases, cancer, and neurological disorders.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of climate change on sea levels?",
+        "options": [
+          "Climate change decreases sea levels",
+          "Climate change has no effect on sea levels",
+          "Climate change increases sea levels",
+          "Climate change is necessary for sea levels"
+        ],
+        "answer": "C",
+        "explanation": "Climate change leads to the melting of polar ice caps and glaciers, resulting in an increase in sea levels.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of overfishing on marine ecosystems?",
+        "options": [
+          "Overfishing has no effect on marine ecosystems",
+          "Overfishing improves marine ecosystems",
+          "Overfishing can lead to the depletion of fish populations and damage to marine ecosystems",
+          "Overfishing is necessary for marine ecosystems"
+        ],
+        "answer": "C",
+        "explanation": "Overfishing can lead to the depletion of fish populations and damage to marine ecosystems, resulting in a loss of biodiversity and ecosystem function.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of human activity on the water cycle?",
+        "options": [
+          "Human activity has no effect on the water cycle",
+          "Human activity improves the water cycle",
+          "Human activity can disrupt the water cycle and lead to droughts and floods",
+          "Human activity is necessary for the water cycle"
+        ],
+        "answer": "C",
+        "explanation": "Human activities such as deforestation, pollution, and climate change can disrupt the water cycle, leading to droughts and floods.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of pollution on air quality?",
+        "options": [
+          "Pollution has no effect on air quality",
+          "Pollution improves air quality",
+          "Pollution can lead to poor air quality and negative health effects",
+          "Pollution is necessary for air quality"
+        ],
+        "answer": "C",
+        "explanation": "Pollution can lead to poor air quality and negative health effects, such as respiratory diseases and cancer.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-3-1 Tracking some of the changes that occurred to the Earth as a result of human activity and exploring the natural hazards that may occur on Earth and how to predict them.",
+    "questions": [
+      {
+        "question": "What is the main cause of climate change?",
+        "options": [
+          "The burning of fossil fuels and deforestation",
+          "The increase in global temperature due to the sun",
+          "The movement of tectonic plates",
+          "The decrease in the Earth's atmosphere"
+        ],
+        "answer": "A",
+        "explanation": "The burning of fossil fuels and deforestation release large amounts of carbon dioxide into the atmosphere, contributing to climate change.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of pollution on the environment?",
+        "options": [
+          "It helps to clean the air and water",
+          "It has no effect on the environment",
+          "It harms plants and animals and contaminates soil and water",
+          "It helps to reduce the effects of natural disasters"
+        ],
+        "answer": "C",
+        "explanation": "Pollution harms plants and animals and contaminates soil and water, affecting the entire ecosystem.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason for the loss of biodiversity?",
+        "options": [
+          "Habitat destruction and fragmentation",
+          "The introduction of non-native species",
+          "The increase in global temperature",
+          "The decrease in the Earth's atmosphere"
+        ],
+        "answer": "A",
+        "explanation": "Habitat destruction and fragmentation lead to the loss of habitats for many species, resulting in a decline in biodiversity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of deforestation on the environment?",
+        "options": [
+          "It helps to reduce the effects of natural disasters",
+          "It has no effect on the environment",
+          "It harms plants and animals and contaminates soil and water",
+          "It helps to clean the air and water"
+        ],
+        "answer": "C",
+        "explanation": "Deforestation harms plants and animals and contaminates soil and water, affecting the entire ecosystem.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of soil erosion?",
+        "options": [
+          "The increase in global temperature",
+          "The decrease in rainfall",
+          "The removal of vegetation and the use of heavy machinery",
+          "The movement of tectonic plates"
+        ],
+        "answer": "C",
+        "explanation": "The removal of vegetation and the use of heavy machinery can lead to soil erosion, as the soil is no longer protected by plant roots and is more susceptible to erosion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of human activity on the Earth's natural resources?",
+        "options": [
+          "It helps to conserve and protect natural resources",
+          "It has no effect on natural resources",
+          "It leads to the depletion and degradation of natural resources",
+          "It helps to reduce the effects of natural disasters"
+        ],
+        "answer": "C",
+        "explanation": "Human activity can lead to the depletion and degradation of natural resources, such as water, air, and soil.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason for the increase in natural disasters?",
+        "options": [
+          "The increase in global temperature",
+          "The decrease in rainfall",
+          "The movement of tectonic plates",
+          "The removal of vegetation and the use of heavy machinery"
+        ],
+        "answer": "A",
+        "explanation": "The increase in global temperature can lead to more frequent and severe natural disasters, such as hurricanes and wildfires.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of pollution on human health?",
+        "options": [
+          "It has no effect on human health",
+          "It helps to improve human health",
+          "It harms human health and can lead to diseases",
+          "It has no impact on the environment"
+        ],
+        "answer": "C",
+        "explanation": "Pollution can harm human health and lead to diseases, such as respiratory problems and cancer.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of water pollution?",
+        "options": [
+          "The increase in global temperature",
+          "The decrease in rainfall",
+          "The removal of vegetation and the use of heavy machinery",
+          "The release of pollutants into waterways"
+        ],
+        "answer": "D",
+        "explanation": "The release of pollutants into waterways, such as chemicals and sewage, can lead to water pollution.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of climate change on the environment?",
+        "options": [
+          "It has no effect on the environment",
+          "It helps to clean the air and water",
+          "It harms plants and animals and contaminates soil and water",
+          "It leads to the loss of biodiversity"
+        ],
+        "answer": "C",
+        "explanation": "Climate change can harm plants and animals and contaminate soil and water, affecting the entire ecosystem.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-3-3-1 Tracking some of the changes that occurred to the Earth as a result of human activity and exploring the natural hazards that may occur on Earth and how to predict them.",
+    "questions": [
+      {
+        "question": "What is the main cause of soil erosion?",
+        "options": [
+          "Water flowing over the land",
+          "Human activities such as deforestation",
+          "Weathering and plate tectonics",
+          "Atmospheric pressure"
+        ],
+        "answer": "B",
+        "explanation": "Human activities such as deforestation lead to soil erosion by removing tree roots that hold the soil in place.",
+        "image_url": null
+      },
+      {
+        "question": "Which natural hazard is often caused by the movement of tectonic plates?",
+        "options": [
+          "Hurricane",
+          "Tsunami",
+          "Earthquake",
+          "Volcanic eruption"
+        ],
+        "answer": "C",
+        "explanation": "Earthquakes are often caused by the movement of tectonic plates, resulting in seismic waves that can cause damage and loss of life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary way to prevent landslides?",
+        "options": [
+          "Building dams to control water flow",
+          "Planting trees to stabilize soil",
+          "Constructing buildings on stable ground",
+          "Using explosives to clear rocks"
+        ],
+        "answer": "B",
+        "explanation": "Planting trees helps to stabilize soil and prevent landslides by holding the soil in place with their roots.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of natural hazard is often caused by the movement of water?",
+        "options": [
+          "Flood",
+          "Drought",
+          "Wildfire",
+          "Tornado"
+        ],
+        "answer": "A",
+        "explanation": "Floods are often caused by the movement of water, such as heavy rainfall or storm surges, resulting in damage to property and loss of life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main way to prevent wildfires?",
+        "options": [
+          "Building fire breaks to contain fires",
+          "Using fire retardants to extinguish fires",
+          "Creating fire-safe zones",
+          "Removing dry leaves and branches"
+        ],
+        "answer": "D",
+        "explanation": "Removing dry leaves and branches helps to prevent wildfires by reducing the amount of fuel available for fires to spread.",
+        "image_url": null
+      },
+      {
+        "question": "Which natural hazard is often caused by the movement of the atmosphere?",
+        "options": [
+          "Hurricane",
+          "Tornado",
+          "Earthquake",
+          "Volcanic eruption"
+        ],
+        "answer": "B",
+        "explanation": "Tornadoes are often caused by the movement of the atmosphere, resulting in rotating columns of air that can cause damage and loss of life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary way to prevent soil pollution?",
+        "options": [
+          "Using pesticides to kill pests",
+          "Planting trees to absorb pollutants",
+          "Building waste management facilities",
+          "Reducing waste and using recycling"
+        ],
+        "answer": "D",
+        "explanation": "Reducing waste and using recycling helps to prevent soil pollution by minimizing the amount of waste that can contaminate the soil.",
+        "image_url": null
+      },
+      {
+        "question": "Which natural hazard is often caused by the movement of the ocean?",
+        "options": [
+          "Hurricane",
+          "Tsunami",
+          "Earthquake",
+          "Volcanic eruption"
+        ],
+        "answer": "B",
+        "explanation": "Tsunamis are often caused by the movement of the ocean, resulting in large waves that can cause damage and loss of life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main way to prevent water pollution?",
+        "options": [
+          "Building sewage treatment plants",
+          "Reducing waste and using recycling",
+          "Planting trees to absorb pollutants",
+          "Using chemicals to kill pollutants"
+        ],
+        "answer": "B",
+        "explanation": "Reducing waste and using recycling helps to prevent water pollution by minimizing the amount of waste that can contaminate water sources.",
+        "image_url": null
+      },
+      {
+        "question": "Which natural hazard is often caused by the movement of the ground?",
+        "options": [
+          "Earthquake",
+          "Volcanic eruption",
+          "Hurricane",
+          "Tsunami"
+        ],
+        "answer": "A",
+        "explanation": "Earthquakes are often caused by the movement of the ground, resulting in seismic waves that can cause damage and loss of life.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-1-1 Understanding that the cell is the basic building unit of living organisms, knowing some of the technologies that helped study them, and comparing single-celled and multi-cellular organisms.",
+    "questions": [
+      {
+        "question": "What is the basic unit of structure of living organisms?",
+        "options": [
+          "A cell is the smallest unit of life that can function independently.",
+          "A cell is the largest unit of life that can function independently.",
+          "A cell is a part of a larger organism but not the basic unit of structure.",
+          "A cell is a type of molecule that makes up living organisms."
+        ],
+        "answer": "A",
+        "explanation": "A cell is the smallest unit of life that can function independently and is the basic unit of structure of living organisms.",
+        "image_url": null
+      },
+      {
+        "question": "What are the three main principles of the cell theory?",
+        "options": [
+          "All living things are composed of cells.",
+          "Cells are the basic units of life.",
+          "All cells come from pre-existing cells.",
+          "Cells are the smallest units of life that can function independently."
+        ],
+        "answer": "C",
+        "explanation": "The three main principles of the cell theory are: 1) All living things are composed of cells, 2) Cells are the basic units of life, and 3) All cells come from pre-existing cells.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main purpose of a microscope in cell biology?",
+        "options": [
+          "To study the structure of cells and their components.",
+          "To study the behavior of cells and their interactions.",
+          "To study the environment in which cells live.",
+          "To study the history of cell biology."
+        ],
+        "answer": "A",
+        "explanation": "The main purpose of a microscope in cell biology is to study the structure of cells and their components, allowing scientists to observe and understand the details of cellular organization.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a single-celled organism and a multi-celled organism?",
+        "options": [
+          "A single-celled organism has one cell, while a multi-celled organism has many cells.",
+          "A single-celled organism is larger than a multi-celled organism.",
+          "A single-celled organism is more complex than a multi-celled organism.",
+          "A single-celled organism is less complex than a multi-celled organism."
+        ],
+        "answer": "A",
+        "explanation": "A single-celled organism has one cell, while a multi-celled organism has many cells, which allows for greater complexity and specialization of functions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of a magnifying glass in cell biology?",
+        "options": [
+          "To study the structure of cells and their components.",
+          "To study the behavior of cells and their interactions.",
+          "To observe cells and their components at a larger scale.",
+          "To study the environment in which cells live."
+        ],
+        "answer": "C",
+        "explanation": "A magnifying glass is used to observe cells and their components at a larger scale, allowing scientists to see the general structure and organization of cells.",
+        "image_url": null
+      },
+      {
+        "question": "What is the importance of cell theory in biology?",
+        "options": [
+          "It explains the structure and function of cells.",
+          "It explains the behavior of cells and their interactions.",
+          "It explains the diversity of life on Earth.",
+          "It explains the evolution of cells over time."
+        ],
+        "answer": "A",
+        "explanation": "Cell theory is important in biology because it explains the structure and function of cells, providing a fundamental understanding of the basic units of life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between prokaryotic and eukaryotic cells?",
+        "options": [
+          "Prokaryotic cells have a nucleus, while eukaryotic cells do not.",
+          "Prokaryotic cells are larger than eukaryotic cells.",
+          "Prokaryotic cells are more complex than eukaryotic cells.",
+          "Prokaryotic cells lack a true nucleus, while eukaryotic cells have a true nucleus."
+        ],
+        "answer": "D",
+        "explanation": "The main difference between prokaryotic and eukaryotic cells is that prokaryotic cells lack a true nucleus, while eukaryotic cells have a true nucleus, which allows for greater complexity and organization of cellular components.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of microscopes in the discovery of cells?",
+        "options": [
+          "They allowed scientists to see cells for the first time.",
+          "They allowed scientists to study the behavior of cells and their interactions.",
+          "They allowed scientists to study the environment in which cells live.",
+          "They allowed scientists to study the history of cell biology."
+        ],
+        "answer": "A",
+        "explanation": "Microscopes played a crucial role in the discovery of cells, allowing scientists to see cells for the first time and observe their structure and organization.",
+        "image_url": null
+      },
+      {
+        "question": "What is the significance of cell division in biology?",
+        "options": [
+          "It allows cells to grow and repair themselves.",
+          "It allows cells to differentiate and specialize.",
+          "It allows cells to reproduce and pass on genetic information.",
+          "It allows cells to die and be replaced by new cells."
+        ],
+        "answer": "C",
+        "explanation": "Cell division is significant in biology because it allows cells to reproduce and pass on genetic information, ensuring the continuation of life and the transmission of genetic traits.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main advantage of using a microscope in cell biology?",
+        "options": [
+          "It allows scientists to see cells and their components at a larger scale.",
+          "It allows scientists to study the behavior of cells and their interactions.",
+          "It allows scientists to study the environment in which cells live.",
+          "It allows scientists to study the history of cell biology."
+        ],
+        "answer": "A",
+        "explanation": "The main advantage of using a microscope in cell biology is that it allows scientists to see cells and their components at a larger scale, providing a detailed understanding of cellular structure and organization.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-1-1 Understanding that the cell is the basic building unit of living organisms, knowing some of the technologies that helped study them, and comparing single-celled and multi-cellular organisms.",
+    "questions": [
+      {
+        "question": "What is the primary function of the cell membrane?",
+        "options": [
+          "To provide structural support to the cell",
+          "To regulate the movement of materials in and out of the cell",
+          "To produce energy for the cell through photosynthesis",
+          "To synthesize proteins for the cell"
+        ],
+        "answer": "B",
+        "explanation": "The cell membrane, also known as the plasma membrane, is a thin layer of lipid and protein molecules that surrounds the cell and regulates the movement of materials in and out of the cell.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a prokaryotic cell and a eukaryotic cell?",
+        "options": [
+          "Prokaryotic cells have a true nucleus, while eukaryotic cells do not",
+          "Prokaryotic cells have a large amount of genetic material, while eukaryotic cells have a small amount",
+          "Prokaryotic cells lack a true nucleus, while eukaryotic cells have a true nucleus",
+          "Prokaryotic cells are single-celled, while eukaryotic cells are multi-celled"
+        ],
+        "answer": "C",
+        "explanation": "Prokaryotic cells, such as bacteria, lack a true nucleus and other membrane-bound organelles, while eukaryotic cells, such as plants and animals, have a true nucleus and other membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of the mitochondria in a cell?",
+        "options": [
+          "To synthesize proteins for the cell",
+          "To store genetic information for the cell",
+          "To produce energy for the cell through cellular respiration",
+          "To regulate the movement of materials in and out of the cell"
+        ],
+        "answer": "C",
+        "explanation": "Mitochondria are organelles found in eukaryotic cells that produce energy for the cell through cellular respiration, a process that converts glucose into ATP.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a single-celled organism and a multi-celled organism?",
+        "options": [
+          "Single-celled organisms have a large amount of genetic material, while multi-celled organisms have a small amount",
+          "Single-celled organisms are able to move, while multi-celled organisms are not",
+          "Single-celled organisms lack a true nucleus, while multi-celled organisms have a true nucleus",
+          "Single-celled organisms are able to perform all functions on their own, while multi-celled organisms rely on specialized cells to perform functions"
+        ],
+        "answer": "D",
+        "explanation": "Single-celled organisms, such as bacteria and protozoa, are able to perform all functions on their own, while multi-celled organisms, such as plants and animals, rely on specialized cells to perform functions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of the ribosomes in a cell?",
+        "options": [
+          "To synthesize proteins for the cell",
+          "To store genetic information for the cell",
+          "To regulate the movement of materials in and out of the cell",
+          "To produce energy for the cell through cellular respiration"
+        ],
+        "answer": "A",
+        "explanation": "Ribosomes are organelles found in cells that synthesize proteins for the cell by reading messenger RNA sequences and assembling amino acids into polypeptide chains.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a eukaryotic cell and a prokaryotic cell?",
+        "options": [
+          "Eukaryotic cells have a large amount of genetic material, while prokaryotic cells have a small amount",
+          "Eukaryotic cells lack a true nucleus, while prokaryotic cells have a true nucleus",
+          "Eukaryotic cells have a true nucleus, while prokaryotic cells do not",
+          "Eukaryotic cells are single-celled, while prokaryotic cells are multi-celled"
+        ],
+        "answer": "C",
+        "explanation": "Eukaryotic cells, such as plants and animals, have a true nucleus and other membrane-bound organelles, while prokaryotic cells, such as bacteria, lack a true nucleus and other membrane-bound organelles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of the lysosomes in a cell?",
+        "options": [
+          "To synthesize proteins for the cell",
+          "To store genetic information for the cell",
+          "To regulate the movement of materials in and out of the cell",
+          "To break down and recycle cellular waste and foreign substances"
+        ],
+        "answer": "D",
+        "explanation": "Lysosomes are organelles found in cells that break down and recycle cellular waste and foreign substances by using enzymes to degrade and recycle cellular components.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a plant cell and an animal cell?",
+        "options": [
+          "Plant cells have a large amount of genetic material, while animal cells have a small amount",
+          "Plant cells lack a true nucleus, while animal cells have a true nucleus",
+          "Plant cells have a true nucleus, while animal cells do not",
+          "Plant cells have a cell wall, while animal cells do not"
+        ],
+        "answer": "D",
+        "explanation": "Plant cells, such as those found in plants, have a cell wall that provides structural support and protection, while animal cells, such as those found in animals, do not have a cell wall.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of the golgi apparatus in a cell?",
+        "options": [
+          "To synthesize proteins for the cell",
+          "To store genetic information for the cell",
+          "To regulate the movement of materials in and out of the cell",
+          "To modify, package, and transport proteins and lipids synthesized by the endoplasmic reticulum"
+        ],
+        "answer": "D",
+        "explanation": "The golgi apparatus is an organelle found in cells that modifies, packages, and transports proteins and lipids synthesized by the endoplasmic reticulum by adding carbohydrates and lipids to the molecules.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a single-celled organism and a multi-celled organism in terms of reproduction?",
+        "options": [
+          "Single-celled organisms reproduce by binary fission, while multi-celled organisms reproduce by meiosis",
+          "Single-celled organisms reproduce by meiosis, while multi-celled organisms reproduce by binary fission",
+          "Single-celled organisms reproduce by mitosis, while multi-celled organisms reproduce by meiosis",
+          "Single-celled organisms reproduce by mitosis, while multi-celled organisms reproduce by binary fission"
+        ],
+        "answer": "A",
+        "explanation": "Single-celled organisms, such as bacteria and protozoa, reproduce by binary fission, a process in which the cell divides into two identical daughter cells, while multi-celled organisms, such as plants and animals, reproduce by meiosis, a process in which the cell divides to produce gametes with half the number of chromosomes.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-1-1 Understanding that the cell is the basic building unit of living organisms, knowing some of the technologies that helped study them, and comparing single-celled and multi-cellular organisms.",
+    "questions": [
+      {
+        "question": "What is the basic building unit of living organisms?",
+        "options": [
+          "A cell is a tiny building block of life",
+          "A cell is a type of animal",
+          "A cell is a type of plant",
+          "A cell is a type of rock"
+        ],
+        "answer": "A",
+        "explanation": "A cell is the basic building unit of living organisms, and it is the smallest unit of life that can function independently.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following organisms is an example of a unicellular organism?",
+        "options": [
+          "A human",
+          "An amoeba",
+          "A tree",
+          "A car"
+        ],
+        "answer": "B",
+        "explanation": "An amoeba is a single-celled organism that can live independently.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between unicellular and multicellular organisms?",
+        "options": [
+          "Unicellular organisms have more cells than multicellular organisms",
+          "Unicellular organisms have fewer cells than multicellular organisms",
+          "Unicellular organisms are larger than multicellular organisms",
+          "Unicellular organisms are smaller than multicellular organisms"
+        ],
+        "answer": "B",
+        "explanation": "Unicellular organisms have fewer cells than multicellular organisms, which are made up of many cells working together.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a multicellular organism?",
+        "options": [
+          "A bacterium",
+          "A human",
+          "A rock",
+          "A chair"
+        ],
+        "answer": "B",
+        "explanation": "A human is a multicellular organism made up of many cells working together.",
+        "image_url": null
+      },
+      {
+        "question": "Why do multicellular organisms have an advantage over unicellular organisms?",
+        "options": [
+          "Multicellular organisms are smaller and more agile",
+          "Multicellular organisms are able to perform more complex tasks",
+          "Multicellular organisms are able to adapt to changing environments",
+          "Multicellular organisms are able to reproduce more quickly"
+        ],
+        "answer": "B",
+        "explanation": "Multicellular organisms are able to perform more complex tasks and adapt to changing environments, giving them an advantage over unicellular organisms.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main benefit of being a multicellular organism?",
+        "options": [
+          "Being able to move quickly",
+          "Being able to reproduce more quickly",
+          "Being able to perform complex tasks",
+          "Being able to adapt to changing environments"
+        ],
+        "answer": "C",
+        "explanation": "The main benefit of being a multicellular organism is being able to perform complex tasks, such as movement, reproduction, and adaptation to changing environments.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a unicellular organism that can move?",
+        "options": [
+          "A human",
+          "An amoeba",
+          "A tree",
+          "A car"
+        ],
+        "answer": "B",
+        "explanation": "An amoeba is a single-celled organism that can move using its pseudopodia.",
+        "image_url": null
+      },
+      {
+        "question": "Why do unicellular organisms have a disadvantage compared to multicellular organisms?",
+        "options": [
+          "Unicellular organisms are able to perform more complex tasks",
+          "Unicellular organisms are able to adapt to changing environments",
+          "Unicellular organisms are able to reproduce more quickly",
+          "Unicellular organisms are limited in their ability to perform tasks"
+        ],
+        "answer": "D",
+        "explanation": "Unicellular organisms are limited in their ability to perform tasks, making them less complex and less adaptable than multicellular organisms.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a unicellular and a multicellular organism in terms of structure?",
+        "options": [
+          "Unicellular organisms have a more complex structure",
+          "Unicellular organisms have a simpler structure",
+          "Unicellular organisms are larger than multicellular organisms",
+          "Unicellular organisms are smaller than multicellular organisms"
+        ],
+        "answer": "B",
+        "explanation": "Unicellular organisms have a simpler structure, consisting of a single cell, while multicellular organisms have a more complex structure made up of many cells.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a multicellular organism that can adapt to changing environments?",
+        "options": [
+          "A bacterium",
+          "A human",
+          "A rock",
+          "A chair"
+        ],
+        "answer": "B",
+        "explanation": "A human is a multicellular organism that can adapt to changing environments through its ability to move, reproduce, and respond to stimuli.",
+        "image_url": null
+      }
+    ]
+  }
+]

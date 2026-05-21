@@ -1,0 +1,2453 @@
+[
+  {
+    "title": "4 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-1Classifying the layers of the atmosphere and identifying their components, characteristics, changes, its effects on the environment and their benefits to humans.",
+    "questions": [
+      {
+        "question": "What is the main layer of the atmosphere that protects us from the sun's harmful rays?",
+        "options": [
+          "The Troposphere is the layer that protects us from the sun's harmful rays.",
+          "The Stratosphere is the layer that protects us from the sun's harmful rays.",
+          "The Mesosphere is the layer that protects us from the sun's harmful rays.",
+          "The Thermosphere is the layer that protects us from the sun's harmful rays."
+        ],
+        "answer": "B",
+        "explanation": "The Stratosphere is the layer that protects us from the sun's harmful rays because it contains a high concentration of ozone, which absorbs ultraviolet radiation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's atmosphere traps heat from the sun?",
+        "options": [
+          "Global Cooling",
+          "Greenhouse Effect",
+          "Climate Change",
+          "Weather Patterns"
+        ],
+        "answer": "B",
+        "explanation": "The Greenhouse Effect is the process called when the Earth's atmosphere traps heat from the sun, keeping the planet warm enough to support life.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of climate change in some regions of the world?",
+        "options": [
+          "Deforestation",
+          "Pollution",
+          "Overpopulation",
+          "Natural Disasters"
+        ],
+        "answer": "A",
+        "explanation": "Deforestation is a main cause of climate change in some regions of the world because it leads to the release of stored carbon into the atmosphere and reduces the ability of forests to absorb carbon dioxide.",
+        "image_url": null
+      },
+      {
+        "question": "What can we do to reduce the impact of climate change?",
+        "options": [
+          "Plant more trees",
+          "Use more fossil fuels",
+          "Conserve water",
+          "Reduce, Reuse, Recycle"
+        ],
+        "answer": "D",
+        "explanation": "Reducing, Reusing, and Recycling can help reduce the impact of climate change by decreasing the amount of waste and pollution in the environment.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of climate change on the environment?",
+        "options": [
+          "It makes the weather colder",
+          "It makes the weather warmer",
+          "It makes the weather more stable",
+          "It makes the weather more unpredictable"
+        ],
+        "answer": "B",
+        "explanation": "Climate change makes the weather warmer, leading to more extreme weather events, rising sea levels, and altered ecosystems.",
+        "image_url": null
+      },
+      {
+        "question": "What is the benefit of the Stratosphere to humans?",
+        "options": [
+          "It provides oxygen for us to breathe",
+          "It protects us from the sun's harmful rays",
+          "It regulates the Earth's temperature",
+          "It affects the weather"
+        ],
+        "answer": "B",
+        "explanation": "The Stratosphere protects us from the sun's harmful rays by containing a high concentration of ozone, which absorbs ultraviolet radiation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of pollution on the environment?",
+        "options": [
+          "It makes the air cleaner",
+          "It makes the water cleaner",
+          "It makes the weather colder",
+          "It harms the environment"
+        ],
+        "answer": "D",
+        "explanation": "Pollution harms the environment by releasing toxic substances into the air and water, leading to harm to plants, animals, and humans.",
+        "image_url": null
+      },
+      {
+        "question": "What can we do to conserve water?",
+        "options": [
+          "Take long showers",
+          "Use more water for irrigation",
+          "Turn off the tap while brushing teeth",
+          "Use more water for drinking"
+        ],
+        "answer": "C",
+        "explanation": "Turning off the tap while brushing teeth can help conserve water by reducing the amount of water used for this daily activity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the benefit of reducing, reusing, and recycling?",
+        "options": [
+          "It increases waste in the environment",
+          "It decreases the amount of pollution",
+          "It increases the amount of energy used",
+          "It decreases the amount of waste in the environment"
+        ],
+        "answer": "D",
+        "explanation": "Reducing, reusing, and recycling decreases the amount of waste in the environment by reducing the amount of materials needed to produce new products.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of climate change on weather patterns?",
+        "options": [
+          "It makes the weather more stable",
+          "It makes the weather more unpredictable",
+          "It makes the weather colder",
+          "It makes the weather warmer"
+        ],
+        "answer": "B",
+        "explanation": "Climate change makes the weather more unpredictable, leading to more extreme weather events, such as hurricanes, droughts, and heatwaves.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-2 Deducing the relationship of the Earth›s spheres to each other and predicting the interactions, and changes that occur between them and the geological effects resulting from them.",
+    "questions": [
+      {
+        "question": "What is the outermost solid layer of the Earth called?",
+        "options": [
+          "The core",
+          "The mantle",
+          "The crust",
+          "The atmosphere"
+        ],
+        "answer": "C",
+        "explanation": "The crust is the outermost solid layer of the Earth, which includes the continental and oceanic crust.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is NOT one of the Earth's spheres?",
+        "options": [
+          "Lithosphere",
+          "Hydrosphere",
+          "Atmosphere",
+          "Biosphere"
+        ],
+        "answer": "A",
+        "explanation": "The lithosphere is a part of the Earth's crust, not one of the Earth's spheres.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's plates move and change?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Fossilization"
+        ],
+        "answer": "C",
+        "explanation": "Plate tectonics is the process by which the Earth's plates move and change.",
+        "image_url": null
+      },
+      {
+        "question": "What is the layer of the Earth that includes the atmosphere, hydrosphere, and biosphere?",
+        "options": [
+          "The core",
+          "The mantle",
+          "The crust",
+          "The lithosphere"
+        ],
+        "answer": "D",
+        "explanation": "The lithosphere is the layer of the Earth that includes the atmosphere, hydrosphere, and biosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the movement of the Earth's plates called?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Plate movement"
+        ],
+        "answer": "C",
+        "explanation": "Plate tectonics is the movement of the Earth's plates.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a part of the lithosphere?",
+        "options": [
+          "The core",
+          "The mantle",
+          "The crust",
+          "The atmosphere"
+        ],
+        "answer": "C",
+        "explanation": "The crust is a part of the lithosphere.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's plates move apart?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Rifting"
+        ],
+        "answer": "D",
+        "explanation": "Rifting is the process by which the Earth's plates move apart.",
+        "image_url": null
+      },
+      {
+        "question": "What is the layer of the Earth that includes the ocean and land?",
+        "options": [
+          "The core",
+          "The mantle",
+          "The crust",
+          "The lithosphere"
+        ],
+        "answer": "D",
+        "explanation": "The lithosphere is the layer of the Earth that includes the ocean and land.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's plates collide?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Continental collision"
+        ],
+        "answer": "D",
+        "explanation": "Continental collision is the process by which the Earth's plates collide.",
+        "image_url": null
+      },
+      {
+        "question": "What is the movement of the Earth's plates that results in the creation of mountains?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Orogenesis"
+        ],
+        "answer": "C",
+        "explanation": "Orogenesis is the movement of the Earth's plates that results in the creation of mountains.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-2 Deducing the relationship of the Earth›s spheres to each other and predicting the interactions, and changes that occur between them and the geological effects resulting from them.",
+    "questions": [
+      {
+        "question": "What is the process that occurs when the Earth's plates move apart?",
+        "options": [
+          "Continental collision",
+          "Plate subduction",
+          "Seafloor spreading",
+          "Mountain building"
+        ],
+        "answer": "C",
+        "explanation": "Seafloor spreading is the process where the Earth's plates move apart and new oceanic crust is formed.",
+        "image_url": null
+      },
+      {
+        "question": "What type of geological change occurs when the Earth's surface is uplifted?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Uplift"
+        ],
+        "answer": "D",
+        "explanation": "Uplift is the process where the Earth's surface is raised, often due to tectonic activity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's plates that results in the creation of mountains?",
+        "options": [
+          "Plate convergence",
+          "Plate divergence",
+          "Plate subduction",
+          "Orogenesis"
+        ],
+        "answer": "D",
+        "explanation": "Orogenesis is the term for the process of mountain building due to plate tectonics.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process that occurs when the Earth's surface is worn away by natural forces?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Plate tectonics"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the process where the Earth's surface is worn away by natural forces such as wind and water.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's plates that results in the creation of oceanic trenches?",
+        "options": [
+          "Plate convergence",
+          "Plate divergence",
+          "Plate subduction",
+          "Continental rifting"
+        ],
+        "answer": "C",
+        "explanation": "Plate subduction is the process where one plate is forced beneath another, often resulting in the creation of oceanic trenches.",
+        "image_url": null
+      },
+      {
+        "question": "What type of geological change occurs when the Earth's surface is worn away by wind and water?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Plate tectonics"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the process where the Earth's surface is worn away by wind and water.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process that occurs when the Earth's plates move together?",
+        "options": [
+          "Plate convergence",
+          "Plate divergence",
+          "Plate subduction",
+          "Continental rifting"
+        ],
+        "answer": "A",
+        "explanation": "Plate convergence is the process where the Earth's plates move together, often resulting in the creation of mountains.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's plates that results in the creation of new oceanic crust?",
+        "options": [
+          "Plate convergence",
+          "Plate divergence",
+          "Plate subduction",
+          "Seafloor spreading"
+        ],
+        "answer": "D",
+        "explanation": "Seafloor spreading is the process where the Earth's plates move apart and new oceanic crust is formed.",
+        "image_url": null
+      },
+      {
+        "question": "What type of geological change occurs when the Earth's surface is covered with sediment?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Plate tectonics"
+        ],
+        "answer": "C",
+        "explanation": "Deposition is the process where the Earth's surface is covered with sediment.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process that occurs when the Earth's plates move apart and new oceanic crust is formed?",
+        "options": [
+          "Continental collision",
+          "Plate subduction",
+          "Seafloor spreading",
+          "Mountain building"
+        ],
+        "answer": "C",
+        "explanation": "Seafloor spreading is the process where the Earth's plates move apart and new oceanic crust is formed.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-2 Deducing the relationship of the Earth›s spheres to each other and predicting the interactions, and changes that occur between them and the geological effects resulting from them.",
+    "questions": [
+      {
+        "question": "What is the movement of molten rock beneath the Earth's surface called?",
+        "options": [
+          "The movement of tectonic plates",
+          "The movement of magma",
+          "The movement of the Earth's crust",
+          "The movement of the Earth's core"
+        ],
+        "answer": "B",
+        "explanation": "Magma is molten rock beneath the Earth's surface, so the movement of magma is the correct term.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when magma moves beneath the Earth's surface?",
+        "options": [
+          "It cools down and forms the Earth's crust",
+          "It heats up and forms volcanoes",
+          "It stays the same and doesn't affect the Earth's surface",
+          "It disappears into space"
+        ],
+        "answer": "B",
+        "explanation": "When magma moves beneath the Earth's surface, it can heat up and form volcanoes, which is a result of the movement of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's crust is broken and new crust is formed?",
+        "options": [
+          "Continental drift",
+          "Plate tectonics",
+          "Seafloor spreading",
+          "Weathering and erosion"
+        ],
+        "answer": "C",
+        "explanation": "Seafloor spreading is the process where the Earth's crust is broken and new crust is formed, which is a result of the movement of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the movement of magma beneath the Earth's surface?",
+        "options": [
+          "The formation of mountains and volcanoes",
+          "The formation of oceans and lakes",
+          "The formation of deserts and forests",
+          "The formation of rivers and streams"
+        ],
+        "answer": "A",
+        "explanation": "The movement of magma beneath the Earth's surface can lead to the formation of mountains and volcanoes, which is a result of the geological effects of magma movement.",
+        "image_url": null
+      },
+      {
+        "question": "What is the movement of the Earth's plates that can cause earthquakes and volcanoes?",
+        "options": [
+          "Continental drift",
+          "Plate tectonics",
+          "Seafloor spreading",
+          "Weathering and erosion"
+        ],
+        "answer": "B",
+        "explanation": "Plate tectonics is the movement of the Earth's plates that can cause earthquakes and volcanoes, which is a result of the movement of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's crust is broken and magma rises to the surface?",
+        "options": [
+          "Continental drift",
+          "Plate tectonics",
+          "Seafloor spreading",
+          "Volcanic eruption"
+        ],
+        "answer": "D",
+        "explanation": "A volcanic eruption is the process when the Earth's crust is broken and magma rises to the surface, which is a result of the movement of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the movement of the Earth's plates?",
+        "options": [
+          "The formation of mountains and volcanoes",
+          "The formation of oceans and lakes",
+          "The formation of deserts and forests",
+          "The formation of rivers and streams"
+        ],
+        "answer": "A",
+        "explanation": "The movement of the Earth's plates can lead to the formation of mountains and volcanoes, which is a result of the geological effects of plate movement.",
+        "image_url": null
+      },
+      {
+        "question": "What is the movement of the Earth's plates that can cause the formation of new oceans?",
+        "options": [
+          "Continental drift",
+          "Plate tectonics",
+          "Seafloor spreading",
+          "Weathering and erosion"
+        ],
+        "answer": "C",
+        "explanation": "Seafloor spreading is the movement of the Earth's plates that can cause the formation of new oceans, which is a result of the movement of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's crust is broken and magma rises to the surface, creating a new landform?",
+        "options": [
+          "Continental drift",
+          "Plate tectonics",
+          "Seafloor spreading",
+          "Volcanic eruption"
+        ],
+        "answer": "D",
+        "explanation": "A volcanic eruption is the process when the Earth's crust is broken and magma rises to the surface, creating a new landform, which is a result of the movement of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the movement of magma beneath the Earth's surface, leading to the formation of new landforms?",
+        "options": [
+          "The formation of mountains and volcanoes",
+          "The formation of oceans and lakes",
+          "The formation of deserts and forests",
+          "The formation of rivers and streams"
+        ],
+        "answer": "A",
+        "explanation": "The movement of magma beneath the Earth's surface can lead to the formation of mountains and volcanoes, which is a result of the geological effects of magma movement.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-2 Deducing the relationship of the Earth›s spheres to each other and predicting the interactions, and changes that occur between them and the geological effects resulting from them.",
+    "questions": [
+      {
+        "question": "What is the process that creates mountains through the movement of tectonic plates?",
+        "options": [
+          "Weathering and erosion",
+          "Plate tectonics",
+          "Volcanic eruptions",
+          "Glaciation"
+        ],
+        "answer": "B",
+        "explanation": "Plate tectonics is the process that creates mountains through the movement of tectonic plates.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's crust that can cause earthquakes and volcanoes?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Glacial movement"
+        ],
+        "answer": "C",
+        "explanation": "Plate tectonics is the term for the movement of the Earth's crust that can cause earthquakes and volcanoes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the largest ocean on Earth?",
+        "options": [
+          "Pacific Ocean",
+          "Atlantic Ocean",
+          "Indian Ocean",
+          "Arctic Ocean"
+        ],
+        "answer": "A",
+        "explanation": "The Pacific Ocean is the largest ocean on Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process that creates new land through the movement of tectonic plates?",
+        "options": [
+          "Weathering and erosion",
+          "Plate tectonics",
+          "Volcanic eruptions",
+          "Glaciation"
+        ],
+        "answer": "B",
+        "explanation": "Plate tectonics is the process that creates new land through the movement of tectonic plates.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of water that creates rivers and lakes?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Glacial movement"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the term for the movement of water that creates rivers and lakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the largest continent on Earth?",
+        "options": [
+          "Asia",
+          "Africa",
+          "North America",
+          "South America"
+        ],
+        "answer": "A",
+        "explanation": "Asia is the largest continent on Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process that creates new land through volcanic eruptions?",
+        "options": [
+          "Weathering and erosion",
+          "Plate tectonics",
+          "Volcanic eruptions",
+          "Glaciation"
+        ],
+        "answer": "C",
+        "explanation": "Volcanic eruptions are the process that creates new land through volcanic eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of ice that creates glaciers?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate tectonics",
+          "Glacial movement"
+        ],
+        "answer": "D",
+        "explanation": "Glacial movement is the term for the movement of ice that creates glaciers.",
+        "image_url": null
+      },
+      {
+        "question": "What is the largest desert on Earth?",
+        "options": [
+          "Sahara Desert",
+          "Gobi Desert",
+          "Mojave Desert",
+          "Atacama Desert"
+        ],
+        "answer": "A",
+        "explanation": "The Sahara Desert is the largest desert on Earth.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process that creates new land through the movement of glaciers?",
+        "options": [
+          "Weathering and erosion",
+          "Plate tectonics",
+          "Volcanic eruptions",
+          "Glaciation"
+        ],
+        "answer": "D",
+        "explanation": "Glaciation is the process that creates new land through the movement of glaciers.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-3 Describing the factors and processes that affected the Earth›s surface which changed some of its",
+    "questions": [
+      {
+        "question": "What is the process called when wind and water wear away rocks and soil?",
+        "options": [
+          "Weathering is the process of rocks changing into soil",
+          "Erosion is the process of rocks changing into soil",
+          "Weathering is the process of wind and water wearing away rocks and soil",
+          "Erosion is the process of wind and water wearing away rocks and soil"
+        ],
+        "answer": "C",
+        "explanation": "Weathering is the process of wind and water wearing away rocks and soil, breaking them down into smaller pieces.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to rocks when they are broken down into smaller pieces?",
+        "options": [
+          "They become larger",
+          "They become smaller",
+          "They stay the same size",
+          "They disappear"
+        ],
+        "answer": "B",
+        "explanation": "Rocks become smaller when they are broken down into smaller pieces through the process of weathering.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when rocks are carried away by wind or water?",
+        "options": [
+          "Weathering is the process of rocks being carried away",
+          "Erosion is the process of rocks being carried away",
+          "Deposition is the process of rocks being carried away",
+          "Sedimentation is the process of rocks being carried away"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the process of rocks being carried away by wind or water.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when rocks are deposited in a new location?",
+        "options": [
+          "Weathering is the process of rocks being deposited",
+          "Erosion is the process of rocks being deposited",
+          "Deposition is the process of rocks being deposited",
+          "Sedimentation is the process of rocks being deposited"
+        ],
+        "answer": "C",
+        "explanation": "Deposition is the process of rocks being deposited in a new location.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of sedimentation?",
+        "options": [
+          "New rocks are formed",
+          "Rocks are broken down into smaller pieces",
+          "Rocks are carried away by wind or water",
+          "New landforms are created"
+        ],
+        "answer": "D",
+        "explanation": "Sedimentation results in the creation of new landforms.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of erosion?",
+        "options": [
+          "Weathering",
+          "Water",
+          "Wind",
+          "Gravity"
+        ],
+        "answer": "B",
+        "explanation": "Water is the main cause of erosion, as it can wear away rocks and soil over time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when rocks are broken down into smaller pieces through chemical reactions?",
+        "options": [
+          "Physical weathering",
+          "Chemical weathering",
+          "Biological weathering",
+          "Mechanical weathering"
+        ],
+        "answer": "B",
+        "explanation": "Chemical weathering is the process of rocks being broken down into smaller pieces through chemical reactions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of weathering?",
+        "options": [
+          "Rocks become larger",
+          "Rocks stay the same size",
+          "Rocks become smaller",
+          "Rocks disappear"
+        ],
+        "answer": "C",
+        "explanation": "Weathering results in rocks becoming smaller as they are broken down into smaller pieces.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when rocks are carried away by ice?",
+        "options": [
+          "Glacial erosion",
+          "Glacial weathering",
+          "Glacial deposition",
+          "Glacial sedimentation"
+        ],
+        "answer": "A",
+        "explanation": "Glacial erosion is the process of rocks being carried away by ice.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main effect of erosion on the Earth's surface?",
+        "options": [
+          "New landforms are created",
+          "Rocks become larger",
+          "Rocks stay the same size",
+          "The Earth's surface remains unchanged"
+        ],
+        "answer": "A",
+        "explanation": "Erosion results in the creation of new landforms as rocks and soil are carried away and deposited in new locations.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-4 Describing the types of rocks and their relationship to minerals and distinguishing their characteristics and",
+    "questions": [
+      {
+        "question": "What is the main difference between an igneous rock and a sedimentary rock?",
+        "options": [
+          "Igneous rocks are formed from the cooling of magma, while sedimentary rocks are formed from the compression of sand and minerals.",
+          "Sedimentary rocks are formed from the cooling of magma, while igneous rocks are formed from the compression of sand and minerals.",
+          "Igneous rocks are formed from the compression of sand and minerals, while sedimentary rocks are formed from the cooling of magma.",
+          "Sedimentary rocks are formed from the erosion of existing rocks, while igneous rocks are formed from the cooling of magma."
+        ],
+        "answer": "A",
+        "explanation": "Igneous rocks are formed from the cooling of magma, while sedimentary rocks are formed from the compression of sand and minerals.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary characteristic of metamorphic rocks?",
+        "options": [
+          "They are formed from the cooling of magma.",
+          "They are formed from the compression of sand and minerals.",
+          "They are formed from the alteration of existing rocks under high pressure and temperature.",
+          "They are formed from the erosion of existing rocks."
+        ],
+        "answer": "C",
+        "explanation": "Metamorphic rocks are formed from the alteration of existing rocks under high pressure and temperature.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of rock is formed from the cooling and solidification of magma?",
+        "options": [
+          "Sedimentary rock",
+          "Igneous rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "B",
+        "explanation": "Igneous rock is formed from the cooling and solidification of magma.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when existing rocks are broken down into smaller particles?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Metamorphism"
+        ],
+        "answer": "A",
+        "explanation": "Weathering is the process called when existing rocks are broken down into smaller particles.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of rock is formed from the compression of sand and minerals?",
+        "options": [
+          "Igneous rock",
+          "Sedimentary rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "B",
+        "explanation": "Sedimentary rock is formed from the compression of sand and minerals.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for rocks that are formed from the alteration of existing rocks under high pressure and temperature?",
+        "options": [
+          "Metamorphic rocks",
+          "Igneous rocks",
+          "Sedimentary rocks",
+          "Foliated rocks"
+        ],
+        "answer": "A",
+        "explanation": "Metamorphic rocks are formed from the alteration of existing rocks under high pressure and temperature.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of rock is formed from the cooling and solidification of magma beneath the Earth's surface?",
+        "options": [
+          "Igneous rock",
+          "Sedimentary rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "A",
+        "explanation": "Igneous rock is formed from the cooling and solidification of magma beneath the Earth's surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when rocks are broken down into smaller particles and carried away by natural forces?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Deposition",
+          "Metamorphism"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the process called when rocks are broken down into smaller particles and carried away by natural forces.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of rock is formed from the compression of sand and minerals over time?",
+        "options": [
+          "Igneous rock",
+          "Sedimentary rock",
+          "Metamorphic rock",
+          "Foliated rock"
+        ],
+        "answer": "B",
+        "explanation": "Sedimentary rock is formed from the compression of sand and minerals over time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for rocks that are formed from the cooling and solidification of magma, but have a layered or banded structure?",
+        "options": [
+          "Igneous rocks",
+          "Sedimentary rocks",
+          "Metamorphic rocks",
+          "Foliated rocks"
+        ],
+        "answer": "D",
+        "explanation": "Foliated rocks are formed from the cooling and solidification of magma, but have a layered or banded structure.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-5 Determining the causes and effects of earthquakes and volcanoes and identifying the sites most vulnerable to earthquakes and volcanoes.",
+    "questions": [
+      {
+        "question": "What is the main reason why earthquakes occur?",
+        "options": [
+          "Movement of the Earth's crust",
+          "Volcanic eruptions",
+          "Weather changes",
+          "Tides"
+        ],
+        "answer": "A",
+        "explanation": "Earthquakes occur due to the movement of the Earth's crust, which can cause the ground to shake violently.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when the Earth's crust is broken and new crust is formed?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate Tectonics",
+          "Volcanic Eruption"
+        ],
+        "answer": "C",
+        "explanation": "Plate Tectonics is the process by which the Earth's crust is broken and new crust is formed.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the study of the Earth's physical structure, composition, and processes?",
+        "options": [
+          "Geography",
+          "Meteorology",
+          "Oceanography",
+          "Geology"
+        ],
+        "answer": "D",
+        "explanation": "Geology is the study of the Earth's physical structure, composition, and processes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of volcanic eruptions?",
+        "options": [
+          "Movement of the Earth's crust",
+          "Weather changes",
+          "Tectonic plate movement",
+          "Human activities"
+        ],
+        "answer": "C",
+        "explanation": "Tectonic plate movement is the main cause of volcanic eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's crust that can cause earthquakes and volcanoes?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate Tectonics",
+          "Glaciation"
+        ],
+        "answer": "C",
+        "explanation": "Plate Tectonics is the movement of the Earth's crust that can cause earthquakes and volcanoes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which the Earth's surface is worn away by natural forces?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate Tectonics",
+          "Volcanic Eruption"
+        ],
+        "answer": "B",
+        "explanation": "Erosion is the process by which the Earth's surface is worn away by natural forces.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the study of the Earth's water, including oceans, lakes, and rivers?",
+        "options": [
+          "Geography",
+          "Meteorology",
+          "Oceanography",
+          "Hydrology"
+        ],
+        "answer": "C",
+        "explanation": "Oceanography is the study of the Earth's water, including oceans, lakes, and rivers.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why the Earth's surface is broken into several large plates?",
+        "options": [
+          "Weather changes",
+          "Tectonic plate movement",
+          "Human activities",
+          "Volcanic eruptions"
+        ],
+        "answer": "B",
+        "explanation": "Tectonic plate movement is the main reason why the Earth's surface is broken into several large plates.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's crust that can cause the creation of mountains?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate Tectonics",
+          "Glaciation"
+        ],
+        "answer": "C",
+        "explanation": "Plate Tectonics is the movement of the Earth's crust that can cause the creation of mountains.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which the Earth's surface is shaped by moving ice?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate Tectonics",
+          "Glaciation"
+        ],
+        "answer": "D",
+        "explanation": "Glaciation is the process by which the Earth's surface is shaped by moving ice.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-5 Determining the causes and effects of earthquakes and volcanoes and identifying the sites most vulnerable to earthquakes and volcanoes.",
+    "questions": [
+      {
+        "question": "What is the main cause of earthquakes?",
+        "options": [
+          "Movement of the Earth's crust",
+          "Volcanic eruptions",
+          "Changes in the weather",
+          "Earth's rotation"
+        ],
+        "answer": "A",
+        "explanation": "Earthquakes occur when there is movement in the Earth's crust, causing the ground to shake.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when magma from the Earth's interior rises to the surface?",
+        "options": [
+          "Weathering",
+          "Erosion",
+          "Plate Tectonics",
+          "Volcanic Eruption"
+        ],
+        "answer": "D",
+        "explanation": "A volcanic eruption occurs when magma from the Earth's interior rises to the surface, releasing hot ash, gas, and rock.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the ground shaking caused by the movement of tectonic plates?",
+        "options": [
+          "Seismic activity",
+          "Volcanic activity",
+          "Earth's rotation",
+          "Weathering"
+        ],
+        "answer": "A",
+        "explanation": "Seismic activity refers to the ground shaking caused by the movement of tectonic plates, resulting in earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the movement of the Earth's crust that can cause earthquakes and volcanoes?",
+        "options": [
+          "Plate Tectonics",
+          "Weathering",
+          "Erosion",
+          "Earth's rotation"
+        ],
+        "answer": "A",
+        "explanation": "Plate Tectonics is the movement of the Earth's crust that can cause earthquakes and volcanoes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main effect of a volcanic eruption?",
+        "options": [
+          "Formation of new land",
+          "Creation of new oceans",
+          "Release of hot ash and gas",
+          "Changes in the weather"
+        ],
+        "answer": "C",
+        "explanation": "A volcanic eruption releases hot ash and gas into the air, affecting the surrounding environment.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the area around a volcano that is affected by volcanic eruptions?",
+        "options": [
+          "Volcanic Zone",
+          "Earthquake Zone",
+          "Weathering Zone",
+          "Erosion Zone"
+        ],
+        "answer": "A",
+        "explanation": "The Volcanic Zone is the area around a volcano that is affected by volcanic eruptions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main cause of volcanic eruptions?",
+        "options": [
+          "Movement of the Earth's crust",
+          "Changes in the weather",
+          "Earth's rotation",
+          "Magma buildup"
+        ],
+        "answer": "D",
+        "explanation": "Volcanic eruptions occur when magma from the Earth's interior builds up and is released through the surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the shaking of the ground caused by the movement of magma beneath the Earth's surface?",
+        "options": [
+          "Seismic activity",
+          "Volcanic activity",
+          "Earth's rotation",
+          "Weathering"
+        ],
+        "answer": "B",
+        "explanation": "Volcanic activity refers to the shaking of the ground caused by the movement of magma beneath the Earth's surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the area that is most likely to be affected by earthquakes and volcanoes?",
+        "options": [
+          "Tectonic Plate",
+          "Volcanic Zone",
+          "Earthquake Zone",
+          "Geological Fault"
+        ],
+        "answer": "A",
+        "explanation": "A Tectonic Plate is the area that is most likely to be affected by earthquakes and volcanoes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main effect of an earthquake on buildings and structures?",
+        "options": [
+          "Formation of new land",
+          "Creation of new oceans",
+          "Damage to buildings and structures",
+          "Changes in the weather"
+        ],
+        "answer": "C",
+        "explanation": "An earthquake can cause damage to buildings and structures, depending on the intensity of the quake.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-3-2-5 Determining the causes and effects of earthquakes and volcanoes and identifying the sites most vulnerable to earthquakes and volcanoes.",
+    "questions": [
+      {
+        "question": "What is the main purpose of earthquake monitoring stations?",
+        "options": [
+          "To predict the weather",
+          "To detect and measure earthquake waves",
+          "To study the movement of the Earth's crust",
+          "To track the movement of animals"
+        ],
+        "answer": "B",
+        "explanation": "Earthquake monitoring stations are used to detect and measure earthquake waves, which helps scientists understand the causes and effects of earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What type of device is often used to measure the ground motion during an earthquake?",
+        "options": [
+          "Seismograph",
+          "Barometer",
+          "Thermometer",
+          "Hygrometer"
+        ],
+        "answer": "A",
+        "explanation": "A seismograph is a device that measures the ground motion during an earthquake, which helps scientists understand the severity of the earthquake.",
+        "image_url": null
+      },
+      {
+        "question": "Why are some areas in the Kingdom of Saudi Arabia more prone to earthquakes?",
+        "options": [
+          "Because they are near the ocean",
+          "Because they are near mountains",
+          "Because they are near fault lines",
+          "Because they are near deserts"
+        ],
+        "answer": "C",
+        "explanation": "Areas near fault lines are more prone to earthquakes because fault lines are cracks in the Earth's crust where tectonic plates move and sometimes get stuck, causing earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the device that records the time and strength of earthquakes?",
+        "options": [
+          "Seismometer",
+          "Spectrometer",
+          "Telescope",
+          "Microscope"
+        ],
+        "answer": "A",
+        "explanation": "A seismometer is a device that records the time and strength of earthquakes, which helps scientists understand the causes and effects of earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "Why are earthquake monitoring stations important?",
+        "options": [
+          "To predict the weather",
+          "To detect and measure earthquake waves",
+          "To study the movement of the Earth's crust",
+          "To track the movement of animals"
+        ],
+        "answer": "B",
+        "explanation": "Earthquake monitoring stations are important because they help scientists detect and measure earthquake waves, which helps them understand the causes and effects of earthquakes and prepare for future earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main goal of earthquake monitoring in the Kingdom of Saudi Arabia?",
+        "options": [
+          "To predict the weather",
+          "To detect and measure earthquake waves",
+          "To study the movement of the Earth's crust",
+          "To track the movement of animals"
+        ],
+        "answer": "B",
+        "explanation": "The main goal of earthquake monitoring in the Kingdom of Saudi Arabia is to detect and measure earthquake waves, which helps scientists understand the causes and effects of earthquakes and prepare for future earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What type of data do seismographs record?",
+        "options": [
+          "Temperature and humidity",
+          "Pressure and wind speed",
+          "Ground motion and earthquake waves",
+          "Earthquake location and depth"
+        ],
+        "answer": "C",
+        "explanation": "Seismographs record ground motion and earthquake waves, which helps scientists understand the causes and effects of earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "Why are earthquake monitoring stations located in different parts of the Kingdom of Saudi Arabia?",
+        "options": [
+          "To detect and measure earthquake waves",
+          "To study the movement of the Earth's crust",
+          "To track the movement of animals",
+          "To predict the weather"
+        ],
+        "answer": "A",
+        "explanation": "Earthquake monitoring stations are located in different parts of the Kingdom of Saudi Arabia to detect and measure earthquake waves, which helps scientists understand the causes and effects of earthquakes and prepare for future earthquakes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the name of the device that measures the strength of earthquake waves?",
+        "options": [
+          "Seismometer",
+          "Accelerometer",
+          "Barometer",
+          "Thermometer"
+        ],
+        "answer": "B",
+        "explanation": "An accelerometer is a device that measures the strength of earthquake waves, which helps scientists understand the severity of the earthquake.",
+        "image_url": null
+      },
+      {
+        "question": "Why are earthquake monitoring stations important for the people of the Kingdom of Saudi Arabia?",
+        "options": [
+          "To predict the weather",
+          "To detect and measure earthquake waves",
+          "To study the movement of the Earth's crust",
+          "To track the movement of animals"
+        ],
+        "answer": "B",
+        "explanation": "Earthquake monitoring stations are important for the people of the Kingdom of Saudi Arabia because they help scientists detect and measure earthquake waves, which helps them understand the causes and effects of earthquakes and prepare for future earthquakes.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-1-1 Describing the cell structures and linking them to their vital functions.",
+    "questions": [
+      {
+        "question": "What is the outermost layer of a cell called?",
+        "options": [
+          "The nucleus",
+          "The cell membrane",
+          "The cytoplasm",
+          "The cell wall"
+        ],
+        "answer": "B",
+        "explanation": "The cell membrane is the outermost layer of a cell that separates the cell from its environment.",
+        "image_url": null
+      },
+      {
+        "question": "What is the region inside the cell membrane where most of the cell's activities take place?",
+        "options": [
+          "The nucleus",
+          "The cytoplasm",
+          "The cell wall",
+          "The mitochondria"
+        ],
+        "answer": "B",
+        "explanation": "The cytoplasm is the region inside the cell membrane where most of the cell's activities take place, including metabolic processes and cell division.",
+        "image_url": null
+      },
+      {
+        "question": "What is the part of the cell that contains most of the cell's genetic material?",
+        "options": [
+          "The cell membrane",
+          "The cytoplasm",
+          "The nucleus",
+          "The cell wall"
+        ],
+        "answer": "C",
+        "explanation": "The nucleus is the part of the cell that contains most of the cell's genetic material, including DNA.",
+        "image_url": null
+      },
+      {
+        "question": "What is the rigid layer outside the cell membrane in plant cells?",
+        "options": [
+          "The cell wall",
+          "The cell membrane",
+          "The cytoplasm",
+          "The nucleus"
+        ],
+        "answer": "A",
+        "explanation": "The cell wall is a rigid layer outside the cell membrane in plant cells that provides support and protection.",
+        "image_url": null
+      },
+      {
+        "question": "What is the clear liquid inside the cell membrane where many metabolic processes take place?",
+        "options": [
+          "The cytoplasm",
+          "The cell membrane",
+          "The nucleus",
+          "The mitochondria"
+        ],
+        "answer": "A",
+        "explanation": "The cytoplasm is the clear liquid inside the cell membrane where many metabolic processes take place, including cell division and metabolic reactions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the part of the cell that is responsible for generating energy?",
+        "options": [
+          "The nucleus",
+          "The cytoplasm",
+          "The mitochondria",
+          "The cell wall"
+        ],
+        "answer": "C",
+        "explanation": "The mitochondria is the part of the cell that is responsible for generating energy through cellular respiration.",
+        "image_url": null
+      },
+      {
+        "question": "What is the outer layer of a plant cell that provides support and protection?",
+        "options": [
+          "The cell wall",
+          "The cell membrane",
+          "The nucleus",
+          "The cytoplasm"
+        ],
+        "answer": "A",
+        "explanation": "The cell wall is the outer layer of a plant cell that provides support and protection.",
+        "image_url": null
+      },
+      {
+        "question": "What is the region inside the cell membrane where many metabolic processes take place?",
+        "options": [
+          "The nucleus",
+          "The cytoplasm",
+          "The cell wall",
+          "The mitochondria"
+        ],
+        "answer": "B",
+        "explanation": "The cytoplasm is the region inside the cell membrane where many metabolic processes take place, including cell division and metabolic reactions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the part of the cell that contains the genetic material?",
+        "options": [
+          "The cell membrane",
+          "The cytoplasm",
+          "The nucleus",
+          "The cell wall"
+        ],
+        "answer": "C",
+        "explanation": "The nucleus is the part of the cell that contains the genetic material, including DNA.",
+        "image_url": null
+      },
+      {
+        "question": "What is the part of the cell that is responsible for cell division?",
+        "options": [
+          "The nucleus",
+          "The cytoplasm",
+          "The mitochondria",
+          "The cell wall"
+        ],
+        "answer": "A",
+        "explanation": "The nucleus is the part of the cell that is responsible for cell division, as it contains the genetic material necessary for cell reproduction.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-1-1 Describing the cell structures and linking them to their vital functions.",
+    "questions": [
+      {
+        "question": "What is the main function of the mitochondria in a cell?",
+        "options": [
+          "To store genetic information",
+          "To synthesize proteins",
+          "To produce energy for the cell",
+          "To transport materials across the cell membrane"
+        ],
+        "answer": "C",
+        "explanation": "Mitochondria are often referred to as the powerhouses of the cell because they generate most of the cell's supply of adenosine triphosphate (ATP), which is used as a source of chemical energy.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary role of the cell membrane?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To regulate what enters and leaves the cell",
+          "To provide structural support to the cell"
+        ],
+        "answer": "C",
+        "explanation": "The cell membrane, also known as the plasma membrane, is a thin layer that surrounds the cell and regulates the movement of materials in and out of the cell.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of the nucleus in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To produce energy for the cell",
+          "To store genetic information",
+          "To transport materials across the cell membrane"
+        ],
+        "answer": "C",
+        "explanation": "The nucleus is the control center of the cell where DNA is stored and replicated. It contains most of the cell's genetic material.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary role of the ribosomes in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To produce energy for the cell",
+          "To transport materials across the cell membrane"
+        ],
+        "answer": "A",
+        "explanation": "Ribosomes are small organelles found throughout the cytoplasm where protein synthesis occurs. They read messenger RNA sequences and assemble amino acids into proteins.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of the lysosomes in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To break down and recycle cellular waste",
+          "To produce energy for the cell"
+        ],
+        "answer": "C",
+        "explanation": "Lysosomes are membrane-bound organelles that contain digestive enzymes. They break down and recycle cellular waste, foreign substances, and cellular debris.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary role of the golgi apparatus in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To transport materials across the cell membrane",
+          "To modify and package proteins for transport"
+        ],
+        "answer": "D",
+        "explanation": "The golgi apparatus is a complex organelle that modifies, sorts, and packages proteins and lipids for transport out of the cell.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of the endoplasmic reticulum in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To produce energy for the cell",
+          "To transport materials across the cell membrane"
+        ],
+        "answer": "A",
+        "explanation": "The endoplasmic reticulum is a network of membranous tubules and cisternae that is involved in protein synthesis, folding, and transport.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary role of the vacuoles in a plant cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To produce energy for the cell",
+          "To store water and nutrients"
+        ],
+        "answer": "D",
+        "explanation": "Vacuoles are membrane-bound organelles that store water, nutrients, and waste products in plant cells.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of the centrioles in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To produce energy for the cell",
+          "To form cilia and flagella"
+        ],
+        "answer": "D",
+        "explanation": "Centrioles are small, cylindrical organelles that are involved in the formation of cilia and flagella, as well as the separation of chromosomes during cell division.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary role of the chloroplasts in a plant cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To produce energy for the cell",
+          "To perform photosynthesis"
+        ],
+        "answer": "D",
+        "explanation": "Chloroplasts are organelles found in plant cells where photosynthesis occurs. They contain the pigment chlorophyll and are responsible for converting light energy into chemical energy.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-1-4 Describing the different patterns in the life cycles of animals and plants and the changes accom-panying them, and comparing them.",
+    "questions": [
+      {
+        "question": "What is the main difference between the life cycle of a butterfly and a frog?",
+        "options": [
+          "A butterfly goes through four stages of life, while a frog goes through three stages.",
+          "A butterfly undergoes metamorphosis, but a frog does not.",
+          "A butterfly lays eggs, while a frog lays tadpoles.",
+          "A butterfly has a complete life cycle, while a frog has an incomplete life cycle."
+        ],
+        "answer": "C",
+        "explanation": "A butterfly lays eggs, while a frog lays tadpoles. This is a key difference between their life cycles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which plants make their own food?",
+        "options": [
+          "Photosynthesis is the process by which plants make their own food.",
+          "Respiration is the process by which plants make their own food.",
+          "Transpiration is the process by which plants make their own food.",
+          "Decomposition is the process by which plants make their own food."
+        ],
+        "answer": "A",
+        "explanation": "Photosynthesis is the process by which plants make their own food using sunlight, water, and carbon dioxide.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the life cycle of a plant and an animal?",
+        "options": [
+          "A plant has a complete life cycle, while an animal has an incomplete life cycle.",
+          "A plant undergoes photosynthesis, but an animal does not.",
+          "A plant grows from a seed, while an animal grows from an egg.",
+          "A plant has a fixed number of cells, while an animal has a variable number of cells."
+        ],
+        "answer": "A",
+        "explanation": "A plant has a complete life cycle, which includes growth, reproduction, and death, while an animal has an incomplete life cycle, which includes growth and reproduction, but not death.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which an animal grows and develops from a fertilized egg?",
+        "options": [
+          "Growth is the process by which an animal grows and develops from a fertilized egg.",
+          "Development is the process by which an animal grows and develops from a fertilized egg.",
+          "Metamorphosis is the process by which an animal grows and develops from a fertilized egg.",
+          "Differentiation is the process by which an animal grows and develops from a fertilized egg."
+        ],
+        "answer": "B",
+        "explanation": "Development is the process by which an animal grows and develops from a fertilized egg, involving cell division, growth, and differentiation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the life cycle of a mammal and a bird?",
+        "options": [
+          "A mammal gives birth to live young, while a bird lays eggs.",
+          "A mammal has a fixed number of cells, while a bird has a variable number of cells.",
+          "A mammal undergoes metamorphosis, while a bird does not.",
+          "A mammal has a complete life cycle, while a bird has an incomplete life cycle."
+        ],
+        "answer": "A",
+        "explanation": "A mammal gives birth to live young, while a bird lays eggs, which is a key difference between their life cycles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which an animal changes its form or structure?",
+        "options": [
+          "Metamorphosis is the process by which an animal changes its form or structure.",
+          "Growth is the process by which an animal changes its form or structure.",
+          "Development is the process by which an animal changes its form or structure.",
+          "Differentiation is the process by which an animal changes its form or structure."
+        ],
+        "answer": "A",
+        "explanation": "Metamorphosis is the process by which an animal changes its form or structure, often involving a dramatic change in appearance or function.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the life cycle of a plant and a fungus?",
+        "options": [
+          "A plant grows from a seed, while a fungus grows from a spore.",
+          "A plant undergoes photosynthesis, but a fungus does not.",
+          "A plant has a fixed number of cells, while a fungus has a variable number of cells.",
+          "A plant has a complete life cycle, while a fungus has an incomplete life cycle."
+        ],
+        "answer": "A",
+        "explanation": "A plant grows from a seed, while a fungus grows from a spore, which is a key difference between their life cycles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which an organism produces offspring?",
+        "options": [
+          "Reproduction is the process by which an organism produces offspring.",
+          "Growth is the process by which an organism produces offspring.",
+          "Development is the process by which an organism produces offspring.",
+          "Differentiation is the process by which an organism produces offspring."
+        ],
+        "answer": "A",
+        "explanation": "Reproduction is the process by which an organism produces offspring, involving the creation of new individuals through various mechanisms such as sexual or asexual reproduction.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the life cycle of an insect and a mammal?",
+        "options": [
+          "An insect undergoes metamorphosis, while a mammal does not.",
+          "An insect has a fixed number of cells, while a mammal has a variable number of cells.",
+          "An insect grows from an egg, while a mammal grows from a fertilized egg.",
+          "An insect has a complete life cycle, while a mammal has an incomplete life cycle."
+        ],
+        "answer": "A",
+        "explanation": "An insect undergoes metamorphosis, which involves a dramatic change in form or structure, while a mammal does not undergo such a transformation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which an organism grows and develops?",
+        "options": [
+          "Growth is the process by which an organism grows and develops.",
+          "Development is the process by which an organism grows and develops.",
+          "Metamorphosis is the process by which an organism grows and develops.",
+          "Differentiation is the process by which an organism grows and develops."
+        ],
+        "answer": "A",
+        "explanation": "Growth is the process by which an organism grows and develops, involving an increase in size or complexity over time.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-1-4 Describing the different patterns in the life cycles of animals and plants and the changes accom-panying them, and comparing them.",
+    "questions": [
+      {
+        "question": "What is the main change that occurs in the life cycle of a butterfly?",
+        "options": [
+          "The butterfly grows bigger and stronger.",
+          "The butterfly lays eggs and starts a new generation.",
+          "The caterpillar transforms into a beautiful butterfly.",
+          "The butterfly migrates to a new location for the winter."
+        ],
+        "answer": "C",
+        "explanation": "In the life cycle of a butterfly, the caterpillar transforms into a beautiful butterfly through a process called metamorphosis.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a seed in the life cycle of a plant?",
+        "options": [
+          "To provide food for animals.",
+          "To protect the plant from harm.",
+          "To grow into a new plant.",
+          "To store water for the plant."
+        ],
+        "answer": "C",
+        "explanation": "A seed is a small plant that grows into a new plant, allowing the species to reproduce and continue its life cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the life cycle of a mammal and a fish?",
+        "options": [
+          "Mammals give birth to live young, while fish lay eggs.",
+          "Mammals live on land, while fish live in water.",
+          "Mammals have fur, while fish have scales.",
+          "Mammals eat plants, while fish eat meat."
+        ],
+        "answer": "A",
+        "explanation": "Mammals give birth to live young, while fish lay eggs, which is a key difference in their life cycles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a pupa in the life cycle of a butterfly?",
+        "options": [
+          "To protect the butterfly from predators.",
+          "To provide food for the butterfly.",
+          "To transform the caterpillar into a butterfly.",
+          "To store energy for the butterfly."
+        ],
+        "answer": "C",
+        "explanation": "A pupa is a stage in the life cycle of a butterfly where the caterpillar transforms into a butterfly through a process called metamorphosis.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main change that occurs in the life cycle of a frog?",
+        "options": [
+          "The frog grows bigger and stronger.",
+          "The frog lays eggs and starts a new generation.",
+          "The tadpole transforms into a frog.",
+          "The frog migrates to a new location for the winter."
+        ],
+        "answer": "C",
+        "explanation": "In the life cycle of a frog, the tadpole transforms into a frog through a process called metamorphosis.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a flower in the life cycle of a plant?",
+        "options": [
+          "To provide food for animals.",
+          "To protect the plant from harm.",
+          "To make seeds and reproduce.",
+          "To store water for the plant."
+        ],
+        "answer": "C",
+        "explanation": "A flower is a part of the plant that makes seeds and reproduces, allowing the species to continue its life cycle.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the life cycle of a plant and an animal?",
+        "options": [
+          "Plants make their own food, while animals eat food.",
+          "Plants live on land, while animals live in water.",
+          "Plants have roots, while animals have legs.",
+          "Plants reproduce by seeds, while animals reproduce by eggs."
+        ],
+        "answer": "A",
+        "explanation": "Plants make their own food through photosynthesis, while animals eat food to survive, which is a key difference in their life cycles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a cocoon in the life cycle of a butterfly?",
+        "options": [
+          "To protect the butterfly from predators.",
+          "To provide food for the butterfly.",
+          "To transform the caterpillar into a butterfly.",
+          "To store energy for the butterfly."
+        ],
+        "answer": "C",
+        "explanation": "A cocoon is a stage in the life cycle of a butterfly where the caterpillar transforms into a butterfly through a process called metamorphosis.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main change that occurs in the life cycle of a tree?",
+        "options": [
+          "The tree grows bigger and stronger.",
+          "The tree lays seeds and starts a new generation.",
+          "The seedling transforms into a mature tree.",
+          "The tree migrates to a new location for the winter."
+        ],
+        "answer": "C",
+        "explanation": "In the life cycle of a tree, the seedling transforms into a mature tree through a process of growth and development.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a seedling in the life cycle of a plant?",
+        "options": [
+          "To provide food for animals.",
+          "To protect the plant from harm.",
+          "To grow into a mature plant.",
+          "To store water for the plant."
+        ],
+        "answer": "C",
+        "explanation": "A seedling is a young plant that grows into a mature plant, allowing the species to continue its life cycle.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-2-1 Classifying living organisms into groups based on common phenotypic traits.",
+    "questions": [
+      {
+        "question": "What is the main reason scientists classify animals into groups?",
+        "options": [
+          "To show how big they are",
+          "To show how many legs they have",
+          "To show their common characteristics and traits",
+          "To show where they live"
+        ],
+        "answer": "C",
+        "explanation": "Scientists classify animals into groups to show their common characteristics and traits, such as body shape, diet, and habitat.",
+        "image_url": null
+      },
+      {
+        "question": "Why do scientists group animals with backbones together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have backbones",
+          "Because they all live in the ocean"
+        ],
+        "answer": "C",
+        "explanation": "Animals with backbones are grouped together because they all have a backbone, which is a common characteristic.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a mammal and a reptile?",
+        "options": [
+          "Mammals have four legs and reptiles have two legs",
+          "Mammals have fur and reptiles have scales",
+          "Mammals live in the ocean and reptiles live on land",
+          "Mammals are warm-blooded and reptiles are cold-blooded"
+        ],
+        "answer": "D",
+        "explanation": "Mammals are warm-blooded, meaning they regulate their own body temperature, while reptiles are cold-blooded, meaning their body temperature is regulated by the environment.",
+        "image_url": null
+      },
+      {
+        "question": "Why do scientists group animals with feathers together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have fur",
+          "Because they all live in the ocean"
+        ],
+        "answer": "B",
+        "explanation": "Animals with feathers are grouped together because they all have feathers, which is a common characteristic.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason scientists group animals with shells together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have shells",
+          "Because they all live in the ocean"
+        ],
+        "answer": "C",
+        "explanation": "Animals with shells are grouped together because they all have shells, which is a common characteristic.",
+        "image_url": null
+      },
+      {
+        "question": "Why do scientists group animals with four legs together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have four legs",
+          "Because they all live in the ocean"
+        ],
+        "answer": "C",
+        "explanation": "Animals with four legs are grouped together because they all have four legs, which is a common characteristic.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a carnivore and a herbivore?",
+        "options": [
+          "Carnivores eat plants and herbivores eat animals",
+          "Carnivores eat animals and herbivores eat plants",
+          "Carnivores live in the ocean and herbivores live on land",
+          "Carnivores are warm-blooded and herbivores are cold-blooded"
+        ],
+        "answer": "B",
+        "explanation": "Carnivores eat animals and herbivores eat plants, which is a common characteristic that distinguishes them from each other.",
+        "image_url": null
+      },
+      {
+        "question": "Why do scientists group animals with wings together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have fur",
+          "Because they all live in the ocean"
+        ],
+        "answer": "B",
+        "explanation": "Animals with wings are grouped together because they all have wings, which is a common characteristic.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason scientists group animals with scaly skin together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have scaly skin",
+          "Because they all live in the ocean"
+        ],
+        "answer": "C",
+        "explanation": "Animals with scaly skin are grouped together because they all have scaly skin, which is a common characteristic.",
+        "image_url": null
+      },
+      {
+        "question": "Why do scientists group animals with hooves together?",
+        "options": [
+          "Because they are all mammals",
+          "Because they are all birds",
+          "Because they all have hooves",
+          "Because they all live in the ocean"
+        ],
+        "answer": "C",
+        "explanation": "Animals with hooves are grouped together because they all have hooves, which is a common characteristic.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-3-1 Representing biological communities and identifying types of population that lives in it, describ-ing the interrelationships among them, and their inter-action with the abiotic components, and the impact of biological communities changes on their survival and sustainability.",
+    "questions": [
+      {
+        "question": "What is a biological community?",
+        "options": [
+          "A group of plants and animals living together in a specific area",
+          "A type of animal that lives in a group",
+          "A type of plant that grows in a specific climate",
+          "A type of rock that forms in the ocean"
+        ],
+        "answer": "A",
+        "explanation": "A biological community is a group of plants and animals living together in a specific area, interacting with each other and their environment.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms need to survive in their habitats?",
+        "options": [
+          "Food, water, and shelter",
+          "Food, water, and air",
+          "Food, shelter, and friends",
+          "Water, shelter, and exercise"
+        ],
+        "answer": "B",
+        "explanation": "Living organisms need food, water, and air to survive in their habitats.",
+        "image_url": null
+      },
+      {
+        "question": "What is an abiotic component?",
+        "options": [
+          "A living thing that helps other living things",
+          "A non-living thing that affects living things",
+          "A type of plant that grows in a specific climate",
+          "A type of animal that lives in a group"
+        ],
+        "answer": "B",
+        "explanation": "An abiotic component is a non-living thing that affects living things, such as water, air, and sunlight.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when a biological community changes?",
+        "options": [
+          "The living things in the community get stronger",
+          "The living things in the community get weaker",
+          "The living things in the community adapt to the change",
+          "The living things in the community disappear"
+        ],
+        "answer": "C",
+        "explanation": "When a biological community changes, the living things in the community may adapt to the change, but they may also get weaker or disappear if they are not able to adapt.",
+        "image_url": null
+      },
+      {
+        "question": "What is a population?",
+        "options": [
+          "A group of living things that live in a specific area",
+          "A type of animal that lives in a group",
+          "A type of plant that grows in a specific climate",
+          "A type of rock that forms in the ocean"
+        ],
+        "answer": "A",
+        "explanation": "A population is a group of living things that live in a specific area, such as a group of birds or a group of trees.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms need to reproduce?",
+        "options": [
+          "Food, water, and shelter",
+          "Food, water, and air",
+          "Food, water, and friends",
+          "Food, water, and a safe place to live"
+        ],
+        "answer": "B",
+        "explanation": "Living organisms need food, water, and air to reproduce, as well as a safe place to live and friends to help them.",
+        "image_url": null
+      },
+      {
+        "question": "What is the importance of abiotic components in a biological community?",
+        "options": [
+          "Abiotic components help living things grow and thrive",
+          "Abiotic components harm living things and make them weaker",
+          "Abiotic components have no effect on living things",
+          "Abiotic components are only important for plants"
+        ],
+        "answer": "A",
+        "explanation": "Abiotic components, such as water, air, and sunlight, help living things grow and thrive in a biological community.",
+        "image_url": null
+      },
+      {
+        "question": "What happens when a biological community becomes too crowded?",
+        "options": [
+          "The living things in the community get stronger",
+          "The living things in the community get weaker",
+          "The living things in the community adapt to the change",
+          "The living things in the community disappear"
+        ],
+        "answer": "B",
+        "explanation": "When a biological community becomes too crowded, the living things in the community may get weaker or disappear if they are not able to adapt to the change.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of predators in a biological community?",
+        "options": [
+          "Predators help living things grow and thrive",
+          "Predators harm living things and make them weaker",
+          "Predators have no effect on living things",
+          "Predators help keep the population of living things in balance"
+        ],
+        "answer": "D",
+        "explanation": "Predators help keep the population of living things in balance by controlling the number of prey animals.",
+        "image_url": null
+      },
+      {
+        "question": "What is the importance of symbiotic relationships in a biological community?",
+        "options": [
+          "Symbiotic relationships harm living things and make them weaker",
+          "Symbiotic relationships have no effect on living things",
+          "Symbiotic relationships help living things grow and thrive",
+          "Symbiotic relationships are only important for plants"
+        ],
+        "answer": "C",
+        "explanation": "Symbiotic relationships, such as mutualism and commensalism, help living things grow and thrive in a biological community.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-3-1 Representing biological communities and identifying types of population that lives in it, describ-ing the interrelationships among them, and their inter-action with the abiotic components, and the impact of biological communities changes on their survival and sustainability.",
+    "questions": [
+      {
+        "question": "What do plants and animals in a forest need to survive?",
+        "options": [
+          "Water and sunlight",
+          "Food and shelter",
+          "Air and water",
+          "Food and air"
+        ],
+        "answer": "B",
+        "explanation": "Plants and animals in a forest need food and shelter to survive. Food provides energy, and shelter protects them from harsh weather conditions.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms in a pond need to live?",
+        "options": [
+          "Water and sunlight",
+          "Food and shelter",
+          "Air and water",
+          "Food and air"
+        ],
+        "answer": "A",
+        "explanation": "Living organisms in a pond need water and sunlight to live. Water provides them with the necessary nutrients, and sunlight helps them undergo photosynthesis.",
+        "image_url": null
+      },
+      {
+        "question": "What do plants and animals in a desert need to survive?",
+        "options": [
+          "Water and food",
+          "Food and shelter",
+          "Air and water",
+          "Water and shelter"
+        ],
+        "answer": "C",
+        "explanation": "Plants and animals in a desert need air and water to survive. Air provides them with oxygen, and water helps them regulate their body temperature.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms in a forest need to grow?",
+        "options": [
+          "Food and shelter",
+          "Water and sunlight",
+          "Air and water",
+          "Food and air"
+        ],
+        "answer": "B",
+        "explanation": "Living organisms in a forest need water and sunlight to grow. Water provides them with the necessary nutrients, and sunlight helps them undergo photosynthesis.",
+        "image_url": null
+      },
+      {
+        "question": "What do plants and animals in a river need to survive?",
+        "options": [
+          "Water and food",
+          "Food and shelter",
+          "Air and water",
+          "Water and shelter"
+        ],
+        "answer": "A",
+        "explanation": "Plants and animals in a river need water and food to survive. Water provides them with the necessary nutrients, and food helps them obtain energy.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms in a forest need to reproduce?",
+        "options": [
+          "Food and shelter",
+          "Water and sunlight",
+          "Air and water",
+          "Food and air"
+        ],
+        "answer": "B",
+        "explanation": "Living organisms in a forest need water and sunlight to reproduce. Water helps them produce offspring, and sunlight provides them with the necessary energy.",
+        "image_url": null
+      },
+      {
+        "question": "What do plants and animals in a mountain need to survive?",
+        "options": [
+          "Water and food",
+          "Food and shelter",
+          "Air and water",
+          "Water and shelter"
+        ],
+        "answer": "C",
+        "explanation": "Plants and animals in a mountain need air and water to survive. Air provides them with oxygen, and water helps them regulate their body temperature.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms in a forest need to adapt?",
+        "options": [
+          "Food and shelter",
+          "Water and sunlight",
+          "Air and water",
+          "Food and air"
+        ],
+        "answer": "B",
+        "explanation": "Living organisms in a forest need water and sunlight to adapt. Water helps them adjust to their environment, and sunlight provides them with the necessary energy.",
+        "image_url": null
+      },
+      {
+        "question": "What do plants and animals in a lake need to survive?",
+        "options": [
+          "Water and food",
+          "Food and shelter",
+          "Air and water",
+          "Water and shelter"
+        ],
+        "answer": "A",
+        "explanation": "Plants and animals in a lake need water and food to survive. Water provides them with the necessary nutrients, and food helps them obtain energy.",
+        "image_url": null
+      },
+      {
+        "question": "What do living organisms in a forest need to interact?",
+        "options": [
+          "Food and shelter",
+          "Water and sunlight",
+          "Air and water",
+          "Food and air"
+        ],
+        "answer": "B",
+        "explanation": "Living organisms in a forest need water and sunlight to interact. Water helps them communicate, and sunlight provides them with the necessary energy.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-3-2 Describing the components of the ecosystem and explaining the impact of the availability of different resources in ecosystems on the survival and sustainability of living organisms, and proposing solutions to problems that affect the stability of the ecosystem.",
+    "questions": [
+      {
+        "question": "What are the living parts of an ecosystem called?",
+        "options": [
+          "Plants and animals",
+          "Rocks and water",
+          "Soil and sunlight",
+          "Air and clouds"
+        ],
+        "answer": "A",
+        "explanation": "The living parts of an ecosystem are called biotic components, which include plants and animals.",
+        "image_url": null
+      },
+      {
+        "question": "What are the non-living parts of an ecosystem called?",
+        "options": [
+          "Water and air",
+          "Plants and animals",
+          "Soil and rocks",
+          "Sunlight and temperature"
+        ],
+        "answer": "A",
+        "explanation": "The non-living parts of an ecosystem are called abiotic components, which include water, air, soil, and rocks.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of sunlight in an ecosystem?",
+        "options": [
+          "It provides food for animals",
+          "It gives plants the energy to grow",
+          "It helps animals move faster",
+          "It makes the soil fertile"
+        ],
+        "answer": "B",
+        "explanation": "Sunlight provides the energy that plants need to grow, which in turn supports the food chain in an ecosystem.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to an ecosystem when there is a lack of water?",
+        "options": [
+          "It becomes more fertile",
+          "It becomes more diverse",
+          "It becomes less diverse and may even disappear",
+          "It becomes more polluted"
+        ],
+        "answer": "C",
+        "explanation": "A lack of water can lead to a decrease in the diversity of plants and animals in an ecosystem, and may even cause it to disappear.",
+        "image_url": null
+      },
+      {
+        "question": "What is the importance of soil in an ecosystem?",
+        "options": [
+          "It provides food for animals",
+          "It gives plants the energy to grow",
+          "It helps plants absorb water and nutrients",
+          "It makes the air clean"
+        ],
+        "answer": "C",
+        "explanation": "Soil provides essential nutrients and water to plants, which in turn supports the food chain in an ecosystem.",
+        "image_url": null
+      },
+      {
+        "question": "What can happen to an ecosystem when there is an overabundance of a particular species?",
+        "options": [
+          "It becomes more diverse",
+          "It becomes less diverse and may even disappear",
+          "It becomes more fertile",
+          "It becomes more polluted"
+        ],
+        "answer": "B",
+        "explanation": "An overabundance of a particular species can lead to a decrease in the diversity of other species in an ecosystem, and may even cause it to disappear.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of decomposers in an ecosystem?",
+        "options": [
+          "They produce oxygen",
+          "They help plants grow",
+          "They break down dead plants and animals into nutrients",
+          "They make the air clean"
+        ],
+        "answer": "C",
+        "explanation": "Decomposers, such as bacteria and fungi, break down dead plants and animals into nutrients that can be used by other living organisms.",
+        "image_url": null
+      },
+      {
+        "question": "What can happen to an ecosystem when there is a change in temperature?",
+        "options": [
+          "It becomes more diverse",
+          "It becomes less diverse and may even disappear",
+          "It becomes more fertile",
+          "It becomes more polluted"
+        ],
+        "answer": "B",
+        "explanation": "A change in temperature can lead to a decrease in the diversity of plants and animals in an ecosystem, and may even cause it to disappear.",
+        "image_url": null
+      },
+      {
+        "question": "What is the importance of water in an ecosystem?",
+        "options": [
+          "It provides food for animals",
+          "It gives plants the energy to grow",
+          "It helps plants absorb nutrients and oxygen",
+          "It makes the air clean"
+        ],
+        "answer": "C",
+        "explanation": "Water is essential for plants to absorb nutrients and oxygen, which in turn supports the food chain in an ecosystem.",
+        "image_url": null
+      },
+      {
+        "question": "What can happen to an ecosystem when there is a lack of nutrients?",
+        "options": [
+          "It becomes more diverse",
+          "It becomes less diverse and may even disappear",
+          "It becomes more fertile",
+          "It becomes more polluted"
+        ],
+        "answer": "B",
+        "explanation": "A lack of nutrients can lead to a decrease in the diversity of plants and animals in an ecosystem, and may even cause it to disappear.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 6)",
+    "subjectName": "Science",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Science",
+    "outcomeText": "6-5-1-3-2 Describing the components of the ecosystem and explaining the impact of the availability of different resources in ecosystems on the survival and sustainability of living organisms, and proposing solutions to problems that affect the stability of the ecosystem.",
+    "questions": [
+      {
+        "question": "What is the main reason why some animals migrate to different habitats?",
+        "options": [
+          "They are looking for food to eat.",
+          "They are trying to escape from predators.",
+          "They are trying to find a place to live.",
+          "They are trying to find a mate."
+        ],
+        "answer": "C",
+        "explanation": "Animals migrate to different habitats to find a place to live, which provides them with the necessary resources such as food, water, and shelter.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to a plant if it does not receive enough water?",
+        "options": [
+          "It will grow faster and stronger.",
+          "It will stay the same size and shape.",
+          "It will start to wilt and turn yellow.",
+          "It will die quickly."
+        ],
+        "answer": "C",
+        "explanation": "If a plant does not receive enough water, it will start to wilt and turn yellow because it is unable to carry out photosynthesis and transport nutrients.",
+        "image_url": null
+      },
+      {
+        "question": "Why do some animals hibernate during the winter?",
+        "options": [
+          "They are trying to escape from the cold weather.",
+          "They are trying to find a place to live.",
+          "They are trying to conserve energy and survive the winter.",
+          "They are trying to find food to eat."
+        ],
+        "answer": "C",
+        "explanation": "Animals hibernate during the winter to conserve energy and survive the winter by slowing down their metabolism and reducing their body temperature.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some plants are able to grow in areas with poor soil?",
+        "options": [
+          "They have deep roots to access water and nutrients.",
+          "They have adapted to the poor soil conditions.",
+          "They are able to absorb nutrients from the air.",
+          "They are able to grow in areas with poor soil because they are able to photosynthesize quickly."
+        ],
+        "answer": "B",
+        "explanation": "Some plants are able to grow in areas with poor soil because they have adapted to the poor soil conditions, such as having a shallow root system or being able to absorb nutrients from the air.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some animals are able to live in areas with extreme temperatures?",
+        "options": [
+          "They have thick fur or feathers to keep warm.",
+          "They are able to hibernate during the winter.",
+          "They are able to migrate to warmer areas.",
+          "They have adapted to the extreme temperatures."
+        ],
+        "answer": "D",
+        "explanation": "Some animals are able to live in areas with extreme temperatures because they have adapted to the conditions, such as having a thick layer of fat or being able to slow down their metabolism.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some plants are able to grow in areas with high levels of salt?",
+        "options": [
+          "They have adapted to the high levels of salt.",
+          "They are able to absorb nutrients from the air.",
+          "They have deep roots to access water and nutrients.",
+          "They are able to grow in areas with high levels of salt because they are able to photosynthesize quickly."
+        ],
+        "answer": "A",
+        "explanation": "Some plants are able to grow in areas with high levels of salt because they have adapted to the conditions, such as having a special type of root system that is able to absorb salt.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some animals are able to live in areas with low levels of oxygen?",
+        "options": [
+          "They have adapted to the low levels of oxygen.",
+          "They are able to migrate to areas with higher levels of oxygen.",
+          "They are able to hibernate during the winter.",
+          "They have thick fur or feathers to keep warm."
+        ],
+        "answer": "A",
+        "explanation": "Some animals are able to live in areas with low levels of oxygen because they have adapted to the conditions, such as having a special type of respiratory system that is able to extract oxygen from the air.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some plants are able to grow in areas with high levels of pollution?",
+        "options": [
+          "They are able to absorb nutrients from the air.",
+          "They have adapted to the high levels of pollution.",
+          "They have deep roots to access water and nutrients.",
+          "They are able to grow in areas with high levels of pollution because they are able to photosynthesize quickly."
+        ],
+        "answer": "B",
+        "explanation": "Some plants are able to grow in areas with high levels of pollution because they have adapted to the conditions, such as having a special type of root system that is able to absorb pollutants.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some animals are able to live in areas with high levels of noise?",
+        "options": [
+          "They have adapted to the high levels of noise.",
+          "They are able to migrate to areas with lower levels of noise.",
+          "They are able to hibernate during the winter.",
+          "They have thick fur or feathers to keep warm."
+        ],
+        "answer": "A",
+        "explanation": "Some animals are able to live in areas with high levels of noise because they have adapted to the conditions, such as having a special type of auditory system that is able to filter out the noise.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main reason why some plants are able to grow in areas with low levels of light?",
+        "options": [
+          "They are able to absorb nutrients from the air.",
+          "They have adapted to the low levels of light.",
+          "They have deep roots to access water and nutrients.",
+          "They are able to grow in areas with low levels of light because they are able to photosynthesize quickly."
+        ],
+        "answer": "B",
+        "explanation": "Some plants are able to grow in areas with low levels of light because they have adapted to the conditions, such as having a special type of leaf structure that is able to absorb what little light is available.",
+        "image_url": null
+      }
+    ]
+  }
+]

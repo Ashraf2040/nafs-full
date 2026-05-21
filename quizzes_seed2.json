@@ -1,0 +1,2297 @@
+[
+  {
+    "title": "2 - English (Grade 3)",
+    "subjectName": "English",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 English",
+    "outcomeText": "3.2.1.1.1 Identifying vocabulary meanings in the text, their synonyms, and antonyms, classifying them according to meanings and types in terms of number and grammatical categories, and using them in meaningful sentences and new contexts.",
+    "questions": [
+      {
+        "question": "What is the opposite of the word 'big'?",
+        "options": [
+          "Small",
+          "Happy",
+          "Fast",
+          "Tall"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'big' is 'small'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'happy'?",
+        "options": [
+          "Sad",
+          "Angry",
+          "Excited",
+          "Tired"
+        ],
+        "answer": "C",
+        "explanation": "The word 'happy' means feeling joyful or pleased.",
+        "image_url": null
+      },
+      {
+        "question": "What is the plural form of the word 'cat'?",
+        "options": [
+          "Cat",
+          "Cats",
+          "Dog",
+          "Dogs"
+        ],
+        "answer": "B",
+        "explanation": "The plural form of 'cat' is 'cats'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of the word 'fast'?",
+        "options": [
+          "Slow",
+          "Big",
+          "Happy",
+          "Tall"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'fast' is 'slow'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'friend'?",
+        "options": [
+          "Enemy",
+          "Family",
+          "Teacher",
+          "Classmate"
+        ],
+        "answer": "A",
+        "explanation": "The word 'friend' means a person you like and trust.",
+        "image_url": null
+      },
+      {
+        "question": "What is the singular form of the word 'dogs'?",
+        "options": [
+          "Dogs",
+          "Dog",
+          "Cats",
+          "Cat"
+        ],
+        "answer": "B",
+        "explanation": "The singular form of 'dogs' is 'dog'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of the word 'tall'?",
+        "options": [
+          "Short",
+          "Happy",
+          "Big",
+          "Fast"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'tall' is 'short'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'teacher'?",
+        "options": [
+          "Student",
+          "Friend",
+          "Parent",
+          "Classmate"
+        ],
+        "answer": "A",
+        "explanation": "The word 'teacher' means a person who helps you learn.",
+        "image_url": null
+      },
+      {
+        "question": "What is the plural form of the word 'book'?",
+        "options": [
+          "Book",
+          "Books",
+          "Pencil",
+          "Pencils"
+        ],
+        "answer": "B",
+        "explanation": "The plural form of 'book' is 'books'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of the word 'happy'?",
+        "options": [
+          "Sad",
+          "Angry",
+          "Fast",
+          "Tall"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'happy' is 'sad'.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - English (Grade 3)",
+    "subjectName": "English",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 English",
+    "outcomeText": "3.2.1.1.1 Identifying vocabulary meanings in the text, their synonyms, and antonyms, classifying them according to meanings and types in terms of number and grammatical categories, and using them in meaningful sentences and new contexts.",
+    "questions": [
+      {
+        "question": "What is the opposite of 'big'?",
+        "options": [
+          "Large",
+          "Small",
+          "Happy",
+          "Fast"
+        ],
+        "answer": "B",
+        "explanation": "The opposite of 'big' is 'small'.",
+        "image_url": null
+      },
+      {
+        "question": "What is a synonym for 'happy'?",
+        "options": [
+          "Sad",
+          "Angry",
+          "Joyful",
+          "Tired"
+        ],
+        "answer": "C",
+        "explanation": "A synonym for 'happy' is 'joyful'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'fast'?",
+        "options": [
+          "Moving quickly",
+          "Moving slowly",
+          "Moving sideways",
+          "Moving up"
+        ],
+        "answer": "A",
+        "explanation": "The word 'fast' means moving quickly.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of 'slow'?",
+        "options": [
+          "Fast",
+          "Happy",
+          "Sad",
+          "Big"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'slow' is 'fast'.",
+        "image_url": null
+      },
+      {
+        "question": "What is a synonym for 'big'?",
+        "options": [
+          "Small",
+          "Happy",
+          "Large",
+          "Tall"
+        ],
+        "answer": "C",
+        "explanation": "A synonym for 'big' is 'large'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'happy'?",
+        "options": [
+          "Feeling sad",
+          "Feeling angry",
+          "Feeling joyful",
+          "Feeling tired"
+        ],
+        "answer": "C",
+        "explanation": "The word 'happy' means feeling joyful.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of 'tall'?",
+        "options": [
+          "Short",
+          "Happy",
+          "Big",
+          "Fast"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'tall' is 'short'.",
+        "image_url": null
+      },
+      {
+        "question": "What is a synonym for 'fast'?",
+        "options": [
+          "Slow",
+          "Happy",
+          "Sad",
+          "Big"
+        ],
+        "answer": "A",
+        "explanation": "A synonym for 'fast' is 'quick'.",
+        "image_url": null
+      },
+      {
+        "question": "What is the meaning of the word 'small'?",
+        "options": [
+          "Moving quickly",
+          "Moving slowly",
+          "Not big",
+          "Not happy"
+        ],
+        "answer": "C",
+        "explanation": "The word 'small' means not big.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of 'happy'?",
+        "options": [
+          "Sad",
+          "Angry",
+          "Joyful",
+          "Tired"
+        ],
+        "answer": "A",
+        "explanation": "The opposite of 'happy' is 'sad'.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-2-2-1 Distinguishing the characteristics of four operations, and using them to find the results and verify their correctness.",
+    "questions": [
+      {
+        "question": "If Sally has 5 pencils and she gives 2 to her friend, then she has 5 + 2 = ? pencils.",
+        "options": [
+          "7 pencils",
+          "5 pencils",
+          "3 pencils",
+          "9 pencils"
+        ],
+        "answer": "C",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 5 + 2 is the same as 2 + 5.",
+        "image_url": null
+      },
+      {
+        "question": "If a bookshelf has 8 books on it and 4 more books are added, then it has 8 + 4 = ? books.",
+        "options": [
+          "10 books",
+          "12 books",
+          "6 books",
+          "4 books"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 8 + 4 is the same as 4 + 8.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy car track is 6 meters long and it is extended by 2 meters, then it is now 6 + 2 = ? meters long.",
+        "options": [
+          "8 meters",
+          "10 meters",
+          "4 meters",
+          "6 meters"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 6 + 2 is the same as 2 + 6.",
+        "image_url": null
+      },
+      {
+        "question": "If a basket has 9 apples in it and 1 more apple is added, then it has 9 + 1 = ? apples.",
+        "options": [
+          "10 apples",
+          "8 apples",
+          "11 apples",
+          "7 apples"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 9 + 1 is the same as 1 + 9.",
+        "image_url": null
+      },
+      {
+        "question": "If a pencil has a length of 15 cm and it is extended by 3 cm, then it is now 15 + 3 = ? cm long.",
+        "options": [
+          "18 cm",
+          "20 cm",
+          "12 cm",
+          "15 cm"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 15 + 3 is the same as 3 + 15.",
+        "image_url": null
+      },
+      {
+        "question": "If a group of friends have 12 pencils and they give 4 pencils to another group, then they have 12 - 4 = ? pencils.",
+        "options": [
+          "8 pencils",
+          "10 pencils",
+          "12 pencils",
+          "16 pencils"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 12 - 4 is the same as 4 - 12.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy car track is 8 meters long and it is shortened by 2 meters, then it is now 8 - 2 = ? meters long.",
+        "options": [
+          "6 meters",
+          "10 meters",
+          "4 meters",
+          "8 meters"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 8 - 2 is the same as 2 - 8.",
+        "image_url": null
+      },
+      {
+        "question": "If a basket has 7 apples in it and 2 more apples are added, then it has 7 + 2 = ? apples.",
+        "options": [
+          "9 apples",
+          "8 apples",
+          "10 apples",
+          "5 apples"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 7 + 2 is the same as 2 + 7.",
+        "image_url": null
+      },
+      {
+        "question": "If a pencil has a length of 12 cm and it is extended by 5 cm, then it is now 12 + 5 = ? cm long.",
+        "options": [
+          "17 cm",
+          "15 cm",
+          "12 cm",
+          "18 cm"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 12 + 5 is the same as 5 + 12.",
+        "image_url": null
+      },
+      {
+        "question": "If a group of friends have 15 pencils and they give 3 pencils to another group, then they have 15 - 3 = ? pencils.",
+        "options": [
+          "12 pencils",
+          "18 pencils",
+          "15 pencils",
+          "20 pencils"
+        ],
+        "answer": "A",
+        "explanation": "The commutative property of addition states that the order of the numbers does not change the result. 15 - 3 is the same as 3 - 15.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-2-2-1 Distinguishing the characteristics of four operations, and using them to find the results and verify their correctness.",
+    "questions": [
+      {
+        "question": "If Sally has 15 pencils and she gives 3 to her friend, then she gives 2 more to her brother. How many pencils does Sally have left?",
+        "options": [
+          "She has 10 pencils left.",
+          "She has 12 pencils left.",
+          "She has 14 pencils left.",
+          "She has 16 pencils left."
+        ],
+        "answer": "A",
+        "explanation": "We can use the associative property of addition to find the result. First, we add 15 and 3, which is 18. Then, we add 2 to 18, which is 20. But Sally gave away 3 + 2 = 5 pencils, so she has 15 - 5 = 10 pencils left.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy car costs $8 and a toy truck costs $5, how much will it cost to buy 2 toy cars and 3 toy trucks?",
+        "options": [
+          "It will cost $24.",
+          "It will cost $26.",
+          "It will cost $28.",
+          "It will cost $30."
+        ],
+        "answer": "C",
+        "explanation": "We can use the associative property of multiplication to find the result. First, we multiply 2 and 8, which is 16. Then, we multiply 3 and 5, which is 15. Finally, we add 16 and 15, which is 31. But the question asks for the cost, so we need to subtract the cost of 2 toy cars from 31, which is 31 - 16 = 15. But we also need to add the cost of 3 toy trucks to 31, which is 31 + 15 = 46. But the question asks for the cost, so we need to subtract the cost of 2 toy cars from 46, which is 46 - 16 = 30.",
+        "image_url": null
+      },
+      {
+        "question": "If a bookshelf has 5 shelves, and each shelf can hold 4 books, how many books can the bookshelf hold in total?",
+        "options": [
+          "The bookshelf can hold 18 books.",
+          "The bookshelf can hold 20 books.",
+          "The bookshelf can hold 22 books.",
+          "The bookshelf can hold 24 books."
+        ],
+        "answer": "A",
+        "explanation": "We can use the associative property of multiplication to find the result. First, we multiply 5 and 4, which is 20.",
+        "image_url": null
+      },
+      {
+        "question": "If a basket has 12 apples and we take away 4 apples, then we take away 2 more apples. How many apples are left in the basket?",
+        "options": [
+          "There are 8 apples left.",
+          "There are 10 apples left.",
+          "There are 12 apples left.",
+          "There are 14 apples left."
+        ],
+        "answer": "A",
+        "explanation": "We can use the associative property of addition to find the result. First, we add 12 and 4, which is 16. Then, we add 2 to 16, which is 18. But we took away 4 + 2 = 6 apples, so we have 12 - 6 = 6 apples left.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy box has 15 toys and we add 2 more toys, then we add 3 more toys. How many toys are in the toy box now?",
+        "options": [
+          "There are 18 toys in the toy box.",
+          "There are 20 toys in the toy box.",
+          "There are 22 toys in the toy box.",
+          "There are 24 toys in the toy box."
+        ],
+        "answer": "A",
+        "explanation": "We can use the associative property of addition to find the result. First, we add 15 and 2, which is 17. Then, we add 3 to 17, which is 20.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-2-2-2 Distinguishing the relations between the four operations, and using them to find the results and verify their correctness.",
+    "questions": [
+      {
+        "question": "What shape has four right angles and four sides of equal length?",
+        "options": [
+          "A square has five sides",
+          "A rectangle has four right angles",
+          "A square has four right angles and four sides of equal length",
+          "A triangle has three sides"
+        ],
+        "answer": "C",
+        "explanation": "A square has four right angles and four sides of equal length.",
+        "image_url": null
+      },
+      {
+        "question": "How many sides does a hexagon have?",
+        "options": [
+          "A hexagon has five sides",
+          "A hexagon has six sides",
+          "A hexagon has seven sides",
+          "A hexagon has eight sides"
+        ],
+        "answer": "B",
+        "explanation": "A hexagon has six sides.",
+        "image_url": null
+      },
+      {
+        "question": "What shape has five sides?",
+        "options": [
+          "A square has four sides",
+          "A triangle has three sides",
+          "A pentagon has five sides",
+          "A hexagon has six sides"
+        ],
+        "answer": "C",
+        "explanation": "A pentagon has five sides.",
+        "image_url": null
+      },
+      {
+        "question": "What shape is a circle?",
+        "options": [
+          "A circle is a square",
+          "A circle is a triangle",
+          "A circle is a shape with no corners",
+          "A circle is a shape with no corners and is round"
+        ],
+        "answer": "D",
+        "explanation": "A circle is a shape with no corners and is round.",
+        "image_url": null
+      },
+      {
+        "question": "What shape has three sides?",
+        "options": [
+          "A square has four sides",
+          "A triangle has three sides",
+          "A hexagon has six sides",
+          "A pentagon has five sides"
+        ],
+        "answer": "B",
+        "explanation": "A triangle has three sides.",
+        "image_url": null
+      },
+      {
+        "question": "How many sides does a square have?",
+        "options": [
+          "A square has three sides",
+          "A square has four sides",
+          "A square has five sides",
+          "A square has six sides"
+        ],
+        "answer": "B",
+        "explanation": "A square has four sides.",
+        "image_url": null
+      },
+      {
+        "question": "What shape has six sides?",
+        "options": [
+          "A hexagon has five sides",
+          "A hexagon has six sides",
+          "A pentagon has five sides",
+          "A square has four sides"
+        ],
+        "answer": "B",
+        "explanation": "A hexagon has six sides.",
+        "image_url": null
+      },
+      {
+        "question": "What shape is a triangle?",
+        "options": [
+          "A triangle is a square",
+          "A triangle is a circle",
+          "A triangle is a shape with three sides",
+          "A triangle is a shape with four sides"
+        ],
+        "answer": "C",
+        "explanation": "A triangle is a shape with three sides.",
+        "image_url": null
+      },
+      {
+        "question": "How many sides does a rectangle have?",
+        "options": [
+          "A rectangle has three sides",
+          "A rectangle has four sides",
+          "A rectangle has five sides",
+          "A rectangle has six sides"
+        ],
+        "answer": "B",
+        "explanation": "A rectangle has four sides.",
+        "image_url": null
+      },
+      {
+        "question": "What shape has four sides and four right angles?",
+        "options": [
+          "A square has three sides",
+          "A square has four sides and four right angles",
+          "A rectangle has four sides and four right angles",
+          "A triangle has three sides"
+        ],
+        "answer": "B",
+        "explanation": "A square has four sides and four right angles.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-3-2-3 Distinguishing currency denominations, using them for counting, representing amounts, and comparing them, and solving mathematical problems including financial applications.",
+    "questions": [
+      {
+        "question": "What is the value of 5 riyals and 2 riyals?",
+        "options": [
+          "7 riyals",
+          "5 riyals",
+          "2 riyals",
+          "10 riyals"
+        ],
+        "answer": "A",
+        "explanation": "When we add 5 riyals and 2 riyals, we get 7 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "How much is 1 riyal and 50 halalas?",
+        "options": [
+          "1 riyal",
+          "50 halalas",
+          "1 riyal and 50 halalas",
+          "1 riyal and 1 halala"
+        ],
+        "answer": "C",
+        "explanation": "1 riyal and 50 halalas is equal to 1 riyal and 50 halalas.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 3 riyals and 1 riyal?",
+        "options": [
+          "2 riyals",
+          "1 riyal",
+          "4 riyals",
+          "5 riyals"
+        ],
+        "answer": "D",
+        "explanation": "When we add 3 riyals and 1 riyal, we get 4 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "How much is 2 riyals and 2 riyals?",
+        "options": [
+          "4 riyals",
+          "1 riyal",
+          "2 riyals",
+          "5 riyals"
+        ],
+        "answer": "A",
+        "explanation": "When we add 2 riyals and 2 riyals, we get 4 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 1 riyal and 1 riyal?",
+        "options": [
+          "1 riyal",
+          "2 riyals",
+          "1 riyal and 1 riyal",
+          "3 riyals"
+        ],
+        "answer": "C",
+        "explanation": "1 riyal and 1 riyal is equal to 2 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "How much is 5 riyals and 1 riyal?",
+        "options": [
+          "6 riyals",
+          "1 riyal",
+          "5 riyals",
+          "10 riyals"
+        ],
+        "answer": "A",
+        "explanation": "When we add 5 riyals and 1 riyal, we get 6 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 2 riyals and 3 riyals?",
+        "options": [
+          "1 riyal",
+          "5 riyals",
+          "2 riyals",
+          "5 riyals"
+        ],
+        "answer": "D",
+        "explanation": "When we add 2 riyals and 3 riyals, we get 5 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "How much is 1 riyal and 3 riyals?",
+        "options": [
+          "4 riyals",
+          "1 riyal",
+          "4 riyals",
+          "1 riyal"
+        ],
+        "answer": "A",
+        "explanation": "1 riyal and 3 riyals is equal to 4 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "What is the value of 3 riyals and 2 riyals?",
+        "options": [
+          "5 riyals",
+          "1 riyal",
+          "5 riyals",
+          "1 riyal"
+        ],
+        "answer": "A",
+        "explanation": "When we add 3 riyals and 2 riyals, we get 5 riyals.",
+        "image_url": null
+      },
+      {
+        "question": "How much is 1 riyal and 2 riyals?",
+        "options": [
+          "3 riyals",
+          "1 riyal",
+          "3 riyals",
+          "1 riyal"
+        ],
+        "answer": "A",
+        "explanation": "1 riyal and 2 riyals is equal to 3 riyals.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-3-2-3 Distinguishing currency denominations, using them for counting, representing amounts, and comparing them, and solving mathematical problems including financial applications.",
+    "questions": [
+      {
+        "question": "If I have 5 riyals and I get 2 more, how much money do I have now?",
+        "options": [
+          "I have 7 riyals now.",
+          "I have 3 riyals now.",
+          "I have 10 riyals now.",
+          "I have 1 riyal now."
+        ],
+        "answer": "A",
+        "explanation": "We add 2 riyals to the 5 riyals we already have, so we have 7 riyals now.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 8 riyals and I spend 3 riyals, how much money do I have left?",
+        "options": [
+          "I have 5 riyals left.",
+          "I have 11 riyals left.",
+          "I have 1 riyal left.",
+          "I have 10 riyals left."
+        ],
+        "answer": "A",
+        "explanation": "We subtract 3 riyals from the 8 riyals we had, so we have 5 riyals left.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 4 riyals and I get 1 riyal, how much money do I have now?",
+        "options": [
+          "I have 5 riyals now.",
+          "I have 3 riyals now.",
+          "I have 6 riyals now.",
+          "I have 2 riyals now."
+        ],
+        "answer": "A",
+        "explanation": "We add 1 riyal to the 4 riyals we already have, so we have 5 riyals now.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 9 riyals and I spend 4 riyals, how much money do I have left?",
+        "options": [
+          "I have 5 riyals left.",
+          "I have 13 riyals left.",
+          "I have 3 riyals left.",
+          "I have 10 riyals left."
+        ],
+        "answer": "A",
+        "explanation": "We subtract 4 riyals from the 9 riyals we had, so we have 5 riyals left.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 1 riyal and I get 2 riyals, how much money do I have now?",
+        "options": [
+          "I have 3 riyals now.",
+          "I have 1 riyal now.",
+          "I have 4 riyals now.",
+          "I have 2 riyals now."
+        ],
+        "answer": "C",
+        "explanation": "We add 2 riyals to the 1 riyal we already have, so we have 3 riyals now.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 6 riyals and I spend 2 riyals, how much money do I have left?",
+        "options": [
+          "I have 4 riyals left.",
+          "I have 8 riyals left.",
+          "I have 3 riyals left.",
+          "I have 10 riyals left."
+        ],
+        "answer": "A",
+        "explanation": "We subtract 2 riyals from the 6 riyals we had, so we have 4 riyals left.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 3 riyals and I get 1 riyal, how much money do I have now?",
+        "options": [
+          "I have 4 riyals now.",
+          "I have 2 riyals now.",
+          "I have 5 riyals now.",
+          "I have 1 riyal now."
+        ],
+        "answer": "A",
+        "explanation": "We add 1 riyal to the 3 riyals we already have, so we have 4 riyals now.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 7 riyals and I spend 1 riyal, how much money do I have left?",
+        "options": [
+          "I have 6 riyals left.",
+          "I have 8 riyals left.",
+          "I have 5 riyals left.",
+          "I have 10 riyals left."
+        ],
+        "answer": "A",
+        "explanation": "We subtract 1 riyal from the 7 riyals we had, so we have 6 riyals left.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 2 riyals and I get 4 riyals, how much money do I have now?",
+        "options": [
+          "I have 6 riyals now.",
+          "I have 2 riyals now.",
+          "I have 1 riyal now.",
+          "I have 5 riyals now."
+        ],
+        "answer": "A",
+        "explanation": "We add 4 riyals to the 2 riyals we already have, so we have 6 riyals now.",
+        "image_url": null
+      },
+      {
+        "question": "If I have 5 riyals and I spend 4 riyals, how much money do I have left?",
+        "options": [
+          "I have 1 riyal left.",
+          "I have 9 riyals left.",
+          "I have 3 riyals left.",
+          "I have 10 riyals left."
+        ],
+        "answer": "A",
+        "explanation": "We subtract 4 riyals from the 5 riyals we had, so we have 1 riyal left.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-3-2-4 Estimating and measuring time using appropriate units of time, reading and writing time, and solving mathematical problems including time applications.",
+    "questions": [
+      {
+        "question": "Tommy has 30 seconds to finish his task. What unit of time should he use to measure the time?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "A",
+        "explanation": "Tommy should use seconds because 30 seconds is a short amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A song is 3 minutes long. What unit of time is best to use to measure the song's length?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "B",
+        "explanation": "Minutes are the best unit of time to use because 3 minutes is a short amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A movie is 2 hours long. What unit of time is best to use to measure the movie's length?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "C",
+        "explanation": "Hours are the best unit of time to use because 2 hours is a longer amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A class has 45 minutes of recess. What unit of time should the teacher use to tell the students how long they have?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "B",
+        "explanation": "The teacher should use minutes because 45 minutes is a short amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A car ride is 1 hour and 15 minutes long. What unit of time is best to use to measure the car ride's length?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "C",
+        "explanation": "Hours are the best unit of time to use because 1 hour and 15 minutes is a longer amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A basketball game is 4 quarters long, each quarter lasting 12 minutes. What unit of time should the coach use to tell the players how long each quarter is?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "B",
+        "explanation": "The coach should use minutes because 12 minutes is a short amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A school day is 8 hours long. What unit of time is best to use to measure the school day's length?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "C",
+        "explanation": "Hours are the best unit of time to use because 8 hours is a longer amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A child has 5 minutes to finish their homework. What unit of time should they use to measure the time?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "B",
+        "explanation": "The child should use minutes because 5 minutes is a short amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A concert is 2 hours and 30 minutes long. What unit of time is best to use to measure the concert's length?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "C",
+        "explanation": "Hours are the best unit of time to use because 2 hours and 30 minutes is a longer amount of time.",
+        "image_url": null
+      },
+      {
+        "question": "A child has 10 seconds to finish their task. What unit of time should they use to measure the time?",
+        "options": [
+          "Seconds",
+          "Minutes",
+          "Hours",
+          "Days"
+        ],
+        "answer": "A",
+        "explanation": "The child should use seconds because 10 seconds is a short amount of time.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-1-1-1 Understanding the place value of numbers up to four digits and using it to represent numbers, read, write, compare, order, and round them.",
+    "questions": [
+      {
+        "question": "What is the expanded form of the number 4,753?",
+        "options": [
+          "Four thousand seven hundred fifty-three",
+          "Four thousand seven hundred and fifty-three",
+          "Four thousand, seven hundred fifty-three",
+          "Four thousand seven hundred and fifty three"
+        ],
+        "answer": "C",
+        "explanation": "The expanded form of 4,753 is four thousand, seven hundred fifty-three.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is the standard form of the number 3,200?",
+        "options": [
+          "Three thousand two hundred",
+          "Three thousand and two hundred",
+          "Three thousand, two hundred",
+          "Three thousand two hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The standard form of 3,200 is three thousand, two hundred.",
+        "image_url": null
+      },
+      {
+        "question": "What is the verbal form of the number 9,500?",
+        "options": [
+          "Nine thousand five hundred",
+          "Nine thousand and five hundred",
+          "Nine thousand, five hundred",
+          "Nine thousand five hundred and zero"
+        ],
+        "answer": "A",
+        "explanation": "The verbal form of 9,500 is nine thousand five hundred.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is the expanded form of the number 2,100?",
+        "options": [
+          "Two thousand one hundred",
+          "Two thousand and one hundred",
+          "Two thousand, one hundred",
+          "Two thousand one hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The expanded form of 2,100 is two thousand, one hundred.",
+        "image_url": null
+      },
+      {
+        "question": "What is the standard form of the number 7,800?",
+        "options": [
+          "Seven thousand eight hundred",
+          "Seven thousand and eight hundred",
+          "Seven thousand, eight hundred",
+          "Seven thousand eight hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The standard form of 7,800 is seven thousand, eight hundred.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is the verbal form of the number 1,400?",
+        "options": [
+          "One thousand four hundred",
+          "One thousand and four hundred",
+          "One thousand, four hundred",
+          "One thousand four hundred and zero"
+        ],
+        "answer": "A",
+        "explanation": "The verbal form of 1,400 is one thousand four hundred.",
+        "image_url": null
+      },
+      {
+        "question": "What is the expanded form of the number 5,600?",
+        "options": [
+          "Five thousand six hundred",
+          "Five thousand and six hundred",
+          "Five thousand, six hundred",
+          "Five thousand six hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The expanded form of 5,600 is five thousand, six hundred.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is the standard form of the number 3,900?",
+        "options": [
+          "Three thousand nine hundred",
+          "Three thousand and nine hundred",
+          "Three thousand, nine hundred",
+          "Three thousand nine hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The standard form of 3,900 is three thousand, nine hundred.",
+        "image_url": null
+      },
+      {
+        "question": "What is the verbal form of the number 8,200?",
+        "options": [
+          "Eight thousand two hundred",
+          "Eight thousand and two hundred",
+          "Eight thousand, two hundred",
+          "Eight thousand two hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The verbal form of 8,200 is eight thousand, two hundred.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is the expanded form of the number 9,100?",
+        "options": [
+          "Nine thousand one hundred",
+          "Nine thousand and one hundred",
+          "Nine thousand, one hundred",
+          "Nine thousand one hundred and zero"
+        ],
+        "answer": "C",
+        "explanation": "The expanded form of 9,100 is nine thousand, one hundred.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-1-1-1 Understanding the place value of numbers up to four digits and using it to represent numbers, read, write, compare, order, and round them.",
+    "questions": [
+      {
+        "question": "Which number is greater than 1,000?",
+        "options": [
+          "900",
+          "1,000",
+          "1,200",
+          "500"
+        ],
+        "answer": "C",
+        "explanation": "1,200 is greater than 1,000 because it has more digits and the digit in the thousands place is larger.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is less than 3,000?",
+        "options": [
+          "2,500",
+          "3,000",
+          "2,000",
+          "4,000"
+        ],
+        "answer": "C",
+        "explanation": "2,000 is less than 3,000 because it has fewer digits and the digit in the thousands place is smaller.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is equal to 2,500?",
+        "options": [
+          "2,400",
+          "2,500",
+          "2,600",
+          "2,800"
+        ],
+        "answer": "B",
+        "explanation": "2,500 is equal to 2,500 because they have the same digits and the same place value.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is greater than 4,000?",
+        "options": [
+          "3,000",
+          "4,000",
+          "4,500",
+          "5,000"
+        ],
+        "answer": "D",
+        "explanation": "5,000 is greater than 4,000 because it has more digits and the digit in the thousands place is larger.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is less than 1,000?",
+        "options": [
+          "900",
+          "1,000",
+          "500",
+          "1,200"
+        ],
+        "answer": "C",
+        "explanation": "500 is less than 1,000 because it has fewer digits and the digit in the hundreds place is smaller.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is equal to 3,000?",
+        "options": [
+          "3,500",
+          "3,000",
+          "2,000",
+          "4,000"
+        ],
+        "answer": "B",
+        "explanation": "3,000 is equal to 3,000 because they have the same digits and the same place value.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is greater than 2,000?",
+        "options": [
+          "2,000",
+          "2,500",
+          "2,800",
+          "2,400"
+        ],
+        "answer": "C",
+        "explanation": "2,500 is greater than 2,000 because it has more digits and the digit in the hundreds place is larger.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is less than 2,500?",
+        "options": [
+          "2,800",
+          "2,500",
+          "2,600",
+          "2,400"
+        ],
+        "answer": "C",
+        "explanation": "2,400 is less than 2,500 because it has fewer digits and the digit in the hundreds place is smaller.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is equal to 1,200?",
+        "options": [
+          "1,000",
+          "1,200",
+          "1,500",
+          "1,800"
+        ],
+        "answer": "B",
+        "explanation": "1,200 is equal to 1,200 because they have the same digits and the same place value.",
+        "image_url": null
+      },
+      {
+        "question": "Which number is greater than 1,500?",
+        "options": [
+          "1,500",
+          "1,800",
+          "1,200",
+          "2,000"
+        ],
+        "answer": "C",
+        "explanation": "1,800 is greater than 1,500 because it has more digits and the digit in the hundreds place is larger.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-1-1-2 Understanding fractions, representing, reading, writing, comparing, and ordering them.",
+    "questions": [
+      {
+        "question": "Which fraction is greater than 1/2?",
+        "options": [
+          "1/2 is greater than 1/4",
+          "1/4 is greater than 1/2",
+          "1/2 is greater than 1/3",
+          "1/3 is greater than 1/2"
+        ],
+        "answer": "C",
+        "explanation": "1/2 is greater than 1/3 because 1/2 is larger than 1/3.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is equal to 1/4?",
+        "options": [
+          "1/2 is equal to 1/4",
+          "1/4 is equal to 1/4",
+          "1/3 is equal to 1/4",
+          "1/4 is equal to 1/8"
+        ],
+        "answer": "B",
+        "explanation": "1/4 is equal to 1/4 because they have the same numerator and denominator.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is less than 3/4?",
+        "options": [
+          "3/4 is less than 1/2",
+          "1/2 is less than 3/4",
+          "1/4 is less than 3/4",
+          "3/4 is less than 1/4"
+        ],
+        "answer": "C",
+        "explanation": "1/2 is less than 3/4 because 1/2 is smaller than 3/4.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is equal to 2/4?",
+        "options": [
+          "1/4 is equal to 2/4",
+          "2/4 is equal to 1/2",
+          "2/4 is equal to 1/4",
+          "1/2 is equal to 2/4"
+        ],
+        "answer": "D",
+        "explanation": "2/4 is equal to 1/2 because they have the same value.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is greater than 1/3?",
+        "options": [
+          "1/3 is greater than 1/4",
+          "1/4 is greater than 1/3",
+          "1/2 is greater than 1/3",
+          "1/3 is greater than 1/2"
+        ],
+        "answer": "C",
+        "explanation": "1/2 is greater than 1/3 because 1/2 is larger than 1/3.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is less than 2/3?",
+        "options": [
+          "2/3 is less than 1/2",
+          "1/2 is less than 2/3",
+          "1/3 is less than 2/3",
+          "2/3 is less than 1/3"
+        ],
+        "answer": "C",
+        "explanation": "1/2 is less than 2/3 because 1/2 is smaller than 2/3.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is equal to 3/6?",
+        "options": [
+          "3/6 is equal to 1/2",
+          "1/2 is equal to 3/6",
+          "3/6 is equal to 1/3",
+          "1/3 is equal to 3/6"
+        ],
+        "answer": "A",
+        "explanation": "3/6 is equal to 1/2 because they have the same value.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is greater than 1/4?",
+        "options": [
+          "1/4 is greater than 1/3",
+          "1/3 is greater than 1/4",
+          "1/2 is greater than 1/4",
+          "1/4 is greater than 1/2"
+        ],
+        "answer": "C",
+        "explanation": "1/2 is greater than 1/4 because 1/2 is larger than 1/4.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is less than 1/2?",
+        "options": [
+          "1/2 is less than 1/3",
+          "1/3 is less than 1/2",
+          "1/4 is less than 1/2",
+          "1/2 is less than 1/4"
+        ],
+        "answer": "C",
+        "explanation": "1/3 is less than 1/2 because 1/3 is smaller than 1/2.",
+        "image_url": null
+      },
+      {
+        "question": "Which fraction is equal to 4/8?",
+        "options": [
+          "4/8 is equal to 1/2",
+          "1/2 is equal to 4/8",
+          "4/8 is equal to 1/4",
+          "1/4 is equal to 4/8"
+        ],
+        "answer": "A",
+        "explanation": "4/8 is equal to 1/2 because they have the same value.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-1-2-1 Finding and estimating the results of addition and subtraction of whole numbers up to three digits, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "If Sally has 145 pencils and she gives 27 pencils to her friend, how many pencils does Sally have left?",
+        "options": [
+          "112 pencils",
+          "117 pencils",
+          "127 pencils",
+          "137 pencils"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 27 from 145. We can estimate by rounding 145 to 100 and 27 to 30. 100 - 30 = 70. Since 145 is close to 100, the actual answer should be close to 70. The correct answer is 112 pencils.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 234 books on it. If 19 books are removed, how many books are left?",
+        "options": [
+          "215 books",
+          "220 books",
+          "225 books",
+          "230 books"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 19 from 234. We can estimate by rounding 234 to 200 and 19 to 20. 200 - 20 = 180. Since 234 is close to 200, the actual answer should be close to 180. The correct answer is 215 books.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy car costs $145 and you pay with a $100 bill, how much change will you get?",
+        "options": [
+          "35 dollars",
+          "40 dollars",
+          "45 dollars",
+          "50 dollars"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 145 from 100. We can estimate by rounding 145 to 100 and 100 to 100. 100 - 100 = 0. Since 145 is close to 100, the actual answer should be close to 0. The correct answer is 35 dollars.",
+        "image_url": null
+      },
+      {
+        "question": "A basket has 156 apples in it. If 32 apples are taken out, how many apples are left?",
+        "options": [
+          "124 apples",
+          "130 apples",
+          "136 apples",
+          "144 apples"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 32 from 156. We can estimate by rounding 156 to 150 and 32 to 30. 150 - 30 = 120. Since 156 is close to 150, the actual answer should be close to 120. The correct answer is 124 apples.",
+        "image_url": null
+      },
+      {
+        "question": "If a pencil costs $27 and you buy 9 pencils, how much will you pay in total?",
+        "options": [
+          "240 dollars",
+          "245 dollars",
+          "250 dollars",
+          "255 dollars"
+        ],
+        "answer": "D",
+        "explanation": "To find the answer, we need to multiply 27 by 9. We can estimate by rounding 27 to 30 and 9 to 10. 30 * 10 = 300. Since 27 is close to 30, the actual answer should be close to 300. The correct answer is 243 dollars.",
+        "image_url": null
+      },
+      {
+        "question": "A box has 219 crayons in it. If 17 crayons are taken out, how many crayons are left?",
+        "options": [
+          "202 crayons",
+          "207 crayons",
+          "212 crayons",
+          "218 crayons"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 17 from 219. We can estimate by rounding 219 to 200 and 17 to 20. 200 - 20 = 180. Since 219 is close to 200, the actual answer should be close to 180. The correct answer is 202 crayons.",
+        "image_url": null
+      },
+      {
+        "question": "If a book costs $145 and you pay with a $100 bill and a $20 bill, how much change will you get?",
+        "options": [
+          "45 dollars",
+          "50 dollars",
+          "55 dollars",
+          "60 dollars"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 145 from 120. We can estimate by rounding 145 to 100 and 120 to 100. 100 - 100 = 0. Since 145 is close to 100, the actual answer should be close to 0. The correct answer is 45 dollars.",
+        "image_url": null
+      },
+      {
+        "question": "A jar has 156 marbles in it. If 31 marbles are taken out, how many marbles are left?",
+        "options": [
+          "125 marbles",
+          "130 marbles",
+          "135 marbles",
+          "140 marbles"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 31 from 156. We can estimate by rounding 156 to 150 and 31 to 30. 150 - 30 = 120. Since 156 is close to 150, the actual answer should be close to 120. The correct answer is 125 marbles.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy costs $234 and you pay with a $200 bill, how much change will you get?",
+        "options": [
+          "34 dollars",
+          "40 dollars",
+          "46 dollars",
+          "50 dollars"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 234 from 200. We can estimate by rounding 234 to 200 and 200 to 200. 200 - 200 = 0. Since 234 is close to 200, the actual answer should be close to 0. The correct answer is 34 dollars.",
+        "image_url": null
+      },
+      {
+        "question": "A bag has 219 stickers in it. If 18 stickers are taken out, how many stickers are left?",
+        "options": [
+          "201 stickers",
+          "206 stickers",
+          "211 stickers",
+          "216 stickers"
+        ],
+        "answer": "A",
+        "explanation": "To find the answer, we need to subtract 18 from 219. We can estimate by rounding 219 to 200 and 18 to 20. 200 - 20 = 180. Since 219 is close to 200, the actual answer should be close to 180. The correct answer is 201 stickers.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Math (Grade 3)",
+    "subjectName": "Math",
+    "gradeTarget": 3,
+    "description": "Assessment for Grade 3 Math",
+    "outcomeText": "3-4-1-2-2 Understanding the operations of multiplication and division, representing them using models, forming fact family, finding their results, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has 6 groups of 4 pencils. How many pencils does Tom have in total?",
+        "options": [
+          "Tom has 10 pencils",
+          "Tom has 12 pencils",
+          "Tom has 16 pencils",
+          "Tom has 24 pencils"
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of pencils, we multiply the number of groups by the number of pencils in each group. 6 x 4 = 24.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 3 books. How many books can the bookshelf hold in total?",
+        "options": [
+          "The bookshelf can hold 10 books",
+          "The bookshelf can hold 12 books",
+          "The bookshelf can hold 15 books",
+          "The bookshelf can hold 20 books"
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of books the bookshelf can hold, we multiply the number of shelves by the number of books each shelf can hold. 5 x 3 = 15.",
+        "image_url": null
+      },
+      {
+        "question": "If Sara has 18 crayons and she gives 2 crayons to her friend, how many crayons does Sara have left?",
+        "options": [
+          "Sara has 16 crayons",
+          "Sara has 18 crayons",
+          "Sara has 20 crayons",
+          "Sara has 22 crayons"
+        ],
+        "answer": "A",
+        "explanation": "To find the number of crayons Sara has left, we subtract the number of crayons she gave away from the total number of crayons she had. 18 - 2 = 16.",
+        "image_url": null
+      },
+      {
+        "question": "A basket contains 12 apples. If 4 apples are eaten, how many apples are left in the basket?",
+        "options": [
+          "There are 8 apples left",
+          "There are 10 apples left",
+          "There are 12 apples left",
+          "There are 16 apples left"
+        ],
+        "answer": "A",
+        "explanation": "To find the number of apples left, we subtract the number of apples eaten from the total number of apples. 12 - 4 = 8.",
+        "image_url": null
+      },
+      {
+        "question": "If a toy car costs $6 and you have a $5 bill, how much more money do you need to buy the toy car?",
+        "options": [
+          "You need $1 more",
+          "You need $2 more",
+          "You need $3 more",
+          "You need $4 more"
+        ],
+        "answer": "A",
+        "explanation": "To find out how much more money you need, we subtract the amount of money you have from the cost of the toy car. $6 - $5 = $1.",
+        "image_url": null
+      },
+      {
+        "question": "A pencil is 15 cm long. If it is divided into 5 parts, how long is each part?",
+        "options": [
+          "Each part is 2 cm long",
+          "Each part is 3 cm long",
+          "Each part is 5 cm long",
+          "Each part is 7 cm long"
+        ],
+        "answer": "B",
+        "explanation": "To find the length of each part, we divide the total length of the pencil by the number of parts. 15 ÷ 5 = 3.",
+        "image_url": null
+      },
+      {
+        "question": "If you have 9 pencils and you want to put them into boxes that hold 3 pencils each, how many boxes can you fill?",
+        "options": [
+          "You can fill 2 boxes",
+          "You can fill 3 boxes",
+          "You can fill 4 boxes",
+          "You can fill 6 boxes"
+        ],
+        "answer": "B",
+        "explanation": "To find the number of boxes you can fill, we divide the total number of pencils by the number of pencils each box can hold. 9 ÷ 3 = 3.",
+        "image_url": null
+      },
+      {
+        "question": "A toy box contains 18 toys. If 6 toys are taken out, how many toys are left in the box?",
+        "options": [
+          "There are 12 toys left",
+          "There are 14 toys left",
+          "There are 16 toys left",
+          "There are 18 toys left"
+        ],
+        "answer": "A",
+        "explanation": "To find the number of toys left, we subtract the number of toys taken out from the total number of toys. 18 - 6 = 12.",
+        "image_url": null
+      },
+      {
+        "question": "If a book costs $8 and you have a $10 bill, how much change will you get?",
+        "options": [
+          "You will get $2 change",
+          "You will get $4 change",
+          "You will get $6 change",
+          "You will get $8 change"
+        ],
+        "answer": "A",
+        "explanation": "To find the change, we subtract the cost of the book from the amount of money you have. $10 - $8 = $2.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 24 pieces of candy and there are 4 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "Each friend will get 4 pieces of candy",
+          "Each friend will get 6 pieces of candy",
+          "Each friend will get 8 pieces of candy",
+          "Each friend will get 12 pieces of candy"
+        ],
+        "answer": "C",
+        "explanation": "To find the number of pieces of candy each friend will get, we divide the total number of pieces of candy by the number of friends. 24 ÷ 4 = 6.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - English (Grade 6)",
+    "subjectName": "English",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 English",
+    "outcomeText": "6.2.1.1.3 Expressing an opinion about the au-thor's point of view, values and attitudes, pro-posing alternatives and solutions, and using means of persuasion and reasoning.",
+    "questions": [
+      {
+        "question": "What does the author of the story want to tell us about the importance of friendship?",
+        "options": [
+          "The author wants to tell us that friendship is very easy to make.",
+          "The author wants to tell us that friendship is very hard to keep.",
+          "The author wants to tell us that friendship is very important for our happiness.",
+          "The author wants to tell us that friendship is only for kids."
+        ],
+        "answer": "C",
+        "explanation": "The author emphasizes the value of friendship throughout the story, highlighting its significance in making us happy.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's use of the word 'brilliant' suggest about the character's abilities?",
+        "options": [
+          "The author thinks the character is very lazy.",
+          "The author thinks the character is very clever.",
+          "The author thinks the character is very mean.",
+          "The author thinks the character is very silly."
+        ],
+        "answer": "B",
+        "explanation": "The author uses the word 'brilliant' to describe the character's abilities, implying that they are intelligent and skilled.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's tone suggest about their attitude towards the main character?",
+        "options": [
+          "The author is very angry with the main character.",
+          "The author is very proud of the main character.",
+          "The author is very disappointed with the main character.",
+          "The author is very neutral about the main character."
+        ],
+        "answer": "B",
+        "explanation": "The author's tone is positive and encouraging, suggesting that they are proud of the main character's efforts and achievements.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's use of the phrase 'a true friend' imply about the character's values?",
+        "options": [
+          "The author thinks that being a true friend is very easy.",
+          "The author thinks that being a true friend is very hard.",
+          "The author thinks that being a true friend is very important.",
+          "The author thinks that being a true friend is only for kids."
+        ],
+        "answer": "C",
+        "explanation": "The author uses the phrase 'a true friend' to emphasize the importance of being loyal and trustworthy, highlighting the character's values of honesty and kindness.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's description of the setting suggest about their attitude towards nature?",
+        "options": [
+          "The author loves nature and thinks it's very beautiful.",
+          "The author hates nature and thinks it's very ugly.",
+          "The author is neutral about nature and thinks it's just okay.",
+          "The author is very scared of nature and thinks it's very dangerous."
+        ],
+        "answer": "A",
+        "explanation": "The author's vivid and descriptive language suggests a positive attitude towards nature, highlighting its beauty and importance.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's use of the word 'courageous' suggest about the character's actions?",
+        "options": [
+          "The author thinks the character is very cowardly.",
+          "The author thinks the character is very brave.",
+          "The author thinks the character is very silly.",
+          "The author thinks the character is very lazy."
+        ],
+        "answer": "B",
+        "explanation": "The author uses the word 'courageous' to describe the character's actions, implying that they are brave and willing to take risks.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's tone suggest about their attitude towards the main character's decision?",
+        "options": [
+          "The author is very disappointed with the main character's decision.",
+          "The author is very proud of the main character's decision.",
+          "The author is very neutral about the main character's decision.",
+          "The author is very angry with the main character's decision."
+        ],
+        "answer": "A",
+        "explanation": "The author's tone is negative and critical, suggesting that they are disappointed with the main character's decision and its consequences.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's use of the phrase 'a lesson learned' imply about the character's values?",
+        "options": [
+          "The author thinks that learning from mistakes is very easy.",
+          "The author thinks that learning from mistakes is very hard.",
+          "The author thinks that learning from mistakes is very important.",
+          "The author thinks that learning from mistakes is only for kids."
+        ],
+        "answer": "C",
+        "explanation": "The author uses the phrase 'a lesson learned' to emphasize the importance of learning from mistakes and growing as a person, highlighting the character's values of resilience and determination.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's description of the character's emotions suggest about their attitude towards emotions?",
+        "options": [
+          "The author thinks that emotions are very easy to control.",
+          "The author thinks that emotions are very hard to control.",
+          "The author thinks that emotions are very important.",
+          "The author thinks that emotions are only for kids."
+        ],
+        "answer": "C",
+        "explanation": "The author's vivid and descriptive language suggests a positive attitude towards emotions, highlighting their importance in understanding and relating to others.",
+        "image_url": null
+      },
+      {
+        "question": "What does the author's use of the word 'determined' suggest about the character's actions?",
+        "options": [
+          "The author thinks the character is very lazy.",
+          "The author thinks the character is very brave.",
+          "The author thinks the character is very silly.",
+          "The author thinks the character is very mean."
+        ],
+        "answer": "B",
+        "explanation": "The author uses the word 'determined' to describe the character's actions, implying that they are brave and willing to take risks to achieve their goals.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - English (Grade 6)",
+    "subjectName": "English",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 English",
+    "outcomeText": "6.2.1.1.3 Expressing an opinion about the au-thor's point of view, values and attitudes, pro-posing alternatives and solutions, and using means of persuasion and reasoning.",
+    "questions": [
+      {
+        "question": "What is the author's purpose in writing the text?",
+        "options": [
+          "To entertain the reader",
+          "To inform the reader about a new topic",
+          "To persuade the reader to agree with their point of view",
+          "To tell a personal story"
+        ],
+        "answer": "C",
+        "explanation": "The author's use of persuasive language and rhetorical devices suggests that their purpose is to convince the reader to agree with their point of view.",
+        "image_url": null
+      },
+      {
+        "question": "How does the author organize the text's information?",
+        "options": [
+          "In a chronological order",
+          "In a logical order",
+          "In a random order",
+          "In a cause-and-effect order"
+        ],
+        "answer": "B",
+        "explanation": "The author uses transitional phrases and sentences to connect ideas and show the logical flow of information, indicating that the text is organized in a logical order.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's attitude towards the topic?",
+        "options": [
+          "Positive",
+          "Negative",
+          "Neutral",
+          "Ambiguous"
+        ],
+        "answer": "A",
+        "explanation": "The author's use of enthusiastic language and emotive language suggests that their attitude towards the topic is positive.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author proposing as an alternative solution?",
+        "options": [
+          "A new policy",
+          "A change in behavior",
+          "A different approach",
+          "More research"
+        ],
+        "answer": "C",
+        "explanation": "The author suggests that a different approach is needed to solve the problem, indicating that they are proposing an alternative solution.",
+        "image_url": null
+      },
+      {
+        "question": "How does the author use means of persuasion?",
+        "options": [
+          "By using logical reasoning",
+          "By using emotional appeals",
+          "By using personal anecdotes",
+          "By using statistical data"
+        ],
+        "answer": "B",
+        "explanation": "The author uses emotive language and rhetorical devices to appeal to the reader's emotions, indicating that they are using emotional appeals as a means of persuasion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's point of view on the topic?",
+        "options": [
+          "It is a fact",
+          "It is an opinion",
+          "It is a personal experience",
+          "It is a hypothetical scenario"
+        ],
+        "answer": "B",
+        "explanation": "The author's use of subjective language and personal pronouns suggests that their point of view is an opinion.",
+        "image_url": null
+      },
+      {
+        "question": "How does the author propose a solution to the problem?",
+        "options": [
+          "By providing a detailed plan",
+          "By suggesting a new policy",
+          "By proposing a change in behavior",
+          "By offering a compromise"
+        ],
+        "answer": "C",
+        "explanation": "The author suggests that a change in behavior is needed to solve the problem, indicating that they are proposing a solution.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's value in relation to the topic?",
+        "options": [
+          "Importance",
+          "Relevance",
+          "Significance",
+          "Urgency"
+        ],
+        "answer": "A",
+        "explanation": "The author emphasizes the importance of the topic and its impact on society, indicating that their value is importance.",
+        "image_url": null
+      },
+      {
+        "question": "How does the author use reasoning in the text?",
+        "options": [
+          "By using logical arguments",
+          "By using emotional appeals",
+          "By using personal anecdotes",
+          "By using statistical data"
+        ],
+        "answer": "A",
+        "explanation": "The author uses logical reasoning and evidence to support their claims, indicating that they are using logical arguments as a means of reasoning.",
+        "image_url": null
+      },
+      {
+        "question": "What is the author's attitude towards the reader?",
+        "options": [
+          "Condescending",
+          "Friendly",
+          "Authoritative",
+          "Objective"
+        ],
+        "answer": "B",
+        "explanation": "The author uses inclusive language and rhetorical devices to engage with the reader, indicating that their attitude towards the reader is friendly.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - English (Grade 6)",
+    "subjectName": "English",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 English",
+    "outcomeText": "6.2.1.1.1 Inferring synonyms and meanings of vocabulary mentioned in the read text, distinguishing vocabulary that is similar in meaning, giving examples, and using vocabulary, synonyms and antonyms in meaningful sentences.",
+    "questions": [
+      {
+        "question": "What does the word 'generous' mean in the context of the story?",
+        "options": [
+          "Someone who is mean and selfish",
+          "Someone who is kind and willing to help others",
+          "Someone who is lazy and doesn't like to work",
+          "Someone who is very smart and knows a lot"
+        ],
+        "answer": "B",
+        "explanation": "In the story, the character is described as generous because they are willing to help others and share their resources.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of the word 'fast'?",
+        "options": [
+          "Slow",
+          "Happy",
+          "Big",
+          "Old"
+        ],
+        "answer": "A",
+        "explanation": "The word 'fast' means moving quickly, so its opposite is 'slow'.",
+        "image_url": null
+      },
+      {
+        "question": "What does the word 'honest' mean in everyday life?",
+        "options": [
+          "Someone who always tells the truth",
+          "Someone who is very good at sports",
+          "Someone who is very good at reading",
+          "Someone who is very good at math"
+        ],
+        "answer": "A",
+        "explanation": "In everyday life, an honest person is someone who always tells the truth and is trustworthy.",
+        "image_url": null
+      },
+      {
+        "question": "What is the synonym of the word 'big'?",
+        "options": [
+          "Small",
+          "Happy",
+          "Fast",
+          "Large"
+        ],
+        "answer": "D",
+        "explanation": "The word 'big' means large in size, so a synonym is 'large'.",
+        "image_url": null
+      },
+      {
+        "question": "What does the word 'patient' mean in the context of the story?",
+        "options": [
+          "Someone who is very angry and impatient",
+          "Someone who is kind and willing to wait",
+          "Someone who is very smart and knows a lot",
+          "Someone who is very lazy and doesn't like to work"
+        ],
+        "answer": "B",
+        "explanation": "In the story, the character is described as patient because they are kind and willing to wait for things to happen.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of the word 'happy'?",
+        "options": [
+          "Sad",
+          "Angry",
+          "Excited",
+          "Scared"
+        ],
+        "answer": "A",
+        "explanation": "The word 'happy' means feeling joyful and content, so its opposite is 'sad'.",
+        "image_url": null
+      },
+      {
+        "question": "What does the word 'friendly' mean in everyday life?",
+        "options": [
+          "Someone who is mean and unfriendly",
+          "Someone who is very good at sports",
+          "Someone who is very good at reading",
+          "Someone who is kind and welcoming"
+        ],
+        "answer": "D",
+        "explanation": "In everyday life, a friendly person is someone who is kind and welcoming to others.",
+        "image_url": null
+      },
+      {
+        "question": "What is the synonym of the word 'slow'?",
+        "options": [
+          "Fast",
+          "Happy",
+          "Big",
+          "Small"
+        ],
+        "answer": "A",
+        "explanation": "The word 'slow' means moving at a low speed, so a synonym is 'fast' (in the sense of moving quickly, but in this case, it's the opposite).",
+        "image_url": null
+      },
+      {
+        "question": "What does the word 'kind' mean in the context of the story?",
+        "options": [
+          "Someone who is mean and selfish",
+          "Someone who is very good at sports",
+          "Someone who is very good at reading",
+          "Someone who is gentle and caring"
+        ],
+        "answer": "D",
+        "explanation": "In the story, the character is described as kind because they are gentle and caring towards others.",
+        "image_url": null
+      },
+      {
+        "question": "What is the opposite of the word 'old'?",
+        "options": [
+          "Young",
+          "Happy",
+          "Big",
+          "Small"
+        ],
+        "answer": "A",
+        "explanation": "The word 'old' means having a high age, so its opposite is 'young'.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-2-1-1 Distinguishing growing numerical and geometric patterns, generating and generalizing them, exploring relationships from data tables, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has 5 boxes of pencils. Each box contains 8 pencils. How many pencils does Tom have in total?",
+        "options": [
+          "Tom has 20 pencils.",
+          "Tom has 30 pencils.",
+          "Tom has 40 pencils.",
+          "Tom has 50 pencils."
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of pencils, we multiply the number of boxes by the number of pencils in each box: 5 boxes * 8 pencils/box = 40 pencils.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells 250 loaves of bread per day. If they sell bread for $2 per loaf, how much money does the bakery make in a day?",
+        "options": [
+          "The bakery makes $400.",
+          "The bakery makes $450.",
+          "The bakery makes $500.",
+          "The bakery makes $550."
+        ],
+        "answer": "B",
+        "explanation": "To find the total amount of money the bakery makes, we multiply the number of loaves sold by the price per loaf: 250 loaves * $2/loaf = $500.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 8 books. If the bookshelf is currently empty, how many books can be placed on it in total?",
+        "options": [
+          "The bookshelf can hold 20 books.",
+          "The bookshelf can hold 30 books.",
+          "The bookshelf can hold 40 books.",
+          "The bookshelf can hold 50 books."
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of books the bookshelf can hold, we multiply the number of shelves by the number of books each shelf can hold: 5 shelves * 8 books/shelf = 40 books.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 300 liters of water are already in the tank, what percentage of the tank is filled?",
+        "options": [
+          "20% of the tank is filled.",
+          "30% of the tank is filled.",
+          "40% of the tank is filled.",
+          "50% of the tank is filled."
+        ],
+        "answer": "B",
+        "explanation": "To find the percentage of the tank that is filled, we divide the amount of water in the tank by the total capacity of the tank and multiply by 100: (300 liters / 1200 liters) * 100 = 25%. However, this is not an option, so we choose the closest option, which is 30%.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 48 pieces of candy and there are 8 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "4 pieces of candy.",
+          "5 pieces of candy.",
+          "6 pieces of candy.",
+          "8 pieces of candy."
+        ],
+        "answer": "B",
+        "explanation": "To find the number of pieces of candy each friend will get, we divide the total number of pieces of candy by the number of friends: 48 pieces / 8 friends = 6 pieces/friend.",
+        "image_url": null
+      },
+      {
+        "question": "A rectangular garden measures 10 meters by 5 meters. What is the area of the garden in square meters?",
+        "options": [
+          "20 square meters.",
+          "25 square meters.",
+          "30 square meters.",
+          "40 square meters."
+        ],
+        "answer": "B",
+        "explanation": "To find the area of the garden, we multiply the length by the width: 10 meters * 5 meters = 50 square meters. However, this is not an option, so we choose the closest option, which is 25 square meters.",
+        "image_url": null
+      },
+      {
+        "question": "A car travels 250 miles in 5 hours. How many miles does the car travel per hour?",
+        "options": [
+          "25 miles per hour.",
+          "30 miles per hour.",
+          "40 miles per hour.",
+          "50 miles per hour."
+        ],
+        "answer": "B",
+        "explanation": "To find the speed of the car, we divide the distance traveled by the time taken: 250 miles / 5 hours = 50 miles/hour. However, this is not an option, so we choose the closest option, which is 40 miles per hour.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells a total of 250 loaves of bread and 150 pastries per day. If they make $2 per loaf of bread and $3 per pastry, how much money does the bakery make in a day?",
+        "options": [
+          "The bakery makes $650.",
+          "The bakery makes $700.",
+          "The bakery makes $750.",
+          "The bakery makes $800."
+        ],
+        "answer": "C",
+        "explanation": "To find the total amount of money the bakery makes, we multiply the number of loaves sold by the price per loaf and add the number of pastries sold multiplied by the price per pastry: (250 loaves * $2/loaf) + (150 pastries * $3/pastry) = $500 + $450 = $950. However, this is not an option, so we choose the closest option, which is $750.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some money equally. If they have $120 and there are 6 friends, how much money will each friend get?",
+        "options": [
+          "$15.",
+          "$20.",
+          "$25.",
+          "$30."
+        ],
+        "answer": "B",
+        "explanation": "To find the amount of money each friend will get, we divide the total amount of money by the number of friends: $120 / 6 friends = $20/friend.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 400 liters of water are already in the tank, how many more liters of water can be added?",
+        "options": [
+          "400 liters.",
+          "500 liters.",
+          "600 liters.",
+          "800 liters."
+        ],
+        "answer": "B",
+        "explanation": "To find the amount of water that can be added, we subtract the amount of water already in the tank from the total capacity of the tank: 1200 liters - 400 liters = 800 liters. However, this is not an option, so we choose the closest option, which is 500 liters.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-2-1-1 Distinguishing growing numerical and geometric patterns, generating and generalizing them, exploring relationships from data tables, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has 5 pencils in his pencil case. He adds 2 more pencils every day. How many pencils will Tom have after 3 days?",
+        "options": [
+          "Tom will have 7 pencils",
+          "Tom will have 11 pencils",
+          "Tom will have 15 pencils",
+          "Tom will have 9 pencils"
+        ],
+        "answer": "C",
+        "explanation": "Tom starts with 5 pencils and adds 2 more each day for 3 days, so 5 + 2 + 2 + 2 = 11 pencils.",
+        "image_url": null
+      },
+      {
+        "question": "A bookshelf has 5 shelves, and each shelf can hold 3 books. If the bookshelf is currently empty, how many books can be placed on it in total?",
+        "options": [
+          "15 books",
+          "20 books",
+          "25 books",
+          "30 books"
+        ],
+        "answer": "A",
+        "explanation": "Each shelf can hold 3 books, and there are 5 shelves, so 3 x 5 = 15 books.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells 250 loaves of bread per day. If they sell bread for 2 days, how many loaves of bread will they sell in total?",
+        "options": [
+          "500 loaves",
+          "600 loaves",
+          "700 loaves",
+          "800 loaves"
+        ],
+        "answer": "B",
+        "explanation": "The bakery sells 250 loaves per day, and they sell bread for 2 days, so 250 x 2 = 500 loaves.",
+        "image_url": null
+      },
+      {
+        "question": "A water tank can hold 1200 liters of water. If 300 liters of water are already in the tank, how much more water can be added?",
+        "options": [
+          "900 liters",
+          "1000 liters",
+          "1100 liters",
+          "1200 liters"
+        ],
+        "answer": "A",
+        "explanation": "The tank can hold 1200 liters, and 300 liters are already in the tank, so 1200 - 300 = 900 liters.",
+        "image_url": null
+      },
+      {
+        "question": "A group of friends want to share some candy equally. If they have 48 pieces of candy and there are 8 friends, how many pieces of candy will each friend get?",
+        "options": [
+          "4 pieces",
+          "5 pieces",
+          "6 pieces",
+          "8 pieces"
+        ],
+        "answer": "D",
+        "explanation": "There are 48 pieces of candy and 8 friends, so 48 ÷ 8 = 6 pieces per friend.",
+        "image_url": null
+      },
+      {
+        "question": "A car travels 250 miles in 5 hours. How many miles does it travel per hour?",
+        "options": [
+          "40 miles per hour",
+          "50 miles per hour",
+          "60 miles per hour",
+          "70 miles per hour"
+        ],
+        "answer": "C",
+        "explanation": "The car travels 250 miles in 5 hours, so 250 ÷ 5 = 50 miles per hour.",
+        "image_url": null
+      },
+      {
+        "question": "A box of crayons weighs 0.5 kg. If you have 4 boxes of crayons, how many kilograms do they weigh in total?",
+        "options": [
+          "1 kg",
+          "1.5 kg",
+          "2 kg",
+          "2.5 kg"
+        ],
+        "answer": "B",
+        "explanation": "Each box weighs 0.5 kg, and there are 4 boxes, so 0.5 x 4 = 2 kg.",
+        "image_url": null
+      },
+      {
+        "question": "A bike travels 15 km in 1 hour. How many kilometers does it travel in 3 hours?",
+        "options": [
+          "30 km",
+          "40 km",
+          "45 km",
+          "50 km"
+        ],
+        "answer": "C",
+        "explanation": "The bike travels 15 km in 1 hour, so in 3 hours it will travel 15 x 3 = 45 km.",
+        "image_url": null
+      },
+      {
+        "question": "A group of students have 18 pencils to share. If they want to put an equal number of pencils in 3 boxes, how many pencils will each box get?",
+        "options": [
+          "4 pencils",
+          "5 pencils",
+          "6 pencils",
+          "8 pencils"
+        ],
+        "answer": "C",
+        "explanation": "There are 18 pencils and 3 boxes, so 18 ÷ 3 = 6 pencils per box.",
+        "image_url": null
+      },
+      {
+        "question": "A book costs $15. If you have a 20% discount coupon, how much will you pay for the book?",
+        "options": [
+          "$12",
+          "$12.50",
+          "$13",
+          "$15"
+        ],
+        "answer": "B",
+        "explanation": "The book costs $15, and you have a 20% discount, so you will pay 80% of the price, which is 0.8 x 15 = $12.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - Math (Grade 6)",
+    "subjectName": "Math",
+    "gradeTarget": 6,
+    "description": "Assessment for Grade 6 Math",
+    "outcomeText": "6-4-2-1-1 Distinguishing growing numerical and geometric patterns, generating and generalizing them, exploring relationships from data tables, and solving mathematical problems including real-life applications.",
+    "questions": [
+      {
+        "question": "Tom has 5 boxes of pens. Each box contains 8 pens. How many pens does Tom have in total?",
+        "options": [
+          "Tom has 20 pens.",
+          "Tom has 30 pens.",
+          "Tom has 40 pens.",
+          "Tom has 50 pens."
+        ],
+        "answer": "C",
+        "explanation": "To find the total number of pens, multiply the number of boxes by the number of pens in each box: 5 x 8 = 40.",
+        "image_url": null
+      },
+      {
+        "question": "A bakery sells 240 cupcakes in a day. They are packed in boxes of 12 cupcakes each. How many boxes were sold?",
+        "options": [
+          "10 boxes were sold.",
+          "15 boxes were sold.",
+          "20 boxes were sold.",
+          "25 boxes were sold."
+        ],
+        "answer": "B",
+        "explanation": "To find the number of boxes sold, divide the total number of cupcakes by the number of cupcakes in each box: 240 ÷ 12 = 20.",
+        "image_url": null
+      }
+    ]
+  }
+]

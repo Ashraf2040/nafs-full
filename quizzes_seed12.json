@@ -1,0 +1,2453 @@
+[
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-1 Describing the movement of a body based on the concepts of the main elements of movement and distinguishing between them.",
+    "questions": [
+      {
+        "question": "A car accelerates from 0 to 60 km/h in 10 seconds. What is the acceleration of the car?",
+        "options": [
+          "The car's acceleration is 6 km/h per second",
+          "The car's acceleration is 12 km/h per second",
+          "The car's acceleration is 60 km/h per second",
+          "The car's acceleration is 0.6 km/h per second"
+        ],
+        "answer": "B",
+        "explanation": "To find the acceleration, we use the formula a = Δv / Δt, where a is acceleration, Δv is the change in velocity, and Δt is the time over which the change occurs. In this case, Δv = 60 km/h and Δt = 10 s, so a = 60 km/h / 10 s = 6 km/h/s.",
+        "image_url": null
+      },
+      {
+        "question": "A bicycle is moving at a constant speed of 10 m/s. What is its acceleration?",
+        "options": [
+          "The bicycle has a positive acceleration of 10 m/s^2",
+          "The bicycle has a negative acceleration of 10 m/s^2",
+          "The bicycle has no acceleration",
+          "The bicycle has a positive acceleration of 1 m/s^2"
+        ],
+        "answer": "C",
+        "explanation": "Acceleration is the rate of change of velocity. Since the bicycle is moving at a constant speed, its velocity is not changing, so its acceleration is zero.",
+        "image_url": null
+      },
+      {
+        "question": "A ball is thrown upwards with an initial velocity of 20 m/s. What is its acceleration?",
+        "options": [
+          "The ball has a positive acceleration of 10 m/s^2",
+          "The ball has a negative acceleration of 10 m/s^2",
+          "The ball has a positive acceleration of 20 m/s^2",
+          "The ball has no acceleration"
+        ],
+        "answer": "B",
+        "explanation": "The ball is under the influence of gravity, which is a force that causes it to accelerate downwards. Since the ball is thrown upwards, its velocity is decreasing, so its acceleration is negative.",
+        "image_url": null
+      },
+      {
+        "question": "A car accelerates from 20 m/s to 40 m/s in 5 seconds. What is its acceleration?",
+        "options": [
+          "The car's acceleration is 4 m/s^2",
+          "The car's acceleration is 6 m/s^2",
+          "The car's acceleration is 8 m/s^2",
+          "The car's acceleration is 10 m/s^2"
+        ],
+        "answer": "B",
+        "explanation": "To find the acceleration, we use the formula a = Δv / Δt, where a is acceleration, Δv is the change in velocity, and Δt is the time over which the change occurs. In this case, Δv = 40 m/s - 20 m/s = 20 m/s and Δt = 5 s, so a = 20 m/s / 5 s = 4 m/s^2.",
+        "image_url": null
+      },
+      {
+        "question": "A person is walking at a constant speed of 2 m/s. What is their acceleration?",
+        "options": [
+          "The person has a positive acceleration of 2 m/s^2",
+          "The person has a negative acceleration of 2 m/s^2",
+          "The person has no acceleration",
+          "The person has a positive acceleration of 1 m/s^2"
+        ],
+        "answer": "C",
+        "explanation": "Acceleration is the rate of change of velocity. Since the person is walking at a constant speed, their velocity is not changing, so their acceleration is zero.",
+        "image_url": null
+      },
+      {
+        "question": "A car accelerates from 0 to 30 m/s in 10 seconds. What is its acceleration?",
+        "options": [
+          "The car's acceleration is 3 m/s^2",
+          "The car's acceleration is 6 m/s^2",
+          "The car's acceleration is 9 m/s^2",
+          "The car's acceleration is 12 m/s^2"
+        ],
+        "answer": "B",
+        "explanation": "To find the acceleration, we use the formula a = Δv / Δt, where a is acceleration, Δv is the change in velocity, and Δt is the time over which the change occurs. In this case, Δv = 30 m/s and Δt = 10 s, so a = 30 m/s / 10 s = 3 m/s^2.",
+        "image_url": null
+      },
+      {
+        "question": "A ball is thrown downwards with an initial velocity of 10 m/s. What is its acceleration?",
+        "options": [
+          "The ball has a positive acceleration of 10 m/s^2",
+          "The ball has a negative acceleration of 10 m/s^2",
+          "The ball has a positive acceleration of 5 m/s^2",
+          "The ball has no acceleration"
+        ],
+        "answer": "B",
+        "explanation": "The ball is under the influence of gravity, which is a force that causes it to accelerate downwards. Since the ball is thrown downwards, its velocity is increasing, so its acceleration is positive.",
+        "image_url": null
+      },
+      {
+        "question": "A car accelerates from 40 m/s to 60 m/s in 5 seconds. What is its acceleration?",
+        "options": [
+          "The car's acceleration is 4 m/s^2",
+          "The car's acceleration is 6 m/s^2",
+          "The car's acceleration is 8 m/s^2",
+          "The car's acceleration is 10 m/s^2"
+        ],
+        "answer": "B",
+        "explanation": "To find the acceleration, we use the formula a = Δv / Δt, where a is acceleration, Δv is the change in velocity, and Δt is the time over which the change occurs. In this case, Δv = 60 m/s - 40 m/s = 20 m/s and Δt = 5 s, so a = 20 m/s / 5 s = 4 m/s^2.",
+        "image_url": null
+      },
+      {
+        "question": "A person is running at a constant speed of 5 m/s. What is their acceleration?",
+        "options": [
+          "The person has a positive acceleration of 5 m/s^2",
+          "The person has a negative acceleration of 5 m/s^2",
+          "The person has no acceleration",
+          "The person has a positive acceleration of 1 m/s^2"
+        ],
+        "answer": "C",
+        "explanation": "Acceleration is the rate of change of velocity. Since the person is running at a constant speed, their velocity is not changing, so their acceleration is zero.",
+        "image_url": null
+      },
+      {
+        "question": "A car accelerates from 0 to 50 m/s in 15 seconds. What is its acceleration?",
+        "options": [
+          "The car's acceleration is 3.33 m/s^2",
+          "The car's acceleration is 6.67 m/s^2",
+          "The car's acceleration is 10 m/s^2",
+          "The car's acceleration is 12.5 m/s^2"
+        ],
+        "answer": "A",
+        "explanation": "To find the acceleration, we use the formula a = Δv / Δt, where a is acceleration, Δv is the change in velocity, and Δt is the time over which the change occurs. In this case, Δv = 50 m/s and Δt = 15 s, so a = 50 m/s / 15 s = 3.33 m/s^2.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-1 Describing the movement of a body based on the concepts of the main elements of movement and distinguishing between them.",
+    "questions": [
+      {
+        "question": "What is the term for the rate of change of velocity?",
+        "options": [
+          "The speed of an object",
+          "The distance traveled by an object",
+          "The rate of change of velocity",
+          "The direction of motion"
+        ],
+        "answer": "C",
+        "explanation": "Acceleration is the rate of change of velocity, which means it is the change in velocity per unit time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the total distance traveled by an object?",
+        "options": [
+          "Displacement",
+          "Velocity",
+          "Acceleration",
+          "Distance"
+        ],
+        "answer": "D",
+        "explanation": "Distance is the total length of the path traveled by an object, regardless of the direction of motion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the speed of an object in a specific direction?",
+        "options": [
+          "Velocity",
+          "Speed",
+          "Acceleration",
+          "Displacement"
+        ],
+        "answer": "A",
+        "explanation": "Velocity is the speed of an object in a specific direction, which means it takes into account both the magnitude and direction of motion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the change in position of an object?",
+        "options": [
+          "Displacement",
+          "Velocity",
+          "Acceleration",
+          "Distance"
+        ],
+        "answer": "A",
+        "explanation": "Displacement is the change in position of an object, which means it is the difference between the initial and final positions of the object.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the rate of change of displacement?",
+        "options": [
+          "Acceleration",
+          "Velocity",
+          "Speed",
+          "Displacement"
+        ],
+        "answer": "A",
+        "explanation": "Acceleration is the rate of change of displacement, which means it is the change in displacement per unit time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the time it takes for an object to travel a certain distance?",
+        "options": [
+          "Time",
+          "Speed",
+          "Distance",
+          "Velocity"
+        ],
+        "answer": "B",
+        "explanation": "Speed is the distance traveled per unit time, which means it is the time it takes for an object to travel a certain distance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the direction of motion of an object?",
+        "options": [
+          "Velocity",
+          "Speed",
+          "Acceleration",
+          "Displacement"
+        ],
+        "answer": "A",
+        "explanation": "Velocity is the speed of an object in a specific direction, which means it takes into account both the magnitude and direction of motion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the total change in velocity of an object?",
+        "options": [
+          "Acceleration",
+          "Velocity",
+          "Speed",
+          "Displacement"
+        ],
+        "answer": "A",
+        "explanation": "Acceleration is the total change in velocity of an object, which means it is the change in velocity per unit time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the rate of change of speed?",
+        "options": [
+          "Acceleration",
+          "Velocity",
+          "Speed",
+          "Displacement"
+        ],
+        "answer": "A",
+        "explanation": "Acceleration is the rate of change of speed, which means it is the change in speed per unit time.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the distance traveled by an object in a specific direction?",
+        "options": [
+          "Distance",
+          "Displacement",
+          "Velocity",
+          "Acceleration"
+        ],
+        "answer": "B",
+        "explanation": "Displacement is the distance traveled by an object in a specific direction, which means it takes into account both the magnitude and direction of motion.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-1 Describing the movement of a body based on the concepts of the main elements of movement and distinguishing between them.",
+    "questions": [
+      {
+        "question": "What type of motion occurs when an object moves in a circular path?",
+        "options": [
+          "Linear motion is the movement of an object in a straight line.",
+          "Circular motion is the movement of an object in a curved path.",
+          "Radial motion is the movement of an object towards or away from a central point.",
+          "Oscillatory motion is the movement of an object back and forth around a central point."
+        ],
+        "answer": "B",
+        "explanation": "Circular motion is the movement of an object in a curved path, such as a planet orbiting the sun.",
+        "image_url": null
+      },
+      {
+        "question": "What is the force that keeps an object moving in a circular path?",
+        "options": [
+          "Centrifugal force is the force that pushes an object away from the center.",
+          "Centripetal force is the force that pulls an object towards the center.",
+          "Frictional force is the force that opposes motion between two surfaces.",
+          "Normal force is the force that acts perpendicular to a surface."
+        ],
+        "answer": "B",
+        "explanation": "Centripetal force is the force that pulls an object towards the center, keeping it moving in a circular path.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of circular motion in everyday life?",
+        "options": [
+          "A car driving in a straight line on the highway.",
+          "A ball rolling on the ground in a straight line.",
+          "A merry-go-round spinning around a central axis.",
+          "A person walking in a straight line down the street."
+        ],
+        "answer": "C",
+        "explanation": "A merry-go-round spinning around a central axis is an example of circular motion, where the force of centripetal force keeps the riders moving in a circular path.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of centripetal force on circular motion?",
+        "options": [
+          "It slows down the object's motion.",
+          "It speeds up the object's motion.",
+          "It keeps the object moving in a circular path.",
+          "It causes the object to move in a straight line."
+        ],
+        "answer": "C",
+        "explanation": "Centripetal force keeps the object moving in a circular path, allowing it to maintain its curved trajectory.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between centripetal force and circular motion?",
+        "options": [
+          "Centripetal force causes circular motion.",
+          "Circular motion causes centripetal force.",
+          "Centripetal force is a result of circular motion.",
+          "Centripetal force is necessary for circular motion."
+        ],
+        "answer": "D",
+        "explanation": "Centripetal force is necessary for circular motion, as it provides the force required to keep the object moving in a curved path.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to an object if the centripetal force is removed?",
+        "options": [
+          "It continues to move in a circular path.",
+          "It moves in a straight line.",
+          "It speeds up its motion.",
+          "It slows down its motion."
+        ],
+        "answer": "B",
+        "explanation": "If the centripetal force is removed, the object will move in a straight line, as it no longer has the force required to maintain its circular motion.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of centripetal force in keeping an object on a circular path?",
+        "options": [
+          "It pushes the object away from the center.",
+          "It pulls the object towards the center.",
+          "It slows down the object's motion.",
+          "It speeds up the object's motion."
+        ],
+        "answer": "B",
+        "explanation": "Centripetal force pulls the object towards the center, keeping it on a circular path and preventing it from moving in a straight line.",
+        "image_url": null
+      },
+      {
+        "question": "What type of motion is characterized by a constant speed and changing direction?",
+        "options": [
+          "Linear motion is the movement of an object in a straight line.",
+          "Circular motion is the movement of an object in a curved path.",
+          "Oscillatory motion is the movement of an object back and forth around a central point.",
+          "Circular motion is the movement of an object in a circular path with a constant speed."
+        ],
+        "answer": "C",
+        "explanation": "Oscillatory motion is the movement of an object back and forth around a central point, characterized by a constant speed and changing direction.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the speed of an object on its circular motion?",
+        "options": [
+          "It decreases the centripetal force required.",
+          "It increases the centripetal force required.",
+          "It has no effect on the centripetal force required.",
+          "It decreases the radius of the circular path."
+        ],
+        "answer": "B",
+        "explanation": "Increasing the speed of an object increases the centripetal force required to keep it moving in a circular path, as the force must be greater to maintain the object's curved trajectory.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the radius of a circular path and the centripetal force?",
+        "options": [
+          "The radius of the circular path decreases with an increase in centripetal force.",
+          "The radius of the circular path increases with an increase in centripetal force.",
+          "The radius of the circular path has no effect on the centripetal force.",
+          "The centripetal force has no effect on the radius of the circular path."
+        ],
+        "answer": "B",
+        "explanation": "The radius of the circular path increases with an increase in centripetal force, as the force must be greater to maintain the object's curved trajectory over a larger distance.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-2 Understanding the concept of momentum and the law of momentum conservation.",
+    "questions": [
+      {
+        "question": "What is Newton's first law of motion?",
+        "options": [
+          "An object at rest will remain at rest, and an object in motion will continue to move with a constant velocity, unless acted upon by an external force",
+          "An object in motion will always come to rest, and an object at rest will always remain at rest",
+          "The force applied to an object is equal to its mass times its acceleration",
+          "The momentum of an object is equal to its mass times its velocity"
+        ],
+        "answer": "An object at rest will remain at rest, and an object in motion will continue to move with a constant velocity, unless acted upon by an external force",
+        "explanation": "Newton's first law of motion states that an object at rest will remain at rest, and an object in motion will continue to move with a constant velocity, unless acted upon by an external force. This law is also known as the law of inertia.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of Newton's first law of motion?",
+        "options": [
+          "A car accelerating down the road",
+          "A ball rolling on a frictionless surface",
+          "A book falling off a table",
+          "A bicycle turning a corner"
+        ],
+        "answer": "A ball rolling on a frictionless surface",
+        "explanation": "A ball rolling on a frictionless surface is an example of Newton's first law of motion because it will continue to move with a constant velocity unless acted upon by an external force, such as friction.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to an object when it is not acted upon by an external force?",
+        "options": [
+          "It will accelerate",
+          "It will decelerate",
+          "It will remain at rest or continue to move with a constant velocity",
+          "It will change direction"
+        ],
+        "answer": "It will remain at rest or continue to move with a constant velocity",
+        "explanation": "According to Newton's first law of motion, an object will remain at rest or continue to move with a constant velocity when it is not acted upon by an external force.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following statements is a consequence of Newton's first law of motion?",
+        "options": [
+          "An object will always come to rest",
+          "An object will always be in motion",
+          "An object will resist changes in its motion",
+          "An object will always accelerate"
+        ],
+        "answer": "An object will resist changes in its motion",
+        "explanation": "Newton's first law of motion implies that an object will resist changes in its motion, which is a fundamental concept in understanding the behavior of objects in the physical world.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the tendency of an object to resist changes in its motion?",
+        "options": [
+          "Inertia",
+          "Momentum",
+          "Friction",
+          "Gravity"
+        ],
+        "answer": "Inertia",
+        "explanation": "Inertia is the term used to describe the tendency of an object to resist changes in its motion, which is a fundamental concept in Newton's first law of motion.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is NOT an example of Newton's first law of motion?",
+        "options": [
+          "A car accelerating down the road",
+          "A ball rolling on a frictionless surface",
+          "A book falling off a table",
+          "A bicycle turning a corner due to the force of friction"
+        ],
+        "answer": "A car accelerating down the road",
+        "explanation": "A car accelerating down the road is not an example of Newton's first law of motion because it is being acted upon by an external force, such as the engine or friction, which is causing it to accelerate.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between an object's mass and its tendency to resist changes in its motion?",
+        "options": [
+          "The more massive the object, the less it resists changes in its motion",
+          "The more massive the object, the more it resists changes in its motion",
+          "The mass of the object has no effect on its tendency to resist changes in its motion",
+          "The mass of the object is inversely proportional to its tendency to resist changes in its motion"
+        ],
+        "answer": "The more massive the object, the more it resists changes in its motion",
+        "explanation": "According to Newton's first law of motion, the more massive an object is, the more it will resist changes in its motion, which is a fundamental concept in understanding the behavior of objects in the physical world.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following statements about Newton's first law of motion is FALSE?",
+        "options": [
+          "An object at rest will remain at rest unless acted upon by an external force",
+          "An object in motion will continue to move with a constant velocity unless acted upon by an external force",
+          "All objects have a natural tendency to come to rest",
+          "The law of inertia applies to all objects in the universe"
+        ],
+        "answer": "All objects have a natural tendency to come to rest",
+        "explanation": "This statement is false because Newton's first law of motion states that an object will remain at rest or continue to move with a constant velocity unless acted upon by an external force, not that it has a natural tendency to come to rest.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main idea of Newton's first law of motion?",
+        "options": [
+          "That an object will always be in motion",
+          "That an object will always come to rest",
+          "That an object will resist changes in its motion",
+          "That an object will always accelerate"
+        ],
+        "answer": "That an object will resist changes in its motion",
+        "explanation": "The main idea of Newton's first law of motion is that an object will resist changes in its motion, which is a fundamental concept in understanding the behavior of objects in the physical world.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a real-world application of Newton's first law of motion?",
+        "options": [
+          "The design of a car's seatbelt",
+          "The trajectory of a projectile",
+          "The motion of a planet in orbit",
+          "All of the above"
+        ],
+        "answer": "All of the above",
+        "explanation": "Newton's first law of motion has many real-world applications, including the design of a car's seatbelt, the trajectory of a projectile, and the motion of a planet in orbit, which all rely on the concept of an object resisting changes in its motion.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-2 Understanding the concept of momentum and the law of momentum conservation.",
+    "questions": [
+      {
+        "question": "What is the momentum of an object?",
+        "options": [
+          "The force that acts on an object",
+          "The energy of an object in motion",
+          "The product of an object's mass and velocity",
+          "The distance an object travels in a given time"
+        ],
+        "answer": "C",
+        "explanation": "Momentum is defined as the product of an object's mass and velocity, which is a fundamental concept in physics.",
+        "image_url": null
+      },
+      {
+        "question": "A car and a truck collide and stick together, what happens to their momentum?",
+        "options": [
+          "Their momentum increases",
+          "Their momentum decreases",
+          "Their momentum is conserved",
+          "Their momentum is lost"
+        ],
+        "answer": "C",
+        "explanation": "According to the law of conservation of momentum, the total momentum of a closed system remains constant over time, so the momentum of the car and truck is conserved.",
+        "image_url": null
+      },
+      {
+        "question": "A bowling ball and a tennis ball have the same velocity, which one has more momentum?",
+        "options": [
+          "The tennis ball has more momentum",
+          "The bowling ball has more momentum",
+          "They have the same momentum",
+          "Momentum cannot be compared"
+        ],
+        "answer": "B",
+        "explanation": "Momentum is the product of an object's mass and velocity, and since the bowling ball has a greater mass than the tennis ball, it has more momentum.",
+        "image_url": null
+      },
+      {
+        "question": "What is the law of conservation of momentum?",
+        "options": [
+          "The total momentum of a closed system decreases over time",
+          "The total momentum of a closed system remains constant over time",
+          "The total momentum of a closed system increases over time",
+          "The total momentum of a closed system is lost over time"
+        ],
+        "answer": "B",
+        "explanation": "The law of conservation of momentum states that the total momentum of a closed system remains constant over time, which means that the momentum before a collision or explosion is equal to the momentum after.",
+        "image_url": null
+      },
+      {
+        "question": "A rocket ship is moving through space, what happens to its momentum when it turns on its engines?",
+        "options": [
+          "Its momentum decreases",
+          "Its momentum remains the same",
+          "Its momentum increases",
+          "Its momentum is lost"
+        ],
+        "answer": "C",
+        "explanation": "When the rocket ship turns on its engines, it expels hot gases out of the back, which increases its momentum in the forward direction.",
+        "image_url": null
+      },
+      {
+        "question": "Two objects collide in a perfectly elastic collision, what happens to their momentum?",
+        "options": [
+          "Their momentum is lost",
+          "Their momentum is conserved",
+          "Their momentum increases",
+          "Their momentum decreases"
+        ],
+        "answer": "B",
+        "explanation": "In a perfectly elastic collision, both momentum and kinetic energy are conserved, which means that the total momentum of the objects before the collision is equal to the total momentum after the collision.",
+        "image_url": null
+      },
+      {
+        "question": "A hockey puck is moving across the ice, what happens to its momentum when it is struck by a hockey stick?",
+        "options": [
+          "Its momentum decreases",
+          "Its momentum remains the same",
+          "Its momentum increases",
+          "Its momentum is lost"
+        ],
+        "answer": "C",
+        "explanation": "When the hockey puck is struck by the hockey stick, it gains momentum in the direction of the strike, resulting in an increase in its momentum.",
+        "image_url": null
+      },
+      {
+        "question": "A car is traveling at a constant velocity, what is its momentum?",
+        "options": [
+          "Its momentum is zero",
+          "Its momentum is decreasing",
+          "Its momentum is increasing",
+          "Its momentum is the product of its mass and velocity"
+        ],
+        "answer": "D",
+        "explanation": "Momentum is defined as the product of an object's mass and velocity, so as long as the car is moving at a constant velocity, its momentum is the product of its mass and velocity.",
+        "image_url": null
+      },
+      {
+        "question": "Two cars collide and stick together, which of the following is true about their momentum?",
+        "options": [
+          "Their momentum is lost",
+          "Their momentum is conserved",
+          "Their momentum increases",
+          "Their momentum decreases"
+        ],
+        "answer": "B",
+        "explanation": "According to the law of conservation of momentum, the total momentum of a closed system remains constant over time, so when the two cars collide and stick together, their momentum is conserved.",
+        "image_url": null
+      },
+      {
+        "question": "A bullet is fired from a gun, what happens to the momentum of the gun?",
+        "options": [
+          "The momentum of the gun increases",
+          "The momentum of the gun decreases",
+          "The momentum of the gun remains the same",
+          "The momentum of the gun is conserved"
+        ],
+        "answer": "B",
+        "explanation": "When the bullet is fired from the gun, the gun recoils in the opposite direction, resulting in a decrease in its momentum.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-3 Understanding the concept of friction force, its types, and how it affects the movement of objects.",
+    "questions": [
+      {
+        "question": "What is the force that opposes motion between two surfaces that are in contact?",
+        "options": [
+          "Normal force",
+          "Friction force",
+          "Applied force",
+          "Gravity force"
+        ],
+        "answer": "B",
+        "explanation": "Friction force is the force that opposes motion between two surfaces that are in contact, which is a fundamental concept in understanding the motion of objects.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of static friction?",
+        "options": [
+          "A car moving down the road",
+          "A person trying to push a heavy box",
+          "A ball rolling on the ground",
+          "A bicycle in motion"
+        ],
+        "answer": "B",
+        "explanation": "Static friction occurs when an object is stationary and a force is applied to it, but the object does not move, such as when a person tries to push a heavy box.",
+        "image_url": null
+      },
+      {
+        "question": "What type of friction occurs when an object is moving and the force of friction opposes the motion?",
+        "options": [
+          "Static friction",
+          "Kinetic friction",
+          "Rolling friction",
+          "Fluid friction"
+        ],
+        "answer": "B",
+        "explanation": "Kinetic friction occurs when an object is moving and the force of friction opposes the motion, which is also known as sliding friction.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of friction on the motion of a rolling ball?",
+        "options": [
+          "It increases the speed of the ball",
+          "It decreases the speed of the ball",
+          "It changes the direction of the ball",
+          "It has no effect on the ball"
+        ],
+        "answer": "B",
+        "explanation": "Friction decreases the speed of a rolling ball by opposing its motion, which is why the ball eventually comes to rest.",
+        "image_url": null
+      },
+      {
+        "question": "Why is it easier to slide a box across a smooth floor than a rough floor?",
+        "options": [
+          "Because the smooth floor has more friction",
+          "Because the smooth floor has less friction",
+          "Because the rough floor has more gravity",
+          "Because the rough floor has less gravity"
+        ],
+        "answer": "B",
+        "explanation": "It is easier to slide a box across a smooth floor because it has less friction, which means there is less opposition to the motion of the box.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of lubricants in reducing friction?",
+        "options": [
+          "To increase the force of friction",
+          "To decrease the force of friction",
+          "To change the direction of friction",
+          "To eliminate friction altogether"
+        ],
+        "answer": "B",
+        "explanation": "Lubricants reduce friction by filling in the gaps between two surfaces, which decreases the force of friction and makes it easier for objects to move.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of fluid friction?",
+        "options": [
+          "A car driving on the road",
+          "A boat sailing through the water",
+          "A person walking on the ground",
+          "A bicycle riding on a smooth floor"
+        ],
+        "answer": "B",
+        "explanation": "Fluid friction occurs when an object moves through a fluid, such as water or air, which is why a boat sailing through the water is an example of fluid friction.",
+        "image_url": null
+      },
+      {
+        "question": "How does the force of friction affect the motion of a skateboard?",
+        "options": [
+          "It increases the speed of the skateboard",
+          "It decreases the speed of the skateboard",
+          "It changes the direction of the skateboard",
+          "It has no effect on the skateboard"
+        ],
+        "answer": "B",
+        "explanation": "The force of friction decreases the speed of a skateboard by opposing its motion, which is why the skateboard eventually comes to rest.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between static and kinetic friction?",
+        "options": [
+          "Static friction occurs when an object is moving, while kinetic friction occurs when an object is stationary",
+          "Static friction occurs when an object is stationary, while kinetic friction occurs when an object is moving",
+          "Static friction is stronger than kinetic friction",
+          "Kinetic friction is stronger than static friction"
+        ],
+        "answer": "B",
+        "explanation": "Static friction occurs when an object is stationary and a force is applied to it, while kinetic friction occurs when an object is moving and the force of friction opposes the motion.",
+        "image_url": null
+      },
+      {
+        "question": "Why is it important to consider friction when designing machines and mechanisms?",
+        "options": [
+          "Because friction increases the efficiency of machines",
+          "Because friction decreases the efficiency of machines",
+          "Because friction has no effect on machines",
+          "Because friction is only important in certain situations"
+        ],
+        "answer": "B",
+        "explanation": "Friction decreases the efficiency of machines by opposing motion and generating heat, which is why it is important to consider friction when designing machines and mechanisms.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-4 Understanding the concept of moment of inertia and reformulating Newton›s first law based on it.",
+    "questions": [
+      {
+        "question": "What is the moment of inertia and how does it relate to Newton's first law?",
+        "options": [
+          "The moment of inertia is a measure of an object's resistance to changes in its rotation and it affects how much force is required to change the object's state of motion",
+          "The moment of inertia is a measure of an object's mass and it determines the object's velocity",
+          "The moment of inertia is a measure of an object's velocity and it determines the object's acceleration",
+          "The moment of inertia is a measure of an object's acceleration and it determines the object's force"
+        ],
+        "answer": "The moment of inertia is a measure of an object's resistance to changes in its rotation and it affects how much force is required to change the object's state of motion",
+        "explanation": "The moment of inertia is a measure of an object's resistance to changes in its rotation, which is related to Newton's first law. According to Newton's first law, an object at rest will remain at rest, and an object in motion will continue to move with a constant velocity, unless acted upon by an external force. The moment of inertia affects how much force is required to change the object's state of motion.",
+        "image_url": null
+      },
+      {
+        "question": "How does the moment of inertia affect the rotation of an object?",
+        "options": [
+          "The moment of inertia increases the rotation of an object",
+          "The moment of inertia decreases the rotation of an object",
+          "The moment of inertia has no effect on the rotation of an object",
+          "The moment of inertia determines the resistance to changes in the rotation of an object"
+        ],
+        "answer": "The moment of inertia determines the resistance to changes in the rotation of an object",
+        "explanation": "The moment of inertia determines the resistance to changes in the rotation of an object. The greater the moment of inertia, the more resistance there is to changes in the rotation, and the less the object will rotate.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the moment of inertia and Newton's first law?",
+        "options": [
+          "The moment of inertia is a measure of an object's mass and it is not related to Newton's first law",
+          "The moment of inertia is a measure of an object's velocity and it is not related to Newton's first law",
+          "The moment of inertia is a measure of an object's resistance to changes in its rotation and it affects how much force is required to change the object's state of motion, which is related to Newton's first law",
+          "The moment of inertia is a measure of an object's acceleration and it determines the object's force"
+        ],
+        "answer": "The moment of inertia is a measure of an object's resistance to changes in its rotation and it affects how much force is required to change the object's state of motion, which is related to Newton's first law",
+        "explanation": "The moment of inertia is a measure of an object's resistance to changes in its rotation, which is related to Newton's first law. According to Newton's first law, an object at rest will remain at rest, and an object in motion will continue to move with a constant velocity, unless acted upon by an external force. The moment of inertia affects how much force is required to change the object's state of motion.",
+        "image_url": null
+      },
+      {
+        "question": "How does the distribution of mass affect the moment of inertia of an object?",
+        "options": [
+          "The distribution of mass has no effect on the moment of inertia of an object",
+          "The distribution of mass increases the moment of inertia of an object",
+          "The distribution of mass decreases the moment of inertia of an object",
+          "The distribution of mass affects the moment of inertia of an object, with more mass concentrated near the axis of rotation resulting in a lower moment of inertia"
+        ],
+        "answer": "The distribution of mass affects the moment of inertia of an object, with more mass concentrated near the axis of rotation resulting in a lower moment of inertia",
+        "explanation": "The distribution of mass affects the moment of inertia of an object. When more mass is concentrated near the axis of rotation, the moment of inertia is lower, and when more mass is concentrated farther from the axis of rotation, the moment of inertia is higher.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the moment of inertia of an object when its mass is increased?",
+        "options": [
+          "The moment of inertia decreases",
+          "The moment of inertia remains the same",
+          "The moment of inertia increases",
+          "The moment of inertia becomes zero"
+        ],
+        "answer": "The moment of inertia increases",
+        "explanation": "When the mass of an object is increased, the moment of inertia also increases. This is because the moment of inertia is directly proportional to the mass of the object.",
+        "image_url": null
+      },
+      {
+        "question": "How does the radius of rotation affect the moment of inertia of an object?",
+        "options": [
+          "The radius of rotation has no effect on the moment of inertia of an object",
+          "The radius of rotation decreases the moment of inertia of an object",
+          "The radius of rotation increases the moment of inertia of an object",
+          "The radius of rotation affects the moment of inertia of an object, with a larger radius resulting in a higher moment of inertia"
+        ],
+        "answer": "The radius of rotation affects the moment of inertia of an object, with a larger radius resulting in a higher moment of inertia",
+        "explanation": "The radius of rotation affects the moment of inertia of an object. When the radius of rotation is larger, the moment of inertia is higher, and when the radius of rotation is smaller, the moment of inertia is lower.",
+        "image_url": null
+      },
+      {
+        "question": "What is the unit of measurement for the moment of inertia?",
+        "options": [
+          "Kilograms per meter",
+          "Kilograms per second",
+          "Kilogram-meters squared",
+          "Newtons per meter"
+        ],
+        "answer": "Kilogram-meters squared",
+        "explanation": "The unit of measurement for the moment of inertia is kilogram-meters squared. This unit represents the amount of mass and the distance from the axis of rotation, which are the two factors that determine the moment of inertia.",
+        "image_url": null
+      },
+      {
+        "question": "How does the moment of inertia relate to the concept of torque?",
+        "options": [
+          "The moment of inertia is a measure of torque",
+          "The moment of inertia is not related to torque",
+          "The moment of inertia affects the amount of torque required to rotate an object",
+          "The moment of inertia is a measure of the force required to rotate an object"
+        ],
+        "answer": "The moment of inertia affects the amount of torque required to rotate an object",
+        "explanation": "The moment of inertia affects the amount of torque required to rotate an object. The greater the moment of inertia, the more torque is required to rotate the object, and the less the object will rotate.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the moment of inertia and the rotational kinetic energy of an object?",
+        "options": [
+          "The moment of inertia is a measure of the rotational kinetic energy of an object",
+          "The moment of inertia is not related to the rotational kinetic energy of an object",
+          "The moment of inertia affects the rotational kinetic energy of an object, with a higher moment of inertia resulting in a lower rotational kinetic energy",
+          "The moment of inertia affects the rotational kinetic energy of an object, with a higher moment of inertia resulting in a higher rotational kinetic energy"
+        ],
+        "answer": "The moment of inertia affects the rotational kinetic energy of an object, with a higher moment of inertia resulting in a higher rotational kinetic energy",
+        "explanation": "The moment of inertia affects the rotational kinetic energy of an object. The greater the moment of inertia, the higher the rotational kinetic energy, and the more energy is required to rotate the object.",
+        "image_url": null
+      },
+      {
+        "question": "How does the moment of inertia affect the stability of a rotating object?",
+        "options": [
+          "The moment of inertia has no effect on the stability of a rotating object",
+          "The moment of inertia decreases the stability of a rotating object",
+          "The moment of inertia increases the stability of a rotating object",
+          "The moment of inertia affects the stability of a rotating object, with a higher moment of inertia resulting in a lower stability"
+        ],
+        "answer": "The moment of inertia increases the stability of a rotating object",
+        "explanation": "The moment of inertia increases the stability of a rotating object. The greater the moment of inertia, the more resistant the object is to changes in its rotation, and the more stable it will be.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-5 Understanding Newton›s second law theoretically and graphically and determining the relationship between body acceleration and the factors affecting",
+    "questions": [
+      {
+        "question": "What is the relationship between force and acceleration according to Newton's second law?",
+        "options": [
+          "Force and acceleration are inversely proportional",
+          "Force and acceleration are directly proportional",
+          "Force and acceleration are not related",
+          "Force and acceleration are proportional to the square of the mass"
+        ],
+        "answer": "B",
+        "explanation": "Newton's second law states that force is equal to the mass of an object multiplied by its acceleration, so force and acceleration are directly proportional.",
+        "image_url": null
+      },
+      {
+        "question": "If the mass of an object is increased, what happens to its acceleration when a constant force is applied?",
+        "options": [
+          "The acceleration increases",
+          "The acceleration decreases",
+          "The acceleration remains the same",
+          "The acceleration becomes zero"
+        ],
+        "answer": "B",
+        "explanation": "According to Newton's second law, if the mass of an object is increased and the force remains constant, the acceleration will decrease because force is divided by mass to get acceleration.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the force on an object while keeping its mass constant?",
+        "options": [
+          "The acceleration decreases",
+          "The acceleration remains the same",
+          "The acceleration increases",
+          "The object will not move"
+        ],
+        "answer": "C",
+        "explanation": "According to Newton's second law, if the force on an object is increased while keeping its mass constant, the acceleration will increase because force is directly proportional to acceleration.",
+        "image_url": null
+      },
+      {
+        "question": "A car is moving with a constant velocity. What is the net force acting on the car?",
+        "options": [
+          "A large force in the direction of motion",
+          "A small force in the direction of motion",
+          "A large force opposite to the direction of motion",
+          "Zero net force"
+        ],
+        "answer": "D",
+        "explanation": "When an object is moving with a constant velocity, the net force acting on it is zero, according to Newton's first law.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the acceleration of an object when the force acting on it is doubled and its mass is halved?",
+        "options": [
+          "The acceleration decreases",
+          "The acceleration remains the same",
+          "The acceleration increases",
+          "The acceleration becomes four times greater"
+        ],
+        "answer": "C",
+        "explanation": "According to Newton's second law, if the force is doubled and the mass is halved, the acceleration will increase because force is directly proportional to acceleration and inversely proportional to mass.",
+        "image_url": null
+      },
+      {
+        "question": "A bicycle and a truck have the same force applied to them. If the bicycle has a smaller mass than the truck, which one will have a greater acceleration?",
+        "options": [
+          "The truck will have a greater acceleration",
+          "The bicycle will have a greater acceleration",
+          "Both will have the same acceleration",
+          "The acceleration is not related to mass"
+        ],
+        "answer": "B",
+        "explanation": "According to Newton's second law, the bicycle will have a greater acceleration because it has a smaller mass, and force is divided by mass to get acceleration.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between mass and acceleration when a constant force is applied?",
+        "options": [
+          "Mass and acceleration are directly proportional",
+          "Mass and acceleration are inversely proportional",
+          "Mass and acceleration are not related",
+          "Mass and acceleration are proportional to the square of the force"
+        ],
+        "answer": "B",
+        "explanation": "According to Newton's second law, mass and acceleration are inversely proportional because force is divided by mass to get acceleration.",
+        "image_url": null
+      },
+      {
+        "question": "If two objects have the same mass, which one will have a greater acceleration when a greater force is applied to it?",
+        "options": [
+          "The object with the smaller force will have a greater acceleration",
+          "The object with the greater force will have a greater acceleration",
+          "Both objects will have the same acceleration",
+          "The acceleration is not related to force"
+        ],
+        "answer": "B",
+        "explanation": "According to Newton's second law, the object with the greater force will have a greater acceleration because force is directly proportional to acceleration.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the acceleration of an object when its mass is increased and the force acting on it remains constant?",
+        "options": [
+          "The acceleration increases",
+          "The acceleration remains the same",
+          "The acceleration decreases",
+          "The acceleration becomes zero"
+        ],
+        "answer": "C",
+        "explanation": "According to Newton's second law, if the mass of an object is increased and the force remains constant, the acceleration will decrease because force is divided by mass to get acceleration.",
+        "image_url": null
+      },
+      {
+        "question": "A force of 10 N is applied to a 2 kg object. What is its acceleration?",
+        "options": [
+          "The acceleration is 5 m/s^2",
+          "The acceleration is 10 m/s^2",
+          "The acceleration is 2 m/s^2",
+          "The acceleration is 20 m/s^2"
+        ],
+        "answer": "A",
+        "explanation": "According to Newton's second law, force is equal to mass multiplied by acceleration. So, acceleration is equal to force divided by mass, which is 10 N / 2 kg = 5 m/s^2.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-5 Understanding Newton›s second law theoretically and graphically and determining the relationship between body acceleration and the factors affecting",
+    "questions": [
+      {
+        "question": "What is the force that pulls objects towards each other?",
+        "options": [
+          "Normal force",
+          "Frictional force",
+          "Gravitational force",
+          "Magnetic force"
+        ],
+        "answer": "C",
+        "explanation": "Gravitational force is the force that attracts objects with mass towards each other.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of gravity on a falling object?",
+        "options": [
+          "It slows down the object",
+          "It speeds up the object",
+          "It keeps the object at a constant velocity",
+          "It changes the direction of the object"
+        ],
+        "answer": "B",
+        "explanation": "Gravity pulls objects towards the ground, causing them to accelerate and speed up as they fall.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between mass and gravity?",
+        "options": [
+          "Mass decreases as gravity increases",
+          "Mass increases as gravity decreases",
+          "Mass and gravity are unrelated",
+          "Mass and gravity are directly proportional"
+        ],
+        "answer": "D",
+        "explanation": "The more massive an object is, the stronger its gravitational pull will be.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the force of gravity between two objects as the distance between them increases?",
+        "options": [
+          "The force of gravity increases",
+          "The force of gravity remains the same",
+          "The force of gravity decreases",
+          "The force of gravity becomes zero"
+        ],
+        "answer": "C",
+        "explanation": "As the distance between two objects increases, the force of gravity between them decreases.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of the effect of gravity on a body?",
+        "options": [
+          "A car moving at a constant velocity",
+          "A ball rolling up a hill",
+          "A rock falling towards the ground",
+          "A bicycle turning a corner"
+        ],
+        "answer": "C",
+        "explanation": "Gravity is the force that pulls the rock towards the ground, causing it to fall.",
+        "image_url": null
+      },
+      {
+        "question": "What is the force of gravity on an object at the surface of the Earth?",
+        "options": [
+          "It depends on the object's velocity",
+          "It depends on the object's mass and the Earth's mass",
+          "It depends on the object's shape and size",
+          "It is always zero"
+        ],
+        "answer": "B",
+        "explanation": "The force of gravity on an object at the surface of the Earth depends on the object's mass and the Earth's mass.",
+        "image_url": null
+      },
+      {
+        "question": "How does the force of gravity affect the motion of a projectile?",
+        "options": [
+          "It causes the projectile to move in a straight line",
+          "It causes the projectile to move in a circular path",
+          "It causes the projectile to accelerate downwards",
+          "It has no effect on the projectile's motion"
+        ],
+        "answer": "C",
+        "explanation": "The force of gravity pulls the projectile downwards, causing it to accelerate and follow a curved path.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the force of gravity and the acceleration of an object?",
+        "options": [
+          "The force of gravity is inversely proportional to the acceleration",
+          "The force of gravity is directly proportional to the acceleration",
+          "The force of gravity is unrelated to the acceleration",
+          "The force of gravity is equal to the acceleration"
+        ],
+        "answer": "B",
+        "explanation": "According to Newton's second law, the force of gravity is directly proportional to the acceleration of an object.",
+        "image_url": null
+      },
+      {
+        "question": "How does the mass of an object affect its weight?",
+        "options": [
+          "The mass of an object has no effect on its weight",
+          "The mass of an object is inversely proportional to its weight",
+          "The mass of an object is directly proportional to its weight",
+          "The mass of an object is equal to its weight"
+        ],
+        "answer": "C",
+        "explanation": "The weight of an object is the force of gravity acting on it, and it is directly proportional to the object's mass.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between mass and weight?",
+        "options": [
+          "Mass is the force of gravity, while weight is the object's resistance to motion",
+          "Mass is the object's resistance to motion, while weight is the force of gravity",
+          "Mass is a measure of an object's amount of matter, while weight is the force of gravity acting on it",
+          "Mass and weight are the same thing"
+        ],
+        "answer": "C",
+        "explanation": "Mass is a measure of an object's amount of matter, while weight is the force of gravity acting on it.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-6 Understanding Newton›s third law and calculating the value of mutual forces mathematically based on it.",
+    "questions": [
+      {
+        "question": "What is Newton's third law of motion?",
+        "options": [
+          "For every action, there is an equal and opposite reaction",
+          "For every action, there is a greater reaction",
+          "For every action, there is a lesser reaction",
+          "For every action, there is no reaction"
+        ],
+        "answer": "For every action, there is an equal and opposite reaction",
+        "explanation": "Newton's third law states that for every action, there is an equal and opposite reaction, which means that the forces exerted by two objects on each other are always equal in magnitude and opposite in direction.",
+        "image_url": null
+      },
+      {
+        "question": "A car accelerates down the road. What force is exerted on the road?",
+        "options": [
+          "A forward force exerted by the road on the car",
+          "A backward force exerted by the car on the road",
+          "A forward force exerted by the car on the road",
+          "No force is exerted on the road"
+        ],
+        "answer": "A backward force exerted by the car on the road",
+        "explanation": "According to Newton's third law, the force exerted by the car on the road is equal and opposite to the force exerted by the road on the car. Since the car is accelerating forward, the road exerts a forward force on the car, and the car exerts a backward force on the road.",
+        "image_url": null
+      },
+      {
+        "question": "When you push on a wall, what happens to the force you exert?",
+        "options": [
+          "The force you exert is absorbed by the wall",
+          "The force you exert is reflected back to you",
+          "The force you exert is equal and opposite to the force exerted by the wall on you",
+          "The force you exert is greater than the force exerted by the wall on you"
+        ],
+        "answer": "The force you exert is equal and opposite to the force exerted by the wall on you",
+        "explanation": "According to Newton's third law, the force you exert on the wall is equal and opposite to the force exerted by the wall on you. This means that the wall exerts an equal force on you in the opposite direction.",
+        "image_url": null
+      },
+      {
+        "question": "A rocket blasts off into space. What force is exerted on the rocket?",
+        "options": [
+          "A downward force exerted by the Earth on the rocket",
+          "An upward force exerted by the exhaust gases on the rocket",
+          "A downward force exerted by the exhaust gases on the rocket",
+          "No force is exerted on the rocket"
+        ],
+        "answer": "An upward force exerted by the exhaust gases on the rocket",
+        "explanation": "According to Newton's third law, the force exerted by the exhaust gases on the rocket is equal and opposite to the force exerted by the rocket on the exhaust gases. Since the exhaust gases are expelled downward, the rocket exerts a downward force on the gases, and the gases exert an upward force on the rocket.",
+        "image_url": null
+      },
+      {
+        "question": "When you throw a ball to a friend, what force is exerted on the ball?",
+        "options": [
+          "A forward force exerted by your hand on the ball",
+          "A backward force exerted by the ball on your hand",
+          "A forward force exerted by the ball on your hand",
+          "No force is exerted on the ball"
+        ],
+        "answer": "A forward force exerted by your hand on the ball",
+        "explanation": "According to Newton's third law, the force exerted by your hand on the ball is equal and opposite to the force exerted by the ball on your hand. Since you are throwing the ball forward, your hand exerts a forward force on the ball, and the ball exerts a backward force on your hand.",
+        "image_url": null
+      },
+      {
+        "question": "A bicycle accelerates down the road. What force is exerted on the bicycle?",
+        "options": [
+          "A forward force exerted by the road on the bicycle",
+          "A backward force exerted by the bicycle on the road",
+          "A forward force exerted by the bicycle on the road",
+          "No force is exerted on the bicycle"
+        ],
+        "answer": "A forward force exerted by the road on the bicycle",
+        "explanation": "According to Newton's third law, the force exerted by the road on the bicycle is equal and opposite to the force exerted by the bicycle on the road. Since the bicycle is accelerating forward, the road exerts a forward force on the bicycle, and the bicycle exerts a backward force on the road.",
+        "image_url": null
+      },
+      {
+        "question": "When you pull on a rope, what force is exerted on the rope?",
+        "options": [
+          "A force exerted by the rope on you in the same direction as the pull",
+          "A force exerted by the rope on you in the opposite direction of the pull",
+          "A force exerted by you on the rope in the same direction as the pull",
+          "No force is exerted on the rope"
+        ],
+        "answer": "A force exerted by you on the rope in the same direction as the pull",
+        "explanation": "According to Newton's third law, the force exerted by you on the rope is equal and opposite to the force exerted by the rope on you. Since you are pulling on the rope, you exert a force on the rope in the same direction as the pull, and the rope exerts a force on you in the opposite direction.",
+        "image_url": null
+      },
+      {
+        "question": "A boat moves through the water. What force is exerted on the boat?",
+        "options": [
+          "A forward force exerted by the water on the boat",
+          "A backward force exerted by the boat on the water",
+          "A forward force exerted by the boat on the water",
+          "No force is exerted on the boat"
+        ],
+        "answer": "A forward force exerted by the water on the boat",
+        "explanation": "According to Newton's third law, the force exerted by the water on the boat is equal and opposite to the force exerted by the boat on the water. Since the boat is moving forward, the water exerts a forward force on the boat, and the boat exerts a backward force on the water.",
+        "image_url": null
+      },
+      {
+        "question": "When you kick a soccer ball, what force is exerted on the ball?",
+        "options": [
+          "A forward force exerted by your foot on the ball",
+          "A backward force exerted by the ball on your foot",
+          "A forward force exerted by the ball on your foot",
+          "No force is exerted on the ball"
+        ],
+        "answer": "A forward force exerted by your foot on the ball",
+        "explanation": "According to Newton's third law, the force exerted by your foot on the ball is equal and opposite to the force exerted by the ball on your foot. Since you are kicking the ball forward, your foot exerts a forward force on the ball, and the ball exerts a backward force on your foot.",
+        "image_url": null
+      },
+      {
+        "question": "A skateboard rolls down a hill. What force is exerted on the skateboard?",
+        "options": [
+          "A downward force exerted by the hill on the skateboard",
+          "An upward force exerted by the skateboard on the hill",
+          "A downward force exerted by the skateboard on the hill",
+          "No force is exerted on the skateboard"
+        ],
+        "answer": "A downward force exerted by the hill on the skateboard",
+        "explanation": "According to Newton's third law, the force exerted by the hill on the skateboard is equal and opposite to the force exerted by the skateboard on the hill. Since the skateboard is rolling down the hill, the hill exerts a downward force on the skateboard, and the skateboard exerts an upward force on the hill.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-2-6 Understanding Newton›s third law and calculating the value of mutual forces mathematically based on it.",
+    "questions": [
+      {
+        "question": "What is Newton's third law of motion?",
+        "options": [
+          "For every action, there is an equal and opposite reaction",
+          "For every action, there is a greater reaction",
+          "For every action, there is a lesser reaction",
+          "For every action, there is no reaction"
+        ],
+        "answer": "For every action, there is an equal and opposite reaction",
+        "explanation": "Newton's third law states that for every action, there is an equal and opposite reaction. This means that when object A exerts a force on object B, object B will exert an equal and opposite force on object A.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of Newton's third law in everyday life?",
+        "options": [
+          "A car accelerating down the road",
+          "A person throwing a ball upwards",
+          "A rocket blasting off into space",
+          "All of the above"
+        ],
+        "answer": "All of the above",
+        "explanation": "All of the above options are examples of Newton's third law in everyday life. When a car accelerates, the ground exerts an equal and opposite force on the car. When a person throws a ball upwards, the ball exerts an equal and opposite force on the person's hand. When a rocket blasts off into space, the rocket exerts an equal and opposite force on the ground.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the forces exerted by two objects on each other?",
+        "options": [
+          "The forces are equal and opposite",
+          "The forces are equal but in the same direction",
+          "The forces are unequal and opposite",
+          "The forces are unequal and in the same direction"
+        ],
+        "answer": "The forces are equal and opposite",
+        "explanation": "According to Newton's third law, the forces exerted by two objects on each other are equal and opposite. This means that the magnitude of the forces is the same, but the direction is opposite.",
+        "image_url": null
+      },
+      {
+        "question": "What is the concept of weightlessness?",
+        "options": [
+          "The state of being in a location with no gravity",
+          "The state of being in a location with very strong gravity",
+          "The state of being in a location with equal and opposite forces",
+          "The state of being in a location with no forces acting on an object"
+        ],
+        "answer": "The state of being in a location with equal and opposite forces",
+        "explanation": "Weightlessness occurs when an object is in a state of free fall, where the force of gravity acting on the object is equal and opposite to the force exerted by the object on the ground. This results in a net force of zero, causing the object to feel weightless.",
+        "image_url": null
+      },
+      {
+        "question": "What is the concept of free fall?",
+        "options": [
+          "The state of being in a location with no gravity",
+          "The state of being in a location with very strong gravity",
+          "The state of an object falling towards the ground with no air resistance",
+          "The state of an object falling towards the ground with very strong air resistance"
+        ],
+        "answer": "The state of an object falling towards the ground with no air resistance",
+        "explanation": "Free fall occurs when an object is falling towards the ground with no air resistance, resulting in a constant acceleration due to gravity. This is an example of Newton's third law, where the force of gravity acting on the object is equal and opposite to the force exerted by the object on the ground.",
+        "image_url": null
+      },
+      {
+        "question": "How do you calculate the value of mutual forces mathematically based on Newton's third law?",
+        "options": [
+          "By using the formula F = ma",
+          "By using the formula F = -F",
+          "By using the formula F = (m1 * m2) / r^2",
+          "By using the formula F = 0"
+        ],
+        "answer": "By using the formula F = -F",
+        "explanation": "According to Newton's third law, the forces exerted by two objects on each other are equal and opposite. Mathematically, this can be represented by the formula F = -F, where F is the force exerted by one object on the other, and -F is the equal and opposite force exerted by the other object.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of Newton's third law in a sports context?",
+        "options": [
+          "A tennis player hitting a tennis ball",
+          "A basketball player shooting a basketball",
+          "A soccer player kicking a soccer ball",
+          "All of the above"
+        ],
+        "answer": "All of the above",
+        "explanation": "All of the above options are examples of Newton's third law in a sports context. When a tennis player hits a tennis ball, the ball exerts an equal and opposite force on the racket. When a basketball player shoots a basketball, the ball exerts an equal and opposite force on the player's hand. When a soccer player kicks a soccer ball, the ball exerts an equal and opposite force on the player's foot.",
+        "image_url": null
+      },
+      {
+        "question": "How does Newton's third law relate to the concept of friction?",
+        "options": [
+          "Friction is a force that opposes motion, and Newton's third law states that for every action, there is an equal and opposite reaction",
+          "Friction is a force that opposes motion, and Newton's third law states that for every action, there is a greater reaction",
+          "Friction is a force that aids motion, and Newton's third law states that for every action, there is an equal and opposite reaction",
+          "Friction is a force that aids motion, and Newton's third law states that for every action, there is a lesser reaction"
+        ],
+        "answer": "Friction is a force that opposes motion, and Newton's third law states that for every action, there is an equal and opposite reaction",
+        "explanation": "Friction is a force that opposes motion, and according to Newton's third law, for every action, there is an equal and opposite reaction. This means that when an object is moving, the force of friction exerted by the surface on the object is equal and opposite to the force exerted by the object on the surface.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a action force and a reaction force?",
+        "options": [
+          "An action force is a force that causes motion, while a reaction force is a force that opposes motion",
+          "An action force is a force that opposes motion, while a reaction force is a force that causes motion",
+          "An action force is a force that causes motion, while a reaction force is a force that also causes motion",
+          "An action force is a force that opposes motion, while a reaction force is a force that also opposes motion"
+        ],
+        "answer": "An action force is a force that causes motion, while a reaction force is a force that opposes motion",
+        "explanation": "According to Newton's third law, an action force is a force that causes motion, while a reaction force is a force that opposes motion. The action force and reaction force are equal and opposite, meaning that they have the same magnitude but opposite directions.",
+        "image_url": null
+      },
+      {
+        "question": "How does Newton's third law apply to the motion of a car?",
+        "options": [
+          "The car exerts a force on the ground, and the ground exerts an equal and opposite force on the car",
+          "The car exerts a force on the air, and the air exerts an equal and opposite force on the car",
+          "The car exerts a force on the road, and the road exerts a lesser force on the car",
+          "The car exerts a force on the road, and the road exerts a greater force on the car"
+        ],
+        "answer": "The car exerts a force on the ground, and the ground exerts an equal and opposite force on the car",
+        "explanation": "According to Newton's third law, when a car is in motion, it exerts a force on the ground, and the ground exerts an equal and opposite force on the car. This is what propels the car forward, as the force exerted by the car on the ground is equal and opposite to the force exerted by the ground on the car.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-3-1 Explaining the concept of electric current and methods of generating it in electrical circuits and its relationship to voltage and electrical resistance, and distinguishing between direct and alternating currents.",
+    "questions": [
+      {
+        "question": "What is the force that attracts or repels charged particles?",
+        "options": [
+          "The electric force is a type of gravitational force.",
+          "The electric force is a type of magnetic force.",
+          "The electric force is a type of force that arises between charged particles.",
+          "The electric force is a type of force that arises between magnets."
+        ],
+        "answer": "C",
+        "explanation": "The electric force is a type of force that arises between charged particles, such as protons and electrons.",
+        "image_url": null
+      },
+      {
+        "question": "What is the electric field?",
+        "options": [
+          "The electric field is a measure of the distance between charged particles.",
+          "The electric field is a measure of the force between charged particles.",
+          "The electric field is a region around a charged particle where the force can be detected.",
+          "The electric field is a measure of the temperature of a charged particle."
+        ],
+        "answer": "C",
+        "explanation": "The electric field is a region around a charged particle where the force can be detected, and it is a measure of the strength of the electric force.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between electric force and electric field?",
+        "options": [
+          "The electric force is equal to the electric field.",
+          "The electric force is proportional to the electric field.",
+          "The electric force is inversely proportional to the electric field.",
+          "The electric force is independent of the electric field."
+        ],
+        "answer": "B",
+        "explanation": "The electric force is proportional to the electric field, as described by Coulomb's Law.",
+        "image_url": null
+      },
+      {
+        "question": "What is the direction of the electric field around a positive charge?",
+        "options": [
+          "The electric field points towards the positive charge.",
+          "The electric field points away from the positive charge.",
+          "The electric field is perpendicular to the positive charge.",
+          "The electric field is parallel to the positive charge."
+        ],
+        "answer": "B",
+        "explanation": "The electric field points away from a positive charge, as described by the direction of the force on a test charge.",
+        "image_url": null
+      },
+      {
+        "question": "What is the direction of the electric field around a negative charge?",
+        "options": [
+          "The electric field points towards the negative charge.",
+          "The electric field points away from the negative charge.",
+          "The electric field is perpendicular to the negative charge.",
+          "The electric field is parallel to the negative charge."
+        ],
+        "answer": "A",
+        "explanation": "The electric field points towards a negative charge, as described by the direction of the force on a test charge.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a direct current and an alternating current?",
+        "options": [
+          "A direct current flows in one direction only, while an alternating current flows in both directions.",
+          "A direct current flows in both directions, while an alternating current flows in one direction only.",
+          "A direct current is a type of current that flows through a circuit, while an alternating current is a type of current that flows through a wire.",
+          "A direct current is a type of current that flows through a wire, while an alternating current is a type of current that flows through a circuit."
+        ],
+        "answer": "A",
+        "explanation": "A direct current flows in one direction only, while an alternating current flows in both directions.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a resistor in an electrical circuit?",
+        "options": [
+          "To increase the voltage in the circuit.",
+          "To decrease the voltage in the circuit.",
+          "To increase the current in the circuit.",
+          "To decrease the current in the circuit."
+        ],
+        "answer": "D",
+        "explanation": "A resistor is used to decrease the current in a circuit by increasing the resistance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between voltage and current in an electrical circuit?",
+        "options": [
+          "The voltage is directly proportional to the current.",
+          "The voltage is inversely proportional to the current.",
+          "The voltage is equal to the current.",
+          "The voltage is independent of the current."
+        ],
+        "answer": "B",
+        "explanation": "The voltage is inversely proportional to the current, as described by Ohm's Law.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of a switch in an electrical circuit?",
+        "options": [
+          "To increase the voltage in the circuit.",
+          "To decrease the voltage in the circuit.",
+          "To increase the current in the circuit.",
+          "To turn the circuit on or off."
+        ],
+        "answer": "D",
+        "explanation": "A switch is used to turn the circuit on or off.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a series circuit and a parallel circuit?",
+        "options": [
+          "A series circuit has multiple paths for the current to flow, while a parallel circuit has only one path for the current to flow.",
+          "A series circuit has only one path for the current to flow, while a parallel circuit has multiple paths for the current to flow.",
+          "A series circuit is used for high-voltage applications, while a parallel circuit is used for low-voltage applications.",
+          "A series circuit is used for low-voltage applications, while a parallel circuit is used for high-voltage applications."
+        ],
+        "answer": "B",
+        "explanation": "A series circuit has only one path for the current to flow, while a parallel circuit has multiple paths for the current to flow.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-3-1 Explaining the concept of electric current and methods of generating it in electrical circuits and its relationship to voltage and electrical resistance, and distinguishing between direct and alternating currents.",
+    "questions": [
+      {
+        "question": "What is the primary method of generating electric current in a household?",
+        "options": [
+          "Using a battery to convert chemical energy into electrical energy",
+          "Using a solar panel to convert sunlight into electrical energy",
+          "Using a dynamo to convert mechanical energy into electrical energy",
+          "Using a nuclear reactor to generate electricity"
+        ],
+        "answer": "A",
+        "explanation": "Households primarily use batteries or the electrical grid to generate electric current, which is often produced by power plants using chemical energy from batteries or mechanical energy from dynamos.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when a magnet rotates within a coil of wire to produce an electric current?",
+        "options": [
+          "Electromagnetic induction",
+          "Electrical conduction",
+          "Electrical resistance",
+          "Electrical capacitance"
+        ],
+        "answer": "A",
+        "explanation": "When a magnet rotates within a coil of wire, it induces an electric current through the process of electromagnetic induction.",
+        "image_url": null
+      },
+      {
+        "question": "What type of current flows in one direction only and does not change direction?",
+        "options": [
+          "Direct current",
+          "Alternating current",
+          "Static current",
+          "Pulsating current"
+        ],
+        "answer": "A",
+        "explanation": "Direct current flows in one direction only and does not change direction, making it suitable for applications like powering small devices.",
+        "image_url": null
+      },
+      {
+        "question": "What is the device called that converts mechanical energy into electrical energy?",
+        "options": [
+          "Generator",
+          "Motor",
+          "Transformer",
+          "Battery"
+        ],
+        "answer": "A",
+        "explanation": "A generator is a device that converts mechanical energy into electrical energy, often used in power plants to produce electricity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when a coil of wire rotates within a magnetic field to produce an electric current?",
+        "options": [
+          "Electromagnetic induction",
+          "Electrical conduction",
+          "Electrical resistance",
+          "Electrical capacitance"
+        ],
+        "answer": "A",
+        "explanation": "When a coil of wire rotates within a magnetic field, it induces an electric current through the process of electromagnetic induction.",
+        "image_url": null
+      },
+      {
+        "question": "What type of current is commonly used in households and businesses?",
+        "options": [
+          "Direct current",
+          "Alternating current",
+          "Static current",
+          "Pulsating current"
+        ],
+        "answer": "B",
+        "explanation": "Alternating current is commonly used in households and businesses due to its efficiency and ease of transmission over long distances.",
+        "image_url": null
+      },
+      {
+        "question": "What is the device called that converts electrical energy into mechanical energy?",
+        "options": [
+          "Generator",
+          "Motor",
+          "Transformer",
+          "Battery"
+        ],
+        "answer": "B",
+        "explanation": "A motor is a device that converts electrical energy into mechanical energy, often used in applications like fans and pumps.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when a coil of wire is stationary and a magnetic field is applied to produce an electric current?",
+        "options": [
+          "Electromagnetic induction",
+          "Electrical conduction",
+          "Electrical resistance",
+          "Electrical capacitance"
+        ],
+        "answer": "A",
+        "explanation": "When a coil of wire is stationary and a magnetic field is applied, it induces an electric current through the process of electromagnetic induction.",
+        "image_url": null
+      },
+      {
+        "question": "What is the device called that steps up or steps down the voltage of an electrical current?",
+        "options": [
+          "Generator",
+          "Motor",
+          "Transformer",
+          "Battery"
+        ],
+        "answer": "C",
+        "explanation": "A transformer is a device that steps up or steps down the voltage of an electrical current, often used in power transmission and distribution.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process called when a coil of wire is stationary and a magnetic field is applied to produce a magnetic field?",
+        "options": [
+          "Electromagnetic induction",
+          "Electrical conduction",
+          "Electrical resistance",
+          "Electromagnetic attraction"
+        ],
+        "answer": "A",
+        "explanation": "When a coil of wire is stationary and a magnetic field is applied, it induces a magnetic field through the process of electromagnetic induction.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-3-1 Explaining the concept of electric current and methods of generating it in electrical circuits and its relationship to voltage and electrical resistance, and distinguishing between direct and alternating currents.",
+    "questions": [
+      {
+        "question": "What is electric current in an electrical circuit?",
+        "options": [
+          "The amount of energy used by a device",
+          "The flow of electrons through a conductor",
+          "The force that opposes the flow of electrons",
+          "The energy transferred from one point to another"
+        ],
+        "answer": "B",
+        "explanation": "Electric current is the flow of electrons through a conductor, such as a wire, and is measured in amperes.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between electric current, voltage, and resistance in an electrical circuit?",
+        "options": [
+          "Current increases as voltage decreases and resistance increases",
+          "Current decreases as voltage increases and resistance decreases",
+          "Current increases as voltage increases and resistance decreases",
+          "Current decreases as voltage decreases and resistance decreases"
+        ],
+        "answer": "C",
+        "explanation": "According to Ohm's law, current increases as voltage increases and resistance decreases, as the equation I = V/R shows.",
+        "image_url": null
+      },
+      {
+        "question": "What is the unit of measurement for electric current?",
+        "options": [
+          "Volts",
+          "Amperes",
+          "Ohms",
+          "Watts"
+        ],
+        "answer": "B",
+        "explanation": "The unit of measurement for electric current is amperes, often abbreviated as amps.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the current in a circuit if the voltage is doubled and the resistance remains the same?",
+        "options": [
+          "The current decreases by half",
+          "The current remains the same",
+          "The current increases by half",
+          "The current doubles"
+        ],
+        "answer": "D",
+        "explanation": "According to Ohm's law, if the voltage is doubled and the resistance remains the same, the current will also double, as I = V/R.",
+        "image_url": null
+      },
+      {
+        "question": "What type of current flows in one direction only?",
+        "options": [
+          "Alternating current",
+          "Direct current",
+          "Electromotive force",
+          "Resistance current"
+        ],
+        "answer": "B",
+        "explanation": "Direct current, or DC, flows in one direction only, from positive to negative, whereas alternating current, or AC, periodically reverses direction.",
+        "image_url": null
+      },
+      {
+        "question": "What is the formula to calculate electric current using Ohm's law?",
+        "options": [
+          "I = V x R",
+          "I = V / R",
+          "I = R / V",
+          "I = V + R"
+        ],
+        "answer": "B",
+        "explanation": "The formula to calculate electric current using Ohm's law is I = V/R, where I is the current in amperes, V is the voltage in volts, and R is the resistance in ohms.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the resistance in a circuit on the electric current?",
+        "options": [
+          "The current increases",
+          "The current remains the same",
+          "The current decreases",
+          "The current becomes zero"
+        ],
+        "answer": "C",
+        "explanation": "According to Ohm's law, if the resistance in a circuit increases, the electric current will decrease, as I = V/R.",
+        "image_url": null
+      },
+      {
+        "question": "What type of current is commonly used in households and businesses?",
+        "options": [
+          "Direct current",
+          "Alternating current",
+          "Pulsating current",
+          "Static current"
+        ],
+        "answer": "B",
+        "explanation": "Alternating current, or AC, is commonly used in households and businesses due to its ability to be transformed to high voltages for efficient transmission and distribution.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the voltage in a circuit if the current and resistance are doubled?",
+        "options": [
+          "The voltage decreases by half",
+          "The voltage remains the same",
+          "The voltage increases by half",
+          "The voltage doubles"
+        ],
+        "answer": "D",
+        "explanation": "According to Ohm's law, if the current and resistance are doubled, the voltage will also double, as V = I x R.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between voltage, current, and resistance in a circuit, as described by Ohm's law?",
+        "options": [
+          "V = I + R",
+          "V = I x R",
+          "V = I / R",
+          "V = R / I"
+        ],
+        "answer": "B",
+        "explanation": "Ohm's law states that voltage, current, and resistance are related by the equation V = I x R, where V is the voltage in volts, I is the current in amperes, and R is the resistance in ohms.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-3-3Comparing between different types of materials in terms of their electrical conductivity.",
+    "questions": [
+      {
+        "question": "What type of materials allow electricity to flow through them easily?",
+        "options": [
+          "Materials that are good conductors of heat are also good conductors of electricity",
+          "Materials that are good insulators of heat are also good insulators of electricity",
+          "Materials that allow electricity to flow through them easily are called conductors",
+          "Materials that prevent electricity from flowing through them are called insulators"
+        ],
+        "answer": "C",
+        "explanation": "Conductors are materials that allow electricity to flow through them easily, such as copper wire.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is a good insulator of electricity?",
+        "options": [
+          "Wood is a good conductor of electricity",
+          "Wood is a good insulator of electricity",
+          "Plastic is a good conductor of electricity",
+          "Plastic is a good insulator of electricity"
+        ],
+        "answer": "B",
+        "explanation": "Wood is a good insulator of electricity and is often used in electrical applications.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of using insulating materials in electrical devices?",
+        "options": [
+          "To increase the flow of electricity",
+          "To decrease the flow of electricity",
+          "To prevent electrical shock",
+          "To increase the heat generated by electricity"
+        ],
+        "answer": "C",
+        "explanation": "Insulating materials are used to prevent electrical shock and to ensure safe handling of electrical devices.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is a good conductor of electricity?",
+        "options": [
+          "Glass is a good conductor of electricity",
+          "Copper is a good conductor of electricity",
+          "Wood is a good conductor of electricity",
+          "Plastic is a good conductor of electricity"
+        ],
+        "answer": "B",
+        "explanation": "Copper is a good conductor of electricity and is often used in electrical wiring.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the flow of electricity when a conductor is connected to a power source?",
+        "options": [
+          "The flow of electricity decreases",
+          "The flow of electricity remains the same",
+          "The flow of electricity increases",
+          "The flow of electricity stops"
+        ],
+        "answer": "C",
+        "explanation": "When a conductor is connected to a power source, the flow of electricity increases and allows the device to function.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is not a good conductor of electricity?",
+        "options": [
+          "Copper is a good conductor of electricity",
+          "Wood is a good conductor of electricity",
+          "Glass is a good conductor of electricity",
+          "Plastic is a good conductor of electricity"
+        ],
+        "answer": "C",
+        "explanation": "Glass is not a good conductor of electricity and is often used as an insulator in electrical devices.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of using conductive materials in electrical devices?",
+        "options": [
+          "To increase the heat generated by electricity",
+          "To decrease the flow of electricity",
+          "To allow electricity to flow through them easily",
+          "To prevent electrical shock"
+        ],
+        "answer": "C",
+        "explanation": "Conductive materials are used to allow electricity to flow through them easily and to ensure proper functioning of electrical devices.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is a good insulator of heat?",
+        "options": [
+          "Wood is a good conductor of heat",
+          "Wood is a good insulator of heat",
+          "Plastic is a good conductor of heat",
+          "Plastic is a good insulator of heat"
+        ],
+        "answer": "B",
+        "explanation": "Wood is a good insulator of heat and is often used in building construction.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the flow of electricity when an insulator is connected to a power source?",
+        "options": [
+          "The flow of electricity increases",
+          "The flow of electricity remains the same",
+          "The flow of electricity decreases",
+          "The flow of electricity stops"
+        ],
+        "answer": "D",
+        "explanation": "When an insulator is connected to a power source, the flow of electricity stops and the device does not function.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is commonly used as a conductor in electrical wiring?",
+        "options": [
+          "Glass is commonly used as a conductor in electrical wiring",
+          "Copper is commonly used as a conductor in electrical wiring",
+          "Wood is commonly used as a conductor in electrical wiring",
+          "Plastic is commonly used as a conductor in electrical wiring"
+        ],
+        "answer": "B",
+        "explanation": "Copper is commonly used as a conductor in electrical wiring due to its high conductivity.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-3-3Comparing between different types of materials in terms of their electrical conductivity.",
+    "questions": [
+      {
+        "question": "What happens to the magnetic field around a wire when the electric current flowing through it increases?",
+        "options": [
+          "The magnetic field becomes weaker and less dense",
+          "The magnetic field remains the same and is unaffected by the current",
+          "The magnetic field becomes stronger and more dense",
+          "The magnetic field disappears completely"
+        ],
+        "answer": "C",
+        "explanation": "As the electric current flowing through a wire increases, the magnetic field around the wire also becomes stronger and more dense due to the direct relationship between electric current and magnetic field strength.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is the best conductor of electricity and would produce the strongest magnetic field when a current flows through it?",
+        "options": [
+          "Copper wire",
+          "Plastic sheet",
+          "Wooden rod",
+          "Glass tube"
+        ],
+        "answer": "A",
+        "explanation": "Copper is an excellent conductor of electricity, meaning it allows electric current to flow through it with minimal resistance, and thus would produce a strong magnetic field when a current flows through it.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the direction of the electric current in a wire and the direction of the magnetic field it produces?",
+        "options": [
+          "The magnetic field is in the same direction as the electric current",
+          "The magnetic field is in the opposite direction to the electric current",
+          "The magnetic field is perpendicular to the electric current",
+          "The magnetic field is parallel to the electric current but has no specific direction"
+        ],
+        "answer": "C",
+        "explanation": "The magnetic field produced by an electric current in a wire is perpendicular to the direction of the current, as described by the right-hand rule.",
+        "image_url": null
+      },
+      {
+        "question": "Which factor does NOT affect the strength of the magnetic field produced by a current-carrying wire?",
+        "options": [
+          "The material the wire is made of",
+          "The temperature of the wire",
+          "The direction of the electric current",
+          "The presence of other magnetic fields nearby"
+        ],
+        "answer": "D",
+        "explanation": "The presence of other magnetic fields nearby can affect the overall magnetic field but does not directly affect the strength of the magnetic field produced by the current-carrying wire itself.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the magnetic field around a coil of wire when the electric current flowing through it is reversed?",
+        "options": [
+          "The magnetic field becomes stronger",
+          "The magnetic field becomes weaker",
+          "The magnetic field remains the same",
+          "The magnetic field reverses its direction"
+        ],
+        "answer": "D",
+        "explanation": "Reversing the direction of the electric current in a coil of wire causes the magnetic field to reverse its direction as well, due to the direct relationship between the current direction and the magnetic field polarity.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a material that is a poor conductor of electricity and would produce a very weak magnetic field when a current flows through it?",
+        "options": [
+          "Aluminum foil",
+          "Copper wire",
+          "Wooden plank",
+          "Metal pipe"
+        ],
+        "answer": "C",
+        "explanation": "Wood is a poor conductor of electricity, meaning it has high resistance to electric current, and thus would produce a very weak magnetic field when a current flows through it.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of using a ferromagnetic core in an electromagnet?",
+        "options": [
+          "To increase the resistance of the coil",
+          "To decrease the electric current flowing through the coil",
+          "To increase the strength of the magnetic field produced",
+          "To reduce the size of the electromagnet"
+        ],
+        "answer": "C",
+        "explanation": "A ferromagnetic core, such as iron, increases the strength of the magnetic field produced by an electromagnet because it can easily magnetize and thus concentrate the magnetic field lines.",
+        "image_url": null
+      },
+      {
+        "question": "How does the distance from the wire affect the strength of the magnetic field produced by a current-carrying wire?",
+        "options": [
+          "The magnetic field strength increases with distance from the wire",
+          "The magnetic field strength remains constant regardless of distance",
+          "The magnetic field strength decreases with distance from the wire",
+          "The magnetic field strength becomes zero at a certain distance"
+        ],
+        "answer": "C",
+        "explanation": "The strength of the magnetic field produced by a current-carrying wire decreases with increasing distance from the wire, following the inverse square law.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the number of turns in a coil of wire on the magnetic field it produces when a current flows through it?",
+        "options": [
+          "The magnetic field becomes weaker",
+          "The magnetic field remains the same",
+          "The magnetic field becomes stronger",
+          "The magnetic field direction changes"
+        ],
+        "answer": "C",
+        "explanation": "Increasing the number of turns in a coil of wire increases the strength of the magnetic field it produces when a current flows through it, because each turn of the coil contributes to the overall magnetic field.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following best describes the relationship between electric current and magnetic field in terms of energy transfer?",
+        "options": [
+          "Electric current generates magnetic field, and magnetic field generates electric current",
+          "Electric current is converted into magnetic field energy",
+          "Magnetic field is converted into electric current energy",
+          "Electric current and magnetic field are unrelated in terms of energy transfer"
+        ],
+        "answer": "B",
+        "explanation": "When electric current flows through a wire, some of the electric energy is converted into magnetic field energy, illustrating the relationship between electric current and magnetic field in terms of energy transfer.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-4-1 Clarifying the concept of thermal energy, its impact and its relationship to temperature.",
+    "questions": [
+      {
+        "question": "What is thermal energy?",
+        "options": [
+          "The energy that plants produce through photosynthesis.",
+          "The energy that comes from the sun.",
+          "The energy that is transferred from one body to another due to a temperature difference.",
+          "The energy that is stored in a battery."
+        ],
+        "answer": "C",
+        "explanation": "Thermal energy is the energy that is transferred from one body to another due to a temperature difference.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the molecules in a substance when it is heated?",
+        "options": [
+          "They slow down and move closer together.",
+          "They speed up and move further apart.",
+          "They remain the same speed and distance apart.",
+          "They change direction and move in a circular motion."
+        ],
+        "answer": "B",
+        "explanation": "When a substance is heated, the molecules speed up and move further apart.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between thermal energy and temperature?",
+        "options": [
+          "Thermal energy increases as temperature decreases.",
+          "Thermal energy decreases as temperature increases.",
+          "Thermal energy increases as temperature increases.",
+          "Thermal energy remains the same regardless of temperature."
+        ],
+        "answer": "C",
+        "explanation": "Thermal energy increases as temperature increases.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of thermal energy in everyday life?",
+        "options": [
+          "A car engine running on gasoline.",
+          "A light bulb turning on when you flip a switch.",
+          "A cup of hot coffee on a cold day.",
+          "A book sitting on a shelf."
+        ],
+        "answer": "C",
+        "explanation": "A cup of hot coffee on a cold day is an example of thermal energy in everyday life.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the thermal energy of a substance when it is cooled?",
+        "options": [
+          "It increases and the substance gets hotter.",
+          "It decreases and the substance gets colder.",
+          "It remains the same and the substance stays the same temperature.",
+          "It increases and the substance gets colder."
+        ],
+        "answer": "B",
+        "explanation": "When a substance is cooled, its thermal energy decreases and it gets colder.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between thermal energy and heat?",
+        "options": [
+          "Thermal energy is the energy that is transferred from one body to another, while heat is the energy that is stored in a substance.",
+          "Thermal energy is the energy that is stored in a substance, while heat is the energy that is transferred from one body to another.",
+          "Thermal energy and heat are the same thing.",
+          "Thermal energy is the energy that is transferred from one body to another, while heat is the energy that is transferred from one body to another due to a temperature difference."
+        ],
+        "answer": "B",
+        "explanation": "Thermal energy is the energy that is stored in a substance, while heat is the energy that is transferred from one body to another due to a temperature difference.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of thermal energy transfer in a real-world scenario?",
+        "options": [
+          "A person walking across a room.",
+          "A car driving down the highway.",
+          "A pot of water boiling on a stove.",
+          "A person sitting in a chair."
+        ],
+        "answer": "C",
+        "explanation": "A pot of water boiling on a stove is an example of thermal energy transfer in a real-world scenario.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the thermal energy of a substance when it is compressed?",
+        "options": [
+          "It increases and the substance gets hotter.",
+          "It decreases and the substance gets colder.",
+          "It remains the same and the substance stays the same temperature.",
+          "It increases and the substance gets colder."
+        ],
+        "answer": "A",
+        "explanation": "When a substance is compressed, its thermal energy increases and it gets hotter.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between thermal energy and work?",
+        "options": [
+          "Thermal energy is the energy that is transferred from one body to another, while work is the energy that is transferred from one body to another due to a force.",
+          "Thermal energy is the energy that is stored in a substance, while work is the energy that is transferred from one body to another due to a force.",
+          "Thermal energy and work are the same thing.",
+          "Thermal energy is the energy that is transferred from one body to another, while work is the energy that is stored in a substance."
+        ],
+        "answer": "A",
+        "explanation": "Thermal energy is the energy that is transferred from one body to another, while work is the energy that is transferred from one body to another due to a force.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of thermal energy in a natural phenomenon?",
+        "options": [
+          "A rainbow appearing in the sky.",
+          "A thunderstorm forming over a lake.",
+          "A river flowing through a valley.",
+          "A mountain range forming over millions of years."
+        ],
+        "answer": "B",
+        "explanation": "A thunderstorm forming over a lake is an example of thermal energy in a natural phenomenon.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-4-1 Clarifying the concept of thermal energy, its impact and its relationship to temperature.",
+    "questions": [
+      {
+        "question": "What is thermal energy?",
+        "options": [
+          "The energy an object has due to its motion",
+          "The energy an object has due to its temperature",
+          "The total kinetic and potential energy of the particles in an object",
+          "The energy an object has due to its electrical charge"
+        ],
+        "answer": "The total kinetic and potential energy of the particles in an object",
+        "explanation": "Thermal energy is the total energy of the particles in an object, which includes both kinetic energy (the energy of motion) and potential energy (stored energy).",
+        "image_url": null
+      },
+      {
+        "question": "How does the temperature of an object relate to its thermal energy?",
+        "options": [
+          "As temperature increases, thermal energy decreases",
+          "As temperature decreases, thermal energy increases",
+          "As temperature increases, thermal energy increases",
+          "Temperature has no effect on thermal energy"
+        ],
+        "answer": "As temperature increases, thermal energy increases",
+        "explanation": "As the temperature of an object increases, the particles in the object gain kinetic energy and start moving faster, which increases the object's thermal energy.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the thermal energy of an object when it is heated?",
+        "options": [
+          "The thermal energy decreases",
+          "The thermal energy stays the same",
+          "The thermal energy increases",
+          "The thermal energy becomes zero"
+        ],
+        "answer": "The thermal energy increases",
+        "explanation": "When an object is heated, energy is transferred to the object, which increases the kinetic energy of the particles and therefore increases the object's thermal energy.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of thermal energy transfer?",
+        "options": [
+          "A book falling off a table",
+          "A hot cup of coffee warming a cold spoon",
+          "A balloon filling with air",
+          "A car moving down the road"
+        ],
+        "answer": "A hot cup of coffee warming a cold spoon",
+        "explanation": "Thermal energy transfer occurs when there is a temperature difference between two objects, causing energy to flow from the hotter object to the cooler object, which is what happens when a hot cup of coffee warms a cold spoon.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the temperature of an object and the motion of its particles?",
+        "options": [
+          "As temperature increases, particle motion decreases",
+          "As temperature decreases, particle motion increases",
+          "As temperature increases, particle motion increases",
+          "Particle motion is not related to temperature"
+        ],
+        "answer": "As temperature increases, particle motion increases",
+        "explanation": "As the temperature of an object increases, the particles in the object gain kinetic energy and start moving faster, which is a direct relationship between temperature and particle motion.",
+        "image_url": null
+      },
+      {
+        "question": "How does the thermal energy of an object change when it is placed in a cold environment?",
+        "options": [
+          "The thermal energy increases",
+          "The thermal energy stays the same",
+          "The thermal energy decreases",
+          "The thermal energy becomes zero"
+        ],
+        "answer": "The thermal energy decreases",
+        "explanation": "When an object is placed in a cold environment, energy is transferred away from the object, which decreases the kinetic energy of the particles and therefore decreases the object's thermal energy.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between thermal energy and temperature?",
+        "options": [
+          "Thermal energy is the average kinetic energy of particles, while temperature is the total energy of the particles",
+          "Thermal energy is the total energy of the particles, while temperature is the average kinetic energy of the particles",
+          "Thermal energy and temperature are the same thing",
+          "Thermal energy is the energy of motion, while temperature is the energy of position"
+        ],
+        "answer": "Thermal energy is the total energy of the particles, while temperature is the average kinetic energy of the particles",
+        "explanation": "Thermal energy is the total energy of the particles in an object, which includes both kinetic energy (the energy of motion) and potential energy (stored energy), while temperature is a measure of the average kinetic energy of the particles.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following objects has the highest thermal energy?",
+        "options": [
+          "A cup of hot coffee",
+          "A cup of cold water",
+          "A block of ice",
+          "A frozen pizza"
+        ],
+        "answer": "A cup of hot coffee",
+        "explanation": "The cup of hot coffee has the highest thermal energy because it has the highest temperature, which means the particles in the coffee have the most kinetic energy.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the particles in an object when its thermal energy increases?",
+        "options": [
+          "The particles slow down and lose kinetic energy",
+          "The particles stay the same and do not change",
+          "The particles speed up and gain kinetic energy",
+          "The particles come to a complete stop"
+        ],
+        "answer": "The particles speed up and gain kinetic energy",
+        "explanation": "When the thermal energy of an object increases, the particles in the object gain kinetic energy and start moving faster, which is a direct result of the increased thermal energy.",
+        "image_url": null
+      },
+      {
+        "question": "How does the thermal energy of an object change when its temperature is held constant?",
+        "options": [
+          "The thermal energy increases",
+          "The thermal energy decreases",
+          "The thermal energy stays the same",
+          "The thermal energy becomes zero"
+        ],
+        "answer": "The thermal energy stays the same",
+        "explanation": "If the temperature of an object is held constant, the average kinetic energy of the particles remains the same, which means the thermal energy of the object also remains the same.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-4-2 Understanding the mechanism of heat transmission and conduction between objects, and measuring temperature.",
+    "questions": [
+      {
+        "question": "Which material is the best conductor of heat?",
+        "options": [
+          "Copper",
+          "Wood",
+          "Plastic",
+          "Glass"
+        ],
+        "answer": "Copper",
+        "explanation": "Copper is a metal with high thermal conductivity, making it an excellent conductor of heat.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the temperature of a metal spoon when it is placed in a hot cup of coffee?",
+        "options": [
+          "The temperature of the spoon decreases",
+          "The temperature of the spoon remains the same",
+          "The temperature of the spoon increases",
+          "The temperature of the spoon becomes absolute zero"
+        ],
+        "answer": "The temperature of the spoon increases",
+        "explanation": "The metal spoon conducts heat from the hot coffee, causing its temperature to rise.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following materials is a poor conductor of heat?",
+        "options": [
+          "Aluminum",
+          "Steel",
+          "Wood",
+          "Copper"
+        ],
+        "answer": "Wood",
+        "explanation": "Wood is a poor conductor of heat due to its low thermal conductivity.",
+        "image_url": null
+      },
+      {
+        "question": "Why do people often use wooden spoons when cooking with hot liquids?",
+        "options": [
+          "Wooden spoons are cheaper than metal spoons",
+          "Wooden spoons are better conductors of heat than metal spoons",
+          "Wooden spoons are poor conductors of heat and will not burn your hand",
+          "Wooden spoons are more durable than metal spoons"
+        ],
+        "answer": "Wooden spoons are poor conductors of heat and will not burn your hand",
+        "explanation": "Wooden spoons are poor conductors of heat, which means they will not transfer heat from the hot liquid to your hand, reducing the risk of burns.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary mechanism by which heat is transferred between objects in contact with each other?",
+        "options": [
+          "Convection",
+          "Radiation",
+          "Conduction",
+          "Evaporation"
+        ],
+        "answer": "Conduction",
+        "explanation": "Conduction is the transfer of heat between objects in direct contact with each other.",
+        "image_url": null
+      },
+      {
+        "question": "Which material would be the best choice for the handle of a cooking pot?",
+        "options": [
+          "Copper",
+          "Aluminum",
+          "Steel",
+          "Plastic"
+        ],
+        "answer": "Plastic",
+        "explanation": "Plastic is a poor conductor of heat, making it a good choice for the handle of a cooking pot as it will not transfer heat from the pot to your hand.",
+        "image_url": null
+      },
+      {
+        "question": "How does the thermal conductivity of a material affect its ability to conduct heat?",
+        "options": [
+          "A high thermal conductivity means a material is a poor conductor of heat",
+          "A low thermal conductivity means a material is a good conductor of heat",
+          "A high thermal conductivity means a material is a good conductor of heat",
+          "A low thermal conductivity means a material is a poor conductor of heat"
+        ],
+        "answer": "A high thermal conductivity means a material is a good conductor of heat",
+        "explanation": "Materials with high thermal conductivity are good conductors of heat, while those with low thermal conductivity are poor conductors.",
+        "image_url": null
+      },
+      {
+        "question": "Why do some cooking pots have handles made of materials with low thermal conductivity?",
+        "options": [
+          "To make the pot more durable",
+          "To make the pot more conductive",
+          "To reduce the risk of burns when handling the pot",
+          "To make the pot more expensive"
+        ],
+        "answer": "To reduce the risk of burns when handling the pot",
+        "explanation": "Handles made of materials with low thermal conductivity, such as plastic or wood, reduce the risk of burns when handling a hot pot.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the transfer of heat between objects that are not in direct contact with each other?",
+        "options": [
+          "Conduction",
+          "Convection",
+          "Radiation",
+          "Evaporation"
+        ],
+        "answer": "Radiation",
+        "explanation": "Radiation is the transfer of heat between objects through electromagnetic waves, and does not require direct contact between the objects.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of conduction?",
+        "options": [
+          "A hot cup of coffee warming a nearby spoon",
+          "A fire heating a room through radiation",
+          "A pot of boiling water heating the air around it through convection",
+          "A person feeling the heat from a fire on their skin"
+        ],
+        "answer": "A hot cup of coffee warming a nearby spoon",
+        "explanation": "The hot coffee warms the spoon through direct contact, which is an example of conduction.",
+        "image_url": null
+      }
+    ]
+  }
+]

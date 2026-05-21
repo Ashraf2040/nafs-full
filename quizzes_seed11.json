@@ -1,0 +1,2453 @@
+[
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-3-6 Describing the concept of biomass and its sources, and identifying its importance in biofuel production and reducing carbon emissions.",
+    "questions": [
+      {
+        "question": "What is biomass?",
+        "options": [
+          "A type of fossil fuel",
+          "A type of renewable energy source",
+          "A type of non-renewable energy source",
+          "A type of energy storage system"
+        ],
+        "answer": "B",
+        "explanation": "Biomass is a type of renewable energy source that comes from organic materials such as plants and waste.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main source of biomass?",
+        "options": [
+          "Plants and trees",
+          "Animals and their waste",
+          "Fossil fuels and minerals",
+          "Water and air"
+        ],
+        "answer": "A",
+        "explanation": "The main source of biomass is plants and trees, which can be converted into energy through various processes.",
+        "image_url": null
+      },
+      {
+        "question": "Why is biomass important in biofuel production?",
+        "options": [
+          "It is a cheap and abundant source of energy",
+          "It is a clean and renewable source of energy",
+          "It is a reliable and consistent source of energy",
+          "It is a new and innovative source of energy"
+        ],
+        "answer": "B",
+        "explanation": "Biomass is important in biofuel production because it is a clean and renewable source of energy that can help reduce our reliance on fossil fuels.",
+        "image_url": null
+      },
+      {
+        "question": "What is the Kingdom of Saudi Arabia's effort to reduce carbon emissions?",
+        "options": [
+          "Increasing the use of fossil fuels",
+          "Investing in renewable energy sources",
+          "Implementing energy-efficient technologies",
+          "Reducing energy consumption"
+        ],
+        "answer": "B",
+        "explanation": "The Kingdom of Saudi Arabia has made efforts to reduce carbon emissions by investing in renewable energy sources such as solar and wind power.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of reducing carbon emissions in the Kingdom of Saudi Arabia?",
+        "options": [
+          "Reducing air pollution and improving public health",
+          "Increasing energy costs and reducing economic growth",
+          "Decreasing energy independence and increasing reliance on foreign oil",
+          "Improving energy security and reducing greenhouse gas emissions"
+        ],
+        "answer": "D",
+        "explanation": "Reducing carbon emissions in the Kingdom of Saudi Arabia can improve energy security and reduce greenhouse gas emissions, which can have a positive impact on the environment and public health.",
+        "image_url": null
+      },
+      {
+        "question": "What is the Kingdom of Saudi Arabia's goal in reducing carbon emissions?",
+        "options": [
+          "Reducing carbon emissions by 50% by 2030",
+          "Increasing carbon emissions by 20% by 2030",
+          "Reducing carbon emissions by 10% by 2030",
+          "Increasing energy consumption by 15% by 2030"
+        ],
+        "answer": "A",
+        "explanation": "The Kingdom of Saudi Arabia has set a goal to reduce carbon emissions by 50% by 2030 as part of its efforts to mitigate climate change.",
+        "image_url": null
+      },
+      {
+        "question": "What is the Kingdom of Saudi Arabia's effort to reduce carbon emissions in the transportation sector?",
+        "options": [
+          "Increasing the use of electric vehicles",
+          "Investing in public transportation systems",
+          "Implementing fuel-efficient technologies",
+          "Reducing the number of vehicles on the road"
+        ],
+        "answer": "A",
+        "explanation": "The Kingdom of Saudi Arabia has made efforts to reduce carbon emissions in the transportation sector by increasing the use of electric vehicles and investing in public transportation systems.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of reducing carbon emissions in the transportation sector in the Kingdom of Saudi Arabia?",
+        "options": [
+          "Reducing air pollution and improving public health",
+          "Increasing energy costs and reducing economic growth",
+          "Decreasing energy independence and increasing reliance on foreign oil",
+          "Improving energy security and reducing greenhouse gas emissions"
+        ],
+        "answer": "D",
+        "explanation": "Reducing carbon emissions in the transportation sector in the Kingdom of Saudi Arabia can improve energy security and reduce greenhouse gas emissions, which can have a positive impact on the environment and public health.",
+        "image_url": null
+      },
+      {
+        "question": "What is the Kingdom of Saudi Arabia's effort to reduce carbon emissions in the industrial sector?",
+        "options": [
+          "Increasing energy efficiency in industries",
+          "Investing in renewable energy sources",
+          "Implementing energy-efficient technologies",
+          "Reducing energy consumption"
+        ],
+        "answer": "A",
+        "explanation": "The Kingdom of Saudi Arabia has made efforts to reduce carbon emissions in the industrial sector by increasing energy efficiency in industries and implementing energy-efficient technologies.",
+        "image_url": null
+      },
+      {
+        "question": "What is the impact of reducing carbon emissions in the industrial sector in the Kingdom of Saudi Arabia?",
+        "options": [
+          "Reducing air pollution and improving public health",
+          "Increasing energy costs and reducing economic growth",
+          "Decreasing energy independence and increasing reliance on foreign oil",
+          "Improving energy security and reducing greenhouse gas emissions"
+        ],
+        "answer": "D",
+        "explanation": "Reducing carbon emissions in the industrial sector in the Kingdom of Saudi Arabia can improve energy security and reduce greenhouse gas emissions, which can have a positive impact on the environment and public health.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-4-1 Describing the development of genetics, and the use of Mendelian laws to explain the inheritance of genetic traits, and the probabilities of their appearance in different generations.",
+    "questions": [
+      {
+        "question": "What is the main function of a chromosome in a cell?",
+        "options": [
+          "To store genetic information",
+          "To produce energy for the cell",
+          "To synthesize proteins",
+          "To regulate cell growth"
+        ],
+        "answer": "A",
+        "explanation": "Chromosomes are thread-like structures that carry genetic information in the nucleus of a cell.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which genetic information is passed from one generation to the next?",
+        "options": [
+          "Mutation",
+          "Genetic drift",
+          "Natural selection",
+          "Hereditary"
+        ],
+        "answer": "D",
+        "explanation": "Hereditary refers to the passing of genetic traits from parents to offspring.",
+        "image_url": null
+      },
+      {
+        "question": "What is the basic unit of heredity?",
+        "options": [
+          "Gene",
+          "Chromosome",
+          "DNA",
+          "Protein"
+        ],
+        "answer": "A",
+        "explanation": "A gene is a segment of DNA that carries information for a specific trait.",
+        "image_url": null
+      },
+      {
+        "question": "What is the process by which the genetic information in DNA is converted into a specific sequence of amino acids?",
+        "options": [
+          "Transcription",
+          "Translation",
+          "Replication",
+          "Mutation"
+        ],
+        "answer": "B",
+        "explanation": "Translation is the process by which the sequence of nucleotides in DNA is used to build a specific sequence of amino acids.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for a change in the DNA sequence of an organism?",
+        "options": [
+          "Mutation",
+          "Genetic drift",
+          "Natural selection",
+          "Genetic variation"
+        ],
+        "answer": "A",
+        "explanation": "A mutation is a change in the DNA sequence of an organism.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of a gene in a cell?",
+        "options": [
+          "To synthesize proteins",
+          "To store genetic information",
+          "To regulate cell growth",
+          "To produce energy for the cell"
+        ],
+        "answer": "A",
+        "explanation": "A gene provides instructions for the synthesis of a specific protein.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which the genetic information in DNA is copied?",
+        "options": [
+          "Replication",
+          "Transcription",
+          "Translation",
+          "Mutation"
+        ],
+        "answer": "A",
+        "explanation": "Replication is the process by which the genetic information in DNA is copied.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the sequence of nucleotides in DNA that codes for a specific protein?",
+        "options": [
+          "Gene",
+          "Chromosome",
+          "DNA sequence",
+          "Protein structure"
+        ],
+        "answer": "C",
+        "explanation": "A DNA sequence is a sequence of nucleotides in DNA that codes for a specific protein.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which the genetic information in DNA is used to build a specific sequence of amino acids?",
+        "options": [
+          "Translation",
+          "Transcription",
+          "Replication",
+          "Mutation"
+        ],
+        "answer": "A",
+        "explanation": "Translation is the process by which the genetic information in DNA is used to build a specific sequence of amino acids.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for a change in the expression of a gene?",
+        "options": [
+          "Mutation",
+          "Genetic drift",
+          "Natural selection",
+          "Gene expression"
+        ],
+        "answer": "D",
+        "explanation": "Gene expression refers to the process by which the information in a gene is converted into a specific sequence of amino acids.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-4-1 Describing the development of genetics, and the use of Mendelian laws to explain the inheritance of genetic traits, and the probabilities of their appearance in different generations.",
+    "questions": [
+      {
+        "question": "What is the term for the different forms of a gene?",
+        "options": [
+          "Genetic traits",
+          "Alleles",
+          "Genetic mutations",
+          "Genetic variations"
+        ],
+        "answer": "B",
+        "explanation": "Alleles are the different forms of a gene that can occupy a specific position on a chromosome.",
+        "image_url": null
+      },
+      {
+        "question": "What is the law of segregation in genetics?",
+        "options": [
+          "The law of independent assortment",
+          "The law of segregation",
+          "The law of dominance",
+          "The law of incomplete dominance"
+        ],
+        "answer": "B",
+        "explanation": "The law of segregation states that each pair of alleles separates from each other during gamete formation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of the dominant allele in genetics?",
+        "options": [
+          "It is always expressed",
+          "It is never expressed",
+          "It is expressed if the individual is homozygous for the allele",
+          "It is expressed if the individual is heterozygous for the allele"
+        ],
+        "answer": "D",
+        "explanation": "A dominant allele is expressed if the individual is heterozygous for the allele, meaning they have one copy of the dominant allele and one copy of the recessive allele.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the probability of an event occurring?",
+        "options": [
+          "Probability",
+          "Odds",
+          "Risk",
+          "Chance"
+        ],
+        "answer": "A",
+        "explanation": "Probability is a measure of the likelihood of an event occurring, expressed as a number between 0 and 1.",
+        "image_url": null
+      },
+      {
+        "question": "What is the law of independent assortment in genetics?",
+        "options": [
+          "The law of segregation",
+          "The law of independent assortment",
+          "The law of dominance",
+          "The law of incomplete dominance"
+        ],
+        "answer": "B",
+        "explanation": "The law of independent assortment states that alleles for different genes separate independently of each other during gamete formation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the combination of two alleles in an individual?",
+        "options": [
+          "Genotype",
+          "Phenotype",
+          "Genetic trait",
+          "Allele combination"
+        ],
+        "answer": "A",
+        "explanation": "Genotype refers to the combination of two alleles in an individual, while phenotype refers to the physical expression of the genotype.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of the recessive allele in genetics?",
+        "options": [
+          "It is always expressed",
+          "It is never expressed",
+          "It is expressed if the individual is homozygous for the allele",
+          "It is expressed if the individual is heterozygous for the allele"
+        ],
+        "answer": "C",
+        "explanation": "A recessive allele is expressed if the individual is homozygous for the allele, meaning they have two copies of the recessive allele.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the physical expression of the genotype?",
+        "options": [
+          "Genotype",
+          "Phenotype",
+          "Genetic trait",
+          "Allele combination"
+        ],
+        "answer": "B",
+        "explanation": "Phenotype refers to the physical expression of the genotype, while genotype refers to the combination of two alleles in an individual.",
+        "image_url": null
+      },
+      {
+        "question": "What is the probability of two independent events occurring?",
+        "options": [
+          "The probability of the first event multiplied by the probability of the second event",
+          "The probability of the first event plus the probability of the second event",
+          "The probability of the first event minus the probability of the second event",
+          "The probability of the first event divided by the probability of the second event"
+        ],
+        "answer": "A",
+        "explanation": "The probability of two independent events occurring is the product of the probabilities of each individual event.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which genetic traits are passed from parents to offspring?",
+        "options": [
+          "Inheritance",
+          "Genetic mutation",
+          "Genetic variation",
+          "Genetic drift"
+        ],
+        "answer": "A",
+        "explanation": "Inheritance refers to the process by which genetic traits are passed from parents to offspring through the transmission of alleles.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-4-1 Describing the development of genetics, and the use of Mendelian laws to explain the inheritance of genetic traits, and the probabilities of their appearance in different generations.",
+    "questions": [
+      {
+        "question": "What is the term for an organism that has two copies of the same allele?",
+        "options": [
+          "An organism with one dominant and one recessive allele",
+          "An organism with two different alleles",
+          "An organism with two copies of the same allele",
+          "An organism with no alleles"
+        ],
+        "answer": "C",
+        "explanation": "An organism that is homozygous has two copies of the same allele, one inherited from each parent.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an organism that has two different alleles?",
+        "options": [
+          "An organism with two copies of the same allele",
+          "An organism with one dominant and one recessive allele",
+          "An organism with two different alleles",
+          "An organism with no alleles"
+        ],
+        "answer": "B",
+        "explanation": "An organism that is heterozygous has two different alleles, one inherited from each parent.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of a homozygous organism?",
+        "options": [
+          "A tall plant with a dominant allele for height",
+          "A short plant with a recessive allele for height",
+          "A plant with two copies of the allele for tallness",
+          "A plant with two copies of the allele for shortness"
+        ],
+        "answer": "C",
+        "explanation": "A plant that is homozygous for the allele that codes for tallness has two copies of the allele, one inherited from each parent.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of a heterozygous organism?",
+        "options": [
+          "A plant with two copies of the allele for tallness",
+          "A plant with two copies of the allele for shortness",
+          "A plant with one dominant and one recessive allele for height",
+          "A plant with no alleles for height"
+        ],
+        "answer": "C",
+        "explanation": "A plant that is heterozygous for the allele that codes for height has one dominant and one recessive allele, one inherited from each parent.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an organism that has one dominant and one recessive allele?",
+        "options": [
+          "An organism with two copies of the same allele",
+          "An organism with two different alleles",
+          "An organism with one dominant and one recessive allele",
+          "An organism with no alleles"
+        ],
+        "answer": "C",
+        "explanation": "An organism that is heterozygous has one dominant and one recessive allele, one inherited from each parent.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an organism that has no alleles?",
+        "options": [
+          "An organism with two copies of the same allele",
+          "An organism with one dominant and one recessive allele",
+          "An organism with two different alleles",
+          "An organism with no alleles"
+        ],
+        "answer": "D",
+        "explanation": "An organism that has no alleles is not possible, as all organisms have at least two alleles for each trait.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a homozygous and a heterozygous organism?",
+        "options": [
+          "A homozygous organism has two copies of the same allele, while a heterozygous organism has two different alleles",
+          "A homozygous organism has two different alleles, while a heterozygous organism has two copies of the same allele",
+          "A homozygous organism has one dominant and one recessive allele, while a heterozygous organism has two copies of the same allele",
+          "A homozygous organism has no alleles, while a heterozygous organism has two different alleles"
+        ],
+        "answer": "A",
+        "explanation": "A homozygous organism has two copies of the same allele, while a heterozygous organism has two different alleles.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of a non-homozygous organism?",
+        "options": [
+          "A plant with two copies of the allele for tallness",
+          "A plant with two copies of the allele for shortness",
+          "A plant with one dominant and one recessive allele for height",
+          "A plant with no alleles for height"
+        ],
+        "answer": "C",
+        "explanation": "A plant that is not homozygous has one dominant and one recessive allele, one inherited from each parent.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an organism that does not have two copies of the same allele?",
+        "options": [
+          "An organism with two copies of the same allele",
+          "An organism with one dominant and one recessive allele",
+          "An organism with two different alleles",
+          "An organism that is not homozygous"
+        ],
+        "answer": "D",
+        "explanation": "An organism that is not homozygous does not have two copies of the same allele.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of a homozygous organism in a population?",
+        "options": [
+          "A plant with one dominant and one recessive allele for height",
+          "A plant with two copies of the allele for tallness",
+          "A plant with two copies of the allele for shortness",
+          "A plant with no alleles for height"
+        ],
+        "answer": "B",
+        "explanation": "A plant that is homozygous for the allele that codes for tallness has two copies of the allele, one inherited from each parent.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-4-1 Describing the development of genetics, and the use of Mendelian laws to explain the inheritance of genetic traits, and the probabilities of their appearance in different generations.",
+    "questions": [
+      {
+        "question": "What is the Punnett square used for in genetics?",
+        "options": [
+          "To predict the probability of genetic traits in offspring",
+          "To determine the genetic makeup of an organism",
+          "To identify the different types of genetic inheritance",
+          "To calculate the probability of genetic mutations"
+        ],
+        "answer": "A",
+        "explanation": "The Punnett square is a tool used to predict the probability of genetic traits in offspring by showing all possible combinations of alleles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a dominant and recessive allele?",
+        "options": [
+          "A dominant allele will always be expressed, while a recessive allele will never be expressed",
+          "A dominant allele will be expressed if an individual has one or two copies of the allele, while a recessive allele will only be expressed if an individual has two copies of the allele",
+          "A dominant allele will be expressed if an individual has two copies of the allele, while a recessive allele will only be expressed if an individual has one copy of the allele",
+          "A dominant allele will never be expressed, while a recessive allele will always be expressed"
+        ],
+        "answer": "B",
+        "explanation": "A dominant allele will be expressed if an individual has one or two copies of the allele, while a recessive allele will only be expressed if an individual has two copies of the allele.",
+        "image_url": null
+      },
+      {
+        "question": "What is the probability of an individual expressing a recessive trait if they have one dominant allele?",
+        "options": [
+          "0%",
+          "25%",
+          "50%",
+          "100%"
+        ],
+        "answer": "A",
+        "explanation": "Since the individual has one dominant allele, the recessive allele will not be expressed, resulting in a 0% probability of the recessive trait being expressed.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of the Punnett square in predicting genetic traits?",
+        "options": [
+          "To calculate the probability of genetic traits in offspring",
+          "To determine the genetic makeup of an organism",
+          "To identify the different types of genetic inheritance",
+          "To predict the probability of genetic traits in offspring"
+        ],
+        "answer": "D",
+        "explanation": "The Punnett square is used to predict the probability of genetic traits in offspring by showing all possible combinations of alleles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the probability of an individual expressing a dominant trait if they have two recessive alleles?",
+        "options": [
+          "0%",
+          "25%",
+          "50%",
+          "100%"
+        ],
+        "answer": "A",
+        "explanation": "Since the individual has two recessive alleles, the dominant allele will not be expressed, resulting in a 0% probability of the dominant trait being expressed.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a homozygous and heterozygous individual?",
+        "options": [
+          "A homozygous individual has two copies of the same allele, while a heterozygous individual has two different alleles",
+          "A homozygous individual has two different alleles, while a heterozygous individual has two copies of the same allele",
+          "A homozygous individual has one copy of the dominant allele and one copy of the recessive allele, while a heterozygous individual has two copies of the same allele",
+          "A homozygous individual has two copies of the recessive allele, while a heterozygous individual has two copies of the dominant allele"
+        ],
+        "answer": "A",
+        "explanation": "A homozygous individual has two copies of the same allele, while a heterozygous individual has two different alleles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the probability of an individual expressing a recessive trait if they have two dominant alleles?",
+        "options": [
+          "0%",
+          "25%",
+          "50%",
+          "100%"
+        ],
+        "answer": "A",
+        "explanation": "Since the individual has two dominant alleles, the recessive allele will not be expressed, resulting in a 0% probability of the recessive trait being expressed.",
+        "image_url": null
+      },
+      {
+        "question": "What is the Punnett square used to calculate?",
+        "options": [
+          "The probability of genetic traits in offspring",
+          "The genetic makeup of an organism",
+          "The different types of genetic inheritance",
+          "The probability of genetic mutations"
+        ],
+        "answer": "A",
+        "explanation": "The Punnett square is used to calculate the probability of genetic traits in offspring by showing all possible combinations of alleles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the probability of an individual expressing a dominant trait if they have one recessive allele?",
+        "options": [
+          "0%",
+          "25%",
+          "50%",
+          "100%"
+        ],
+        "answer": "B",
+        "explanation": "Since the individual has one recessive allele, the dominant allele will be expressed, resulting in a 50% probability of the dominant trait being expressed.",
+        "image_url": null
+      },
+      {
+        "question": "What is the Punnett square a tool for?",
+        "options": [
+          "Predicting genetic traits in offspring",
+          "Determining the genetic makeup of an organism",
+          "Identifying the different types of genetic inheritance",
+          "Calculating the probability of genetic mutations"
+        ],
+        "answer": "A",
+        "explanation": "The Punnett square is a tool used to predict the probability of genetic traits in offspring by showing all possible combinations of alleles.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-4-2 Describing the structure of the chromosome and the relationship between its components, and predicting the results of the defects that occur in the genetic chain when genetic mutations occur and their effects.",
+    "questions": [
+      {
+        "question": "What is the main component of a chromosome?",
+        "options": [
+          "DNA and proteins",
+          "RNA and lipids",
+          "Chromatin and histones",
+          "Mitochondria and ribosomes"
+        ],
+        "answer": "C",
+        "explanation": "Chromatin and histones are the main components of a chromosome, which make up the chromatin fiber.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of histones in a chromosome?",
+        "options": [
+          "To replicate DNA",
+          "To repair DNA damage",
+          "To package DNA into chromatin",
+          "To transcribe genes"
+        ],
+        "answer": "C",
+        "explanation": "Histones are proteins that package DNA into chromatin, allowing it to fit into the cell's nucleus.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of a genetic mutation in a chromosome?",
+        "options": [
+          "A change in the DNA sequence",
+          "A change in the protein structure",
+          "A change in the chromatin structure",
+          "A change in the cell's function"
+        ],
+        "answer": "A",
+        "explanation": "A genetic mutation in a chromosome results in a change in the DNA sequence, which can affect the production of proteins.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between the structure of a chromosome and its function?",
+        "options": [
+          "The structure determines the function",
+          "The function determines the structure",
+          "The structure and function are unrelated",
+          "The structure affects the function"
+        ],
+        "answer": "D",
+        "explanation": "The structure of a chromosome affects its function, as the arrangement of DNA and proteins influences gene expression and protein production.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of a chromosomal defect on the cell?",
+        "options": [
+          "It can cause cancer",
+          "It can cause genetic disorders",
+          "It can cause cell death",
+          "It can cause cell division"
+        ],
+        "answer": "B",
+        "explanation": "A chromosomal defect can cause genetic disorders, such as Down syndrome or sickle cell anemia, due to the disruption of normal gene expression.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of atomic models in understanding the structure of chromosomes?",
+        "options": [
+          "They provide a visual representation of the structure",
+          "They help to explain the function of chromosomes",
+          "They are not relevant to chromosome structure",
+          "They are used to study the behavior of chromosomes"
+        ],
+        "answer": "A",
+        "explanation": "Atomic models provide a visual representation of the structure of chromosomes, helping scientists to understand the arrangement of DNA and proteins.",
+        "image_url": null
+      },
+      {
+        "question": "How have atomic models evolved throughout history?",
+        "options": [
+          "From simple to complex",
+          "From complex to simple",
+          "They have remained the same",
+          "They have been replaced by new models"
+        ],
+        "answer": "A",
+        "explanation": "Atomic models have evolved from simple to complex, with scientists refining their understanding of the structure of atoms and molecules.",
+        "image_url": null
+      },
+      {
+        "question": "What is the significance of atomic models in the development of scientific knowledge?",
+        "options": [
+          "They provide a foundation for scientific inquiry",
+          "They are a tool for scientific discovery",
+          "They are not relevant to scientific knowledge",
+          "They are a hindrance to scientific progress"
+        ],
+        "answer": "A",
+        "explanation": "Atomic models provide a foundation for scientific inquiry, allowing scientists to develop and test hypotheses about the structure and behavior of matter.",
+        "image_url": null
+      },
+      {
+        "question": "How do atomic models relate to the nature of science?",
+        "options": [
+          "They demonstrate the power of scientific inquiry",
+          "They illustrate the limitations of scientific knowledge",
+          "They are not relevant to the nature of science",
+          "They are a reflection of scientific bias"
+        ],
+        "answer": "A",
+        "explanation": "Atomic models demonstrate the power of scientific inquiry, as they have been developed and refined through the application of scientific principles and methods.",
+        "image_url": null
+      },
+      {
+        "question": "What is the relationship between atomic models and the development of scientific knowledge?",
+        "options": [
+          "They are independent of each other",
+          "They are interdependent",
+          "They are unrelated",
+          "They are mutually exclusive"
+        ],
+        "answer": "B",
+        "explanation": "Atomic models and the development of scientific knowledge are interdependent, as the refinement of atomic models has led to new insights and understanding of the natural world.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-1-4-2 Describing the structure of the chromosome and the relationship between its components, and predicting the results of the defects that occur in the genetic chain when genetic mutations occur and their effects.",
+    "questions": [
+      {
+        "question": "What is the primary function of DNA in a cell?",
+        "options": [
+          "To store genetic information for protein synthesis",
+          "To provide structural support to the cell",
+          "To regulate cell growth and division",
+          "To transport nutrients into the cell"
+        ],
+        "answer": "A",
+        "explanation": "DNA stores genetic information in the form of nucleotides, which are used to synthesize proteins.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between DNA and RNA?",
+        "options": [
+          "DNA is single-stranded, while RNA is double-stranded",
+          "DNA is found in the nucleus, while RNA is found in the cytoplasm",
+          "DNA contains the sugar deoxyribose, while RNA contains the sugar ribose",
+          "DNA contains the base thymine, while RNA contains the base uracil"
+        ],
+        "answer": "C",
+        "explanation": "DNA contains the sugar deoxyribose, while RNA contains the sugar ribose.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of nucleotides in DNA?",
+        "options": [
+          "To provide structural support to the cell",
+          "To regulate cell growth and division",
+          "To store genetic information in the form of nucleotides",
+          "To transport nutrients into the cell"
+        ],
+        "answer": "C",
+        "explanation": "Nucleotides store genetic information in the form of nucleotide bases, which are used to synthesize proteins.",
+        "image_url": null
+      },
+      {
+        "question": "What is the shape of the DNA double helix?",
+        "options": [
+          "A spiral staircase",
+          "A zigzag pattern",
+          "A circular shape",
+          "A linear shape"
+        ],
+        "answer": "A",
+        "explanation": "The DNA double helix has a spiral staircase shape, with two complementary strands twisted together.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of RNA in protein synthesis?",
+        "options": [
+          "To store genetic information for protein synthesis",
+          "To provide structural support to the cell",
+          "To regulate cell growth and division",
+          "To carry amino acids to the ribosome"
+        ],
+        "answer": "D",
+        "explanation": "RNA carries amino acids to the ribosome, where they are assembled into proteins.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the nucleotide bases in DNA and RNA?",
+        "options": [
+          "DNA contains the base thymine, while RNA contains the base adenine",
+          "DNA contains the base adenine, while RNA contains the base thymine",
+          "DNA contains the base thymine, while RNA contains the base uracil",
+          "DNA contains the base cytosine, while RNA contains the base guanine"
+        ],
+        "answer": "C",
+        "explanation": "DNA contains the base thymine, while RNA contains the base uracil.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of DNA replication in cell division?",
+        "options": [
+          "To provide structural support to the cell",
+          "To regulate cell growth and division",
+          "To store genetic information for protein synthesis",
+          "To ensure that each new cell receives a complete set of genetic information"
+        ],
+        "answer": "D",
+        "explanation": "DNA replication ensures that each new cell receives a complete set of genetic information.",
+        "image_url": null
+      },
+      {
+        "question": "What is the shape of the RNA molecule?",
+        "options": [
+          "A spiral staircase",
+          "A zigzag pattern",
+          "A circular shape",
+          "A linear shape with a single strand"
+        ],
+        "answer": "D",
+        "explanation": "RNA is a single-stranded molecule with a linear shape.",
+        "image_url": null
+      },
+      {
+        "question": "What is the function of DNA in gene expression?",
+        "options": [
+          "To store genetic information for protein synthesis",
+          "To provide structural support to the cell",
+          "To regulate cell growth and division",
+          "To transcribe genetic information into RNA"
+        ],
+        "answer": "D",
+        "explanation": "DNA transcribes genetic information into RNA, which is then translated into proteins.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between the structure of DNA and RNA?",
+        "options": [
+          "DNA is single-stranded, while RNA is double-stranded",
+          "DNA contains the sugar deoxyribose, while RNA contains the sugar ribose",
+          "DNA contains the base thymine, while RNA contains the base adenine",
+          "DNA contains the base cytosine, while RNA contains the base guanine"
+        ],
+        "answer": "B",
+        "explanation": "DNA contains the sugar deoxyribose, while RNA contains the sugar ribose.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-1 Explaining the development of the atomic model throughout history, and understanding the structure and components of the atom.",
+    "questions": [
+      {
+        "question": "What are the two main subatomic particles found in the nucleus of an atom?",
+        "options": [
+          "Protons and electrons",
+          "Protons and neutrons",
+          "Neutrons and electrons",
+          "Hydrogen and oxygen"
+        ],
+        "answer": "B",
+        "explanation": "Protons and neutrons are found in the nucleus of an atom, while electrons are found in the electronic cloud.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between protons and neutrons in an atom?",
+        "options": [
+          "Protons are heavier than neutrons",
+          "Protons have a positive charge, while neutrons have a negative charge",
+          "Protons have a positive charge, while neutrons have no charge",
+          "Protons are smaller than neutrons"
+        ],
+        "answer": "C",
+        "explanation": "Protons have a positive charge, while neutrons have no charge.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the region around the nucleus of an atom where electrons are found?",
+        "options": [
+          "Atomic cloud",
+          "Electronic cloud",
+          "Proton cloud",
+          "Nuclear cloud"
+        ],
+        "answer": "B",
+        "explanation": "The electronic cloud is the region around the nucleus of an atom where electrons are found.",
+        "image_url": null
+      },
+      {
+        "question": "What is the number of protons in an atom's nucleus called?",
+        "options": [
+          "Atomic mass",
+          "Atomic number",
+          "Mass number",
+          "Proton count"
+        ],
+        "answer": "B",
+        "explanation": "The atomic number is the number of protons in an atom's nucleus.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the total number of protons and neutrons in an atom's nucleus?",
+        "options": [
+          "Atomic mass",
+          "Mass number",
+          "Proton count",
+          "Nuclear count"
+        ],
+        "answer": "B",
+        "explanation": "The mass number is the total number of protons and neutrons in an atom's nucleus.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main function of electrons in an atom?",
+        "options": [
+          "To hold the nucleus together",
+          "To carry a positive charge",
+          "To carry a negative charge",
+          "To orbit the nucleus"
+        ],
+        "answer": "D",
+        "explanation": "Electrons carry a negative charge and orbit the nucleus of an atom.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the number of electrons in a neutral atom?",
+        "options": [
+          "Atomic mass",
+          "Atomic number",
+          "Mass number",
+          "Electron count"
+        ],
+        "answer": "B",
+        "explanation": "The atomic number is also the number of electrons in a neutral atom.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the number of protons in an atom when it is ionized?",
+        "options": [
+          "It increases",
+          "It decreases",
+          "It remains the same",
+          "It becomes zero"
+        ],
+        "answer": "B",
+        "explanation": "When an atom is ionized, the number of protons remains the same.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for an atom that has gained or lost electrons?",
+        "options": [
+          "Ion",
+          "Molecule",
+          "Compound",
+          "Element"
+        ],
+        "answer": "A",
+        "explanation": "An ion is an atom that has gained or lost electrons.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between an isotope and an element?",
+        "options": [
+          "Isotopes have different numbers of protons, while elements have the same number of protons",
+          "Isotopes have the same number of protons, while elements have different numbers of protons",
+          "Isotopes have different numbers of neutrons, while elements have the same number of neutrons",
+          "Isotopes have the same number of neutrons, while elements have different numbers of neutrons"
+        ],
+        "answer": "C",
+        "explanation": "Isotopes have different numbers of neutrons, while elements have the same number of neutrons.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-1 Explaining the development of the atomic model throughout history, and understanding the structure and components of the atom.",
+    "questions": [
+      {
+        "question": "What is an isotope of an element?",
+        "options": [
+          "An atom with a different number of protons in its nucleus",
+          "An atom with the same number of protons but a different number of neutrons in its nucleus",
+          "A molecule composed of two or more different elements",
+          "A compound made up of two or more isotopes of the same element"
+        ],
+        "answer": "B",
+        "explanation": "Isotopes are atoms of the same element that have the same number of protons in their nucleus but differ in the number of neutrons, resulting in different masses.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of an isotope?",
+        "options": [
+          "Oxygen with 8 protons and 8 neutrons",
+          "Oxygen with 8 protons and 9 neutrons",
+          "Nitrogen with 7 protons and 7 neutrons",
+          "Carbon with 6 protons and 8 neutrons"
+        ],
+        "answer": "B",
+        "explanation": "This option shows oxygen with a different number of neutrons, making it an isotope of oxygen.",
+        "image_url": null
+      },
+      {
+        "question": "How do isotopes of the same element compare in terms of atomic number?",
+        "options": [
+          "They have different atomic numbers",
+          "They have the same atomic number but different mass numbers",
+          "They have different mass numbers but the same atomic number",
+          "They have neither the same atomic number nor the same mass number"
+        ],
+        "answer": "C",
+        "explanation": "Isotopes of the same element have the same number of protons, which means they have the same atomic number, but they differ in the number of neutrons, resulting in different mass numbers.",
+        "image_url": null
+      },
+      {
+        "question": "What is radioactive decay?",
+        "options": [
+          "The process by which an atom gains protons",
+          "The process by which an atom loses energy",
+          "The process by which an unstable atom loses energy and stability by emitting radiation",
+          "The process by which an atom becomes more stable by gaining neutrons"
+        ],
+        "answer": "C",
+        "explanation": "Radioactive decay is the process where unstable atoms lose energy and stability, resulting in the emission of radiation, such as alpha, beta, or gamma rays.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between radioactive decay and radioactive transformation?",
+        "options": [
+          "Radioactive decay involves a change in the number of protons, while radioactive transformation involves a change in the number of neutrons",
+          "Radioactive decay involves the emission of radiation, while radioactive transformation involves the absorption of radiation",
+          "Radioactive decay is a spontaneous process, while radioactive transformation is an induced process",
+          "Radioactive decay results in a more stable atom, while radioactive transformation results in a less stable atom"
+        ],
+        "answer": "C",
+        "explanation": "Radioactive decay is a spontaneous process where unstable atoms lose energy and stability, while radioactive transformation can be either spontaneous or induced, depending on the context, but the key distinction lies in the spontaneity of the decay process itself.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following statements about isotopes is true?",
+        "options": [
+          "Isotopes of the same element have different chemical properties",
+          "Isotopes of the same element have the same chemical properties but different physical properties",
+          "Isotopes of the same element have different physical properties but the same chemical properties",
+          "Isotopes of the same element have neither the same chemical nor the same physical properties"
+        ],
+        "answer": "B",
+        "explanation": "Isotopes of the same element have the same number of protons, which determines their chemical properties, but they differ in the number of neutrons, affecting their physical properties, such as mass.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the atomic number of an atom during radioactive decay?",
+        "options": [
+          "It increases by one",
+          "It decreases by one",
+          "It remains the same",
+          "It changes randomly"
+        ],
+        "answer": "B",
+        "explanation": "During certain types of radioactive decay, such as beta decay, the atomic number can change, but in the case of alpha decay, the atomic number decreases by two, and in beta decay, it can either increase or decrease by one, depending on the type of beta decay.",
+        "image_url": null
+      },
+      {
+        "question": "Why do isotopes undergo radioactive decay?",
+        "options": [
+          "Because they have too many protons in their nucleus",
+          "Because they have too few neutrons in their nucleus",
+          "Because they are unstable and have excess energy",
+          "Because they are stable and have a balanced number of protons and neutrons"
+        ],
+        "answer": "C",
+        "explanation": "Isotopes undergo radioactive decay because they are unstable, having an imbalance in the number of protons and neutrons, which leads to excess energy that is released through radiation.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of radioactive decay in terms of the stability of the atom?",
+        "options": [
+          "The atom becomes less stable",
+          "The atom becomes more stable",
+          "The atom remains stable",
+          "The atom becomes neutral"
+        ],
+        "answer": "B",
+        "explanation": "Radioactive decay is a process where unstable atoms lose energy and become more stable by emitting radiation, thus moving towards a more stable state.",
+        "image_url": null
+      },
+      {
+        "question": "How does the mass number of an isotope relate to its atomic mass?",
+        "options": [
+          "The mass number is equal to the atomic mass",
+          "The mass number is less than the atomic mass",
+          "The mass number is greater than the atomic mass",
+          "The mass number is the sum of the protons and neutrons, which approximates the atomic mass"
+        ],
+        "answer": "D",
+        "explanation": "The mass number of an isotope is the sum of its protons and neutrons, which gives an approximate value of its atomic mass, considering that the mass of a neutron is slightly greater than that of a proton.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-2 Comparing between compounds and mixtures, classifying mixtures, suggesting appropriate methods to separate their components, and distinguishing between types of solutions and their components.",
+    "questions": [
+      {
+        "question": "What is the main difference between a homogeneous and a heterogeneous mixture?",
+        "options": [
+          "A homogeneous mixture has the same composition throughout, while a heterogeneous mixture has different components that are not uniformly distributed",
+          "A homogeneous mixture has different components that are not uniformly distributed, while a heterogeneous mixture has the same composition throughout",
+          "A homogeneous mixture is a type of element, while a heterogeneous mixture is a type of compound",
+          "A homogeneous mixture is a type of compound, while a heterogeneous mixture is a type of element"
+        ],
+        "answer": "A",
+        "explanation": "A homogeneous mixture has the same composition throughout, while a heterogeneous mixture has different components that are not uniformly distributed.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a homogeneous mixture?",
+        "options": [
+          "Saltwater",
+          "Oil and water",
+          "Sand and water",
+          "Mud and water"
+        ],
+        "answer": "A",
+        "explanation": "Saltwater is an example of a homogeneous mixture because it has the same composition throughout.",
+        "image_url": null
+      },
+      {
+        "question": "What type of mixture is air?",
+        "options": [
+          "A homogeneous mixture",
+          "A heterogeneous mixture",
+          "A compound",
+          "An element"
+        ],
+        "answer": "A",
+        "explanation": "Air is a homogeneous mixture because it has the same composition throughout, even though it is made up of different gases.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a heterogeneous mixture?",
+        "options": [
+          "Sugar and water",
+          "Oil and water",
+          "Salt and water",
+          "Milk and water"
+        ],
+        "answer": "B",
+        "explanation": "Oil and water is an example of a heterogeneous mixture because it has different components that are not uniformly distributed.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a solution and a mixture?",
+        "options": [
+          "A solution is a type of mixture, while a mixture is a type of solution",
+          "A solution is a homogeneous mixture, while a mixture can be either homogeneous or heterogeneous",
+          "A solution is a type of compound, while a mixture is a type of element",
+          "A solution is a type of element, while a mixture is a type of compound"
+        ],
+        "answer": "B",
+        "explanation": "A solution is a homogeneous mixture, while a mixture can be either homogeneous or heterogeneous.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a heterogeneous mixture that can be separated by filtration?",
+        "options": [
+          "Saltwater",
+          "Oil and water",
+          "Sand and water",
+          "Mud and water"
+        ],
+        "answer": "C",
+        "explanation": "Sand and water is an example of a heterogeneous mixture that can be separated by filtration.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of classifying mixtures as homogeneous or heterogeneous?",
+        "options": [
+          "To determine the type of solution",
+          "To determine the type of compound",
+          "To determine the appropriate method of separation",
+          "To determine the type of element"
+        ],
+        "answer": "C",
+        "explanation": "The purpose of classifying mixtures as homogeneous or heterogeneous is to determine the appropriate method of separation.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following methods is used to separate the components of a heterogeneous mixture?",
+        "options": [
+          "Distillation",
+          "Filtration",
+          "Chromatography",
+          "All of the above"
+        ],
+        "answer": "D",
+        "explanation": "All of the above methods can be used to separate the components of a heterogeneous mixture, depending on the specific mixture and its components.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a colloid and a solution?",
+        "options": [
+          "A colloid is a type of solution, while a solution is a type of colloid",
+          "A colloid is a heterogeneous mixture, while a solution is a homogeneous mixture",
+          "A colloid is a type of compound, while a solution is a type of element",
+          "A colloid is a type of element, while a solution is a type of compound"
+        ],
+        "answer": "B",
+        "explanation": "A colloid is a heterogeneous mixture, while a solution is a homogeneous mixture.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a colloid?",
+        "options": [
+          "Saltwater",
+          "Milk",
+          "Oil and water",
+          "Sand and water"
+        ],
+        "answer": "B",
+        "explanation": "Milk is an example of a colloid because it is a heterogeneous mixture that has particles that are not uniformly distributed.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "1 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-3 Determining the concept of solubility, the rate of solubility in a solution, and deducing the factors affecting the solubility rate of a solute in",
+    "questions": [
+      {
+        "question": "What is the main factor that affects the rate of solubility of a solute in a solution?",
+        "options": [
+          "The temperature of the solution",
+          "The pressure of the solution",
+          "The volume of the solution",
+          "The color of the solution"
+        ],
+        "answer": "A",
+        "explanation": "The rate of solubility of a solute in a solution is mainly affected by the temperature of the solution. An increase in temperature generally increases the solubility of a solute.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the amount of a substance that can dissolve in a given amount of solvent at a particular temperature?",
+        "options": [
+          "Solubility rate",
+          "Solubility limit",
+          "Viscosity",
+          "Surface tension"
+        ],
+        "answer": "B",
+        "explanation": "The term solubility limit refers to the maximum amount of a substance that can dissolve in a given amount of solvent at a particular temperature.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a factor that affects the solubility rate of a solute in a solution?",
+        "options": [
+          "The shape of the container",
+          "The type of solvent used",
+          "The presence of other solutes",
+          "The color of the solute"
+        ],
+        "answer": "B",
+        "explanation": "The type of solvent used can affect the solubility rate of a solute in a solution. Different solvents have different properties that can affect the solubility of a solute.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the solubility of a gas in a liquid when the temperature is increased?",
+        "options": [
+          "It increases",
+          "It decreases",
+          "It remains the same",
+          "It becomes zero"
+        ],
+        "answer": "B",
+        "explanation": "When the temperature is increased, the solubility of a gas in a liquid generally decreases. This is because the increased kinetic energy of the gas molecules makes it more difficult for them to dissolve in the liquid.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following properties of a liquid is affected by the arrangement of its molecules?",
+        "options": [
+          "Viscosity",
+          "Surface tension",
+          "Density",
+          "Color"
+        ],
+        "answer": "A",
+        "explanation": "The viscosity of a liquid is affected by the arrangement of its molecules. The stronger the intermolecular forces between the molecules, the higher the viscosity of the liquid.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the force that acts between the molecules of a liquid and the surface of the container?",
+        "options": [
+          "Adhesion",
+          "Cohesion",
+          "Viscosity",
+          "Surface tension"
+        ],
+        "answer": "A",
+        "explanation": "The force that acts between the molecules of a liquid and the surface of the container is called adhesion.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a substance with high surface tension?",
+        "options": [
+          "Water",
+          "Alcohol",
+          "Gasoline",
+          "Mercury"
+        ],
+        "answer": "D",
+        "explanation": "Mercury has a high surface tension due to the strong intermolecular forces between its molecules. This is why mercury forms droplets and has a convex meniscus when placed in a container.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the viscosity of a liquid when its temperature is increased?",
+        "options": [
+          "It increases",
+          "It decreases",
+          "It remains the same",
+          "It becomes zero"
+        ],
+        "answer": "B",
+        "explanation": "When the temperature of a liquid is increased, its viscosity generally decreases. This is because the increased kinetic energy of the molecules makes it easier for them to flow past each other.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following factors can affect the solubility of a solute in a solution?",
+        "options": [
+          "The pressure of the solution",
+          "The temperature of the solution",
+          "The presence of other solutes",
+          "All of the above"
+        ],
+        "answer": "D",
+        "explanation": "All of the above factors can affect the solubility of a solute in a solution. The pressure, temperature, and presence of other solutes can all impact the solubility of a solute.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term used to describe the process by which a solute dissolves in a solvent?",
+        "options": [
+          "Dissolution",
+          "Solubilization",
+          "Precipitation",
+          "Crystallization"
+        ],
+        "answer": "A",
+        "explanation": "The term dissolution refers to the process by which a solute dissolves in a solvent. This process involves the breaking of intermolecular forces between the solute molecules and the formation of new forces between the solute and solvent molecules.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-3 Determining the concept of solubility, the rate of solubility in a solution, and deducing the factors affecting the solubility rate of a solute in",
+    "questions": [
+      {
+        "question": "What happens to the solubility of a substance when the temperature of the solution is increased?",
+        "options": [
+          "The solubility of the substance decreases",
+          "The solubility of the substance remains the same",
+          "The solubility of the substance increases for most solids",
+          "The solubility of the substance increases for all substances"
+        ],
+        "answer": "C",
+        "explanation": "For most solids, an increase in temperature results in an increase in solubility, as the particles gain kinetic energy and are able to move more freely, allowing more solute particles to dissolve.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following factors can affect the solubility rate of a solute in a solution?",
+        "options": [
+          "Only the temperature of the solution",
+          "Only the composition of the solute",
+          "Both the temperature and composition of the solute",
+          "Neither the temperature nor composition of the solute"
+        ],
+        "answer": "C",
+        "explanation": "Both the temperature and composition of the solute can affect the solubility rate, as changes in temperature can increase or decrease the kinetic energy of the particles, and the composition of the solute can affect the intermolecular forces between the solute and solvent particles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the maximum amount of solute that can dissolve in a given amount of solvent at a particular temperature?",
+        "options": [
+          "Solubility rate",
+          "Saturation point",
+          "Dissolution rate",
+          "Solubility limit"
+        ],
+        "answer": "B",
+        "explanation": "The saturation point is the term for the maximum amount of solute that can dissolve in a given amount of solvent at a particular temperature, beyond which no more solute can dissolve.",
+        "image_url": null
+      },
+      {
+        "question": "How does the composition of a compound affect its solubility in a solution?",
+        "options": [
+          "The composition of the compound has no effect on its solubility",
+          "The composition of the compound affects the intermolecular forces between the solute and solvent particles",
+          "The composition of the compound only affects the temperature of the solution",
+          "The composition of the compound only affects the amount of solvent present"
+        ],
+        "answer": "B",
+        "explanation": "The composition of the compound affects the intermolecular forces between the solute and solvent particles, which in turn affects the solubility of the compound, as different compounds have different types and strengths of intermolecular forces.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the solubility of a gas in a solution when the temperature is increased?",
+        "options": [
+          "The solubility of the gas increases",
+          "The solubility of the gas remains the same",
+          "The solubility of the gas decreases",
+          "The solubility of the gas is unaffected by temperature"
+        ],
+        "answer": "C",
+        "explanation": "For gases, an increase in temperature results in a decrease in solubility, as the gas molecules gain kinetic energy and are able to escape the solution more easily.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a factor that affects the solubility rate of a solute in a solution?",
+        "options": [
+          "The shape of the container holding the solution",
+          "The color of the solute",
+          "The pressure of the solution",
+          "The temperature of the solution"
+        ],
+        "answer": "D",
+        "explanation": "The temperature of the solution is an example of a factor that affects the solubility rate of a solute, as changes in temperature can increase or decrease the kinetic energy of the particles, affecting the rate at which the solute dissolves.",
+        "image_url": null
+      },
+      {
+        "question": "How does the solubility of a substance change when the pressure of the solution is increased?",
+        "options": [
+          "The solubility of the substance increases for all substances",
+          "The solubility of the substance decreases for all substances",
+          "The solubility of the substance remains the same for all substances",
+          "The solubility of the substance increases for gases and decreases for solids"
+        ],
+        "answer": "D",
+        "explanation": "For gases, an increase in pressure results in an increase in solubility, as the gas molecules are forced into the solution, while for solids, an increase in pressure has little effect on solubility.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the process by which a solid, liquid, or gas dissolves in a solvent?",
+        "options": [
+          "Dissolution",
+          "Solubilization",
+          "Saturation",
+          "Solubility"
+        ],
+        "answer": "A",
+        "explanation": "Dissolution is the term for the process by which a solid, liquid, or gas dissolves in a solvent, resulting in a solution.",
+        "image_url": null
+      },
+      {
+        "question": "How does the composition of a solute affect its solubility in a solution?",
+        "options": [
+          "The composition of the solute has no effect on its solubility",
+          "The composition of the solute affects the pH of the solution",
+          "The composition of the solute affects the intermolecular forces between the solute and solvent particles",
+          "The composition of the solute affects the temperature of the solution"
+        ],
+        "answer": "C",
+        "explanation": "The composition of the solute affects the intermolecular forces between the solute and solvent particles, which in turn affects the solubility of the solute, as different solutes have different types and strengths of intermolecular forces.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the solubility of a substance when the composition of the solvent is changed?",
+        "options": [
+          "The solubility of the substance remains the same",
+          "The solubility of the substance increases for all substances",
+          "The solubility of the substance decreases for all substances",
+          "The solubility of the substance changes depending on the intermolecular forces between the solute and solvent particles"
+        ],
+        "answer": "D",
+        "explanation": "The solubility of a substance can change when the composition of the solvent is changed, as the intermolecular forces between the solute and solvent particles can be affected, resulting in an increase or decrease in solubility.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-3 Determining the concept of solubility, the rate of solubility in a solution, and deducing the factors affecting the solubility rate of a solute in",
+    "questions": [
+      {
+        "question": "What is the primary factor that affects the rate of solubility of a solute in a solvent?",
+        "options": [
+          "The temperature of the solvent",
+          "The pressure of the surrounding environment",
+          "The surface area of the solute",
+          "The color of the solute"
+        ],
+        "answer": "A",
+        "explanation": "The temperature of the solvent is a primary factor that affects the rate of solubility of a solute, as increasing the temperature generally increases the solubility of most substances.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a factor that can increase the rate of solubility of a solute in a solvent?",
+        "options": [
+          "Decreasing the temperature of the solvent",
+          "Increasing the pressure of the surrounding environment",
+          "Increasing the surface area of the solute",
+          "Decreasing the amount of solvent"
+        ],
+        "answer": "C",
+        "explanation": "Increasing the surface area of the solute can increase the rate of solubility, as it allows more of the solute to come into contact with the solvent at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the rate of solubility of a solute in a solvent when the temperature of the solvent is increased?",
+        "options": [
+          "The rate of solubility decreases",
+          "The rate of solubility remains the same",
+          "The rate of solubility increases",
+          "The solute becomes insoluble"
+        ],
+        "answer": "C",
+        "explanation": "Increasing the temperature of the solvent generally increases the rate of solubility of a solute, as the particles of the solvent have more energy and are moving faster, allowing them to interact with the solute more effectively.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following types of solutions is most likely to have a high rate of solubility?",
+        "options": [
+          "A solution with a high concentration of solute",
+          "A solution with a low concentration of solute",
+          "A solution with a high temperature",
+          "A solution with a low surface area of solute"
+        ],
+        "answer": "C",
+        "explanation": "A solution with a high temperature is most likely to have a high rate of solubility, as the particles of the solvent have more energy and are moving faster, allowing them to interact with the solute more effectively.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of increasing the pressure of the surrounding environment on the rate of solubility of a gas in a liquid?",
+        "options": [
+          "The rate of solubility decreases",
+          "The rate of solubility remains the same",
+          "The rate of solubility increases",
+          "The gas becomes insoluble"
+        ],
+        "answer": "C",
+        "explanation": "Increasing the pressure of the surrounding environment can increase the rate of solubility of a gas in a liquid, as the increased pressure forces more gas molecules into the liquid.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following factors can affect the rate of solubility of a solute in a solvent?",
+        "options": [
+          "The color of the solute",
+          "The shape of the solute",
+          "The surface area of the solute",
+          "The smell of the solvent"
+        ],
+        "answer": "C",
+        "explanation": "The surface area of the solute is a factor that can affect the rate of solubility, as increasing the surface area allows more of the solute to come into contact with the solvent at the same time.",
+        "image_url": null
+      },
+      {
+        "question": "What happens to the rate of solubility of a solute in a solvent when the amount of solvent is decreased?",
+        "options": [
+          "The rate of solubility increases",
+          "The rate of solubility remains the same",
+          "The rate of solubility decreases",
+          "The solute becomes insoluble"
+        ],
+        "answer": "C",
+        "explanation": "Decreasing the amount of solvent can decrease the rate of solubility, as there are fewer solvent particles available to interact with the solute.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a factor that can decrease the rate of solubility of a solute in a solvent?",
+        "options": [
+          "Increasing the temperature of the solvent",
+          "Increasing the surface area of the solute",
+          "Decreasing the amount of solvent",
+          "Increasing the pressure of the surrounding environment"
+        ],
+        "answer": "C",
+        "explanation": "Decreasing the amount of solvent can decrease the rate of solubility, as there are fewer solvent particles available to interact with the solute.",
+        "image_url": null
+      },
+      {
+        "question": "What is the effect of stirring a solution on the rate of solubility of a solute in a solvent?",
+        "options": [
+          "The rate of solubility decreases",
+          "The rate of solubility remains the same",
+          "The rate of solubility increases",
+          "The solute becomes insoluble"
+        ],
+        "answer": "C",
+        "explanation": "Stirring a solution can increase the rate of solubility, as it helps to distribute the solute particles throughout the solvent and increases the surface area of the solute in contact with the solvent.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following types of solutions is most likely to have a low rate of solubility?",
+        "options": [
+          "A solution with a high temperature",
+          "A solution with a low surface area of solute",
+          "A solution with a high concentration of solute",
+          "A solution with a low amount of solvent"
+        ],
+        "answer": "B",
+        "explanation": "A solution with a low surface area of solute is most likely to have a low rate of solubility, as there is less solute in contact with the solvent at any given time.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-4 Explaining the properties of liquids, comparing crystalline and amorphous solids, and describing the pattern of crystals in solids.",
+    "questions": [
+      {
+        "question": "What is the main difference between crystalline and amorphous solids?",
+        "options": [
+          "Crystalline solids have a random arrangement of particles, while amorphous solids have a regular arrangement",
+          "Crystalline solids have a regular arrangement of particles, while amorphous solids have a random arrangement",
+          "Crystalline solids are found only in nature, while amorphous solids are man-made",
+          "Crystalline solids are always harder than amorphous solids"
+        ],
+        "answer": "B",
+        "explanation": "Crystalline solids have a regular, repeating pattern of particles, while amorphous solids have a random arrangement of particles.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is a noble gas?",
+        "options": [
+          "Carbon",
+          "Nitrogen",
+          "Oxygen",
+          "Neon"
+        ],
+        "answer": "D",
+        "explanation": "Neon is a noble gas, which is a group of elements in the periodic table that are unreactive and do not readily form compounds with other elements.",
+        "image_url": null
+      },
+      {
+        "question": "What is the property of liquids that allows them to take the shape of their container?",
+        "options": [
+          "Viscosity",
+          "Surface tension",
+          "Density",
+          "Fluidity"
+        ],
+        "answer": "D",
+        "explanation": "Fluidity is the ability of a liquid to flow and take the shape of its container.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following solids is an example of an amorphous solid?",
+        "options": [
+          "Salt",
+          "Sugar",
+          "Glass",
+          "Diamond"
+        ],
+        "answer": "C",
+        "explanation": "Glass is an example of an amorphous solid, which means it does not have a regular, repeating pattern of particles.",
+        "image_url": null
+      },
+      {
+        "question": "What is the pattern of crystals in solids called?",
+        "options": [
+          "Crystal lattice",
+          "Molecular structure",
+          "Atomic arrangement",
+          "Particle pattern"
+        ],
+        "answer": "A",
+        "explanation": "The crystal lattice is the regular, repeating pattern of particles in a crystalline solid.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is a metal?",
+        "options": [
+          "Oxygen",
+          "Nitrogen",
+          "Carbon",
+          "Copper"
+        ],
+        "answer": "D",
+        "explanation": "Copper is a metal, which is a type of element that is typically shiny, malleable, and good at conducting electricity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a metal and a nonmetal?",
+        "options": [
+          "Metals are typically soft and nonmetals are typically hard",
+          "Metals are typically good at conducting electricity and nonmetals are not",
+          "Metals are typically found in nature and nonmetals are man-made",
+          "Metals are typically liquid at room temperature and nonmetals are solid"
+        ],
+        "answer": "B",
+        "explanation": "Metals are typically good at conducting electricity, while nonmetals are not.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a common use of the element silicon?",
+        "options": [
+          "Making jewelry",
+          "Conducting electricity",
+          "Making computer chips",
+          "Making medical equipment"
+        ],
+        "answer": "C",
+        "explanation": "Silicon is commonly used to make computer chips, which are used in a wide range of electronic devices.",
+        "image_url": null
+      },
+      {
+        "question": "What is the property of a liquid that causes it to resist changes in shape?",
+        "options": [
+          "Viscosity",
+          "Surface tension",
+          "Density",
+          "Fluidity"
+        ],
+        "answer": "B",
+        "explanation": "Surface tension is the property of a liquid that causes it to resist changes in shape and behave as if it has an elastic skin at its surface.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is a semiconductor?",
+        "options": [
+          "Copper",
+          "Silver",
+          "Gold",
+          "Silicon"
+        ],
+        "answer": "D",
+        "explanation": "Silicon is a semiconductor, which means it can conduct electricity under certain conditions, but not as well as a metal.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-5 Describing the history of the periodic table, explaining how the elements are organized in the periodic table, and the properties of the elements and their common uses.",
+    "questions": [
+      {
+        "question": "What is the main reason for the organization of elements in the periodic table?",
+        "options": [
+          "Their atomic mass increases from left to right and top to bottom",
+          "Their physical properties such as color and texture",
+          "Their electronic composition and the number of electrons in the outermost energy level",
+          "Their chemical reactivity with other elements"
+        ],
+        "answer": "C",
+        "explanation": "The elements in the periodic table are organized based on their electronic composition, specifically the number of electrons in the outermost energy level, which determines their chemical properties.",
+        "image_url": null
+      },
+      {
+        "question": "Which group of elements is located on the far right side of the periodic table and is known for being unreactive?",
+        "options": [
+          "Alkali metals",
+          "Noble gases",
+          "Halogens",
+          "Transition metals"
+        ],
+        "answer": "B",
+        "explanation": "The noble gases are located on the far right side of the periodic table and are known for being unreactive due to their full outer energy level.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the elements in the periodic table that are located in the middle of the table and have partially filled d subshells?",
+        "options": [
+          "Representative elements",
+          "Transition elements",
+          "Inner transition elements",
+          "Noble gases"
+        ],
+        "answer": "B",
+        "explanation": "The transition elements are located in the middle of the periodic table and have partially filled d subshells, which gives them unique chemical properties.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is an example of a lanthanide?",
+        "options": [
+          "Copper",
+          "Silver",
+          "Lanthanum",
+          "Tin"
+        ],
+        "answer": "C",
+        "explanation": "Lanthanum is an example of a lanthanide, which is a group of inner transition elements that have partially filled f subshells.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary use of the element titanium?",
+        "options": [
+          "Making jewelry",
+          "Manufacturing aircraft and spacecraft parts",
+          "Producing pigments and dyes",
+          "Creating medical implants"
+        ],
+        "answer": "B",
+        "explanation": "Titanium is a strong and lightweight metal that is often used in the manufacture of aircraft and spacecraft parts due to its high strength-to-weight ratio and resistance to corrosion.",
+        "image_url": null
+      },
+      {
+        "question": "Which group of elements is known for being highly reactive and readily losing one electron to form a positive ion?",
+        "options": [
+          "Alkali metals",
+          "Halogens",
+          "Noble gases",
+          "Transition metals"
+        ],
+        "answer": "A",
+        "explanation": "The alkali metals are known for being highly reactive and readily losing one electron to form a positive ion, which makes them highly reactive with water and other substances.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the elements in the periodic table that are located at the bottom of the table and have partially filled f subshells?",
+        "options": [
+          "Lanthanides",
+          "Actinides",
+          "Transition elements",
+          "Inner transition elements"
+        ],
+        "answer": "A",
+        "explanation": "The lanthanides are a group of inner transition elements that have partially filled f subshells and are located at the bottom of the periodic table.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is an example of a representative element?",
+        "options": [
+          "Copper",
+          "Silver",
+          "Carbon",
+          "Tin"
+        ],
+        "answer": "C",
+        "explanation": "Carbon is an example of a representative element, which is a group of elements that have a full outer energy level and exhibit a wide range of chemical properties.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary use of the element tungsten?",
+        "options": [
+          "Making light bulb filaments",
+          "Manufacturing high-speed tools",
+          "Producing superconducting materials",
+          "Creating radiation shielding"
+        ],
+        "answer": "A",
+        "explanation": "Tungsten is a hard, dense metal that is often used in the manufacture of light bulb filaments due to its high melting point and resistance to corrosion.",
+        "image_url": null
+      },
+      {
+        "question": "Which group of elements is known for being highly reactive and readily gaining one electron to form a negative ion?",
+        "options": [
+          "Alkali metals",
+          "Halogens",
+          "Noble gases",
+          "Transition metals"
+        ],
+        "answer": "B",
+        "explanation": "The halogens are known for being highly reactive and readily gaining one electron to form a negative ion, which makes them highly reactive with metals and other substances.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "5 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-5 Describing the history of the periodic table, explaining how the elements are organized in the periodic table, and the properties of the elements and their common uses.",
+    "questions": [
+      {
+        "question": "What is the main purpose of the periodic table?",
+        "options": [
+          "To list all the elements in alphabetical order",
+          "To organize elements based on their properties and atomic mass",
+          "To show the chemical reactions between elements",
+          "To describe the history of chemistry"
+        ],
+        "answer": "B",
+        "explanation": "The periodic table is used to organize elements based on their properties and atomic mass, allowing for the identification of patterns and relationships between elements.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a processed element?",
+        "options": [
+          "Oxygen found in the air",
+          "Iron extracted from iron ore",
+          "Helium found in natural gas deposits",
+          "Nitrogen in the atmosphere"
+        ],
+        "answer": "B",
+        "explanation": "Iron extracted from iron ore is an example of a processed element, as it has been refined and purified from its natural state.",
+        "image_url": null
+      },
+      {
+        "question": "What is a catalyst in a chemical reaction?",
+        "options": [
+          "A substance that is consumed by the reaction",
+          "A substance that speeds up the reaction without being consumed",
+          "A substance that slows down the reaction",
+          "A substance that is produced by the reaction"
+        ],
+        "answer": "B",
+        "explanation": "A catalyst is a substance that speeds up a chemical reaction without being consumed or altered in the process.",
+        "image_url": null
+      },
+      {
+        "question": "Which element is commonly used as a catalyst in the production of ammonia?",
+        "options": [
+          "Iron",
+          "Copper",
+          "Nickel",
+          "Platinum"
+        ],
+        "answer": "A",
+        "explanation": "Iron is commonly used as a catalyst in the Haber-Bosch process, which is used to produce ammonia on an industrial scale.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary function of the periodic table in relation to the elements?",
+        "options": [
+          "To predict the properties of unknown elements",
+          "To organize elements based on their properties and atomic mass",
+          "To describe the history of element discovery",
+          "To list the elements in order of their discovery"
+        ],
+        "answer": "B",
+        "explanation": "The primary function of the periodic table is to organize elements based on their properties and atomic mass, allowing for the identification of patterns and relationships between elements.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is not a noble gas?",
+        "options": [
+          "Neon",
+          "Argon",
+          "Oxygen",
+          "Krypton"
+        ],
+        "answer": "C",
+        "explanation": "Oxygen is not a noble gas, as it is a highly reactive element that readily forms compounds with other elements.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for elements that have been refined and purified from their natural state?",
+        "options": [
+          "Raw elements",
+          "Processed elements",
+          "Natural elements",
+          "Synthetic elements"
+        ],
+        "answer": "B",
+        "explanation": "Processed elements are elements that have been refined and purified from their natural state, often through industrial processes.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a common use of the element titanium?",
+        "options": [
+          "As a catalyst in chemical reactions",
+          "As a component of high-strength alloys",
+          "As a pigment in paints and coatings",
+          "As a fuel source for nuclear reactors"
+        ],
+        "answer": "B",
+        "explanation": "Titanium is often used as a component of high-strength alloys, due to its high strength-to-weight ratio and corrosion resistance.",
+        "image_url": null
+      },
+      {
+        "question": "What is the primary difference between a processed element and a raw element?",
+        "options": [
+          "The processed element is more expensive to produce",
+          "The processed element has a higher atomic mass",
+          "The processed element has been refined and purified from its natural state",
+          "The processed element is more reactive than the raw element"
+        ],
+        "answer": "C",
+        "explanation": "The primary difference between a processed element and a raw element is that the processed element has been refined and purified from its natural state, often through industrial processes.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following elements is commonly used as a catalyst in the production of polyethylene?",
+        "options": [
+          "Chromium",
+          "Molybdenum",
+          "Tungsten",
+          "Aluminum"
+        ],
+        "answer": "A",
+        "explanation": "Chromium is commonly used as a catalyst in the production of polyethylene, as it helps to facilitate the polymerization reaction.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "4 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-7 Explaining how atoms bond with each other, identifying what is a chemical bond and how it is formed, and distinguishing between different types",
+    "questions": [
+      {
+        "question": "What is a chemical bond?",
+        "options": [
+          "A type of physical force that holds objects together",
+          "A type of attractive force that holds atoms together",
+          "A type of energy that is released during a chemical reaction",
+          "A type of matter that is found in all living things"
+        ],
+        "answer": "B",
+        "explanation": "A chemical bond is a type of attractive force that holds atoms together, resulting in the formation of a chemical compound.",
+        "image_url": null
+      },
+      {
+        "question": "What type of chemical bond is formed when one or more electrons are transferred from one atom to another?",
+        "options": [
+          "Covalent bond",
+          "Ionic bond",
+          "Metallic bond",
+          "Polar bond"
+        ],
+        "answer": "B",
+        "explanation": "An ionic bond is formed when one or more electrons are transferred from one atom to another, resulting in the formation of ions with opposite charges that are attracted to each other.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of chemical bond involves the sharing of one or more pairs of electrons between atoms?",
+        "options": [
+          "Ionic bond",
+          "Covalent bond",
+          "Metallic bond",
+          "Hydrogen bond"
+        ],
+        "answer": "B",
+        "explanation": "A covalent bond involves the sharing of one or more pairs of electrons between atoms, resulting in a strong and stable chemical bond.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between a polar covalent bond and a nonpolar covalent bond?",
+        "options": [
+          "The number of electrons shared between atoms",
+          "The type of atoms involved in the bond",
+          "The distribution of electrons between atoms",
+          "The strength of the bond"
+        ],
+        "answer": "C",
+        "explanation": "The main difference between a polar covalent bond and a nonpolar covalent bond is the distribution of electrons between atoms, with polar bonds having an unequal distribution of electrons and nonpolar bonds having an equal distribution.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of chemical bond is typically found in metals?",
+        "options": [
+          "Ionic bond",
+          "Covalent bond",
+          "Metallic bond",
+          "Polar bond"
+        ],
+        "answer": "C",
+        "explanation": "A metallic bond is typically found in metals, where electrons are delocalized and free to move throughout the metal lattice, resulting in high electrical conductivity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the result of the formation of a chemical bond between two or more atoms?",
+        "options": [
+          "The formation of a new element",
+          "The formation of a compound",
+          "The release of energy",
+          "The absorption of energy"
+        ],
+        "answer": "B",
+        "explanation": "The formation of a chemical bond between two or more atoms results in the formation of a compound, which is a substance with a fixed composition and properties that are different from those of its individual component atoms.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a polar covalent bond?",
+        "options": [
+          "The bond between two oxygen atoms in an oxygen molecule",
+          "The bond between a hydrogen atom and an oxygen atom in a water molecule",
+          "The bond between two hydrogen atoms in a hydrogen molecule",
+          "The bond between a sodium atom and a chlorine atom in a salt molecule"
+        ],
+        "answer": "B",
+        "explanation": "The bond between a hydrogen atom and an oxygen atom in a water molecule is an example of a polar covalent bond, where the electrons are not shared equally between the atoms due to the difference in electronegativity.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the attractive force between two atoms that results from the interaction between their electrons?",
+        "options": [
+          "Electronegativity",
+          "Electron affinity",
+          "Chemical bond",
+          "Intermolecular force"
+        ],
+        "answer": "C",
+        "explanation": "A chemical bond is the attractive force between two atoms that results from the interaction between their electrons, resulting in the formation of a compound.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of chemical bond is characterized by the transfer of electrons from one atom to another, resulting in the formation of ions with opposite charges?",
+        "options": [
+          "Covalent bond",
+          "Ionic bond",
+          "Metallic bond",
+          "Polar bond"
+        ],
+        "answer": "B",
+        "explanation": "An ionic bond is characterized by the transfer of electrons from one atom to another, resulting in the formation of ions with opposite charges that are attracted to each other.",
+        "image_url": null
+      },
+      {
+        "question": "What is the main difference between an ionic bond and a covalent bond?",
+        "options": [
+          "The number of electrons shared between atoms",
+          "The type of atoms involved in the bond",
+          "The transfer of electrons between atoms",
+          "The strength of the bond"
+        ],
+        "answer": "C",
+        "explanation": "The main difference between an ionic bond and a covalent bond is the transfer of electrons between atoms, with ionic bonds involving the transfer of electrons and covalent bonds involving the sharing of electrons.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "2 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-8 Understanding how a chemical reaction occurs, expressing it in a balanced chemical equation based on the law of conservation of mass, and distinguishing chemical reactions according to the energy associated with",
+    "questions": [
+      {
+        "question": "What is the law of conservation of mass in a chemical reaction?",
+        "options": [
+          "Matter is created during a chemical reaction",
+          "Matter is destroyed during a chemical reaction",
+          "The total mass of the reactants is equal to the total mass of the products",
+          "The total mass of the reactants is less than the total mass of the products"
+        ],
+        "answer": "C",
+        "explanation": "The law of conservation of mass states that matter cannot be created or destroyed in a chemical reaction, so the total mass of the reactants must be equal to the total mass of the products.",
+        "image_url": null
+      },
+      {
+        "question": "What is a balanced chemical equation?",
+        "options": [
+          "An equation that shows the reactants and products but does not account for the number of atoms",
+          "An equation that shows the reactants and products with the same number of atoms of each element on both sides",
+          "An equation that shows only the reactants",
+          "An equation that shows only the products"
+        ],
+        "answer": "B",
+        "explanation": "A balanced chemical equation is an equation that shows the reactants and products with the same number of atoms of each element on both sides, following the law of conservation of mass.",
+        "image_url": null
+      },
+      {
+        "question": "What type of chemical reaction involves the combination of two or more substances to form a new compound?",
+        "options": [
+          "Synthesis reaction",
+          "Decomposition reaction",
+          "Replacement reaction",
+          "Combustion reaction"
+        ],
+        "answer": "A",
+        "explanation": "A synthesis reaction is a type of chemical reaction where two or more substances combine to form a new compound, such as 2H2 + O2 → 2H2O.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of balancing a chemical equation?",
+        "options": [
+          "To show that the reaction is exothermic",
+          "To show that the reaction is endothermic",
+          "To ensure that the law of conservation of mass is followed",
+          "To determine the rate of the reaction"
+        ],
+        "answer": "C",
+        "explanation": "The purpose of balancing a chemical equation is to ensure that the law of conservation of mass is followed, meaning that the number of atoms of each element is the same on both the reactant and product sides.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a balanced chemical equation?",
+        "options": [
+          "2H2 + O2 → H2O",
+          "2H2 + O2 → 2H2O",
+          "H2 + O2 → H2O",
+          "H2 + 2O2 → H2O"
+        ],
+        "answer": "B",
+        "explanation": "The equation 2H2 + O2 → 2H2O is balanced because it has the same number of atoms of each element on both the reactant and product sides.",
+        "image_url": null
+      },
+      {
+        "question": "What is the difference between a reactant and a product in a chemical reaction?",
+        "options": [
+          "A reactant is a substance that is formed during a reaction, while a product is a substance that is used up",
+          "A reactant is a substance that is used up during a reaction, while a product is a substance that is formed",
+          "A reactant and a product are the same thing",
+          "A reactant is a type of catalyst, while a product is a type of solvent"
+        ],
+        "answer": "B",
+        "explanation": "In a chemical reaction, a reactant is a substance that is used up or consumed, while a product is a substance that is formed or produced.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of chemical reaction involves the breakdown of a single compound into two or more simpler substances?",
+        "options": [
+          "Synthesis reaction",
+          "Decomposition reaction",
+          "Replacement reaction",
+          "Combustion reaction"
+        ],
+        "answer": "B",
+        "explanation": "A decomposition reaction is a type of chemical reaction where a single compound breaks down into two or more simpler substances, such as 2H2O → 2H2 + O2.",
+        "image_url": null
+      },
+      {
+        "question": "What is the role of energy in a chemical reaction?",
+        "options": [
+          "Energy is always released during a chemical reaction",
+          "Energy is always absorbed during a chemical reaction",
+          "Energy can be either released or absorbed during a chemical reaction",
+          "Energy is not involved in chemical reactions"
+        ],
+        "answer": "C",
+        "explanation": "In a chemical reaction, energy can be either released (exothermic) or absorbed (endothermic), depending on the specific reaction and the conditions under which it occurs.",
+        "image_url": null
+      },
+      {
+        "question": "How do you know if a chemical equation is balanced?",
+        "options": [
+          "If the number of atoms of each element is the same on both the reactant and product sides",
+          "If the number of atoms of each element is different on the reactant and product sides",
+          "If the equation has the same number of reactants and products",
+          "If the equation has a different number of reactants and products"
+        ],
+        "answer": "A",
+        "explanation": "A chemical equation is balanced if the number of atoms of each element is the same on both the reactant and product sides, following the law of conservation of mass.",
+        "image_url": null
+      },
+      {
+        "question": "What is the purpose of using coefficients in a balanced chemical equation?",
+        "options": [
+          "To indicate the state of matter of the reactants and products",
+          "To indicate the direction of the reaction",
+          "To balance the number of atoms of each element",
+          "To show the rate of the reaction"
+        ],
+        "answer": "C",
+        "explanation": "Coefficients are used in a balanced chemical equation to balance the number of atoms of each element, ensuring that the law of conservation of mass is followed.",
+        "image_url": null
+      }
+    ]
+  },
+  {
+    "title": "3 - Science (Grade 9)",
+    "subjectName": "Science",
+    "gradeTarget": 9,
+    "description": "Assessment for Grade 9 Science",
+    "outcomeText": "9-5-2-1-8 Understanding how a chemical reaction occurs, expressing it in a balanced chemical equation based on the law of conservation of mass, and distinguishing chemical reactions according to the energy associated with",
+    "questions": [
+      {
+        "question": "What type of energy is associated with a chemical reaction that releases heat to the surroundings?",
+        "options": [
+          "Electromagnetic energy",
+          "Thermal energy released",
+          "Chemical potential energy",
+          "Nuclear energy absorbed"
+        ],
+        "answer": "B",
+        "explanation": "Thermal energy released is the correct answer because it describes the type of energy associated with an exothermic reaction, where heat is released to the surroundings.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is an example of a chemical reaction that absorbs energy from the surroundings?",
+        "options": [
+          "Combustion of gasoline in a car engine",
+          "Photosynthesis in plants",
+          "Decomposition of organic matter",
+          "Respiration in humans"
+        ],
+        "answer": "B",
+        "explanation": "Photosynthesis is the correct answer because it is an endothermic reaction that absorbs energy from sunlight to convert carbon dioxide and water into glucose and oxygen.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the energy released or absorbed during a chemical reaction?",
+        "options": [
+          "Kinetic energy",
+          "Potential energy",
+          "Thermal energy",
+          "Chemical energy"
+        ],
+        "answer": "D",
+        "explanation": "Chemical energy is the correct answer because it refers to the energy stored in the bonds of atoms and molecules, which is released or absorbed during a chemical reaction.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of chemical reaction releases energy to the surroundings?",
+        "options": [
+          "Endothermic reaction",
+          "Exothermic reaction",
+          "Neutral reaction",
+          "Reversible reaction"
+        ],
+        "answer": "B",
+        "explanation": "Exothermic reaction is the correct answer because it describes a chemical reaction that releases energy to the surroundings, often in the form of heat or light.",
+        "image_url": null
+      },
+      {
+        "question": "What is an example of a chemical reaction that releases energy in the form of light?",
+        "options": [
+          "Combustion of wood",
+          "Decomposition of hydrogen peroxide",
+          "Respiration in humans",
+          "Glow stick reaction"
+        ],
+        "answer": "D",
+        "explanation": "Glow stick reaction is the correct answer because it is a chemical reaction that releases energy in the form of light, which is an example of an exothermic reaction.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following is a characteristic of an exothermic reaction?",
+        "options": [
+          "Absorbs energy from the surroundings",
+          "Releases energy to the surroundings",
+          "Has a negative entropy change",
+          "Has a constant temperature"
+        ],
+        "answer": "B",
+        "explanation": "Releases energy to the surroundings is the correct answer because it describes a characteristic of an exothermic reaction, where energy is released to the surroundings, often in the form of heat or light.",
+        "image_url": null
+      },
+      {
+        "question": "What type of energy is associated with the breaking of chemical bonds?",
+        "options": [
+          "Chemical potential energy",
+          "Thermal energy",
+          "Electromagnetic energy",
+          "Kinetic energy"
+        ],
+        "answer": "A",
+        "explanation": "Chemical potential energy is the correct answer because it refers to the energy stored in the bonds of atoms and molecules, which is released or absorbed during a chemical reaction.",
+        "image_url": null
+      },
+      {
+        "question": "Which of the following chemical reactions is an example of an endothermic reaction?",
+        "options": [
+          "Combustion of gasoline",
+          "Decomposition of ammonia",
+          "Photosynthesis in plants",
+          "Respiration in humans"
+        ],
+        "answer": "C",
+        "explanation": "Photosynthesis is the correct answer because it is an endothermic reaction that absorbs energy from sunlight to convert carbon dioxide and water into glucose and oxygen.",
+        "image_url": null
+      },
+      {
+        "question": "What is the term for the energy required to break the bonds of a molecule?",
+        "options": [
+          "Activation energy",
+          "Chemical potential energy",
+          "Thermal energy",
+          "Bond energy"
+        ],
+        "answer": "A",
+        "explanation": "Activation energy is the correct answer because it refers to the energy required to break the bonds of a molecule and initiate a chemical reaction.",
+        "image_url": null
+      },
+      {
+        "question": "Which type of chemical reaction has a positive entropy change?",
+        "options": [
+          "Exothermic reaction",
+          "Endothermic reaction",
+          "Reversible reaction",
+          "Irreversible reaction"
+        ],
+        "answer": "B",
+        "explanation": "Endothermic reaction is the correct answer because it often has a positive entropy change, as energy is absorbed from the surroundings and the system becomes more disordered.",
+        "image_url": null
+      }
+    ]
+  }
+]
