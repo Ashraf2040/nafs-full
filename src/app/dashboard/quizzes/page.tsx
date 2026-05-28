@@ -7,7 +7,7 @@ import QuizManager from "@/components/QuizManager";
 import {
   FileText, Calendar, Clock, Edit, PlayCircle, CheckCircle2,
   GraduationCap, Filter, BookOpen, Eye, Trash2, Upload, Download,
-  Sparkles, Search, LayoutGrid, List
+  Sparkles, Search, LayoutGrid, List, History, ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 import QuizFilters from "./QuizFilters";
@@ -189,6 +189,12 @@ export default async function QuizzesPage({
     });
   }
 
+  /* ─── Count completed quizzes for student badge ─── */
+  let completedCount = 0;
+  if (userRole === "STUDENT") {
+    completedCount = completedQuizIds.size;
+  }
+
   /* ─── Pagination link builder ─── */
   const buildPageLink = (pageNum: number) => {
     const query = new URLSearchParams();
@@ -225,6 +231,23 @@ export default async function QuizzesPage({
           </div>
 
           <div className="flex gap-3 flex-wrap items-center w-full md:w-auto">
+            {/* STUDENT: Completed Quizzes Link */}
+            {userRole === "STUDENT" && (
+              <Link
+                href="/dashboard/quizzes/completed"
+                className="flex items-center gap-2 bg-emerald-50 border-2 border-emerald-200 hover:border-emerald-300 hover:bg-emerald-100 text-emerald-700 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-sm"
+              >
+                <History size={16} />
+                Completed Quizzes
+                {completedCount > 0 && (
+                  <span className="bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    {completedCount}
+                  </span>
+                )}
+                <ArrowRight size={14} className="ml-0.5" />
+              </Link>
+            )}
+
             {userRole !== "STUDENT" && (
               <>
                 <QuizFilters
@@ -274,7 +297,7 @@ export default async function QuizzesPage({
                     }`}>
                       {isCompleted ? <CheckCircle2 size={20} /> : <FileText size={20} />}
                     </div>
-                    
+
                     <div className="flex flex-col items-end gap-1.5">
                       {isCompleted && (
                         <span className="text-[11px] font-bold px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-100 flex items-center gap-1.5">
@@ -416,7 +439,7 @@ export default async function QuizzesPage({
                 )
               )}
             </div>
-            
+
             {/* Mobile page indicator */}
             <span className="sm:hidden text-sm font-medium text-slate-600">
               Page {safePage} of {totalPages}

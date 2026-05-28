@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Find grade by level
+    // Find grade
     let gradeId: string | null = null;
 
     if (gradeLevel) {
@@ -43,6 +43,20 @@ export async function POST(req: NextRequest) {
       gradeId = grade?.id || null;
     }
 
+    // Find class
+    let classId: string | null = null;
+
+    if (className && gradeId) {
+      const existingClass = await prisma.class.findFirst({
+        where: {
+          name: className,
+          gradeId,
+        },
+      });
+
+      classId = existingClass?.id || null;
+    }
+
     // Create user
     const user = await prisma.user.create({
       data: {
@@ -51,7 +65,7 @@ export async function POST(req: NextRequest) {
         password: hashedPassword,
         role,
         gradeId,
-        className: className || null,
+        classId,
       },
     });
 

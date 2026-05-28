@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import {
   LayoutDashboard, BookOpen, Users, BarChart3, Settings,
   FileText, Award, GraduationCap, ClipboardList, Home,
-  Shield, UserCog
+  Shield, UserCog, CheckCircle2, History
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -18,6 +18,7 @@ export default function Sidebar() {
       { name: "Overview", icon: <LayoutDashboard size={20} />, href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "My Quizzes", icon: <FileText size={20} />, href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER"] },
       { name: "Available Quizzes", icon: <ClipboardList size={20} />, href: "/dashboard/quizzes", roles: ["STUDENT"] },
+      { name: "Completed Quizzes", icon: <CheckCircle2 size={20} />, href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
       { name: "Subjects", icon: <BookOpen size={20} />, href: "/dashboard/subjects", roles: ["ADMIN", "TEACHER"] },
       { name: "Students", icon: <Users size={20} />, href: "/dashboard/students", roles: ["ADMIN", "TEACHER"] },
       { name: "Statistics", icon: <BarChart3 size={20} />, href: "/dashboard/statistics", roles: ["ADMIN", "TEACHER"] },
@@ -39,6 +40,28 @@ export default function Sidebar() {
 
   const menuItems = getMenuItems();
 
+  // Compute active item with "most specific match wins" logic
+  // This prevents parent routes from being highlighted when child routes are active
+  const getActiveHref = (): string | null => {
+    if (!pathname) return null;
+
+    // Filter items whose href matches the current pathname
+    // An item matches if: pathname equals href exactly, OR pathname starts with href + "/"
+    const matches = menuItems.filter((item) => {
+      if (pathname === item.href) return true;
+      if (item.href !== "/dashboard" && pathname.startsWith(item.href + "/")) return true;
+      return false;
+    });
+
+    if (matches.length === 0) return null;
+
+    // If multiple match, pick the one with the longest href (most specific)
+    // e.g. /dashboard/quizzes/completed beats /dashboard/quizzes
+    return matches.reduce((a, b) => a.href.length >= b.href.length ? a : b).href;
+  };
+
+  const activeHref = getActiveHref();
+
   return (
     <aside className="w-64 bg-slate-900 text-slate-300 flex-shrink-0 min-h-[calc(100vh-4rem)] shadow-inner flex flex-col">
       <div className="p-6">
@@ -47,7 +70,7 @@ export default function Sidebar() {
         </p>
         <nav className="space-y-1">
           {menuItems.map((item) => {
-            const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname?.startsWith(item.href));
+            const isActive = activeHref === item.href;
             return (
               <Link
                 key={item.name}
@@ -63,7 +86,7 @@ export default function Sidebar() {
           })}
         </nav>
       </div>
-      
+
       {userRole === "STUDENT" && (
         <div className="p-6 mt-4">
           <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Quick Links</p>

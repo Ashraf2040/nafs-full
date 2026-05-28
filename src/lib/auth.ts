@@ -5,10 +5,12 @@ import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcrypt";
 import prisma from "@/lib/prisma";
 
-// Always use VERCEL_URL on Vercel (overrides any manual NEXTAUTH_URL set via env)
+// Always use VERCEL_URL on Vercel
 if (process.env.VERCEL_URL) {
   const url = process.env.VERCEL_URL.trim();
-  process.env.NEXTAUTH_URL = url.startsWith("http") ? url : `https://${url}`;
+  process.env.NEXTAUTH_URL = url.startsWith("http")
+    ? url
+    : `https://${url}`;
 }
 
 export const authOptions: NextAuthOptions = {
@@ -22,6 +24,7 @@ export const authOptions: NextAuthOptions = {
 
     CredentialsProvider({
       name: "Credentials",
+
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
@@ -33,7 +36,12 @@ export const authOptions: NextAuthOptions = {
         }
 
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email },
+          where: {
+            email: credentials.email,
+          },
+          include: {
+            class: true, // ✅
+          },
         });
 
         if (!user || !user.password) {
@@ -55,7 +63,8 @@ export const authOptions: NextAuthOptions = {
           email: user.email,
           role: user.role,
           gradeId: user.gradeId,
-          className: user.className,
+          classId: user.classId,
+          className: user.class?.name || null, // ✅ relation
         };
       },
     }),
@@ -72,8 +81,10 @@ export const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.role = (user as any).role;
         token.gradeId = (user as any).gradeId;
+        token.classId = (user as any).classId;
         token.className = (user as any).className;
       }
+
       return token;
     },
 
@@ -82,8 +93,10 @@ export const authOptions: NextAuthOptions = {
         (session.user as any).id = token.id;
         (session.user as any).role = token.role;
         (session.user as any).gradeId = token.gradeId;
+        (session.user as any).classId = token.classId;
         (session.user as any).className = token.className;
       }
+
       return session;
     },
   },

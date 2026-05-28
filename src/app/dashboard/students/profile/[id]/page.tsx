@@ -27,14 +27,14 @@ export default async function StudentProfile({ params }: { params: Promise<{ id:
   const student = await prisma.user.findUnique({
   where: { id: resolvedParams.id },
   include: {
-    grade: true, // 🔥 لازم ده
+    grade: true,
+    class: true, // ✅ أضف ده
     submissions: {
       include: { quiz: { include: { subject: true } } },
       orderBy: { completedAt: "desc" },
     },
   },
 });
-
   if (!student) return <div className="p-10 text-center text-red-500 font-bold">Student not found</div>;
 
   // Group stats by subject
@@ -79,7 +79,7 @@ export default async function StudentProfile({ params }: { params: Promise<{ id:
             <h1 className="text-3xl font-extrabold text-slate-900">{student.name}</h1>
             <p className="text-slate-500 flex items-center gap-2 mt-1">
              <Calendar size={16} />
-Grade {student.grade?.level ?? "N/A"} • {student.className || "No class"}
+Grade {student.grade?.level ?? "N/A"} • {student.class?.name || "No class"}
             </p>
           </div>
         </div>

@@ -114,6 +114,20 @@ export default function SolveQuizPage({
           setShowCalculator(true);
         }
 
+        // Fetch existing attempts for this student
+        if (userRole === "STUDENT") {
+          try {
+            const attemptsRes = await fetch(`/api/students/quiz-attempts?quizId=${quizId}`);
+            if (attemptsRes.ok) {
+              const attemptsData = await attemptsRes.json();
+              const usedAttempts = attemptsData.attemptsUsed || 0;
+              setAttempts(usedAttempts + 1);
+            }
+          } catch {
+            // Silently fail - default to attempt 1
+          }
+        }
+
         setQuiz({
           ...data,
           questions: normalizedQuestions,
