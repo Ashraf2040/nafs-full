@@ -15,7 +15,6 @@ export async function GET(req: Request) {
         }
 
         const userRole = (session.user as any).role;
-
         if (userRole === "STUDENT") {
             return NextResponse.json({ error: "Forbidden" }, { status: 403 });
         }
@@ -23,11 +22,10 @@ export async function GET(req: Request) {
         const students = await prisma.user.findMany({
             where: { role: "STUDENT" },
             include: {
+                grade: true,
+                class: true,
                 submissions: {
-                    select: {
-                        score: true,
-                        quizId: true,
-                    }
+                    select: { score: true, quizId: true }
                 },
                 _count: {
                     select: { submissions: true }
@@ -36,14 +34,26 @@ export async function GET(req: Request) {
             orderBy: { name: "asc" }
         });
 
-        return NextResponse.json(students);
+        const formattedStudents = students.map(s => ({
+            id: s.id,
+            name: s.name,
+            email: s.email,
+            gradeLevel: s.grade?.level ?? null,
+            gradeId: s.gradeId,
+            classId: s.classId,
+            className: s.class?.name ?? null,
+            role: s.role,
+            _count: { submissions: s._count.submissions },
+            submissions: s.submissions
+        }));
+
+        return NextResponse.json(formattedStudents);
     } catch (error) {
         console.error("STUDENTS_FETCH_ERROR:", error);
         return NextResponse.json({ error: "Failed to fetch students" }, { status: 500 });
     }
 }
 
-// POST - Create student
 export async function POST(req: Request) {
     try {
         const session = await getServerSession(authOptions);
@@ -57,7 +67,7 @@ export async function POST(req: Request) {
         }
 
         const body = await req.json();
-        const { name, email, gradeLevel, className, password } = body;
+        const { name, email, gradeLevel, classId, password } = body;
 
         if (!name || !email || !gradeLevel) {
             return NextResponse.json(
@@ -66,10 +76,7 @@ export async function POST(req: Request) {
             );
         }
 
-        const existing = await prisma.user.findUnique({
-            where: { email }
-        });
-
+        const existing = await prisma.user.findUnique({ where: { email } });
         if (existing) {
             return NextResponse.json(
                 { error: "A student with this email already exists" },
@@ -77,21 +84,27 @@ export async function POST(req: Request) {
             );
         }
 
-        const hashedPassword = await bcrypt.hash(password || "Student123!", 10);
-
-        // 🔥 convert gradeLevel → gradeId
         const grade = await prisma.grade.findFirst({
-            where: {
-                level: Number(gradeLevel),
-            },
+            where: { level: Number(gradeLevel) },
         });
-
         if (!grade) {
-            return NextResponse.json(
-                { error: "Invalid grade level" },
-                { status: 400 }
-            );
+            return NextResponse.json({ error: "Invalid grade level" }, { status: 400 });
         }
+
+        let finalClassId = classId || null;
+        if (finalClassId) {
+            const classExists = await prisma.class.findFirst({
+                where: { id: finalClassId, gradeId: grade.id }
+            });
+            if (!classExists) {
+                return NextResponse.json(
+                    { error: "Selected class does not belong to the chosen grade" },
+                    { status: 400 }
+                );
+            }
+        }
+
+        const hashedPassword = await bcrypt.hash(password || "Student123!", 10);
 
         const student = await prisma.user.create({
             data: {
@@ -100,11 +113,22 @@ export async function POST(req: Request) {
                 password: hashedPassword,
                 role: "STUDENT",
                 gradeId: grade.id,
-                className: className || null,
+                classId: finalClassId,
+            },
+            include: {
+                grade: true,
+                class: true
             }
         });
 
-        return NextResponse.json({ success: true, student });
+        return NextResponse.json({ 
+            success: true, 
+            student: {
+                ...student,
+                gradeLevel: student.grade?.level,
+                className: student.class?.name
+            }
+        });
 
     } catch (error) {
         console.error("STUDENT_CREATE_ERROR:", error);

@@ -22,11 +22,13 @@ model User {
   email     String   @unique
   password  String?
   image     String?
-  className String?
   role      Role     @default(STUDENT)
 
   gradeId   String?
   grade     Grade?   @relation(fields: [gradeId], references: [id])
+  
+  classId   String?   // NEW: Link to Class model
+  class     Class?    @relation(fields: [classId], references: [id])
 
   quizzes     Quiz[]              @relation("CreatedBy")
   submissions Result[]
@@ -60,10 +62,23 @@ model Grade {
   quizzes     Quiz[]
   assignments TeacherAssignment[]
   users       User[]
+  classes     Class[]   // NEW
 
   createdAt DateTime @default(now())
 }
-
+model Class {
+  id        String   @id @default(cuid())
+  name      String   // e.g., "A", "B", "6/1", "Science-A"
+  
+  gradeId   String
+  grade     Grade    @relation(fields: [gradeId], references: [id], onDelete: Cascade)
+  
+  users     User[]
+  
+  createdAt DateTime @default(now())
+  
+  @@unique([name, gradeId])  // Same class name can exist in different grades
+}
 /* ===================== TEACHER ASSIGNMENT ===================== */
 
 model TeacherAssignment {

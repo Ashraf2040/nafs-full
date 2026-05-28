@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import {
   Users, Upload, Filter, UserCircle2, FileText, Search,
   Loader2, GraduationCap, TrendingUp, AlertCircle,
-  Plus, X, Download, UserPlus, Pencil
+  Plus, X, Download, UserPlus, Pencil, School, Layers
 } from "lucide-react";
 import Link from "next/link";
 import StudentEditModal from "@/components/StudentEditModal";
@@ -13,15 +13,28 @@ interface Student {
   id: string;
   name: string;
   email: string;
-  gradeLevel: number;
+  gradeLevel: number | null;
+  gradeId: string | null;
+  classId: string | null;
   className: string | null;
   role: string;
-  _count?: {
-    submissions: number;
-  };
-  submissions?: {
-    score: number;
-  }[];
+  _count?: { submissions: number };
+  submissions?: { score: number }[];
+}
+
+interface ClassItem {
+  id: string;
+  name: string;
+  gradeId: string;
+  grade: { level: number };
+  _count: { users: number };
+}
+
+interface GradeItem {
+  id: string;
+  level: number;
+  name: string | null;
+  _count: { users: number; classes: number };
 }
 
 export default function StudentsPage() {
@@ -35,26 +48,69 @@ export default function StudentsPage() {
     return null;
   }
 
-  const [students, setStudents] = useState<Student[]>([]);              // FIXED
+  const [students, setStudents] = useState<Student[]>([]);
+  const [classes, setClasses] = useState<ClassItem[]>([]);
+  const [grades, setGrades] = useState<GradeItem[]>([]);
   const [gradeFilter, setGradeFilter] = useState("All");
-  const [classFilter, setClassFilter] = useState("");
+  const [classFilter, setClassFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [isImporting, setIsImporting] = useState(false);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({ total: 0, active: 0, struggling: 0 });
 
+  // Create Student Form
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [createForm, setCreateForm] = useState({
     name: "",
     email: "",
     gradeLevel: "6",
-    className: "",
+    classId: "",
     password: "",
   });
   const [createError, setCreateError] = useState("");
 
-  const [editingStudent, setEditingStudent] = useState<Student | null>(null);   // FIXED
+  // Add Class Modal
+  const [showAddClass, setShowAddClass] = useState(false);
+  const [classForm, setClassForm] = useState({ name: "", gradeLevel: "6" });
+  const [isAddingClass, setIsAddingClass] = useState(false);
+  const [classError, setClassError] = useState("");
+
+  // Add Grade Modal
+  const [showAddGrade, setShowAddGrade] = useState(false);
+  const [gradeForm, setGradeForm] = useState({ level: "", name: "" });
+  const [isAddingGrade, setIsAddingGrade] = useState(false);
+  const [gradeError, setGradeError] = useState("");
+
+  const [editingStudent, setEditingStudent] = useState<Student | null>(null);
+
+  // Fetch classes for the selected grade
+  const fetchClasses = async (gradeLevel?: string) => {
+    try {
+      const url = gradeLevel 
+        ? `/api/classes?gradeLevel=${gradeLevel}` 
+        : '/api/classes';
+      const res = await fetch(url);
+      if (res.ok) {
+        const data = await res.json();
+        setClasses(data);
+      }
+    } catch (error) {
+      console.error("Failed to fetch classes:", error);
+    }
+  };
+
+  const fetchGrades = async () => {
+    try {
+      const res = await fetch('/api/grades');
+      if (res.ok) {
+        const data = await res.json();
+        setGrades(data);
+      }
+    } catch (error) {
+      console.error("Failed to fetch grades:", error);
+    }
+  };
 
   const fetchStudents = async () => {
     setLoading(true);
@@ -86,15 +142,101 @@ export default function StudentsPage() {
     }
   };
 
-  useEffect(() => { fetchStudents(); }, []);
+  useEffect(() => { 
+    fetchStudents(); 
+    fetchClasses(); 
+    fetchGrades();
+  }, []);
+
+  // Fetch classes when grade changes in create form
+  useEffect(() => {
+    if (showCreateForm && createForm.gradeLevel) {
+      fetchClasses(createForm.gradeLevel);
+      setCreateForm(prev => ({ ...prev, classId: "" }));
+    }
+  }, [createForm.gradeLevel, showCreateForm]);
+
+  // ==================== ADD CLASS ====================
+  const handleAddClass = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setClassError("");
+    setIsAddingClass(true);
+
+    try {
+      const res = await fetch("/api/classes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: classForm.name.trim(),
+          gradeLevel: parseInt(classForm.gradeLevel),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setClassError(data.error || "Failed to create class");
+        setIsAddingClass(false);
+        return;
+      }
+
+      setClassForm({ name: "", gradeLevel: "6" });
+      setShowAddClass(false);
+      fetchClasses();
+      // Refresh classes in create form if same grade
+      if (showCreateForm) {
+        fetchClasses(createForm.gradeLevel);
+      }
+      alert(`Class "${data.class.name}" created successfully!`);
+    } catch (error) {
+      setClassError("Network error. Please try again.");
+    } finally {
+      setIsAddingClass(false);
+    }
+  };
+
+  // ==================== ADD GRADE ====================
+  const handleAddGrade = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setGradeError("");
+    setIsAddingGrade(true);
+
+    try {
+      const res = await fetch("/api/grades", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          level: parseInt(gradeForm.level),
+          name: gradeForm.name.trim() || undefined,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setGradeError(data.error || "Failed to create grade");
+        setIsAddingGrade(false);
+        return;
+      }
+
+      setGradeForm({ level: "", name: "" });
+      setShowAddGrade(false);
+      fetchGrades();
+      alert(`Grade ${data.grade.level} created successfully!`);
+    } catch (error) {
+      setGradeError("Network error. Please try again.");
+    } finally {
+      setIsAddingGrade(false);
+    }
+  };
 
   const handleExportRoster = () => {
     const headers = ["Name", "Email", "Grade", "Class", "Password"];
     const rows = students.map((s) => [
       s.name,
       s.email,
-      s.gradeLevel,
-      s.className || "",
+      s.gradeLevel ?? "",
+      s.className ?? "",
       "Student123!",
     ]);
 
@@ -230,7 +372,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           name: createForm.name,
           email: createForm.email,
           gradeLevel: parseInt(createForm.gradeLevel),
-          className: createForm.className || null,
+          classId: createForm.classId || undefined,
           password: createForm.password || "Student123!",
         }),
       });
@@ -243,7 +385,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
         return;
       }
 
-      setCreateForm({ name: "", email: "", gradeLevel: "6", className: "", password: "" });
+      setCreateForm({ name: "", email: "", gradeLevel: "6", classId: "", password: "" });
       setShowCreateForm(false);
       fetchStudents();
       alert("Student created successfully!");
@@ -258,8 +400,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
     const matchesGrade =
       gradeFilter === "All" || s.gradeLevel === parseInt(gradeFilter);
     const matchesClass =
-      !classFilter ||
-      s.className?.toLowerCase().includes(classFilter.toLowerCase());
+      classFilter === "All" || s.classId === classFilter;
     const matchesSearch =
       !searchQuery ||
       s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -271,6 +412,12 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
     if (!student.submissions?.length) return null;
     return student.submissions.reduce((a, b) => a + b.score, 0) / student.submissions.length;
   };
+
+  const availableClasses = gradeFilter === "All" 
+    ? classes 
+    : classes.filter(c => c.grade.level === parseInt(gradeFilter));
+
+  const gradeLevels = grades.map(g => g.level).sort((a, b) => a - b);
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
@@ -321,6 +468,22 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           </p>
         </div>
         <div className="flex gap-3 flex-wrap">
+          {/* ADD GRADE BUTTON */}
+          <button
+            onClick={() => setShowAddGrade(true)}
+            className="bg-violet-600 hover:bg-violet-700 text-white px-5 py-3 rounded-2xl font-bold cursor-pointer flex items-center gap-2 transition-all shadow-lg shadow-violet-100 active:scale-95"
+          >
+            <Layers size={20} /> Add Grade
+          </button>
+
+          {/* ADD CLASS BUTTON */}
+          <button
+            onClick={() => setShowAddClass(true)}
+            className="bg-amber-600 hover:bg-amber-700 text-white px-5 py-3 rounded-2xl font-bold cursor-pointer flex items-center gap-2 transition-all shadow-lg shadow-amber-100 active:scale-95"
+          >
+            <School size={20} /> Add Class
+          </button>
+
           <button
             onClick={() => setShowCreateForm(!showCreateForm)}
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-2xl font-bold cursor-pointer flex items-center gap-2 transition-all shadow-lg shadow-emerald-100 active:scale-95"
@@ -363,6 +526,133 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
         </button>
       </div>
 
+      {/* ==================== ADD GRADE MODAL ==================== */}
+      {showAddGrade && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white w-full max-w-md rounded-[2rem] shadow-2xl p-8">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <Layers className="text-violet-600" size={24} /> Add New Grade
+              </h2>
+              <button onClick={() => setShowAddGrade(false)} className="p-2 hover:bg-slate-100 rounded-full">
+                <X size={20} />
+              </button>
+            </div>
+
+            {gradeError && (
+              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-semibold flex items-center gap-2">
+                <AlertCircle size={18} /> {gradeError}
+              </div>
+            )}
+
+            <form onSubmit={handleAddGrade} className="space-y-4">
+              <div>
+                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
+                  Grade Level *
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  max="12"
+                  required
+                  value={gradeForm.level}
+                  onChange={(e) => setGradeForm({ ...gradeForm, level: e.target.value })}
+                  placeholder="e.g. 10"
+                  className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-violet-400 outline-none font-medium text-slate-700"
+                />
+              </div>
+              <div>
+                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
+                  Grade Name (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={gradeForm.name}
+                  onChange={(e) => setGradeForm({ ...gradeForm, name: e.target.value })}
+                  placeholder="e.g. Grade 10, Year 10"
+                  className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-violet-400 outline-none font-medium text-slate-700"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isAddingGrade}
+                className="w-full bg-violet-600 hover:bg-violet-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md"
+              >
+                {isAddingGrade ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                {isAddingGrade ? "Creating..." : "Create Grade"}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ==================== ADD CLASS MODAL ==================== */}
+      {showAddClass && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white w-full max-w-md rounded-[2rem] shadow-2xl p-8">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <School className="text-amber-600" size={24} /> Add New Class
+              </h2>
+              <button onClick={() => setShowAddClass(false)} className="p-2 hover:bg-slate-100 rounded-full">
+                <X size={20} />
+              </button>
+            </div>
+
+            {classError && (
+              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-semibold flex items-center gap-2">
+                <AlertCircle size={18} /> {classError}
+              </div>
+            )}
+
+            <form onSubmit={handleAddClass} className="space-y-4">
+              <div>
+                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
+                  Grade Level *
+                </label>
+                <select
+                  required
+                  value={classForm.gradeLevel}
+                  onChange={(e) => setClassForm({ ...classForm, gradeLevel: e.target.value })}
+                  className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-400 outline-none font-medium text-slate-700 cursor-pointer bg-white"
+                >
+                  {gradeLevels.length === 0 && (
+                    <option value="">No grades available - add a grade first</option>
+                  )}
+                  {gradeLevels.map((g) => (
+                    <option key={g} value={g}>
+                      Grade {g}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
+                  Class Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={classForm.name}
+                  onChange={(e) => setClassForm({ ...classForm, name: e.target.value })}
+                  placeholder="e.g. A, B, Science-A, 6/1"
+                  className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-400 outline-none font-medium text-slate-700"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isAddingClass}
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md"
+              >
+                {isAddingClass ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                {isAddingClass ? "Creating..." : "Create Class"}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Create Student Form */}
       {showCreateForm && (
         <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm">
           <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
@@ -387,9 +677,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
                 type="text"
                 required
                 value={createForm.name}
-                onChange={(e) =>
-                  setCreateForm({ ...createForm, name: e.target.value })
-                }
+                onChange={(e) => setCreateForm({ ...createForm, name: e.target.value })}
                 placeholder="e.g. John Doe"
                 className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700"
               />
@@ -402,9 +690,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
                 type="email"
                 required
                 value={createForm.email}
-                onChange={(e) =>
-                  setCreateForm({ ...createForm, email: e.target.value })
-                }
+                onChange={(e) => setCreateForm({ ...createForm, email: e.target.value })}
                 placeholder="e.g. john@school.edu"
                 className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700"
               />
@@ -416,32 +702,57 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
               <select
                 required
                 value={createForm.gradeLevel}
-                onChange={(e) =>
-                  setCreateForm({ ...createForm, gradeLevel: e.target.value })
-                }
+                onChange={(e) => setCreateForm({ ...createForm, gradeLevel: e.target.value })}
                 className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700 cursor-pointer bg-white"
               >
-                {[3, 4, 5, 6, 7, 8, 9].map((g) => (
+                {gradeLevels.length === 0 && (
+                  <option value="">No grades - add one first</option>
+                )}
+                {gradeLevels.map((g) => (
                   <option key={g} value={g}>
                     Grade {g}
                   </option>
                 ))}
               </select>
             </div>
+            
+            {/* Class Dropdown */}
             <div>
               <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
-                Class Name
+                Class *
               </label>
-              <input
-                type="text"
-                value={createForm.className}
-                onChange={(e) =>
-                  setCreateForm({ ...createForm, className: e.target.value })
-                }
-                placeholder="e.g. A, B, 6/1"
-                className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700"
-              />
+              <select
+                required
+                value={createForm.classId}
+                onChange={(e) => setCreateForm({ ...createForm, classId: e.target.value })}
+                className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700 cursor-pointer bg-white"
+              >
+                <option value="">Select a class...</option>
+                {classes
+                  .filter(c => c.grade.level === parseInt(createForm.gradeLevel))
+                  .map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name} ({c._count.users} students)
+                  </option>
+                ))}
+              </select>
+              {classes.filter(c => c.grade.level === parseInt(createForm.gradeLevel)).length === 0 && (
+                <p className="text-xs text-amber-600 mt-1">
+                  No classes for Grade {createForm.gradeLevel}. 
+                  <button 
+                    type="button"
+                    onClick={() => {
+                      setClassForm({ name: "", gradeLevel: createForm.gradeLevel });
+                      setShowAddClass(true);
+                    }}
+                    className="underline ml-1 hover:text-amber-800 font-semibold"
+                  >
+                    Add one?
+                  </button>
+                </p>
+              )}
             </div>
+
             <div>
               <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
                 Password *
@@ -450,9 +761,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
                 type="password"
                 required
                 value={createForm.password}
-                onChange={(e) =>
-                  setCreateForm({ ...createForm, password: e.target.value })
-                }
+                onChange={(e) => setCreateForm({ ...createForm, password: e.target.value })}
                 placeholder="Min 6 characters"
                 minLength={6}
                 className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700"
@@ -464,11 +773,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
                 disabled={isCreating}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold transition-all shadow-md flex items-center justify-center gap-2 disabled:opacity-50"
               >
-                {isCreating ? (
-                  <Loader2 size={18} className="animate-spin" />
-                ) : (
-                  <Plus size={18} />
-                )}
+                {isCreating ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
                 {isCreating ? "Creating..." : "Create Student"}
               </button>
             </div>
@@ -482,17 +787,37 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           <Filter size={20} className="text-indigo-500" />
           <select
             className="w-full py-3 bg-transparent outline-none font-bold text-slate-700 cursor-pointer"
-            onChange={(e) => setGradeFilter(e.target.value)}
+            onChange={(e) => {
+              setGradeFilter(e.target.value);
+              setClassFilter("All");
+            }}
             value={gradeFilter}
           >
             <option value="All">All Grades</option>
-            {[3, 4, 5, 6, 7, 8, 9].map((g) => (
+            {gradeLevels.map((g) => (
               <option key={g} value={g}>
                 Grade {g}
               </option>
             ))}
           </select>
         </div>
+        
+        <div className="flex-1 bg-white p-2 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3 px-4">
+          <School size={20} className="text-indigo-500" />
+          <select
+            className="w-full py-3 bg-transparent outline-none font-bold text-slate-700 cursor-pointer"
+            onChange={(e) => setClassFilter(e.target.value)}
+            value={classFilter}
+          >
+            <option value="All">All Classes</option>
+            {availableClasses.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name} (Grade {c.grade.level})
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="flex-1 bg-white p-2 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3 px-4">
           <Search size={20} className="text-indigo-500" />
           <input
@@ -501,16 +826,6 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
             className="w-full py-3 bg-transparent outline-none font-medium text-slate-700"
             onChange={(e) => setSearchQuery(e.target.value)}
             value={searchQuery}
-          />
-        </div>
-        <div className="flex-1 bg-white p-2 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3 px-4">
-          <GraduationCap size={20} className="text-indigo-500" />
-          <input
-            type="text"
-            placeholder="Filter by Class (e.g. A, B, 6/1)..."
-            className="w-full py-3 bg-transparent outline-none font-medium text-slate-700"
-            onChange={(e) => setClassFilter(e.target.value)}
-            value={classFilter}
           />
         </div>
       </div>
@@ -529,20 +844,14 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           <tbody className="divide-y divide-slate-50">
             {loading ? (
               <tr>
-                <td
-                  colSpan={4}
-                  className="p-20 text-center text-slate-400 font-bold italic"
-                >
+                <td colSpan={4} className="p-20 text-center text-slate-400 font-bold italic">
                   <Loader2 className="animate-spin mx-auto mb-4" size={32} />
                   Loading student records...
                 </td>
               </tr>
             ) : filteredStudents.length === 0 ? (
               <tr>
-                <td
-                  colSpan={4}
-                  className="p-20 text-center text-slate-400 font-bold"
-                >
+                <td colSpan={4} className="p-20 text-center text-slate-400 font-bold">
                   <Users size={48} className="mx-auto mb-4 text-slate-300" />
                   No students found matching your criteria.
                 </td>
@@ -551,19 +860,14 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
               filteredStudents.map((student: Student) => {
                 const avg = getStudentAverage(student);
                 return (
-                  <tr
-                    key={student.id}
-                    className="hover:bg-slate-50/80 transition-all group"
-                  >
+                  <tr key={student.id} className="hover:bg-slate-50/80 transition-all group">
                     <td className="p-8">
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-black text-lg border border-indigo-100">
                           {student.name[0]}
                         </div>
                         <div>
-                          <p className="font-bold text-slate-800 text-lg">
-                            {student.name}
-                          </p>
+                          <p className="font-bold text-slate-800 text-lg">{student.name}</p>
                           <p className="text-sm text-slate-400">{student.email}</p>
                         </div>
                       </div>
@@ -571,25 +875,25 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
                     <td className="p-8">
                       <div className="flex items-center gap-2">
                         <span className="bg-slate-100 px-3 py-1 rounded-lg font-bold text-slate-600 text-sm">
-                          Grade {student.gradeLevel}
+                          Grade {student.gradeLevel ?? "?"}
                         </span>
-                        <span className="text-indigo-400 font-medium text-sm">
-                          {student.className || "Unassigned"}
-                        </span>
+                        {student.className && (
+                          <span className="bg-indigo-50 px-3 py-1 rounded-lg font-bold text-indigo-600 text-sm border border-indigo-100">
+                            {student.className}
+                          </span>
+                        )}
+                        {!student.className && (
+                          <span className="text-amber-400 font-medium text-sm">No class</span>
+                        )}
                       </div>
                     </td>
                     <td className="p-8">
                       {avg !== null ? (
                         <div className="flex items-center gap-2">
-                          <div
-                            className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm ${
-                              avg >= 80
-                                ? "bg-emerald-100 text-emerald-700"
-                                : avg >= 50
-                                ? "bg-amber-100 text-amber-700"
-                                : "bg-red-100 text-red-700"
-                            }`}
-                          >
+                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm ${
+                            avg >= 80 ? "bg-emerald-100 text-emerald-700" : 
+                            avg >= 50 ? "bg-amber-100 text-amber-700" : "bg-red-100 text-red-700"
+                          }`}>
                             {avg.toFixed(0)}%
                           </div>
                           <span className="text-xs text-slate-400">
@@ -610,7 +914,6 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
                         >
                           <Pencil size={16} /> Edit
                         </button>
-
                         <Link
                           href={`/dashboard/students/profile/${student.id}`}
                           className="inline-flex items-center gap-2 bg-slate-50 text-indigo-600 px-5 py-2.5 rounded-xl font-bold hover:bg-indigo-600 hover:text-white transition-all"

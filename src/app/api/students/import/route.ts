@@ -18,7 +18,9 @@ export async function POST(req: Request) {
       );
     }
 
-    const operations = students.map(async (s: any) => {
+    const results = [];
+
+    for (const s of students) {
       const name = s.name || s.Name;
       const email = s.email || s.Email;
       const gradeLevel = s.gradeLevel !== undefined ? s.gradeLevel : s.Grade;
@@ -27,22 +29,36 @@ export async function POST(req: Request) {
 
       const hashedPassword = bcrypt.hashSync(password, 10);
 
-      // 🔥 convert gradeLevel → gradeId
+      // Find grade
       const grade = await prisma.grade.findFirst({
-        where: {
-          level: Number(gradeLevel),
-        },
+        where: { level: Number(gradeLevel) },
       });
 
       if (!grade) {
         throw new Error(`Grade not found for level: ${gradeLevel}`);
       }
 
-      return prisma.user.upsert({
+      // Handle class
+      let classId = null;
+      if (className) {
+        const existingClass = await prisma.class.findFirst({
+          where: { name: className, gradeId: grade.id }
+        });
+        if (existingClass) {
+          classId = existingClass.id;
+        } else {
+          const newClass = await prisma.class.create({
+            data: { name: className, gradeId: grade.id }
+          });
+          classId = newClass.id;
+        }
+      }
+
+      const student = await prisma.user.upsert({
         where: { email },
         update: {
           gradeId: grade.id,
-          className: className || null,
+          classId,
           name,
           ...(password ? { password: hashedPassword } : {}),
         },
@@ -52,21 +68,21 @@ export async function POST(req: Request) {
           password: hashedPassword,
           role: "STUDENT",
           gradeId: grade.id,
-          className: className || null,
+          classId,
         },
       });
-    });
-
-    await Promise.all(operations);
+      
+      results.push(student);
+    }
 
     return NextResponse.json({
       success: true,
-      count: students.length,
+      count: results.length,
     });
   } catch (error) {
     console.error("IMPORT_ERROR:", error);
     return NextResponse.json(
-      { error: "Database error" },
+      { error: error instanceof Error ? error.message : "Database error" },
       { status: 500 }
     );
   }
