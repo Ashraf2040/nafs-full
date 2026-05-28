@@ -21,7 +21,7 @@ interface GroupedAssignment {
   grades: number[];
 }
 
-export default function QuizManager() {
+export default function QuizManager2() {
   const { data: session, status: sessionStatus } = useSession();
   const userRole = (session?.user as any)?.role;
 

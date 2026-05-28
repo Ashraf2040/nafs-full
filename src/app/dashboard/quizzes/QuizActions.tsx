@@ -75,7 +75,7 @@ export default function QuizActions({ quizId, isPublished, title }: QuizActionsP
             <h3 className="text-lg font-bold text-slate-800">Delete Quiz?</h3>
           </div>
           <p className="text-slate-600 mb-6">
-            Are you sure you want to delete <strong className="text-slate-800">"{title}"</strong>? 
+            Are you sure you want to delete <strong className="text-slate-800">"{title}"</strong>?
             This action cannot be undone. All questions and student results for this quiz will be permanently removed.
           </p>
           <div className="flex gap-3">
@@ -106,7 +106,7 @@ export default function QuizActions({ quizId, isPublished, title }: QuizActionsP
         <button
           onClick={handlePublish}
           disabled={isPublishing}
-          className="flex-[2] bg-amber-500 hover:bg-amber-600 disabled:bg-amber-300 text-white text-center py-2.5 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-1.5 shadow-md hover:shadow-amber-200"
+          className="flex-[2] bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-center py-2.5 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-1.5 shadow-md hover:shadow-amber-200"
         >
           {isPublishing ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
           {isPublishing ? "Publishing..." : "Publish"}

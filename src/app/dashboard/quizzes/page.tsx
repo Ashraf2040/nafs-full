@@ -13,6 +13,7 @@ import Link from "next/link";
 import QuizFilters from "./QuizFilters";
 import QuizActions from "./QuizActions";
 import CsvImportButton from "./CsvImportButton";
+import QuizManager2 from "@/components/QuizManager";
 
 export const dynamic = "force-dynamic";
 
@@ -203,7 +204,8 @@ export default async function QuizzesPage({
     <div className="mx-auto max-w-7xl space-y-8">
       {(userRole === "ADMIN" || userRole === "TEACHER") && (
         <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 lg:p-8">
-          <QuizManager />
+          {/* <QuizManager /> */}
+          <QuizManager2 />
         </div>
       )}
 
