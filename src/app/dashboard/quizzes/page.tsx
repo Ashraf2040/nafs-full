@@ -15,7 +15,7 @@ import QuizActions from "./QuizActions";
 import CsvImportButton from "./CsvImportButton";
 import QuizManager2 from "@/components/QuizManager";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export default async function QuizzesPage({
   searchParams,
@@ -57,29 +57,31 @@ export default async function QuizzesPage({
     whereClause.gradeId = currentUser.grade.id;
   }
 
+  /* ─── Teacher assignments ─── */
+  let teacherAssignments: any[] | null = null;
   if (userRole === "TEACHER") {
-    const assignments = await prisma.teacherAssignment.findMany({
+    teacherAssignments = await prisma.teacherAssignment.findMany({
       where: { teacherId: userId },
       include: { subject: true, grade: true },
     });
 
-    if (assignments.length === 0) {
+    if (teacherAssignments.length === 0) {
       whereClause.id = "none";
     } else {
-      whereClause.OR = assignments.map((a) => ({
+      whereClause.OR = teacherAssignments.map((a) => ({
         subjectId: a.subjectId,
         gradeId: a.gradeId,
       }));
 
       if (filterSubject) {
-        const allowedSubjectIds = assignments
+        const allowedSubjectIds = teacherAssignments
           .filter((a) => a.subject.name === filterSubject)
           .map((a) => a.subjectId);
         if (allowedSubjectIds.length === 0) whereClause.id = "none";
         else whereClause.subjectId = { in: allowedSubjectIds };
       }
       if (filterGrade) {
-        const allowedGradeIds = assignments
+        const allowedGradeIds = teacherAssignments
           .filter((a) => a.grade.level === filterGrade)
           .map((a) => a.gradeId);
         if (allowedGradeIds.length === 0) whereClause.id = "none";
@@ -101,73 +103,75 @@ export default async function QuizzesPage({
   const quizWhere =
     Object.keys(whereClause).length > 0 ? whereClause : undefined;
 
-  /* ─── Pagination ─── */
-  const totalCount = await prisma.quiz.count({ where: quizWhere });
+  /* ─── Batch independent queries ─── */
+  const pageSkip = (Math.min(currentPage, Math.max(1, Math.ceil(1 / ITEMS_PER_PAGE))) - 1) * ITEMS_PER_PAGE;
+  const [
+    totalCount,
+    quizzes,
+    allSubjects,
+    allGrades,
+    allOutcomes,
+    studentResultsData,
+  ] = await Promise.all([
+    prisma.quiz.count({ where: quizWhere }),
+    prisma.quiz.findMany({
+      where: quizWhere,
+      include: {
+        subject: true,
+        grade: true,
+        _count: { select: { questions: true } },
+      },
+      orderBy: { createdAt: "desc" },
+      skip: pageSkip,
+      take: ITEMS_PER_PAGE,
+    }),
+    prisma.subject.findMany({ orderBy: { name: "asc" } }),
+    prisma.grade.findMany({ orderBy: { level: "asc" } }),
+    prisma.learningOutcome.findMany({
+      select: {
+        id: true,
+        outcomeText: true,
+        grade: true,
+        subject: true,
+        indicatorText: true,
+      },
+      orderBy: { createdAt: "desc" },
+    }),
+    userRole === "STUDENT"
+      ? prisma.result.findMany({
+          where: { studentId: userId },
+          select: { id: true, quizId: true, score: true },
+        })
+      : Promise.resolve([]),
+  ]);
+
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
   const safePage = Math.min(currentPage, Math.max(1, totalPages));
-  const skip = (safePage - 1) * ITEMS_PER_PAGE;
 
-  const quizzes = await prisma.quiz.findMany({
-    where: quizWhere,
-    include: {
-      subject: true,
-      grade: true,
-      questions: true,
-      results: userRole === "STUDENT" ? { where: { studentId: userId } } : true,
-    },
-    orderBy: { createdAt: "desc" },
-    skip,
-    take: ITEMS_PER_PAGE,
-  });
-
-  /* ─── Dropdown data ─── */
-  let allSubjects = await prisma.subject.findMany({ orderBy: { name: "asc" } });
-  let allGrades = await prisma.grade.findMany({ orderBy: { level: "asc" } });
-
-  if (userRole === "TEACHER") {
-    const assignments = await prisma.teacherAssignment.findMany({
-      where: { teacherId: userId },
-      include: { subject: true, grade: true },
-    });
-    const allowedSubjectIds = [
-      ...new Set(assignments.map((a) => a.subjectId)),
-    ];
-    const allowedGradeIds = [...new Set(assignments.map((a) => a.gradeId))];
-    allSubjects = allSubjects.filter((s) => allowedSubjectIds.includes(s.id));
-    allGrades = allGrades.filter((g) => allowedGradeIds.includes(g.id));
+  /* ─── Teacher filter for dropdowns ─── */
+  let filteredSubjects = allSubjects;
+  let filteredGrades = allGrades;
+  if (userRole === "TEACHER" && teacherAssignments) {
+    const allowedSubjectIds = new Set(teacherAssignments.map((a) => a.subjectId));
+    const allowedGradeIds = new Set(teacherAssignments.map((a) => a.gradeId));
+    filteredSubjects = allSubjects.filter((s) => allowedSubjectIds.has(s.id));
+    filteredGrades = allGrades.filter((g) => allowedGradeIds.has(g.id));
   }
 
-  const allQuizzesForGrades = await prisma.quiz.findMany({
-    select: { grade: { select: { level: true } } },
-  });
-  const quizGradeLevels = [
-    ...new Set(allQuizzesForGrades.map((q) => q.grade.level)),
-  ].sort((a, b) => a - b);
+  const quizGradeLevels = filteredGrades.map((g) => g.level);
 
-  const allOutcomes = await prisma.learningOutcome.findMany({
-    select: {
-      id: true,
-      outcomeText: true,
-      grade: true,
-      subject: true,
-      indicatorText: true,
-    },
-    orderBy: { createdAt: "desc" },
-  });
-
+  /* ─── Filter outcomes ─── */
   const filteredOutcomes = allOutcomes.filter((o) => {
     if (filterSubject && o.subject !== filterSubject) return false;
     if (filterGrade && o.grade !== filterGrade) return false;
     return true;
   });
 
+  /* ─── Indicators ─── */
   let filteredIndicators: { id: string; indicatorText: string }[] = [];
   if (filterOutcome) {
-    const outcomeData = await prisma.learningOutcome.findUnique({
-      where: { id: filterOutcome },
-      select: { id: true, indicatorText: true },
-    });
-    if (outcomeData) filteredIndicators = [outcomeData];
+    const outcomeData = allOutcomes.find((o) => o.id === filterOutcome);
+    if (outcomeData) filteredIndicators = [{ id: outcomeData.id, indicatorText: outcomeData.indicatorText }];
   } else {
     filteredIndicators = filteredOutcomes.map((o) => ({
       id: o.id,
@@ -179,11 +183,7 @@ export default async function QuizzesPage({
   let studentResults: Record<string, any> = {};
   let completedQuizIds: Set<string> = new Set();
   if (userRole === "STUDENT") {
-    const results = await prisma.result.findMany({
-      where: { studentId: userId },
-      include: { quiz: true },
-    });
-    results.forEach((r) => {
+    studentResultsData.forEach((r) => {
       studentResults[r.quizId] = r;
       completedQuizIds.add(r.quizId);
     });
@@ -251,7 +251,7 @@ export default async function QuizzesPage({
             {userRole !== "STUDENT" && (
               <>
                 <QuizFilters
-                  subjects={allSubjects}
+                  subjects={filteredSubjects}
                   grades={quizGradeLevels}
                   outcomes={filteredOutcomes}
                   indicators={filteredIndicators}
@@ -275,7 +275,6 @@ export default async function QuizzesPage({
           {quizzes.map((quiz) => {
             const isCompleted = completedQuizIds.has(quiz.id);
             const result = studentResults[quiz.id];
-            const questionsList = Array.isArray(quiz.questions) ? quiz.questions : [];
 
             if (userRole === "STUDENT" && isCompleted) return null;
 
@@ -333,7 +332,7 @@ export default async function QuizzesPage({
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-2 text-slate-600">
                         <Clock size={15} className="text-slate-400 flex-shrink-0" />
-                        <span className="font-medium">{questionsList?.length || 0} Qs</span>
+                        <span className="font-medium">{quiz._count?.questions ?? 0} Qs</span>
                       </div>
                       <div className="flex items-center gap-2 text-slate-500 text-xs">
                         <Calendar size={13} className="text-slate-300 flex-shrink-0" />

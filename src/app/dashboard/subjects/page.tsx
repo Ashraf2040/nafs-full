@@ -7,7 +7,7 @@ import Link from "next/link";
 import { BookOpen, Edit, Plus, BarChart3, FileText, Users } from "lucide-react";
 import SubjectCreateModal from "@/components/SubjectCreateModal";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export default async function DashboardSubjectsPage() {
   const session = await getServerSession(authOptions);

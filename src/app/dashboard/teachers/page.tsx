@@ -7,30 +7,45 @@ import { UserCog, Mail, BarChart3 } from "lucide-react";
 import TeacherCreateModal from "./TeacherCreateModal";
 import TeacherEditButton from "@/components/TeacherEditButton";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export default async function TeachersManagementPage() {
   const session = await getServerSession(authOptions);
   if (!session?.user || (session.user as any).role !== "ADMIN") redirect("/dashboard");
 
-  const teachers = await prisma.user.findMany({
-    where: { role: "TEACHER" },
-    include: {
-      assignments: { include: { subject: true, grade: true } },
-      quizzes: { include: { results: true } },
-    },
-    orderBy: { createdAt: "desc" },
-  });
+  const [teachers, subjects, grades] = await Promise.all([
+    prisma.user.findMany({
+      where: { role: "TEACHER" },
+      include: {
+        assignments: { include: { subject: true, grade: true } },
+        quizzes: { select: { id: true, _count: { select: { results: true } } } },
+      },
+      orderBy: { createdAt: "desc" },
+    }),
+    prisma.subject.findMany({
+      where: { name: { in: ["Science", "Math", "English"] } },
+      orderBy: { name: "asc" },
+    }),
+    prisma.grade.findMany({
+      where: { level: { in: [3, 6, 9] } },
+      orderBy: { level: "asc" },
+    }),
+  ]);
 
-  const subjects = await prisma.subject.findMany({
-    where: { name: { in: ["Science", "Math", "English"] } },
-    orderBy: { name: "asc" },
-  });
-
-  const grades = await prisma.grade.findMany({
-    where: { level: { in: [3, 6, 9] } },
-    orderBy: { level: "asc" },
-  });
+  const teacherIds = teachers.map(t => t.id);
+  const quizStats = teacherIds.length > 0
+    ? await prisma.result.groupBy({
+        by: ["quizId"],
+        where: { quiz: { creatorId: { in: teacherIds } } },
+        _avg: { score: true },
+      })
+    : [];
+  const quizStatMap = new Map(quizStats.map(q => [q.quizId, q._avg.score]));
+  // Map teacherId -> [quizIds] from the already-loaded quizzes
+  const teacherQuizMap = new Map<string, string[]>();
+  for (const t of teachers) {
+    teacherQuizMap.set(t.id, t.quizzes.map(q => q.id));
+  }
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
@@ -49,16 +64,13 @@ export default async function TeachersManagementPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {teachers.map((teacher) => {
           const totalQuizzes = teacher.quizzes.length;
-          const totalSubmissions = teacher.quizzes.reduce(
-            (acc, q) => acc + q.results.length,
-            0
-          );
-          const avgScore =
-            totalSubmissions > 0
-              ? teacher.quizzes
-                  .flatMap((q) => q.results)
-                  .reduce((a, b) => a + b.score, 0) / totalSubmissions
-              : 0;
+          let totalSubmissions = 0;
+          let scoreSum = 0;
+          for (const q of teacher.quizzes) {
+            totalSubmissions += q._count.results;
+            scoreSum += (quizStatMap.get(q.id) || 0) * q._count.results;
+          }
+          const avgScore = totalSubmissions > 0 ? scoreSum / totalSubmissions : 0;
 
           const grouped = teacher.assignments.reduce((acc, a) => {
             const name = a.subject.name;

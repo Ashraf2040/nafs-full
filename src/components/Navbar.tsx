@@ -3,26 +3,21 @@
 
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import useSWR from "swr";
 import { BookOpen, LogOut, LogIn, User, Shield, GraduationCap, Trophy } from "lucide-react";
-import { useEffect, useState } from "react";
+import { fetcher } from "@/lib/fetcher";
 
 export default function Navbar() {
   const { data: session, status } = useSession();
-  const [studentStats, setStudentStats] = useState<{ totalScore: number; quizzesTaken: number } | null>(null);
   const userRole = (session?.user as any)?.role;
   const userName = session?.user?.name;
 
-  // Fetch student stats for the score badge
-  useEffect(() => {
-    if (userRole === "STUDENT" && session?.user?.id) {
-      fetch(`/api/students/stats/${session.user.id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data) setStudentStats(data);
-        })
-        .catch(console.error);
-    }
-  }, [userRole, session?.user?.id]);
+  const { data: studentStats } = useSWR(
+    userRole === "STUDENT" && session?.user?.id
+      ? `/api/students/stats/${session.user.id}`
+      : null,
+    fetcher
+  );
 
   return (
     <nav className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">

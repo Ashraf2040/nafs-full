@@ -319,9 +319,11 @@ export default async function LandingPage() {
               </div>
             </div>
             <div className="p-4 sm:p-6 lg:p-8">
-              <div className="h-[300px] sm:h-[380px] w-full rounded-2xl overflow-hidden bg-slate-50/50">
-                <SystemStatsChart />
-              </div>
+              <div className="bg-white p-8">
+  <div className="h-[400px]">
+    <SystemStatsChart />
+  </div>
+</div>
             </div>
           </div>
         </div>

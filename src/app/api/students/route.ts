@@ -19,20 +19,37 @@ export async function GET(req: Request) {
             return NextResponse.json({ error: "Forbidden" }, { status: 403 });
         }
 
-        const students = await prisma.user.findMany({
-            where: { role: "STUDENT" },
-            include: {
-                grade: true,
-                class: true,
-                submissions: {
-                    select: { score: true, quizId: true }
+        const { searchParams } = new URL(req.url);
+        const limit = Math.min(parseInt(searchParams.get("limit") || "500"), 500);
+        const offset = parseInt(searchParams.get("offset") || "0");
+
+        const [students, total] = await Promise.all([
+            prisma.user.findMany({
+                where: { role: "STUDENT" },
+                include: {
+                    grade: true,
+                    class: true,
+                    _count: {
+                        select: { submissions: true }
+                    }
                 },
-                _count: {
-                    select: { submissions: true }
-                }
-            },
-            orderBy: { name: "asc" }
-        });
+                orderBy: { name: "asc" },
+                take: limit,
+                skip: offset,
+            }),
+            prisma.user.count({ where: { role: "STUDENT" } }),
+        ]);
+
+        const studentIds = students.map(s => s.id);
+        const avgScores = studentIds.length > 0
+            ? await prisma.result.groupBy({
+                by: ["studentId"],
+                where: { studentId: { in: studentIds } },
+                _avg: { score: true },
+            })
+            : [];
+
+        const avgScoreMap = new Map(avgScores.map(a => [a.studentId, a._avg.score]));
 
         const formattedStudents = students.map(s => ({
             id: s.id,
@@ -44,10 +61,10 @@ export async function GET(req: Request) {
             className: s.class?.name ?? null,
             role: s.role,
             _count: { submissions: s._count.submissions },
-            submissions: s.submissions
+            avgScore: avgScoreMap.get(s.id) ?? null,
         }));
 
-        return NextResponse.json(formattedStudents);
+        return NextResponse.json({ students: formattedStudents, total });
     } catch (error) {
         console.error("STUDENTS_FETCH_ERROR:", error);
         return NextResponse.json({ error: "Failed to fetch students" }, { status: 500 });

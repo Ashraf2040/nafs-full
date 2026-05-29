@@ -4,8 +4,6 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 
-export const dynamic = "force-dynamic";
-
 // GET - Fetch classes (optionally filtered by grade)
 export async function GET(req: Request) {
     try {

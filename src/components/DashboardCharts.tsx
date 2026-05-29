@@ -1,10 +1,29 @@
+// src/components/DashboardCharts.tsx
 "use client";
 
+import { useEffect, useState } from "react";
+
 export default function DashboardCharts({ subjectPerformance, gradeDistribution, monthlyData, recentScores, isStudent }: any) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent hydration mismatch + ensure container has size before render
+  if (!mounted) {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 h-[300px] animate-pulse" />
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 h-[300px] animate-pulse" />
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Subject Performance Bars */}
-      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 min-h-[300px]">
         <h3 className="font-bold text-slate-800 mb-4">Performance by Subject</h3>
         <div className="space-y-3">
           {subjectPerformance?.map((s: any) => (
@@ -14,16 +33,22 @@ export default function DashboardCharts({ subjectPerformance, gradeDistribution,
                 <span className="font-bold">{s.avgScore}%</span>
               </div>
               <div className="w-full bg-slate-100 rounded-full h-2.5">
-                <div className="bg-indigo-500 h-2.5 rounded-full" style={{ width: `${s.avgScore}%` }} />
+                <div 
+                  className="bg-indigo-500 h-2.5 rounded-full transition-all duration-500" 
+                  style={{ width: `${Math.min(s.avgScore, 100)}%` }} 
+                />
               </div>
             </div>
           ))}
+          {(!subjectPerformance || subjectPerformance.length === 0) && (
+            <p className="text-sm text-slate-400 text-center py-8">No data available</p>
+          )}
         </div>
       </div>
       
       {/* Grade Distribution */}
       {!isStudent && (
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 min-h-[300px]">
           <h3 className="font-bold text-slate-800 mb-4">Students by Grade</h3>
           <div className="space-y-3">
             {gradeDistribution?.map((g: any) => (
@@ -35,13 +60,16 @@ export default function DashboardCharts({ subjectPerformance, gradeDistribution,
                 <span className="text-sm font-bold">{g.count}</span>
               </div>
             ))}
+            {(!gradeDistribution || gradeDistribution.length === 0) && (
+              <p className="text-sm text-slate-400 text-center py-8">No data available</p>
+            )}
           </div>
         </div>
       )}
       
       {/* Recent Scores for Students */}
       {isStudent && recentScores?.length > 0 && (
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 min-h-[300px]">
           <h3 className="font-bold text-slate-800 mb-4">Recent Scores</h3>
           <div className="space-y-2">
             {recentScores.map((r: any, i: number) => (

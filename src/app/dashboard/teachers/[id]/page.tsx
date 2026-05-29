@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, Mail, BookOpen, FileText, Users, TrendingUp } from "lucide-react";
 import TeacherPerformanceChart from "./TeacherPerformanceChart";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 600;
 
 export default async function TeacherProfilePage({ params }: { params: Promise<{ id: string }> }) {
   const session = await getServerSession(authOptions);

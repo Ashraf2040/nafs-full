@@ -7,7 +7,7 @@ import { Award, BarChart3, Printer, BookOpen, TrendingUp, Calendar, CheckCircle2
 import CertificateButton from "@/components/CertificateButton";
 import PrintButton from "@/components/PrintButton";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function StudentProfile({ params }: { params: Promise<{ id: string }> }) {
   const session = await getServerSession(authOptions);

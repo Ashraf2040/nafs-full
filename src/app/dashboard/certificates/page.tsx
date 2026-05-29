@@ -6,7 +6,7 @@ import prisma from "@/lib/prisma";
 import CertificateButton from "@/components/CertificateButton";
 import { Award, CheckCircle, TrendingUp, BookOpen, GraduationCap } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export default async function CertificatesPage() {
   const session = await getServerSession(authOptions);

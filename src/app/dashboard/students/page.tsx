@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useSWR, { mutate } from "swr";
 import { useSession } from "next-auth/react";
 import {
   Users, Upload, Filter, UserCircle2, FileText, Search,
@@ -8,6 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import StudentEditModal from "@/components/StudentEditModal";
+import { fetcher } from "@/lib/fetcher";
 
 interface Student {
   id: string;
@@ -19,7 +21,7 @@ interface Student {
   className: string | null;
   role: string;
   _count?: { submissions: number };
-  submissions?: { score: number }[];
+  avgScore: number | null;
 }
 
 interface ClassItem {
@@ -48,14 +50,10 @@ export default function StudentsPage() {
     return null;
   }
 
-  const [students, setStudents] = useState<Student[]>([]);
-  const [classes, setClasses] = useState<ClassItem[]>([]);
-  const [grades, setGrades] = useState<GradeItem[]>([]);
   const [gradeFilter, setGradeFilter] = useState("All");
   const [classFilter, setClassFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [isImporting, setIsImporting] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({ total: 0, active: 0, struggling: 0 });
 
   // Create Student Form
@@ -84,77 +82,36 @@ export default function StudentsPage() {
 
   const [editingStudent, setEditingStudent] = useState<Student | null>(null);
 
-  // Fetch classes for the selected grade
-  const fetchClasses = async (gradeLevel?: string) => {
-    try {
-      const url = gradeLevel 
-        ? `/api/classes?gradeLevel=${gradeLevel}` 
-        : '/api/classes';
-      const res = await fetch(url);
-      if (res.ok) {
-        const data = await res.json();
-        setClasses(data);
-      }
-    } catch (error) {
-      console.error("Failed to fetch classes:", error);
-    }
-  };
-
-  const fetchGrades = async () => {
-    try {
-      const res = await fetch('/api/grades');
-      if (res.ok) {
-        const data = await res.json();
-        setGrades(data);
-      }
-    } catch (error) {
-      console.error("Failed to fetch grades:", error);
-    }
-  };
-
-  const fetchStudents = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch('/api/students');
-      const data = await res.json();
-      if (!res.ok || !Array.isArray(data)) {
-        console.error("Failed to fetch students:", data);
-        setStudents([]);
-        setStats({ total: 0, active: 0, struggling: 0 });
-        return;
-      }
-      setStudents(data);
-
-      const total = data.length;
-      const active = data.filter((s: Student) => (s._count?.submissions ?? 0) > 0).length;
-      const struggling = data.filter((s: Student) => {
-        const avg = s.submissions?.length
-          ? s.submissions.reduce((a: number, b: any) => a + b.score, 0) / s.submissions.length
-          : 0;
+  // SWR: auto-cached and deduplicated data fetching
+  const { data: studentsRes, isLoading: studentsLoading } = useSWR('/api/students', fetcher, {
+    onSuccess: (data: any) => {
+      const list: Student[] = data?.students ?? [];
+      const total = list.length;
+      const active = list.filter((s: Student) => (s._count?.submissions ?? 0) > 0).length;
+      const struggling = list.filter((s: Student) => {
+        const avg = s.avgScore ?? 0;
         return avg > 0 && avg < 50;
       }).length;
-
       setStats({ total, active, struggling });
-    } catch (error) {
-      console.error("Failed to fetch students:", error);
-    } finally {
-      setLoading(false);
     }
+  });
+
+  const { data: gradesData } = useSWR('/api/grades', fetcher);
+  const { data: classesData } = useSWR(
+    showCreateForm && createForm.gradeLevel
+      ? `/api/classes?gradeLevel=${createForm.gradeLevel}`
+      : '/api/classes',
+    fetcher
+  );
+
+  const students: Student[] = studentsRes?.students ?? [];
+  const grades: GradeItem[] = gradesData ?? [];
+  const classes: ClassItem[] = classesData ?? [];
+
+  // Reset classId when grade level changes in create form
+  const handleGradeLevelChange = (level: string) => {
+    setCreateForm(prev => ({ ...prev, gradeLevel: level, classId: "" }));
   };
-
-  useEffect(() => { 
-    fetchStudents(); 
-    fetchClasses(); 
-    fetchGrades();
-  }, []);
-
-  // Fetch classes when grade changes in create form
-  useEffect(() => {
-    if (showCreateForm && createForm.gradeLevel) {
-      fetchClasses(createForm.gradeLevel);
-      setCreateForm(prev => ({ ...prev, classId: "" }));
-    }
-  }, [createForm.gradeLevel, showCreateForm]);
 
   // ==================== ADD CLASS ====================
   const handleAddClass = async (e: React.FormEvent) => {
@@ -182,11 +139,7 @@ export default function StudentsPage() {
 
       setClassForm({ name: "", gradeLevel: "6" });
       setShowAddClass(false);
-      fetchClasses();
-      // Refresh classes in create form if same grade
-      if (showCreateForm) {
-        fetchClasses(createForm.gradeLevel);
-      }
+      mutate('/api/classes');
       alert(`Class "${data.class.name}" created successfully!`);
     } catch (error) {
       setClassError("Network error. Please try again.");
@@ -221,7 +174,7 @@ export default function StudentsPage() {
 
       setGradeForm({ level: "", name: "" });
       setShowAddGrade(false);
-      fetchGrades();
+      mutate('/api/grades');
       alert(`Grade ${data.grade.level} created successfully!`);
     } catch (error) {
       setGradeError("Network error. Please try again.");
@@ -349,7 +302,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
         alert(
           `Import successful! ${data.count} students imported with their own passwords.`
         );
-        fetchStudents();
+        mutate('/api/students');
       } else {
         const err = await res.json();
         alert(`Import failed: ${err.error || "Check CSV format."}`);
@@ -387,7 +340,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
 
       setCreateForm({ name: "", email: "", gradeLevel: "6", classId: "", password: "" });
       setShowCreateForm(false);
-      fetchStudents();
+      mutate('/api/students');
       alert("Student created successfully!");
     } catch (error) {
       setCreateError("Network error. Please try again.");
@@ -409,8 +362,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
   });
 
   const getStudentAverage = (student: Student) => {
-    if (!student.submissions?.length) return null;
-    return student.submissions.reduce((a, b) => a + b.score, 0) / student.submissions.length;
+    return student.avgScore;
   };
 
   const availableClasses = gradeFilter === "All" 
@@ -702,29 +654,29 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
               <select
                 required
                 value={createForm.gradeLevel}
-                onChange={(e) => setCreateForm({ ...createForm, gradeLevel: e.target.value })}
-                className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700 cursor-pointer bg-white"
-              >
-                {gradeLevels.length === 0 && (
-                  <option value="">No grades - add one first</option>
-                )}
-                {gradeLevels.map((g) => (
-                  <option key={g} value={g}>
-                    Grade {g}
-                  </option>
-                ))}
-              </select>
-            </div>
-            
-            {/* Class Dropdown */}
-            <div>
-              <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
-                Class *
-              </label>
-              <select
-                required
-                value={createForm.classId}
-                onChange={(e) => setCreateForm({ ...createForm, classId: e.target.value })}
+              onChange={(e) => handleGradeLevelChange(e.target.value)}
+              className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700 cursor-pointer bg-white"
+            >
+              {gradeLevels.length === 0 && (
+                <option value="">No grades - add one first</option>
+              )}
+              {gradeLevels.map((g) => (
+                <option key={g} value={g}>
+                  Grade {g}
+                </option>
+              ))}
+            </select>
+          </div>
+          
+          {/* Class Dropdown */}
+          <div>
+            <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 block">
+              Class *
+            </label>
+            <select
+              required
+              value={createForm.classId}
+              onChange={(e) => setCreateForm({ ...createForm, classId: e.target.value })}
                 className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-400 outline-none font-medium text-slate-700 cursor-pointer bg-white"
               >
                 <option value="">Select a class...</option>
@@ -842,7 +794,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
-            {loading ? (
+            {studentsLoading ? (
               <tr>
                 <td colSpan={4} className="p-20 text-center text-slate-400 font-bold italic">
                   <Loader2 className="animate-spin mx-auto mb-4" size={32} />
@@ -934,7 +886,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
         <StudentEditModal
           student={editingStudent}
           onClose={() => setEditingStudent(null)}
-          onSaved={fetchStudents}
+          onSaved={() => mutate('/api/students')}
         />
       )}
     </div>

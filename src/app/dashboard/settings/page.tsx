@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { User, Mail, Shield, Bell, Key, GraduationCap, BookOpen } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function SettingsPage() {
   const session = await getServerSession(authOptions);

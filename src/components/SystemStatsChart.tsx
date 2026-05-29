@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 import {
   BarChart,
   Bar,
@@ -12,6 +13,7 @@ import {
   Cell,
   TooltipProps,
 } from "recharts";
+import { fetcher } from "@/lib/fetcher";
 
 interface GradeData {
   name: string;
@@ -31,28 +33,17 @@ const FALLBACK_DATA: GradeData[] = [
 
 export function SystemStatsChart() {
   const [mounted, setMounted] = useState(false);
-  const [chartData, setChartData] = useState<GradeData[]>([]);
-  const [loading, setLoading] = useState(true);
+  useEffect(() => { setMounted(true); }, []);
 
-  useEffect(() => {
-    setMounted(true);
-    fetch("/api/stats")
-      .then((r) => r.json())
-      .then((json) => {
-        if (json.data && json.data.length > 0) {
-          setChartData(json.data);
-        } else {
-          setChartData(FALLBACK_DATA);
-        }
-      })
-      .catch(() => setChartData(FALLBACK_DATA))
-      .finally(() => setLoading(false));
-  }, []);
+  const { data: json, isLoading } = useSWR('/api/stats', fetcher);
+
+  const chartData: GradeData[] = json?.data?.length ? json.data : FALLBACK_DATA;
+  const loading = isLoading;
 
   if (!mounted || loading) {
     return (
-      <div className="w-full min-h-[300px] flex items-center justify-center">
-        <div className="animate-pulse bg-slate-200 rounded-xl w-full h-[300px]" />
+      <div style={{ width: '100%', height: 350 }} className="flex items-center justify-center">
+        <div className="animate-pulse bg-slate-200 rounded-xl" style={{ width: '100%', height: 350 }} />
       </div>
     );
   }
@@ -65,63 +56,18 @@ export function SystemStatsChart() {
     return "#ef4444";
   };
 
-  // ✅ SAFE formatter (fixes TS error)
-  const formatTooltip: TooltipProps<number, string>["formatter"] = (
-    value,
-    name
-  ) => {
-    const num = typeof value === "number" ? value : Number(value ?? 0);
-
-    if (name === "score") return [`${num}%`, "Average Score"];
-    if (name === "participation") return [num, "Active Students"];
-    return [num, String(name)];
-  };
-
   return (
-    <div className="w-full" style={{ minHeight: "300px", height: "100%" }}>
+    <div style={{ position: 'relative', width: '100%', height: 350 }}>
       <ResponsiveContainer width="100%" height={350}>
-        <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+        <BarChart data={chartData}>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} />
+          <XAxis dataKey="name" />
+          <YAxis domain={[0, 100]} />
+          <Tooltip />
 
-          <XAxis
-            dataKey="name"
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: "#64748b", fontSize: 12, fontWeight: 600 }}
-            dy={10}
-          />
-
-          <YAxis
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: "#64748b", fontSize: 12 }}
-            dx={-10}
-            domain={[0, 100]}
-            tickFormatter={(v) => `${v}%`}
-          />
-
-          <Tooltip
-  cursor={{ fill: "#f1f5f9" }}
-  contentStyle={{
-    borderRadius: "12px",
-    border: "none",
-    boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
-    fontSize: "14px",
-    fontWeight: 600,
-  }}
-  formatter={(value, name) => {
-    const num = Number(value ?? 0);
-
-    if (name === "score") return [`${num}%`, "Average Score"];
-    if (name === "participation") return [num, "Active Students"];
-
-    return [num, String(name)];
-  }}
-/>
-
-          <Bar dataKey="score" name="score" radius={[6, 6, 0, 0]} maxBarSize={50}>
+          <Bar dataKey="score" radius={[6, 6, 0, 0]}>
             {chartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={getBarColor(entry.score)} />
+              <Cell key={index} fill={getBarColor(entry.score)} />
             ))}
           </Bar>
         </BarChart>

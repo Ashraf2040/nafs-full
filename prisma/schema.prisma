@@ -27,7 +27,7 @@ model User {
   gradeId   String?
   grade     Grade?   @relation(fields: [gradeId], references: [id])
   
-  classId   String?   // NEW: Link to Class model
+  classId   String?
   class     Class?    @relation(fields: [classId], references: [id])
 
   quizzes     Quiz[]              @relation("CreatedBy")
@@ -35,6 +35,8 @@ model User {
   assignments TeacherAssignment[]
 
   createdAt DateTime @default(now())
+  @@index([role])
+  @@index([gradeId])
 }
 
 /* ===================== SUBJECT (STATIC) ===================== */
@@ -62,13 +64,16 @@ model Grade {
   quizzes     Quiz[]
   assignments TeacherAssignment[]
   users       User[]
-  classes     Class[]   // NEW
+  classes     Class[]
 
   createdAt DateTime @default(now())
 }
+
+/* ===================== CLASS ===================== */
+
 model Class {
   id        String   @id @default(cuid())
-  name      String   // e.g., "A", "B", "6/1", "Science-A"
+  name      String
   
   gradeId   String
   grade     Grade    @relation(fields: [gradeId], references: [id], onDelete: Cascade)
@@ -77,8 +82,10 @@ model Class {
   
   createdAt DateTime @default(now())
   
-  @@unique([name, gradeId])  // Same class name can exist in different grades
+  @@unique([name, gradeId])
+  @@index([gradeId])
 }
+
 /* ===================== TEACHER ASSIGNMENT ===================== */
 
 model TeacherAssignment {
@@ -96,6 +103,9 @@ model TeacherAssignment {
   createdAt DateTime @default(now())
 
   @@unique([teacherId, subjectId, gradeId])
+  @@index([teacherId])
+  @@index([subjectId])
+  @@index([gradeId])
 }
 
 /* ===================== QUIZ ===================== */
@@ -105,7 +115,7 @@ model Quiz {
   title       String
   description String?
   isPublished Boolean  @default(false)
-  dueDate     DateTime?   // <-- ADD THIS
+  dueDate     DateTime?
 
   gradeId     String
   grade       Grade     @relation(fields: [gradeId], references: [id])
@@ -121,6 +131,9 @@ model Quiz {
   results     Result[]
 
   createdAt   DateTime @default(now())
+  @@index([isPublished])
+  @@index([gradeId])
+  @@index([subjectId])
 }
 
 /* ===================== QUESTION ===================== */
@@ -145,6 +158,7 @@ model Question {
 
   answers       StudentAnswer[]
   createdAt     DateTime @default(now())
+  @@index([quizId])
 }
 
 /* ===================== RESULT ===================== */
@@ -162,6 +176,9 @@ model Result {
 
   answers     StudentAnswer[]
   completedAt DateTime @default(now())
+  @@index([studentId])
+  @@index([quizId])
+  @@index([completedAt])
 }
 
 /* ===================== STUDENT ANSWER ===================== */
@@ -179,6 +196,8 @@ model StudentAnswer {
   isCorrect     Boolean
 
   createdAt DateTime @default(now())
+  @@index([resultId])
+  @@index([questionId])
 }
 
 /* ===================== LEARNING OUTCOME ===================== */
@@ -195,6 +214,8 @@ model LearningOutcome {
   subjectRef   Subject? @relation("SubjectOutcomes", fields: [subjectRefId], references: [id])
 
   questions Question[]
- quizzes   Quiz[]
+  quizzes   Quiz[]
   createdAt DateTime @default(now())
+  @@index([grade])
+  @@index([subject])
 }
