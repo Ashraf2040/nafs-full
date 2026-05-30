@@ -103,7 +103,9 @@ export default function Sidebar() {
       <div className="p-6 mt-auto">
         <div className="bg-slate-800 rounded-xl p-4 text-center border border-slate-700">
           <p className="text-xs text-slate-400 mb-2">Need help?</p>
-          <button className="text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">View Documentation</button>
+          <Link href="/docs" className="text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+            View Documentation
+          </Link>
         </div>
       </div>
     </aside>

@@ -12,7 +12,7 @@ const globalForPrisma = global as unknown as {
 
 const pool = globalForPrisma.pool || new Pool({ 
   connectionString,
-  max: 3,
+  max: 8,
   idleTimeoutMillis: 15000,
   connectionTimeoutMillis: 10000,
 });

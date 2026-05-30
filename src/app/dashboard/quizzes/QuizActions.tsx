@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Send, CheckCircle2, Trash2, Loader2, AlertTriangle } from "lucide-react";
 
 interface QuizActionsProps {
@@ -10,6 +11,7 @@ interface QuizActionsProps {
 }
 
 export default function QuizActions({ quizId, isPublished, title }: QuizActionsProps) {
+  const router = useRouter();
   const [isPublishing, setIsPublishing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -25,8 +27,7 @@ export default function QuizActions({ quizId, isPublished, title }: QuizActionsP
       });
 
       if (res.ok) {
-        // Refresh the page to show updated status
-        window.location.reload();
+        router.refresh();
       } else {
         const err = await res.json();
         alert(`Failed to publish: ${err.error || "Unknown error"}`);
@@ -49,8 +50,7 @@ export default function QuizActions({ quizId, isPublished, title }: QuizActionsP
       });
 
       if (res.ok) {
-        // Refresh the page to remove the deleted quiz
-        window.location.reload();
+        router.refresh();
       } else {
         const err = await res.json();
         alert(`Failed to delete: ${err.error || "Unknown error"}`);
