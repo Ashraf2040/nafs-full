@@ -26,6 +26,17 @@ function resolveAnswerText(answer: string, options: string[]): string {
   return answer;
 }
 
+// FIX: New helper function to properly compare full answer strings
+function isAnswerCorrect(userAnswer: string | undefined, correctAnswer: string | undefined, options: string[]): boolean {
+  if (!userAnswer || !correctAnswer) return false;
+  
+  // Use resolveAnswerText to normalize the AI's correct answer into the exact option string
+  const correctOptionText = resolveAnswerText(correctAnswer, options);
+  
+  // Compare the full strings (case-insensitive and trimmed)
+  return userAnswer.trim().toLowerCase() === correctOptionText.trim().toLowerCase();
+}
+
 export default function SolveQuizPage({
   params,
 }: {
@@ -146,14 +157,13 @@ export default function SolveQuizPage({
     setSelectedAnswers({ ...selectedAnswers, [currentQuestion]: option });
   };
 
+  // FIX: Updated to use full string comparison instead of first letter
   const calculateScore = () => {
     if (!quiz?.questions?.length) return 0;
     let correct = 0;
     quiz.questions.forEach((q: any, idx: number) => {
       if (!q) return;
-      const userLetter = selectedAnswers[idx]?.trim().charAt(0).toUpperCase();
-      const correctLetter = q.answer?.trim().charAt(0).toUpperCase();
-      if (userLetter && userLetter === correctLetter) correct++;
+      if (isAnswerCorrect(selectedAnswers[idx], q.answer, q.options)) correct++;
     });
     return Math.round((correct / quiz.questions.length) * 100);
   };
@@ -173,12 +183,11 @@ export default function SolveQuizPage({
     setIsSaving(true);
 
     try {
+      // FIX: Updated to use full string comparison instead of first letter
       const formattedAnswers = quiz.questions.map((q: any, idx: number) => ({
         questionId: q.id,
         studentAnswer: selectedAnswers[idx] || "",
-        isCorrect:
-          selectedAnswers[idx]?.trim().charAt(0).toUpperCase() ===
-          q.answer?.trim().charAt(0).toUpperCase(),
+        isCorrect: isAnswerCorrect(selectedAnswers[idx], q.answer, q.options),
       }));
 
       const res = await fetch("/api/results/save", {
@@ -296,11 +305,10 @@ export default function SolveQuizPage({
             <div className="text-center">
               <p className="text-2xl font-bold text-slate-800">
                 {
+                  // FIX: Updated to use full string comparison
                   quiz.questions.filter((q: any, idx: number) => {
                     if (!q) return false;
-                    const ul = selectedAnswers[idx]?.trim().charAt(0).toUpperCase();
-                    const cl = q.answer?.trim().charAt(0).toUpperCase();
-                    return ul === cl;
+                    return isAnswerCorrect(selectedAnswers[idx], q.answer, q.options);
                   }).length
                 }
               </p>
@@ -310,11 +318,10 @@ export default function SolveQuizPage({
             <div className="text-center">
               <p className="text-2xl font-bold text-slate-800">
                 {
+                  // FIX: Updated to use full string comparison
                   quiz.questions.filter((q: any, idx: number) => {
                     if (!q) return false;
-                    const ul = selectedAnswers[idx]?.trim().charAt(0).toUpperCase();
-                    const cl = q.answer?.trim().charAt(0).toUpperCase();
-                    return ul !== cl;
+                    return !isAnswerCorrect(selectedAnswers[idx], q.answer, q.options);
                   }).length
                 }
               </p>
@@ -365,9 +372,8 @@ export default function SolveQuizPage({
           {quiz?.questions?.map((q: any, idx: number) => {
             if (!q) return null;
             const userAnswer = selectedAnswers[idx];
-            const userLetter = userAnswer?.trim().charAt(0).toUpperCase();
-            const correctLetter = q.answer?.trim().charAt(0).toUpperCase();
-            const isCorrect = userLetter === correctLetter;
+            // FIX: Updated to use full string comparison
+            const isCorrect = isAnswerCorrect(userAnswer, q.answer, q.options || []);
             const userAnswerFull = resolveAnswerText(userAnswer, q.options || []);
             const correctAnswerFull = resolveAnswerText(q.answer, q.options || []);
             return (
