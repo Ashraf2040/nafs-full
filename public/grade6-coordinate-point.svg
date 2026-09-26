@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="Coordinate plane with an unlabeled point in the first quadrant">
+  <title>Coordinate plane with a point in the first quadrant</title>
+
+  <rect width="640" height="640" fill="#ffffff"/>
+
+  <!-- Grid lines -->
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="155" y1="110" x2="155" y2="560"/>
+    <line x1="230" y1="110" x2="230" y2="560"/>
+    <line x1="305" y1="110" x2="305" y2="560"/>
+    <line x1="380" y1="110" x2="380" y2="560"/>
+    <line x1="455" y1="110" x2="455" y2="560"/>
+    <line x1="530" y1="110" x2="530" y2="560"/>
+    <line x1="80" y1="485" x2="620" y2="485"/>
+    <line x1="80" y1="410" x2="620" y2="410"/>
+    <line x1="80" y1="335" x2="620" y2="335"/>
+    <line x1="80" y1="260" x2="620" y2="260"/>
+    <line x1="80" y1="185" x2="620" y2="185"/>
+    <line x1="80" y1="110" x2="620" y2="110"/>
+  </g>
+
+  <!-- Axes -->
+  <g stroke="#0f172a" stroke-width="2.5" stroke-linecap="round">
+    <line x1="80" y1="560" x2="624" y2="560"/>
+    <line x1="80" y1="560" x2="80" y2="106"/>
+  </g>
+
+  <!-- Arrowheads -->
+  <g fill="#0f172a">
+    <polygon points="624,560 606,553 606,567"/>
+    <polygon points="80,106 73,124 87,124"/>
+  </g>
+
+  <!-- Tick marks -->
+  <g stroke="#0f172a" stroke-width="2">
+    <line x1="155" y1="556" x2="155" y2="564"/>
+    <line x1="230" y1="556" x2="230" y2="564"/>
+    <line x1="305" y1="556" x2="305" y2="564"/>
+    <line x1="380" y1="556" x2="380" y2="564"/>
+    <line x1="455" y1="556" x2="455" y2="564"/>
+    <line x1="530" y1="556" x2="530" y2="564"/>
+    <line x1="76" y1="485" x2="84" y2="485"/>
+    <line x1="76" y1="410" x2="84" y2="410"/>
+    <line x1="76" y1="335" x2="84" y2="335"/>
+    <line x1="76" y1="260" x2="84" y2="260"/>
+    <line x1="76" y1="185" x2="84" y2="185"/>
+    <line x1="76" y1="110" x2="84" y2="110"/>
+  </g>
+
+  <!-- Number labels -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155" text-anchor="middle">
+    <text x="155" y="582">1</text>
+    <text x="230" y="582">2</text>
+    <text x="305" y="582">3</text>
+    <text x="380" y="582">4</text>
+    <text x="455" y="582">5</text>
+    <text x="530" y="582">6</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155" text-anchor="end">
+    <text x="64" y="491">1</text>
+    <text x="64" y="416">2</text>
+    <text x="64" y="341">3</text>
+    <text x="64" y="266">4</text>
+    <text x="64" y="191">5</text>
+    <text x="64" y="116">6</text>
+  </g>
+
+  <!-- Origin -->
+  <text x="66" y="583" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="end">0</text>
+
+  <!-- Axis labels -->
+  <text x="626" y="552" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0f172a">x</text>
+  <text x="96" y="102" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0f172a">y</text>
+
+  <!-- Point at (2, 5) — plotted from the given facts, left unlabeled so the answer is not revealed -->
+  <circle cx="230" cy="185" r="7" fill="#4f46e5"/>
+</svg>

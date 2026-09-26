@@ -17,6 +17,17 @@ const adapter = new PrismaPg(pool);
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
+  if (process.env.ALLOW_DESTRUCTIVE_SEED !== 'true') {
+    throw new Error('Refusing to erase the database. Set ALLOW_DESTRUCTIVE_SEED=true only for an intentional demo reset.');
+  }
+  const adminEmail = process.env.SEED_ADMIN_EMAIL?.trim().toLowerCase();
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD;
+  const teacherSeedPassword = process.env.SEED_TEACHER_PASSWORD;
+  const studentSeedPassword = process.env.SEED_STUDENT_PASSWORD;
+  if (!adminEmail || !adminPassword || adminPassword.length < 12 || !teacherSeedPassword || teacherSeedPassword.length < 12 || !studentSeedPassword || studentSeedPassword.length < 12) {
+    throw new Error('Seed credentials are required and must be at least 12 characters (SEED_ADMIN_EMAIL, SEED_ADMIN_PASSWORD, SEED_TEACHER_PASSWORD, SEED_STUDENT_PASSWORD).');
+  }
+
   console.log('🧹 Clearing existing data...');
 
   await prisma.studentAnswer.deleteMany();
@@ -43,13 +54,13 @@ async function main() {
   const admin = await prisma.user.create({
     data: {
       name: 'Ashraf Elsayed',
-      email: 'ashrafflefl2030@gmail.com',
-      password: await bcrypt.hash('123456', 12),
+      email: adminEmail,
+      password: await bcrypt.hash(adminPassword, 12),
       role: 'ADMIN',
     },
   });
 
-  console.log('✅ Admin created: ashrafflefl2030@gmail.com');
+  console.log(`✅ Admin created: ${adminEmail}`);
 
   // 3. CREATE SUBJECTS (Science, Math, English)
   const scienceSubject = await prisma.subject.create({
@@ -79,7 +90,7 @@ async function main() {
   console.log('✅ Subjects created: Science, Math, English');
 
   // 4. CREATE TEACHERS — EXACTLY AS YOU ASKED
-  const teacherPassword = await bcrypt.hash('teacher123', 12);
+  const teacherPassword = await bcrypt.hash(teacherSeedPassword, 12);
 
   // ─── Grade 3: 2 teachers (Math, English) ───
   const teacher3Math = await prisma.user.create({
@@ -183,7 +194,7 @@ async function main() {
   console.log('✅ 8 Teachers created and assigned');
 
   // 5. CREATE STUDENTS (10 per grade = 30 total)
-  const studentPassword = await bcrypt.hash('student123', 12);
+  const studentPassword = await bcrypt.hash(studentSeedPassword, 12);
 
   const studentNames = [
     // Grade 3 (indices 0-9)
@@ -515,7 +526,7 @@ async function main() {
   console.log('╔════════════════════════════════════════════════════╗');
   console.log('║         ✅ DATABASE SEEDED SUCCESSFULLY!            ║');
   console.log('╠════════════════════════════════════════════════════╣');
-  console.log('║  Admin:        1  (ashrafflefl2030@gmail.com)      ║');
+  console.log(`║  Admin:        1  (${adminEmail})`);
   console.log('║  Grades:       3  (3, 6, 9)                        ║');
   console.log('║  Subjects:     3  (Science, Math, English)          ║');
   console.log('║  Teachers:     8                                   ║');
@@ -526,11 +537,7 @@ async function main() {
   console.log('║  Quizzes:      9 (3 per grade)                     ║');
   console.log('║  Results:      15 sample submissions               ║');
   console.log('╚════════════════════════════════════════════════════╝');
-  console.log('');
-  console.log('🔐 Login Credentials:');
-  console.log('   Admin:    ashrafflefl2030@gmail.com / 123456');
-  console.log('   Teachers: any teacher email / teacher123');
-  console.log('   Students: student1@nafs.edu - student30@nafs.edu / student123');
+  console.log('🔐 Seed passwords were loaded from environment variables and are not printed.');
 }
 
 main()

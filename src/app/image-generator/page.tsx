@@ -1,96 +1,202 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-export default function DiagramTesterPage() {
-  const [prompt, setPrompt] = useState('');
-  const [image, setImage] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+interface LogEntry {
+  timestamp: string;
+  type: 'info' | 'success' | 'error';
+  message: string;
+}
 
-  const handleGenerate = async () => {
-    if (!prompt.trim()) return;
-    
-    setLoading(true);
-    setImage(null);
+interface GeneratedImage {
+  id: string;
+  url: string;
+}
+
+export default function GenerateImagesPage() {
+  const [csvFile, setCsvFile] = useState<File | null>(null);
+  const [logs, setLogs] = useState<LogEntry[]>([]);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [generatedImages, setGeneratedImages] = useState<GeneratedImage[]>([]);
+  const [progress, setProgress] = useState({ current: 0, total: 0 });
+
+  const addLog = (message: string, type: 'info' | 'success' | 'error' = 'info') => {
+    const timestamp = new Date().toLocaleTimeString();
+    setLogs((prev) => [{ timestamp, type, message }, ...prev]);
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setCsvFile(e.target.files[0]);
+      addLog(`File uploaded: ${e.target.files[0].name}`, 'info');
+    }
+  };
+
+  // Simple CSV parser supporting standard quotes and commas
+  const parseCSV = (text: string) => {
+    const lines = text.split(/\r?\n/);
+    return lines
+      .map((line) => {
+        // Simple regex to match comma-separated values while respecting quotes
+        const matches = line.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
+        return matches ? matches.map(val => val.replace(/^"|"$/g, '')) : [];
+      })
+      .filter((row) => row.length > 1);
+  };
+
+  const startGeneration = async () => {
+    if (!csvFile) {
+      addLog('Error: Please upload a CSV file first.', 'error');
+      return;
+    }
+
+    setIsProcessing(true);
+    setLogs([]);
+    setGeneratedImages([]);
+    addLog('Starting CSV processing...', 'info');
 
     try {
-      const res = await fetch('/api/generate-image', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt }),
-      });
+      const text = await csvFile.text();
+      const rows = parseCSV(text);
 
-      const data = await res.json();
-      
-      if (data.success) {
-        // Construct the data URL for immediate rendering
-        setImage(`data:image/jpeg;base64,${data.imageBase64}`);
-      } else {
-        alert(data.error || 'Failed to generate diagram');
+      if (rows.length === 0) {
+        addLog('Error: CSV file seems empty or malformed.', 'error');
+        setIsProcessing(false);
+        return;
       }
-    } catch (error) {
-      console.error(error);
-      alert('An unexpected error occurred.');
+
+      addLog(`Found ${rows.length} valid rows to process.`, 'info');
+      setProgress({ current: 0, total: rows.length });
+
+      // Iterate through rows sequentially to prevent crashing and observe live updates
+      for (let i = 0; i < rows.length; i++) {
+        const row = rows[i];
+        const id = row[0];       // Column 1: Image ID (e.g., sci-g6-describing-factors-005)
+        const prompt = row[11];  // Column 12: Image Prompt
+
+        if (!id || !prompt) {
+          addLog(`Skipping row ${i + 1}: Missing ID or Prompt data.`, 'error');
+          continue;
+        }
+
+        setProgress((prev) => ({ ...prev, current: i + 1 }));
+        addLog(`[${i + 1}/${rows.length}] Processing ID: ${id}...`, 'info');
+
+        try {
+          const res = await fetch('/api/generate-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id, prompt }),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok || data.error) {
+            throw new Error(data.error || 'Failed generating asset');
+          }
+
+          addLog(`Successfully saved: ${data.fileName}`, 'success');
+          setGeneratedImages((prev) => [{ id, url: data.url }, ...prev]);
+
+        } catch (err: any) {
+          addLog(`Failed processing ID ${id}: ${err.message}`, 'error');
+        }
+
+        // Optional short delay to respect rate-limiting thresholds
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+
+      addLog('Batch generation completed!', 'success');
+    } catch (err: any) {
+      addLog(`Critical processing failure: ${err.message}`, 'error');
     } finally {
-      setLoading(false);
+      setIsProcessing(false);
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-8 space-y-8">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">Diagram Generator Test</h1>
-        <p className="text-gray-500">
-          Paste an AI prompt from your CSV to test the output of the Imagen 3 model.
-        </p>
-      </div>
+    <div className="max-w-6xl mx-auto p-6 space-y-8 font-sans">
+      <header className="border-b pb-4">
+        <h1 className="text-2xl font-bold tracking-tight">Automated Assessment Asset Pipeline</h1>
+        <p className="text-gray-500 text-sm">Upload CSV mapping to generate and auto-name dashboard assets directly to storage.</p>
+      </header>
 
-      <div className="space-y-4 bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Image Prompt
-          </label>
-          <textarea
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
-            rows={5}
-            placeholder="e.g., Create an educational diagram for Math Grade 6..."
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
+      {/* Control Actions */}
+      <div className="bg-gray-50 border p-4 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="flex flex-col gap-1">
+          <label className="text-sm font-semibold text-gray-700">Select Assessment CSV File</label>
+          <input 
+            type="file" 
+            accept=".csv" 
+            onChange={handleFileChange}
+            disabled={isProcessing}
+            className="text-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300"
           />
         </div>
 
         <button
-          onClick={handleGenerate}
-          disabled={loading || !prompt.trim()}
-          className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white font-semibold rounded-lg transition-colors flex justify-center items-center"
+          onClick={startGeneration}
+          disabled={isProcessing || !csvFile}
+          className={`px-6 py-2.5 rounded-md font-medium text-sm transition-colors ${
+            isProcessing || !csvFile 
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed' 
+              : 'bg-black text-white hover:bg-gray-800'
+          }`}
         >
-          {loading ? (
-            <span className="flex items-center space-x-2">
-              <svg className="animate-spin h-5 w-5 text-white" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-              </svg>
-              <span>Generating Diagram...</span>
-            </span>
-          ) : (
-            'Generate Diagram'
-          )}
+          {isProcessing ? `Processing (${progress.current}/${progress.total})` : 'Execute Generation'}
         </button>
       </div>
 
-      {image && (
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-900">Result:</h2>
-          <div className="bg-gray-50 p-4 rounded-xl border border-gray-200 flex justify-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src={image} 
-              alt="Generated Educational Diagram" 
-              className="max-w-full h-auto rounded-lg shadow-sm"
-            />
+      {/* Main Panel splitting Live Logging and Previews */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        {/* Terminal Logger */}
+        <div className="flex flex-col">
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">Live Backend Execution Stream</h3>
+          <div className="bg-gray-900 text-gray-100 font-mono p-4 rounded-lg h-96 overflow-y-auto flex flex-col-reverse gap-1 text-xs border border-gray-800 shadow-inner">
+            {logs.length === 0 ? (
+              <span className="text-gray-500 italic">Console idling. Upload data matrix and initiate run...</span>
+            ) : (
+              logs.map((log, index) => (
+                <div key={index} className="leading-5">
+                  <span className="text-gray-500 mr-2">[{log.timestamp}]</span>
+                  <span className={
+                    log.type === 'success' ? 'text-green-400 font-semibold' : 
+                    log.type === 'error' ? 'text-red-400 font-semibold' : 'text-blue-300'
+                  }>
+                    {log.message}
+                  </span>
+                </div>
+              ))
+            )}
           </div>
         </div>
-      )}
+
+        {/* Real-time Rendered Asset Previews */}
+        <div className="flex flex-col">
+          <h3 className="text-sm font-semibold text-gray-700 mb-2">Generated Media Library</h3>
+          <div className="border rounded-lg h-96 overflow-y-auto p-4 bg-gray-50 grid grid-cols-2 gap-4 shadow-inner">
+            {generatedImages.length === 0 ? (
+              <div className="col-span-2 flex items-center justify-center text-gray-400 italic text-sm">
+                No items built in this session.
+              </div>
+            ) : (
+              generatedImages.map((img) => (
+                <div key={img.id} className="bg-white border rounded p-2 flex flex-col gap-2 shadow-sm">
+                  <div className="relative aspect-video bg-gray-100 rounded overflow-hidden border">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={img.url} alt={img.id} className="object-contain w-full h-full" />
+                  </div>
+                  <div className="text-[10px] font-mono truncate text-gray-600 font-semibold bg-gray-100 px-1.5 py-0.5 rounded" title={img.id}>
+                    {img.id}.png
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }

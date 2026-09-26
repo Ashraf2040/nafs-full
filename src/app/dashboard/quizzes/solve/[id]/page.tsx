@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, use, useRef } from "react";
 import {
   CheckCircle2, XCircle, ArrowRight, ArrowLeft,
   Timer, Loader2, RefreshCcw, Trophy, AlertCircle,
-  BookOpen, TrendingUp, Calculator, Image as ImageIcon
+  BookOpen, TrendingUp, Image as ImageIcon
 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -56,10 +56,11 @@ export default function SolveQuizPage({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [attempts, setAttempts] = useState(1);
   const [isSaving, setIsSaving] = useState(false);
+  const [savedScore, setSavedScore] = useState<number | null>(null);
+  const [correctAnswers, setCorrectAnswers] = useState<number | null>(null);
+  const [saveError, setSaveError] = useState("");
+  const startTime = useRef(Date.now());
 
-  const [showCalculator, setShowCalculator] = useState(false);
-  const [calcInput, setCalcInput] = useState("");
-  const [calcResult, setCalcResult] = useState("");
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -81,6 +82,12 @@ export default function SolveQuizPage({
 
         if (res.status === 404) {
           setError("Quiz not found.");
+          setIsLoading(false);
+          return;
+        }
+
+        if (res.status === 410) {
+          setError("This quiz is no longer available because its due date has passed.");
           setIsLoading(false);
           return;
         }
@@ -117,14 +124,6 @@ export default function SolveQuizPage({
           return;
         }
 
-        const subjectName = data.subject?.name || "";
-        if (
-          subjectName.toLowerCase().includes("math") ||
-          subjectName.toLowerCase().includes("mathematics")
-        ) {
-          setShowCalculator(true);
-        }
-
         // Fetch existing attempts for this student
         if (userRole === "STUDENT") {
           try {
@@ -132,6 +131,11 @@ export default function SolveQuizPage({
             if (attemptsRes.ok) {
               const attemptsData = await attemptsRes.json();
               const usedAttempts = attemptsData.attemptsUsed || 0;
+              if (usedAttempts >= MAX_ATTEMPTS) {
+                setError(`You have used all ${MAX_ATTEMPTS} attempts for this quiz.`);
+                setIsLoading(false);
+                return;
+              }
               setAttempts(usedAttempts + 1);
             }
           } catch {
@@ -173,14 +177,29 @@ export default function SolveQuizPage({
     setIsSubmitted(false);
     setCurrentQuestion(0);
     setSelectedAnswers({});
+    setSavedScore(null);
+    setCorrectAnswers(null);
+    setSaveError("");
     setAttempts((prev) => prev + 1);
+    startTime.current = Date.now();
   };
 
   const handleSubmit = async () => {
     if (!quiz?.questions) return;
 
-    const score = calculateScore();
+    if (userRole !== "STUDENT") {
+      setSavedScore(calculateScore());
+      setCorrectAnswers(
+        quiz.questions.filter((q: any, idx: number) =>
+          isAnswerCorrect(selectedAnswers[idx], q.answer, q.options),
+        ).length,
+      );
+      setIsSubmitted(true);
+      return;
+    }
+
     setIsSaving(true);
+    setSaveError("");
 
     try {
       // FIX: Updated to use full string comparison instead of first letter
@@ -190,13 +209,15 @@ export default function SolveQuizPage({
         isCorrect: isAnswerCorrect(selectedAnswers[idx], q.answer, q.options),
       }));
 
+      const elapsed = Math.floor((Date.now() - startTime.current) / 1000);
+
       const res = await fetch("/api/results/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           quizId,
-          score,
           answers: formattedAnswers,
+          timeSpentSeconds: elapsed,
         }),
       });
 
@@ -206,30 +227,36 @@ export default function SolveQuizPage({
         throw new Error(data.message || data.details || `Error ${res.status}`);
       }
 
-      console.log("Save result:", data.message);
+      const reviewByQuestion = new Map(
+        (data.review || []).map((item: any) => [item.questionId, item]),
+      );
+      setQuiz((current: any) => ({
+        ...current,
+        questions: current.questions.map((question: any) => {
+          const review = reviewByQuestion.get(question.id) as any;
+          return review
+            ? {
+                ...question,
+                answer: review.correctAnswer,
+                explanation: review.explanation || "",
+                serverIsCorrect: review.isCorrect,
+              }
+            : question;
+        }),
+      }));
+      setSavedScore(Number(data.score));
+      setCorrectAnswers(
+        typeof data.correctAnswers === "number"
+          ? data.correctAnswers
+          : (data.review || []).filter((item: any) => item.isCorrect).length,
+      );
+      if (typeof data.attemptsUsed === "number") setAttempts(data.attemptsUsed);
+      setIsSubmitted(true);
     } catch (err: any) {
       console.error("Error saving result:", err.message);
+      setSaveError(err.message || "Your result could not be saved. Please try again.");
     } finally {
       setIsSaving(false);
-      setIsSubmitted(true);
-    }
-  };
-
-  const handleCalcInput = (val: string) => {
-    if (val === "C") {
-      setCalcInput("");
-      setCalcResult("");
-    } else if (val === "=") {
-      try {
-        const result = Function('"use strict"; return (' + calcInput + ")")();
-        setCalcResult(String(result));
-      } catch {
-        setCalcResult("Error");
-      }
-    } else if (val === "DEL") {
-      setCalcInput((prev) => prev.slice(0, -1));
-    } else {
-      setCalcInput((prev) => prev + val);
     }
   };
 
@@ -265,7 +292,7 @@ export default function SolveQuizPage({
   }
 
   if (isSubmitted) {
-    const score = calculateScore();
+    const score = savedScore ?? calculateScore();
     let feedbackEmoji = "🎯";
     let feedbackMessage = "Good effort!";
     let feedbackColor = "text-amber-600";
@@ -293,7 +320,7 @@ export default function SolveQuizPage({
     }
 
     return (
-      <div className="max-w-6xl mx-auto py-10 px-4 space-y-8">
+      <div className="max-w-7xl mx-auto py-10 px-4 space-y-8">
         <div
           className={`text-center p-10 ${bgColor} rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden`}
         >
@@ -304,26 +331,18 @@ export default function SolveQuizPage({
           <div className="flex justify-center gap-8 mb-8">
             <div className="text-center">
               <p className="text-2xl font-bold text-slate-800">
-                {
-                  // FIX: Updated to use full string comparison
-                  quiz.questions.filter((q: any, idx: number) => {
-                    if (!q) return false;
-                    return isAnswerCorrect(selectedAnswers[idx], q.answer, q.options);
-                  }).length
-                }
+                {correctAnswers ?? quiz.questions.filter((q: any, idx: number) =>
+                  q && isAnswerCorrect(selectedAnswers[idx], q.answer, q.options),
+                ).length}
               </p>
               <p className="text-xs text-slate-500 font-bold uppercase">Correct</p>
             </div>
             <div className="w-px bg-slate-200" />
             <div className="text-center">
               <p className="text-2xl font-bold text-slate-800">
-                {
-                  // FIX: Updated to use full string comparison
-                  quiz.questions.filter((q: any, idx: number) => {
-                    if (!q) return false;
-                    return !isAnswerCorrect(selectedAnswers[idx], q.answer, q.options);
-                  }).length
-                }
+                {quiz.questions.length - (correctAnswers ?? quiz.questions.filter((q: any, idx: number) =>
+                  q && isAnswerCorrect(selectedAnswers[idx], q.answer, q.options),
+                ).length)}
               </p>
               <p className="text-xs text-slate-500 font-bold uppercase">Incorrect</p>
             </div>
@@ -373,7 +392,9 @@ export default function SolveQuizPage({
             if (!q) return null;
             const userAnswer = selectedAnswers[idx];
             // FIX: Updated to use full string comparison
-            const isCorrect = isAnswerCorrect(userAnswer, q.answer, q.options || []);
+            const isCorrect = typeof q.serverIsCorrect === "boolean"
+              ? q.serverIsCorrect
+              : isAnswerCorrect(userAnswer, q.answer, q.options || []);
             const userAnswerFull = resolveAnswerText(userAnswer, q.options || []);
             const correctAnswerFull = resolveAnswerText(q.answer, q.options || []);
             return (
@@ -583,65 +604,16 @@ export default function SolveQuizPage({
               </button>
             )}
           </div>
-        </div>
-        {showCalculator && (
-          <div className="w-full lg:w-72">
-            <div className="bg-white rounded-3xl shadow-sm border border-slate-100 p-6 sticky top-24">
-              <div className="flex items-center gap-2 mb-4">
-                <Calculator size={20} className="text-indigo-600" />
-                <h3 className="font-bold text-slate-800">Calculator</h3>
-              </div>
-              <div className="bg-slate-900 rounded-xl p-4 mb-4">
-                <div className="text-right text-slate-400 text-sm font-mono min-h-[20px]">
-                  {calcInput || "0"}
-                </div>
-                <div className="text-right text-white text-2xl font-bold font-mono min-h-[32px]">
-                  {calcResult || ""}
-                </div>
-              </div>
-              <div className="grid grid-cols-4 gap-2">
-                {[
-                  "C",
-                  "DEL",
-                  "/",
-                  "*",
-                  "7",
-                  "8",
-                  "9",
-                  "-",
-                  "4",
-                  "5",
-                  "6",
-                  "+",
-                  "1",
-                  "2",
-                  "3",
-                  "=",
-                  "0",
-                  ".",
-                  "(",
-                  ")",
-                ].map((btn) => (
-                  <button
-                    key={btn}
-                    onClick={() => handleCalcInput(btn)}
-                    className={`p-3 rounded-xl font-bold text-sm transition-all active:scale-95 ${
-                      btn === "="
-                        ? "bg-indigo-600 text-white hover:bg-indigo-700 col-start-4"
-                        : btn === "C"
-                        ? "bg-red-100 text-red-600 hover:bg-red-200"
-                        : ["/", "*", "-", "+"].includes(btn)
-                        ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                    }`}
-                  >
-                    {btn}
-                  </button>
-                ))}
+          {saveError && (
+            <div role="alert" className="mt-4 flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+              <AlertCircle size={18} className="mt-0.5 shrink-0" />
+              <div>
+                <p className="font-bold">Your quiz has not been saved yet.</p>
+                <p>{saveError} Your answers are still here; please submit again.</p>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ export default async function StudentProfile({ params }: { params: Promise<{ id:
   }
 
   const userRole = (session.user as any)?.role;
+  const userId = (session.user as any)?.id;
   const resolvedParams = await params;
 
   // Students can only view their own profile
@@ -24,12 +25,27 @@ export default async function StudentProfile({ params }: { params: Promise<{ id:
     redirect("/dashboard");
   }
 
-  const student = await prisma.user.findUnique({
-  where: { id: resolvedParams.id },
+  const assignments = userRole === "TEACHER"
+    ? await prisma.teacherAssignment.findMany({
+        where: { teacherId: userId },
+        select: { subjectId: true, gradeId: true },
+      })
+    : [];
+  const assignedGradeIds = [...new Set(assignments.map((assignment) => assignment.gradeId))];
+
+  const student = await prisma.user.findFirst({
+  where: {
+    id: resolvedParams.id,
+    role: "STUDENT",
+    ...(userRole === "TEACHER" ? { gradeId: { in: assignedGradeIds } } : {}),
+  },
   include: {
     grade: true,
-    class: true, // ✅ أضف ده
+    class: true,
     submissions: {
+      where: userRole === "TEACHER"
+        ? { quiz: { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) } }
+        : {},
       include: { quiz: { include: { subject: true } } },
       orderBy: { completedAt: "desc" },
     },
@@ -202,7 +218,7 @@ Grade {student.grade?.level ?? "N/A"} • {student.class?.name || "No class"}
             studentName={student.name || ""}
             subject="All Subjects"
             date={new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-            teacherName="Ashraf Elsayed"
+            teacherName={session.user.name || "NAFS Prep"}
             score={overallAverage}
           />
         </div>

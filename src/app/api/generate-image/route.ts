@@ -1,58 +1,83 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenAI } from '@google/genai';
+import { NextResponse } from 'next/server';
+import { requireRole } from "@/lib/guard";
+import fs from 'fs';
+import path from 'path';
 
-// The SDK automatically picks up GOOGLE_GENAI_API_KEY from the environment
-const ai = new GoogleGenAI({});
-
-export async function POST(req: NextRequest) {
+export async function POST(request: Request) {
   try {
-    const { prompt } = await req.json();
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
 
-    if (!prompt) {
-      return NextResponse.json(
-        { error: 'A prompt is required to generate an image.' },
-        { status: 400 }
-      );
+    const { id, prompt } = await request.json();
+
+    if (!id || !prompt) {
+      return NextResponse.json({ error: 'Missing ID or Prompt' }, { status: 400 });
     }
 
-    // Call the Imagen 4.0 model (Updated from 3.0)
-    const response = await ai.models.generateImages({
-      model: 'imagen-4.0-generate-001', // 👈 FIXED MODEL NAME
-      prompt: prompt,
-      config: {
-        numberOfImages: 1,
-        outputMimeType: 'image/jpeg',
-        // 4:3 is usually a good aspect ratio for assessment diagrams
-        aspectRatio: '4:3', 
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json({ error: 'API key is not configured' }, { status: 500 });
+    }
+
+    // 1. Call the Google AI endpoint for image generation
+    const model = 'gemini-3.1-flash-image'; 
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+    const apiResponse = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [{ text: prompt }]
+          }
+        ]
+      }),
     });
 
-    // Safety check in case the API blocks the prompt
-    if (!response.generatedImages || response.generatedImages.length === 0) {
-        return NextResponse.json(
-          { error: 'No image returned. The prompt may have triggered a safety filter.' },
-          { status: 400 }
-        );
+    if (!apiResponse.ok) {
+      const errorData = await apiResponse.json();
+      throw new Error(errorData.error?.message || 'Failed to generate image from API');
     }
 
-    const imageObj = response.generatedImages[0].image;
+    const data = await apiResponse.json();
+
+    // 2. Extract base64 data from the Gemini response structure
+    // Adding a safety check to ensure the payload contains the expected inlineData
+    const candidatePart = data.candidates?.[0]?.content?.parts?.[0];
+    if (!candidatePart || !candidatePart.inlineData || !candidatePart.inlineData.data) {
+      throw new Error('Unexpected response structure: Image data not found');
+    }
+
+    const base64Data = candidatePart.inlineData.data;
+    const buffer = Buffer.from(base64Data, 'base64');
+
+    // 3. Define target directory and filename inside the public folder
+    const outputDir = path.join(process.cwd(), 'public', 'images');
     
-    if (!imageObj || !imageObj.imageBytes) {
-         return NextResponse.json(
-          { error: 'Image data is missing from the API response.' },
-          { status: 500 }
-        );
+    // Ensure directory exists
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
     }
 
-    // Extract the base64 string
-    const base64Image = imageObj.imageBytes;
+    // Define final path (saving as PNG)
+    const fileName = `${id.replace(/\.[^/.]+$/, "")}.png`; 
+    const filePath = path.join(outputDir, fileName);
 
-    return NextResponse.json({ success: true, imageBase64: base64Image });
+    // 4. Write file to disk
+    fs.writeFileSync(filePath, buffer);
+
+    // Return the accessible public URL path
+    return NextResponse.json({ 
+      success: true, 
+      fileName: fileName,
+      url: `/images/${fileName}` 
+    });
+
   } catch (error: any) {
-    console.error('Error generating image:', error);
-    return NextResponse.json(
-      { error: error.message || 'Failed to generate image. Check server logs for details.' },
-      { status: 500 }
-    );
+    console.error('Generation Error:', error);
+    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }

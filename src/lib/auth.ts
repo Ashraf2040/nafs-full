@@ -76,7 +76,7 @@ export const authOptions: NextAuthOptions = {
   },
 
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
       if (user) {
         token.id = user.id;
         token.role = (user as any).role;
@@ -85,16 +85,20 @@ export const authOptions: NextAuthOptions = {
         token.className = (user as any).className;
       }
 
+      if (trigger === "update" && typeof session?.name === "string") {
+        token.name = session.name.trim().slice(0, 100);
+      }
+
       return token;
     },
 
     async session({ session, token }) {
       if (session.user) {
-        (session.user as any).id = token.id;
-        (session.user as any).role = token.role;
-        (session.user as any).gradeId = token.gradeId;
-        (session.user as any).classId = token.classId;
-        (session.user as any).className = token.className;
+        session.user.id = token.id;
+        session.user.role = token.role;
+        session.user.gradeId = token.gradeId ?? null;
+        session.user.classId = token.classId ?? null;
+        session.user.className = token.className ?? null;
       }
 
       return session;

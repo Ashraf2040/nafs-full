@@ -1,23 +1,26 @@
 // src/app/api/grades/route.ts
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
+import { requireRole } from "@/lib/guard";
 
 // GET - Fetch all grades or a specific grade by level
 export async function GET(req: Request) {
     try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        }
+        const { user, response } = await requireRole("STUDENT", "TEACHER", "ADMIN");
+        if (response) return response;
 
         const { searchParams } = new URL(req.url);
         const level = searchParams.get("level");
 
+        const allowedGradeIds = user!.role === "TEACHER"
+            ? (await prisma.teacherAssignment.findMany({ where: { teacherId: user!.id }, select: { gradeId: true } })).map((a) => a.gradeId)
+            : user!.role === "STUDENT" && user!.gradeId
+                ? [user!.gradeId]
+                : null;
+
         if (level) {
             const grade = await prisma.grade.findFirst({
-                where: { level: parseInt(level) },
+                where: { level: parseInt(level), ...(allowedGradeIds ? { id: { in: allowedGradeIds } } : {}) },
                 include: {
                     _count: { select: { users: true, classes: true } }
                 }
@@ -29,6 +32,7 @@ export async function GET(req: Request) {
         }
 
         const grades = await prisma.grade.findMany({
+            where: allowedGradeIds ? { id: { in: allowedGradeIds } } : {},
             include: {
                 _count: { select: { users: true, classes: true } }
             },
@@ -45,15 +49,8 @@ export async function GET(req: Request) {
 // POST - Create a new grade
 export async function POST(req: Request) {
     try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        }
-
-        const userRole = (session.user as any).role;
-        if (userRole === "STUDENT") {
-            return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-        }
+        const { response } = await requireRole("ADMIN");
+        if (response) return response;
 
         const body = await req.json();
         const { level, name } = body;

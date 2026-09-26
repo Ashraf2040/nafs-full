@@ -1,0 +1,58 @@
+[
+  {
+    "file": "cleaned-quizzes-with-images-teacher-verified.csv",
+    "preview": {
+      "recordCount": 1,
+      "truncated": false,
+      "metadata": {
+        "revision": "sqgwp2",
+        "target": {
+          "id": "wb/yyj0vq",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "table",
+          "tokens": [
+            "table"
+          ]
+        },
+        "include": {
+          "requested": "values",
+          "tokens": [
+            "values"
+          ]
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "errors": {
+      "recordCount": 1,
+      "truncated": false,
+      "metadata": {
+        "revision": "zf7rdv",
+        "target": {
+          "id": "wb/bgxutd",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "match",
+          "tokens": [
+            "match"
+          ]
+        },
+        "include": {
+          "tokens": []
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    }
+  }
+]

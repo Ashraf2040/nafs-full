@@ -1,7 +1,6 @@
 // src/app/api/students/route.ts
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
+import { requireRole, getTeacherGradeIds } from "@/lib/guard";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
 
@@ -9,23 +8,27 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
     try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        }
-
-        const userRole = (session.user as any).role;
-        if (userRole === "STUDENT") {
-            return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-        }
+        const { user, response } = await requireRole("TEACHER", "ADMIN");
+        if (response) return response;
 
         const { searchParams } = new URL(req.url);
         const limit = Math.min(parseInt(searchParams.get("limit") || "500"), 500);
         const offset = parseInt(searchParams.get("offset") || "0");
 
+        const where: any = { role: "STUDENT" };
+
+        // TEACHERS may only list students in the grades they are assigned to
+        if (user!.role === "TEACHER") {
+            const gradeIds = await getTeacherGradeIds(user!.id);
+            if (gradeIds.length === 0) {
+                return NextResponse.json({ students: [], total: 0 });
+            }
+            where.gradeId = { in: gradeIds };
+        }
+
         const [students, total] = await Promise.all([
             prisma.user.findMany({
-                where: { role: "STUDENT" },
+                where,
                 include: {
                     grade: true,
                     class: true,
@@ -37,14 +40,25 @@ export async function GET(req: Request) {
                 take: limit,
                 skip: offset,
             }),
-            prisma.user.count({ where: { role: "STUDENT" } }),
+            prisma.user.count({ where }),
         ]);
 
         const studentIds = students.map(s => s.id);
+        const teacherAssignments = user!.role === "TEACHER"
+            ? await prisma.teacherAssignment.findMany({
+                where: { teacherId: user!.id },
+                select: { subjectId: true, gradeId: true },
+              })
+            : [];
         const avgScores = studentIds.length > 0
             ? await prisma.result.groupBy({
                 by: ["studentId"],
-                where: { studentId: { in: studentIds } },
+                where: {
+                    studentId: { in: studentIds },
+                    ...(user!.role === "TEACHER"
+                        ? { quiz: { OR: teacherAssignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) } }
+                        : {}),
+                },
                 _avg: { score: true },
             })
             : [];
@@ -73,15 +87,8 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
     try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        }
-
-        const userRole = (session.user as any).role;
-        if (userRole === "STUDENT") {
-            return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-        }
+        const { user, response } = await requireRole("TEACHER", "ADMIN");
+        if (response) return response;
 
         const body = await req.json();
         const { name, email, gradeLevel, classId, password } = body;
@@ -93,7 +100,8 @@ export async function POST(req: Request) {
             );
         }
 
-        const existing = await prisma.user.findUnique({ where: { email } });
+        const normalizedEmail = String(email).trim().toLowerCase();
+        const existing = await prisma.user.findUnique({ where: { email: normalizedEmail } });
         if (existing) {
             return NextResponse.json(
                 { error: "A student with this email already exists" },
@@ -106,6 +114,16 @@ export async function POST(req: Request) {
         });
         if (!grade) {
             return NextResponse.json({ error: "Invalid grade level" }, { status: 400 });
+        }
+
+        if (user!.role === "TEACHER") {
+            const assigned = await prisma.teacherAssignment.findFirst({
+                where: { teacherId: user!.id, gradeId: grade.id },
+                select: { id: true },
+            });
+            if (!assigned) {
+                return NextResponse.json({ error: "You can only add students to an assigned grade" }, { status: 403 });
+            }
         }
 
         let finalClassId = classId || null;
@@ -121,20 +139,29 @@ export async function POST(req: Request) {
             }
         }
 
-        const hashedPassword = await bcrypt.hash(password || "Student123!", 10);
+        if (typeof password !== "string" || password.length < 6) {
+            return NextResponse.json({ error: "Password must be at least 6 characters" }, { status: 400 });
+        }
+        const hashedPassword = await bcrypt.hash(password, 10);
 
         const student = await prisma.user.create({
             data: {
                 name,
-                email,
+                email: normalizedEmail,
                 password: hashedPassword,
                 role: "STUDENT",
                 gradeId: grade.id,
                 classId: finalClassId,
             },
-            include: {
+            select: {
+                id: true,
+                name: true,
+                email: true,
+                role: true,
+                gradeId: true,
+                classId: true,
                 grade: true,
-                class: true
+                class: true,
             }
         });
 

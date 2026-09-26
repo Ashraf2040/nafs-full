@@ -1,6 +1,7 @@
 // src/app/api/students/stats/[id]/route.ts
 
 import { NextResponse } from "next/server";
+import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
 
 export async function GET(
@@ -8,8 +9,33 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { user, response } = await requireRole("STUDENT", "TEACHER", "ADMIN");
+    if (response) return response;
+
     const resolvedParams = await params;
     const studentId = resolvedParams.id;
+
+    const student = await prisma.user.findUnique({
+      where: { id: studentId },
+      select: { id: true, role: true, gradeId: true },
+    });
+
+    if (!student || student.role !== "STUDENT") {
+      return NextResponse.json({ error: "Student not found" }, { status: 404 });
+    }
+
+    // Students may only ever access their OWN stats (IDOR protection)
+    if (user!.role === "STUDENT" && user!.id !== studentId) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+
+    // Teachers may only access students in grades they are assigned to
+    if (user!.role === "TEACHER" && !(await canViewStudent(user!, student))) {
+      return NextResponse.json(
+        { error: "Forbidden: Not assigned to this student's grade" },
+        { status: 403 }
+      );
+    }
 
     const results = await prisma.result.findMany({
       where: { studentId },
@@ -33,12 +59,8 @@ export async function GET(
     const averageScore =
       quizzesTaken > 0 ? totalRawScore / quizzesTaken : 0;
 
-    // Achievement Score
-    const achievementScore = results.reduce((acc, r) => {
-      const questionCount = r.quiz?.questions?.length || 0;
-
-      return acc + r.score * questionCount;
-    }, 0);
+    // Result.score is stored as a percentage from 0 to 100.
+    const averagePercentage = Math.round(averageScore);
 
     // أعلى درجة
     const highestScore =
@@ -47,9 +69,10 @@ export async function GET(
         : 0;
 
     return NextResponse.json({
-      totalScore: achievementScore || 0,
+      totalScore: Math.round(totalRawScore),
+      averageScore: Math.round(averageScore),
+      averagePercentage,
       quizzesTaken,
-      averageScore,
       highestScore,
     });
   } catch (error) {

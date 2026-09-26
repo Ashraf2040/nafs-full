@@ -188,7 +188,7 @@ nafs-prep/
 | **TeacherAssignment** | `id`, `teacherId`, `subjectId`, `gradeId`, `createdAt` | → User (teacher), → Subject, → Grade | Which subjects/grades a teacher can teach |
 | **Quiz** | `id`, `title`, `description`, `isPublished`, `dueDate`, `gradeId`, `subjectId`, `creatorId`, `outcomeId`, `createdAt` | → Grade, → Subject, → User (creator), → LearningOutcome (optional), → Question[], → Result[] | Assessments created by teachers/admins |
 | **Question** | `id`, `quizId`, `questionText`, `questionType`, `options` (JSON), `correctAnswer`, `explanation`, `imageUrl`, `bloomLevel`, `difficulty`, `learningOutcomeId`, `createdAt` | → Quiz, → LearningOutcome (optional), → StudentAnswer[] | Individual quiz questions |
-| **Result** | `id`, `score`, `totalPoints`, `studentId`, `quizId`, `completedAt` | → User (student), → Quiz, → StudentAnswer[] | Quiz submission results |
+| **Result** | `id`, `score` (percentage), `totalPoints`, `totalItems`, `attemptsCount`, `studentId`, `quizId`, `completedAt` | → User (student), → Quiz, → StudentAnswer[] | One best-result row per student/quiz with server-graded answers and attempt count |
 | **StudentAnswer** | `id`, `resultId`, `questionId`, `studentAnswer`, `isCorrect`, `createdAt` | → Result, → Question | Individual question answers within a submission |
 | **LearningOutcome** | `id`, `grade` (Int), `subject`, `subDomain`, `outcomeText`, `indicatorText`, `subjectRefId`, `createdAt` | → Subject (optional), → Question[], → Quiz[] | NAFS learning standards mapped by grade/subject |
 
@@ -283,7 +283,7 @@ For each matched route, the middleware:
 |-----|------|-------------|
 | `/` | `src/app/page.tsx` | Landing page — hero, stats bar, subject cards (Science/Math/English), how-it-works, features, testimonials, footer CTA. Role-aware CTAs based on session. |
 | `/login` | `src/app/login/page.tsx` | Login form with email/password + Google OAuth button |
-| `/register` | `src/app/register/page.tsx` | Registration form (name, email, password, role selection, grade) |
+| `/register` | `src/app/register/page.tsx` | Student self-registration (name, email, password, grade). Staff accounts are admin-created. |
 | `/unauthorized` | `src/app/unauthorized/page.tsx` | Access denied page with 403 illustration |
 
 ### Dashboard Pages (all under `/dashboard`)
@@ -301,9 +301,9 @@ For each matched route, the middleware:
 | `/dashboard/teachers/[id]` | `teachers/[id]/page.tsx` | ADMIN | Individual teacher profile with performance chart |
 | `/dashboard/subjects` | `subjects/page.tsx` | ADMIN, TEACHER | Subject listing with management options |
 | `/dashboard/statistics` | `statistics/page.tsx` | ADMIN, TEACHER | Full analytics dashboard. KPI cards (students, completion rate, avg score, active quizzes), score trends chart (6-month), grade distribution pie chart, subject performance bar chart, student rankings table, struggling quizzes needing remediation. **Streaming**: Header/filters instantly, then KPI cards → charts → rankings → struggling quizzes stream in. Supports subject/grade filters. |
-| `/dashboard/certificates` | `certificates/page.tsx` | ADMIN, TEACHER, STUDENT | Achievement certificates. Students see their own (score ≥ 80%). Admins/teachers see all high-scoring students (score ≥ 80%, latest 20). Downloadable PDF certificates. |
-| `/dashboard/settings` | `settings/page.tsx` | ADMIN, TEACHER, STUDENT | User settings page |
-| `/image-generator` | `image-generator/page.tsx` | Public | AI image generation tool |
+| `/dashboard/certificates` | `certificates/page.tsx` | ADMIN, TEACHER, STUDENT | Achievement certificates. Students see their own; teachers see assigned cohorts; admins see platform-wide achievements. |
+| `/dashboard/settings` | `settings/page.tsx` | ADMIN, TEACHER, STUDENT | Secure profile and password management |
+| `/image-generator` | `image-generator/page.tsx` | ADMIN, TEACHER | AI image generation tool |
 | `/preparation/[subject]` | `preparation/[subject]/page.tsx` | STUDENT | Subject-specific preparation content (Science, English, Math) |
 
 ---
@@ -315,7 +315,7 @@ For each matched route, the middleware:
 | Method | Route | Auth | Description |
 |--------|-------|------|-------------|
 | ALL | `/api/auth/[...nextauth]` | Public | NextAuth handler — sign in/out, session, providers, CSRF |
-| POST | `/api/register` | Public | Create account (name, email, password, role, grade). Hashes password with bcrypt. Returns user + auto sign-in URL. |
+| POST | `/api/register` | Public | Create a student account. Public registration cannot assign staff roles. |
 
 ### Users / Students
 
@@ -384,7 +384,7 @@ For each matched route, the middleware:
 
 | Method | Route | Auth | Description |
 |--------|-------|------|-------------|
-| GET | `/api/stats` | Public | Platform-wide stats: per-grade average score and participation count (raw SQL aggregation across Grade → Quiz → Result). Used by admin dashboard. |
+| GET | `/api/stats` | Admin, Teacher | Per-grade average score and participation; teacher results are limited to exact subject/grade assignments. |
 
 ---
 

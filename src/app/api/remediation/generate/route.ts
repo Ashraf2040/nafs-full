@@ -1,24 +1,19 @@
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
+import { requireRole } from "@/lib/guard";
 import { model } from "@/lib/ai";
 import { analyzeQuiz } from "@/lib/analyzeQuiz";
 
 // simple in-memory rate limit (per server instance)
 const lastRequestMap = new Map<string, number>();
 
+export const maxDuration = 120;
+
 export async function POST(req: Request) {
   try {
-    const session = await getServerSession(authOptions);
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
 
-    if (!session?.user) {
-      return NextResponse.json(
-        { message: "Unauthorized" },
-        { status: 401 }
-      );
-    }
-
-    const userId = (session.user as any).id || "anonymous";
+    const userId = user!.id;
 
     // -----------------------------
     // RATE LIMIT (5 seconds)

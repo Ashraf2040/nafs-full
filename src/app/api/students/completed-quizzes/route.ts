@@ -1,22 +1,13 @@
 // src/app/api/students/completed-quizzes/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
+import { requireRole } from "@/lib/guard";
 
 export async function GET(req: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const userRole = (session.user as any).role;
-    const userId = (session.user as any).id;
-
-    if (userRole !== "STUDENT") {
-      return NextResponse.json({ error: "Only students can access this endpoint" }, { status: 403 });
-    }
+    const { user, response } = await requireRole("STUDENT");
+    if (response) return response;
+    const userId = user!.id;
 
     // Get URL params
     const { searchParams } = new URL(req.url);
@@ -37,7 +28,16 @@ export async function GET(req: NextRequest) {
           include: {
             subject: true,
             grade: true,
-            questions: true,
+            questions: {
+              select: {
+                id: true,
+                questionText: true,
+                questionType: true,
+                options: true,
+                imageUrl: true,
+                difficulty: true,
+              },
+            },
           },
         },
       },
@@ -52,7 +52,7 @@ export async function GET(req: NextRequest) {
     results.forEach((result) => {
       const quizId = result.quizId;
       const currentCount = quizAttemptsMap.get(quizId) || 0;
-      quizAttemptsMap.set(quizId, currentCount + 1);
+      quizAttemptsMap.set(quizId, Math.max(currentCount, result.attemptsCount));
 
       // Keep the latest result (highest score or most recent)
       const existing = latestResultMap.get(quizId);
@@ -79,6 +79,7 @@ export async function GET(req: NextRequest) {
           score: result.score,
           totalPoints: result.totalPoints,
           createdAt: result.completedAt,
+          attemptNumber: result.attemptsCount,
         },
         attemptsUsed,
       };

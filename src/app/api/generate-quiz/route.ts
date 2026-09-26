@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { requireRole } from "@/lib/guard";
+
+export const maxDuration = 120;
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 const MAX_RETRIES = 3;
@@ -140,6 +143,9 @@ function generateTemplateSVG(prompt: string): string {
 
 export async function POST(req: NextRequest) {
   try {
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
+
     const body = await req.json();
     const { lessonText, pdfBase64, grade, subject, outcome, indicator, questionCount, includeImages } = body;
 

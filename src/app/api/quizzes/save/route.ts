@@ -1,8 +1,7 @@
 // src/app/api/quizzes/save/route.ts
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
+import { requireRole } from "@/lib/guard";
 
 function generateSmartTitle(outcomeText: string, subject: string, grade: number): string {
   if (!outcomeText) return `${subject} Assessment - Grade ${grade}`;
@@ -13,17 +12,10 @@ function generateSmartTitle(outcomeText: string, subject: string, grade: number)
 
 export async function POST(req: Request) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session || !session.user) {
-      return NextResponse.json({ message: "Unauthorized: Please log in." }, { status: 401 });
-    }
-
-    const userRole = (session.user as any).role;
-    const userId = (session.user as any).id;
-
-    if (userRole === "STUDENT") {
-      return NextResponse.json({ message: "Forbidden: Students cannot create quizzes." }, { status: 403 });
-    }
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
+    const userRole = user!.role;
+    const userId = user!.id;
 
     const {
       title,
@@ -33,18 +25,23 @@ export async function POST(req: Request) {
       isPublished,
       description,
       outcomeText,
-      outcomeId,        // ← ADDED
+      outcomeId,
     } = await req.json();
 
-    console.log("[SAVE_QUIZ] Payload received:", {
-      subjectName,
-      gradeTarget,
-      outcomeId,
-      questionCount: questions?.length,
-    });
-
-    if (!subjectName || !questions || gradeTarget == null) {
+    if (typeof subjectName !== "string" || !subjectName.trim() || !Array.isArray(questions) || questions.length === 0 || gradeTarget == null) {
       return NextResponse.json({ message: "Missing required fields" }, { status: 400 });
+    }
+    if (questions.length > 200) {
+      return NextResponse.json({ message: "A quiz can contain at most 200 questions" }, { status: 400 });
+    }
+    const invalidQuestion = questions.find((question: any) =>
+      !question?.question ||
+      !question?.answer ||
+      !Array.isArray(question.options) ||
+      question.options.length < 2,
+    );
+    if (invalidQuestion) {
+      return NextResponse.json({ message: "Every question needs text, at least two options, and a correct answer" }, { status: 400 });
     }
 
     const gradeLevel = parseInt(gradeTarget.toString());
@@ -60,7 +57,7 @@ export async function POST(req: Request) {
       const assignment = await prisma.teacherAssignment.findFirst({
         where: {
           teacherId: userId,
-          subject: { name: subjectName },
+          subject: { name: subjectName.trim() },
           grade: { level: gradeLevel },
         },
       });
@@ -69,13 +66,37 @@ export async function POST(req: Request) {
       }
     }
 
-    const subject = await prisma.subject.upsert({
-      where: { name: subjectName },
-      update: {},
-      create: { name: subjectName },
-    });
+    const subject = userRole === "ADMIN"
+      ? await prisma.subject.upsert({
+          where: { name: subjectName.trim() },
+          update: {},
+          create: { name: subjectName.trim() },
+        })
+      : await prisma.subject.findUnique({ where: { name: subjectName.trim() } });
+    if (!subject) {
+      return NextResponse.json({ message: "Subject not found" }, { status: 400 });
+    }
 
-    const smartTitle = title || generateSmartTitle(outcomeText || "", subjectName, gradeLevel);
+    const requestedOutcomeIds = [...new Set([
+      ...(outcomeId ? [String(outcomeId)] : []),
+      ...questions.map((question: any) => question.learningOutcomeId).filter(Boolean).map(String),
+    ])];
+    if (requestedOutcomeIds.length > 0) {
+      const matchingOutcomeCount = await prisma.learningOutcome.count({
+        where: {
+          id: { in: requestedOutcomeIds },
+          grade: gradeLevel,
+          subject: { equals: subject.name, mode: "insensitive" },
+        },
+      });
+      if (matchingOutcomeCount !== requestedOutcomeIds.length) {
+        return NextResponse.json({ message: "One or more indicators do not match the selected subject and grade" }, { status: 400 });
+      }
+    }
+
+    const smartTitle = typeof title === "string" && title.trim()
+      ? title.trim()
+      : generateSmartTitle(outcomeText || "", subject.name, gradeLevel);
 
     const newQuiz = await prisma.quiz.create({
       data: {
@@ -85,17 +106,19 @@ export async function POST(req: Request) {
         subjectId: subject.id,
         gradeId: gradeRecord.id,
         creatorId: userId,
-        outcomeId: outcomeId || null,   // ← ADDED
+        outcomeId: outcomeId || null,
+        // dueDate is not set here — it will be set when published
         questions: {
           create: questions.map((q: any) => ({
-            questionText: q.question,
+            questionText: String(q.question).trim(),
             questionType: "MULTIPLE_CHOICE",
-            correctAnswer: q.answer,
-            options: q.options,
-            explanation: q.explanation,
+            correctAnswer: String(q.answer).trim(),
+            options: q.options.map(String),
+            explanation: q.explanation || null,
             imageUrl: q.image_url || null,
-            bloomLevel: null,
-            difficulty: null,
+            learningOutcomeId: q.learningOutcomeId || outcomeId || null,
+            bloomLevel: q.bloomLevel || null,
+            difficulty: q.difficulty || null,
           })),
         },
       },
@@ -106,8 +129,6 @@ export async function POST(req: Request) {
         questions: true,
       },
     });
-
-    console.log("[SAVE_QUIZ] Created quiz shape:", JSON.stringify(newQuiz, null, 2));
 
     return NextResponse.json(
       { message: "Quiz saved successfully", quizId: newQuiz.id },

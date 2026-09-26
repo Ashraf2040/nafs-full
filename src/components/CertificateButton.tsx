@@ -12,9 +12,10 @@ interface CertificateButtonProps {
   date: string;
   teacherName: string;
   score?: number;
+  resultId?: string; // Unique result ID for guaranteed filename uniqueness
 }
 
-export default function CertificateButton({ studentName, subject, date, teacherName, score = 95 }: CertificateButtonProps) {
+export default function CertificateButton({ studentName, subject, date, teacherName, score = 95, resultId = "overall" }: CertificateButtonProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -23,11 +24,18 @@ export default function CertificateButton({ studentName, subject, date, teacherN
 
   if (!isMounted) return <div className="h-12 w-48 bg-slate-100 rounded-xl animate-pulse" />;
 
+  // Create a unique filename including score, date, and resultId to prevent overwrites
+  const safeStudentName = studentName.replace(/\s+/g, '_');
+  const safeSubject = subject.replace(/\s+/g, '_');
+  const safeDate = date.replace(/,/g, '').replace(/\s+/g, '_');
+  const shortResultId = resultId.slice(-6); // Last 6 chars of UUID for brevity
+   const fileName = `${safeStudentName}_${safeSubject}_${shortResultId}_Certificate.pdf`;
+
   return (
     <div suppressHydrationWarning={true}>
       <PDFDownloadLink
         document={<CertificatePDF studentName={studentName} subject={subject} date={date} teacherName={teacherName} score={score} />}
-        fileName={`${studentName.replace(/\s+/g, '_')}_${subject}_Certificate.pdf`}
+        fileName={fileName}
       >
         {({ loading, error, url }) => {
           if (error) {

@@ -1,30 +1,34 @@
 // src/app/api/classes/route.ts
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
+import { requireRole } from "@/lib/guard";
 
 // GET - Fetch classes (optionally filtered by grade)
 export async function GET(req: Request) {
     try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        }
+        const { user, response } = await requireRole("STUDENT", "TEACHER", "ADMIN");
+        if (response) return response;
 
         const { searchParams } = new URL(req.url);
         const gradeId = searchParams.get("gradeId");
         const gradeLevel = searchParams.get("gradeLevel");
 
-        const where: any = {};
+        const allowedGradeIds = user!.role === "TEACHER"
+            ? (await prisma.teacherAssignment.findMany({ where: { teacherId: user!.id }, select: { gradeId: true } })).map((a) => a.gradeId)
+            : user!.role === "STUDENT" && user!.gradeId
+                ? [user!.gradeId]
+                : null;
+        const where: any = allowedGradeIds ? { gradeId: { in: allowedGradeIds } } : {};
         
         if (gradeId) {
-            where.gradeId = gradeId;
+            if (!allowedGradeIds || allowedGradeIds.includes(gradeId)) where.gradeId = gradeId;
+            else return NextResponse.json([]);
         } else if (gradeLevel) {
             const grade = await prisma.grade.findFirst({
                 where: { level: parseInt(gradeLevel) }
             });
-            if (grade) where.gradeId = grade.id;
+            if (grade && (!allowedGradeIds || allowedGradeIds.includes(grade.id))) where.gradeId = grade.id;
+            else return NextResponse.json([]);
         }
 
         const classes = await prisma.class.findMany({
@@ -46,15 +50,8 @@ export async function GET(req: Request) {
 // POST - Create a new class
 export async function POST(req: Request) {
     try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        }
-
-        const userRole = (session.user as any).role;
-        if (userRole === "STUDENT") {
-            return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-        }
+        const { user, response } = await requireRole("TEACHER", "ADMIN");
+        if (response) return response;
 
         const body = await req.json();
         const { name, gradeId, gradeLevel } = body;
@@ -77,6 +74,16 @@ export async function POST(req: Request) {
 
         if (!finalGradeId) {
             return NextResponse.json({ error: "Grade is required" }, { status: 400 });
+        }
+
+        if (user!.role === "TEACHER") {
+            const assignment = await prisma.teacherAssignment.findFirst({
+                where: { teacherId: user!.id, gradeId: finalGradeId },
+                select: { id: true },
+            });
+            if (!assignment) {
+                return NextResponse.json({ error: "You can only create classes in an assigned grade" }, { status: 403 });
+            }
         }
 
         const existing = await prisma.class.findFirst({

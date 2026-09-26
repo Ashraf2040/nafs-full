@@ -184,13 +184,12 @@ export default function StudentsPage() {
   };
 
   const handleExportRoster = () => {
-    const headers = ["Name", "Email", "Grade", "Class", "Password"];
+    const headers = ["Name", "Email", "Grade", "Class"];
     const rows = students.map((s) => [
       s.name,
       s.email,
       s.gradeLevel ?? "",
       s.className ?? "",
-      "Student123!",
     ]);
 
     const csvContent = [
@@ -326,7 +325,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           email: createForm.email,
           gradeLevel: parseInt(createForm.gradeLevel),
           classId: createForm.classId || undefined,
-          password: createForm.password || "Student123!",
+          password: createForm.password,
         }),
       });
 
@@ -420,13 +419,14 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           </p>
         </div>
         <div className="flex gap-3 flex-wrap">
-          {/* ADD GRADE BUTTON */}
-          <button
-            onClick={() => setShowAddGrade(true)}
-            className="bg-violet-600 hover:bg-violet-700 text-white px-5 py-3 rounded-2xl font-bold cursor-pointer flex items-center gap-2 transition-all shadow-lg shadow-violet-100 active:scale-95"
-          >
-            <Layers size={20} /> Add Grade
-          </button>
+          {userRole === "ADMIN" && (
+            <button
+              onClick={() => setShowAddGrade(true)}
+              className="bg-violet-600 hover:bg-violet-700 text-white px-5 py-3 rounded-2xl font-bold cursor-pointer flex items-center gap-2 transition-all shadow-lg shadow-violet-100 active:scale-95"
+            >
+              <Layers size={20} /> Add Grade
+            </button>
+          )}
 
           {/* ADD CLASS BUTTON */}
           <button

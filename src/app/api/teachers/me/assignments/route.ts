@@ -1,19 +1,13 @@
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
+import { requireRole } from "@/lib/guard";
 import prisma from "@/lib/prisma";
 
 export async function GET() {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
 
-    const userId = (session.user as any)?.id;
-    if (!userId) {
-      return NextResponse.json({ error: "No user ID in session" }, { status: 400 });
-    }
+    const userId = user!.id;
 
     const assignments = await prisma.teacherAssignment.findMany({
       where: { teacherId: userId },

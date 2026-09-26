@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { startTransition } from "react";
 import { Filter, GraduationCap } from "lucide-react";
 
 interface StatFiltersProps {
@@ -10,11 +12,15 @@ interface StatFiltersProps {
 }
 
 export default function StatFilters({ subjects, grades, defaultSubject, defaultGrade }: StatFiltersProps) {
+  const router = useRouter();
+
   const updateFilter = (key: string, value: string) => {
     const url = new URL(window.location.href);
     if (value === "All") url.searchParams.delete(key);
     else url.searchParams.set(key, value);
-    window.location.href = url.toString();
+    startTransition(() => {
+      router.push(url.toString());
+    });
   };
 
   return (

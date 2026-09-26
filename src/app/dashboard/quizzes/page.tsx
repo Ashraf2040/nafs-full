@@ -5,9 +5,7 @@ import { Suspense } from "react";
 import QuizManager2 from "@/components/QuizManager";
 import QuizFilterBar from "./QuizFilterBar";
 import QuizGridSection from "./QuizGridSection";
-import {
-  LayoutGrid, FileText, GraduationCap, Filter,
-} from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 
 export const revalidate = 300;
 
@@ -76,8 +74,8 @@ export default async function QuizzesPage({
   const session = await getServerSession(authOptions);
   if (!session?.user) redirect("/login");
 
-  const userRole = (session.user as any)?.role;
-  const userId = (session.user as any)?.id;
+  const userRole = session.user.role;
+  const userId = session.user.id;
   if (!userId) redirect("/login");
 
   const params = await searchParams;
@@ -97,7 +95,7 @@ export default async function QuizzesPage({
 
       <div className="space-y-6">
         {/* Header Section — renders instantly (no data fetching) */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
+        <div className="flex items-center justify-between gap-5">
           <div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
               <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl border border-indigo-100/50">
@@ -111,23 +109,21 @@ export default async function QuizzesPage({
               Browse, filter, and manage your NAFS preparation materials
             </p>
           </div>
-
-          {/* Filters for admin/teacher — stream independently */}
-          {userRole !== "STUDENT" && (
-            <Suspense fallback={<FiltersSkeleton />}>
-              <div className="flex gap-3 flex-wrap items-center w-full md:w-auto">
-                <QuizFilterBar
-                  userRole={userRole}
-                  userId={userId}
-                  filterSubject={filterSubject}
-                  filterGrade={filterGrade}
-                  filterOutcome={filterOutcome}
-                  filterIndicator={filterIndicator}
-                />
-              </div>
-            </Suspense>
-          )}
         </div>
+
+        {/* Filters for admin/teacher — stream independently */}
+        {userRole !== "STUDENT" && (
+          <Suspense fallback={<FiltersSkeleton />}>
+            <QuizFilterBar
+              userRole={userRole}
+              userId={userId}
+              filterSubject={filterSubject}
+              filterGrade={filterGrade}
+              filterOutcome={filterOutcome}
+              filterIndicator={filterIndicator}
+            />
+          </Suspense>
+        )}
 
         {/* Quiz grid + count badge — streams in last (heaviest queries) */}
         <Suspense fallback={<QuizGridSkeleton />}>

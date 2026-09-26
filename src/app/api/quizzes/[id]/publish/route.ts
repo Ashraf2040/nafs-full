@@ -1,31 +1,41 @@
 // src/app/api/quizzes/[id]/publish/route.ts
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { requireRole } from "@/lib/guard";
 
 export async function POST(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const userRole = (session.user as any).role;
-    if (userRole === "STUDENT") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
 
     const { id } = await params;
+    const quiz = await prisma.quiz.findUnique({
+      where: { id },
+      select: { creatorId: true, _count: { select: { questions: true } } },
+    });
+    if (!quiz) return NextResponse.json({ error: "Quiz not found" }, { status: 404 });
+    if (user!.role === "TEACHER" && quiz.creatorId !== user!.id) {
+      return NextResponse.json({ error: "Only the quiz owner can publish it" }, { status: 403 });
+    }
+    if (quiz._count.questions === 0) {
+      return NextResponse.json({ error: "Add at least one question before publishing" }, { status: 409 });
+    }
 
-    // Update quiz to published
+    // Calculate due date: 2 weeks from now
+    const twoWeeksFromNow = new Date();
+    twoWeeksFromNow.setDate(twoWeeksFromNow.getDate() + 14);
+
+    // Update quiz to published and set due date
     const updatedQuiz = await prisma.quiz.update({
       where: { id },
-      data: { isPublished: true },
+      data: { 
+        isPublished: true,
+        dueDate: twoWeeksFromNow,
+      },
     });
 
     // Revalidate the quizzes page so fresh data shows

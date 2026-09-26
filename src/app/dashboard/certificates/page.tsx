@@ -27,7 +27,7 @@ export default async function CertificatesPage() {
         studentId: userId,
         score: { gte: 80 }
       },
-      include: { quiz: { include: { subject: true } } },
+      include: { quiz: { include: { subject: true, creator: { select: { name: true } } } } },
       orderBy: { completedAt: "desc" },
     });
 
@@ -41,13 +41,28 @@ export default async function CertificatesPage() {
         month: "long",
         day: "numeric",
       }),
-      teacherName: "Ashraf Elsayed",
+      teacherName: r.quiz.creator.name || "NAFS Prep",
     }));
   } else {
-    // For teachers, show all student achievements
+    const assignments = userRole === "TEACHER"
+      ? await prisma.teacherAssignment.findMany({
+          where: { teacherId: userId },
+          select: { subjectId: true, gradeId: true },
+        })
+      : [];
+    const quizScope = userRole === "TEACHER"
+      ? assignments.length > 0
+        ? { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) }
+        : { id: "__no_teacher_assignments__" }
+      : {};
+
+    // Admins see platform achievements; teachers see only assigned cohorts.
     const results = await prisma.result.findMany({
-      where: { score: { gte: 80 } },
-      include: { quiz: { include: { subject: true } }, student: true },
+      where: { score: { gte: 80 }, quiz: quizScope },
+      include: {
+        quiz: { include: { subject: true, creator: { select: { name: true } } } },
+        student: true,
+      },
       orderBy: { completedAt: "desc" },
       take: 20,
     });
@@ -62,7 +77,7 @@ export default async function CertificatesPage() {
         month: "long",
         day: "numeric",
       }),
-      teacherName: "Ashraf Elsayed",
+      teacherName: r.quiz.creator.name || "NAFS Prep",
     }));
   }
 
@@ -130,6 +145,7 @@ export default async function CertificatesPage() {
                       date={cert.date}
                       teacherName={cert.teacherName}
                       score={cert.score}
+                      resultId={cert.id}
                     />
                   </div>
                 )}
@@ -146,6 +162,7 @@ export default async function CertificatesPage() {
                       date={cert.date}
                       teacherName={cert.teacherName}
                       score={cert.score}
+                      resultId={cert.id}
                     />
                   </div>
                 )}

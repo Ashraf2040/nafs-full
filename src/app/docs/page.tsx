@@ -100,7 +100,7 @@ export default function DocsPage() {
               <div>
                 <h3 className="font-bold text-slate-800 mb-2">Login Methods</h3>
                 <ul className="space-y-2 text-slate-600">
-                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0" /> <span><strong>Email & Password</strong> — Credentials provider with bcrypt password hashing. Users can register with name, email, password, and role.</span></li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0" /> <span><strong>Email & Password</strong> — Credentials provider with bcrypt password hashing. Public registration creates student accounts only; staff roles are admin-managed.</span></li>
                   <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0" /> <span><strong>Google OAuth</strong> — Social login via Google (requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in .env).</span></li>
                 </ul>
               </div>
@@ -153,7 +153,7 @@ export default function DocsPage() {
                     { name: "TeacherAssignment", fields: "id, teacherId, subjectId, gradeId", desc: "Maps which subjects + grades a teacher can access. Unique constraint on teacherId+subjectId+gradeId." },
                     { name: "Quiz", fields: "id, title, description, isPublished, dueDate, gradeId, subjectId, creatorId, outcomeId", desc: "Assessments created by teachers/admins." },
                     { name: "Question", fields: "id, quizId, questionText, questionType, options (JSON), correctAnswer, explanation, imageUrl, bloomLevel, difficulty, learningOutcomeId", desc: "Individual quiz questions." },
-                    { name: "Result", fields: "id, score, totalPoints, studentId, quizId", desc: "Quiz submission results." },
+                    { name: "Result", fields: "id, score (percentage), totalPoints, totalItems, attemptsCount, studentId, quizId", desc: "Server-graded best result and attempt count." },
                     { name: "StudentAnswer", fields: "id, resultId, questionId, studentAnswer, isCorrect", desc: "Individual question answers within a submission." },
                     { name: "LearningOutcome", fields: "id, grade (Int), subject, subDomain, outcomeText, indicatorText", desc: "NAFS learning standards mapped by grade/subject." },
                   ].map(({ name, fields, desc }) => (
@@ -195,7 +195,7 @@ Quiz                 ──→ Result    ──→ StudentAnswer ──→ Quest
                   {[
                     ["/", "Public", "Landing page — hero, subject cards, how-it-works, CTA"],
                     ["/login", "Public", "Sign in with email/password or Google"],
-                    ["/register", "Public", "Create account with name, email, password, role"],
+                    ["/register", "Public", "Create a student account with name, email, password, and grade"],
                     ["/dashboard", "All", "Role-based dashboard with stats, charts, recent activity. Uses streaming Suspense."],
                     ["/dashboard/quizzes", "All", "Quiz library with filters (subject, grade, outcome). Students see only published quizzes."],
                     ["/dashboard/quizzes/solve/[id]", "All", "Quiz-taking interface for students; preview for teachers/admins."],
@@ -259,7 +259,7 @@ Quiz                 ──→ Result    ──→ StudentAnswer ──→ Quest
                     ["/api/generate-quiz", "POST", "Admin, Teacher", "AI quiz generation via Gemini"],
                     ["/api/generate-images", "POST", "Admin, Teacher", "AI image generation"],
                     ["/api/remediation/generate", "POST", "Admin, Teacher", "AI remediation plan generation"],
-                    ["/api/stats", "GET", "Public", "Platform-wide per-grade stats (avg score, participation)"],
+                    ["/api/stats", "GET", "Admin, Teacher", "Role-scoped per-grade statistics (average score and participation)"],
                   ].map(([ep, methods, auth, desc]) => (
                     <tr key={ep} className="hover:bg-slate-50/50">
                       <td className="p-4 font-mono text-xs text-indigo-600 max-w-[260px] break-all">{ep}</td>

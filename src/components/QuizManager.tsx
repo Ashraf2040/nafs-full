@@ -38,7 +38,6 @@ export default function QuizManager2() {
 
   const [subject, setSubject] = useState("");
   const [grade, setGrade] = useState("");
-  const [dueDate, setDueDate] = useState("");
 
   const [lessonText, setLessonText] = useState("");
   const [pdfFile, setPdfFile] = useState<File | null>(null);
@@ -323,10 +322,6 @@ export default function QuizManager2() {
       toast.error("Please add at least one question.");
       return;
     }
-    if (!dueDate) {
-      toast.error("Please select a due date.");
-      return;
-    }
 
     if (userRole === "TEACHER") {
       const hasAccess = teacherAssignments.some(
@@ -344,15 +339,20 @@ export default function QuizManager2() {
     try {
       const selectedOutcome = outcomes.find((o) => o.id === selectedOutcomeId);
 
+      const questionsWithOutcomes = questions.map((q: any) => ({
+        ...q,
+        learningOutcomeId: q.learningOutcomeId || selectedOutcome?.id || null,
+      }));
+
       const payload = {
         title: "",
         subjectName: subject,
         gradeTarget: parseInt(grade),
-        dueDate: new Date(dueDate).toISOString(),
-        questions,
+        questions: questionsWithOutcomes,
         isPublished: false,
         description: `Assessment for Grade ${grade} ${subject}`,
         outcomeText: selectedOutcome?.outcomeText || "",
+        outcomeId: selectedOutcome?.id || null,
       };
 
       const res = await fetch("/api/quizzes/save", {
@@ -368,7 +368,6 @@ export default function QuizManager2() {
         setLessonText("");
         setPdfFile(null);
         setSelectedOutcomeId("");
-        setDueDate("");
         setIncludeImages(false);
         window.location.reload();
       } else {
@@ -643,16 +642,6 @@ export default function QuizManager2() {
                     </option>
                   ))}
                 </select>
-
-                <div className="flex items-center gap-2 bg-white px-3 border border-slate-200 rounded-xl shadow-sm">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Due:</span>
-                  <input
-                    type="date"
-                    value={dueDate}
-                    onChange={(e) => setDueDate(e.target.value)}
-                    className="p-1 outline-none font-medium text-slate-600"
-                  />
-                </div>
 
                 <label className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm cursor-pointer hover:bg-slate-50 transition-colors">
                   <ImageIcon

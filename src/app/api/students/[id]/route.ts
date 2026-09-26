@@ -1,7 +1,6 @@
 // src/app/api/students/[id]/route.ts
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
+import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
@@ -12,18 +11,31 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
 
     const resolvedParams = await params;
+    const assignments = user!.role === "TEACHER"
+      ? await prisma.teacherAssignment.findMany({
+          where: { teacherId: user!.id },
+          select: { subjectId: true, gradeId: true },
+        })
+      : [];
     const student = await prisma.user.findUnique({
       where: { id: resolvedParams.id },
-      include: {
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        gradeId: true,
+        classId: true,
         grade: true,
         class: true,
         submissions: {
+          where: user!.role === "TEACHER"
+            ? { quiz: { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) } }
+            : {},
           include: { quiz: { include: { subject: true } } },
           orderBy: { completedAt: "desc" }
         }
@@ -32,6 +44,13 @@ export async function GET(
 
     if (!student || student.role !== "STUDENT") {
       return NextResponse.json({ error: "Student not found" }, { status: 404 });
+    }
+
+    if (!(await canViewStudent(user!, student))) {
+      return NextResponse.json(
+        { error: "Forbidden: Not assigned to this student's grade" },
+        { status: 403 }
+      );
     }
 
     return NextResponse.json({
@@ -51,19 +70,23 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const userRole = (session.user as any).role;
-    if (userRole === "STUDENT") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
+    const { user, response } = await requireRole("TEACHER", "ADMIN");
+    if (response) return response;
 
     const resolvedParams = await params;
     const { id } = resolvedParams;
     const body = await req.json();
+
+    const existingStudent = await prisma.user.findUnique({
+      where: { id },
+      select: { id: true, role: true, gradeId: true },
+    });
+    if (!existingStudent || existingStudent.role !== "STUDENT") {
+      return NextResponse.json({ error: "Student not found" }, { status: 404 });
+    }
+    if (!(await canViewStudent(user!, existingStudent))) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
     
     // Accept either gradeLevel or gradeId
     const { gradeLevel, gradeId, classId } = body;
@@ -94,6 +117,16 @@ export async function PUT(
       }
     }
 
+    if (user!.role === "TEACHER" && finalGradeId) {
+      const assigned = await prisma.teacherAssignment.findFirst({
+        where: { teacherId: user!.id, gradeId: finalGradeId },
+        select: { id: true },
+      });
+      if (!assigned) {
+        return NextResponse.json({ error: "You can only move students within your assigned grades" }, { status: 403 });
+      }
+    }
+
     // Build update data dynamically - only include fields that exist in schema
     const updateData: any = {};
     
@@ -110,9 +143,15 @@ export async function PUT(
     const updated = await prisma.user.update({
       where: { id },
       data: updateData,
-      include: {
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        role: true,
+        gradeId: true,
+        classId: true,
         grade: true,
-        class: true
+        class: true,
       }
     });
 
@@ -130,27 +169,22 @@ export async function PUT(
   }
 }
 
-// DELETE - Remove student
+// DELETE - Remove student (ADMIN only)
 export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session?.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const userRole = (session.user as any).role;
-    if (userRole === "STUDENT") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
+    const { user, response } = await requireRole("ADMIN");
+    if (response) return response;
 
     const resolvedParams = await params;
     
-    await prisma.user.delete({
-      where: { id: resolvedParams.id }
-    });
+    const student = await prisma.user.findUnique({ where: { id: resolvedParams.id }, select: { role: true } });
+    if (!student || student.role !== "STUDENT") {
+      return NextResponse.json({ error: "Student not found" }, { status: 404 });
+    }
+    await prisma.user.delete({ where: { id: resolvedParams.id } });
 
     return NextResponse.json({ success: true });
   } catch (error) {

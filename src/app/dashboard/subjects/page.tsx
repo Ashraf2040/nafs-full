@@ -4,7 +4,7 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
-import { BookOpen, Edit, Plus, BarChart3, FileText, Users } from "lucide-react";
+import { BookOpen, BarChart3, FileText, Users } from "lucide-react";
 import SubjectCreateModal from "@/components/SubjectCreateModal";
 
 export const revalidate = 600;
@@ -17,18 +17,34 @@ export default async function DashboardSubjectsPage() {
   }
 
   const userRole = (session.user as any)?.role;
+  const userId = (session.user as any)?.id;
 
   if (userRole === "STUDENT") {
     redirect("/dashboard");
   }
 
+  const assignments = userRole === "TEACHER"
+    ? await prisma.teacherAssignment.findMany({
+        where: { teacherId: userId },
+        select: { subjectId: true, gradeId: true },
+      })
+    : [];
+  const assignedSubjectIds = [...new Set(assignments.map((assignment) => assignment.subjectId))];
+  const assignedPairs = assignments.map((assignment) => ({
+    subjectId: assignment.subjectId,
+    gradeId: assignment.gradeId,
+  }));
+
   const subjects = await prisma.subject.findMany({
+    where: userRole === "TEACHER" ? { id: { in: assignedSubjectIds } } : {},
     include: {
       quizzes: {
+        where: userRole === "TEACHER" ? { OR: assignedPairs } : {},
         include: {
           _count: {
             select: { results: true },
           },
+          results: { select: { score: true } },
         },
       },
     },
@@ -41,17 +57,10 @@ export default async function DashboardSubjectsPage() {
     0
   );
 
-  const avgScore =
-    subject.quizzes.length > 0
-      ? subject.quizzes.reduce((acc, q) => {
-          const quizAvg =
-            q._count?.results && q._count.results > 0
-              ? 0 // ❗ ما عندكش scores هنا، فقط count
-              : 0;
-
-          return acc + quizAvg;
-        }, 0) / subject.quizzes.length
-      : 0;
+  const scores = subject.quizzes.flatMap((quiz) => quiz.results.map((result) => result.score));
+  const avgScore = scores.length > 0
+    ? scores.reduce((sum, score) => sum + score, 0) / scores.length
+    : 0;
 
   return {
     ...subject,
@@ -65,15 +74,16 @@ export default async function DashboardSubjectsPage() {
       <header className="flex justify-between items-end border-b border-slate-200 pb-6">
         <div>
           <h1 className="text-3xl font-extrabold text-slate-900 flex items-center gap-3">
-            <BookOpen className="text-indigo-600" /> Subject Management
+            <BookOpen className="text-indigo-600" /> {userRole === "ADMIN" ? "Subject Management" : "Assigned Subjects"}
           </h1>
           <p className="text-slate-500 mt-2">
-            Manage curriculum subjects and view associated assessments.
+            {userRole === "ADMIN"
+              ? "Manage curriculum subjects and view associated assessments."
+              : "Review assessment activity and performance for your assigned subjects."}
           </p>
         </div>
 
-        {/* ─── WORKING ADD SUBJECT BUTTON ─── */}
-        <SubjectCreateModal />
+        {userRole === "ADMIN" && <SubjectCreateModal />}
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -146,9 +156,6 @@ export default async function DashboardSubjectsPage() {
               >
                 View Page →
               </Link>
-              <button className="text-slate-400 hover:text-indigo-600 hover:bg-indigo-50 p-2 rounded-lg transition-colors">
-                <Edit size={18} />
-              </button>
             </div>
           </div>
         ))}
@@ -157,7 +164,7 @@ export default async function DashboardSubjectsPage() {
           <div className="col-span-full py-20 text-center bg-slate-50 rounded-[3rem] border-2 border-dashed border-slate-200">
             <BookOpen size={48} className="mx-auto text-slate-300 mb-4" />
             <p className="text-slate-400 font-medium">
-              No subjects found. Create your first subject!
+              {userRole === "ADMIN" ? "No subjects found. Create your first subject." : "No subjects are assigned to your account yet."}
             </p>
           </div>
         )}

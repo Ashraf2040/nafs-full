@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   FileText, Calendar, Clock, Edit, PlayCircle, CheckCircle2,
   GraduationCap, BookOpen, Eye, Sparkles, Search, History, ArrowRight,
+  Lock, AlertTriangle, Mail
 } from "lucide-react";
 import QuizActions from "./QuizActions";
 
@@ -35,6 +36,7 @@ export default async function QuizGridSection({
       select: { grade: { select: { id: true } } },
     });
     if (currentUser?.grade) {
+      // Students see published quizzes for their grade
       whereClause.isPublished = true;
       whereClause.gradeId = currentUser.grade.id;
     }
@@ -75,31 +77,58 @@ export default async function QuizGridSection({
   if (userRole !== "TEACHER" || !whereClause.id) {
     if (filterSubject) whereClause.subject = { name: filterSubject };
     if (filterGrade) whereClause.grade = { level: filterGrade };
-    if (filterOutcome || filterIndicator) {
-      whereClause.outcomeId = filterOutcome || filterIndicator;
+  }
+
+  let learningOutcomeIds: string[] = [];
+  if (filterIndicator) {
+    // An indicator maps to exactly one LearningOutcome row.
+    learningOutcomeIds = [filterIndicator];
+  } else if (filterOutcome) {
+    // Outcomes are stored as one row per indicator. Selecting an outcome must
+    // therefore match every row that shares its subject, grade, and text.
+    const selectedOutcome = await prisma.learningOutcome.findUnique({
+      where: { id: filterOutcome },
+      select: { subject: true, grade: true, outcomeText: true },
+    });
+
+    if (selectedOutcome) {
+      const matchingOutcomes = await prisma.learningOutcome.findMany({
+        where: {
+          subject: selectedOutcome.subject,
+          grade: selectedOutcome.grade,
+          outcomeText: selectedOutcome.outcomeText,
+        },
+        select: { id: true },
+      });
+      learningOutcomeIds = matchingOutcomes.map((outcome) => outcome.id);
+    }
+  }
+
+  if (filterOutcome || filterIndicator) {
+    const outcomeCondition = {
+      OR: [
+        { outcomeId: { in: learningOutcomeIds } },
+        {
+          questions: {
+            some: { learningOutcomeId: { in: learningOutcomeIds } },
+          },
+        },
+      ],
+    };
+    if (whereClause.OR) {
+      const existingOR = whereClause.OR;
+      delete whereClause.OR;
+      whereClause.AND = [{ OR: existingOR }, outcomeCondition];
+    } else {
+      whereClause.AND = [outcomeCondition];
     }
   }
 
   const quizWhere =
     Object.keys(whereClause).length > 0 ? whereClause : undefined;
 
-  const pageSkip =
-    (Math.min(currentPage, Math.max(1, Math.ceil(1 / ITEMS_PER_PAGE))) - 1) *
-    ITEMS_PER_PAGE;
-
-  const [totalCount, quizzes, studentResultsData] = await Promise.all([
+  const [totalCount, studentResultsData] = await Promise.all([
     prisma.quiz.count({ where: quizWhere }),
-    prisma.quiz.findMany({
-      where: quizWhere,
-      include: {
-        subject: true,
-        grade: true,
-        _count: { select: { questions: true } },
-      },
-      orderBy: { createdAt: "desc" },
-      skip: pageSkip,
-      take: ITEMS_PER_PAGE,
-    }),
     userRole === "STUDENT"
       ? prisma.result.findMany({
           where: { studentId: userId },
@@ -110,6 +139,18 @@ export default async function QuizGridSection({
 
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
   const safePage = Math.min(currentPage, Math.max(1, totalPages));
+  const pageSkip = (safePage - 1) * ITEMS_PER_PAGE;
+  const quizzes = await prisma.quiz.findMany({
+    where: quizWhere,
+    include: {
+      subject: true,
+      grade: true,
+      _count: { select: { questions: true } },
+    },
+    orderBy: { createdAt: "desc" },
+    skip: pageSkip,
+    take: ITEMS_PER_PAGE,
+  });
 
   let studentResults: Record<string, any> = {};
   let completedQuizIds: Set<string> = new Set();
@@ -120,6 +161,12 @@ export default async function QuizGridSection({
     });
   }
   const completedCount = completedQuizIds.size;
+
+  // Check if quiz is expired (past due date)
+  const isExpired = (quiz: any) => {
+    if (!quiz.dueDate) return false;
+    return new Date(quiz.dueDate) < new Date();
+  };
 
   const buildPageLink = (pageNum: number) => {
     const query = new URLSearchParams();
@@ -162,24 +209,42 @@ export default async function QuizGridSection({
         {quizzes.map((quiz) => {
           const isCompleted = completedQuizIds.has(quiz.id);
           const result = studentResults[quiz.id];
-
-          if (userRole === "STUDENT" && isCompleted) return null;
+          const expired = isExpired(quiz);
+          const isDisabled = userRole === "STUDENT" && (isCompleted || expired);
 
           return (
             <div
               key={quiz.id}
-              className="relative bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-indigo-200 transition-all duration-300 flex flex-col overflow-hidden group"
+              className={`relative bg-white rounded-2xl border border-slate-200/80 shadow-sm flex flex-col overflow-hidden group ${
+                isDisabled 
+                  ? "opacity-75" 
+                  : "hover:shadow-xl hover:border-indigo-200 transition-all duration-300"
+              }`}
             >
               <div
-                className={`h-1.5 w-full ${quiz.isPublished ? "bg-gradient-to-r from-indigo-500 to-violet-500" : "bg-gradient-to-r from-amber-400 to-orange-400"}`}
+                className={`h-1.5 w-full ${
+                  isCompleted 
+                    ? "bg-gradient-to-r from-emerald-500 to-teal-500"
+                    : expired 
+                      ? "bg-gradient-to-r from-slate-400 to-slate-500"
+                      : quiz.isPublished 
+                        ? "bg-gradient-to-r from-indigo-500 to-violet-500" 
+                        : "bg-gradient-to-r from-amber-400 to-orange-400"
+                }`}
               />
 
               <div className="p-5 sm:p-6 flex-1 flex flex-col">
                 <div className="flex justify-between items-start mb-5">
                   <div
-                    className={`p-2.5 rounded-xl transition-colors duration-300 ${isCompleted ? "bg-emerald-50 text-emerald-600 border border-emerald-100" : "bg-slate-50 text-slate-500 border border-slate-100 group-hover:bg-indigo-50 group-hover:text-indigo-600 group-hover:border-indigo-100"}`}
+                    className={`p-2.5 rounded-xl transition-colors duration-300 ${
+                      isCompleted 
+                        ? "bg-emerald-50 text-emerald-600 border border-emerald-100" 
+                        : expired
+                          ? "bg-slate-100 text-slate-500 border border-slate-200"
+                          : "bg-slate-50 text-slate-500 border border-slate-100 group-hover:bg-indigo-50 group-hover:text-indigo-600 group-hover:border-indigo-100"
+                    }`}
                   >
-                    {isCompleted ? <CheckCircle2 size={20} /> : <FileText size={20} />}
+                    {isCompleted ? <CheckCircle2 size={20} /> : expired ? <Lock size={20} /> : <FileText size={20} />}
                   </div>
 
                   <div className="flex flex-col items-end gap-1.5">
@@ -188,9 +253,18 @@ export default async function QuizGridSection({
                         <CheckCircle2 size={12} /> Scored {result.score.toFixed(0)}%
                       </span>
                     )}
-                    {!isCompleted && (
+                    {expired && !isCompleted && (
+                      <span className="text-[11px] font-bold px-3 py-1 rounded-lg bg-slate-100 text-slate-600 border border-slate-200 flex items-center gap-1.5">
+                        <AlertTriangle size={12} /> Expired
+                      </span>
+                    )}
+                    {!isCompleted && !expired && (
                       <span
-                        className={`text-[11px] font-bold px-3 py-1 rounded-lg ${quiz.isPublished ? "bg-indigo-50 text-indigo-700 border border-indigo-100" : "bg-amber-50 text-amber-700 border border-amber-100"}`}
+                        className={`text-[11px] font-bold px-3 py-1 rounded-lg ${
+                          quiz.isPublished 
+                            ? "bg-indigo-50 text-indigo-700 border border-indigo-100" 
+                            : "bg-amber-50 text-amber-700 border border-amber-100"
+                        }`}
                       >
                         {quiz.isPublished ? "Active" : "Draft"}
                       </span>
@@ -198,7 +272,9 @@ export default async function QuizGridSection({
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug line-clamp-2 min-h-[48px] group-hover:text-indigo-600 transition-colors">
+                <h3 className={`text-lg font-bold mb-3 leading-snug line-clamp-2 min-h-[48px] ${
+                  isDisabled ? "text-slate-500" : "text-slate-900 group-hover:text-indigo-600 transition-colors"
+                }`}>
                   {quiz.title}
                 </h3>
 
@@ -221,18 +297,43 @@ export default async function QuizGridSection({
                       <span>{new Date(quiz.createdAt).toLocaleDateString()}</span>
                     </div>
                   </div>
+                  {quiz.dueDate && (
+                    <div className="flex items-center gap-2 text-xs">
+                      <Calendar size={13} className={`flex-shrink-0 ${expired ? "text-red-400" : "text-amber-400"}`} />
+                      <span className={`font-medium ${expired ? "text-red-500" : "text-amber-600"}`}>
+                        Due: {new Date(quiz.dueDate).toLocaleDateString()}
+                        {expired && " (Expired)"}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="mt-auto" />
 
                 <div className="pt-5 mt-2 border-t border-slate-100">
                   {userRole === "STUDENT" ? (
-                    <Link
-                      href={`/dashboard/quizzes/solve/${quiz.id}`}
-                      className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 active:scale-[0.98]"
-                    >
-                      <PlayCircle size={18} /> Start Assessment
-                    </Link>
+                    isCompleted ? (
+                      <button
+                        disabled
+                        className="w-full bg-emerald-50 text-emerald-600 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 cursor-default border border-emerald-100"
+                      >
+                        <CheckCircle2 size={18} /> Completed — {result.score.toFixed(0)}%
+                      </button>
+                    ) : expired ? (
+                      <button
+                        disabled
+                        className="w-full bg-slate-100 text-slate-500 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 cursor-not-allowed border border-slate-200"
+                      >
+                        <Lock size={18} /> Deadline Passed
+                      </button>
+                    ) : (
+                      <Link
+                        href={`/dashboard/quizzes/solve/${quiz.id}`}
+                        className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 active:scale-[0.98]"
+                      >
+                        <PlayCircle size={18} /> Start Assessment
+                      </Link>
+                    )
                   ) : (
                     <div className="flex items-center gap-2">
                       <Link

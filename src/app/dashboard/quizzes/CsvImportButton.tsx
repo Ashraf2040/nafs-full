@@ -130,7 +130,7 @@ export default function CsvImportButton() {
           duration: 6000,
         });
       }
-    } catch (error) {
+    } catch {
       setProgress({
         status: "error",
         progress: 0,
@@ -165,7 +165,7 @@ export default function CsvImportButton() {
   };
 
   return (
-    <div className="flex flex-col items-start w-full max-w-md">
+    <div className="flex flex-col items-start">
       <input
         ref={inputRef}
         type="file"
@@ -177,9 +177,10 @@ export default function CsvImportButton() {
       />
 
       <button
+        type="button"
         onClick={() => inputRef.current?.click()}
         disabled={isUploading}
-        className="bg-white border-2 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50 text-indigo-700 px-4 py-2 rounded-xl font-medium shadow-sm transition-all flex items-center gap-2 text-sm disabled:opacity-50 w-full justify-center"
+        className="flex h-11 items-center justify-center gap-2 rounded-xl border border-indigo-200 bg-white px-4 text-sm font-semibold text-indigo-700 shadow-sm transition-all hover:border-indigo-400 hover:bg-indigo-50 disabled:opacity-50"
       >
         {isUploading ? (
           <Loader2 size={16} className="animate-spin" />

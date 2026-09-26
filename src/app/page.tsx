@@ -48,10 +48,10 @@ export default async function LandingPage() {
   ];
 
   const stats = [
-    { value: "12,400+", label: "Active Students", icon: <Users size={22} /> },
-    { value: "98%", label: "Pass Rate Improvement", icon: <Trophy size={22} /> },
-    { value: "50K+", label: "Quizzes Generated", icon: <FileText size={22} /> },
-    { value: "4.98", label: "Average Rating", icon: <Star size={22} /> },
+    { value: "3", label: "Core Subjects", icon: <BookOpen size={22} /> },
+    { value: "3", label: "Target Grades", icon: <GraduationCap size={22} /> },
+    { value: "100%", label: "Server-graded Results", icon: <ShieldCheck size={22} /> },
+    { value: "3", label: "Role-specific Portals", icon: <Users size={22} /> },
   ];
 
   const steps = [
@@ -291,7 +291,7 @@ export default async function LandingPage() {
       </section>
 
       {/* ===== SYSTEM CHART SECTION ===== */}
-      <section className="py-16 sm:py-24">
+      {(userRole === "ADMIN" || userRole === "TEACHER") && <section className="py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-200/80 overflow-hidden">
             <div className="p-6 sm:p-8 lg:p-10 border-b border-slate-100">
@@ -327,7 +327,7 @@ export default async function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ===== SUBJECTS SECTION ===== */}
       <section id="subjects" className="py-16 sm:py-24 bg-white">

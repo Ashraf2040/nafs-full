@@ -4,16 +4,14 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { User, Mail, Lock, UserPlus, AlertCircle, GraduationCap, Shield, BookOpen } from "lucide-react";
+import { User, Mail, Lock, UserPlus, AlertCircle, GraduationCap } from "lucide-react";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({ 
     name: "", 
     email: "", 
     password: "", 
-    role: "STUDENT",
     gradeLevel: "",
-    className: "" 
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,8 +24,8 @@ export default function RegisterPage() {
 
     const payload = {
       ...formData,
-      gradeLevel: formData.role === "STUDENT" ? parseInt(formData.gradeLevel) || null : null,
-      className: formData.role === "STUDENT" ? formData.className || null : null,
+      role: "STUDENT",
+      gradeLevel: parseInt(formData.gradeLevel),
     };
 
     const res = await fetch("/api/register", {
@@ -40,7 +38,7 @@ export default function RegisterPage() {
       router.push("/login?registered=true");
     } else {
       const data = await res.json();
-      setError(data.message || "Something went wrong");
+      setError(data.error || data.message || "Something went wrong");
       setLoading(false);
     }
   };
@@ -70,7 +68,7 @@ export default function RegisterPage() {
               <input 
                 type="text" required
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
-                placeholder="Ashraf Elsayed"
+                placeholder="Your full name"
                 className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-400 transition-all" 
               />
             </div>
@@ -94,7 +92,7 @@ export default function RegisterPage() {
             <div className="relative">
               <Lock className="absolute left-4 top-3.5 text-slate-400" size={18} />
               <input 
-                type="password" required
+                type="password" required minLength={8}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
                 placeholder="••••••••"
                 className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-400 transition-all" 
@@ -102,60 +100,21 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">I am a...</label>
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                type="button"
-                onClick={() => setFormData({...formData, role: "STUDENT"})}
-                className={`p-3 rounded-xl border-2 font-medium text-center transition-all flex items-center justify-center gap-2 ${
-                  formData.role === "STUDENT" 
-                    ? "border-indigo-600 bg-indigo-50 text-indigo-700" 
-                    : "border-slate-200 text-slate-600 hover:border-slate-300"
-                }`}
-              >
-                <BookOpen size={18} /> Student
-              </button>
-              <button
-                type="button"
-                onClick={() => setFormData({...formData, role: "TEACHER"})}
-                className={`p-3 rounded-xl border-2 font-medium text-center transition-all flex items-center justify-center gap-2 ${
-                  formData.role === "TEACHER" 
-                    ? "border-indigo-600 bg-indigo-50 text-indigo-700" 
-                    : "border-slate-200 text-slate-600 hover:border-slate-300"
-                }`}
-              >
-                <Shield size={18} /> Teacher
-              </button>
-            </div>
-          </div>
-
-          {/* Student-specific fields */}
-          {formData.role === "STUDENT" && (
-            <div className="space-y-4 animate-in slide-in-from-top-2">
+          <div className="space-y-4">
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">Grade Level</label>
                 <select
+                  required
                   value={formData.gradeLevel}
                   onChange={(e) => setFormData({...formData, gradeLevel: e.target.value})}
                   className="w-full p-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-400 font-medium text-slate-600"
                 >
                   <option value="">Select Grade</option>
-                  {[3,4,5,6,7,8,9].map(g => <option key={g} value={g}>Grade {g}</option>)}
+                  {[3, 6, 9].map(g => <option key={g} value={g}>Grade {g}</option>)}
                 </select>
               </div>
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Class Name</label>
-                <input
-                  type="text"
-                  value={formData.className}
-                  onChange={(e) => setFormData({...formData, className: e.target.value})}
-                  placeholder="e.g., 6A, 7B"
-                  className="w-full p-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-400 font-medium text-slate-600"
-                />
-              </div>
-            </div>
-          )}
+              <p className="text-xs text-slate-400">Teacher and administrator accounts are created by an administrator.</p>
+          </div>
 
           <button 
             type="submit" 

@@ -26,13 +26,14 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "Quiz ID is required" }, { status: 400 });
     }
 
-    // Count how many results exist for this student + quiz combination
-    const attemptsCount = await prisma.result.count({
+    const result = await prisma.result.findFirst({
       where: {
         studentId: userId,
         quizId: quizId,
       },
+      select: { attemptsCount: true },
     });
+    const attemptsCount = result?.attemptsCount ?? 0;
 
     return NextResponse.json({
       attemptsUsed: attemptsCount,
