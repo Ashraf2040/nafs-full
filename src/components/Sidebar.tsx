@@ -8,7 +8,7 @@ import {
   LayoutDashboard, BookOpen, Users, BarChart3, Settings,
   FileText, Award, GraduationCap, ClipboardList, Home,
   Shield, UserCog, CheckCircle2, History, ChevronRight,
-  Route, Trophy, Gamepad2, Target
+  Route, Trophy, Gamepad2, Target, LibraryBig
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -21,6 +21,7 @@ export default function Sidebar() {
       { name: "Overview", icon: <LayoutDashboard size={20} />, href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "My Quizzes", icon: <FileText size={20} />, href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER"] },
       { name: "Available Quizzes", icon: <ClipboardList size={20} />, href: "/dashboard/quizzes", roles: ["STUDENT"] },
+      { name: "Study Guides", icon: <LibraryBig size={20} />, href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Completed Quizzes", icon: <CheckCircle2 size={20} />, href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
       { name: "Learning Path", icon: <Route size={20} />, href: "/dashboard/learning-path", roles: ["STUDENT"] },
       { name: "Diagnostics", icon: <BarChart3 size={20} />, href: "/dashboard/diagnostics", roles: ["STUDENT"] },

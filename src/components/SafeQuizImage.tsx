@@ -1,6 +1,7 @@
 // components/SafeQuizImage.tsx
 "use client";
 import { useState } from "react";
+import { normalizeImageUrl } from "@/lib/image-url";
 
 interface SafeQuizImageProps {
   imageUrl: string | null;
@@ -10,7 +11,7 @@ interface SafeQuizImageProps {
 }
 
 export default function SafeQuizImage({ imageUrl, svgBackup, templateBackup, alt }: SafeQuizImageProps) {
-  const [currentSrc, setCurrentSrc] = useState<string | null>(imageUrl);
+  const [currentSrc, setCurrentSrc] = useState<string | null>(normalizeImageUrl(imageUrl));
   const [attempt, setAttempt] = useState(0);
 
   const handleError = () => {

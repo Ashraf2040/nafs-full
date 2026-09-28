@@ -8,6 +8,7 @@ const items = [
   { label: "Overview", href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Teachers", href: "/dashboard/teachers", roles: ["ADMIN"] },
   { label: "Quizzes", href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Study Guides", href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Completed", href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
   { label: "Learning Path", href: "/dashboard/learning-path", roles: ["STUDENT"] },
   { label: "Diagnostics", href: "/dashboard/diagnostics", roles: ["STUDENT"] },

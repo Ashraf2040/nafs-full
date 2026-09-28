@@ -3,6 +3,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireRole } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { normalizeImageUrl } from "@/lib/image-url";
 import Papa from "papaparse";
 import type { Prisma } from "@prisma/client";
 
@@ -152,7 +153,7 @@ function buildQuestions(rows: any[], outcomeIds: string[]) {
       correctAnswer: clean(row.answer),
       options,
       explanation: clean(row.explanation) || null,
-      imageUrl: clean(row.image_url) || null,
+      imageUrl: normalizeImageUrl(clean(row.image_url)),
       bloomLevel: clean(row.bloom_level) || null,
       difficulty: clean(row.difficulty) || null,
       learningOutcomeId: outcomeIds[rowIndex],

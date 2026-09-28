@@ -1,0 +1,44 @@
+<!doctype html><html lang="ar"><head><meta charset="utf-8"><title>Daily Lesson Plan - Hostinger VPS handoff</title><style>
+@page{size:A4;margin:15mm 16mm}*{box-sizing:border-box}body{font:10.7pt/1.5 Arial,"Segoe UI",sans-serif;color:#1b2738;margin:0}h1{font-size:22pt;color:#123b75;line-height:1.2;margin:0 0 6px}h2{font-size:14pt;color:#17477e;border-bottom:1px solid #cad8e8;padding-bottom:4px;margin:13px 0 6px}p{margin:4px 0 7px}ol,ul{margin:4px 0 8px;padding-left:21px}li{margin:4px 0}code{font:9pt Consolas,"Courier New",monospace;background:#f0f3f7;padding:1px 3px;border-radius:3px;direction:ltr;unicode-bidi:embed}a{color:#0759a5;overflow-wrap:anywhere}.lead{font-size:12pt;color:#465a72}.note{background:#fff5dd;border-left:4px solid #dfa729;padding:7px 10px;margin:8px 0;border-radius:3px}.links{font-size:8.5pt}.rtl{direction:rtl;text-align:right;line-height:1.72}.rtl h1,.rtl h2{text-align:right}.rtl ol,.rtl ul{padding-right:22px;padding-left:0}.rtl .note{border-left:0;border-right:4px solid #dfa729}.rtl code{direction:ltr;unicode-bidi:embed}.pagebreak{break-before:page}.small{font-size:8.5pt;color:#627087}.footer{margin-top:10px;padding-top:5px;border-top:1px solid #d9e1ea;font-size:8pt;color:#6b7787}
+</style></head><body>
+<section class="rtl" lang="ar" dir="rtl">
+<p class="small">رسالة للمطور | Daily Lesson Plan</p><h1>النشر على VPS من Hostinger</h1>
+<p class="lead">لقد أرسلت لك الكود كاملاً. أرجو نشر التطبيق وقاعدة البيانات على VPS الخاص بي كما يلي:</p>
+<ol>
+<li><b>اسم التطبيق وإعداد الخادم:</b> اجعل الاسم الظاهر في الموقع وعنوان المتصفح <b>Daily Lesson Plan</b>. ثبّت Ubuntu 24.04 مع CloudPanel على VPS، وأنشئ موقع Node.js للنطاق.</li>
+<li><b>قاعدة البيانات:</b> ثبّت PostgreSQL على الـ VPS، وأنشئ قاعدة ومستخدم تطبيق بصلاحيات محدودة. اجعل اتصال PostgreSQL محلياً فقط وأبقِ المنفذ 5432 مغلقاً للعامة. خذ نسخة احتياطية من قاعدة البيانات الحالية وانقلها إلى قاعدة VPS الجديدة حتى لا نفقد الاختبارات والمستخدمين.</li>
+<li><b>الكود:</b> ارفع المستودع الخاص إلى مجلد الموقع، وثبّت الحزم بـ <code>npm ci</code> ثم ابنِ التطبيق بـ <code>npm run build</code>. شغّله عبر PM2 باسم <code>daily-lesson-plan</code> على منفذ CloudPanel، واجعل PM2 يعيد تشغيله عند إعادة تشغيل الخادم.</li>
+<li><b>الإعدادات:</b> اضبط <code>DATABASE_URL</code> للاتصال المحلي بقاعدة VPS، و<code>NEXTAUTH_URL</code> للنطاق عبر HTTPS، و<code>NEXTAUTH_SECRET</code> و<code>GEMINI_API_KEY</code> و<code>GOOGLE_CLIENT_ID</code> و<code>GOOGLE_CLIENT_SECRET</code>. أضف Google OAuth callback: <code>https://نطاقي/api/auth/callback/google</code>. لا تحفظ الأسرار في Git.</li>
+<li><b>Prisma:</b> بعد أخذ نسخة احتياطية والتأكد من استعادة قاعدة البيانات، شغّل <code>npx prisma migrate deploy</code>. لا تستخدم <code>prisma migrate reset</code>.</li>
+<li><b>الصور والملفات:</b> انقل مجلد <code>public/image-source</code> كاملاً إلى الموقع على الـ VPS؛ به نحو ١٬٢٨٥ صورة وحجمه قرابة ٢٫٥ غيغابايت، وهو غير محفوظ في Git. أبقه في مسار دائم لا تحذفه تحديثات الكود. اجعل ملفات الأدلة الدراسية والصور المرفوعة تحفظ في تخزين دائم كذلك.</li>
+<li><b>النطاق والأمان:</b> وجّه سجل A للنطاق إلى IP الخاص بالـ VPS، وفعّل شهادة Let's Encrypt من CloudPanel. اسمح فقط بالمنافذ اللازمة مثل SSH وHTTP وHTTPS، ولا تفتح PostgreSQL للإنترنت.</li>
+<li><b>الفحص:</b> اختبر دخول الطالب والمعلم والمدير، وافتح اختباراً بصور، وجرّب رفع ملف، وتأكد من بقاء الصور والملفات بعد إعادة تشغيل التطبيق.</li>
+</ol>
+<div class="note"><b>مهم:</b> يتضمن الكود إصلاح مسارات الصور النسبية. أرجو نشر هذا التعديل والتأكد من أن روابط الصور تعمل بعد نقل المجلد.</div>
+<h2>مراجع Hostinger</h2><ul class="links">
+<li><a href="https://www.hostinger.com/support/8794480-how-to-use-the-cloudpanel-vps-template-at-hostinger/">إعداد CloudPanel على VPS</a></li>
+<li><a href="https://www.hostinger.com/support/9553137-how-to-set-up-a-node-js-application-using-hostinger-cloudpanel/">إعداد تطبيق Node.js</a></li>
+<li><a href="https://www.hostinger.com/tutorials/how-to-install-postgresql-on-ubuntu/">تثبيت PostgreSQL على Ubuntu</a></li>
+<li><a href="https://www.hostinger.com/support/8592551-how-to-install-a-let-s-encrypt-ssl-certificate-on-a-vps-with-cloudpanel-at-hostinger/">شهادة SSL على CloudPanel</a></li>
+</ul><div class="footer">Daily Lesson Plan | تعليمات VPS مختصرة للمطور</div></section>
+
+<section class="pagebreak" lang="en">
+<p class="small">Developer handoff | Daily Lesson Plan</p><h1>Deploy on a Hostinger VPS</h1>
+<p class="lead">I have already shared the complete source code with you. Please deploy the app and database on my VPS as follows:</p>
+<ol>
+<li><b>App name and server:</b> Set the visible website branding and browser title to <b>Daily Lesson Plan</b>. Install Ubuntu 24.04 with CloudPanel on the VPS and create a Node.js site for my domain.</li>
+<li><b>Database:</b> Install PostgreSQL on the VPS and create an app database with a restricted app user. Keep PostgreSQL local-only and do not expose port 5432 publicly. Back up the current database and restore it to the new VPS database so we keep the existing quizzes and users.</li>
+<li><b>Code:</b> Upload the private repository to the site directory, install dependencies with <code>npm ci</code>, and build with <code>npm run build</code>. Run it under PM2 as <code>daily-lesson-plan</code> on the CloudPanel port, and configure PM2 to restart it when the VPS reboots.</li>
+<li><b>Environment:</b> Set <code>DATABASE_URL</code> to the local VPS database, <code>NEXTAUTH_URL</code> to my HTTPS domain, plus <code>NEXTAUTH_SECRET</code>, <code>GEMINI_API_KEY</code>, <code>GOOGLE_CLIENT_ID</code>, and <code>GOOGLE_CLIENT_SECRET</code>. Add the Google OAuth callback <code>https://my-domain/api/auth/callback/google</code>. Keep secrets out of Git.</li>
+<li><b>Prisma:</b> After backing up and restoring the database, run <code>npx prisma migrate deploy</code>. Do not run <code>prisma migrate reset</code>.</li>
+<li><b>Images and files:</b> Copy the complete <code>public/image-source</code> folder to the VPS site; it has about 1,285 images and is roughly 2.5 GB, and is not tracked in Git. Keep it in a persistent location that code updates will not remove. Store study-guide uploads and generated images persistently too.</li>
+<li><b>Domain and security:</b> Point the domain's A record to the VPS IP and enable a Let's Encrypt certificate in CloudPanel. Allow only required ports such as SSH, HTTP, and HTTPS; do not expose PostgreSQL to the internet.</li>
+<li><b>Verify:</b> Test student, teacher, and admin sign-in, open a quiz with images, test a file upload, and confirm files remain available after restarting the app.</li>
+</ol>
+<div class="note"><b>Important:</b> The source includes a fix for relative image paths. Please deploy that change and verify image URLs after copying the folder.</div>
+<h2>Hostinger references</h2><ul class="links">
+<li><a href="https://www.hostinger.com/support/8794480-how-to-use-the-cloudpanel-vps-template-at-hostinger/">Set up CloudPanel on a VPS</a></li>
+<li><a href="https://www.hostinger.com/support/9553137-how-to-set-up-a-node-js-application-using-hostinger-cloudpanel/">Set up a Node.js app</a></li>
+<li><a href="https://www.hostinger.com/tutorials/how-to-install-postgresql-on-ubuntu/">Install PostgreSQL on Ubuntu</a></li>
+<li><a href="https://www.hostinger.com/support/8592551-how-to-install-a-let-s-encrypt-ssl-certificate-on-a-vps-with-cloudpanel-at-hostinger/">SSL certificate in CloudPanel</a></li>
+</ul><div class="footer">Daily Lesson Plan | Short VPS deployment instructions</div></section></body></html>

@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { normalizeImageUrl } from "@/lib/image-url";
 
 const MAX_ATTEMPTS = 3;
 
@@ -62,6 +63,10 @@ export default function SolveQuizPage({
   const startTime = useRef(Date.now());
 
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+  const [correctPopup, setCorrectPopup] = useState("");
+  const popupTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => { if (popupTimer.current) clearTimeout(popupTimer.current); }, []);
 
   useEffect(() => {
      const fetchQuiz = async () => {
@@ -109,7 +114,7 @@ export default function SolveQuizPage({
                 question: q.questionText || q.question || "No question provided",
                 answer: q.correctAnswer || q.answer || "",
                 options: Array.isArray(q.options) ? q.options : [],
-                image_url: q.image_url || q.imageUrl || null,
+                image_url: normalizeImageUrl(q.image_url || q.imageUrl),
                 explanation: q.explanation || "",
               }))
           : [];
@@ -158,7 +163,13 @@ export default function SolveQuizPage({
   }, [quizId, userRole]);
 
   const handleOptionSelect = (option: string) => {
-    setSelectedAnswers({ ...selectedAnswers, [currentQuestion]: option });
+    setSelectedAnswers((previous) => ({ ...previous, [currentQuestion]: option }));
+    if (isAnswerCorrect(option, q?.answer, q?.options || [])) {
+      const messages = ["Excellent!", "Fantastic!", "Wonderful!", "You got it!", "Brilliant work!"];
+      setCorrectPopup(messages[Math.floor(Math.random() * messages.length)]);
+      if (popupTimer.current) clearTimeout(popupTimer.current);
+      popupTimer.current = setTimeout(() => setCorrectPopup(""), 1800);
+    }
   };
 
   // FIX: Updated to use full string comparison instead of first letter
@@ -481,6 +492,15 @@ export default function SolveQuizPage({
 
   return (
     <div className="max-w-5xl mx-auto py-10 px-4">
+      {correctPopup && (
+        <div role="status" aria-live="assertive" className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/25 p-4 backdrop-blur-[2px]">
+          <div className="animate-bounce rounded-3xl border-4 border-emerald-200 bg-white px-10 py-8 text-center shadow-2xl shadow-emerald-900/20">
+            <div className="mb-2 text-5xl" aria-hidden="true">🌟</div>
+            <p className="text-3xl font-black text-emerald-600">{correctPopup}</p>
+            <p className="mt-2 font-semibold text-slate-500">That answer is correct!</p>
+          </div>
+        </div>
+      )}
       {enlargedImage && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
