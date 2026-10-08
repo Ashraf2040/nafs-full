@@ -91,6 +91,8 @@ const roleAccess: Record<string, RouteRule> = {
   "/api/generate-quiz": { roles: ["ADMIN", "TEACHER"] },
   "/api/generate-image": { roles: ["ADMIN", "TEACHER"] },
   "/api/admin": { roles: ["ADMIN"] },
+  "/api/admin/database-export": { roles: ["ADMIN"] },
+  "/api/admin/database-import": { roles: ["ADMIN"] },
 
   // ── Pages ──
   "/dashboard/teachers": { roles: ["ADMIN"] },

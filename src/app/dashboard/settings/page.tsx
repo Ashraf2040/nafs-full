@@ -4,6 +4,8 @@ import { redirect } from "next/navigation";
 import { GraduationCap, Shield } from "lucide-react";
 import prisma from "@/lib/prisma";
 import SettingsForm from "./SettingsForm";
+import DatabaseExportButton from "./DatabaseExportButton";
+import DatabaseImportButton from "./DatabaseImportButton";
 
 export const dynamic = "force-dynamic";
 
@@ -44,6 +46,21 @@ export default async function SettingsPage() {
         </div>
         <SettingsForm defaultName={name} email={account.email} canChangePassword={Boolean(account.password)} />
       </div>
+      {account.role === "ADMIN" && (
+        <section className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/70 p-6 shadow-sm sm:p-8">
+          <div className="mb-5">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-600">Administrator tools</p>
+            <h2 className="mt-2 text-xl font-extrabold text-slate-900">Database backup</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
+              Export or merge a versioned archive with one CSV file per database table. The archive contains account data, including password hashes, so store it securely.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <DatabaseExportButton />
+            <DatabaseImportButton />
+          </div>
+        </section>
+      )}
     </div>
   );
 }
