@@ -19,13 +19,12 @@ export default function Sidebar() {
   const getMenuItems = () => {
     const items = [
       { name: "Overview", icon: <LayoutDashboard size={20} />, href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-      { name: "My Quizzes", icon: <FileText size={20} />, href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER"] },
-      { name: "Available Quizzes", icon: <ClipboardList size={20} />, href: "/dashboard/quizzes", roles: ["STUDENT"] },
+      { name: "Diagnostic", icon: <Target size={20} />, href: "/dashboard/diagnostic", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+      { name: "Practice", icon: <FileText size={20} />, href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Study Guides", icon: <LibraryBig size={20} />, href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Completed Quizzes", icon: <CheckCircle2 size={20} />, href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
       { name: "Learning Path", icon: <Route size={20} />, href: "/dashboard/learning-path", roles: ["STUDENT"] },
-      { name: "Diagnostics", icon: <BarChart3 size={20} />, href: "/dashboard/diagnostics", roles: ["STUDENT"] },
-      { name: "Report", icon: <Target size={20} />, href: "/dashboard/report", roles: ["STUDENT"] },
+      { name: "Analysis", icon: <Target size={20} />, href: "/dashboard/diagnostic/analysis", roles: ["STUDENT"] },
       { name: "Achievements", icon: <Trophy size={20} />, href: "/dashboard/achievements", roles: ["STUDENT"] },
       { name: "Subjects", icon: <BookOpen size={20} />, href: "/dashboard/subjects", roles: ["ADMIN", "TEACHER"] },
       { name: "Challenges", icon: <Gamepad2 size={20} />, href: "/dashboard/challenges", roles: ["ADMIN", "TEACHER", "STUDENT"] },
@@ -64,7 +63,7 @@ export default function Sidebar() {
   const activeHref = getActiveHref();
 
   return (
-    <aside className="hidden w-64 bg-slate-900 text-slate-300 flex-shrink-0 min-h-[calc(100vh-4rem)] shadow-inner lg:flex flex-col relative">
+    <aside className="print:hidden hidden w-64 bg-slate-900 text-slate-300 flex-shrink-0 min-h-[calc(100vh-4rem)] shadow-inner lg:flex flex-col relative">
       {/* Subtle top gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
       

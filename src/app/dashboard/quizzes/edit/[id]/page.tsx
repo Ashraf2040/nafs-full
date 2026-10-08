@@ -25,6 +25,7 @@ interface QuizData {
   gradeTarget: number;
   dueDate: string;
   isPublished: boolean;
+  isDiagnostic: boolean;
   subject: { name: string };
   questions: Question[];
 }
@@ -47,6 +48,8 @@ export default function EditQuizPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [saveSuccess, setSaveSuccess] = useState(false);
+  const [uploadingQuestion, setUploadingQuestion] = useState<number | null>(null);
+  const [assetError, setAssetError] = useState("");
 
   useEffect(() => {
     const fetchQuiz = async () => {
@@ -115,6 +118,45 @@ export default function EditQuizPage() {
     if (!confirm("Are you sure you want to remove this question?")) return;
     const updated = quiz.questions.filter((_, i) => i !== index);
     setQuiz({ ...quiz, questions: updated });
+  };
+
+  const uploadQuestionImage = async (index: number, file?: File) => {
+    if (!file || !quiz) return;
+    setAssetError("");
+    if (!file.type.startsWith("image/")) {
+      setAssetError("Choose an image file such as PNG, JPEG, WebP, or GIF.");
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      setAssetError("Choose an image smaller than 10 MB.");
+      return;
+    }
+
+    setUploadingQuestion(index);
+    try {
+      const signatureResponse = await fetch("/api/diagnostic/assets", { method: "PUT" });
+      const signatureData = await signatureResponse.json();
+      if (!signatureResponse.ok) throw new Error(signatureData.error || "Could not prepare the image upload.");
+
+      const formData = new FormData();
+      formData.set("file", file);
+      formData.set("api_key", signatureData.apiKey);
+      formData.set("timestamp", String(signatureData.timestamp));
+      formData.set("signature", signatureData.signature);
+      formData.set("folder", signatureData.folder);
+      formData.set("public_id", signatureData.publicId);
+
+      const uploadResponse = await fetch(`https://api.cloudinary.com/v1_1/${encodeURIComponent(signatureData.cloudName)}/image/upload`, { method: "POST", body: formData });
+      const uploadData = await uploadResponse.json();
+      if (!uploadResponse.ok || typeof uploadData.secure_url !== "string") {
+        throw new Error(uploadData.error?.message || "The image could not be uploaded.");
+      }
+      updateQuestionField(index, "imageUrl", uploadData.secure_url);
+    } catch (uploadError) {
+      setAssetError(uploadError instanceof Error ? uploadError.message : "The image could not be uploaded.");
+    } finally {
+      setUploadingQuestion(null);
+    }
   };
 
   const handleSave = async () => {
@@ -200,7 +242,7 @@ export default function EditQuizPage() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link
-            href="/dashboard/quizzes"
+            href={quiz.isDiagnostic ? "/dashboard/diagnostic" : "/dashboard/quizzes"}
             className="p-2 bg-slate-100 rounded-xl hover:bg-slate-200 transition-colors text-slate-600"
           >
             <ArrowLeft size={20} />
@@ -333,6 +375,31 @@ export default function EditQuizPage() {
                   />
                 </div>
               ))}
+            </div>
+
+            {/* Optional question visual */}
+            <div className="mb-4 rounded-xl border border-slate-200 bg-slate-50/70 p-3">
+              <label className="mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-500">
+                <ImageIcon size={14} /> Question visual (optional)
+              </label>
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                <label className={`inline-flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-xs font-bold text-white ${uploadingQuestion === idx ? "bg-indigo-400" : "bg-indigo-600 hover:bg-indigo-700"}`}>
+                  {uploadingQuestion === idx ? <Loader2 size={14} className="animate-spin" /> : <ImageIcon size={14} />}
+                  {uploadingQuestion === idx ? "Uploading image..." : "Upload an image"}
+                  <input type="file" accept="image/png,image/jpeg,image/webp,image/gif" className="sr-only" disabled={uploadingQuestion !== null} onChange={(event) => { void uploadQuestionImage(idx, event.target.files?.[0]); event.currentTarget.value = ""; }} />
+                </label>
+                <span className="text-xs text-slate-400">PNG, JPEG, WebP, or GIF · up to 10 MB</span>
+              </div>
+              <input
+                type="url"
+                value={q.imageUrl || ""}
+                onChange={(e) => updateQuestionField(idx, "imageUrl", e.target.value || null)}
+                placeholder="Or paste a secure image URL"
+                className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-700 outline-none focus:border-indigo-400"
+              />
+              {q.imageUrl && <img src={q.imageUrl} alt="Question visual preview" className="mt-3 max-h-48 rounded-lg border border-slate-200 bg-white object-contain" />}
+              {assetError && <p role="alert" className="mt-2 text-xs font-semibold text-rose-600">{assetError}</p>}
+              <p className="mt-1.5 text-[11px] leading-4 text-slate-400">Uploads go directly to the app’s Cloudinary image library. The secure URL is saved with this question.</p>
             </div>
 
             {/* Explanation */}

@@ -7,12 +7,12 @@ import { useSession } from "next-auth/react";
 const items = [
   { label: "Overview", href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Teachers", href: "/dashboard/teachers", roles: ["ADMIN"] },
-  { label: "Quizzes", href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Diagnostic", href: "/dashboard/diagnostic", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Practice", href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Study Guides", href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Completed", href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
   { label: "Learning Path", href: "/dashboard/learning-path", roles: ["STUDENT"] },
-  { label: "Diagnostics", href: "/dashboard/diagnostics", roles: ["STUDENT"] },
-  { label: "Report", href: "/dashboard/report", roles: ["STUDENT"] },
+  { label: "Analysis", href: "/dashboard/diagnostic/analysis", roles: ["STUDENT"] },
   { label: "Achievements", href: "/dashboard/achievements", roles: ["STUDENT"] },
   { label: "Subjects", href: "/dashboard/subjects", roles: ["ADMIN", "TEACHER"] },
   { label: "Challenges", href: "/dashboard/challenges", roles: ["ADMIN", "TEACHER", "STUDENT"] },
@@ -33,7 +33,7 @@ export default function DashboardMobileNav() {
     .sort((a, b) => b.href.length - a.href.length)[0]?.href;
 
   return (
-    <nav aria-label="Dashboard navigation" className="sticky top-16 z-40 border-b border-slate-200 bg-white/95 px-3 py-2 backdrop-blur lg:hidden">
+    <nav aria-label="Dashboard navigation" className="print:hidden sticky top-16 z-40 border-b border-slate-200 bg-white/95 px-3 py-2 backdrop-blur lg:hidden">
       <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {visibleItems.map((item) => (
           <Link

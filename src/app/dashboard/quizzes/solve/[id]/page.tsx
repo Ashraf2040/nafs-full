@@ -8,6 +8,7 @@ import {
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { normalizeImageUrl } from "@/lib/image-url";
+import { grade3Passage, grade3PassageImage } from "@/lib/grade3Diagnostic";
 
 const MAX_ATTEMPTS = 3;
 
@@ -541,12 +542,18 @@ export default function SolveQuizPage({
                 Attempt {attempts}/{MAX_ATTEMPTS}
               </span>
               <div className="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full text-slate-600 font-mono">
-                <Timer size={18} /> Q {currentQuestion + 1} of {quiz.questions.length}
+                <Timer size={18} /> {quiz?.isDiagnostic && quiz?.gradeTarget === 3 && quiz?.subject?.name?.toLowerCase() === "english" && quiz.questions.length === 5 ? `Q ${currentQuestion + 9} of 13` : `Q ${currentQuestion + 1} of ${quiz.questions.length}`}
               </div>
             </div>
           </div>
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mb-6">
             <h2 className="text-xl font-bold text-slate-800 mb-4">{q?.question}</h2>
+            {quiz?.isDiagnostic && quiz?.gradeTarget === 3 && quiz?.subject?.name?.toLowerCase() === "english" && currentQuestion >= 2 && currentQuestion <= 4 && (
+              <div className="mb-6 rounded-2xl border border-sky-100 bg-sky-50/70 p-5">
+                <p className="mb-2 text-xs font-extrabold uppercase tracking-wider text-sky-700">Reading passage</p>
+                <p className="whitespace-pre-line text-sm leading-7 text-slate-700"><img src={grade3PassageImage} alt="Linda caring for the plants in her garden" className="float-right mb-3 ml-4 w-48 rounded-xl" />{grade3Passage}</p>
+              </div>
+            )}
             {q?.image_url && (
               <div
                 className="mb-6 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 cursor-pointer group relative"

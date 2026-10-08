@@ -50,12 +50,31 @@ export default function StudyGuidesPage() {
     event.preventDefault();
     if (!file || !title.trim()) return;
     setBusy(true); setError(""); setNotice("");
-    const form = new FormData();
-    form.set("title", title.trim()); form.set("subjectId", subjectId); form.set("gradeId", gradeId); form.set("file", file);
     try {
-      const response = await fetch("/api/study-guides", { method: "POST", body: form });
+      if (file.size === 0 || file.size > 15 * 1024 * 1024 || (!file.type.toLowerCase().includes("pdf") && !file.name.toLowerCase().endsWith(".pdf"))) {
+        throw new Error("Choose a PDF smaller than 15 MB.");
+      }
+      const signatureResponse = await fetch("/api/study-guides", { method: "PUT" });
+      const signatureData = await signatureResponse.json();
+      if (!signatureResponse.ok) throw new Error(signatureData.error || "Could not prepare the PDF upload.");
+
+      const uploadForm = new FormData();
+      uploadForm.set("file", file);
+      uploadForm.set("api_key", signatureData.apiKey);
+      uploadForm.set("timestamp", String(signatureData.timestamp));
+      uploadForm.set("signature", signatureData.signature);
+      uploadForm.set("public_id", signatureData.publicId);
+      const cloudinaryResponse = await fetch(`https://api.cloudinary.com/v1_1/${encodeURIComponent(signatureData.cloudName)}/raw/upload`, { method: "POST", body: uploadForm });
+      const cloudinaryData = await cloudinaryResponse.json();
+      if (!cloudinaryResponse.ok) throw new Error(cloudinaryData.error?.message || "The PDF could not be uploaded to storage.");
+
+      const response = await fetch("/api/study-guides", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: title.trim(), subjectId, gradeId, fileName: file.name, publicId: cloudinaryData.public_id }),
+      });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Upload failed.");
+      if (!response.ok) throw new Error(data.error || "The PDF was uploaded but the study guide could not be saved.");
       setTitle(""); setFile(null); setNotice("Guide uploaded. Publish it when it is ready for students.");
       await loadGuides();
     } catch (e: any) { setError(e.message); }

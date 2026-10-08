@@ -57,7 +57,7 @@ ANTHROPIC_API_KEY="your-anthropic-key"
 AGENTROUTER_API_KEY="your-agentrouter-key"
 ANTHROPIC_BASE_URL="https://agentrouter.org/"
 
-# Image upload
+# Cloudinary file storage (quiz images and study guide PDFs)
 CLOUDINARY_CLOUD_NAME=your-cloud-name
 CLOUDINARY_API_KEY=your-api-key
 CLOUDINARY_API_SECRET=your-api-secret
@@ -517,6 +517,7 @@ npm start       # Starts production server with ISR
 1. Push repository to GitHub
 2. Import project to Vercel
 3. Set environment variables (all from `.env`)
+   - Add `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET` in Vercel for Production (and Preview if needed).
 4. Vercel auto-detects `NEXTAUTH_URL` from `VERCEL_URL`
 5. Post-install hook runs `prisma generate`
 6. Build command runs `prisma generate && next build`
@@ -525,6 +526,7 @@ npm start       # Starts production server with ISR
 ```bash
 npx prisma migrate deploy
 ```
+Run this command with `DATABASE_URL` set to the production database before using study guides; it creates the required `StudyGuide` table.
 
 ### Manual / Self-Hosted
 

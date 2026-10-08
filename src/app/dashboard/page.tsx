@@ -585,7 +585,7 @@ async function StudentDashboardContent({ userId, userName }: { userId: string; u
                 <Route size={18} /> Learning Path
                 <ArrowUpRight size={14} className="ml-auto opacity-50 group-hover:opacity-100 transition-opacity" />
               </Link>
-              <Link href="/dashboard/diagnostics" className="flex items-center gap-3 p-3.5 bg-emerald-50/80 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors border border-emerald-100/50 group">
+              <Link href="/dashboard/diagnostic" className="flex items-center gap-3 p-3.5 bg-emerald-50/80 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors border border-emerald-100/50 group">
                 <BarChart3 size={18} /> Diagnostics & Reports
                 <ArrowUpRight size={14} className="ml-auto opacity-50 group-hover:opacity-100 transition-opacity" />
               </Link>
