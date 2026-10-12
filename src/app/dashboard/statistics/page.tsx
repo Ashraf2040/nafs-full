@@ -461,7 +461,7 @@ export default async function StatisticsPage({ searchParams }: { searchParams: P
     : {};
 
   const quizFilter: Prisma.QuizWhereInput = {
-    AND: [assignmentScope, ...selectedQuizFilters],
+    AND: [{ assessmentType: "QUIZ" }, assignmentScope, ...selectedQuizFilters],
   };
   const resultWhere: Prisma.ResultWhereInput = { quiz: quizFilter };
 

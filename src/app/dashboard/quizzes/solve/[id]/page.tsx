@@ -56,6 +56,7 @@ export default function SolveQuizPage({
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isPracticeCompleted, setIsPracticeCompleted] = useState(false);
   const [attempts, setAttempts] = useState(1);
   const [isSaving, setIsSaving] = useState(false);
   const [savedScore, setSavedScore] = useState<number | null>(null);
@@ -131,7 +132,7 @@ export default function SolveQuizPage({
         }
 
         // Fetch existing attempts for this student
-        if (userRole === "STUDENT") {
+        if (userRole === "STUDENT" && data.assessmentType === "QUIZ") {
           try {
             const attemptsRes = await fetch(`/api/students/quiz-attempts?quizId=${quizId}`);
             if (attemptsRes.ok) {
@@ -214,6 +215,17 @@ export default function SolveQuizPage({
     setSaveError("");
 
     try {
+      if (quiz.assessmentType === "PRACTICE") {
+        const completionResponse = await fetch("/api/practices/complete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ quizId }),
+        });
+        const completionData = await completionResponse.json();
+        if (!completionResponse.ok) throw new Error(completionData.message || "Could not record practice completion");
+        setIsPracticeCompleted(true);
+        return;
+      }
       // FIX: Updated to use full string comparison instead of first letter
       const formattedAnswers = quiz.questions.map((q: any, idx: number) => ({
         questionId: q.id,
@@ -473,6 +485,17 @@ export default function SolveQuizPage({
             );
           })}
         </div>
+      </div>
+    );
+  }
+
+  if (isPracticeCompleted) {
+    return (
+      <div className="max-w-3xl mx-auto py-16 px-4 text-center">
+        <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><CheckCircle2 size={40} /></div>
+        <h1 className="text-3xl font-black text-slate-900">Practice completed</h1>
+        <p className="mt-3 text-slate-600">Your completion has been recorded. Practices are for learning and do not receive a grade.</p>
+        <Link href="/dashboard/quizzes" className="mt-8 inline-flex rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white">Back to Practices</Link>
       </div>
     );
   }

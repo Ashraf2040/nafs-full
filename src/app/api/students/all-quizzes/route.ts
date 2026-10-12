@@ -23,6 +23,7 @@ export async function GET(req: NextRequest) {
     const quizzes = await prisma.quiz.findMany({
       where: {
         isPublished: true,
+        assessmentType: "QUIZ",
         gradeId: student.gradeId,
       },
       include: {

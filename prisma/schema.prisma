@@ -34,6 +34,11 @@ enum PathStatus {
   MASTERED
 }
 
+enum AssessmentType {
+  PRACTICE
+  QUIZ
+}
+
 /* ===================== USER ===================== */
 
 model User {
@@ -51,7 +56,10 @@ model User {
   class     Class?    @relation(fields: [classId], references: [id])
 
   quizzes     Quiz[]              @relation("CreatedBy")
+  createdSimulations Simulation[]  @relation("CreatedSimulations")
   submissions Result[]
+  practiceCompletions PracticeCompletion[]
+  simulationAttempts SimulationAttempt[]
   assignments TeacherAssignment[]
   createdStudyGuides StudyGuide[]
 
@@ -75,6 +83,7 @@ model Subject {
   colorCode   String?
 
   quizzes     Quiz[]
+  simulationSubjects SimulationSubject[]
   assignments TeacherAssignment[]
   outcomes    LearningOutcome[] @relation("SubjectOutcomes")
   studyGuides StudyGuide[]
@@ -90,6 +99,7 @@ model Grade {
   name  String?
 
   quizzes     Quiz[]
+  simulations Simulation[]
   assignments TeacherAssignment[]
   users       User[]
   classes     Class[]
@@ -146,6 +156,7 @@ model Quiz {
   isPublished Boolean  @default(false)
   dueDate     DateTime?
   isDiagnostic Boolean @default(false)
+  assessmentType AssessmentType @default(PRACTICE)
 
   gradeId     String
   grade       Grade     @relation(fields: [gradeId], references: [id])
@@ -163,12 +174,82 @@ model Quiz {
 
   questions   Question[]
   results     Result[]
+  practiceCompletions PracticeCompletion[]
+  simulationSubjects SimulationSubject[]
 
   createdAt   DateTime @default(now())
   @@index([isPublished])
   @@index([gradeId])
   @@index([subjectId])
   @@index([testingWindowId])
+}
+
+model PracticeCompletion {
+  id        String   @id @default(cuid())
+  studentId String
+  quizId    String
+  completedAt DateTime @default(now())
+  student   User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  quiz      Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  @@unique([studentId, quizId])
+  @@index([studentId])
+  @@index([quizId])
+}
+
+model Simulation {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  gradeId     String
+  creatorId   String
+  isPublished Boolean  @default(false)
+  dueDate     DateTime?
+  createdAt   DateTime @default(now())
+  grade       Grade    @relation(fields: [gradeId], references: [id], onDelete: Cascade)
+  creator     User     @relation("CreatedSimulations", fields: [creatorId], references: [id], onDelete: Cascade)
+  subjects    SimulationSubject[]
+  attempts    SimulationAttempt[]
+  @@index([gradeId, isPublished])
+}
+
+model SimulationSubject {
+  id           String @id @default(cuid())
+  simulationId String
+  quizId       String?
+  subjectId    String
+  simulation   Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  quiz         Quiz? @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  subject      Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  questions    SimulationQuestion[]
+  @@unique([simulationId, subjectId])
+  @@unique([simulationId, quizId])
+}
+
+model SimulationQuestion {
+  id                  String @id @default(cuid())
+  simulationSubjectId String
+  questionText        String @db.Text
+  options             Json
+  correctAnswer       String
+  explanation         String? @db.Text
+  imageUrl            String?
+  createdAt           DateTime @default(now())
+  simulationSubject   SimulationSubject @relation(fields: [simulationSubjectId], references: [id], onDelete: Cascade)
+  @@index([simulationSubjectId])
+}
+
+model SimulationAttempt {
+  id           String   @id @default(cuid())
+  simulationId String
+  studentId    String
+  answerSheet  Json
+  score        Float?
+  totalItems   Int
+  completedAt  DateTime @default(now())
+  simulation   Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  student      User @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@unique([simulationId, studentId])
+  @@index([studentId])
 }
 
 model StudyGuide {

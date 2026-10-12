@@ -52,18 +52,36 @@ export async function GET(req: Request) {
     });
 
     const studentIds = students.map(s => s.id);
+    const practiceQuizWhere: any = { assessmentType: "PRACTICE", isPublished: true };
+    if (user!.role === "TEACHER") practiceQuizWhere.OR = teacherAssignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId }));
+    if (subjectName) {
+      const practiceSubject = await prisma.subject.findFirst({ where: { name: subjectName }, select: { id: true } });
+      if (practiceSubject) practiceQuizWhere.subjectId = practiceSubject.id;
+    }
+    if (gradeLevel) {
+      const practiceGrade = await prisma.grade.findFirst({ where: { level: Number(gradeLevel) }, select: { id: true } });
+      if (practiceGrade) practiceQuizWhere.gradeId = practiceGrade.id;
+    }
+    const practices = await prisma.quiz.findMany({ where: practiceQuizWhere, select: { id: true, gradeId: true } });
+    const practiceCompletions = studentIds.length && practices.length
+      ? await prisma.practiceCompletion.findMany({ where: { studentId: { in: studentIds }, quizId: { in: practices.map(practice => practice.id) } }, select: { studentId: true, quizId: true } })
+      : [];
+    const completedPracticeIds = new Map<string, Set<string>>();
+    for (const completion of practiceCompletions) {
+      const ids = completedPracticeIds.get(completion.studentId) ?? new Set<string>();
+      ids.add(completion.quizId);
+      completedPracticeIds.set(completion.studentId, ids);
+    }
     const avgScoreMap = new Map<string, number | null>();
     let quizCountMap = new Map<string, number>();
 
     if (studentIds.length > 0) {
-      const resultFilter: any = {};
+      const resultFilter: any = { quiz: { assessmentType: "QUIZ" } };
       if (user!.role === "TEACHER") {
-        resultFilter.quiz = {
-          OR: teacherAssignments.map((assignment) => ({
-            subjectId: assignment.subjectId,
-            gradeId: assignment.gradeId,
-          })),
-        };
+        resultFilter.quiz = { AND: [
+          { assessmentType: "QUIZ" },
+          { OR: teacherAssignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) },
+        ] };
       }
       if (subjectName) {
         const subject = await prisma.subject.findFirst({ where: { name: subjectName } });
@@ -104,6 +122,9 @@ export async function GET(req: Request) {
       gradeLevel: s.grade?.level ?? null,
       className: s.class?.name ?? null,
       completedQuizzes: quizCountMap.get(s.id) ?? 0,
+      completedPractices: practices.filter(practice => practice.gradeId === s.gradeId && completedPracticeIds.get(s.id)?.has(practice.id)).length,
+      totalPractices: practices.filter(practice => practice.gradeId === s.gradeId).length,
+      missingPractices: practices.filter(practice => practice.gradeId === s.gradeId && !completedPracticeIds.get(s.id)?.has(practice.id)).length,
       avgScore: avgScoreMap.get(s.id) ?? null,
     }));
 

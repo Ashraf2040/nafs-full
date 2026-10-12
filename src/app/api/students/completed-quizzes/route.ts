@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
 
     // Fetch all results for this student with quiz details
     const results = await prisma.result.findMany({
-      where: { studentId },
+      where: { studentId, quiz: { assessmentType: "QUIZ" } },
       include: {
         quiz: {
           include: {

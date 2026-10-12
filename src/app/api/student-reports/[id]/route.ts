@@ -57,13 +57,21 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
     const gradeId = grade.id;
 
     const allQuizzes = await prisma.quiz.findMany({
-      where: { subjectId, gradeId, isPublished: true },
+      where: { subjectId, gradeId, isPublished: true, assessmentType: "QUIZ" },
       include: {
         _count: { select: { questions: true } },
         results: { where: { studentId: id } },
       },
       orderBy: { createdAt: "desc" },
     });
+
+    const allPractices = await prisma.quiz.findMany({
+      where: { subjectId, gradeId, isPublished: true, assessmentType: "PRACTICE" },
+      include: { _count: { select: { questions: true } }, practiceCompletions: { where: { studentId: id } } },
+      orderBy: { createdAt: "desc" },
+    });
+    const completedPractices = allPractices.filter(p => p.practiceCompletions.length > 0).map(p => ({ id: p.id, title: p.title, completedAt: p.practiceCompletions[0].completedAt, questionsCount: p._count.questions }));
+    const incompletePractices = allPractices.filter(p => p.practiceCompletions.length === 0).map(p => ({ id: p.id, title: p.title, questionsCount: p._count.questions, createdAt: p.createdAt }));
 
     const completedQuizzes = allQuizzes.filter(q => q.results.length > 0).map(q => ({
       id: q.id,
@@ -112,6 +120,9 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
       },
       completedQuizzes: completedWithPct,
       incompleteQuizzes,
+      practiceSummary: { total: allPractices.length, completed: completedPractices.length, missing: incompletePractices.length },
+      completedPractices,
+      incompletePractices,
     });
   } catch (error) {
     console.error("STUDENT_REPORT_ERROR:", error);

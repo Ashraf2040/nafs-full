@@ -20,7 +20,9 @@ export default function Sidebar() {
     const items = [
       { name: "Overview", icon: <LayoutDashboard size={20} />, href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Diagnostic", icon: <Target size={20} />, href: "/dashboard/diagnostic", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-      { name: "Practice", icon: <FileText size={20} />, href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+      { name: "Practices", icon: <FileText size={20} />, href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+      { name: "Quizzes", icon: <CheckCircle2 size={20} />, href: "/dashboard/quizzes/graded", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+      { name: "Simulations", icon: <ClipboardList size={20} />, href: "/dashboard/simulations", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Study Guides", icon: <LibraryBig size={20} />, href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Completed Quizzes", icon: <CheckCircle2 size={20} />, href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
       { name: "Learning Path", icon: <Route size={20} />, href: "/dashboard/learning-path", roles: ["STUDENT"] },
@@ -78,7 +80,7 @@ export default function Sidebar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`group flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 relative ${
+                className={`group flex items-center gap-3 ${item.name === "Simulations" ? "pl-14 py-2" : item.name === "Quizzes" ? "pl-10 py-2.5" : "px-4 py-3"} rounded-xl transition-all duration-200 relative ${
                   isActive 
                     ? "text-white font-semibold" 
                     : "hover:bg-slate-800 hover:text-white font-medium"

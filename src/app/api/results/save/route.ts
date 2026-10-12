@@ -89,6 +89,9 @@ export async function POST(req: Request) {
     if (!quiz) {
       return NextResponse.json({ message: "Quiz not found" }, { status: 404 });
     }
+    if (quiz.assessmentType !== "QUIZ") {
+      return NextResponse.json({ message: "Practices are completion-only and are not graded" }, { status: 409 });
+    }
     if (!quiz.isPublished) {
       return NextResponse.json({ message: "This quiz is not available" }, { status: 403 });
     }

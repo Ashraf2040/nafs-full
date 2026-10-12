@@ -435,9 +435,9 @@ async function StudentDashboardContent({ userId, userName }: { userId: string; u
   }
 
   const [availableQuizzes, completedResults, upcomingQuizzes, subjectStats, streakData] = await Promise.all([
-    prisma.quiz.count({ where: { isPublished: true, grade: { level: userGradeLevel } } }),
+    prisma.quiz.count({ where: { assessmentType: "QUIZ", isPublished: true, grade: { level: userGradeLevel } } }),
     prisma.result.findMany({ 
-      where: { studentId: userId }, 
+      where: { studentId: userId, quiz: { assessmentType: "QUIZ" } },
       take: 10, 
       select: { 
         id: true, 
@@ -448,8 +448,9 @@ async function StudentDashboardContent({ userId, userName }: { userId: string; u
       orderBy: { completedAt: "desc" } 
     }),
     prisma.quiz.findMany({ 
-      where: { 
-        isPublished: true, 
+      where: {
+        assessmentType: "QUIZ",
+        isPublished: true,
         grade: { level: userGradeLevel }, 
         NOT: { results: { some: { studentId: userId } } } 
       }, 
@@ -467,13 +468,14 @@ async function StudentDashboardContent({ userId, userName }: { userId: string; u
     prisma.$queryRaw<{ name: string; completed: number; total: number; avgScore: number }[]>`
       SELECT s.name, COUNT(DISTINCT CASE WHEN r."studentId" = ${userId} THEN r.id END)::int as completed,
         COUNT(DISTINCT q.id)::int as total, COALESCE(ROUND(AVG(CASE WHEN r."studentId" = ${userId} THEN r.score END)), 0)::int as "avgScore"
-      FROM "Subject" s LEFT JOIN "Quiz" q ON q."subjectId" = s.id AND q."gradeId" = ${userGradeId}
+      FROM "Subject" s LEFT JOIN "Quiz" q ON q."subjectId" = s.id AND q."gradeId" = ${userGradeId} AND q."assessmentType" = 'QUIZ'
       LEFT JOIN "Result" r ON r."quizId" = q.id AND r."studentId" = ${userId}
       GROUP BY s.id, s.name HAVING COUNT(q.id) > 0 ORDER BY total DESC
     `,
     prisma.$queryRaw<{ count: number }[]>`
       SELECT COUNT(*)::int as count FROM "Result" 
       WHERE "studentId" = ${userId} AND "completedAt" >= ${new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)}
+      AND EXISTS (SELECT 1 FROM "Quiz" q WHERE q.id = "Result"."quizId" AND q."assessmentType" = 'QUIZ')
     `
   ]);
 
@@ -672,11 +674,11 @@ export default async function DashboardPage() {
           select: { subjectId: true, gradeId: true },
         })
       : [];
-    const quizWhere: Prisma.QuizWhereInput = userRole === "TEACHER"
+    const quizWhere: Prisma.QuizWhereInput = { assessmentType: "QUIZ", ...(userRole === "TEACHER"
       ? assignments.length > 0
         ? { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) }
         : { id: "__no_teacher_assignments__" }
-      : {};
+      : {}) };
     const teacherGradeIds = [...new Set(assignments.map((assignment) => assignment.gradeId))];
     const studentWhere: Prisma.UserWhereInput = {
       role: "STUDENT",

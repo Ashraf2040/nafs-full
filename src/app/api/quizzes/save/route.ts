@@ -26,6 +26,7 @@ export async function POST(req: Request) {
       description,
       outcomeText,
       outcomeId,
+      assessmentType,
     } = await req.json();
 
     if (typeof subjectName !== "string" || !subjectName.trim() || !Array.isArray(questions) || questions.length === 0 || gradeTarget == null) {
@@ -45,6 +46,7 @@ export async function POST(req: Request) {
     }
 
     const gradeLevel = parseInt(gradeTarget.toString());
+    const kind = assessmentType === "QUIZ" ? "QUIZ" : "PRACTICE";
 
     const gradeRecord = await prisma.grade.findUnique({
       where: { level: gradeLevel },
@@ -101,6 +103,7 @@ export async function POST(req: Request) {
     const newQuiz = await prisma.quiz.create({
       data: {
         title: smartTitle,
+        assessmentType: kind,
         description: description || null,
         isPublished: isPublished ?? false,
         subjectId: subject.id,

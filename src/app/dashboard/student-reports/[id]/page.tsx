@@ -127,6 +127,8 @@ export default function StudentReportDetailPage() {
   const { student, summary, completedQuizzes: cqRaw, iq: iqRaw } = data;
   const cq: CompletedQuiz[] = cqRaw || [];
   const iq: IncompleteQuiz[] = iqRaw || [];
+  const completedPractices: { id: string; title: string; completedAt: string }[] = data.completedPractices || [];
+  const incompletePractices: { id: string; title: string; questionsCount: number }[] = data.incompletePractices || [];
 
   const completionData = [
     { name: "Completed", value: summary.totalCompleted, color: "#10b981" },
@@ -354,6 +356,18 @@ export default function StudentReportDetailPage() {
                 ))}
               </div>
             )}
+          </div>
+        </div>
+
+        <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden">
+          <div className="h-1.5 bg-gradient-to-r from-indigo-500 to-cyan-500" />
+          <div className="p-6">
+            <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2"><CheckCircle2 size={20} className="text-indigo-500" /> Practice completion</h2>
+            <p className="mb-4 text-sm text-slate-500">{data.practiceSummary?.completed ?? completedPractices.length} completed · {data.practiceSummary?.missing ?? incompletePractices.length} missing. Practices do not affect grades.</p>
+            <div className="grid gap-5 md:grid-cols-2">
+              <div><h3 className="mb-2 text-sm font-bold text-emerald-700">Completed</h3>{completedPractices.length ? completedPractices.map(p=><div key={p.id} className="flex items-center justify-between border-b border-slate-100 py-2 text-sm"><span>{p.title}</span><span className="text-emerald-700">Complete</span></div>) : <p className="py-3 text-sm text-slate-400">No completed practices.</p>}</div>
+              <div><h3 className="mb-2 text-sm font-bold text-amber-700">Missing</h3>{incompletePractices.length ? incompletePractices.map(p=><div key={p.id} className="flex items-center justify-between border-b border-slate-100 py-2 text-sm"><span>{p.title}</span><span className="text-amber-700">Missing</span></div>) : <p className="py-3 text-sm text-slate-400">All published practices are complete.</p>}</div>
+            </div>
           </div>
         </div>
 

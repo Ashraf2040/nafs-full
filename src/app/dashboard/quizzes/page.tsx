@@ -101,12 +101,10 @@ export default async function QuizzesPage({
               <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl border border-indigo-100/50">
                 <LayoutGrid size={22} />
               </div>
-              {userRole === "STUDENT"
-                ? "Available Assessments"
-                : "Assessment Library"}
+              {userRole === "STUDENT" ? "Available Practices" : "Practice Library"}
             </h1>
             <p className="text-slate-500 mt-1.5 text-sm ml-[46px]">
-              Browse, filter, and manage your NAFS preparation materials
+              Complete these exercises for practice. Practices record completion without a grade.
             </p>
           </div>
         </div>

@@ -69,13 +69,14 @@ export async function POST(req: Request) {
       await prisma.$transaction(async (tx) => {
         await tx.question.deleteMany({ where: { quizId: existing.id } });
         await tx.question.createMany({ data: questionData.map((question) => ({ ...question, quizId: existing.id })) });
-        await tx.quiz.update({ where: { id: existing.id }, data: { isPublished: false, dueDate: null, description: `Preparation Form (A), Academic Year 2026-2027. ${subjectName === "Math" ? "Eight source items with exact diagram crops; use the item alignment notes as a screening guide." : "Five exact source questions with the original reading passage and illustration."}` } });
+        await tx.quiz.update({ where: { id: existing.id }, data: { assessmentType: "QUIZ", isPublished: false, dueDate: null, description: `Preparation Form (A), Academic Year 2026-2027. ${subjectName === "Math" ? "Eight source items with exact diagram crops; use the item alignment notes as a screening guide." : "Five exact source questions with the original reading passage and illustration."}` } });
       });
       return NextResponse.json({ quizId: existing.id, existing: true, refreshed: true });
     }
 
     const quiz = await prisma.quiz.create({
       data: {
+        assessmentType: "QUIZ",
         title,
         description: customDraft
           ? "Diagnostic assessment draft. Add questions, outcome links, and visual assets before publishing."

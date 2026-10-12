@@ -10,6 +10,7 @@ import QuizActions from "./QuizActions";
 const ITEMS_PER_PAGE = 15;
 
 interface QuizGridSectionProps {
+  assessmentType?: "PRACTICE" | "QUIZ";
   userRole: string;
   userId: string;
   filterSubject?: string;
@@ -27,8 +28,9 @@ export default async function QuizGridSection({
   filterOutcome,
   filterIndicator,
   currentPage,
+  assessmentType = "PRACTICE",
 }: QuizGridSectionProps) {
-  const whereClause: any = {};
+  const whereClause: any = { assessmentType };
 
   if (userRole === "STUDENT") {
     const currentUser = await prisma.user.findUnique({
@@ -127,13 +129,16 @@ export default async function QuizGridSection({
   const quizWhere =
     Object.keys(whereClause).length > 0 ? whereClause : undefined;
 
-  const [totalCount, studentResultsData] = await Promise.all([
+  const [totalCount, studentResultsData, practiceCompletionData] = await Promise.all([
     prisma.quiz.count({ where: quizWhere }),
-    userRole === "STUDENT"
+    userRole === "STUDENT" && assessmentType === "QUIZ"
       ? prisma.result.findMany({
-          where: { studentId: userId },
+          where: { studentId: userId, quiz: { assessmentType: "QUIZ" } },
           select: { id: true, quizId: true, score: true },
         })
+      : Promise.resolve([]),
+    userRole === "STUDENT" && assessmentType === "PRACTICE"
+      ? prisma.practiceCompletion.findMany({ where: { studentId: userId }, select: { quizId: true } })
       : Promise.resolve([]),
   ]);
 
@@ -159,6 +164,7 @@ export default async function QuizGridSection({
       studentResults[r.quizId] = r;
       completedQuizIds.add(r.quizId);
     });
+    practiceCompletionData.forEach((completion) => completedQuizIds.add(completion.quizId));
   }
   const completedCount = completedQuizIds.size;
 
@@ -250,7 +256,7 @@ export default async function QuizGridSection({
                   <div className="flex flex-col items-end gap-1.5">
                     {isCompleted && (
                       <span className="text-[11px] font-bold px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-100 flex items-center gap-1.5">
-                        <CheckCircle2 size={12} /> Scored {result.score.toFixed(0)}%
+                        <CheckCircle2 size={12} /> {assessmentType === "PRACTICE" ? "Completed" : `Scored ${result.score.toFixed(0)}%`}
                       </span>
                     )}
                     {expired && !isCompleted && (
@@ -317,7 +323,7 @@ export default async function QuizGridSection({
                         disabled
                         className="w-full bg-emerald-50 text-emerald-600 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 cursor-default border border-emerald-100"
                       >
-                        <CheckCircle2 size={18} /> Completed — {result.score.toFixed(0)}%
+                        <CheckCircle2 size={18} /> {assessmentType === "PRACTICE" ? "Completed" : `Completed — ${result.score.toFixed(0)}%`}
                       </button>
                     ) : expired ? (
                       <button

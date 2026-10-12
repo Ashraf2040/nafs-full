@@ -16,6 +16,9 @@ interface Student {
   gradeLevel: number | null;
   className: string | null;
   completedQuizzes: number;
+  completedPractices: number;
+  totalPractices: number;
+  missingPractices: number;
   avgScore: number | null;
 }
 
@@ -136,6 +139,7 @@ export default function StudentReportsPage() {
                   <th className="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4">Grade</th>
                   <th className="text-left text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4">Class</th>
                   <th className="text-center text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4">Completed</th>
+                  <th className="text-center text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4">Practice status</th>
                   <th className="text-center text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4">Avg Score</th>
                   <th className="text-right text-xs font-semibold text-slate-500 uppercase tracking-wider px-6 py-4">Report</th>
                 </tr>
@@ -163,6 +167,10 @@ export default function StudentReportsPage() {
                     </td>
                     <td className="px-6 py-4 text-center">
                       <span className="text-sm font-semibold text-slate-700">{student.completedQuizzes}</span>
+                    </td>
+                    <td className="px-6 py-4 text-center">
+                      <span className="text-sm font-semibold text-emerald-700">{student.completedPractices}/{student.totalPractices}</span>
+                      <span className="block text-xs text-amber-700">{student.missingPractices} missing</span>
                     </td>
                     <td className="px-6 py-4">
                       {student.avgScore !== null ? (
