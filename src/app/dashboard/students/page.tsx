@@ -887,6 +887,7 @@ Bob Williams,bob.w@school.edu,6,C,BobPass012!`;
           student={editingStudent}
           onClose={() => setEditingStudent(null)}
           onSaved={() => mutate('/api/students')}
+          canDelete={userRole === "ADMIN"}
         />
       )}
     </div>

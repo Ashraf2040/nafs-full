@@ -180,11 +180,20 @@ export async function DELETE(
 
     const resolvedParams = await params;
     
-    const student = await prisma.user.findUnique({ where: { id: resolvedParams.id }, select: { role: true } });
+    const student = await prisma.user.findUnique({ where: { id: resolvedParams.id }, select: { id: true, role: true } });
     if (!student || student.role !== "STUDENT") {
       return NextResponse.json({ error: "Student not found" }, { status: 404 });
     }
-    await prisma.user.delete({ where: { id: resolvedParams.id } });
+    await prisma.$transaction(async (tx) => {
+      // These records use restrictive foreign keys, so remove student-owned
+      // history before deleting the account. Cascading relations are handled by the database.
+      await tx.result.deleteMany({ where: { studentId: student.id } });
+      await tx.skillMastery.deleteMany({ where: { studentId: student.id } });
+      await tx.learningPathItem.deleteMany({ where: { studentId: student.id } });
+      await tx.trophy.deleteMany({ where: { studentId: student.id } });
+      await tx.challengeParticipation.deleteMany({ where: { studentId: student.id } });
+      await tx.user.delete({ where: { id: student.id } });
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

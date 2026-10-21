@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { X, Save, Loader2, GraduationCap, School } from "lucide-react";
+import { X, Save, Loader2, Trash2 } from "lucide-react";
 
 interface Student {
   id: string;
@@ -22,13 +22,15 @@ interface Props {
   student: Student;
   onClose: () => void;
   onSaved: () => void;
+  canDelete: boolean;
 }
 
-export default function StudentEditModal({ student, onClose, onSaved }: Props) {
+export default function StudentEditModal({ student, onClose, onSaved, canDelete }: Props) {
   const [gradeLevel, setGradeLevel] = useState(student.gradeLevel?.toString() || "6");
   const [classId, setClassId] = useState(student.classId || "");
   const [classes, setClasses] = useState<ClassItem[]>([]);
   const [loading, setLoading] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isFetchingClasses, setIsFetchingClasses] = useState(false);
 
   useEffect(() => {
@@ -72,6 +74,26 @@ export default function StudentEditModal({ student, onClose, onSaved }: Props) {
       alert("Network error");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!window.confirm(`Delete ${student.name}? This cannot be undone.`)) return;
+
+    setIsDeleting(true);
+    try {
+      const res = await fetch(`/api/students/${student.id}`, { method: "DELETE" });
+      if (res.ok) {
+        onSaved();
+        onClose();
+      } else {
+        const err = await res.json();
+        alert(err.error || "Delete failed");
+      }
+    } catch {
+      alert("Network error");
+    } finally {
+      setIsDeleting(false);
     }
   };
 
@@ -129,14 +151,26 @@ export default function StudentEditModal({ student, onClose, onSaved }: Props) {
           </div>
         </div>
 
-        <button
-          onClick={handleSave}
-          disabled={loading}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50"
-        >
-          {loading ? <Loader2 size={18} className="animate-spin" /> : <Save size={18} />}
-          Save Changes
-        </button>
+        <div className="flex gap-3">
+          {canDelete && (
+            <button
+              onClick={handleDelete}
+              disabled={loading || isDeleting}
+              className="px-4 bg-red-50 hover:bg-red-100 text-red-700 py-3 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50"
+            >
+              {isDeleting ? <Loader2 size={18} className="animate-spin" /> : <Trash2 size={18} />}
+              Delete
+            </button>
+          )}
+          <button
+            onClick={handleSave}
+            disabled={loading || isDeleting}
+            className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 disabled:opacity-50"
+          >
+            {loading ? <Loader2 size={18} className="animate-spin" /> : <Save size={18} />}
+            Save Changes
+          </button>
+        </div>
       </div>
     </div>
   );
