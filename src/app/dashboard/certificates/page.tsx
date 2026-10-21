@@ -8,6 +8,27 @@ import { Award, CheckCircle, TrendingUp, BookOpen, GraduationCap } from "lucide-
 
 export const revalidate = 300;
 
+async function getAssignedTeachersForQuizzes(quizzes: Array<{ id: string; subjectId: string; gradeId: string; creatorId: string }>) {
+  const pairs = [...new Map(quizzes.map((quiz) => [`${quiz.subjectId}:${quiz.gradeId}`, { subjectId: quiz.subjectId, gradeId: quiz.gradeId }])).values()];
+  if (pairs.length === 0) return new Map<string, string>();
+  const assignments = await prisma.teacherAssignment.findMany({
+    where: { OR: pairs },
+    select: { teacherId: true, subjectId: true, gradeId: true, teacher: { select: { name: true } } },
+    orderBy: { createdAt: "asc" },
+  });
+  const byPair = new Map<string, typeof assignments>();
+  for (const assignment of assignments) {
+    const key = `${assignment.subjectId}:${assignment.gradeId}`;
+    byPair.set(key, [...(byPair.get(key) ?? []), assignment]);
+  }
+  return new Map(quizzes.map((quiz) => {
+    const teachers = byPair.get(`${quiz.subjectId}:${quiz.gradeId}`) ?? [];
+    const assigned = teachers.find((teacher) => teacher.teacherId === quiz.creatorId && teacher.teacher.name?.trim())
+      ?? teachers.find((teacher) => teacher.teacher.name?.trim());
+    return [quiz.id, assigned?.teacher.name?.trim() || "NAFS Prep"];
+  }));
+}
+
 export default async function CertificatesPage() {
   const session = await getServerSession(authOptions);
 
@@ -30,6 +51,7 @@ export default async function CertificatesPage() {
       include: { quiz: { include: { subject: true, creator: { select: { name: true } } } } },
       orderBy: { completedAt: "desc" },
     });
+    const assignedTeacherNames = await getAssignedTeachersForQuizzes(results.map((result) => result.quiz));
 
     achievements = results.map((r) => ({
       id: r.id,
@@ -41,7 +63,7 @@ export default async function CertificatesPage() {
         month: "long",
         day: "numeric",
       }),
-      teacherName: r.quiz.creator.name || "NAFS Prep",
+      teacherName: assignedTeacherNames.get(r.quiz.id) || "NAFS Prep",
     }));
   } else {
     const assignments = userRole === "TEACHER"
@@ -66,6 +88,7 @@ export default async function CertificatesPage() {
       orderBy: { completedAt: "desc" },
       take: 20,
     });
+    const assignedTeacherNames = await getAssignedTeachersForQuizzes(results.map((result) => result.quiz));
 
     achievements = results.map((r) => ({
       id: r.id,
@@ -77,7 +100,7 @@ export default async function CertificatesPage() {
         month: "long",
         day: "numeric",
       }),
-      teacherName: r.quiz.creator.name || "NAFS Prep",
+      teacherName: assignedTeacherNames.get(r.quiz.id) || "NAFS Prep",
     }));
   }
 

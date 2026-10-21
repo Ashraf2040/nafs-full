@@ -181,14 +181,15 @@ export default async function QuizGridSection({
     if (filterOutcome) query.set("outcome", filterOutcome);
     if (filterIndicator) query.set("indicator", filterIndicator);
     query.set("page", pageNum.toString());
-    return `/dashboard/quizzes?${query.toString()}`;
+    const basePath = assessmentType === "PRACTICE" ? "/dashboard/practices" : "/dashboard/quizzes";
+    return `${basePath}?${query.toString()}`;
   };
 
   return (
     <>
       {/* Info bar: completed link (student) + total count */}
       <div className="flex items-center gap-3 justify-end flex-wrap">
-        {userRole === "STUDENT" && completedCount > 0 && (
+        {userRole === "STUDENT" && assessmentType === "QUIZ" && completedCount > 0 && (
           <Link
             href="/dashboard/quizzes/completed"
             className="flex items-center gap-2 bg-emerald-50 border-2 border-emerald-200 hover:border-emerald-300 hover:bg-emerald-100 text-emerald-700 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-sm"
@@ -334,7 +335,7 @@ export default async function QuizGridSection({
                       </button>
                     ) : (
                       <Link
-                        href={`/dashboard/quizzes/solve/${quiz.id}`}
+                        href={assessmentType === "PRACTICE" ? `/dashboard/practices/solve/${quiz.id}` : `/dashboard/quizzes/solve/${quiz.id}`}
                         className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold text-sm hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 active:scale-[0.98]"
                       >
                         <PlayCircle size={18} /> Start Assessment
@@ -343,7 +344,7 @@ export default async function QuizGridSection({
                   ) : (
                     <div className="flex items-center gap-2">
                       <Link
-                        href={`/dashboard/quizzes/solve/${quiz.id}`}
+                        href={assessmentType === "PRACTICE" ? `/dashboard/practices/solve/${quiz.id}` : `/dashboard/quizzes/solve/${quiz.id}`}
                         className="flex-1 bg-slate-50 text-slate-700 py-2.5 rounded-xl font-semibold text-sm hover:bg-indigo-50 hover:text-indigo-700 transition-all flex items-center justify-center gap-1.5 border border-slate-100 hover:border-indigo-100"
                         title="Preview Quiz"
                       >

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireRole } from "@/lib/guard";
 import prisma from "@/lib/prisma";
-import { isChallengeOpen, parseChallengeCriteria } from "@/lib/challenges";
+import { calculateChallengeProgress, isChallengeOpen, parseChallengeCriteria } from "@/lib/challenges";
 
 export async function GET(
   req: Request,
@@ -113,6 +113,12 @@ export async function PUT(
           return NextResponse.json({ message: "You can only use your assigned subject and grade" }, { status: 403 });
         }
       }
+      if (criteria.goalType === "QUIZZES") {
+        const quizRows = await prisma.quiz.findMany({ where: { id: { in: criteria.quizIds ?? [] }, assessmentType: "QUIZ", isPublished: true, subjectId: subject.id, gradeId: grade.id }, select: { id: true } });
+        if (quizRows.length !== criteria.quizIds?.length) {
+          return NextResponse.json({ message: "Choose published quizzes for the selected subject and grade" }, { status: 400 });
+        }
+      } else {
       const outcomeCount = await prisma.learningOutcome.count({
         where: {
           subject: { equals: subject.name, mode: "insensitive" },
@@ -122,6 +128,7 @@ export async function PUT(
       });
       if (outcomeCount === 0) {
         return NextResponse.json({ message: "No indicators match the selected challenge criteria" }, { status: 400 });
+      }
       }
       normalizedCriteria = { ...criteria, subject: subject.name, grade: grade.level };
     }
@@ -144,6 +151,13 @@ export async function PUT(
         ...(isActive !== undefined && { isActive }),
       },
     });
+    if (normalizedCriteria) {
+      const participants = await prisma.challengeParticipation.findMany({ where: { challengeId: id }, select: { id: true, studentId: true, completedAt: true } });
+      await Promise.all(participants.map(async (participant) => {
+        const { progress } = await calculateChallengeProgress(prisma, participant.studentId, normalizedCriteria!);
+        await prisma.challengeParticipation.update({ where: { id: participant.id }, data: { progress, completedAt: progress >= 100 ? participant.completedAt ?? new Date() : null } });
+      }));
+    }
     return NextResponse.json({ challenge });
   } catch (error: any) {
     console.error("CHALLENGE_PUT_ERROR:", error);

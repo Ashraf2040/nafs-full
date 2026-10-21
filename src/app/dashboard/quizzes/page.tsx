@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import QuizManager2 from "@/components/QuizManager";
 import QuizFilterBar from "./QuizFilterBar";
 import QuizGridSection from "./QuizGridSection";
+import BulkDeleteAssessmentsButton from "./BulkDeleteAssessmentsButton";
 import { LayoutGrid } from "lucide-react";
 
 export const revalidate = 300;
@@ -89,7 +90,7 @@ export default async function QuizzesPage({
     <div className="mx-auto max-w-7xl space-y-8">
       {(userRole === "ADMIN" || userRole === "TEACHER") && (
         <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 lg:p-8">
-          <QuizManager2 />
+          <QuizManager2 assessmentType="QUIZ" />
         </div>
       )}
 
@@ -101,12 +102,13 @@ export default async function QuizzesPage({
               <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl border border-indigo-100/50">
                 <LayoutGrid size={22} />
               </div>
-              {userRole === "STUDENT" ? "Available Practices" : "Practice Library"}
+              {userRole === "STUDENT" ? "Graded Quizzes" : "Quiz Library"}
             </h1>
             <p className="text-slate-500 mt-1.5 text-sm ml-[46px]">
-              Complete these exercises for practice. Practices record completion without a grade.
+              Take graded quizzes and review your scores and attempts.
             </p>
           </div>
+          {(userRole === "ADMIN" || userRole === "TEACHER") && <BulkDeleteAssessmentsButton assessmentType="QUIZ" />}
         </div>
 
         {/* Filters for admin/teacher — stream independently */}
@@ -133,6 +135,7 @@ export default async function QuizzesPage({
             filterOutcome={filterOutcome}
             filterIndicator={filterIndicator}
             currentPage={currentPage}
+            assessmentType="QUIZ"
           />
         </Suspense>
       </div>

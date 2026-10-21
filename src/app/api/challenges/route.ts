@@ -1,18 +1,26 @@
 import { NextResponse } from "next/server";
 import { requireRole } from "@/lib/guard";
 import prisma from "@/lib/prisma";
-import { parseChallengeCriteria } from "@/lib/challenges";
+import { calculateChallengeProgress, parseChallengeCriteria } from "@/lib/challenges";
 
-function buildChallengeOptions(rows: Array<{ subject: string; grade: number; subDomain: string | null }>) {
-  const options = new Map<string, { subject: string; grade: number; domains: string[] }>();
+function buildChallengeOptions(rows: Array<{ subject: string; grade: number; subDomain: string | null }>, quizzes: Array<{ id: string; title: string; subject: string; grade: number; questionCount: number }>) {
+  const options = new Map<string, { subject: string; grade: number; domains: string[]; quizzes: typeof quizzes }>();
   for (const row of rows) {
     const key = `${row.subject}::${row.grade}`;
-    const option = options.get(key) ?? { subject: row.subject, grade: row.grade, domains: [] };
+    const option = options.get(key) ?? { subject: row.subject, grade: row.grade, domains: [], quizzes: [] };
     if (row.subDomain && !option.domains.includes(row.subDomain)) option.domains.push(row.subDomain);
     options.set(key, option);
   }
-  return [...options.values()].map((option) => ({ ...option, domains: option.domains.sort() }));
+  for (const quiz of quizzes) {
+    const key = `${quiz.subject}::${quiz.grade}`;
+    const option = options.get(key) ?? { subject: quiz.subject, grade: quiz.grade, domains: [], quizzes: [] };
+    option.quizzes.push(quiz);
+    options.set(key, option);
+  }
+  return [...options.values()].map((option) => ({ ...option, domains: option.domains.sort(), quizzes: option.quizzes.sort((a, b) => a.title.localeCompare(b.title)) }));
 }
+
+const challengeQuizWhere = { assessmentType: "QUIZ" as const, isPublished: true };
 
 export async function GET(req: Request) {
   try {
@@ -40,7 +48,19 @@ export async function GET(req: Request) {
         },
         orderBy: { startDate: "desc" },
       });
-      return NextResponse.json({ challenges, options: null });
+      const selectedQuizIds = challenges.flatMap((challenge) => parseChallengeCriteria(challenge.criteria)?.quizIds ?? []);
+      const selectedQuizTitles = selectedQuizIds.length ? await prisma.quiz.findMany({ where: { id: { in: selectedQuizIds } }, select: { id: true, title: true } }) : [];
+      const quizTitleById = new Map(selectedQuizTitles.map((quiz) => [quiz.id, quiz.title]));
+      const refreshed = await Promise.all(challenges.map(async (challenge) => {
+        const participation = challenge.participations[0];
+        const criteria = parseChallengeCriteria(challenge.criteria);
+        const quizTitles = criteria?.quizIds?.map((id) => quizTitleById.get(id)).filter(Boolean) ?? [];
+        if (!participation || !criteria) return { ...challenge, quizTitles };
+        const { progress } = await calculateChallengeProgress(prisma, userId, criteria);
+        const updated = await prisma.challengeParticipation.update({ where: { id: participation.id }, data: { progress, completedAt: progress >= 100 ? participation.completedAt ?? new Date() : null } });
+        return { ...challenge, participations: [updated], quizTitles };
+      }));
+      return NextResponse.json({ challenges: refreshed, options: null });
     }
 
     const participationsInclude = {
@@ -81,11 +101,14 @@ export async function GET(req: Request) {
             select: { subject: true, grade: true, subDomain: true },
           })
         : [];
-      return NextResponse.json({ challenges, options: buildChallengeOptions(outcomeRows) });
+      const quizRows = assignments.length > 0
+        ? await prisma.quiz.findMany({ where: { ...challengeQuizWhere, OR: assignments.map((assignment) => ({ subject: { name: { equals: assignment.subject.name, mode: "insensitive" as const } }, grade: { level: assignment.grade.level } })) }, select: { id: true, title: true, subject: { select: { name: true } }, grade: { select: { level: true } }, _count: { select: { questions: true } } }, orderBy: { title: "asc" } })
+        : [];
+      return NextResponse.json({ challenges, options: buildChallengeOptions(outcomeRows, quizRows.map((quiz) => ({ id: quiz.id, title: quiz.title, subject: quiz.subject.name, grade: quiz.grade.level, questionCount: quiz._count.questions }))) });
     }
 
     // ADMIN: see all challenges
-    const [challenges, outcomeRows] = await Promise.all([
+    const [challenges, outcomeRows, quizRows] = await Promise.all([
       prisma.challenge.findMany({
         include: {
           ...participationsInclude,
@@ -98,10 +121,11 @@ export async function GET(req: Request) {
         select: { subject: true, grade: true, subDomain: true },
         orderBy: [{ subject: "asc" }, { grade: "asc" }, { subDomain: "asc" }],
       }),
+      prisma.quiz.findMany({ where: challengeQuizWhere, select: { id: true, title: true, subject: { select: { name: true } }, grade: { select: { level: true } }, _count: { select: { questions: true } } }, orderBy: { title: "asc" } }),
     ]);
     return NextResponse.json({
       challenges,
-      options: buildChallengeOptions(outcomeRows),
+      options: buildChallengeOptions(outcomeRows, quizRows.map((quiz) => ({ id: quiz.id, title: quiz.title, subject: quiz.subject.name, grade: quiz.grade.level, questionCount: quiz._count.questions }))),
     });
   } catch (error: any) {
     console.error("CHALLENGES_GET_ERROR:", error);
@@ -159,6 +183,15 @@ export async function POST(req: Request) {
       }
     }
 
+    if (criteria.goalType === "QUIZZES") {
+      const matchingQuizzes = await prisma.quiz.findMany({
+        where: { id: { in: criteria.quizIds }, ...challengeQuizWhere, subjectId: subject.id, gradeId: grade.id },
+        select: { id: true },
+      });
+      if (matchingQuizzes.length !== criteria.quizIds?.length) {
+        return NextResponse.json({ message: "Choose published quizzes for the selected subject and grade" }, { status: 400 });
+      }
+    } else {
     const matchingOutcomes = await prisma.learningOutcome.count({
       where: {
         subject: { equals: subject.name, mode: "insensitive" },
@@ -170,6 +203,7 @@ export async function POST(req: Request) {
     });
     if (matchingOutcomes === 0) {
       return NextResponse.json({ message: "No indicators match the selected challenge criteria" }, { status: 400 });
+    }
     }
 
     const normalizedCriteria = { ...criteria, subject: subject.name, grade: grade.level };

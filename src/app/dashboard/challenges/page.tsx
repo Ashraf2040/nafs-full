@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import {
   Gamepad2, Loader2, AlertCircle, Plus, Target,
   Trophy, Clock, Users, CheckCircle2,
-  Trash2, Sparkles, Zap, Medal, PlayCircle, BookOpen, GraduationCap
+  Trash2, Sparkles, Zap, Medal, PlayCircle, BookOpen, GraduationCap, Pencil
 } from "lucide-react";
 
 export default function ChallengesPage() {
@@ -15,10 +15,11 @@ export default function ChallengesPage() {
   const [challenges, setChallenges] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);
+  const [editingChallengeId, setEditingChallengeId] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [actionId, setActionId] = useState<string | null>(null);
   const [notice, setNotice] = useState<{ type: "success" | "error"; message: string } | null>(null);
-  const [options, setOptions] = useState<Array<{ subject: string; grade: number; domains: string[] }>>([]);
+  const [options, setOptions] = useState<Array<{ subject: string; grade: number; domains: string[]; quizzes: Array<{ id: string; title: string; questionCount: number }> }>>([]);
 
   const [form, setForm] = useState({
     title: "",
@@ -26,6 +27,8 @@ export default function ChallengesPage() {
     subject: "Math",
     grade: "6",
     domain: "",
+    goalType: "SKILLS" as "SKILLS" | "QUIZZES",
+    quizIds: [] as string[],
     minMastered: "5",
     rewardBadge: "",
     startDate: "",
@@ -44,12 +47,12 @@ export default function ChallengesPage() {
         if (availableOptions.length > 0) {
           setForm((current) => {
             const stillAvailable = availableOptions.some(
-              (option: { subject: string; grade: number; domains: string[] }) =>
+              (option: { subject: string; grade: number; domains: string[]; quizzes: Array<{id:string;title:string;questionCount:number}> }) =>
                 option.subject === current.subject && String(option.grade) === current.grade,
             );
             return stillAvailable
               ? current
-              : { ...current, subject: availableOptions[0].subject, grade: String(availableOptions[0].grade) };
+              : { ...current, subject: availableOptions[0].subject, grade: String(availableOptions[0].grade), quizIds: [] };
           });
         }
       } else {
@@ -78,11 +81,13 @@ export default function ChallengesPage() {
       const criteria = {
         subject: form.subject,
         grade: parseInt(form.grade),
-        ...(form.domain ? { domain: form.domain } : {}),
-        minMastered: parseInt(form.minMastered) || 5,
+        goalType: form.goalType,
+        ...(form.goalType === "QUIZZES"
+          ? { quizIds: form.quizIds, minQuizzes: parseInt(form.minMastered) || form.quizIds.length }
+          : { ...(form.domain ? { domain: form.domain } : {}), minMastered: parseInt(form.minMastered) || 5 }),
       };
-      const res = await fetch("/api/challenges", {
-        method: "POST",
+      const res = await fetch(editingChallengeId ? `/api/challenges/${editingChallengeId}` : "/api/challenges", {
+        method: editingChallengeId ? "PUT" : "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           title: form.title,
@@ -95,9 +100,10 @@ export default function ChallengesPage() {
       });
       if (res.ok) {
         setShowCreate(false);
-        setForm({ title: "", description: "", subject: "Math", grade: "6", domain: "", minMastered: "5", rewardBadge: "", startDate: "", endDate: "" });
+        setEditingChallengeId(null);
+        setForm({ title: "", description: "", subject: "Math", grade: "6", domain: "", goalType: "SKILLS", quizIds: [], minMastered: "5", rewardBadge: "", startDate: "", endDate: "" });
         await fetchChallenges();
-        setNotice({ type: "success", message: "Challenge created successfully." });
+        setNotice({ type: "success", message: editingChallengeId ? "Challenge updated and participant progress recalculated." : "Challenge created successfully." });
       } else {
         const data = await res.json().catch(() => ({}));
         setNotice({ type: "error", message: data.message || "Challenge could not be created." });
@@ -108,6 +114,25 @@ export default function ChallengesPage() {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const handleEdit = (challenge: any) => {
+    const criteria = challenge.criteria as any;
+    setForm({
+      title: challenge.title,
+      description: challenge.description || "",
+      subject: criteria.subject,
+      grade: String(criteria.grade),
+      domain: criteria.domain || "",
+      goalType: criteria.goalType === "QUIZZES" ? "QUIZZES" : "SKILLS",
+      quizIds: criteria.quizIds || [],
+      minMastered: String(criteria.goalType === "QUIZZES" ? criteria.minQuizzes : criteria.minMastered),
+      rewardBadge: challenge.rewardBadge || "",
+      startDate: new Date(challenge.startDate).toISOString().slice(0, 10),
+      endDate: challenge.endDate ? new Date(challenge.endDate).toISOString().slice(0, 10) : "",
+    });
+    setEditingChallengeId(challenge.id);
+    setShowCreate(true);
   };
 
   const handleJoin = async (challengeId: string) => {
@@ -198,6 +223,7 @@ export default function ChallengesPage() {
   const domains = options.find(
     (option) => option.subject === form.subject && String(option.grade) === form.grade,
   )?.domains ?? [];
+  const availableQuizzes = options.find((option) => option.subject === form.subject && String(option.grade) === form.grade)?.quizzes ?? [];
   const now = Date.now();
   const statusFor = (challenge: any) => {
     const starts = new Date(challenge.startDate).getTime();
@@ -266,7 +292,7 @@ export default function ChallengesPage() {
       {/* Teacher: Create Button */}
       {!isStudent && (
         <button
-          onClick={() => setShowCreate(!showCreate)}
+          onClick={() => { setShowCreate(!showCreate); setEditingChallengeId(null); }}
           disabled={options.length === 0}
           className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-slate-300 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition-colors"
         >
@@ -280,7 +306,7 @@ export default function ChallengesPage() {
           <div className="flex items-center gap-3">
             <div className="p-2 bg-emerald-50 text-emerald-600 rounded-xl"><Sparkles size={20} /></div>
             <div>
-              <h2 className="text-xl font-bold text-slate-800">Create Challenge</h2>
+              <h2 className="text-xl font-bold text-slate-800">{editingChallengeId ? "Edit Challenge" : "Create Challenge"}</h2>
               <p className="text-sm text-slate-500">Set a goal for students to master skills in a subject and domain</p>
             </div>
           </div>
@@ -308,7 +334,11 @@ export default function ChallengesPage() {
 
             {/* Goal section */}
             <div className="col-span-full">
-              <p className="text-sm font-semibold text-slate-700 mb-3">Goal — students must master this many skills:</p>
+              <p className="text-sm font-semibold text-slate-700 mb-3">Choose how students complete this challenge:</p>
+              <div className="flex flex-wrap gap-2">
+                <button type="button" onClick={() => setForm({ ...form, goalType: "SKILLS", quizIds: [] })} className={`rounded-xl px-4 py-2 text-sm font-semibold ${form.goalType === "SKILLS" ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-600"}`}>Master skills</button>
+                <button type="button" onClick={() => setForm({ ...form, goalType: "QUIZZES", domain: "", quizIds: [], minMastered: "1" })} className={`rounded-xl px-4 py-2 text-sm font-semibold ${form.goalType === "QUIZZES" ? "bg-emerald-600 text-white" : "bg-slate-100 text-slate-600"}`}>Complete selected quizzes</button>
+              </div>
             </div>
 
             <div>
@@ -320,7 +350,7 @@ export default function ChallengesPage() {
                   onChange={(e) => {
                     const subject = e.target.value;
                     const firstGrade = options.find((option) => option.subject === subject)?.grade;
-                    setForm({ ...form, subject, domain: "", ...(firstGrade ? { grade: String(firstGrade) } : {}) });
+                    setForm({ ...form, subject, domain: "", quizIds: [], ...(firstGrade ? { grade: String(firstGrade) } : {}) });
                   }}
                   className="bg-transparent outline-none text-sm font-bold text-slate-700 flex-1"
                 >
@@ -335,7 +365,7 @@ export default function ChallengesPage() {
                 <GraduationCap size={16} className="text-slate-400" />
                 <select
                   value={form.grade}
-                  onChange={(e) => setForm({ ...form, grade: e.target.value, domain: "" })}
+                  onChange={(e) => setForm({ ...form, grade: e.target.value, domain: "", quizIds: [] })}
                   className="bg-transparent outline-none text-sm font-bold text-slate-700 flex-1"
                 >
                   {grades.map((g) => (
@@ -345,7 +375,7 @@ export default function ChallengesPage() {
               </div>
             </div>
 
-            <div>
+            {form.goalType === "SKILLS" && <div>
               <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 block">Domain (optional)</label>
               <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5">
                 <Target size={16} className="text-slate-400" />
@@ -358,21 +388,33 @@ export default function ChallengesPage() {
                   {domains.map((domain) => <option key={domain} value={domain}>{domain}</option>)}
                 </select>
               </div>
-            </div>
+            </div>}
 
             <div>
-              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 block">Min Skills to Master</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 block">{form.goalType === "QUIZZES" ? "Quizzes to complete" : "Skills to master"}</label>
               <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5">
                 <Medal size={16} className="text-slate-400" />
                 <input
                   type="number"
                   min={1}
+                  max={form.goalType === "QUIZZES" ? Math.max(1, form.quizIds.length) : 100}
                   value={form.minMastered}
                   onChange={(e) => setForm({ ...form, minMastered: e.target.value })}
                   className="bg-transparent outline-none text-sm font-bold text-slate-700 flex-1 w-20"
                 />
               </div>
             </div>
+
+            {form.goalType === "QUIZZES" && <div className="col-span-full">
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2 block">Select quizzes for this challenge</label>
+              {availableQuizzes.length === 0 ? <p className="rounded-xl bg-amber-50 p-3 text-sm text-amber-800">No published quizzes are available for this subject and grade.</p> : <div className="grid gap-2 sm:grid-cols-2">{availableQuizzes.map((quiz) => <label key={quiz.id} className="flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 p-3"><input type="checkbox" checked={form.quizIds.includes(quiz.id)} onChange={(event) => {
+                const wasMatchingSelectedCount = Number(form.minMastered) === form.quizIds.length;
+                const quizIds = event.target.checked ? [...form.quizIds, quiz.id] : form.quizIds.filter((id) => id !== quiz.id);
+                const target = wasMatchingSelectedCount ? Math.max(1, quizIds.length) : Math.min(Number(form.minMastered), Math.max(1, quizIds.length));
+                setForm({ ...form, quizIds, minMastered: String(target) });
+              }} className="mt-1"/><span className="text-sm font-semibold text-slate-700">{quiz.title}<small className="block font-normal text-slate-500">{quiz.questionCount} questions</small></span></label>)}</div>}
+              <p className="mt-2 text-xs text-slate-500">Selected: {form.quizIds.length}. Submitted results for these quizzes count toward progress.</p>
+            </div>}
 
             <div>
               <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1 block">Reward Badge</label>
@@ -411,11 +453,11 @@ export default function ChallengesPage() {
 
           <button
             type="submit"
-            disabled={submitting}
+            disabled={submitting || (form.goalType === "QUIZZES" && (form.quizIds.length === 0 || Number(form.minMastered) > form.quizIds.length))}
             className="bg-emerald-600 hover:bg-emerald-700 disabled:bg-emerald-400 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition-colors inline-flex items-center gap-2"
           >
             {submitting ? <Loader2 size={18} className="animate-spin" /> : <Sparkles size={18} />}
-            Create Challenge
+            {editingChallengeId ? "Save Challenge" : "Create Challenge"}
           </button>
         </form>
       )}
@@ -482,6 +524,12 @@ export default function ChallengesPage() {
                     {!isStudent && (
                       <div className="flex gap-1">
                         <button
+                          onClick={() => handleEdit(challenge)}
+                          className="p-2 hover:bg-indigo-50 rounded-lg text-indigo-600 transition-colors"
+                          title="Edit challenge criteria"
+                          aria-label="Edit challenge criteria"
+                        ><Pencil size={16} /></button>
+                        <button
                           onClick={() => handleToggleActive(challenge.id, challenge.isActive)}
                           disabled={actionId === challenge.id}
                           className="p-2 hover:bg-slate-100 disabled:opacity-40 rounded-lg text-slate-500 transition-colors"
@@ -519,9 +567,11 @@ export default function ChallengesPage() {
                       </span>
                     )}
                     <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700">
-                      Master {c?.minMastered}+ skills
+                      {c?.goalType === "QUIZZES" ? `Complete ${c?.minQuizzes} selected quizzes` : `Master ${c?.minMastered}+ skills`}
                     </span>
+                    {c?.goalType === "QUIZZES" && <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-violet-50 text-violet-700">{c.quizIds?.length || 0} quiz choices</span>}
                   </div>
+                  {c?.goalType === "QUIZZES" && challenge.quizTitles?.length > 0 && <p className="mb-4 text-xs leading-5 text-slate-500">Quizzes: {challenge.quizTitles.join(", ")}</p>}
 
                   <div className="flex flex-wrap gap-4 text-sm text-slate-600 mb-4">
                     <span className="flex items-center gap-1">
