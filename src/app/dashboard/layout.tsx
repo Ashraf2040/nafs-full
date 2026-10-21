@@ -16,13 +16,13 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="flex h-dvh w-full flex-col overflow-hidden bg-slate-50/80 print:h-auto print:overflow-visible print:bg-white">
+    <div className="flex h-[calc(100dvh-4rem)] min-h-0 w-full flex-col overflow-hidden bg-slate-50/80 print:h-auto print:overflow-visible print:bg-white">
       <DashboardMobileNav />
       <div className="flex min-h-0 flex-1">
         <Sidebar />
         <main className="relative min-h-0 min-w-0 flex-1 overflow-y-auto print:overflow-visible">
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f01a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none print:hidden" />
-          <div className="relative z-10 p-4 sm:p-6 lg:p-8 max-w-[1400px] mx-auto print:max-w-none print:p-0">
+          <div className="relative z-10 mx-auto w-full max-w-[1400px] p-3 sm:p-5 md:p-6 lg:p-8 print:max-w-none print:p-0">
             {children}
           </div>
         </main>
