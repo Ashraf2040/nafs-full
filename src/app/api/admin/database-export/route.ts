@@ -90,7 +90,9 @@ export async function GET() {
 
     const archive = zipSync(archiveFiles, { level: 6 });
     const date = exportedAt.slice(0, 10);
-    return new NextResponse(archive, {
+    const archiveBody = new ArrayBuffer(archive.byteLength);
+    new Uint8Array(archiveBody).set(archive);
+    return new NextResponse(archiveBody, {
       headers: {
         "Content-Type": "application/zip",
         "Content-Disposition": `attachment; filename="nafs-prep-csv-backup-${date}.zip"`,
