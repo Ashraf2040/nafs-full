@@ -52,7 +52,7 @@ export default async function SettingsPage() {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-600">Administrator tools</p>
             <h2 className="mt-2 text-xl font-extrabold text-slate-900">Database backup</h2>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-              Export or merge a versioned archive with one CSV file per database table. The archive contains account data, including password hashes, so store it securely.
+              Export or import individual table CSVs, plus dedicated Diagnosis and Simulation CSVs. Import referenced grade, subject, user, outcome, and testing-window records first. User CSVs include password hashes; store them securely.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
