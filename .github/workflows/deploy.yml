@@ -19,7 +19,6 @@ jobs:
           host: ${{ secrets.CONTABO_HOST }}
           username: ${{ secrets.CONTABO_USER }}
           key: ${{ secrets.CONTABO_SSH_KEY }}
-          script_stop: true
           script: |
             set -e
 
