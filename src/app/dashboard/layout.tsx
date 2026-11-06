@@ -20,9 +20,9 @@ export default async function DashboardLayout({
       <DashboardMobileNav />
       <div className="flex min-h-0 flex-1">
         <Sidebar />
-        <main className="relative min-h-0 min-w-0 flex-1 overflow-y-auto print:overflow-visible">
+        <main className="dashboard-main relative min-h-0 min-w-0 flex-1 overflow-y-auto print:overflow-visible">
           <div className="absolute inset-0 bg-[radial-gradient(#e2e8f01a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none print:hidden" />
-          <div className="relative z-10 mx-auto w-full max-w-[1400px] p-3 sm:p-5 md:p-6 lg:p-8 print:max-w-none print:p-0">
+          <div className="dashboard-content relative z-10 mx-auto w-full max-w-[1400px] p-3 sm:p-5 md:p-6 lg:p-8 print:max-w-none print:p-0">
             {children}
           </div>
         </main>

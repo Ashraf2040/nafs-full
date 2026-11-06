@@ -225,7 +225,7 @@ export default async function QuizGridSection({
       </div>
 
       {/* Quiz Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
         {quizzes.map((quiz) => {
           const isCompleted = completedQuizIds.has(quiz.id);
           const result = studentResults[quiz.id];

@@ -7,6 +7,70 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Keep typography compact on tablets and phones without changing desktop sizing. */
+@media (min-width: 640px) and (max-width: 1279px) {
+  :root {
+    --spacing: 0.225rem;
+    --text-xs: 0.72rem;
+    --text-sm: 0.84rem;
+    --text-base: 0.95rem;
+    --text-lg: 1.06rem;
+    --text-xl: 1.17rem;
+    --text-2xl: 1.38rem;
+    --text-3xl: 1.7rem;
+    --text-4xl: 2.08rem;
+    --text-5xl: 2.7rem;
+    --text-6xl: 3.3rem;
+    --text-7xl: 3.95rem;
+    --text-8xl: 5.1rem;
+    --text-9xl: 6.8rem;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --spacing: 0.2rem;
+    --text-xs: 0.6875rem;
+    --text-sm: 0.8125rem;
+    --text-base: 0.9375rem;
+    --text-lg: 1rem;
+    --text-xl: 1.125rem;
+    --text-2xl: 1.35rem;
+    --text-3xl: 1.625rem;
+    --text-4xl: 1.875rem;
+    --text-5xl: 2.25rem;
+    --text-6xl: 2.75rem;
+    --text-7xl: 3.25rem;
+    --text-8xl: 4rem;
+    --text-9xl: 5rem;
+  }
+}
+
+/* A dashboard sidebar reduces usable width before the viewport reaches tablet size. */
+.dashboard-main {
+  container-type: inline-size;
+  container-name: dashboard-main;
+}
+
+@container dashboard-main (min-width: 640px) and (max-width: 1150px) {
+  .dashboard-content {
+    --spacing: 0.225rem;
+    --text-xs: 0.72rem;
+    --text-sm: 0.84rem;
+    --text-base: 0.95rem;
+    --text-lg: 1.06rem;
+    --text-xl: 1.17rem;
+    --text-2xl: 1.38rem;
+    --text-3xl: 1.7rem;
+    --text-4xl: 2.08rem;
+    --text-5xl: 2.7rem;
+    --text-6xl: 3.3rem;
+    --text-7xl: 3.95rem;
+    --text-8xl: 5.1rem;
+    --text-9xl: 6.8rem;
+  }
+}
+
 /* That's it! 
   We removed the dark mode media query and the body override.
   Now your layout.tsx will have 100% control over the colors.
