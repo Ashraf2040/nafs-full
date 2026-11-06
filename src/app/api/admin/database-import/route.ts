@@ -98,6 +98,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ importedRows });
   } catch (error) {
     console.error(`Database ${selection} import failed`, error);
-    return NextResponse.json({ error: `The ${selection} CSV could not be imported. Check that related grade, subject, and creator records already exist.` }, { status: 422 });
+    const code = typeof error === "object" && error !== null && "code" in error ? String(error.code) : "";
+    const message = code === "P2003"
+      ? "Import stopped because a row refers to a related record that is not in this database. Import its referenced grade, subject, user, quiz, or other parent records first, then retry."
+      : code === "P2002"
+        ? "Import stopped because the CSV contains a value that must be unique but already exists. Review the duplicate value and correct the CSV."
+        : code === "P2025"
+          ? "Import stopped because a related record needed by one or more rows could not be found. Import the referenced records first, then retry."
+          : "The CSV passed file checks, but the database rejected one or more records. Confirm referenced records exist and that each row matches the selected table, then retry.";
+    return NextResponse.json({ error: message }, { status: 422 });
   }
 }

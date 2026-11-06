@@ -47,15 +47,13 @@ export default async function SettingsPage() {
         <SettingsForm defaultName={name} email={account.email} canChangePassword={Boolean(account.password)} />
       </div>
       {account.role === "ADMIN" && (
-        <section className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/70 p-6 shadow-sm sm:p-8">
+        <section className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/70 p-5 shadow-sm sm:p-8">
           <div className="mb-5">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-600">Administrator tools</p>
-            <h2 className="mt-2 text-xl font-extrabold text-slate-900">Database backup</h2>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-              Export or import individual table CSVs, plus dedicated Diagnosis and Simulation CSVs. Import referenced grade, subject, user, outcome, and testing-window records first. User CSVs include password hashes; store them securely.
-            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-slate-900">Database backup</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">Export a CSV backup or import records into the database. Before importing, the file is checked and you can review its record count. Matching IDs are updated and new IDs are added. Import referenced grade, subject, user, outcome, and testing-window records first. User CSVs contain password hashes; store them securely.</p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
             <DatabaseExportButton />
             <DatabaseImportButton />
           </div>
