@@ -98,11 +98,15 @@ export async function POST(request: Request) {
 
   const tables = featureSelection ? restoreOrder.filter((table) => featureRows!.has(table)) : [selection as DatabaseBackupTable];
   const rowsFor = (table: DatabaseBackupTable) => featureSelection ? featureRows!.get(table)! : singleRows!;
+  let failingTable: DatabaseBackupTable | null = null;
+  let failingId: string | null = null;
   try {
     await prisma.$transaction(async (tx) => {
       for (const table of tables) {
         const delegate = (tx as unknown as Record<string, UpsertDelegate>)[delegateNames[table]];
         for (const source of rowsFor(table)) {
+          failingTable = table;
+          failingId = typeof source.id === "string" ? source.id : null;
           const row = { ...source };
           for (const [field, value] of Object.entries(row)) if (value !== null && dateFields.has(field)) row[field] = new Date(String(value));
           if (table === "Question" && row.options === null) row.options = Prisma.DbNull;
@@ -116,13 +120,17 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error(`Database ${selection} import failed`, error);
     const code = typeof error === "object" && error !== null && "code" in error ? String(error.code) : "";
+    const field = typeof error === "object" && error !== null && "meta" in error && typeof error.meta === "object" && error.meta !== null && "field_name" in error.meta ? String(error.meta.field_name) : null;
+    const failedRecord = failingTable ? ` The failed record was ${failingTable}${failingId ? ` (${failingId})` : ""}${field ? `; the database rejected the ${field} reference` : ""}.` : "";
     const message = code === "P2003"
-      ? "Import stopped because a row refers to a related record that is not in this database. Import its referenced grade, subject, user, quiz, or other parent records first, then retry."
+      ? `Import stopped because a related record is missing.${failedRecord} This Simulation bundle includes its grade and subject records; verify the latest app and database migration are deployed on Contabo, then retry.`
       : code === "P2002"
-        ? "Import stopped because the CSV contains a value that must be unique but already exists. Review the duplicate value and correct the CSV."
+        ? `Import stopped because a value that must be unique already exists.${failedRecord} Review the destination records and retry.`
         : code === "P2025"
-          ? "Import stopped because a related record needed by one or more rows could not be found. Import the referenced records first, then retry."
-          : "The CSV passed file checks, but the database rejected one or more records. Confirm referenced records exist and that each row matches the selected table, then retry.";
+          ? `Import stopped because a related record needed by this row could not be found.${failedRecord} Verify the referenced records and retry.`
+          : code === "P2011"
+            ? `The CSV passed file checks, but the database still requires a value that this portable bundle intentionally leaves empty.${failedRecord} Apply the latest database migration on Contabo and retry.`
+            : `The CSV passed file checks, but the database rejected a record.${failedRecord} Verify that the latest app and database migration are deployed, then retry.`;
     return NextResponse.json({ error: message }, { status: 422 });
   }
 }
