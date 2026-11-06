@@ -6,12 +6,12 @@ import { AlertTriangle, CheckCircle2, FileUp, Loader2, ShieldCheck, X } from "lu
 import { databaseBackupSelections, databaseBackupTableFields, diagnosisBackupTables, simulationBackupTables, type DatabaseBackupSelection, type DatabaseBackupTable } from "@/lib/databaseBackup";
 
 const maxFileSize = 100 * 1024 * 1024;
-const label = (table: DatabaseBackupSelection) => table === "SimulationBundle" ? "Simulation (including linked quiz content)" : table === "Diagnosis" ? "Diagnosis (quizzes + questions)" : table.replace(/([a-z])([A-Z])/g, "$1 $2");
+const label = (table: DatabaseBackupSelection) => table === "SimulationBundle" ? "Full Simulation backup" : table === "Diagnosis" ? "Full Diagnosis backup (quizzes + questions)" : table === "Simulation" ? "Simulation table only" : table.replace(/([a-z])([A-Z])/g, "$1 $2");
 type Preview = { total: number; tables: [string, number][] };
 
 export default function DatabaseImportButton() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [selection, setSelection] = useState<DatabaseBackupSelection>("Diagnosis");
+  const [selection, setSelection] = useState<DatabaseBackupSelection>("SimulationBundle");
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<Preview | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -110,7 +110,12 @@ export default function DatabaseImportButton() {
     <div className="mt-5 space-y-3">
       <label className="block text-sm font-bold text-slate-700" htmlFor="import-table">Import type</label>
       <select id="import-table" value={selection} onChange={(event) => selectTable(event.target.value as DatabaseBackupSelection)} className="w-full rounded-xl border border-slate-300 bg-white px-3 py-3 font-semibold text-slate-700 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100">
-        {databaseBackupSelections.map((name) => <option key={name} value={name}>{label(name)}</option>)}
+        <optgroup label="Full backups">
+          {(["SimulationBundle", "Diagnosis"] as const).map((name) => <option key={name} value={name}>{label(name)}</option>)}
+        </optgroup>
+        <optgroup label="Individual tables">
+          {databaseBackupSelections.filter((name): name is Exclude<DatabaseBackupSelection, "Diagnosis" | "SimulationBundle"> => name !== "Diagnosis" && name !== "SimulationBundle").map((name) => <option key={name} value={name}>{label(name)}</option>)}
+        </optgroup>
       </select>
       <p className="text-xs leading-5 text-slate-500">Records with matching IDs will be updated; new IDs will be added. Related records must already exist.</p>
       <input ref={inputRef} type="file" accept=".csv,text/csv" className="sr-only" onChange={(event) => void selectFile(event.target.files?.[0])} />

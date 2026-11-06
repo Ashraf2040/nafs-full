@@ -65,9 +65,10 @@ export async function GET(request: Request) {
       csv = Papa.unparse({ fields: [...fields], data }, { newline: "\r\n" });
     }
     const date = new Date().toISOString().slice(0, 10);
+    const filenameType = selection === "SimulationBundle" ? "Simulation-full-bundle" : selection;
     return new NextResponse(`\uFEFF${csv}`, { headers: {
       "Content-Type": "text/csv; charset=utf-8",
-      "Content-Disposition": `attachment; filename="nafs-prep-${selection}-${date}.csv"`,
+      "Content-Disposition": `attachment; filename="nafs-prep-${filenameType}-${date}.csv"`,
       "Cache-Control": "private, no-store, max-age=0",
       "X-Content-Type-Options": "nosniff",
     } });
