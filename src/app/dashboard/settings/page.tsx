@@ -51,7 +51,7 @@ export default async function SettingsPage() {
           <div className="mb-5">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-indigo-600">Administrator tools</p>
             <h2 className="mt-2 text-2xl font-extrabold text-slate-900">Database backup</h2>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">Export a CSV backup or import records into the database. Before importing, the file is checked and you can review its record count. Matching IDs are updated and new IDs are added. Import referenced grade, subject, user, outcome, and testing-window records first. User CSVs contain password hashes; store them securely.</p>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">Export a CSV backup or import records into the database. Before importing, the file is checked and you can review its record count. Matching IDs are updated and new IDs are added. Simulation bundles include the required grades and subjects and do not require source accounts. Standalone table imports may still need their referenced records first. User CSVs contain password hashes; store them securely.</p>
           </div>
           <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
             <DatabaseExportButton />

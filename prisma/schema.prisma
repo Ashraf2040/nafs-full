@@ -164,8 +164,8 @@ model Quiz {
   subjectId   String
   subject     Subject   @relation(fields: [subjectId], references: [id])
 
-  creatorId   String
-  creator     User      @relation("CreatedBy", fields: [creatorId], references: [id])
+  creatorId   String?
+  creator     User?     @relation("CreatedBy", fields: [creatorId], references: [id], onDelete: SetNull)
   outcomeId   String?
   outcome     LearningOutcome? @relation(fields: [outcomeId], references: [id])
 
@@ -201,12 +201,12 @@ model Simulation {
   title       String
   description String?
   gradeId     String
-  creatorId   String
+  creatorId   String?
   isPublished Boolean  @default(false)
   dueDate     DateTime?
   createdAt   DateTime @default(now())
   grade       Grade    @relation(fields: [gradeId], references: [id], onDelete: Cascade)
-  creator     User     @relation("CreatedSimulations", fields: [creatorId], references: [id], onDelete: Cascade)
+  creator     User?    @relation("CreatedSimulations", fields: [creatorId], references: [id], onDelete: SetNull)
   subjects    SimulationSubject[]
   attempts    SimulationAttempt[]
   @@index([gradeId, isPublished])

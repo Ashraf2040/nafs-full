@@ -79,6 +79,23 @@ export async function POST(request: Request) {
   const singleRows = featureSelection ? null : parseSingleTableCsv(text, selection as DatabaseBackupTable);
   if ((featureSelection && !featureRows) || (!featureSelection && !singleRows)) return NextResponse.json({ error: featureSelection ? `This CSV is not a valid ${featureSelection} export.` : `This CSV does not match the ${selection} table format.` }, { status: 400 });
 
+  if (selection === "SimulationBundle") {
+    // Static grades and subjects may already exist with different IDs on the destination.
+    const sourceGrades = featureRows!.get("Grade")!;
+    const sourceSubjects = featureRows!.get("Subject")!;
+    const [existingGrades, existingSubjects] = await Promise.all([
+      prisma.grade.findMany({ where: { level: { in: sourceGrades.map((row) => row.level).filter((level): level is number => typeof level === "number") } }, select: { id: true, level: true } }),
+      prisma.subject.findMany({ where: { name: { in: sourceSubjects.map((row) => row.name).filter((name): name is string => typeof name === "string") } }, select: { id: true, name: true } }),
+    ]);
+    const gradeIds = new Map(sourceGrades.map((row) => [String(row.id), existingGrades.find((grade) => grade.level === row.level)?.id ?? String(row.id)]));
+    const subjectIds = new Map(sourceSubjects.map((row) => [String(row.id), existingSubjects.find((subject) => subject.name === row.name)?.id ?? String(row.id)]));
+    for (const table of ["Quiz", "Simulation"] as const) for (const row of featureRows!.get(table)!) if (typeof row.gradeId === "string") row.gradeId = gradeIds.get(row.gradeId) ?? row.gradeId;
+    for (const row of featureRows!.get("Quiz")!) if (typeof row.subjectId === "string") row.subjectId = subjectIds.get(row.subjectId) ?? row.subjectId;
+    for (const row of featureRows!.get("SimulationSubject")!) if (typeof row.subjectId === "string") row.subjectId = subjectIds.get(row.subjectId) ?? row.subjectId;
+    featureRows!.set("Grade", sourceGrades.filter((row) => gradeIds.get(String(row.id)) === String(row.id)));
+    featureRows!.set("Subject", sourceSubjects.filter((row) => subjectIds.get(String(row.id)) === String(row.id)));
+  }
+
   const tables = featureSelection ? restoreOrder.filter((table) => featureRows!.has(table)) : [selection as DatabaseBackupTable];
   const rowsFor = (table: DatabaseBackupTable) => featureSelection ? featureRows!.get(table)! : singleRows!;
   try {

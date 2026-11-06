@@ -8,7 +8,7 @@ import { Award, CheckCircle, TrendingUp, BookOpen, GraduationCap } from "lucide-
 
 export const revalidate = 300;
 
-async function getAssignedTeachersForQuizzes(quizzes: Array<{ id: string; subjectId: string; gradeId: string; creatorId: string }>) {
+async function getAssignedTeachersForQuizzes(quizzes: Array<{ id: string; subjectId: string; gradeId: string; creatorId: string | null }>) {
   const pairs = [...new Map(quizzes.map((quiz) => [`${quiz.subjectId}:${quiz.gradeId}`, { subjectId: quiz.subjectId, gradeId: quiz.gradeId }])).values()];
   if (pairs.length === 0) return new Map<string, string>();
   const assignments = await prisma.teacherAssignment.findMany({

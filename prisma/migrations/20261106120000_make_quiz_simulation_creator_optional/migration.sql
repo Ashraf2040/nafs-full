@@ -1,0 +1,7 @@
+ALTER TABLE "Quiz" ALTER COLUMN "creatorId" DROP NOT NULL;
+ALTER TABLE "Quiz" DROP CONSTRAINT "Quiz_creatorId_fkey";
+ALTER TABLE "Quiz" ADD CONSTRAINT "Quiz_creatorId_fkey" FOREIGN KEY ("creatorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+ALTER TABLE "Simulation" ALTER COLUMN "creatorId" DROP NOT NULL;
+ALTER TABLE "Simulation" DROP CONSTRAINT "Simulation_creatorId_fkey";
+ALTER TABLE "Simulation" ADD CONSTRAINT "Simulation_creatorId_fkey" FOREIGN KEY ("creatorId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;

@@ -21,13 +21,28 @@ async function exportFeature(selection: "Diagnosis" | "SimulationBundle") {
   const subjects = await db.simulationSubject.findMany({ where: { simulationId: { in: ids } } });
   const subjectIds = subjects.map((subject) => subject.id);
   const linkedQuizIds = [...new Set(subjects.map((subject) => subject.quizId).filter((id): id is string => typeof id === "string"))];
-  const [questions, attempts, linkedQuizzes, linkedQuizQuestions] = await Promise.all([
+  const [questions, linkedQuizzes, linkedQuizQuestions] = await Promise.all([
     db.simulationQuestion.findMany({ where: { simulationSubjectId: { in: subjectIds } } }),
-    db.simulationAttempt.findMany({ where: { simulationId: { in: ids } } }),
     db.quiz.findMany({ where: { id: { in: linkedQuizIds } } }),
     db.question.findMany({ where: { quizId: { in: linkedQuizIds } } }),
   ]);
-  return { Quiz: linkedQuizzes, Question: linkedQuizQuestions, Simulation: simulations, SimulationSubject: subjects, SimulationQuestion: questions, SimulationAttempt: attempts };
+  const gradeIds = [...new Set([...simulations.map((row) => row.gradeId), ...linkedQuizzes.map((row) => row.gradeId)])];
+  const subjectIdsForBundle = [...new Set([...subjects.map((row) => row.subjectId), ...linkedQuizzes.map((row) => row.subjectId)])];
+  const [grades, subjectRows] = await Promise.all([
+    db.grade.findMany({ where: { id: { in: gradeIds } } }),
+    db.subject.findMany({ where: { id: { in: subjectIdsForBundle } } }),
+  ]);
+  // A feature backup carries content and its static references, but must not depend on source accounts.
+  return {
+    Grade: grades,
+    Subject: subjectRows,
+    Quiz: linkedQuizzes.map((row) => ({ ...row, creatorId: null, outcomeId: null, testingWindowId: null })),
+    Question: linkedQuizQuestions.map((row) => ({ ...row, learningOutcomeId: null })),
+    Simulation: simulations.map((row) => ({ ...row, creatorId: null })),
+    SimulationSubject: subjects,
+    SimulationQuestion: questions,
+    // Attempts belong to individual students and are intentionally excluded from a portable content bundle.
+  };
 }
 
 export async function GET(request: Request) {

@@ -27,4 +27,4 @@ export type DatabaseBackupSelection = DatabaseBackupTable | "Diagnosis" | "Simul
 export const databaseBackupTableNames = Object.keys(databaseBackupTableFields) as DatabaseBackupTable[];
 export const databaseBackupSelections: DatabaseBackupSelection[] = [...databaseBackupTableNames, "Diagnosis", "SimulationBundle"];
 export const diagnosisBackupTables: DatabaseBackupTable[] = ["Quiz", "Question"];
-export const simulationBackupTables: DatabaseBackupTable[] = ["Quiz", "Question", "Simulation", "SimulationSubject", "SimulationQuestion", "SimulationAttempt"];
+export const simulationBackupTables: DatabaseBackupTable[] = ["Grade", "Subject", "Quiz", "Question", "Simulation", "SimulationSubject", "SimulationQuestion"];

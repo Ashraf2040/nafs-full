@@ -36,7 +36,7 @@ export default function DatabaseImportButton() {
       if (JSON.stringify(headerCheck.meta.fields) === JSON.stringify(["__table", "id", "data"])) {
         const tableRows = Papa.parse<{ __table: string }>(text, { header: true, skipEmptyLines: "greedy" });
         const tableNames = new Set(tableRows.data.map((row) => row.__table));
-        if ([...tableNames].some((name) => simulationBackupTables.includes(name as DatabaseBackupTable))) detectedSelection = "SimulationBundle";
+        if ([...tableNames].some((name) => ["Simulation", "SimulationSubject", "SimulationQuestion"].includes(name))) detectedSelection = "SimulationBundle";
         else if ([...tableNames].some((name) => diagnosisBackupTables.includes(name as DatabaseBackupTable))) detectedSelection = "Diagnosis";
       } else {
         const matchingTable = databaseBackupSelections.find((name) => name !== "Diagnosis" && name !== "SimulationBundle" && JSON.stringify(headerCheck.meta.fields) === JSON.stringify(databaseBackupTableFields[name]));

@@ -8,7 +8,7 @@ import { BarChart3, CheckCircle2, ClipboardList, Eye, EyeOff, Loader2, Plus, Pla
 type Subject = { id: string; name: string; assignments?: { grade: { level: number } }[] };
 type Quiz = { id: string; title: string; grade: { level: number }; subject: Subject; _count: { questions: number } };
 type QuestionDraft = { questionText: string; options: string[]; correctIndex: number };
-type Sim = { id: string; title: string; creatorId: string; isPublished: boolean; grade: { level: number }; subjects: { subject: Subject; questionCount: number }[]; attempts: any[] };
+type Sim = { id: string; title: string; creatorId: string | null; isPublished: boolean; grade: { level: number }; subjects: { subject: Subject; questionCount: number }[]; attempts: any[] };
 
 const newQuestion = (): QuestionDraft => ({ questionText: "", options: ["", "", "", ""], correctIndex: 0 });
 
