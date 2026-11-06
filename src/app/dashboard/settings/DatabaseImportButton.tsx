@@ -28,7 +28,7 @@ export default function DatabaseImportButton() {
     try {
       const text = (await selected.text()).replace(/^\uFEFF/, "");
       let count: number;
-      if (selection === "Diagnosis" || selection === "Simulation") {
+      if (selection === "Diagnosis" || selection === "SimulationBundle") {
         const parsed = Papa.parse<{ __table: string; id: string; data: string }>(text, { header: true, skipEmptyLines: "greedy", preview: 200_001 });
         const allowed: DatabaseBackupTable[] = selection === "Diagnosis" ? diagnosisBackupTables : simulationBackupTables;
         if (parsed.errors.length || JSON.stringify(parsed.meta.fields) !== JSON.stringify(["__table", "id", "data"]) || parsed.data.length > 200_000 || parsed.data.some((row) => !allowed.includes(row.__table as DatabaseBackupTable) || !row.id || !row.data)) throw new Error(`Choose a CSV exported for ${label(selection)}.`);
@@ -58,12 +58,12 @@ export default function DatabaseImportButton() {
     } catch (importError) { setError(importError instanceof Error ? importError.message : "The CSV could not be imported."); }
     finally { setImporting(false); }
   };
-  const isFeature = selection === "Diagnosis" || selection === "Simulation";
+  const isFeature = selection === "Diagnosis" || selection === "SimulationBundle";
   return <div className="space-y-3">
     <div className="flex flex-wrap items-center gap-3">
       <label className="sr-only" htmlFor="import-table">Table to import</label>
       <select id="import-table" value={selection} onChange={(event) => selectTable(event.target.value as DatabaseBackupSelection)} className="rounded-xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-700">
-        {databaseBackupSelections.map((name) => <option key={name} value={name}>{name === "Diagnosis" ? "Diagnosis (quizzes + questions)" : name === "Simulation" ? "Simulation (including linked quiz content)" : label(name)}</option>)}
+        {databaseBackupSelections.map((name) => <option key={name} value={name}>{name === "Diagnosis" ? "Diagnosis (quizzes + questions)" : name === "SimulationBundle" ? "Simulation (including linked quiz content)" : label(name)}</option>)}
       </select>
       <input ref={inputRef} type="file" accept=".csv,text/csv" className="sr-only" onChange={(event) => void selectFile(event.target.files?.[0])} />
       <button type="button" onClick={() => inputRef.current?.click()} className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-white px-5 py-3 font-bold text-indigo-700 shadow-sm transition hover:bg-indigo-50"><FileUp size={18} />Choose CSV</button>

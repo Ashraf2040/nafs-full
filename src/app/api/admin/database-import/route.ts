@@ -39,7 +39,7 @@ function parseSingleTableCsv(text: string, table: DatabaseBackupTable): Record<s
   return rows;
 }
 
-function parseFeatureCsv(text: string, selection: "Diagnosis" | "Simulation"): ParsedRows | null {
+function parseFeatureCsv(text: string, selection: "Diagnosis" | "SimulationBundle"): ParsedRows | null {
   const parsed = Papa.parse<{ __table: string; id: string; data: string }>(text.replace(/^\uFEFF/, ""), { header: true, skipEmptyLines: "greedy" });
   if (parsed.errors.length || JSON.stringify(parsed.meta.fields) !== JSON.stringify(["__table", "id", "data"]) || parsed.data.length > 200_000) return null;
   const allowedTables = selection === "Diagnosis" ? diagnosisBackupTables : simulationBackupTables;
@@ -65,7 +65,7 @@ export async function POST(request: Request) {
   const { response } = await requireRole("ADMIN");
   if (response) return response;
   const selection = new URL(request.url).searchParams.get("table") as DatabaseBackupSelection | null;
-  if (!selection || ![...databaseBackupTableNames, "Diagnosis", "Simulation"].includes(selection)) return NextResponse.json({ error: "Choose a valid table to import." }, { status: 400 });
+  if (!selection || ![...databaseBackupTableNames, "Diagnosis", "SimulationBundle"].includes(selection)) return NextResponse.json({ error: "Choose a valid table to import." }, { status: 400 });
   const length = Number(request.headers.get("content-length") ?? 0);
   if (length > maxFileBytes) return NextResponse.json({ error: "Table CSV files must be 100 MB or smaller." }, { status: 413 });
   let text: string;
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     if (new TextEncoder().encode(text).byteLength > maxFileBytes) throw new Error("too large");
   } catch { return NextResponse.json({ error: "Choose a valid CSV file smaller than 100 MB." }, { status: 400 }); }
 
-  const featureSelection = selection === "Diagnosis" || selection === "Simulation" ? selection : null;
+  const featureSelection = selection === "Diagnosis" || selection === "SimulationBundle" ? selection : null;
   const featureRows = featureSelection ? parseFeatureCsv(text, featureSelection) : null;
   const singleRows = featureSelection ? null : parseSingleTableCsv(text, selection as DatabaseBackupTable);
   if ((featureSelection && !featureRows) || (!featureSelection && !singleRows)) return NextResponse.json({ error: featureSelection ? `This CSV is not a valid ${featureSelection} export.` : `This CSV does not match the ${selection} table format.` }, { status: 400 });

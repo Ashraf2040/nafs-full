@@ -23,8 +23,8 @@ export const databaseBackupTableFields = {
   ChallengeParticipation: ["id", "challengeId", "studentId", "progress", "completedAt"],
 } as const;
 export type DatabaseBackupTable = keyof typeof databaseBackupTableFields;
-export type DatabaseBackupSelection = DatabaseBackupTable | "Diagnosis" | "Simulation";
+export type DatabaseBackupSelection = DatabaseBackupTable | "Diagnosis" | "SimulationBundle";
 export const databaseBackupTableNames = Object.keys(databaseBackupTableFields) as DatabaseBackupTable[];
-export const databaseBackupSelections: DatabaseBackupSelection[] = [...databaseBackupTableNames, "Diagnosis", "Simulation"];
+export const databaseBackupSelections: DatabaseBackupSelection[] = [...databaseBackupTableNames, "Diagnosis", "SimulationBundle"];
 export const diagnosisBackupTables: DatabaseBackupTable[] = ["Quiz", "Question"];
 export const simulationBackupTables: DatabaseBackupTable[] = ["Quiz", "Question", "Simulation", "SimulationSubject", "SimulationQuestion", "SimulationAttempt"];

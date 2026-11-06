@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 type Row = Record<string, unknown>;
 type Delegate = { findMany(args?: Record<string, unknown>): Promise<Row[]> };
 
-async function exportFeature(selection: "Diagnosis" | "Simulation") {
+async function exportFeature(selection: "Diagnosis" | "SimulationBundle") {
   const db = prisma as unknown as Record<string, Delegate>;
   if (selection === "Diagnosis") {
     const quizzes = await db.quiz.findMany({ where: { isDiagnostic: true } });
@@ -34,13 +34,13 @@ export async function GET(request: Request) {
   const { response } = await requireRole("ADMIN");
   if (response) return response;
   const selection = new URL(request.url).searchParams.get("table") as DatabaseBackupSelection | null;
-  if (!selection || ![...databaseBackupTableNames, "Diagnosis", "Simulation"].includes(selection)) return NextResponse.json({ error: "Choose a valid table to export." }, { status: 400 });
+  if (!selection || ![...databaseBackupTableNames, "Diagnosis", "SimulationBundle"].includes(selection)) return NextResponse.json({ error: "Choose a valid table to export." }, { status: 400 });
   try {
     const db = prisma as unknown as Record<string, Delegate>;
     let csv: string;
-    if (selection === "Diagnosis" || selection === "Simulation") {
+    if (selection === "Diagnosis" || selection === "SimulationBundle") {
       const tables = await exportFeature(selection);
-      const rows = Object.entries(tables).flatMap(([table, records]) => records.map((data) => ({ __table: table, id: String(data.id), data: JSON.stringify(data) })));
+      const rows = (Object.entries(tables) as [string, Row[]][]).flatMap(([table, records]) => records.map((data) => ({ __table: table, id: String(data.id), data: JSON.stringify(data) })));
       csv = Papa.unparse({ fields: ["__table", "id", "data"], data: rows }, { newline: "\r\n" });
     } else {
       const delegateName = selection[0].toLowerCase() + selection.slice(1);
