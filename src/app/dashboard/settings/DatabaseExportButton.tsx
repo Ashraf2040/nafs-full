@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Download, Loader2 } from "lucide-react";
 import { databaseBackupSelections, type DatabaseBackupSelection } from "@/lib/databaseBackup";
 
-const featureLabel = (table: "Diagnosis" | "SimulationBundle") => table === "SimulationBundle" ? "Full Simulation backup (ready to import)" : "Full Diagnosis backup (quizzes + questions)";
+const featureLabel = (table: "Diagnosis" | "SimulationBundle") => table === "SimulationBundle" ? "Full Simulation backup (ready to import)" : "Full Diagnosis backup (ready to import)";
 const tableLabel = (table: Exclude<DatabaseBackupSelection, "Diagnosis" | "SimulationBundle">) => table === "Simulation" ? "Simulation table only (not a full backup)" : table.replace(/([a-z])([A-Z])/g, "$1 $2");
 export default function DatabaseExportButton() {
   const [table, setTable] = useState<DatabaseBackupSelection>("SimulationBundle");
@@ -19,7 +19,8 @@ export default function DatabaseExportButton() {
         throw new Error(result?.error || `Export failed (server returned ${response.status}). Try again or contact your administrator.`);
       }
       const csv = await response.blob(); const url = URL.createObjectURL(csv); const link = document.createElement("a");
-      link.href = url; link.download = `nafs-prep-${table === "SimulationBundle" ? "Simulation-full-bundle" : table}-${new Date().toISOString().slice(0, 10)}.csv`;
+      const fileType = table === "SimulationBundle" ? "Simulation-full-bundle" : table === "Diagnosis" ? "Diagnosis-full-bundle" : table;
+      link.href = url; link.download = `nafs-prep-${fileType}-${new Date().toISOString().slice(0, 10)}.csv`;
       document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
     } catch (exportError) { setError(exportError instanceof TypeError ? "Could not reach the server. Check your connection and try again." : exportError instanceof Error ? exportError.message : "The CSV could not be downloaded. Try again."); }
     finally { setExporting(false); }
@@ -33,7 +34,7 @@ export default function DatabaseExportButton() {
       <optgroup label="Individual tables (may require related records)">
         {databaseBackupSelections.filter((name): name is Exclude<DatabaseBackupSelection, "Diagnosis" | "SimulationBundle"> => name !== "Diagnosis" && name !== "SimulationBundle").map((name) => <option key={name} value={name}>{tableLabel(name)}</option>)}
       </optgroup>
-    </select>{table === "SimulationBundle" && <p className="text-xs leading-5 text-slate-500">Includes the Simulation, its grades and subjects, linked quizzes, and questions. It does not include source accounts or student attempts.</p>}{table === "Simulation" && <p className="text-xs leading-5 text-amber-700">This exports only Simulation rows. To move a Simulation to another database, choose the full Simulation backup above.</p>}<button type="button" onClick={() => void downloadTable()} disabled={exporting} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-3 font-bold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-wait disabled:opacity-60">{exporting ? <Loader2 size={18} className="animate-spin" /> : <Download size={18} />}{exporting ? "Preparing your CSV…" : "Download CSV"}</button></div>
+    </select>{table === "SimulationBundle" && <p className="text-xs leading-5 text-slate-500">Includes the Simulation, its grades and subjects, linked quizzes, and questions. It does not include source accounts or student attempts.</p>}{table === "Diagnosis" && <p className="text-xs leading-5 text-slate-500">Includes diagnostic quizzes, their questions, grades, and subjects. It does not include source accounts.</p>}{table === "Simulation" && <p className="text-xs leading-5 text-amber-700">This exports only Simulation rows. To move a Simulation to another database, choose the full Simulation backup above.</p>}{table === "Quiz" && <p className="text-xs leading-5 text-amber-700">This exports only Quiz rows. To move a complete Diagnosis feature, choose the full Diagnosis backup above.</p>}<button type="button" onClick={() => void downloadTable()} disabled={exporting} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-3 font-bold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-wait disabled:opacity-60">{exporting ? <Loader2 size={18} className="animate-spin" /> : <Download size={18} />}{exporting ? "Preparing your CSV…" : "Download CSV"}</button></div>
     {error && <div role="alert" className="mt-4 rounded-xl border border-rose-200 bg-rose-50 p-3 text-sm leading-5 text-rose-800"><strong>Export failed:</strong> {error}</div>}
   </section>;
 }

@@ -14,7 +14,18 @@ async function exportFeature(selection: "Diagnosis" | "SimulationBundle") {
   if (selection === "Diagnosis") {
     const quizzes = await db.quiz.findMany({ where: { isDiagnostic: true } });
     const questions = await db.question.findMany({ where: { quizId: { in: quizzes.map((quiz) => quiz.id) } } });
-    return { Quiz: quizzes, Question: questions };
+    const gradeIds = [...new Set(quizzes.map((row) => row.gradeId))];
+    const subjectIds = [...new Set(quizzes.map((row) => row.subjectId))];
+    const [grades, subjects] = await Promise.all([
+      db.grade.findMany({ where: { id: { in: gradeIds } } }),
+      db.subject.findMany({ where: { id: { in: subjectIds } } }),
+    ]);
+    return {
+      Grade: grades,
+      Subject: subjects,
+      Quiz: quizzes.map((row) => ({ ...row, creatorId: null, outcomeId: null, testingWindowId: null })),
+      Question: questions.map((row) => ({ ...row, learningOutcomeId: null })),
+    };
   }
   const simulations = await db.simulation.findMany();
   const ids = simulations.map((simulation) => simulation.id);
@@ -65,7 +76,7 @@ export async function GET(request: Request) {
       csv = Papa.unparse({ fields: [...fields], data }, { newline: "\r\n" });
     }
     const date = new Date().toISOString().slice(0, 10);
-    const filenameType = selection === "SimulationBundle" ? "Simulation-full-bundle" : selection;
+    const filenameType = selection === "SimulationBundle" ? "Simulation-full-bundle" : selection === "Diagnosis" ? "Diagnosis-full-bundle" : selection;
     return new NextResponse(`\uFEFF${csv}`, { headers: {
       "Content-Type": "text/csv; charset=utf-8",
       "Content-Disposition": `attachment; filename="nafs-prep-${filenameType}-${date}.csv"`,

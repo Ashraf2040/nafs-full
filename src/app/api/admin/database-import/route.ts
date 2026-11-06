@@ -79,7 +79,7 @@ export async function POST(request: Request) {
   const singleRows = featureSelection ? null : parseSingleTableCsv(text, selection as DatabaseBackupTable);
   if ((featureSelection && !featureRows) || (!featureSelection && !singleRows)) return NextResponse.json({ error: featureSelection ? `This CSV is not a valid ${featureSelection} export.` : `This CSV does not match the ${selection} table format.` }, { status: 400 });
 
-  if (selection === "SimulationBundle") {
+  if (featureSelection) {
     // Static grades and subjects may already exist with different IDs on the destination.
     const sourceGrades = featureRows!.get("Grade")!;
     const sourceSubjects = featureRows!.get("Subject")!;
