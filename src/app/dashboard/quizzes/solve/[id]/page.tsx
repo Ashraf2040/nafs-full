@@ -67,8 +67,12 @@ export default function SolveQuizPage({
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const [correctPopup, setCorrectPopup] = useState("");
   const popupTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  useEffect(() => () => { if (popupTimer.current) clearTimeout(popupTimer.current); }, []);
+  useEffect(() => () => {
+    if (popupTimer.current) clearTimeout(popupTimer.current);
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
+  }, []);
 
   useEffect(() => {
      const fetchQuiz = async () => {
@@ -166,11 +170,15 @@ export default function SolveQuizPage({
 
   const handleOptionSelect = (option: string) => {
     setSelectedAnswers((previous) => ({ ...previous, [currentQuestion]: option }));
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
     if (isAnswerCorrect(option, q?.answer, q?.options || [])) {
       const messages = ["Excellent!", "Fantastic!", "Wonderful!", "You got it!", "Brilliant work!"];
       setCorrectPopup(messages[Math.floor(Math.random() * messages.length)]);
       if (popupTimer.current) clearTimeout(popupTimer.current);
-      popupTimer.current = setTimeout(() => setCorrectPopup(""), 1800);
+      popupTimer.current = setTimeout(() => setCorrectPopup(""), 950);
+    } else setCorrectPopup("");
+    if (currentQuestion < (quiz?.questions?.length ?? 0) - 1) {
+      advanceTimer.current = setTimeout(() => setCurrentQuestion((index) => index + 1), 1000);
     }
   };
 
@@ -187,6 +195,7 @@ export default function SolveQuizPage({
 
   const handleRetake = () => {
     if (attempts >= MAX_ATTEMPTS) return;
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
     setIsSubmitted(false);
     setCurrentQuestion(0);
     setSelectedAnswers({});
@@ -515,7 +524,7 @@ export default function SolveQuizPage({
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-10 px-4">
+    <div className="max-w-7xl mx-auto py-10 px-4">
       {correctPopup && (
         <div role="status" aria-live="assertive" className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/25 p-4 backdrop-blur-[2px]">
           <div className="animate-bounce rounded-3xl border-4 border-emerald-200 bg-white px-10 py-8 text-center shadow-2xl shadow-emerald-900/20">
@@ -626,7 +635,7 @@ export default function SolveQuizPage({
           <div className="flex justify-between">
             <button
               disabled={currentQuestion === 0}
-              onClick={() => setCurrentQuestion((prev) => prev - 1)}
+              onClick={() => { if (advanceTimer.current) clearTimeout(advanceTimer.current); setCurrentQuestion((prev) => prev - 1); }}
               className="flex items-center gap-2 text-slate-500 font-bold hover:text-slate-700 disabled:opacity-30 disabled:hover:text-slate-500 transition-colors"
             >
               <ArrowLeft size={20} /> Previous
@@ -646,7 +655,7 @@ export default function SolveQuizPage({
               </button>
             ) : (
               <button
-                onClick={() => setCurrentQuestion((prev) => prev + 1)}
+                onClick={() => { if (advanceTimer.current) clearTimeout(advanceTimer.current); setCurrentQuestion((prev) => prev + 1); }}
                 disabled={!selectedAnswers[currentQuestion]}
                 className="flex items-center gap-2 bg-indigo-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-shadow shadow-md disabled:opacity-50"
               >

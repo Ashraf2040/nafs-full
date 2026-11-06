@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   FileText, Calendar, Clock, Edit, PlayCircle, CheckCircle2,
   GraduationCap, BookOpen, Eye, Sparkles, Search, History, ArrowRight,
-  Lock, AlertTriangle, Mail
+  Lock, AlertTriangle, Mail, ChevronLeft, ChevronRight
 } from "lucide-react";
 import QuizActions from "./QuizActions";
 
@@ -184,6 +184,19 @@ export default async function QuizGridSection({
     const basePath = assessmentType === "PRACTICE" ? "/dashboard/practices" : "/dashboard/quizzes";
     return `${basePath}?${query.toString()}`;
   };
+
+  const pagePoints = [...new Set([1, safePage - 1, safePage, safePage + 1, totalPages])]
+    .filter((pageNum) => pageNum >= 1 && pageNum <= totalPages)
+    .sort((a, b) => a - b);
+  const paginationItems: Array<number | null> = [];
+  pagePoints.forEach((pageNum, index) => {
+    if (index > 0) {
+      const gap = pageNum - pagePoints[index - 1];
+      if (gap === 2) paginationItems.push(pageNum - 1);
+      else if (gap > 2) paginationItems.push(null);
+    }
+    paginationItems.push(pageNum);
+  });
 
   return (
     <>
@@ -398,51 +411,54 @@ export default async function QuizGridSection({
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-2 pt-6 pb-2">
+        <nav aria-label="Pagination" className="flex justify-center items-center gap-1.5 pt-6 pb-2">
           {safePage > 1 ? (
             <Link
               href={buildPageLink(safePage - 1)}
-              className="px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-all shadow-sm"
+              aria-label="Previous page"
+              title="Previous page"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-all shadow-sm"
             >
-              Previous
+              <ChevronLeft size={18} />
             </Link>
           ) : (
-            <span className="px-5 py-2.5 rounded-xl bg-slate-50 border border-slate-100 text-slate-300 text-sm font-semibold cursor-not-allowed">
-              Previous
+            <span aria-disabled="true" aria-label="Previous page" className="flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-slate-300">
+              <ChevronLeft size={18} />
             </span>
           )}
 
-          <div className="hidden sm:flex items-center gap-1.5 mx-2">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-              (pageNum) => (
-                <Link
-                  key={pageNum}
-                  href={buildPageLink(pageNum)}
-                  className={`w-10 h-10 flex items-center justify-center rounded-xl text-sm font-bold transition-all ${pageNum === safePage ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/20" : "bg-white text-slate-600 border border-slate-200 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 shadow-sm"}`}
-                >
-                  {pageNum}
-                </Link>
-              ),
-            )}
+          <span className="sr-only" aria-live="polite">Page {safePage} of {totalPages}</span>
+          <div className="flex items-center gap-1" aria-label={`Page ${safePage} of ${totalPages}`}>
+            {paginationItems.map((pageNum, index) => pageNum === null ? (
+              <span key={`ellipsis-${index}`} aria-hidden="true" className="flex h-10 w-7 items-center justify-center text-slate-400">…</span>
+            ) : (
+              <Link
+                key={pageNum}
+                href={buildPageLink(pageNum)}
+                aria-current={pageNum === safePage ? "page" : undefined}
+                aria-label={`Page ${pageNum}`}
+                className={`flex h-10 min-w-10 items-center justify-center rounded-xl px-2 text-sm font-bold transition-all ${pageNum === safePage ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/20" : "bg-white text-slate-600 border border-slate-200 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 shadow-sm"}`}
+              >
+                {pageNum}
+              </Link>
+            ))}
           </div>
-
-          <span className="sm:hidden text-sm font-medium text-slate-600">
-            Page {safePage} of {totalPages}
-          </span>
 
           {safePage < totalPages ? (
             <Link
               href={buildPageLink(safePage + 1)}
-              className="px-5 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-all shadow-sm"
+              aria-label="Next page"
+              title="Next page"
+              className="flex h-10 w-10 items-center justify-center rounded-xl bg-white border border-slate-200 text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition-all shadow-sm"
             >
-              Next
+              <ChevronRight size={18} />
             </Link>
           ) : (
-            <span className="px-5 py-2.5 rounded-xl bg-slate-50 border border-slate-100 text-slate-300 text-sm font-semibold cursor-not-allowed">
-              Next
+            <span aria-disabled="true" aria-label="Next page" className="flex h-10 w-10 cursor-not-allowed items-center justify-center rounded-xl bg-slate-50 border border-slate-100 text-slate-300">
+              <ChevronRight size={18} />
             </span>
           )}
-        </div>
+        </nav>
       )}
     </>
   );
