@@ -67,11 +67,27 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
     const { title, description, dueDate, questions } = await req.json();
     const existingQuiz = await prisma.quiz.findUnique({
       where: { id },
-      select: { creatorId: true, _count: { select: { results: true } } },
+      select: {
+        creatorId: true,
+        subjectId: true,
+        gradeId: true,
+        isPublished: true,
+        isShared: true,
+        _count: { select: { results: true } },
+      },
     });
     if (!existingQuiz) return NextResponse.json({ error: "Quiz not found" }, { status: 404 });
-    if (user!.role === "TEACHER" && existingQuiz.creatorId !== user!.id) {
-      return NextResponse.json({ error: "Only the quiz owner can edit it" }, { status: 403 });
+    if (user!.role === "TEACHER") {
+      const teacherScope = await getTeacherScope(user!.id);
+      const assigned = teacherScope.assignments.some((assignment) =>
+        assignment.subjectId === existingQuiz.subjectId && assignment.gradeId === existingQuiz.gradeId
+      );
+      const ownQuiz = existingQuiz.creatorId === user!.id;
+      const sharedAdminQuiz = Boolean(existingQuiz.isPublished && existingQuiz.creatorId && teacherScope.adminIds.includes(existingQuiz.creatorId));
+      const sharedImportedQuiz = existingQuiz.isShared && existingQuiz.isPublished;
+      if (!assigned || (!ownQuiz && !sharedAdminQuiz && !sharedImportedQuiz)) {
+        return NextResponse.json({ error: "This quiz is outside your assigned subjects or teacher workspace" }, { status: 403 });
+      }
     }
     if (existingQuiz._count.results > 0) {
       return NextResponse.json(

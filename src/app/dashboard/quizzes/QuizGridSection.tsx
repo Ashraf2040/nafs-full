@@ -324,14 +324,14 @@ export default async function QuizGridSection({
                       >
                         <Eye size={16} /> Preview
                       </Link>
+                      {(userRole === "ADMIN" || userRole === "TEACHER") && <Link
+                        href={`/dashboard/quizzes/edit/${quiz.id}`}
+                        className="flex-1 bg-slate-50 text-slate-700 py-2.5 rounded-xl font-semibold text-sm hover:bg-indigo-50 hover:text-indigo-700 transition-all flex items-center justify-center gap-1.5 border border-slate-100 hover:border-indigo-100"
+                        title="Edit Quiz"
+                      >
+                        <Edit size={16} /> Edit
+                      </Link>}
                       {(userRole === "ADMIN" || quiz.creatorId === userId) && <>
-                        <Link
-                          href={`/dashboard/quizzes/edit/${quiz.id}`}
-                          className="flex-1 bg-slate-50 text-slate-700 py-2.5 rounded-xl font-semibold text-sm hover:bg-indigo-50 hover:text-indigo-700 transition-all flex items-center justify-center gap-1.5 border border-slate-100 hover:border-indigo-100"
-                          title="Edit Quiz"
-                        >
-                          <Edit size={16} /> Edit
-                        </Link>
                         <div className="border-l border-slate-100 h-8 mx-1" />
                         <QuizActions
                           quizId={quiz.id}

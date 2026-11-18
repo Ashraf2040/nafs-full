@@ -3,15 +3,23 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Activity, ArrowRight, BookOpenCheck, Brain, CheckCircle2, ChevronDown, ClipboardList, FlaskConical, Loader2, Pencil, Eye, Send, Sparkles, Plus, X, Trash2, AlertTriangle, RotateCcw } from "lucide-react";
+import { Activity, ArrowRight, BookOpenCheck, Brain, CheckCircle2, ChevronDown, ClipboardList, FlaskConical, Loader2, Pencil, Eye, Send, Sparkles, Plus, X, Trash2, AlertTriangle, RotateCcw, Search, Download } from "lucide-react";
 
 type QuizSummary = { id: string; title: string; subject: string; grade: number; isPublished: boolean; questionCount: number };
+type ImportableQuiz = QuizSummary;
 
 export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { quizzes: QuizSummary[]; teacherAssignments?: Array<{ grade: number; subject: string }> | null }) {
   const [openGrade, setOpenGrade] = useState<number | null>(null);
   const [showCreate, setShowCreate] = useState(false);
-  const [createGrade, setCreateGrade] = useState("3");
-  const [createSubject, setCreateSubject] = useState("Math");
+  const [showImport, setShowImport] = useState(false);
+  const [importQuizzes, setImportQuizzes] = useState<ImportableQuiz[]>([]);
+  const [importSearch, setImportSearch] = useState("");
+  const [selectedImportIds, setSelectedImportIds] = useState<string[]>([]);
+  const [importGrade, setImportGrade] = useState("All");
+  const [importSubject, setImportSubject] = useState("All");
+  const [loadingImports, setLoadingImports] = useState(false);
+  const [createGrade, setCreateGrade] = useState(() => String(teacherAssignments?.[0]?.grade ?? 3));
+  const [createSubject, setCreateSubject] = useState(() => teacherAssignments?.[0]?.subject ?? "Math");
   const [createTitle, setCreateTitle] = useState("");
   const [deleteTarget, setDeleteTarget] = useState<QuizSummary | null>(null);
   const [deleting, setDeleting] = useState(false);
@@ -27,6 +35,72 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
   const createSubjects = teacherAssignments
     ? [...new Set(teacherAssignments.filter((assignment) => assignment.grade === Number(createGrade)).map((assignment) => assignment.subject))]
     : ["Math", "English", "Science"];
+  const importGrades = [...new Set(importQuizzes.map((quiz) => quiz.grade))].sort((a, b) => a - b);
+  const importSubjects = [...new Set(importQuizzes.filter((quiz) => importGrade === "All" || quiz.grade === Number(importGrade)).map((quiz) => quiz.subject))].sort();
+  const visibleImportQuizzes = importQuizzes.filter((quiz) =>
+    (importGrade === "All" || quiz.grade === Number(importGrade)) &&
+    (importSubject === "All" || quiz.subject === importSubject) &&
+    `${quiz.title} ${quiz.subject}`.toLowerCase().includes(importSearch.trim().toLowerCase())
+  );
+
+  const openImportPicker = async () => {
+    if (showImport) { setShowImport(false); return; }
+    setShowImport(true);
+    if (importQuizzes.length) return;
+    setLoadingImports(true);
+    setMessage("");
+    try {
+      const response = await fetch("/api/diagnostic/import-existing", { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Could not load platform quizzes.");
+      setImportQuizzes(data.quizzes || []);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not load platform quizzes.");
+    } finally {
+      setLoadingImports(false);
+    }
+  };
+
+  const toggleImportQuiz = (quiz: ImportableQuiz) => {
+    const selected = importQuizzes.filter((item) => selectedImportIds.includes(item.id));
+    if (selectedImportIds.includes(quiz.id)) {
+      setSelectedImportIds((current) => current.filter((id) => id !== quiz.id));
+      return;
+    }
+    if (selectedImportIds.length >= 30) {
+      setMessage("Choose up to 30 quizzes for one diagnostic.");
+      return;
+    }
+    if (selected.length && (selected[0].grade !== quiz.grade || selected[0].subject.toLowerCase() !== quiz.subject.toLowerCase())) {
+      setMessage("One diagnostic can combine quizzes from the same grade and subject only. Clear the selection to start a different group.");
+      return;
+    }
+    setMessage("");
+    setSelectedImportIds((current) => [...current, quiz.id]);
+  };
+
+  const importSelectedQuizzes = async () => {
+    if (!selectedImportIds.length) return;
+    setBusy("import-selected");
+    setMessage("");
+    try {
+      const response = await fetch("/api/diagnostic/import-existing", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ quizIds: selectedImportIds }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Could not import this quiz.");
+      setShowImport(false);
+      setSelectedImportIds([]);
+      setMessage(`Combined diagnostic created with ${data.sourceCount} quizzes. It is now available in the diagnostic list.`);
+      router.refresh();
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not import this quiz.");
+    } finally {
+      setBusy(null);
+    }
+  };
 
   const createDraft = async (subjectName: string) => {
     const key = `${subjectName}`;
@@ -53,7 +127,7 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
     setBusy(quizId);
     setMessage("");
     try {
-      const response = await fetch(`/api/quizzes/${quizId}/publish`, { method: "POST" });
+      const response = await fetch(`/api/diagnostic/${quizId}/publish`, { method: "POST" });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Could not publish the diagnostic.");
       router.refresh();
@@ -75,7 +149,10 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.message || "Could not create the diagnostic draft.");
-      router.push(`/dashboard/quizzes/edit/${data.quizId}`);
+      setShowCreate(false);
+      setCreateTitle("");
+      setMessage("Diagnostic draft created. Use Edit in the diagnostic list to add questions.");
+      router.refresh();
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Something went wrong.");
     } finally {
@@ -88,7 +165,7 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
     setDeleting(true);
     setMessage("");
     try {
-      const response = await fetch(`/api/quizzes/${deleteTarget.id}`, { method: "DELETE" });
+      const response = await fetch(`/api/diagnostic/${deleteTarget.id}`, { method: "DELETE" });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Could not delete this diagnostic.");
       setDeleteTarget(null);
@@ -127,17 +204,19 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
 
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
         <div><p className="text-sm font-extrabold text-slate-900">Build a new diagnostic</p><p className="mt-1 text-xs text-slate-500">{teacherAssignments ? "Start a draft for an assigned grade and subject." : "Start a draft for any supported grade and subject."}</p></div>
-        <button onClick={() => setShowCreate(!showCreate)} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700">{showCreate ? <X size={16} /> : <Plus size={16} />}{showCreate ? "Close" : "Create diagnostic"}</button>
+        <div className="flex flex-wrap gap-2"><button onClick={() => void openImportPicker()} className="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-white px-4 py-2.5 text-sm font-bold text-indigo-700 shadow-sm hover:bg-indigo-50">{showImport ? <X size={16} /> : <Download size={16} />}{showImport ? "Close import" : "Import existing quiz"}</button><button onClick={() => setShowCreate(!showCreate)} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700">{showCreate ? <X size={16} /> : <Plus size={16} />}{showCreate ? "Close" : "Create diagnostic"}</button></div>
       </div>
 
+      {showImport && <section className="space-y-4 rounded-3xl border border-indigo-100 bg-white p-5 shadow-sm sm:p-7"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">Platform quiz library</p><h2 className="mt-1 text-xl font-extrabold text-slate-900">Choose quizzes for one diagnostic</h2><p className="mt-1 text-sm text-slate-500">Select multiple quizzes from the same grade and subject. Their questions and outcome links will be combined into one unpublished diagnostic; originals stay unchanged.</p></div><div className="grid gap-3 sm:grid-cols-[1.5fr_1fr_1fr]"><label className="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2.5"><Search size={16} className="shrink-0 text-slate-400"/><input value={importSearch} onChange={(event) => setImportSearch(event.target.value)} placeholder="Search quiz or subject" className="min-w-0 w-full outline-none text-sm"/></label><select aria-label="Filter import quizzes by grade" value={importGrade} onChange={(event) => { setImportGrade(event.target.value); setImportSubject("All"); }} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold"><option value="All">All grades</option>{importGrades.map((grade) => <option key={grade} value={grade}>Grade {grade}</option>)}</select><select aria-label="Filter import quizzes by subject" value={importSubject} onChange={(event) => setImportSubject(event.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm font-semibold"><option value="All">All subjects</option>{importSubjects.map((subject) => <option key={subject}>{subject}</option>)}</select></div><div className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-indigo-50 px-4 py-3"><p className="text-sm font-semibold text-indigo-900">{selectedImportIds.length} selected{selectedImportIds.length > 0 && (() => { const first = importQuizzes.find((quiz) => quiz.id === selectedImportIds[0]); return first ? ` · Grade ${first.grade} ${first.subject}` : ""; })()}</p><div className="flex gap-2"><button type="button" onClick={() => setSelectedImportIds([])} disabled={!selectedImportIds.length || busy === "import-selected"} className="rounded-lg px-3 py-2 text-xs font-bold text-slate-600 hover:bg-white disabled:opacity-40">Clear</button><button type="button" onClick={() => void importSelectedQuizzes()} disabled={!selectedImportIds.length || busy === "import-selected"} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-sm font-bold text-white hover:bg-indigo-700 disabled:opacity-50">{busy === "import-selected" ? <Loader2 size={15} className="animate-spin"/> : <Download size={15}/>}Import selected as one diagnostic</button></div></div>{loadingImports ? <div className="flex justify-center py-8"><Loader2 className="animate-spin text-indigo-600"/></div> : visibleImportQuizzes.length ? <div className="grid gap-3 md:grid-cols-2">{visibleImportQuizzes.map((quiz) => { const selected = selectedImportIds.includes(quiz.id); const first = selectedImportIds.length ? importQuizzes.find((item) => item.id === selectedImportIds[0]) : null; const incompatible = Boolean(first && (first.grade !== quiz.grade || first.subject.toLowerCase() !== quiz.subject.toLowerCase())); return <label key={quiz.id} className={`flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition ${selected ? "border-indigo-400 bg-indigo-50" : incompatible ? "cursor-not-allowed border-slate-100 opacity-50" : "border-slate-200 hover:border-indigo-200"}`}><input type="checkbox" checked={selected} disabled={(!selected && incompatible) || (!selected && selectedImportIds.length >= 30) || busy === "import-selected"} onChange={() => toggleImportQuiz(quiz)} className="h-4 w-4 shrink-0 accent-indigo-600"/><span className="min-w-0 flex-1"><span className="block truncate font-bold text-slate-900">{quiz.title}</span><span className="mt-1 block text-xs text-slate-500">Grade {quiz.grade} · {quiz.subject} · {quiz.questionCount} questions · {quiz.isPublished ? "Published" : "Draft"}</span></span></label>; })}</div> : <p className="rounded-2xl bg-slate-50 p-6 text-center text-sm text-slate-500">{importQuizzes.length ? "No platform quizzes match these filters. Choose All subjects or adjust your grade/search." : "No non-diagnostic platform quizzes are available in your scope."}</p>}</section>}
+
       {showCreate && <section className="rounded-3xl border border-indigo-100 bg-white p-5 shadow-sm sm:p-7">
-        <div className="mb-5"><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">New draft</p><h2 className="mt-1 text-xl font-extrabold text-slate-900">Set up the assessment</h2><p className="mt-1 text-sm text-slate-500">Name this diagnostic. The next step opens the question editor, where you can add questions, answers, and visuals.</p></div>
+        <div className="mb-5"><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">New draft</p><h2 className="mt-1 text-xl font-extrabold text-slate-900">Set up the assessment</h2><p className="mt-1 text-sm text-slate-500">Create the draft here, then choose Edit from the diagnostic list when you are ready to add questions, answers, and visuals.</p></div>
         <div className="grid gap-4 sm:grid-cols-3">
           <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Grade<select value={createGradeOptions.includes(Number(createGrade)) ? createGrade : String(createGradeOptions[0] ?? "")} onChange={(event) => { setCreateGrade(event.target.value); const nextSubjects = teacherAssignments?.filter((assignment) => assignment.grade === Number(event.target.value)).map((assignment) => assignment.subject); if (nextSubjects?.length && !nextSubjects.includes(createSubject)) setCreateSubject(nextSubjects[0]); }} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none focus:border-indigo-400">{createGradeOptions.map((grade) => <option key={grade} value={grade}>Grade {grade}</option>)}</select></label>
           <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Subject<select value={createSubjects.includes(createSubject) ? createSubject : createSubjects[0] ?? ""} onChange={(event) => setCreateSubject(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none focus:border-indigo-400">{createSubjects.map((subject) => <option key={subject}>{subject}</option>)}</select></label>
           <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Assessment name<input required value={createTitle} onChange={(event) => setCreateTitle(event.target.value)} placeholder={`Grade ${createGrade} ${createSubject} Diagnostic - Draft`} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none placeholder:font-normal focus:border-indigo-400" /></label>
         </div>
-        <div className="mt-5 flex justify-end"><button onClick={createDiagnostic} disabled={busy === "new-diagnostic" || !createTitle.trim()} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60">{busy === "new-diagnostic" ? <Loader2 size={16} className="animate-spin" /> : <ArrowRight size={16} />}{busy === "new-diagnostic" ? "Creating draft..." : "Create draft and add questions"}</button></div>
+        <div className="mt-5 flex justify-end"><button onClick={createDiagnostic} disabled={busy === "new-diagnostic" || !createTitle.trim() || !createSubjects.length} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60">{busy === "new-diagnostic" ? <Loader2 size={16} className="animate-spin" /> : <ArrowRight size={16} />}{busy === "new-diagnostic" ? "Creating draft..." : "Create diagnostic draft"}</button></div>
       </section>}
 
       <section className="grid gap-4 md:grid-cols-3" aria-label="Choose grade">
@@ -168,7 +247,7 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
               <p className="mt-1 min-h-10 text-sm leading-5 text-slate-500">{openGrade === 3 && (subject === "Math" || subject === "English") ? `${quiz?.questionCount ?? (subject === "Math" ? 8 : 5)} questions from Preparation Form (A)` : "Assessment content can be added for this grade and subject."}</p>
               {quiz ? <div className="mt-4 flex flex-wrap gap-2">
                 <Link href={`/dashboard/diagnostic/preview/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Eye size={14} /> View</Link>
-                <Link href={`/dashboard/quizzes/edit/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Pencil size={14} /> Edit</Link>
+                <Link href={`/dashboard/diagnostic/edit/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Pencil size={14} /> Edit</Link>
                 {!quiz.isPublished && <button onClick={() => publish(quiz.id)} disabled={busy === quiz.id} className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-bold text-white hover:bg-indigo-700 disabled:opacity-60">{busy === quiz.id ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />} Publish</button>}
                 {quiz.isPublished && <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-700"><CheckCircle2 size={14} /> Live</span>}
               </div> : openGrade === 3 && (subject === "Math" || subject === "English") ? <button onClick={() => createDraft(subject)} disabled={busy === subject} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60">{busy === subject ? <Loader2 size={16} className="animate-spin" /> : <Sparkles size={16} />} Prepare draft <ArrowRight size={15} /></button> : <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400">Assessment content coming soon</span>}
@@ -179,7 +258,7 @@ export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { 
 
       {quizzes.length > 0 && <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
         <div className="mb-5 flex flex-wrap items-end justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">Your library</p><h2 className="mt-1 text-xl font-extrabold text-slate-900">Saved diagnostics</h2></div><span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-500">{quizzes.length} assessment{quizzes.length === 1 ? "" : "s"}</span></div>
-        <div className="space-y-3">{quizzes.map((quiz) => <article key={quiz.id} className="flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50/70 p-4 sm:flex-row sm:items-center sm:justify-between"><div><div className="flex flex-wrap items-center gap-2"><h3 className="font-bold text-slate-900">{quiz.title}</h3><span className={`rounded-full px-2.5 py-1 text-[10px] font-extrabold ${quiz.isPublished ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"}`}>{quiz.isPublished ? "Published" : "Draft"}</span></div><p className="mt-1 text-xs text-slate-500">Grade {quiz.grade} · {quiz.subject} · {quiz.questionCount} question{quiz.questionCount === 1 ? "" : "s"}</p></div><div className="flex flex-wrap gap-2"><Link href={`/dashboard/diagnostic/preview/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Eye size={14} /> View</Link><Link href={`/dashboard/quizzes/edit/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Pencil size={14} /> Edit</Link>{!quiz.isPublished && <button onClick={() => publish(quiz.id)} disabled={busy === quiz.id} className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-bold text-white hover:bg-indigo-700 disabled:opacity-60">{busy === quiz.id ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />} Publish</button>}{quiz.grade === 3 && ["math", "english"].includes(quiz.subject.toLowerCase()) && quiz.title === `NAFS Grade 3 Diagnostic - ${quiz.subject}` && <button onClick={() => restoreSourceVersion(quiz)} disabled={busy === `restore-${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-indigo-700 ring-1 ring-indigo-100 hover:bg-indigo-50 disabled:opacity-60">{busy === `restore-${quiz.id}` ? <Loader2 size={14} className="animate-spin" /> : <RotateCcw size={14} />} Restore booklet version</button>}<button onClick={() => setDeleteTarget(quiz)} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-rose-600 ring-1 ring-rose-100 hover:bg-rose-50"><Trash2 size={14} /> Delete</button></div></article>)}</div>
+        <div className="space-y-3">{quizzes.map((quiz) => <article key={quiz.id} className="flex flex-col gap-4 rounded-2xl border border-slate-100 bg-slate-50/70 p-4 sm:flex-row sm:items-center sm:justify-between"><div><div className="flex flex-wrap items-center gap-2"><h3 className="font-bold text-slate-900">{quiz.title}</h3><span className={`rounded-full px-2.5 py-1 text-[10px] font-extrabold ${quiz.isPublished ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"}`}>{quiz.isPublished ? "Published" : "Draft"}</span></div><p className="mt-1 text-xs text-slate-500">Grade {quiz.grade} · {quiz.subject} · {quiz.questionCount} question{quiz.questionCount === 1 ? "" : "s"}</p></div><div className="flex flex-wrap gap-2"><Link href={`/dashboard/diagnostic/preview/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Eye size={14} /> View</Link><Link href={`/dashboard/diagnostic/edit/${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100"><Pencil size={14} /> Edit</Link>{!quiz.isPublished && <button onClick={() => publish(quiz.id)} disabled={busy === quiz.id} className="inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-2 text-xs font-bold text-white hover:bg-indigo-700 disabled:opacity-60">{busy === quiz.id ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />} Publish</button>}{quiz.grade === 3 && ["math", "english"].includes(quiz.subject.toLowerCase()) && quiz.title === `NAFS Grade 3 Diagnostic - ${quiz.subject}` && <button onClick={() => restoreSourceVersion(quiz)} disabled={busy === `restore-${quiz.id}`} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-indigo-700 ring-1 ring-indigo-100 hover:bg-indigo-50 disabled:opacity-60">{busy === `restore-${quiz.id}` ? <Loader2 size={14} className="animate-spin" /> : <RotateCcw size={14} />} Restore booklet version</button>}<button onClick={() => setDeleteTarget(quiz)} className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2 text-xs font-bold text-rose-600 ring-1 ring-rose-100 hover:bg-rose-50"><Trash2 size={14} /> Delete</button></div></article>)}</div>
       </section>}
 
       <section className="grid gap-4 lg:grid-cols-[1.2fr_.8fr]">

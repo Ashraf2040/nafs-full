@@ -640,7 +640,7 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
       {/* Main Quiz Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4">
-          <div className="bg-white w-full max-w-7xl h-[calc(100dvh-1rem)] max-h-[calc(100dvh-1rem)] sm:h-[92dvh] sm:max-h-[92dvh] rounded-2xl sm:rounded-[2rem] shadow-2xl flex flex-col relative overflow-hidden">
+          <div className="bg-white w-full max-w-7xl h-[calc(100dvh-2rem)] max-h-[calc(100dvh-2rem)] sm:h-[calc(100dvh-8rem)] sm:max-h-[calc(100dvh-8rem)] rounded-2xl sm:rounded-[2rem] shadow-2xl flex flex-col relative overflow-hidden">
             <header className="shrink-0 px-4 py-4 sm:px-8 sm:py-6 border-b border-slate-100 bg-slate-50">
               <div className="flex flex-wrap justify-between items-center gap-3 mb-4">
                 <h3 className="text-2xl font-bold text-slate-800">{assessmentType === "PRACTICE" ? "Practice" : "Quiz"} Creator Studio</h3>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
   Loader2, Save, Plus, Trash2, X, ArrowLeft, CheckCircle2,
@@ -32,9 +32,12 @@ interface QuizData {
 
 export default function EditQuizPage() {
   const params = useParams();
+  const pathname = usePathname();
   const router = useRouter();
   const { data: session } = useSession();
   const quizId = params.id as string;
+  const isDiagnosticRoute = pathname.startsWith("/dashboard/diagnostic/edit/");
+  const assessmentApiPath = isDiagnosticRoute ? `/api/diagnostic/${quizId}` : `/api/quizzes/${quizId}`;
   const userRole = (session?.user as any)?.role;
 
   // Redirect students
@@ -54,7 +57,7 @@ export default function EditQuizPage() {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const res = await fetch(`/api/quizzes/${quizId}`);
+        const res = await fetch(assessmentApiPath);
         if (!res.ok) throw new Error("Quiz not found");
         const data = await res.json();
 
@@ -79,7 +82,7 @@ export default function EditQuizPage() {
       }
     };
     fetchQuiz();
-  }, [quizId]);
+  }, [assessmentApiPath]);
 
   const updateQuestionField = (index: number, field: keyof Question, value: any) => {
     if (!quiz) return;
@@ -175,7 +178,7 @@ export default function EditQuizPage() {
     setSaveSuccess(false);
 
     try {
-      const res = await fetch(`/api/quizzes/${quizId}`, {
+      const res = await fetch(assessmentApiPath, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -242,7 +245,7 @@ export default function EditQuizPage() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link
-            href={quiz.isDiagnostic ? "/dashboard/diagnostic" : "/dashboard/quizzes"}
+            href={isDiagnosticRoute || quiz.isDiagnostic ? "/dashboard/diagnostic" : "/dashboard/quizzes"}
             className="p-2 bg-slate-100 rounded-xl hover:bg-slate-200 transition-colors text-slate-600"
           >
             <ArrowLeft size={20} />
