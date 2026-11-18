@@ -12,6 +12,7 @@ import StatFilters from "./StatFilters";
 import GenerateRemediationBtn from "./GenerateRemediationBtn";
 import { ScoreTrendsChart, GradePieChart, SubjectBarChart, ProficiencyChart, GrowthWindowChart } from "./Charts";
 import { getTeacherScope } from "@/lib/teacher-scope";
+import OutcomeProgressSection from "./OutcomeProgressSection";
 
 export const revalidate = 600;
 
@@ -508,6 +509,10 @@ export default async function StatisticsPage({ searchParams }: { searchParams: P
 
       <Suspense fallback={<div className="h-[350px] bg-slate-50 rounded-2xl animate-pulse" />}>
         <ProficiencySection masteryWhere={masteryWhere} studentWhere={studentWhere} />
+      </Suspense>
+
+      <Suspense fallback={<div className="h-64 animate-pulse rounded-3xl bg-slate-50" />}>
+        <OutcomeProgressSection userId={userId} userRole={userRole} subject={filterSubject} grade={filterGrade} assignments={assignments} />
       </Suspense>
 
       <Suspense fallback={<div className="h-[350px] bg-slate-50 rounded-2xl animate-pulse" />}>

@@ -223,7 +223,6 @@ model SimulationSubject {
   quiz         Quiz? @relation(fields: [quizId], references: [id], onDelete: Cascade)
   subject      Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
   questions    SimulationQuestion[]
-  @@unique([simulationId, subjectId])
   @@unique([simulationId, quizId])
 }
 

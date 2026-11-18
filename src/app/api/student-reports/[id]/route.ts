@@ -13,10 +13,6 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
     const subjectName = searchParams.get("subject");
     const gradeLevel = searchParams.get("grade");
 
-    if (!subjectName || !gradeLevel) {
-      return NextResponse.json({ error: "subject and grade are required" }, { status: 400 });
-    }
-
     const student = await prisma.user.findUnique({
       where: { id },
       include: { grade: true, class: true },
@@ -32,26 +28,21 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
       );
     }
 
-    const subject = await prisma.subject.findFirst({ where: { name: subjectName } });
-    const grade = await prisma.grade.findFirst({ where: { level: Number(gradeLevel) } });
-    if (!subject || !grade) {
-      return NextResponse.json({ error: "Invalid subject or grade" }, { status: 400 });
-    }
-
+    const grade = gradeLevel ? await prisma.grade.findFirst({ where: { level: Number(gradeLevel) } }) : student.grade;
+    if (!grade || grade.id !== student.gradeId) return NextResponse.json({ error: "Invalid grade" }, { status: 400 });
+    const subject = subjectName && subjectName !== "All" ? await prisma.subject.findFirst({ where: { name: subjectName } }) : null;
+    if (subjectName && subjectName !== "All" && !subject) return NextResponse.json({ error: "Invalid subject" }, { status: 400 });
     const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
-    if (teacherScope && !teacherScope.assignments.some((assignment) =>
-      assignment.subjectId === subject.id && assignment.gradeId === grade.id
-    )) {
+    if (teacherScope && !teacherScope.assignments.some((assignment) => assignment.gradeId === grade.id && (!subject || assignment.subjectId === subject.id))) {
         return NextResponse.json({ error: "Forbidden: Subject and grade are not assigned to you" }, { status: 403 });
     }
 
-    const subjectId = subject.id;
-    const gradeId = grade.id;
+    const scopeWhere = { gradeId: grade.id, ...(subject ? { subjectId: subject.id } : {}) };
 
     const allQuizzes = await prisma.quiz.findMany({
       where: teacherScope
-        ? { AND: [teacherScope.quizWhere, { subjectId, gradeId, isPublished: true, assessmentType: "QUIZ" }] }
-        : { subjectId, gradeId, isPublished: true, assessmentType: "QUIZ" },
+        ? { AND: [teacherScope.quizWhere, { ...scopeWhere, isPublished: true, assessmentType: "QUIZ" }] }
+        : { ...scopeWhere, isPublished: true, assessmentType: "QUIZ" },
       include: {
         _count: { select: { questions: true } },
         results: { where: { studentId: id } },
@@ -61,8 +52,8 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
 
     const allPractices = await prisma.quiz.findMany({
       where: teacherScope
-        ? { AND: [teacherScope.quizWhere, { subjectId, gradeId, isPublished: true, assessmentType: "PRACTICE" }] }
-        : { subjectId, gradeId, isPublished: true, assessmentType: "PRACTICE" },
+        ? { AND: [teacherScope.quizWhere, { ...scopeWhere, isPublished: true, assessmentType: "PRACTICE" }] }
+        : { ...scopeWhere, isPublished: true, assessmentType: "PRACTICE" },
       include: { _count: { select: { questions: true } }, practiceCompletions: { where: { studentId: id } } },
       orderBy: { createdAt: "desc" },
     });

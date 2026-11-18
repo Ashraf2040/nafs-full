@@ -430,11 +430,12 @@ function QuizCard({
                 <CheckCircle2 size={16} /> Completed — {score.toFixed(0)}%
               </button>
               <Link
-                href={`/dashboard/quizzes/solve/${quiz.id}`}
+                href={`/dashboard/results/${quiz.result?.id}`}
                 className="px-4 py-3 bg-slate-50 text-slate-600 rounded-xl font-semibold text-sm hover:bg-indigo-50 hover:text-indigo-700 transition-all flex items-center justify-center border border-slate-100 hover:border-indigo-100"
-                title="Review Quiz"
+                title="Review answers"
+                aria-label={`Review answers for ${quiz.title}`}
               >
-                <PlayCircle size={16} />
+                <FileText size={16} />
               </Link>
             </>
           )}

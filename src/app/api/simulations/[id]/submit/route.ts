@@ -12,7 +12,13 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const simulation = await prisma.simulation.findFirst({
     where: { id, isPublished: true, gradeId: user!.gradeId ?? "" },
     include: {
-      subjects: { include: { subject: { select: { name: true } }, quiz: { include: { questions: { select: { id: true, options: true, correctAnswer: true, explanation: true } } } }, questions: { select: { id: true, options: true, correctAnswer: true, explanation: true } } } },
+      subjects: {
+        include: {
+          subject: { select: { name: true } },
+          quiz: { include: { questions: { select: { id: true, options: true, correctAnswer: true, explanation: true, learningOutcome: { select: { outcomeText: true, indicatorText: true } } } } } },
+          questions: { select: { id: true, options: true, correctAnswer: true, explanation: true } },
+        },
+      },
     },
   });
   if (!simulation || (simulation.dueDate && simulation.dueDate < new Date())) return NextResponse.json({ message: "Simulation is unavailable" }, { status: 404 });
@@ -28,7 +34,8 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     const answer = norm(question.correctAnswer);
     const correctAnswer = choices.find(option => norm(option) === answer) ?? (/^[A-Z]$/i.test(answer) ? choices[answer.toUpperCase().charCodeAt(0) - 65] : question.correctAnswer);
     const studentAnswer = String(answers[question.id] ?? "");
-    return { questionId: question.id, subjectName: question.subjectName, correct: Boolean(studentAnswer && norm(correctAnswer) === norm(studentAnswer)), studentAnswer, correctAnswer: correctAnswer || question.correctAnswer, explanation: question.explanation };
+    const outcome = "learningOutcome" in question ? question.learningOutcome as { outcomeText?: string; indicatorText?: string | null } | null : null;
+    return { questionId: question.id, subjectName: question.subjectName, correct: Boolean(studentAnswer && norm(correctAnswer) === norm(studentAnswer)), studentAnswer, correctAnswer: correctAnswer || question.correctAnswer, explanation: question.explanation, outcomeText: outcome?.outcomeText ?? null, indicatorText: outcome?.indicatorText ?? null };
   });
   const correct = review.filter(answer => answer.correct).length;
   const score = questions.length ? Math.round(correct * 10000 / questions.length) / 100 : 0;

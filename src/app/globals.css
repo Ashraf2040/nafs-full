@@ -106,6 +106,19 @@ img { height: auto; }
 
 body:has(.dashboard-main) footer { display: none; }
 
+@media print {
+  @page { size: auto; margin: 14mm; }
+  html, body { background: #fff !important; color: #0f172a !important; }
+  body * { visibility: visible !important; }
+  nav, aside, footer, button, .no-print, .dashboard-mobile-nav, .dashboard-sidebar { display: none !important; }
+  #student-report { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  #student-report > * { break-inside: auto; }
+  #student-report article, #student-report header, #student-report section > div { break-inside: avoid; }
+  #student-report img { max-height: 90mm !important; }
+  a { color: inherit !important; text-decoration: none !important; }
+  .shadow, .shadow-sm, .shadow-md, .shadow-lg { box-shadow: none !important; }
+}
+
 @media (max-width: 1023px) {
   .dashboard-main { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
   .dashboard-content { padding-left: clamp(.75rem, 3vw, 1.5rem); padding-right: clamp(.75rem, 3vw, 1.5rem); }

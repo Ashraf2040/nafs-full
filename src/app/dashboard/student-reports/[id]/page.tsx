@@ -55,7 +55,7 @@ export default function StudentReportDetailPage() {
   const params = useParams();
   const searchParams = useSearchParams();
   const studentId = params.id as string;
-  const subject = searchParams.get("subject") || "Math";
+  const subject = searchParams.get("subject") || "All";
   const grade = searchParams.get("grade") || "6";
 
   const [data, setData] = useState<any>(null);
@@ -344,6 +344,7 @@ export default function StudentReportDetailPage() {
                         />
                       </div>
                     </div>
+                    <Link href={`/dashboard/results/${q.resultId}`} className="flex-shrink-0 rounded-xl bg-indigo-600 px-3 py-2 text-xs font-bold text-white hover:bg-indigo-700">Review answers</Link>
                     <button
                       onClick={() => handleRepublish(q.id, q.title)}
                       disabled={republishing === q.id}

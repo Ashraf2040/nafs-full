@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { BarChart3, CheckCircle2, ClipboardList, Eye, EyeOff, Loader2, Plus, PlayCircle, Trash2, Users } from "lucide-react";
+import { BarChart3, CheckCircle2, ClipboardList, Eye, EyeOff, Loader2, Plus, PlayCircle, Search, Trash2, Users } from "lucide-react";
 
 type Subject = { id: string; name: string; assignments?: { grade: { level: number } }[] };
 type Quiz = { id: string; title: string; grade: { level: number }; subject: Subject; _count: { questions: number } };
@@ -23,6 +23,7 @@ export default function SimulationsPage() {
   const [title, setTitle] = useState("");
   const [grade, setGrade] = useState("");
   const [selectedQuizzes, setSelectedQuizzes] = useState<string[]>([]);
+  const [quizSearch, setQuizSearch] = useState("");
   const [customSubjectIds, setCustomSubjectIds] = useState<string[]>([]);
   const [customQuestions, setCustomQuestions] = useState<Record<string, QuestionDraft[]>>({});
   const [mode, setMode] = useState<"quizzes" | "custom">("quizzes");
@@ -59,8 +60,8 @@ export default function SimulationsPage() {
   }, [load]);
 
   const availableQuizzes = quizzes.filter(quiz => String(quiz.grade.level) === grade);
+  const filteredQuizzes = availableQuizzes.filter(quiz => `${quiz.title} ${quiz.subject.name}`.toLowerCase().includes(quizSearch.trim().toLowerCase()));
   const availableSubjects = subjects.filter(subject => role !== "TEACHER" || subject.assignments?.some(assignment => assignment.grade.level === Number(grade)));
-  const distinctQuizSubjects = new Set(availableQuizzes.map(quiz => quiz.subject.id)).size;
   const stats = useMemo(() => {
     const scores = simulations.flatMap(simulation => simulation.attempts.map(attempt => attempt.score).filter((score: any) => typeof score === "number"));
     return {
@@ -73,7 +74,7 @@ export default function SimulationsPage() {
   const selectCustomSubject = (subjectId: string) => {
     setCustomSubjectIds(previous => {
       if (previous.includes(subjectId)) return previous.filter(id => id !== subjectId);
-      if (previous.length >= 3) return previous;
+    if (previous.length >= 3) return previous;
       setCustomQuestions(current => ({ ...current, [subjectId]: current[subjectId] || [newQuestion()] }));
       return [...previous, subjectId];
     });
@@ -88,7 +89,7 @@ export default function SimulationsPage() {
 
   const toggleQuiz = (quiz: Quiz) => setSelectedQuizzes(previous => {
     if (previous.includes(quiz.id)) return previous.filter(id => id !== quiz.id);
-    if (previous.length >= 3 || previous.some(id => availableQuizzes.find(item => item.id === id)?.subject.id === quiz.subject.id)) return previous;
+    if (previous.length >= 30) return previous;
     return [...previous, quiz.id];
   });
 
@@ -120,7 +121,7 @@ export default function SimulationsPage() {
       setCustomSubjectIds([]);
       setCustomQuestions({});
       await load();
-      setNotice("Simulation saved as a draft. Review it in Drafts, then publish it when it’s ready for students.");
+    setNotice("Test saved as a draft. Review it, then publish it when it’s ready for students.");
     } catch (error: any) {
       setMessage(error.message || "Could not create simulation");
     } finally {
@@ -158,15 +159,15 @@ export default function SimulationsPage() {
   };
 
   return <div className="mx-auto max-w-7xl space-y-7">
-    <header className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7"><div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500"/><div className="flex items-start gap-3 sm:gap-4"><span className="rounded-2xl bg-indigo-50 p-3 text-indigo-700"><ClipboardList size={22}/></span><div><h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">{role === "STUDENT" ? "Your Simulations" : "Simulation Studio"}</h1><p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-600">{role === "STUDENT" ? "Complete a published multi-subject simulation and review your score and answer feedback." : role === "TEACHER" ? "Build multi-subject simulations from quizzes or your own questions for your assigned grades." : "Create and publish multi-subject simulations, then review student results across grades."}</p></div></div></header>
+    <header className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7"><div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500"/><div className="flex items-start gap-3 sm:gap-4"><span className="rounded-2xl bg-indigo-50 p-3 text-indigo-700"><ClipboardList size={22}/></span><div><h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">{role === "STUDENT" ? "Your Tests" : "Test Studio"}</h1><p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-600">{role === "STUDENT" ? "Complete a published test and review your score and answer feedback." : role === "TEACHER" ? "Group quizzes from your assigned grades into tests, then track student answers and results." : "Create and publish tests, then review student results across grades."}</p></div></div></header>
 
-    {role !== "STUDENT" && <div className="grid gap-4 sm:grid-cols-3"><Stat label="Simulations" value={stats.simulations} /><Stat label="Completed tests" value={stats.attempts} /><Stat label="Average score" value={stats.average === null ? "—" : `${stats.average}%`} /></div>}
+    {role !== "STUDENT" && <div className="grid gap-4 sm:grid-cols-3"><Stat label="Tests" value={stats.simulations} /><Stat label="Completed tests" value={stats.attempts} /><Stat label="Average score" value={stats.average === null ? "—" : `${stats.average}%`} /></div>}
 
     {notice && <div role="status" className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">{notice}</div>}
     {message && <div role="alert" className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">{message}</div>}
 
     {role !== "STUDENT" && <form onSubmit={createSimulation} className="space-y-5 rounded-2xl border bg-white p-6 shadow-sm">
-      <div><h2 className="flex items-center gap-2 text-xl font-bold"><Plus size={19} />Create a simulation</h2><p className="mt-1 text-sm text-slate-500">New simulations are saved as drafts. Publish after you’ve reviewed the questions.</p></div>
+      <div><h2 className="flex items-center gap-2 text-xl font-bold"><Plus size={19} />Create a test</h2><p className="mt-1 text-sm text-slate-500">New tests are saved as drafts. Publish after you’ve reviewed the questions.</p></div>
       <div className="grid gap-3 sm:grid-cols-2">
         <input required value={title} onChange={event => setTitle(event.target.value)} placeholder="Simulation title" className="rounded-xl border p-3" />
         <select required value={grade} onChange={event => { setGrade(event.target.value); setSelectedQuizzes([]); setCustomSubjectIds([]); }} className="rounded-xl border p-3"><option value="">Choose grade</option>{gradeLevels.map(level => <option key={level} value={level}>Grade {level}</option>)}</select>
@@ -177,9 +178,10 @@ export default function SimulationsPage() {
       </div>
 
       {mode === "quizzes" ? <>
-        <p className="text-sm text-slate-500">Choose two or three graded quizzes, one per subject ({selectedQuizzes.length} selected).</p>
-        {grade && distinctQuizSubjects < 2 && <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">There aren’t two graded quiz subjects for this grade yet. Switch to <b>Write my own questions</b> or <Link href="/dashboard/quizzes/graded" target="_blank" rel="noreferrer" className="font-bold underline">create a graded quiz</Link>.</div>}
-        <div className="grid gap-2 md:grid-cols-2">{availableQuizzes.map(quiz => <label key={quiz.id} className="flex cursor-pointer items-center gap-3 rounded-xl border p-3"><input type="checkbox" checked={selectedQuizzes.includes(quiz.id)} onChange={() => toggleQuiz(quiz)} disabled={!selectedQuizzes.includes(quiz.id) && (selectedQuizzes.length === 3 || selectedQuizzes.some(id => availableQuizzes.find(item => item.id === id)?.subject.id === quiz.subject.id))} /><span className="min-w-0"><b>{quiz.subject.name}</b> · {quiz.title}<small className="block text-slate-500">{quiz._count.questions} questions</small></span></label>)}</div>
+        <p className="text-sm text-slate-500">Choose 2–30 quizzes for this grade. Quizzes can share a subject ({selectedQuizzes.length} selected).</p>
+        <label className="flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm text-slate-500"><Search size={16}/><input value={quizSearch} onChange={event => setQuizSearch(event.target.value)} placeholder="Find a quiz by title or subject" className="min-w-0 flex-1 outline-none"/></label>
+        <div className="grid gap-2 md:grid-cols-2">{filteredQuizzes.map(quiz => <label key={quiz.id} className="flex cursor-pointer items-center gap-3 rounded-xl border p-3"><input type="checkbox" checked={selectedQuizzes.includes(quiz.id)} onChange={() => toggleQuiz(quiz)} disabled={!selectedQuizzes.includes(quiz.id) && selectedQuizzes.length === 30} /><span className="min-w-0"><b>{quiz.subject.name}</b> · {quiz.title}<small className="block text-slate-500">{quiz._count.questions} questions</small></span></label>)}</div>
+        {filteredQuizzes.length === 0 && <p className="rounded-xl bg-slate-50 p-4 text-sm text-slate-500">No quizzes match that search.</p>}
       </> : <>
         <p className="text-sm text-slate-500">Choose two or three subjects, then write one or more questions for each.</p>
         <div className="flex flex-wrap gap-2">{availableSubjects.map(subject => <label key={subject.id} className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm"><input type="checkbox" checked={customSubjectIds.includes(subject.id)} disabled={!customSubjectIds.includes(subject.id) && customSubjectIds.length === 3} onChange={() => selectCustomSubject(subject.id)} />{subject.name}</label>)}</div>
@@ -189,7 +191,7 @@ export default function SimulationsPage() {
           return <section key={subjectId} className="space-y-3 rounded-2xl border border-slate-200 p-4"><h3 className="font-bold text-slate-800">{subject.name}</h3>{questions.map((question, index) => <div key={index} className="space-y-3 rounded-xl bg-slate-50 p-4"><div className="flex items-center justify-between"><b className="text-sm">Question {index + 1}</b><button type="button" disabled={questions.length === 1} onClick={() => setCustomQuestions(current => ({ ...current, [subjectId]: current[subjectId].filter((_, i) => i !== index) }))} className="text-xs font-semibold text-rose-600 disabled:opacity-40">Remove question</button></div><textarea required value={question.questionText} onChange={event => updateQuestion(subjectId, index, { questionText: event.target.value })} placeholder="Write the question" className="w-full rounded-lg border p-3" rows={2} /><div className="grid gap-2 sm:grid-cols-2">{question.options.map((option, optionIndex) => <input key={optionIndex} required value={option} onChange={event => { const options = [...question.options]; options[optionIndex] = event.target.value; updateQuestion(subjectId, index, { options }); }} placeholder={`Choice ${String.fromCharCode(65 + optionIndex)}`} className="rounded-lg border p-2.5" />)}</div><label className="flex items-center gap-2 text-sm font-medium">Correct answer<select value={question.correctIndex} onChange={event => updateQuestion(subjectId, index, { correctIndex: Number(event.target.value) })} className="rounded-lg border p-2">{question.options.map((_, optionIndex) => <option key={optionIndex} value={optionIndex}>{String.fromCharCode(65 + optionIndex)}</option>)}</select></label></div>)}<button type="button" onClick={() => setCustomQuestions(current => ({ ...current, [subjectId]: [...(current[subjectId] || []), newQuestion()] }))} className="rounded-lg border border-indigo-200 px-3 py-2 text-sm font-semibold text-indigo-700">+ Add question</button></section>;
         })}
       </>}
-      <button disabled={saving || (mode === "quizzes" ? selectedQuizzes.length < 2 : customSubjectIds.length < 2 || customSubjectIds.some(id => !(customQuestions[id] || []).some(question => question.questionText.trim() && question.options.filter(option => option.trim()).length >= 2 && question.options[question.correctIndex]?.trim())))} className="rounded-xl bg-indigo-600 px-5 py-3 font-bold text-white disabled:opacity-40">{saving ? "Creating…" : "Create simulation"}</button>
+      <button disabled={saving || (mode === "quizzes" ? selectedQuizzes.length < 2 : customSubjectIds.length < 2 || customSubjectIds.some(id => !(customQuestions[id] || []).some(question => question.questionText.trim() && question.options.filter(option => option.trim()).length >= 2 && question.options[question.correctIndex]?.trim())))} className="rounded-xl bg-indigo-600 px-5 py-3 font-bold text-white disabled:opacity-40">{saving ? "Creating…" : "Create test"}</button>
     </form>}
 
     {loading ? <div className="flex justify-center rounded-2xl border bg-white p-10"><Loader2 className="animate-spin text-indigo-600" /></div> : simulations.length === 0 ? <section className="rounded-2xl border border-dashed bg-white p-10 text-center text-slate-500">{role === "STUDENT" ? "No simulations are available yet." : "No simulations yet. Create one above; it will appear in Drafts until you publish it."}</section> : <section className="space-y-6">

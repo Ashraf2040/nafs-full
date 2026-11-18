@@ -16,7 +16,7 @@ const items = [
   { label: "Diagnostic", href: "/dashboard/diagnostic", icon: Target, roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Practices", href: "/dashboard/practices", icon: FileText, roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Quizzes", href: "/dashboard/quizzes", icon: CheckCircle2, roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Simulations", href: "/dashboard/simulations", icon: ClipboardList, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Tests", href: "/dashboard/simulations", icon: ClipboardList, roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Study Guides", href: "/dashboard/study-guides", icon: LibraryBig, roles: ["ADMIN", "TEACHER", "STUDENT"] },
   { label: "Completed Quizzes", href: "/dashboard/quizzes/completed", icon: CheckCircle2, roles: ["STUDENT"] },
   { label: "Achievements", href: "/dashboard/achievements", icon: Trophy, roles: ["STUDENT"] },

@@ -26,7 +26,7 @@ export default function StudentReportsPage() {
   const { data: session } = useSession();
   const userRole = (session?.user as any)?.role;
 
-  const [subject, setSubject] = useState("Math");
+  const [subject, setSubject] = useState("All");
   const [gradeLevel, setGradeLevel] = useState("6");
   const [classId, setClassId] = useState("");
 
@@ -42,7 +42,7 @@ export default function StudentReportsPage() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const subjects = ["Math", "English", "Science"];
+  const subjects = ["All", "Math", "English", "Science"];
   const grades = [3, 6, 9];
 
   const filteredStudents = (data?.students || []).filter((s: Student) =>
@@ -72,7 +72,7 @@ export default function StudentReportsPage() {
               className="w-full px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-medium focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 outline-none"
             >
               {subjects.map(s => (
-                <option key={s} value={s}>{s}</option>
+                <option key={s} value={s}>{s === "All" ? "All subjects" : s}</option>
               ))}
             </select>
           </div>
