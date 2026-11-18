@@ -106,18 +106,20 @@ export default async function CertificatesPage() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-8">
-      <header className="mb-10 flex items-center gap-4 border-b border-slate-200 pb-6">
-        <div className="bg-amber-100 p-4 rounded-2xl text-amber-600">
-          <Award size={40} />
+      <header className="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:mb-2 sm:flex-row sm:items-center sm:p-7">
+        <div className="w-fit rounded-2xl bg-amber-100 p-3 text-amber-600 sm:p-4">
+          <Award size={30} />
         </div>
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900">
+          <h1 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
             {userRole === "STUDENT" ? "Your Achievements" : "Student Achievements"}
           </h1>
-          <p className="text-slate-500">
-            {userRole === "STUDENT" 
-              ? "Download and print certificates for quizzes you have mastered." 
-              : "View and manage certificates for high-performing students."}
+          <p className="text-sm leading-6 text-slate-600">
+            {userRole === "STUDENT"
+              ? "Download and print certificates you have earned through your quiz results."
+              : userRole === "TEACHER"
+                ? "Review certificates earned by students in your assigned classes."
+                : "Review and manage certificates earned by students across the platform."}
           </p>
         </div>
       </header>

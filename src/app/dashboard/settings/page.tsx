@@ -17,6 +17,7 @@ export default async function SettingsPage() {
     where: { id: session.user.id },
     select: {
       name: true,
+      username: true,
       email: true,
       role: true,
       password: true,
@@ -44,7 +45,7 @@ export default async function SettingsPage() {
             </div>
           </div>
         </div>
-        <SettingsForm defaultName={name} email={account.email} canChangePassword={Boolean(account.password)} />
+        <SettingsForm defaultName={name} username={account.username} email={account.email} canChangePassword={Boolean(account.password)} />
       </div>
       {account.role === "ADMIN" && (
         <section className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-white to-indigo-50/70 p-5 shadow-sm sm:p-8">

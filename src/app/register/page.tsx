@@ -9,6 +9,7 @@ import { User, Mail, Lock, UserPlus, AlertCircle, GraduationCap } from "lucide-r
 export default function RegisterPage() {
   const [formData, setFormData] = useState({ 
     name: "", 
+    username: "",
     email: "", 
     password: "", 
     gradeLevel: "",
@@ -75,11 +76,19 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-bold text-slate-700 mb-2">Email Address</label>
+            <label className="block text-sm font-bold text-slate-700 mb-2">Username</label>
+            <div className="relative">
+              <User className="absolute left-4 top-3.5 text-slate-400" size={18} />
+              <input type="text" required minLength={3} autoComplete="username" value={formData.username} onChange={(e) => setFormData({...formData, username: e.target.value})} placeholder="Choose a username" className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-400 transition-all" />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold text-slate-700 mb-2">Email Address (Optional)</label>
             <div className="relative">
               <Mail className="absolute left-4 top-3.5 text-slate-400" size={18} />
               <input 
-                type="email" required
+                type="email"
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 placeholder="name@example.com"
                 className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-indigo-400 transition-all" 

@@ -29,9 +29,16 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isOutcomeModalOpen, setIsOutcomeModalOpen] = useState(false);
+  const [isOutcomeStudioOpen, setIsOutcomeStudioOpen] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isUploadingExcel, setIsUploadingExcel] = useState(false);
+  const [isSavingOutcome, setIsSavingOutcome] = useState(false);
+  const [studioSubject, setStudioSubject] = useState("");
+  const [studioGrade, setStudioGrade] = useState("");
+  const [studioSubDomain, setStudioSubDomain] = useState("");
+  const [studioOutcomeText, setStudioOutcomeText] = useState("");
+  const [studioIndicators, setStudioIndicators] = useState("");
   const [isFetchingOutcomes, setIsFetchingOutcomes] = useState(false);
   const [teacherAssignments, setTeacherAssignments] = useState<GroupedAssignment[]>([]);
   const [assignmentsLoaded, setAssignmentsLoaded] = useState(false);
@@ -224,6 +231,8 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
     setIsUploadingExcel(true);
     const formData = new FormData();
     formData.append("file", file);
+    formData.append("subject", studioSubject);
+    formData.append("grade", studioGrade);
 
     const toastId = toast.loading("Uploading curriculum outcomes...");
 
@@ -235,21 +244,49 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
 
       if (res.ok) {
         const data = await res.json();
-        toast.success(`Successfully uploaded ${data.count} curriculum outcomes!`, { id: toastId });
-        const outcomesRes = await fetch(`/api/outcomes?subject=${encodeURIComponent(subject)}&grade=${grade}`);
-        if (outcomesRes.ok) {
-          const outcomesData = await outcomesRes.json();
-          setOutcomes(outcomesData.outcomes || []);
+        toast.success(`Imported ${data.count} indicators. ${data.skippedDuplicates || 0} duplicates skipped.`, { id: toastId });
+        if (studioSubject === subject && studioGrade === grade) {
+          const outcomesRes = await fetch(`/api/outcomes?subject=${encodeURIComponent(studioSubject)}&grade=${studioGrade}`);
+          if (outcomesRes.ok) setOutcomes((await outcomesRes.json()).outcomes || []);
         }
       } else {
         const err = await res.json();
-        toast.error(`Upload failed: ${err.message || "Unknown error"}`, { id: toastId });
+        toast.error(`Import failed: ${err.error || err.message || "Unknown error"}`, { id: toastId });
       }
     } catch {
       toast.error("Failed to upload Excel sheet. Please try again.", { id: toastId });
     } finally {
       setIsUploadingExcel(false);
       e.target.value = "";
+    }
+  };
+
+  const handleCreateOutcome = async () => {
+    const indicators = studioIndicators.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+    if (!studioSubject || !studioGrade || !studioOutcomeText.trim() || indicators.length === 0) {
+      toast.error("Choose a grade and subject, then enter an outcome and at least one indicator.");
+      return;
+    }
+    setIsSavingOutcome(true);
+    try {
+      const response = await fetch("/api/outcomes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject: studioSubject, grade: Number(studioGrade), subDomain: studioSubDomain, outcomeText: studioOutcomeText, indicators }),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Could not save outcome.");
+      toast.success(`${data.count} indicator${data.count === 1 ? "" : "s"} added${data.skippedDuplicates ? `; ${data.skippedDuplicates} duplicate(s) skipped` : ""}.`);
+      if (studioSubject === subject && studioGrade === grade) {
+        const refreshed = await fetch(`/api/outcomes?subject=${encodeURIComponent(studioSubject)}&grade=${studioGrade}`);
+        if (refreshed.ok) setOutcomes((await refreshed.json()).outcomes || []);
+      }
+      setStudioOutcomeText("");
+      setStudioIndicators("");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Could not save this outcome.");
+    } finally {
+      setIsSavingOutcome(false);
     }
   };
 
@@ -443,6 +480,9 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
     userRole === "ADMIN"
       ? [3, 6, 9]
       : teacherAssignments.find((a) => a.subject.name === subject)?.grades || [];
+  const studioGradeOptions = userRole === "ADMIN"
+    ? [3, 6, 9]
+    : teacherAssignments.find((a) => a.subject.name === studioSubject)?.grades || [];
 
   if (userRole === "TEACHER" && !assignmentsLoaded) {
     return (
@@ -465,24 +505,10 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
             Create and manage NAFS assessments for your students
           </p>
         </div>
-        <div className="flex gap-4">
-          <div className="relative">
-            <input
-              type="file"
-              accept=".xlsx, .xls, .csv"
-              onChange={handleExcelUpload}
-              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-              disabled={isUploadingExcel}
-            />
-            <button className="bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-600 px-6 py-2.5 rounded-xl font-medium shadow-sm transition-all flex items-center gap-2">
-              {isUploadingExcel ? (
-                <Loader2 size={20} className="animate-spin" />
-              ) : (
-                <Table size={20} />
-              )}
-              {isUploadingExcel ? "Uploading..." : "Import Outcomes"}
-            </button>
-          </div>
+        <div className="flex flex-wrap gap-3">
+          <button onClick={() => { setStudioSubject(subject || availableSubjects[0]?.name || ""); setStudioGrade(grade || String(availableGrades[0] || 3)); setIsOutcomeStudioOpen(true); }} className="bg-white border-2 border-slate-200 hover:border-indigo-200 hover:bg-indigo-50 text-indigo-700 px-5 py-2.5 rounded-xl font-semibold shadow-sm transition-all flex items-center gap-2">
+            <Table size={19} /> Outcome Studio
+          </button>
 
           <button
             onClick={() => setIsModalOpen(true)}
@@ -492,6 +518,32 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
           </button>
         </div>
       </div>
+
+      {isOutcomeStudioOpen && <div className="fixed inset-0 z-[80] flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && !isSavingOutcome && !isUploadingExcel) setIsOutcomeStudioOpen(false); }}>
+        <section role="dialog" aria-modal="true" aria-labelledby="outcome-studio-title" className="flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl bg-white shadow-2xl">
+          <header className="flex items-start justify-between gap-4 border-b border-slate-100 bg-gradient-to-r from-indigo-50 to-violet-50 px-6 py-5 sm:px-8">
+            <div><p className="text-xs font-extrabold uppercase tracking-[0.16em] text-indigo-600">Curriculum workspace</p><h2 id="outcome-studio-title" className="mt-1 text-2xl font-extrabold text-slate-900">Outcome Studio</h2><p className="mt-1 text-sm text-slate-500">Add learning outcomes and their indicators for a specific grade and subject.</p></div>
+            <button type="button" onClick={() => setIsOutcomeStudioOpen(false)} className="rounded-xl p-2 text-slate-500 hover:bg-white" aria-label="Close Outcome Studio"><X size={20} /></button>
+          </header>
+          <div className="flex-1 space-y-5 overflow-y-auto p-6 sm:p-8">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="text-sm font-bold text-slate-700">Subject<select value={studioSubject} onChange={(event) => { const nextSubject = event.target.value; setStudioSubject(nextSubject); const gradesForSubject = userRole === "ADMIN" ? [3, 6, 9] : teacherAssignments.find((assignment) => assignment.subject.name === nextSubject)?.grades || []; if (!gradesForSubject.includes(Number(studioGrade))) setStudioGrade(String(gradesForSubject[0] ?? "")); }} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm"><option value="">Select subject</option>{availableSubjects.map((item) => <option key={item.id} value={item.name}>{item.name}</option>)}</select></label>
+              <label className="text-sm font-bold text-slate-700">Grade<select value={studioGrade} onChange={(event) => setStudioGrade(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm"><option value="">Select grade</option>{studioGradeOptions.map((level) => <option key={level} value={level}>Grade {level}</option>)}</select></label>
+            </div>
+            <div className="rounded-2xl border border-slate-200 p-4 sm:p-5">
+              <h3 className="font-bold text-slate-900">Add directly</h3><p className="mt-1 text-xs leading-5 text-slate-500">Enter one learning outcome, then put each indicator on its own line.</p>
+              <label className="mt-4 block text-xs font-bold uppercase tracking-wider text-slate-500">Sub-domain (optional)<input value={studioSubDomain} onChange={(event) => setStudioSubDomain(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium normal-case tracking-normal text-slate-800" placeholder="e.g. Reading comprehension" /></label>
+              <label className="mt-4 block text-xs font-bold uppercase tracking-wider text-slate-500">Learning outcome<textarea value={studioOutcomeText} onChange={(event) => setStudioOutcomeText(event.target.value)} rows={3} className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium normal-case tracking-normal text-slate-800" placeholder="Describe the learning outcome" /></label>
+              <label className="mt-4 block text-xs font-bold uppercase tracking-wider text-slate-500">Indicators<textarea value={studioIndicators} onChange={(event) => setStudioIndicators(event.target.value)} rows={4} className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-3 text-sm font-medium normal-case tracking-normal text-slate-800" placeholder={"1. First indicator\n2. Second indicator"} /></label>
+              <button type="button" onClick={handleCreateOutcome} disabled={isSavingOutcome || !studioSubject || !studioGrade} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-indigo-700 disabled:opacity-50">{isSavingOutcome ? <Loader2 size={16} className="animate-spin" /> : <Plus size={16} />} Save outcome</button>
+            </div>
+            <div className="rounded-2xl border border-dashed border-indigo-200 bg-indigo-50/50 p-4 sm:p-5">
+              <div className="flex flex-wrap items-center justify-between gap-3"><div><h3 className="font-bold text-slate-900">Import from CSV</h3><p className="mt-1 text-xs leading-5 text-slate-500">Use the sample headings. Only rows matching the selected grade and subject are imported.</p></div><a href="/comprehensive_indicators.csv" download className="text-xs font-bold text-indigo-700 underline underline-offset-2">Download sample CSV</a></div>
+              <label className="mt-4 flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-indigo-200 bg-white px-4 py-3 text-sm font-bold text-indigo-700 hover:bg-indigo-50">{isUploadingExcel ? <Loader2 size={17} className="animate-spin" /> : <Upload size={17} />}{isUploadingExcel ? "Importing..." : "Choose CSV file"}<input type="file" accept=".csv,text/csv" onChange={handleExcelUpload} disabled={isUploadingExcel || !studioSubject || !studioGrade} className="sr-only" /></label>
+            </div>
+          </div>
+        </section>
+      </div>}
 
       {/* Outcomes Selection Modal */}
       {isOutcomeModalOpen && (

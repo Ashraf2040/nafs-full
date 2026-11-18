@@ -4,9 +4,9 @@ import { authOptions } from "@/lib/auth";
 import Link from "next/link";
 import {
   BarChart3, BookOpen, FlaskConical, Calculator, ShieldCheck,
-  GraduationCap, ArrowRight, Trophy, Users, Star, Zap,
+  GraduationCap, ArrowRight, Trophy, Users, Zap,
   FileText, Target, Sparkles, CheckCircle2, ChevronRight,
-  Brain, Globe, Lock
+  Brain, Globe, Lock, LayoutDashboard, Activity
 } from "lucide-react";
 import { SystemStatsChart } from "@/components/SystemStatsChart";
 
@@ -49,9 +49,9 @@ export default async function LandingPage() {
 
   const stats = [
     { value: "3", label: "Core Subjects", icon: <BookOpen size={22} /> },
-    { value: "3", label: "Target Grades", icon: <GraduationCap size={22} /> },
-    { value: "100%", label: "Server-graded Results", icon: <ShieldCheck size={22} /> },
-    { value: "3", label: "Role-specific Portals", icon: <Users size={22} /> },
+    { value: "3 · 6 · 9", label: "Supported grades", icon: <GraduationCap size={22} /> },
+    { value: "2", label: "Assessment modes", icon: <ShieldCheck size={22} /> },
+    { value: "3", label: "Role-based portals", icon: <Users size={22} /> },
   ];
 
   const steps = [
@@ -80,7 +80,7 @@ export default async function LandingPage() {
       icon: <Sparkles size={36} />,
       title: "AI Quiz Generator",
       desc: "Upload PDFs or paste text and instantly get high-quality, standards-aligned assessments with detailed explanations.",
-      highlight: "GPT-4 Powered",
+      highlight: "AI Assisted",
     },
     {
       icon: <BarChart3 size={36} />,
@@ -97,10 +97,10 @@ export default async function LandingPage() {
   ];
 
   const trustBadges = [
-    { icon: <ShieldCheck size={18} />, text: "NAFS Aligned" },
-    { icon: <Lock size={18} />, text: "Data Secure" },
-    { icon: <Globe size={18} />, text: "Arabic & English" },
-    { icon: <Zap size={18} />, text: "Instant Results" },
+    { icon: <Target size={18} />, text: "Curriculum indicators" },
+    { icon: <CheckCircle2 size={18} />, text: "Practice & quizzes" },
+    { icon: <BarChart3 size={18} />, text: "Progress insights" },
+    { icon: <Zap size={18} />, text: "Feedback after quizzes" },
   ];
 
   return (
@@ -164,109 +164,59 @@ export default async function LandingPage() {
       </nav>
 
       {/* ===== HERO SECTION ===== */}
-      <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 bg-slate-950 text-white overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(168,85,247,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:60px_60px]" />
-          {/* Floating orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.07] backdrop-blur-sm text-white/80 font-medium text-xs sm:text-sm mb-8 border border-white/[0.08] ring-1 ring-white/[0.05]">
-            <ShieldCheck size={15} className="text-emerald-400" />
-            <span>Officially Aligned with NAFS Standards</span>
-            <CheckCircle2 size={13} className="text-emerald-400" />
+      <section className="relative isolate overflow-hidden bg-slate-950 text-white">
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_78%_10%,rgba(99,102,241,.2),transparent_34%),radial-gradient(ellipse_at_0%_100%,rgba(124,58,237,.13),transparent_36%)]" />
+        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:34px_34px]" />
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.05fr_.95fr] lg:gap-14 lg:px-8 lg:py-28">
+          <div className="max-w-2xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-300/20 bg-white/[.06] px-3.5 py-2 text-xs font-semibold text-indigo-100 sm:text-sm">
+              <ShieldCheck size={15} className="text-emerald-300" /> Saudi NAFS preparation, thoughtfully designed
+            </div>
+            <h1 className="text-[2.55rem] font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.8rem]">
+              Prepare with clarity.
+              <span className="mt-1 block bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent">Grow with confidence.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              A focused preparation space for Saudi students and educators, with curriculum-mapped practice, clear feedback, and progress you can follow.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              {!session ? <>
+                <Link href="/register" className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-xl bg-white px-6 py-3 font-bold text-slate-900 shadow-lg shadow-indigo-950/20 transition hover:-translate-y-0.5 hover:bg-indigo-50">
+                  <GraduationCap size={20} /> Get started <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link href="/login" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold text-white transition hover:border-white/30 hover:bg-white/[.06]">Sign in</Link>
+              </> : userRole === "STUDENT" ? <>
+                <Link href="/preparation/science" className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-bold text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-50"><BookOpen size={19} /> Start learning <ArrowRight size={17} /></Link>
+                <Link href="/dashboard" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold transition hover:bg-white/[.06]"><Trophy size={18} /> My progress</Link>
+              </> : <>
+                <Link href="/dashboard/quizzes" className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-bold text-slate-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-50"><BarChart3 size={19} /> Manage assessments <ArrowRight size={17} /></Link>
+                <Link href="/dashboard/statistics" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold transition hover:bg-white/[.06]">View analytics <ArrowRight size={17} /></Link>
+              </>}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/10 pt-5">
+              {trustBadges.map((badge) => <span key={badge.text} className="inline-flex items-center gap-2 text-xs font-medium text-slate-300 sm:text-sm"><span className="text-indigo-300">{badge.icon}</span>{badge.text}</span>)}
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 sm:mb-8">
-            Master the NAFS
-            <br className="hidden sm:block" />{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-violet-400 to-pink-400">
-              Assessment
-            </span>{" "}
-            with
-            <br className="hidden sm:block" />{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">
-              Professional Practicing
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-12">
-            Generate intelligent quizzes from PDFs, render beautiful math equations,
-            and track progress with advanced analytics — all aligned to NAFS standards.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-10 sm:mb-16">
-            {!session ? (
-              <>
-                <Link
-                  href="/register"
-                  className="group bg-white text-slate-900 px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
-                >
-                  <GraduationCap size={22} />
-                  Start Free Today
-                  <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-                <Link
-                  href="/login"
-                  className="group border border-white/15 hover:border-white/30 hover:bg-white/5 px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 transition-all duration-300"
-                >
-                  Sign In
-                  <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </>
-            ) : userRole === "STUDENT" ? (
-              <>
-                <Link
-                  href="/preparation/science"
-                  className="group bg-white text-slate-900 px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all"
-                >
-                  <BookOpen size={22} /> Start Practicing
-                </Link>
-                <Link
-                  href="/dashboard"
-                  className="group border border-white/15 hover:border-white/30 hover:bg-white/5 px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 transition-all"
-                >
-                  <Trophy size={22} /> My Progress
-                </Link>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/dashboard/quizzes"
-                  className="group bg-white text-slate-900 px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all"
-                >
-                  <BarChart3 size={22} /> Create Assessment
-                </Link>
-                <Link
-                  href="/dashboard/statistics"
-                  className="group border border-white/15 hover:border-white/30 hover:bg-white/5 px-8 py-4 rounded-2xl font-semibold text-base sm:text-lg flex items-center justify-center gap-2.5 transition-all"
-                >
-                  View Analytics <ArrowRight size={20} />
-                </Link>
-              </>
-            )}
-          </div>
-
-          {/* Trust Badges Row */}
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            {trustBadges.map((badge) => (
-              <div
-                key={badge.text}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.05] text-white/50 text-xs sm:text-sm font-medium border border-white/[0.06]"
-              >
-                {badge.icon}
-                {badge.text}
+          <div className="relative mx-auto w-full max-w-[34rem] lg:ml-auto">
+            <div aria-hidden="true" className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-indigo-500/20 via-violet-500/10 to-transparent blur-2xl" />
+            <div className="relative rounded-[1.6rem] border border-white/15 bg-slate-900/80 p-4 shadow-2xl shadow-slate-950/50 backdrop-blur-xl sm:p-5">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div className="flex items-center gap-3"><span className="rounded-xl bg-indigo-500/15 p-2.5 text-indigo-200"><LayoutDashboard size={19} /></span><div><p className="text-sm font-bold text-white">Your learning space</p><p className="mt-0.5 text-xs text-slate-400">A clear view of what comes next</p></div></div>
+                <span className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-2.5 py-1 text-[10px] font-semibold text-emerald-200">Ready to learn</span>
               </div>
-            ))}
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="rounded-xl border border-white/10 bg-white/[.04] p-3.5"><div className="flex items-center gap-2 text-xs font-medium text-slate-300"><BookOpen size={15} className="text-indigo-300" /> Curriculum mapped</div><p className="mt-3 text-lg font-bold text-white">Learn by indicator</p><p className="mt-1 text-xs leading-5 text-slate-400">Practice focused on each skill</p></div>
+                <div className="rounded-xl border border-white/10 bg-white/[.04] p-3.5"><div className="flex items-center gap-2 text-xs font-medium text-slate-300"><Activity size={15} className="text-emerald-300" /> Progress tracking</div><p className="mt-3 text-lg font-bold text-white">See your growth</p><p className="mt-1 text-xs leading-5 text-slate-400">Feedback after every assessment</p></div>
+              </div>
+              <div className="mt-3 rounded-xl border border-white/10 bg-white/[.04] p-4">
+                <div className="mb-4 flex items-center justify-between"><div><p className="text-xs font-semibold text-slate-300">Choose a subject</p><p className="mt-1 text-[11px] text-slate-500">Build a steady study routine</p></div><ArrowRight size={16} className="text-slate-400" /></div>
+                <div className="space-y-2.5">
+                  {[{ name: "Science", color: "bg-emerald-400", width: "w-[72%]" }, { name: "English", color: "bg-indigo-400", width: "w-[54%]" }, { name: "Mathematics", color: "bg-violet-400", width: "w-[63%]" }].map((item) => <div key={item.name} className="flex items-center gap-3"><span className="w-24 shrink-0 text-xs font-medium text-slate-300">{item.name}</span><div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/10"><div className={`h-full rounded-full ${item.color} ${item.width} opacity-80`} /></div><span className="text-[10px] text-slate-500">Explore</span></div>)}
+                </div>
+              </div>
+              <div className="mt-3 flex items-center gap-2 text-[11px] text-slate-400"><ShieldCheck size={14} className="text-emerald-300" /> Designed for students, teachers, and school administrators</div>
+            </div>
           </div>
         </div>
       </section>
@@ -319,11 +269,7 @@ export default async function LandingPage() {
               </div>
             </div>
             <div className="p-4 sm:p-6 lg:p-8">
-              <div className="bg-white p-8">
-  <div className="h-[400px]">
-    <SystemStatsChart />
-  </div>
-</div>
+              <div className="min-w-0"><SystemStatsChart /></div>
             </div>
           </div>
         </div>
@@ -510,70 +456,12 @@ export default async function LandingPage() {
         </div>
       </section>
 
-      {/* ===== SOCIAL PROOF / TESTIMONIAL ===== */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Left - Quote */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 text-xs font-semibold mb-6 uppercase tracking-wider">
-                <Star size={14} className="fill-current" />
-                Testimonial
-              </div>
-              <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 leading-snug tracking-tight mb-6">
-                &ldquo;NAFS Portal helped me go from struggling to{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
-                  scoring in the top 5%
-                </span>{" "}
-                of my class.&rdquo;
-              </blockquote>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg">
-                  A
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-900">Ahmed Al-Rashid</div>
-                  <div className="text-sm text-slate-500">Grade 9 Student, Riyadh</div>
-                </div>
-              </div>
-              <div className="flex gap-1 mt-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} className="text-amber-400 fill-amber-400" />
-                ))}
-              </div>
-            </div>
-
-            {/* Right - Stats Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-4xl font-extrabold text-slate-900 mb-1">98%</div>
-                <div className="text-sm text-slate-500">Pass rate improvement</div>
-                <div className="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
-                  <div className="h-full w-[98%] bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full" />
-                </div>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-4xl font-extrabold text-slate-900 mb-1">3x</div>
-                <div className="text-sm text-slate-500">Faster learning</div>
-                <div className="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
-                  <div className="h-full w-[75%] bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full" />
-                </div>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-4xl font-extrabold text-slate-900 mb-1">12K+</div>
-                <div className="text-sm text-slate-500">Active learners</div>
-                <div className="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
-                  <div className="h-full w-[85%] bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full" />
-                </div>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
-                <div className="text-4xl font-extrabold text-slate-900 mb-1">50K+</div>
-                <div className="text-sm text-slate-500">Quizzes taken</div>
-                <div className="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
-                  <div className="h-full w-[92%] bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
-                </div>
-              </div>
-            </div>
+      {/* ===== LEARNING APPROACH ===== */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:gap-16 lg:px-8">
+          <div><p className="text-xs font-bold uppercase tracking-[.16em] text-indigo-600">A clearer way to prepare</p><h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">Study with purpose, one skill at a time.</h2><p className="mt-4 max-w-lg leading-7 text-slate-600">Keep preparation focused on the skills students need to build. Review feedback, revisit challenging areas, and follow progress across each subject.</p></div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {[{ icon: <Target size={20} />, title: "Focused practice", detail: "Work through curriculum indicators with targeted questions." }, { icon: <CheckCircle2 size={20} />, title: "Useful feedback", detail: "Review answers and explanations after each assessment." }, { icon: <BarChart3 size={20} />, title: "Visible progress", detail: "Follow quiz results and skill development over time." }].map((item) => <article key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 sm:p-4"><span className="inline-flex rounded-xl bg-indigo-50 p-2.5 text-indigo-600">{item.icon}</span><h3 className="mt-4 text-sm font-bold text-slate-900">{item.title}</h3><p className="mt-2 text-xs leading-5 text-slate-600">{item.detail}</p></article>)}
           </div>
         </div>
       </section>
@@ -590,14 +478,14 @@ export default async function LandingPage() {
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white/80 text-sm font-medium mb-6 backdrop-blur-sm border border-white/10">
                 <Sparkles size={16} />
-                Join 12,400+ students today
+                Built for steady progress
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 tracking-tight">
                 Ready to Excel in NAFS?
               </h2>
               <p className="text-indigo-100 text-base sm:text-lg max-w-lg mx-auto mb-8 sm:mb-10">
-                Join thousands of students and educators already improving their performance with AI-powered tools.
+                Create a focused preparation routine with curriculum-mapped practice and clear progress tracking.
               </p>
 
               <Link
@@ -610,7 +498,7 @@ export default async function LandingPage() {
 
               {!session && (
                 <p className="mt-4 text-indigo-200 text-xs sm:text-sm">
-                  No credit card required · Free forever plan available
+                  Built for students and educators in Saudi Arabia
                 </p>
               )}
             </div>

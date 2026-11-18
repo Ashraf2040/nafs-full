@@ -48,7 +48,7 @@ export default function DocsPage() {
             <h1 className="text-3xl font-extrabold text-slate-900 mb-6">NAFS Preparation Portal — Documentation</h1>
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-4">
               <p className="text-slate-600 leading-relaxed">
-                The <strong>NAFS Preparation Portal</strong> is an AI-powered web platform designed to help students prepare for the <strong>NAFS (National Assessment Framework)</strong> standardized assessment in the UAE. It enables teachers to generate quizzes from text or PDF content, track student progress, and provides detailed analytics for students, teachers, and administrators.
+                The <strong>NAFS Preparation Portal</strong> is an AI-assisted preparation platform for students and educators in Saudi Arabia. It supports curriculum-mapped practice, quizzes, progress tracking, and learning analytics for students, teachers, and administrators.
               </p>
               <ul className="space-y-2 text-slate-600">
                 <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2.5 flex-shrink-0" /> <span><strong>Students</strong> — Take quizzes, track progress, earn certificates, and review performance across subjects.</span></li>
@@ -74,7 +74,7 @@ export default function DocsPage() {
                     ["Styling", "TailwindCSS v4"],
                     ["Database", "PostgreSQL via Supabase (Tokyo region)"],
                     ["ORM", "Prisma 7.8 with @prisma/adapter-pg"],
-                    ["Authentication", "NextAuth v4 (JWT, credentials + Google OAuth)"],
+                    ["Authentication", "NextAuth v4 (JWT, username and password)"],
                     ["AI", "Google Gemini 2.0 Flash, Anthropic via AgentRouter"],
                     ["Charts", "Recharts 3.8.1"],
                     ["Math Rendering", "KaTeX + react-katex"],
@@ -100,8 +100,7 @@ export default function DocsPage() {
               <div>
                 <h3 className="font-bold text-slate-800 mb-2">Login Methods</h3>
                 <ul className="space-y-2 text-slate-600">
-                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0" /> <span><strong>Email & Password</strong> — Credentials provider with bcrypt password hashing. Public registration creates student accounts only; staff roles are admin-managed.</span></li>
-                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0" /> <span><strong>Google OAuth</strong> — Social login via Google (requires GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in .env).</span></li>
+                  <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0" /> <span><strong>Username & Password</strong> — Credentials provider with bcrypt password hashing. Public registration creates student accounts only; staff roles are admin-managed.</span></li>
                 </ul>
               </div>
               <div>
@@ -146,12 +145,12 @@ export default function DocsPage() {
                 <h3 className="font-bold text-slate-800 mb-3">Models</h3>
                 <div className="space-y-3">
                   {[
-                    { name: "User", fields: "id, name, email (unique), password, image, role (ENUM: ADMIN/TEACHER/STUDENT), gradeId, classId", desc: "All users — students, teachers, and admins. Linked to Grade and Class." },
+                    { name: "User", fields: "id, name, username (unique), email (unique/contact), password, image, role (ENUM: ADMIN/TEACHER/STUDENT), gradeId, classId", desc: "All users — students, teachers, and admins. Linked to Grade and Class." },
                     { name: "Grade", fields: "id, level (unique Int), name", desc: "Grade levels (typically 3-9)." },
                     { name: "Class", fields: "id, name, gradeId", desc: "Class groups within a grade. Unique constraint on name+gradeId." },
                     { name: "Subject", fields: "id, name (unique), description, colorCode", desc: "Academic subjects — Science, Math, English (static)." },
                     { name: "TeacherAssignment", fields: "id, teacherId, subjectId, gradeId", desc: "Maps which subjects + grades a teacher can access. Unique constraint on teacherId+subjectId+gradeId." },
-                    { name: "Quiz", fields: "id, title, description, isPublished, dueDate, gradeId, subjectId, creatorId, outcomeId", desc: "Assessments created by teachers/admins." },
+                    { name: "Quiz", fields: "id, title, description, isPublished, isShared, dueDate, gradeId, subjectId, creatorId, outcomeId", desc: "Assessments created by teachers/admins. Admin-imported shared assessments are visible only to teachers assigned to their subject and grade." },
                     { name: "Question", fields: "id, quizId, questionText, questionType, options (JSON), correctAnswer, explanation, imageUrl, bloomLevel, difficulty, learningOutcomeId", desc: "Individual quiz questions." },
                     { name: "Result", fields: "id, score (percentage), totalPoints, totalItems, attemptsCount, studentId, quizId", desc: "Server-graded best result and attempt count." },
                     { name: "StudentAnswer", fields: "id, resultId, questionId, studentAnswer, isCorrect", desc: "Individual question answers within a submission." },
@@ -194,8 +193,8 @@ Quiz                 ──→ Result    ──→ StudentAnswer ──→ Quest
                 <tbody className="divide-y divide-slate-50 text-sm">
                   {[
                     ["/", "Public", "Landing page — hero, subject cards, how-it-works, CTA"],
-                    ["/login", "Public", "Sign in with email/password or Google"],
-                    ["/register", "Public", "Create a student account with name, email, password, and grade"],
+                    ["/login", "Public", "Sign in with username and password"],
+                    ["/register", "Public", "Create a student account with name, username, optional email, password, and grade"],
                     ["/dashboard", "All", "Role-based dashboard with stats, charts, recent activity. Uses streaming Suspense."],
                     ["/dashboard/quizzes", "All", "Quiz library with filters (subject, grade, outcome). Students see only published quizzes."],
                     ["/dashboard/quizzes/solve/[id]", "All", "Quiz-taking interface for students; preview for teachers/admins."],

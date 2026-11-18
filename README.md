@@ -1,6 +1,6 @@
 # NAFS Preparation Portal
 
-AI-powered web platform for students to prepare for the **NAFS (National Assessment Framework)** standardized assessment in the UAE. Generates quizzes from text/PDF, tracks progress, provides analytics for students, teachers, and admins.
+AI-assisted web platform for students and educators in Saudi Arabia to prepare for NAFS assessments. It supports curriculum-mapped quizzes, progress tracking, and analytics for students, teachers, and administrators.
 
 ---
 
@@ -13,7 +13,7 @@ AI-powered web platform for students to prepare for the **NAFS (National Assessm
 | Styling | TailwindCSS v4 |
 | Database | PostgreSQL (via Supabase) |
 | ORM | Prisma 7.8 with `@prisma/adapter-pg` (pg driver) |
-| Auth | NextAuth v4 (JWT strategy, credentials + Google OAuth) |
+| Auth | NextAuth v4 (JWT credentials, username + password) |
 | AI | Google Gemini 2.0 Flash, Anthropic (via AgentRouter) |
 | Charts | Recharts 3.8.1 |
 | PDF | React-PDF (certificates), jsPDF |
@@ -31,7 +31,6 @@ AI-powered web platform for students to prepare for the **NAFS (National Assessm
 - Node.js 20+
 - PostgreSQL database (Supabase recommended)
 - Google Gemini API key (for AI quiz generation)
-- Google OAuth credentials (optional, for social login)
 
 ### Environment Variables
 
@@ -44,10 +43,6 @@ DATABASE_URL="postgresql://user:password@host:5432/db?schema=public"
 # NextAuth
 NEXTAUTH_URL="http://localhost:3000"
 NEXTAUTH_SECRET="your-random-secret"
-
-# Google OAuth (optional)
-GOOGLE_CLIENT_ID="your-google-client-id"
-GOOGLE_CLIENT_SECRET="your-google-client-secret"
 
 # AI - Gemini (for quiz generation)
 GEMINI_API_KEY="your-gemini-api-key"
@@ -181,7 +176,7 @@ nafs-prep/
 
 | Model | Key Fields | Relations | Purpose |
 |-------|-----------|-----------|---------|
-| **User** | `id`, `name`, `email` (unique), `password`, `image`, `role`, `gradeId`, `classId`, `createdAt` | → Grade, → Class, → Quiz (creator), → Result, → TeacherAssignment | All users (students, teachers, admins) |
+| **User** | `id`, `name`, `username` (unique), `email` (unique/contact), `password`, `image`, `role`, `gradeId`, `classId`, `createdAt` | → Grade, → Class, → Quiz (creator), → Result, → TeacherAssignment | All users (students, teachers, admins) |
 | **Grade** | `id`, `level` (unique, Int), `name`, `createdAt` | → Quiz[], → TeacherAssignment[], → User[], → Class[] | Grade levels (3-9) |
 | **Class** | `id`, `name`, `gradeId`, `createdAt` | → Grade, → User[] | Class groups within a grade |
 | **Subject** | `id`, `name` (unique), `description`, `colorCode`, `createdAt` | → Quiz[], → TeacherAssignment[], → LearningOutcome[] | Academic subjects (Science, Math, English) |
@@ -225,14 +220,14 @@ LearningOutcome ──→ Subject (optional reference)
 
 ### Auth Flow
 
-1. **Credentials**: User enters email + password → `authorize()` in `src/lib/auth.ts` looks up user via Prisma, compares password with bcrypt → returns user object with role, gradeId, classId
-2. **Google OAuth**: Uses GoogleProvider with client ID/secret from env vars
-3. **JWT Strategy**: Token stores `id`, `role`, `gradeId`, `classId`, `className`
-4. **Session**: JWT decoded on each request, role/grade info available in `session.user`
+1. **Credentials**: User enters username + password → `authorize()` in `src/lib/auth.ts` looks up username via Prisma, compares password with bcrypt → returns user object with role, gradeId, classId
+2. **JWT Strategy**: Token stores `id`, `role`, `gradeId`, `classId`, `className`
+3. **Session**: JWT decoded on each request, role/grade info available in `session.user`
 
 ### Auth Configuration (`src/lib/auth.ts`)
 
-- Two providers: Credentials (email/password) + Google OAuth
+- Credentials sign-in uses username and password. Email remains an optional contact address for newly created student and teacher accounts.
+- New usernames are 3–30 characters and may contain letters, numbers, dots, underscores, and hyphens. Existing accounts receive a username derived from their email address during the username migration; each account can see its username in Account Settings.
 - JWT strategy with 30-day max age
 - Callbacks populate JWT and session with role + grade/class info
 - Custom sign-in page: `/login`
@@ -282,8 +277,8 @@ For each matched route, the middleware:
 | URL | File | Description |
 |-----|------|-------------|
 | `/` | `src/app/page.tsx` | Landing page — hero, stats bar, subject cards (Science/Math/English), how-it-works, features, testimonials, footer CTA. Role-aware CTAs based on session. |
-| `/login` | `src/app/login/page.tsx` | Login form with email/password + Google OAuth button |
-| `/register` | `src/app/register/page.tsx` | Student self-registration (name, email, password, grade). Staff accounts are admin-created. |
+| `/login` | `src/app/login/page.tsx` | Login form with username and password |
+| `/register` | `src/app/register/page.tsx` | Student self-registration (name, username, optional email, password, grade). Staff accounts are admin-created. |
 | `/unauthorized` | `src/app/unauthorized/page.tsx` | Access denied page with 403 illustration |
 
 ### Dashboard Pages (all under `/dashboard`)
@@ -497,6 +492,7 @@ Uses Anthropic/AgentRouter to generate remediation plans for quizzes with low av
 `revalidate` and ISR only work in production (`next build && next start`). In dev mode (Turbopack), every request is dynamic.
 
 ```bash
+npm run db:deploy # Apply pending database migrations before releasing
 npm run build   # Builds + generates Prisma client
 npm start       # Starts production server with ISR
 ```
@@ -505,7 +501,7 @@ npm start       # Starts production server with ISR
 
 - Hosted on Supabase (Tokyo region, `aws-1-ap-northeast-1.pooler.supabase.com`)
 - Each query has ~200-400ms network overhead
-- Pool max 3 connections with 10s timeout, 15s idle timeout
+- Pool max 3 connections with a 30s connection timeout and 30s idle timeout (overridable with `DB_POOL_MAX`, `DB_CONNECTION_TIMEOUT_MS`, and `DB_IDLE_TIMEOUT_MS`)
 - Prisma client is cached as global singleton (prevents multiple pool creation in serverless)
 
 ---

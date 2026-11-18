@@ -5,7 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
-  Mail,
+  User,
   Lock,
   LogIn,
   AlertCircle,
@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export default function LoginClient() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -23,8 +23,17 @@ export default function LoginClient() {
 
   const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
   const registered = searchParams.get("registered");
+  const authError = searchParams.get("error");
 
   const { data: session, status } = useSession();
+
+  useEffect(() => {
+    if (!authError) return;
+    const normalized = authError.toLowerCase();
+    setError(/timeout|connection|database|terminated/.test(normalized)
+      ? "We couldn't connect to the sign-in service. Please try again in a moment."
+      : "We couldn't sign you in. Please try again.");
+  }, [authError]);
 
   useEffect(() => {
     if (status === "authenticated" && session?.user) {
@@ -41,19 +50,28 @@ export default function LoginClient() {
     setLoading(true);
     setError("");
 
-    const result = await signIn("credentials", {
-      email: formData.email,
-      password: formData.password,
-      redirect: false,
-      callbackUrl,
-    });
+    try {
+      const result = await signIn("credentials", {
+        username: formData.username,
+        password: formData.password,
+        redirect: false,
+        callbackUrl,
+      });
 
-    if (result?.error) {
-      setError("Invalid email or password");
+      if (result?.error) {
+        setError(/timeout|connection|database|terminated/i.test(result.error)
+          ? "We couldn't connect to the sign-in service. Please try again in a moment."
+          : "Invalid username or password");
+      } else if (result?.ok) {
+        router.push(callbackUrl);
+        router.refresh();
+      } else {
+        setError("We couldn't sign you in. Please try again.");
+      }
+    } catch {
+      setError("We couldn't connect to the sign-in service. Please try again in a moment.");
+    } finally {
       setLoading(false);
-    } else if (result?.ok) {
-      router.push(callbackUrl);
-      router.refresh();
     }
   };
 
@@ -87,17 +105,19 @@ export default function LoginClient() {
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-2">
-              Email Address
+              Username
             </label>
             <div className="relative">
-              <Mail className="absolute left-4 top-3.5 text-slate-400" size={18} />
+              <User className="absolute left-4 top-3.5 text-slate-400" size={18} />
               <input
-                type="email"
+                type="text"
                 required
-                value={formData.email}
+                autoComplete="username"
+                value={formData.username}
                 onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
+                  setFormData({ ...formData, username: e.target.value })
                 }
+                placeholder="Enter your username"
                 className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl"
               />
             </div>

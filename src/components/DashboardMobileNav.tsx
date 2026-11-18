@@ -3,62 +3,90 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  Activity, Award, BarChart3, BookOpen, CheckCircle2, ClipboardList,
+  FileText, Gamepad2, GraduationCap, LayoutDashboard, LibraryBig,
+  Menu, Settings, Shield, Target, Trophy, UserCog, Users, X,
+} from "lucide-react";
 
 const items = [
-  { label: "Overview", href: "/dashboard", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Teachers", href: "/dashboard/teachers", roles: ["ADMIN"] },
-  { label: "Diagnostic", href: "/dashboard/diagnostic", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Practices", href: "/dashboard/practices", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Quizzes", href: "/dashboard/quizzes", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Simulations", href: "/dashboard/simulations", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Study Guides", href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Completed", href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
-  { label: "Learning Path", href: "/dashboard/learning-path", roles: ["STUDENT"] },
-  { label: "Analysis", href: "/dashboard/diagnostic/analysis", roles: ["STUDENT"] },
-  { label: "Achievements", href: "/dashboard/achievements", roles: ["STUDENT"] },
-  { label: "Subjects", href: "/dashboard/subjects", roles: ["ADMIN", "TEACHER"] },
-  { label: "Challenges", href: "/dashboard/challenges", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Students", href: "/dashboard/students", roles: ["ADMIN", "TEACHER"] },
-  { label: "Reports", href: "/dashboard/student-reports", roles: ["ADMIN", "TEACHER"] },
-  { label: "Statistics", href: "/dashboard/statistics", roles: ["ADMIN", "TEACHER"] },
-  { label: "Certificates", href: "/dashboard/certificates", roles: ["ADMIN", "TEACHER", "STUDENT"] },
-  { label: "Settings", href: "/dashboard/settings", roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Overview", href: "/dashboard", icon: LayoutDashboard, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Manage Teachers", href: "/dashboard/teachers", icon: UserCog, roles: ["ADMIN"] },
+  { label: "Diagnostic", href: "/dashboard/diagnostic", icon: Target, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Practices", href: "/dashboard/practices", icon: FileText, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Quizzes", href: "/dashboard/quizzes", icon: CheckCircle2, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Simulations", href: "/dashboard/simulations", icon: ClipboardList, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Study Guides", href: "/dashboard/study-guides", icon: LibraryBig, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Completed Quizzes", href: "/dashboard/quizzes/completed", icon: CheckCircle2, roles: ["STUDENT"] },
+  { label: "Achievements", href: "/dashboard/achievements", icon: Trophy, roles: ["STUDENT"] },
+  { label: "Subjects", href: "/dashboard/subjects", icon: BookOpen, roles: ["ADMIN", "TEACHER"] },
+  { label: "Challenges", href: "/dashboard/challenges", icon: Gamepad2, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Students", href: "/dashboard/students", icon: Users, roles: ["ADMIN", "TEACHER"] },
+  { label: "Student Reports", href: "/dashboard/student-reports", icon: Activity, roles: ["ADMIN", "TEACHER"] },
+  { label: "Statistics", href: "/dashboard/statistics", icon: BarChart3, roles: ["ADMIN", "TEACHER"] },
+  { label: "Certificates", href: "/dashboard/certificates", icon: Award, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Settings", href: "/dashboard/settings", icon: Settings, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Documentation", href: "/docs", icon: Shield, roles: ["ADMIN", "TEACHER", "STUDENT"] },
+  { label: "Science Prep", href: "/preparation/science", icon: BookOpen, roles: ["STUDENT"] },
+  { label: "English Prep", href: "/preparation/english", icon: BookOpen, roles: ["STUDENT"] },
+  { label: "Math Prep", href: "/preparation/math", icon: GraduationCap, roles: ["STUDENT"] },
 ];
+
+const primaryLabels = ["Overview", "Practices", "Quizzes", "Study Guides"];
 
 export default function DashboardMobileNav() {
   const pathname = usePathname();
-  const activeLinkRef = useRef<HTMLAnchorElement>(null);
   const { data: session } = useSession();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const role = (session?.user as any)?.role as string | undefined;
   const visibleItems = items.filter((item) => role && item.roles.includes(role));
-  const activeHref = visibleItems
+  const activeItem = visibleItems
     .filter((item) => pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(`${item.href}/`)))
-    .sort((a, b) => b.href.length - a.href.length)[0]?.href;
+    .sort((a, b) => b.href.length - a.href.length)[0];
+  const primaryItems = visibleItems.filter((item) => primaryLabels.includes(item.label));
+  const moreItems = visibleItems.filter((item) => !primaryLabels.includes(item.label));
+  const moreIsActive = moreItems.some((item) => activeItem?.href === item.href);
 
   useEffect(() => {
-    activeLinkRef.current?.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
-  }, [activeHref]);
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
+    window.addEventListener("keydown", onKeyDown);
+    menuRef.current?.focus();
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
   return (
-    <nav aria-label="Dashboard navigation" className="print:hidden sticky top-0 z-40 border-b border-slate-200 bg-white/95 px-2 py-2 backdrop-blur lg:hidden sm:px-3">
-      <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto overscroll-x-contain pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {visibleItems.map((item) => (
-          <Link
-            key={`${item.label}-${item.href}`}
-            href={item.href}
-            ref={activeHref === item.href ? activeLinkRef : undefined}
-            aria-current={activeHref === item.href ? "page" : undefined}
-            className={`shrink-0 snap-start rounded-full px-3.5 py-2.5 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 sm:px-4 sm:text-sm ${
-              activeHref === item.href
-                ? "bg-indigo-600 text-white shadow-sm"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
-    </nav>
+    <>
+      <nav aria-label="Dashboard navigation" className="dashboard-mobile-nav print:hidden lg:hidden">
+        {primaryItems.map(({ label, href, icon: Icon }) => {
+          const isActive = activeItem?.href === href;
+          return <Link key={href} href={href} aria-current={isActive ? "page" : undefined} className={`dashboard-mobile-link ${isActive ? "is-active" : ""}`}>
+            <Icon size={19} strokeWidth={isActive ? 2.4 : 1.9} /><span>{label === "Study Guides" ? "Guides" : label}</span>
+          </Link>;
+        })}
+        <button type="button" aria-expanded={menuOpen} aria-controls="dashboard-mobile-menu" onClick={() => setMenuOpen((open) => !open)} className={`dashboard-mobile-link ${menuOpen || moreIsActive ? "is-active" : ""}`}>
+          {menuOpen ? <X size={19} /> : <Menu size={19} />}<span>More</span>
+        </button>
+      </nav>
+
+      {menuOpen && <div className="dashboard-mobile-backdrop print:hidden" onClick={() => setMenuOpen(false)}>
+        <div ref={menuRef} id="dashboard-mobile-menu" role="dialog" aria-modal="true" aria-label="More dashboard sections" tabIndex={-1} className="dashboard-mobile-sheet" onClick={(event) => event.stopPropagation()}>
+          <div className="mb-4 flex items-center justify-between">
+            <div><p className="text-xs font-bold uppercase tracking-[.16em] text-indigo-600">Workspace</p><h2 className="mt-1 text-lg font-bold text-slate-900">More sections</h2></div>
+            <button type="button" aria-label="Close menu" onClick={() => setMenuOpen(false)} className="rounded-xl border border-slate-200 p-2 text-slate-500 hover:bg-slate-50"><X size={19} /></button>
+          </div>
+          <nav className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {moreItems.map(({ label, href, icon: Icon }) => {
+              const isActive = activeItem?.href === href;
+              return <Link key={href} href={href} onClick={() => setMenuOpen(false)} aria-current={isActive ? "page" : undefined} className={`dashboard-mobile-sheet-link ${isActive ? "is-active" : ""}`}>
+                <span className="dashboard-mobile-sheet-icon"><Icon size={18} /></span><span className="min-w-0 truncate">{label}</span>
+              </Link>;
+            })}
+          </nav>
+        </div>
+      </div>}
+    </>
   );
 }

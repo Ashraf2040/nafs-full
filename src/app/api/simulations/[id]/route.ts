@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { requireRole } from "@/lib/guard";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { user, response } = await requireRole("ADMIN", "TEACHER", "STUDENT");
@@ -21,9 +22,16 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   });
   if (!simulation || (user!.role === "STUDENT" && (!simulation.isPublished || simulation.gradeId !== user!.gradeId))) return NextResponse.json({ message: "Simulation not available" }, { status: 404 });
   if (user!.role === "TEACHER") {
+    if (simulation.creatorId !== user!.id) return NextResponse.json({ message: "Simulation not available" }, { status: 404 });
     const assignments = await prisma.teacherAssignment.findMany({ where: { teacherId: user!.id, gradeId: simulation.gradeId }, select: { subjectId: true } });
     const allowed = new Set(assignments.map(a => a.subjectId));
     if (simulation.subjects.some(subject => !allowed.has(subject.subjectId))) return NextResponse.json({ message: "You are not assigned to every subject in this simulation" }, { status: 403 });
+    const teacherScope = await getTeacherScope(user!.id);
+    const sourceQuizIds = simulation.subjects.flatMap((section) => section.quizId ? [section.quizId] : []);
+    if (sourceQuizIds.length) {
+      const allowedSources = await prisma.quiz.count({ where: { id: { in: sourceQuizIds }, AND: [teacherScope.quizWhere] } });
+      if (allowedSources !== sourceQuizIds.length) return NextResponse.json({ message: "A source quiz is outside your assigned scope" }, { status: 403 });
+    }
   }
   const attempt = user!.role === "STUDENT" ? await prisma.simulationAttempt.findUnique({ where: { simulationId_studentId: { simulationId: id, studentId: user!.id } } }) : null;
   const safeSimulation = { ...simulation, subjects: simulation.subjects.map(section => ({ ...section, questions: section.quiz?.questions ?? section.questions })) };

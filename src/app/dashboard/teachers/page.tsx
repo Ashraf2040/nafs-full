@@ -6,6 +6,7 @@ import Link from "next/link";
 import { UserCog, Mail, BarChart3 } from "lucide-react";
 import TeacherCreateModal from "./TeacherCreateModal";
 import TeacherEditButton from "@/components/TeacherEditButton";
+import TeacherDeleteButton from "@/components/TeacherDeleteButton";
 
 export const revalidate = 600;
 
@@ -49,9 +50,9 @@ export default async function TeachersManagementPage() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">
-      <header className="flex justify-between items-center">
+      <header className="flex flex-col justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:p-7">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
+          <h1 className="flex items-center gap-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
             <UserCog className="text-indigo-600" size={32} /> Teacher Management
           </h1>
           <p className="text-slate-500 mt-1">
@@ -94,17 +95,16 @@ export default async function TeachersManagementPage() {
                       {teacher.name || "Unnamed Teacher"}
                     </h3>
                     <p className="text-xs text-slate-500 flex items-center gap-1">
-                      <Mail size={12} /> {teacher.email}
+                      <Mail size={12} /> {teacher.email.endsWith(".invalid") ? "No email provided" : teacher.email}
                     </p>
+                    <p className="mt-1 text-xs font-semibold text-indigo-600">Username: {teacher.username}</p>
                   </div>
                 </div>
 
-                {/* ─── EDIT ASSIGNMENTS BUTTON ─── */}
-                <TeacherEditButton
-                  teacher={teacher}
-                  subjects={subjects}
-                  grades={grades}
-                />
+                <div className="flex shrink-0 items-center gap-2">
+                  <TeacherEditButton teacher={teacher} subjects={subjects} grades={grades} />
+                  <TeacherDeleteButton teacherId={teacher.id} teacherName={teacher.name || "this teacher"} />
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-2 mb-4">

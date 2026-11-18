@@ -21,11 +21,11 @@ function ChartContainer({ children, height = 300 }: { children: React.ReactNode;
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) {
-    return <div style={{ width: '100%', height }} className="animate-pulse bg-slate-100 rounded-xl" />;
+    return <div style={{ width: '100%', height: `clamp(240px, 34vw, ${height}px)` }} className="min-w-0 animate-pulse rounded-xl bg-slate-100" />;
   }
   return (
-    <div style={{ position: 'relative', width: '100%', height }}>
-      <ResponsiveContainer width="100%" height={height}>
+    <div className="min-w-0" style={{ position: 'relative', width: '100%', height: `clamp(240px, 34vw, ${height}px)` }}>
+      <ResponsiveContainer width="100%" height="100%" debounce={80}>
         {children as any}
       </ResponsiveContainer>
     </div>

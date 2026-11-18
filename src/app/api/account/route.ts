@@ -18,14 +18,14 @@ export async function PUT(req: Request) {
 
     const account = await prisma.user.findUnique({
       where: { id: user!.id },
-      select: { id: true, password: true },
+      select: { id: true, username: true, password: true },
     });
     if (!account) return NextResponse.json({ error: "Account not found" }, { status: 404 });
 
     let passwordHash: string | undefined;
     if (newPassword) {
       if (!account.password) {
-        return NextResponse.json({ error: "Password changes are unavailable for your external sign-in account" }, { status: 400 });
+        return NextResponse.json({ error: "This account does not have a password yet. Ask an administrator to set one." }, { status: 400 });
       }
       if (!currentPassword || !(await bcrypt.compare(currentPassword, account.password))) {
         return NextResponse.json({ error: "Current password is incorrect" }, { status: 400 });
@@ -39,7 +39,7 @@ export async function PUT(req: Request) {
     const updated = await prisma.user.update({
       where: { id: user!.id },
       data: { name, ...(passwordHash ? { password: passwordHash } : {}) },
-      select: { id: true, name: true, email: true, role: true },
+      select: { id: true, name: true, username: true, email: true, role: true },
     });
     return NextResponse.json({ user: updated, passwordChanged: Boolean(passwordHash) });
   } catch (error) {

@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const dynamic = "force-dynamic";
 
@@ -15,17 +16,13 @@ export async function GET(
     if (response) return response;
 
     const resolvedParams = await params;
-    const assignments = user!.role === "TEACHER"
-      ? await prisma.teacherAssignment.findMany({
-          where: { teacherId: user!.id },
-          select: { subjectId: true, gradeId: true },
-        })
-      : [];
+    const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
     const student = await prisma.user.findUnique({
       where: { id: resolvedParams.id },
       select: {
         id: true,
         name: true,
+        username: true,
         email: true,
         role: true,
         gradeId: true,
@@ -33,9 +30,7 @@ export async function GET(
         grade: true,
         class: true,
         submissions: {
-          where: user!.role === "TEACHER"
-            ? { quiz: { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) } }
-            : {},
+          where: teacherScope ? { quiz: teacherScope.quizWhere } : {},
           include: { quiz: { include: { subject: true } } },
           orderBy: { completedAt: "desc" }
         }

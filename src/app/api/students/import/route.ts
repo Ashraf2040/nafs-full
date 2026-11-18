@@ -8,6 +8,7 @@ const MAX_IMPORT_ROWS = 1_000;
 
 type ImportStudent = {
   name: string;
+  username: string;
   email: string;
   gradeLevel: number;
   className: string;
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
     const normalized = rows.map((row: any, index: number) => ({
       rowNumber: index + 2,
       name: String(row.name ?? row.Name ?? "").trim(),
+      username: String(row.username ?? row.Username ?? row.login ?? "").trim().toLowerCase(),
       email: String(row.email ?? row.Email ?? "").trim().toLowerCase(),
       gradeLevel: Number(row.gradeLevel ?? row.Grade),
       className: String(row.className ?? row.Class ?? "").trim(),
@@ -38,15 +40,22 @@ export async function POST(req: Request) {
     }));
     const invalid = normalized.find((student) =>
       !student.name ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(student.email) ||
+      !/^[a-z0-9][a-z0-9._-]{2,29}$/.test(student.username) ||
+      (student.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(student.email)) ||
       !Number.isInteger(student.gradeLevel) ||
       student.password.length < 6,
     );
     if (invalid) {
       return NextResponse.json(
-        { error: `Row ${invalid.rowNumber} needs a valid name, email, grade, and password of at least 6 characters.` },
+        { error: `Row ${invalid.rowNumber} needs a name, a 3–30 character username, grade, and password of at least 6 characters. Email is optional.` },
         { status: 400 },
       );
+    }
+    if (new Set(normalized.map((student) => student.username)).size !== normalized.length) {
+      return NextResponse.json({ error: "The import contains duplicate usernames" }, { status: 400 });
+    }
+    for (const student of normalized) {
+      if (!student.email) student.email = `${student.username}@students.nafs.invalid`;
     }
     if (new Set(normalized.map((student) => student.email)).size !== normalized.length) {
       return NextResponse.json({ error: "The import contains duplicate email addresses" }, { status: 400 });
@@ -79,16 +88,18 @@ export async function POST(req: Request) {
     }
 
     const existingUsers = await prisma.user.findMany({
-      where: { email: { in: normalized.map((student) => student.email) } },
-      select: { email: true, role: true },
+      where: { OR: [{ username: { in: normalized.map((student) => student.username) } }, { email: { in: normalized.map((student) => student.email) } }] },
+      select: { username: true, email: true, role: true },
     });
     const protectedAccount = existingUsers.find((account) => account.role !== "STUDENT");
     if (protectedAccount) {
       return NextResponse.json(
-        { error: `${protectedAccount.email} belongs to a protected non-student account` },
+        { error: `${protectedAccount.username} belongs to a protected non-student account` },
         { status: 409 },
       );
     }
+    const emailCollision = existingUsers.find((account) => normalized.some((student) => student.email === account.email && student.username !== account.username));
+    if (emailCollision) return NextResponse.json({ error: `Email ${emailCollision.email} is already attached to another username.` }, { status: 409 });
 
     const prepared: ImportStudent[] = await Promise.all(
       normalized.map(async (student) => ({
@@ -111,15 +122,18 @@ export async function POST(req: Request) {
           classId = classRow.id;
         }
         await tx.user.upsert({
-          where: { email: student.email },
+          where: { username: student.username },
           update: {
             name: student.name,
+            username: student.username,
             password: student.passwordHash,
+            email: student.email,
             gradeId,
             classId,
           },
           create: {
             name: student.name,
+            username: student.username,
             email: student.email,
             password: student.passwordHash,
             role: "STUDENT",

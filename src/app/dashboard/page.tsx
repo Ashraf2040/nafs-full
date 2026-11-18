@@ -8,11 +8,12 @@ import {
   Users, FileText, TrendingUp, AlertCircle, CheckCircle2,
   BarChart3, Calendar, ChevronRight, PlayCircle, Plus,
   Clock, Award, BookOpen, Sparkles, ArrowUpRight, Zap,
-  Target, TrendingDown, Activity, Route, Trophy
+  Target, TrendingDown, Activity, Trophy
 } from "lucide-react";
 import { Suspense } from "react";
 import DashboardCharts from "@/components/DashboardCharts";
 import type { Prisma } from "@prisma/client";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const revalidate = 600;
 
@@ -173,7 +174,7 @@ async function StaffChartSection({ quizWhere, studentWhere }: {
     subject.score += result.score;
     subjects.set(name, subject);
 
-    const month = new Date(result.completedAt.getFullYear(), result.completedAt.getMonth(), 1);
+    const month = new Date(Date.UTC(result.completedAt.getFullYear(), result.completedAt.getMonth(), 1));
     const key = month.toISOString();
     const bucket = months.get(key) ?? { month, count: 0 };
     bucket.count += 1;
@@ -193,7 +194,12 @@ async function StaffChartSection({ quizWhere, studentWhere }: {
     .filter((group) => group.gradeId)
     .map((group) => ({ gradeLevel: gradeLevelMap.get(group.gradeId!) ?? 0, count: group._count.id }))
     .sort((a, b) => a.gradeLevel - b.gradeLevel);
-  const monthlySubmissions = [...months.values()].sort((a, b) => a.month.getTime() - b.month.getTime());
+  const today = new Date();
+  const monthlySubmissions = Array.from({ length: 6 }, (_, index) => {
+    const month = new Date(Date.UTC(today.getFullYear(), today.getMonth() - 5 + index, 1));
+    const key = month.toISOString();
+    return months.get(key) ?? { month, count: 0 };
+  });
   
   return (
     <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-4 sm:p-6 lg:p-8 relative overflow-hidden">
@@ -581,12 +587,8 @@ async function StudentDashboardContent({ userId, userName }: { userId: string; u
         <div className="space-y-6">
           {/* Quick Links */}
           <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6">
-            <h3 className="text-lg font-bold text-slate-900 mb-5">Learning Tools</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-5">Your next steps</h3>
             <div className="space-y-2.5">
-              <Link href="/dashboard/learning-path" className="flex items-center gap-3 p-3.5 bg-indigo-50/80 rounded-xl text-indigo-700 font-semibold hover:bg-indigo-100 transition-colors border border-indigo-100/50 group">
-                <Route size={18} /> Learning Path
-                <ArrowUpRight size={14} className="ml-auto opacity-50 group-hover:opacity-100 transition-opacity" />
-              </Link>
               <Link href="/dashboard/diagnostic" className="flex items-center gap-3 p-3.5 bg-emerald-50/80 rounded-xl text-emerald-700 font-semibold hover:bg-emerald-100 transition-colors border border-emerald-100/50 group">
                 <BarChart3 size={18} /> Diagnostics & Reports
                 <ArrowUpRight size={14} className="ml-auto opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -668,17 +670,12 @@ export default async function DashboardPage() {
   const userName = (session.user as any)?.name || "User";
 
   if (userRole === "ADMIN" || userRole === "TEACHER") {
-    const assignments = userRole === "TEACHER"
-      ? await prisma.teacherAssignment.findMany({
-          where: { teacherId: userId },
-          select: { subjectId: true, gradeId: true },
-        })
-      : [];
-    const quizWhere: Prisma.QuizWhereInput = { assessmentType: "QUIZ", ...(userRole === "TEACHER"
-      ? assignments.length > 0
-        ? { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) }
-        : { id: "__no_teacher_assignments__" }
-      : {}) };
+    const teacherScope = userRole === "TEACHER" ? await getTeacherScope(userId) : null;
+    const assignments = teacherScope?.assignments ?? [];
+    const quizWhere: Prisma.QuizWhereInput = {
+      assessmentType: "QUIZ",
+      ...(teacherScope ? { AND: [teacherScope.quizWhere] } : {}),
+    };
     const teacherGradeIds = [...new Set(assignments.map((assignment) => assignment.gradeId))];
     const studentWhere: Prisma.UserWhereInput = {
       role: "STUDENT",

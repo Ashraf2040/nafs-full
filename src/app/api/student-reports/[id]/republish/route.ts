@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -28,8 +29,13 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
       }
     }
 
+    const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
     const existingResult = await prisma.result.findFirst({
-      where: { studentId, quizId },
+      where: {
+        studentId,
+        quizId,
+        ...(teacherScope ? { quiz: teacherScope.quizWhere } : {}),
+      },
       select: { id: true },
     });
 

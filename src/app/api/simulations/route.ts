@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { requireRole } from "@/lib/guard";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET() {
   try {
@@ -9,14 +10,15 @@ export async function GET() {
   const isStudent = user!.role === "STUDENT";
   let simulationWhere: any = isStudent ? { isPublished: true, gradeId: user!.gradeId ?? "" } : {};
   if (user!.role === "TEACHER") {
-    const assignments = await prisma.teacherAssignment.findMany({ where: { teacherId: user!.id }, select: { subjectId: true, gradeId: true } });
+    const teacherScope = await getTeacherScope(user!.id);
+    const assignments = teacherScope.assignments;
     const byGrade = new Map<string, Set<string>>();
     for (const assignment of assignments) {
       const subjects = byGrade.get(assignment.gradeId) ?? new Set<string>();
       subjects.add(assignment.subjectId);
       byGrade.set(assignment.gradeId, subjects);
     }
-    simulationWhere = byGrade.size ? { OR: [...byGrade].map(([gradeId, subjectIds]) => ({ gradeId, subjects: { every: { subjectId: { in: [...subjectIds] } } } })) } : { id: "none" };
+    simulationWhere = byGrade.size ? { creatorId: user!.id, OR: [...byGrade].map(([gradeId, subjectIds]) => ({ gradeId, subjects: { every: { subjectId: { in: [...subjectIds] } } } })) } : { id: "none" };
   }
   const simulations = await prisma.simulation.findMany({
     where: simulationWhere,
@@ -26,7 +28,8 @@ export async function GET() {
       attempts: isStudent ? { where: { studentId: user!.id }, select: { score: true, totalItems: true, completedAt: true } } : { include: { student: { select: { name: true, email: true, class: { select: { name: true } } } } } },
     }, orderBy: { createdAt: "desc" },
   });
-  const quizzes = isStudent ? [] : await prisma.quiz.findMany({ where: { assessmentType: "QUIZ", grade: user!.role === "TEACHER" ? { assignments: { some: { teacherId: user!.id } } } : undefined }, select: { id: true, title: true, grade: { select: { level: true } }, subject: { select: { id: true, name: true } }, _count: { select: { questions: true } } }, orderBy: { createdAt: "desc" } });
+  const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
+  const quizzes = isStudent ? [] : await prisma.quiz.findMany({ where: { assessmentType: "QUIZ", ...(teacherScope ? { AND: [teacherScope.quizWhere] } : {}) }, select: { id: true, title: true, grade: { select: { level: true } }, subject: { select: { id: true, name: true } }, _count: { select: { questions: true } } }, orderBy: { createdAt: "desc" } });
   const grades = isStudent ? [] : await prisma.grade.findMany({ where: user!.role === "TEACHER" ? { assignments: { some: { teacherId: user!.id } } } : undefined, select: { level: true }, orderBy: { level: "asc" } });
   const subjects = isStudent ? [] : await prisma.subject.findMany({ where: user!.role === "TEACHER" ? { assignments: { some: { teacherId: user!.id } } } : undefined, select: { id: true, name: true, ...(user!.role === "TEACHER" ? { assignments: { where: { teacherId: user!.id }, select: { grade: { select: { level: true } } } } } : {}) }, orderBy: { name: "asc" } });
   const formattedSimulations = simulations.map(simulation => ({ ...simulation, subjects: simulation.subjects.map(section => ({ ...section, questionCount: section.quiz?._count.questions ?? section.questions.length })) }));
@@ -50,7 +53,8 @@ export async function POST(req: Request) {
   } else if (!Array.isArray(quizIds) || quizIds.length < 2 || quizIds.length > 3 || new Set(quizIds).size !== quizIds.length) return NextResponse.json({ message: "Choose two or three quizzes" }, { status: 400 });
   const grade = await prisma.grade.findUnique({ where: { level: Number(gradeLevel) } });
   if (!grade) return NextResponse.json({ message: "Select a valid grade" }, { status: 400 });
-  const quizzes = isCustom ? [] : await prisma.quiz.findMany({ where: { id: { in: quizIds }, assessmentType: "QUIZ", gradeId: grade.id }, include: { subject: true } });
+  const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
+  const quizzes = isCustom ? [] : await prisma.quiz.findMany({ where: { id: { in: quizIds }, assessmentType: "QUIZ", gradeId: grade.id, ...(teacherScope ? { AND: [teacherScope.quizWhere] } : {}) }, include: { subject: true } });
   const subjectIds = isCustom ? selectedSubjectIds : quizzes.map(q => q.subjectId);
   if (!isCustom && (quizzes.length !== quizIds.length || new Set(subjectIds).size !== quizzes.length)) return NextResponse.json({ message: "Choose one graded quiz per subject for the selected grade" }, { status: 400 });
   if (isCustom) {

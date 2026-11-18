@@ -7,7 +7,7 @@ import { Activity, ArrowRight, BookOpenCheck, Brain, CheckCircle2, ChevronDown, 
 
 type QuizSummary = { id: string; title: string; subject: string; grade: number; isPublished: boolean; questionCount: number };
 
-export default function DiagnosticHub({ quizzes }: { quizzes: QuizSummary[] }) {
+export default function DiagnosticHub({ quizzes, teacherAssignments = null }: { quizzes: QuizSummary[]; teacherAssignments?: Array<{ grade: number; subject: string }> | null }) {
   const [openGrade, setOpenGrade] = useState<number | null>(null);
   const [showCreate, setShowCreate] = useState(false);
   const [createGrade, setCreateGrade] = useState("3");
@@ -19,8 +19,13 @@ export default function DiagnosticHub({ quizzes }: { quizzes: QuizSummary[] }) {
   const [message, setMessage] = useState("");
   const router = useRouter();
 
-  const subjectsFor = (grade: number) => grade === 3
+  const subjectsFor = (grade: number) => (grade === 3
     ? ["Math", "English"]
+    : ["Math", "English", "Science"]).filter((subject) => !teacherAssignments || teacherAssignments.some((assignment) => assignment.grade === grade && assignment.subject.toLowerCase() === subject.toLowerCase()));
+  const gradesForView = teacherAssignments ? [...new Set(teacherAssignments.map((assignment) => assignment.grade))].sort((a, b) => a - b) : [3, 6, 9];
+  const createGradeOptions = teacherAssignments ? gradesForView : [3, 6, 9];
+  const createSubjects = teacherAssignments
+    ? [...new Set(teacherAssignments.filter((assignment) => assignment.grade === Number(createGrade)).map((assignment) => assignment.subject))]
     : ["Math", "English", "Science"];
 
   const createDraft = async (subjectName: string) => {
@@ -121,22 +126,22 @@ export default function DiagnosticHub({ quizzes }: { quizzes: QuizSummary[] }) {
       {message && <p role="alert" className="rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-medium text-rose-700">{message}</p>}
 
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
-        <div><p className="text-sm font-extrabold text-slate-900">Build a new diagnostic</p><p className="mt-1 text-xs text-slate-500">Start a draft for any supported grade and subject.</p></div>
+        <div><p className="text-sm font-extrabold text-slate-900">Build a new diagnostic</p><p className="mt-1 text-xs text-slate-500">{teacherAssignments ? "Start a draft for an assigned grade and subject." : "Start a draft for any supported grade and subject."}</p></div>
         <button onClick={() => setShowCreate(!showCreate)} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700">{showCreate ? <X size={16} /> : <Plus size={16} />}{showCreate ? "Close" : "Create diagnostic"}</button>
       </div>
 
       {showCreate && <section className="rounded-3xl border border-indigo-100 bg-white p-5 shadow-sm sm:p-7">
         <div className="mb-5"><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">New draft</p><h2 className="mt-1 text-xl font-extrabold text-slate-900">Set up the assessment</h2><p className="mt-1 text-sm text-slate-500">Name this diagnostic. The next step opens the question editor, where you can add questions, answers, and visuals.</p></div>
         <div className="grid gap-4 sm:grid-cols-3">
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Grade<select value={createGrade} onChange={(event) => setCreateGrade(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none focus:border-indigo-400"><option value="3">Grade 3</option><option value="6">Grade 6</option><option value="9">Grade 9</option></select></label>
-          <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Subject<select value={createSubject} onChange={(event) => setCreateSubject(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none focus:border-indigo-400"><option>Math</option><option>English</option><option>Science</option></select></label>
+          <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Grade<select value={createGradeOptions.includes(Number(createGrade)) ? createGrade : String(createGradeOptions[0] ?? "")} onChange={(event) => { setCreateGrade(event.target.value); const nextSubjects = teacherAssignments?.filter((assignment) => assignment.grade === Number(event.target.value)).map((assignment) => assignment.subject); if (nextSubjects?.length && !nextSubjects.includes(createSubject)) setCreateSubject(nextSubjects[0]); }} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none focus:border-indigo-400">{createGradeOptions.map((grade) => <option key={grade} value={grade}>Grade {grade}</option>)}</select></label>
+          <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Subject<select value={createSubjects.includes(createSubject) ? createSubject : createSubjects[0] ?? ""} onChange={(event) => setCreateSubject(event.target.value)} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none focus:border-indigo-400">{createSubjects.map((subject) => <option key={subject}>{subject}</option>)}</select></label>
           <label className="text-xs font-bold uppercase tracking-wider text-slate-500">Assessment name<input required value={createTitle} onChange={(event) => setCreateTitle(event.target.value)} placeholder={`Grade ${createGrade} ${createSubject} Diagnostic - Draft`} className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm font-semibold normal-case tracking-normal text-slate-800 outline-none placeholder:font-normal focus:border-indigo-400" /></label>
         </div>
         <div className="mt-5 flex justify-end"><button onClick={createDiagnostic} disabled={busy === "new-diagnostic" || !createTitle.trim()} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-3 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60">{busy === "new-diagnostic" ? <Loader2 size={16} className="animate-spin" /> : <ArrowRight size={16} />}{busy === "new-diagnostic" ? "Creating draft..." : "Create draft and add questions"}</button></div>
       </section>}
 
       <section className="grid gap-4 md:grid-cols-3" aria-label="Choose grade">
-        {[3, 6, 9].map((grade) => {
+        {gradesForView.map((grade) => {
           const active = openGrade === grade;
           return (
             <button key={grade} onClick={() => setOpenGrade(active ? null : grade)} aria-expanded={active}
@@ -148,6 +153,7 @@ export default function DiagnosticHub({ quizzes }: { quizzes: QuizSummary[] }) {
             </button>
           );
         })}
+        {gradesForView.length === 0 && <p className="col-span-full rounded-2xl border border-dashed border-slate-300 p-6 text-center text-sm text-slate-500">No assigned diagnostic grades are available.</p>}
       </section>
 
       {openGrade !== null && <section className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">

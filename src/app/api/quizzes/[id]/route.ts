@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { requireRole } from "@/lib/guard";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -38,18 +39,17 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
       if (quiz.dueDate && quiz.dueDate < new Date()) {
         return NextResponse.json({ error: "This quiz is no longer available" }, { status: 410 });
       }
-    } else if (user!.role === "TEACHER" && quiz.creatorId !== user!.id) {
-      const assignment = await prisma.teacherAssignment.findUnique({
-        where: {
-          teacherId_subjectId_gradeId: {
-            teacherId: user!.id,
-            subjectId: quiz.subjectId,
-            gradeId: quiz.gradeId,
-          },
-        },
-        select: { id: true },
-      });
-      if (!assignment) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    } else if (user!.role === "TEACHER") {
+      const teacherScope = await getTeacherScope(user!.id);
+      const assigned = teacherScope.assignments.some((assignment) =>
+        assignment.subjectId === quiz.subjectId && assignment.gradeId === quiz.gradeId
+      );
+      const ownQuiz = quiz.creatorId === user!.id;
+      const sharedAdminQuiz = Boolean(quiz.isPublished && quiz.creatorId && teacherScope.adminIds.includes(quiz.creatorId));
+      const sharedImportedQuiz = quiz.isShared && quiz.isPublished;
+      if (!assigned || (!ownQuiz && !sharedAdminQuiz && !sharedImportedQuiz)) {
+        return NextResponse.json({ error: "This quiz is outside your assigned subjects or teacher workspace" }, { status: 403 });
+      }
     }
 
     return NextResponse.json({ ...quiz, gradeTarget: quiz.grade.level });

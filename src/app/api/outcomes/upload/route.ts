@@ -20,8 +20,16 @@ export async function POST(req: Request) {
     const formData = await req.formData();
     const file = formData.get("file") as File;
     if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 });
+    const targetSubject = String(formData.get("subject") || "").trim();
+    const targetGrade = Number(formData.get("grade"));
+    if (!targetSubject || !Number.isInteger(targetGrade)) return NextResponse.json({ error: "Choose a subject and grade before importing." }, { status: 400 });
+    const [subjectRecord, gradeRecord] = await Promise.all([
+      prisma.subject.findFirst({ where: { name: { equals: targetSubject, mode: "insensitive" } }, select: { id: true, name: true } }),
+      prisma.grade.findUnique({ where: { level: targetGrade }, select: { id: true, level: true } }),
+    ]);
+    if (!subjectRecord || !gradeRecord) return NextResponse.json({ error: "Choose a configured subject and grade." }, { status: 400 });
 
-    const text = await file.text();
+    const text = (await file.text()).replace(/^\uFEFF/, "");
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
     const rows = parsed.data as any[];
 
@@ -36,7 +44,9 @@ export async function POST(req: Request) {
         outcomeText: String(row["Learning Outcome"] || "").trim(),
         indicatorText: String(row["Indicator"] || "").trim(),
       };
-    }).filter(o => o.grade > 0 && o.subject && o.outcomeText && o.indicatorText);
+    }).filter(o => o.grade === targetGrade && o.subject.toLowerCase() === subjectRecord.name.toLowerCase() && o.outcomeText && o.indicatorText)
+      .map((outcome) => ({ ...outcome, grade: targetGrade, subject: subjectRecord.name }));
+    if (normalizedRows.length === 0) return NextResponse.json({ error: `No sample rows matched Grade ${targetGrade} ${subjectRecord.name}.` }, { status: 400 });
 
     const uniqueRows = new Map<string, (typeof normalizedRows)[number]>();
     for (const outcome of normalizedRows) {
@@ -53,17 +63,13 @@ export async function POST(req: Request) {
 
     // TEACHER SCOPE: Verify teacher is assigned to ALL subjects in the upload
     if (userRole === "TEACHER") {
-      const uploadedSubjects = [...new Set(outcomesToInsert.map(o => o.subject))];
       const assignments = await prisma.teacherAssignment.findMany({
         where: { teacherId: userId },
-        include: { subject: true },
+        include: { subject: true, grade: true },
       });
-      const allowedSubjects = assignments.map(a => a.subject.name);
-      const disallowed = uploadedSubjects.filter(s => !allowedSubjects.includes(s));
-      if (disallowed.length > 0) {
-        return NextResponse.json({ 
-          error: `You are not assigned to: ${disallowed.join(", ")}` 
-        }, { status: 403 });
+      const allowed = assignments.some((assignment) => assignment.subjectId === subjectRecord.id && assignment.gradeId === gradeRecord.id);
+      if (!allowed) {
+        return NextResponse.json({ error: `You are not assigned to Grade ${targetGrade} ${targetSubject}.` }, { status: 403 });
       }
     }
 
@@ -93,6 +99,7 @@ export async function POST(req: Request) {
       message: "Upload successful",
       count: newOutcomes.length,
       skippedDuplicates: outcomesToInsert.length - newOutcomes.length,
+      ignoredOtherScopes: rows.length - normalizedRows.length,
     });
   } catch (error) {
     console.error("Upload Error:", error);

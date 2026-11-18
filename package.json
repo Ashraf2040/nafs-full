@@ -6,6 +6,8 @@
     "dev": "next dev --webpack",
     "build": "prisma generate && next build",
     "start": "next start",
+    "db:deploy": "prisma migrate deploy",
+    "admin:recover": "tsx scripts/admin-access.ts",
     "lint": "eslint",
     "postinstall": "prisma generate"
   },

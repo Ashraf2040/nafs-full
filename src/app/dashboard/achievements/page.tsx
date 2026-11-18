@@ -186,7 +186,7 @@ export default function AchievementsPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Header */}
-      <header className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+      <header className="bg-gradient-to-br from-amber-600 via-orange-600 to-yellow-600 rounded-3xl p-5 text-white shadow-xl relative overflow-hidden sm:p-8">
         <div className="absolute -top-10 -right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-white/5 rounded-full blur-3xl" />
         <div className="relative z-10">
@@ -199,17 +199,17 @@ export default function AchievementsPage() {
       </header>
 
       {!hasTrophies && !hasBadges ? (
-        <div className="bg-white rounded-3xl border-2 border-dashed border-slate-200 p-16 text-center">
+        <div className="bg-white rounded-3xl border-2 border-dashed border-slate-200 p-7 text-center sm:p-16">
           <Trophy size={64} className="mx-auto text-slate-300 mb-4" />
           <h2 className="text-xl font-bold text-slate-600 mb-2">No Achievements Yet</h2>
           <p className="text-slate-400 max-w-md mx-auto mb-6">
             Complete assessments to earn trophies, or join challenges to earn badges.
           </p>
           <Link
-            href="/dashboard/learning-path"
+            href="/dashboard/quizzes"
             className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors shadow-md"
           >
-            <Target size={18} /> Start Learning
+            <Target size={18} /> Browse Quizzes
           </Link>
         </div>
       ) : (

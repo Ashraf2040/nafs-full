@@ -172,8 +172,10 @@ async function createQuiz(
   title: string,
   gradeId: string,
   subjectId: string,
+  isShared: boolean,
   outcomeId: string,
-  questionOutcomeIds: string[]
+  questionOutcomeIds: string[],
+  assessmentType: "PRACTICE" | "QUIZ"
 ): Promise<string> {
   const firstRow = rows[0];
 
@@ -189,10 +191,13 @@ async function createQuiz(
         data: {
           title,
 
+          assessmentType,
+
           description:
             clean(firstRow.description) || null,
 
           isPublished: parseBoolean(firstRow.is_published),
+          isShared,
 
           dueDate: parseOptionalDate(firstRow.due_date),
 
@@ -302,6 +307,10 @@ export async function POST(req: NextRequest) {
      */
 
     const formData = await req.formData();
+
+    const requestedAssessmentType = clean(formData.get("assessmentType"));
+    const assessmentType: "PRACTICE" | "QUIZ" =
+      requestedAssessmentType === "PRACTICE" ? "PRACTICE" : "QUIZ";
 
     const file = formData.get("file");
 
@@ -811,8 +820,10 @@ export async function POST(req: NextRequest) {
             uniqueTitle,
             gradeRecord.id,
             subjectRecord.id,
+            creator.role === "ADMIN",
             outcomeId,
-            questionOutcomeIds
+            questionOutcomeIds,
+            assessmentType
           );
 
           createdQuizIds.push(quizId);

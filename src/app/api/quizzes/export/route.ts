@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(req: NextRequest) {
   try {
@@ -20,19 +21,11 @@ export async function GET(req: NextRequest) {
     let whereClause: any = {};
 
     if (userRole === "TEACHER") {
-      const assignments = await prisma.teacherAssignment.findMany({
-        where: { teacherId: userId },
-        select: { subjectId: true, gradeId: true },
-      });
-
-      if (assignments.length === 0) {
+      const teacherScope = await getTeacherScope(userId);
+      if (teacherScope.assignments.length === 0) {
         return NextResponse.json({ quizzes: [] });
       }
-
-      whereClause.OR = assignments.map((a) => ({
-        subjectId: a.subjectId,
-        gradeId: a.gradeId,
-      }));
+      whereClause = teacherScope.quizWhere;
     }
 
     const quizzes = await prisma.quiz.findMany({

@@ -6,9 +6,9 @@ import { useSession } from "next-auth/react";
 import { motion } from "framer-motion";
 import {
   LayoutDashboard, BookOpen, Users, BarChart3, Settings,
-  FileText, Award, GraduationCap, ClipboardList, Home,
-  Shield, UserCog, CheckCircle2, History, ChevronRight,
-  Route, Trophy, Gamepad2, Target, LibraryBig
+  FileText, Award, ClipboardList,
+  UserCog, CheckCircle2, ChevronRight,
+  Trophy, Gamepad2, Target, LibraryBig
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -25,8 +25,6 @@ export default function Sidebar() {
       { name: "Simulations", icon: <ClipboardList size={20} />, href: "/dashboard/simulations", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Study Guides", icon: <LibraryBig size={20} />, href: "/dashboard/study-guides", roles: ["ADMIN", "TEACHER", "STUDENT"] },
       { name: "Completed Quizzes", icon: <CheckCircle2 size={20} />, href: "/dashboard/quizzes/completed", roles: ["STUDENT"] },
-      { name: "Learning Path", icon: <Route size={20} />, href: "/dashboard/learning-path", roles: ["STUDENT"] },
-      { name: "Analysis", icon: <Target size={20} />, href: "/dashboard/diagnostic/analysis", roles: ["STUDENT"] },
       { name: "Achievements", icon: <Trophy size={20} />, href: "/dashboard/achievements", roles: ["STUDENT"] },
       { name: "Subjects", icon: <BookOpen size={20} />, href: "/dashboard/subjects", roles: ["ADMIN", "TEACHER"] },
       { name: "Challenges", icon: <Gamepad2 size={20} />, href: "/dashboard/challenges", roles: ["ADMIN", "TEACHER", "STUDENT"] },
@@ -65,12 +63,12 @@ export default function Sidebar() {
   const activeHref = getActiveHref();
 
   return (
-    <aside className="print:hidden hidden w-64 bg-slate-900 text-slate-300 flex-shrink-0 min-h-[calc(100vh-4rem)] shadow-inner lg:flex flex-col relative">
+    <aside className="print:hidden hidden w-60 shrink-0 border-r border-slate-800/80 bg-slate-950 text-slate-300 lg:flex flex-col relative xl:w-[17rem]">
       {/* Subtle top gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
       
-      <div className="p-6">
-        <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-4">
+      <div className="p-4 xl:p-5">
+        <p className="mb-3 px-3 text-[10px] font-bold text-slate-500 uppercase tracking-[0.18em]">
           {userRole === "STUDENT" ? "Student Portal" : userRole === "ADMIN" ? "Administration" : "Teacher Portal"}
         </p>
         <nav className="space-y-1">
@@ -80,7 +78,7 @@ export default function Sidebar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`group flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 relative ${
+                className={`group flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all duration-200 relative ${
                   isActive 
                     ? "text-white font-semibold" 
                     : "hover:bg-slate-800 hover:text-white font-medium"
@@ -89,7 +87,7 @@ export default function Sidebar() {
                 {isActive && (
                   <motion.div
                     layoutId="activeSidebarItem"
-                    className="absolute inset-0 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-900/50"
+                    className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 shadow-md shadow-indigo-950/30"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -125,7 +123,7 @@ export default function Sidebar() {
       )}
 
       {userRole === "ADMIN" && <div className="p-6 mt-auto">
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-4 text-center border border-slate-700/50 hover:border-slate-600 transition-colors">
+          <div className="rounded-xl border border-slate-700/70 bg-slate-900 p-4 text-center transition-colors hover:border-slate-600">
           <p className="text-xs text-slate-400 mb-2">Need help?</p>
           <Link href="/docs" className="text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors inline-flex items-center gap-1">
             View Documentation

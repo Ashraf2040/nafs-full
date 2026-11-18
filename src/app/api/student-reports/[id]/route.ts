@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -37,27 +38,20 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
       return NextResponse.json({ error: "Invalid subject or grade" }, { status: 400 });
     }
 
-    if (user!.role === "TEACHER") {
-      const assignment = await prisma.teacherAssignment.findUnique({
-        where: {
-          teacherId_subjectId_gradeId: {
-            teacherId: user!.id,
-            subjectId: subject.id,
-            gradeId: grade.id,
-          },
-        },
-        select: { id: true },
-      });
-      if (!assignment) {
+    const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
+    if (teacherScope && !teacherScope.assignments.some((assignment) =>
+      assignment.subjectId === subject.id && assignment.gradeId === grade.id
+    )) {
         return NextResponse.json({ error: "Forbidden: Subject and grade are not assigned to you" }, { status: 403 });
-      }
     }
 
     const subjectId = subject.id;
     const gradeId = grade.id;
 
     const allQuizzes = await prisma.quiz.findMany({
-      where: { subjectId, gradeId, isPublished: true, assessmentType: "QUIZ" },
+      where: teacherScope
+        ? { AND: [teacherScope.quizWhere, { subjectId, gradeId, isPublished: true, assessmentType: "QUIZ" }] }
+        : { subjectId, gradeId, isPublished: true, assessmentType: "QUIZ" },
       include: {
         _count: { select: { questions: true } },
         results: { where: { studentId: id } },
@@ -66,7 +60,9 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
     });
 
     const allPractices = await prisma.quiz.findMany({
-      where: { subjectId, gradeId, isPublished: true, assessmentType: "PRACTICE" },
+      where: teacherScope
+        ? { AND: [teacherScope.quizWhere, { subjectId, gradeId, isPublished: true, assessmentType: "PRACTICE" }] }
+        : { subjectId, gradeId, isPublished: true, assessmentType: "PRACTICE" },
       include: { _count: { select: { questions: true } }, practiceCompletions: { where: { studentId: id } } },
       orderBy: { createdAt: "desc" },
     });

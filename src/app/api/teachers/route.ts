@@ -26,10 +26,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  const { name, email, password, assignments } = await req.json();
-  if (!name || !email || !password || !assignments?.length) {
+  const { name, username, email, password, assignments } = await req.json();
+  if (!name || !username || !password || !assignments?.length) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
+  const normalizedUsername = String(username).trim().toLowerCase();
+  if (!/^[a-z0-9][a-z0-9._-]{2,29}$/.test(normalizedUsername)) return NextResponse.json({ error: "Username must be 3–30 characters using letters, numbers, dots, underscores, or hyphens" }, { status: 400 });
+  const normalizedEmail = typeof email === "string" && email.trim() ? email.trim().toLowerCase() : `${normalizedUsername}@teachers.nafs.invalid`;
+  if (typeof email === "string" && email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) return NextResponse.json({ error: "Enter a valid email address or leave it blank" }, { status: 400 });
 
   for (const a of assignments) {
     if (!a.gradeIds?.length) {
@@ -53,8 +57,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "One or more invalid grades" }, { status: 400 });
   }
 
-  const existing = await prisma.user.findUnique({ where: { email } });
-  if (existing) return NextResponse.json({ error: "Email already exists" }, { status: 409 });
+  const existing = await prisma.user.findFirst({ where: { OR: [{ username: normalizedUsername }, { email: normalizedEmail }] } });
+  if (existing) return NextResponse.json({ error: "Username or email already exists" }, { status: 409 });
 
   // Flatten to one TeacherAssignment per subject-grade pair
   const assignmentData = assignments.flatMap((a: any) =>
@@ -68,7 +72,8 @@ export async function POST(req: Request) {
   const teacher = await prisma.user.create({
     data: {
       name,
-      email,
+      username: normalizedUsername,
+      email: normalizedEmail,
       password: hashed,
       role: "TEACHER",
       assignments: { create: assignmentData },

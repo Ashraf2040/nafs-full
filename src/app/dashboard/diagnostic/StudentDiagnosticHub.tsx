@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, ArrowRight, BookOpenCheck, Brain, CheckCircle2, ClipboardList, FlaskConical, LockKeyhole, Play, Trophy } from "lucide-react";
+import { BookOpenCheck, Brain, CheckCircle2, ClipboardList, FlaskConical, LockKeyhole, Play, Trophy } from "lucide-react";
 
 type QuizSummary = {
   id: string;
@@ -46,8 +46,5 @@ export default function StudentDiagnosticHub({ gradeLevel, quizzes }: { gradeLev
       </div>
     </section>}
 
-    <Link href="/dashboard/diagnostic/analysis" className="group flex flex-col gap-5 rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-indigo-900 p-6 text-white shadow-lg transition-transform hover:-translate-y-0.5 sm:flex-row sm:items-center sm:justify-between sm:p-7">
-      <div className="flex items-start gap-4"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-indigo-200"><Activity size={23} /></span><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-200">Your outcomes</p><h2 className="mt-1 text-2xl font-extrabold">Analysis and progress</h2><p className="mt-2 max-w-2xl text-sm leading-6 text-indigo-100/75">Review your overall mastery, outcome progress, and areas to practise.</p></div></div><span className="inline-flex items-center gap-2 self-end text-sm font-bold text-white/80 sm:self-auto">View analysis <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></span>
-    </Link>
   </div>;
 }

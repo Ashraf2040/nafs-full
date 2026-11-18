@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth";
 import { ClipboardCheck, Sparkles } from "lucide-react";
 import DiagnosticHub from "./DiagnosticHub";
 import StudentDiagnosticHub from "./StudentDiagnosticHub";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const dynamic = "force-dynamic";
 
@@ -45,8 +46,9 @@ export default async function DiagnosticPage() {
     }))} />;
   }
 
+  const teacherScope = session.user.role === "TEACHER" ? await getTeacherScope(session.user.id) : null;
   const quizzes = await prisma.quiz.findMany({
-    where: { isDiagnostic: true, grade: { level: { in: [3, 6, 9] } }, ...(session.user.role === "TEACHER" ? { creatorId: session.user.id } : {}) },
+    where: { isDiagnostic: true, grade: { level: { in: [3, 6, 9] } }, ...(teacherScope ? { AND: [teacherScope.quizWhere, { creatorId: session.user.id }] } : {}) },
     include: { grade: { select: { level: true } }, subject: { select: { name: true } }, _count: { select: { questions: true } } },
     orderBy: { createdAt: "desc" },
   });
@@ -59,11 +61,13 @@ export default async function DiagnosticPage() {
     questionCount: quiz._count.questions,
   }));
 
+  const teacherAssignments = teacherScope?.assignments.map((assignment) => ({ grade: assignment.grade.level, subject: assignment.subject.name })) ?? null;
+
   return <div className="mx-auto max-w-7xl space-y-7">
     <header className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-indigo-700 via-violet-700 to-fuchsia-700 p-7 text-white shadow-xl sm:p-10">
       <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" /><div className="absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-fuchsia-300/10 blur-3xl" />
       <div className="relative flex flex-col justify-between gap-6 sm:flex-row sm:items-end"><div><span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-bold"><ClipboardCheck size={14} /> Diagnostic workspace</span><h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Assessment library</h1><p className="mt-2 max-w-2xl text-sm leading-6 text-indigo-100 sm:text-base">Prepare, review, and publish focused NAFS diagnostics. Track student understanding by the outcomes each question measures.</p></div><div className="flex items-center gap-2 text-sm font-semibold text-white/80"><Sparkles size={17} /> Grades 3, 6 &amp; 9</div></div>
     </header>
-    <DiagnosticHub quizzes={summaries} />
+    <DiagnosticHub quizzes={summaries} teacherAssignments={teacherAssignments} />
   </div>;
 }

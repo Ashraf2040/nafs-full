@@ -54,13 +54,14 @@ async function main() {
   const admin = await prisma.user.create({
     data: {
       name: 'Ashraf Elsayed',
+      username: 'admin',
       email: adminEmail,
       password: await bcrypt.hash(adminPassword, 12),
       role: 'ADMIN',
     },
   });
 
-  console.log(`✅ Admin created: ${adminEmail}`);
+  console.log(`✅ Admin created: username=admin, email=${adminEmail}`);
 
   // 3. CREATE SUBJECTS (Science, Math, English)
   const scienceSubject = await prisma.subject.create({
@@ -96,6 +97,7 @@ async function main() {
   const teacher3Math = await prisma.user.create({
     data: {
       name: 'Layla Samir',
+      username: 'layla.samir',
       email: 'layla.samir@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -108,6 +110,7 @@ async function main() {
   const teacher3English = await prisma.user.create({
     data: {
       name: 'Youssef Adel',
+      username: 'youssef.adel',
       email: 'youssef.adel@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -121,6 +124,7 @@ async function main() {
   const teacher6Science = await prisma.user.create({
     data: {
       name: 'Yasmin Ahmed',
+      username: 'yasmin.ahmed',
       email: 'yasmin.ahmed@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -133,6 +137,7 @@ async function main() {
   const teacher6Math = await prisma.user.create({
     data: {
       name: 'Omar Hassan',
+      username: 'omar.hassan',
       email: 'omar.hassan@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -145,6 +150,7 @@ async function main() {
   const teacher6English = await prisma.user.create({
     data: {
       name: 'Fatima Khalil',
+      username: 'fatima.khalil',
       email: 'fatima.khalil@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -158,6 +164,7 @@ async function main() {
   const teacher9Science = await prisma.user.create({
     data: {
       name: 'Khaled Mahmoud',
+      username: 'khaled.mahmoud',
       email: 'khaled.mahmoud@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -170,6 +177,7 @@ async function main() {
   const teacher9Math = await prisma.user.create({
     data: {
       name: 'Nour Ibrahim',
+      username: 'nour.ibrahim',
       email: 'nour.ibrahim@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -182,6 +190,7 @@ async function main() {
   const teacher9English = await prisma.user.create({
     data: {
       name: 'Ahmad Tarek',
+      username: 'ahmad.tarek',
       email: 'ahmad.tarek@nafs.edu',
       password: teacherPassword,
       role: 'TEACHER',
@@ -218,6 +227,7 @@ async function main() {
       const student = await prisma.user.create({
         data: {
           name: studentNames[idx],
+          username: `student${idx + 1}`,
           email: `student${idx + 1}@nafs.edu`,
           password: studentPassword,
           role: 'STUDENT',

@@ -12,7 +12,9 @@ interface ImportProgress {
   totalQuizzes?: number;
 }
 
-export default function CsvImportButton() {
+export default function CsvImportButton({ assessmentType = "QUIZ" }: { assessmentType?: "PRACTICE" | "QUIZ" }) {
+  const itemLabel = assessmentType === "PRACTICE" ? "practice" : "quiz";
+  const itemPlural = assessmentType === "PRACTICE" ? "practices" : "quizzes";
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState<ImportProgress>({
     status: "idle",
@@ -64,6 +66,7 @@ export default function CsvImportButton() {
 
       const formData = new FormData();
       formData.append("file", file);
+      formData.append("assessmentType", assessmentType);
 
       setProgress((prev) => ({
         ...prev,
@@ -76,7 +79,7 @@ export default function CsvImportButton() {
       setProgress((prev) => ({
         ...prev,
         status: "creating",
-        message: "Creating quizzes in database...",
+        message: `Creating ${itemPlural} in database...`,
       }));
 
       // Start a progress animation for the server processing phase
@@ -104,13 +107,13 @@ export default function CsvImportButton() {
         setProgress({
           status: "complete",
           progress: 100,
-          message: `Successfully imported ${data.count || 1} quiz${data.count !== 1 ? 'zes' : ''}!`,
+          message: `Successfully imported ${data.count || 1} ${data.count === 1 ? itemLabel : itemPlural}!`,
           totalQuizzes: data.count,
         });
 
         await simulateProgress(100, 400);
 
-        toast.success(`Imported ${data.count || 1} quiz${data.count !== 1 ? 'zes' : ''} successfully!`, {
+        toast.success(`Imported ${data.count || 1} ${data.count === 1 ? itemLabel : itemPlural} successfully!`, {
           duration: 4000,
           icon: '🎉',
         });
@@ -187,7 +190,7 @@ export default function CsvImportButton() {
         ) : (
           <Upload size={16} />
         )}
-        {isUploading ? "Importing..." : "Import Quizzes from CSV"}
+        {isUploading ? "Importing..." : `Import ${assessmentType === "PRACTICE" ? "Practices" : "Quizzes"} from CSV`}
       </button>
 
       <a
@@ -236,7 +239,7 @@ export default function CsvImportButton() {
           {progress.totalQuizzes && progress.totalQuizzes > 0 && (
             <div className="mt-2 text-xs text-emerald-600 font-semibold flex items-center gap-1">
               <CheckCircle2 size={12} />
-              {progress.totalQuizzes} quiz{progress.totalQuizzes !== 1 ? 'zes' : ''} created
+              {progress.totalQuizzes} {itemPlural} created
             </div>
           )}
         </div>

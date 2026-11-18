@@ -13,6 +13,7 @@ export async function POST(req: NextRequest) {
 
     const {
       name,
+      username,
       email,
       password,
       role,
@@ -29,16 +30,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!name || !email || !password || !gradeLevel) {
+    if (!name || !username || !password || !gradeLevel) {
       return NextResponse.json(
-        { error: "Name, email, password, and grade are required" },
+        { error: "Name, username, password, and grade are required" },
         { status: 400 }
       );
     }
 
-    if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const normalizedUsername = String(username).trim().toLowerCase();
+    if (!/^[a-z0-9][a-z0-9._-]{2,29}$/.test(normalizedUsername)) {
+      return NextResponse.json({ error: "Username must be 3–30 characters and use letters, numbers, dots, underscores, or hyphens." }, { status: 400 });
+    }
+
+    if (email && (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
       return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
     }
+    const normalizedEmail = typeof email === "string" && email.trim() ? email.trim().toLowerCase() : `${normalizedUsername}@students.nafs.invalid`;
 
     if (typeof password !== "string" || password.length < 8) {
       return NextResponse.json(
@@ -48,13 +55,13 @@ export async function POST(req: NextRequest) {
     }
 
     // Check existing user
-    const existingUser = await prisma.user.findUnique({
-      where: { email: String(email).toLowerCase() },
+    const existingUser = await prisma.user.findFirst({
+      where: { OR: [{ email: normalizedEmail }, { username: normalizedUsername }] },
     });
 
     if (existingUser) {
       return NextResponse.json(
-        { error: "Email already exists" },
+        { error: "Email or username already exists" },
         { status: 400 }
       );
     }
@@ -87,7 +94,8 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: {
         name,
-        email: String(email).toLowerCase(),
+        username: normalizedUsername,
+        email: normalizedEmail,
         password: hashedPassword,
         role: "STUDENT",
         gradeId,

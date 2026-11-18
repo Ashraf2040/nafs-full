@@ -158,7 +158,7 @@ export default function SimulationsPage() {
   };
 
   return <div className="mx-auto max-w-7xl space-y-7">
-    <header><h1 className="flex items-center gap-3 text-3xl font-black text-slate-900"><span className="rounded-xl bg-indigo-50 p-3 text-indigo-600"><ClipboardList /></span>Simulations</h1><p className="mt-2 text-slate-500">Combine two or three subjects in one test, use a bubble sheet, and review student results.</p></header>
+    <header className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7"><div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-500 via-indigo-500 to-cyan-500"/><div className="flex items-start gap-3 sm:gap-4"><span className="rounded-2xl bg-indigo-50 p-3 text-indigo-700"><ClipboardList size={22}/></span><div><h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">{role === "STUDENT" ? "Your Simulations" : "Simulation Studio"}</h1><p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-600">{role === "STUDENT" ? "Complete a published multi-subject simulation and review your score and answer feedback." : role === "TEACHER" ? "Build multi-subject simulations from quizzes or your own questions for your assigned grades." : "Create and publish multi-subject simulations, then review student results across grades."}</p></div></div></header>
 
     {role !== "STUDENT" && <div className="grid gap-4 sm:grid-cols-3"><Stat label="Simulations" value={stats.simulations} /><Stat label="Completed tests" value={stats.attempts} /><Stat label="Average score" value={stats.average === null ? "—" : `${stats.average}%`} /></div>}
 

@@ -1,77 +1,169 @@
-/* src/app/globals.css */
 @import "tailwindcss";
 
-/* Keep the font variables if Next.js generated them for the Inter font */
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-/* Keep typography compact on tablets and phones without changing desktop sizing. */
-@media (min-width: 640px) and (max-width: 1279px) {
-  :root {
-    --spacing: 0.225rem;
-    --text-xs: 0.72rem;
-    --text-sm: 0.84rem;
-    --text-base: 0.95rem;
-    --text-lg: 1.06rem;
-    --text-xl: 1.17rem;
-    --text-2xl: 1.38rem;
-    --text-3xl: 1.7rem;
-    --text-4xl: 2.08rem;
-    --text-5xl: 2.7rem;
-    --text-6xl: 3.3rem;
-    --text-7xl: 3.95rem;
-    --text-8xl: 5.1rem;
-    --text-9xl: 6.8rem;
+:root {
+  color-scheme: light;
+  --page: #f5f7fc;
+  --surface: #ffffff;
+  --ink: #172033;
+  --muted: #64748b;
+  --line: #e5eaf3;
+  --brand: #4f46e5;
+  --brand-strong: #4338ca;
+  --radius-card: 1.25rem;
+  --shadow-card: 0 8px 28px -20px rgb(15 23 42 / 0.25), 0 1px 2px rgb(15 23 42 / 0.04);
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body {
+  min-width: 320px;
+  background: var(--page);
+  color: var(--ink);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: rgb(99 102 241 / .16); color: #312e81; }
+:focus-visible { outline: 3px solid rgb(99 102 241 / .42); outline-offset: 2px; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, [role="button"] { touch-action: manipulation; }
+img, svg, canvas { max-width: 100%; }
+img { height: auto; }
+
+/* Shared, restrained surfaces across dashboard and management pages. */
+.dashboard-content { min-width: 0; }
+.dashboard-content [class*="bg-white"][class*="rounded-"] {
+  border-color: var(--line);
+  box-shadow: var(--shadow-card);
+}
+.dashboard-content [class*="grid"] > * { min-width: 0; }
+.dashboard-content table { width: 100%; }
+.dashboard-content [class*="overflow-x-auto"] { -webkit-overflow-scrolling: touch; }
+.dashboard-content input:not([type="checkbox"]):not([type="radio"]),
+.dashboard-content select,
+.dashboard-content textarea {
+  max-width: 100%;
+  border-color: #dbe2ee;
+}
+.dashboard-content input:not([type="checkbox"]):not([type="radio"]):focus,
+.dashboard-content select:focus,
+.dashboard-content textarea:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgb(99 102 241 / .12);
+}
+.recharts-responsive-container { min-width: 0 !important; }
+.recharts-wrapper, .recharts-surface { overflow: visible; }
+.recharts-cartesian-axis-tick-value { fill: #64748b; }
+.recharts-cartesian-grid-horizontal line { stroke: #e9edf5; }
+.recharts-tooltip-wrapper { outline: none; }
+
+.dashboard-mobile-nav {
+  display: none;
+}
+.dashboard-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-end;
+  background: rgb(15 23 42 / .38);
+  padding: 1rem 1rem calc(5.75rem + env(safe-area-inset-bottom));
+  backdrop-filter: blur(4px);
+}
+.dashboard-mobile-sheet {
+  width: min(100%, 44rem);
+  max-height: min(72dvh, 38rem);
+  margin: 0 auto;
+  overflow: auto;
+  border: 1px solid rgb(226 232 240 / .9);
+  border-radius: 1.5rem;
+  background: white;
+  padding: 1.25rem;
+  box-shadow: 0 24px 64px rgb(15 23 42 / .22);
+}
+.dashboard-mobile-sheet-link {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: .65rem;
+  border: 1px solid #e8edf5;
+  border-radius: .9rem;
+  background: #fff;
+  padding: .7rem .75rem;
+  color: #475569;
+  font-size: .8rem;
+  font-weight: 650;
+  transition: 160ms ease;
+}
+.dashboard-mobile-sheet-icon { display: grid; flex: 0 0 auto; place-items: center; color: #64748b; }
+.dashboard-mobile-sheet-link:hover { border-color: #c7d2fe; background: #f8faff; color: #4338ca; }
+.dashboard-mobile-sheet-link.is-active { border-color: #c7d2fe; background: #eef2ff; color: #4338ca; }
+
+body:has(.dashboard-main) footer { display: none; }
+
+@media (max-width: 1023px) {
+  .dashboard-main { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+  .dashboard-content { padding-left: clamp(.75rem, 3vw, 1.5rem); padding-right: clamp(.75rem, 3vw, 1.5rem); }
+  .dashboard-mobile-nav {
+    position: fixed;
+    z-index: 70;
+    right: max(.75rem, env(safe-area-inset-right));
+    bottom: max(.75rem, env(safe-area-inset-bottom));
+    left: max(.75rem, env(safe-area-inset-left));
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: .25rem;
+    max-width: 46rem;
+    margin: 0 auto;
+    border: 1px solid rgb(226 232 240 / .9);
+    border-radius: 1.2rem;
+    background: rgb(255 255 255 / .94);
+    padding: .45rem;
+    box-shadow: 0 10px 32px rgb(15 23 42 / .16);
+    backdrop-filter: blur(18px);
   }
+  .dashboard-mobile-link {
+    display: flex;
+    min-width: 0;
+    min-height: 3.35rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    border: 0;
+    border-radius: .9rem;
+    background: transparent;
+    color: #64748b;
+    font: inherit;
+    font-size: .65rem;
+    font-weight: 650;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+  .dashboard-mobile-link.is-active { background: #eef2ff; color: #4338ca; }
+  .dashboard-mobile-link:active { transform: scale(.96); }
 }
 
 @media (max-width: 639px) {
-  :root {
-    --spacing: 0.2rem;
-    --text-xs: 0.6875rem;
-    --text-sm: 0.8125rem;
-    --text-base: 0.9375rem;
-    --text-lg: 1rem;
-    --text-xl: 1.125rem;
-    --text-2xl: 1.35rem;
-    --text-3xl: 1.625rem;
-    --text-4xl: 1.875rem;
-    --text-5xl: 2.25rem;
-    --text-6xl: 2.75rem;
-    --text-7xl: 3.25rem;
-    --text-8xl: 4rem;
-    --text-9xl: 5rem;
-  }
+  html { font-size: 15px; }
+  .dashboard-content { padding-top: .875rem; }
+  .dashboard-content [class*="p-8"] { padding: 1.125rem; }
+  .dashboard-content [class*="p-7"] { padding: 1rem; }
+  .dashboard-content [class*="p-6"] { padding: 1rem; }
+  .dashboard-content [class*="gap-8"] { gap: 1rem; }
+  .dashboard-content [class*="gap-6"] { gap: .875rem; }
+  .dashboard-content h1 { overflow-wrap: anywhere; }
+  .dashboard-content table { display: block; min-width: 38rem; max-width: 100%; overflow-x: auto; }
+  .recharts-cartesian-axis-tick-value { font-size: 10px; }
+  .dashboard-mobile-sheet { padding: 1rem; }
 }
 
-/* A dashboard sidebar reduces usable width before the viewport reaches tablet size. */
-.dashboard-main {
-  container-type: inline-size;
-  container-name: dashboard-main;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
-
-@container dashboard-main (min-width: 640px) and (max-width: 1150px) {
-  .dashboard-content {
-    --spacing: 0.225rem;
-    --text-xs: 0.72rem;
-    --text-sm: 0.84rem;
-    --text-base: 0.95rem;
-    --text-lg: 1.06rem;
-    --text-xl: 1.17rem;
-    --text-2xl: 1.38rem;
-    --text-3xl: 1.7rem;
-    --text-4xl: 2.08rem;
-    --text-5xl: 2.7rem;
-    --text-6xl: 3.3rem;
-    --text-7xl: 3.95rem;
-    --text-8xl: 5.1rem;
-    --text-9xl: 6.8rem;
-  }
-}
-
-/* That's it! 
-  We removed the dark mode media query and the body override.
-  Now your layout.tsx will have 100% control over the colors.
-*/

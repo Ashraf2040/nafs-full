@@ -6,6 +6,7 @@ import prisma from "@/lib/prisma";
 import Link from "next/link";
 import { BookOpen, BarChart3, FileText, Users } from "lucide-react";
 import SubjectCreateModal from "@/components/SubjectCreateModal";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const revalidate = 600;
 
@@ -23,12 +24,8 @@ export default async function DashboardSubjectsPage() {
     redirect("/dashboard");
   }
 
-  const assignments = userRole === "TEACHER"
-    ? await prisma.teacherAssignment.findMany({
-        where: { teacherId: userId },
-        select: { subjectId: true, gradeId: true },
-      })
-    : [];
+  const teacherScope = userRole === "TEACHER" ? await getTeacherScope(userId) : null;
+  const assignments = teacherScope?.assignments ?? [];
   const assignedSubjectIds = [...new Set(assignments.map((assignment) => assignment.subjectId))];
   const assignedPairs = assignments.map((assignment) => ({
     subjectId: assignment.subjectId,
@@ -39,7 +36,7 @@ export default async function DashboardSubjectsPage() {
     where: userRole === "TEACHER" ? { id: { in: assignedSubjectIds } } : {},
     include: {
       quizzes: {
-        where: userRole === "TEACHER" ? { OR: assignedPairs } : {},
+        where: teacherScope ? { AND: [teacherScope.quizWhere, { OR: assignedPairs }] } : {},
         include: {
           _count: {
             select: { results: true },
@@ -71,9 +68,9 @@ export default async function DashboardSubjectsPage() {
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
-      <header className="flex justify-between items-end border-b border-slate-200 pb-6">
+      <header className="flex flex-col justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:p-7">
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 flex items-center gap-3">
+          <h1 className="flex items-center gap-3 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
             <BookOpen className="text-indigo-600" /> {userRole === "ADMIN" ? "Subject Management" : "Assigned Subjects"}
           </h1>
           <p className="text-slate-500 mt-2">

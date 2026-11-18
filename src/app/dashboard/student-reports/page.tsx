@@ -50,15 +50,15 @@ export default function StudentReportsPage() {
   );
 
   return (
-    <div className="min-h-screen">
-      <div className="mb-8">
+    <div className="mx-auto max-w-7xl space-y-6">
+      <header className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
         <h1 className="text-3xl font-bold text-slate-800 flex items-center gap-3">
           <Users size={28} className="text-indigo-600" /> Student Reports
         </h1>
-        <p className="text-slate-500 mt-1">View performance reports for any student, filtered by subject and grade.</p>
-      </div>
+        <p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-600">{userRole === "TEACHER" ? "Review progress for students in your assigned grades and subjects." : "Review student performance across the platform and filter by grade, class, and subject."}</p>
+      </header>
 
-      <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm p-6 mb-8">
+      <div className="rounded-3xl border border-slate-200/80 bg-white p-4 shadow-sm sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <Filter size={16} className="text-slate-400" />
           <span className="font-semibold text-slate-700">Filters</span>

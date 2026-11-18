@@ -11,6 +11,7 @@ export default function TeacherCreateModal({ subjects, grades }: { subjects: Sub
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [assignments, setAssignments] = useState<{subjectId: string; gradeIds: string[]}[]>([]);
@@ -35,7 +36,7 @@ export default function TeacherCreateModal({ subjects, grades }: { subjects: Sub
   };
 
   const handleSubmit = async () => {
-    if (!name || !email || !password) return toast.error("Fill all fields");
+    if (!name || !username || !password) return toast.error("Fill name, username, and password");
     if (assignments.length === 0) return toast.error("Assign at least one subject");
     if (assignments.some(a => a.gradeIds.length === 0)) return toast.error("Select grades for each subject");
 
@@ -44,7 +45,7 @@ export default function TeacherCreateModal({ subjects, grades }: { subjects: Sub
       const res = await fetch("/api/teachers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, assignments }),
+        body: JSON.stringify({ name, username, email, password, assignments }),
       });
       if (res.ok) {
         toast.success("Teacher created successfully");
@@ -77,7 +78,8 @@ export default function TeacherCreateModal({ subjects, grades }: { subjects: Sub
 
         <div className="space-y-4 mb-6">
           <input value={name} onChange={e => setName(e.target.value)} placeholder="Full Name" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-400 outline-none" />
-          <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address" type="email" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-400 outline-none" />
+          <input value={username} onChange={e => setUsername(e.target.value)} placeholder="Username for sign-in" autoComplete="username" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-400 outline-none" />
+          <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address (optional)" type="email" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-400 outline-none" />
           <input value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" type="password" className="w-full p-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-400 outline-none" />
         </div>
 

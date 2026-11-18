@@ -13,8 +13,8 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "NAFS Preparation Portal - Master Your Assessments",
   description:
-    "Comprehensive AI-powered preparation platform for NAFS assessments. Generate quizzes, track progress, and earn certificates.",
-  keywords: ["NAFS", "education", "assessment", "quiz", "learning", "UAE education"],
+    "Saudi NAFS preparation platform for students and educators. Practice by curriculum indicator, track progress, and review quiz results.",
+  keywords: ["NAFS", "Saudi Arabia", "education", "assessment", "quiz", "learning"],
   authors: [{ name: "NAFS Portal Team" }],
   openGraph: {
     title: "NAFS Preparation Portal",

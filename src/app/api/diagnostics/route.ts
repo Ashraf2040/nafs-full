@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(req: Request) {
   try {
@@ -16,6 +17,7 @@ export async function GET(req: Request) {
 
     // STUDENT: only ever their own diagnostics
     const targetStudentId = (userRole === "STUDENT") ? userId : studentId;
+    const teacherScope = userRole === "TEACHER" ? await getTeacherScope(userId) : null;
 
     // TEACHER: only students in assigned grades
     if (userRole === "TEACHER") {
@@ -38,6 +40,15 @@ export async function GET(req: Request) {
     const outcomeFilter: any = {};
     if (subject) outcomeFilter.subject = subject;
     if (grade) outcomeFilter.grade = grade;
+    if (teacherScope) {
+      const visibleAssignments = teacherScope.assignments.filter((assignment) =>
+        (!subject || assignment.subject.name === subject) && (!grade || assignment.grade.level === grade)
+      );
+      if (visibleAssignments.length === 0) {
+        return NextResponse.json({ error: "This subject and grade are not assigned to you" }, { status: 403 });
+      }
+      outcomeFilter.OR = visibleAssignments.map((assignment) => ({ subject: assignment.subject.name, grade: assignment.grade.level }));
+    }
 
     // All outcomes matching filter
     const allOutcomes = await prisma.learningOutcome.findMany({
@@ -85,10 +96,12 @@ export async function GET(req: Request) {
     const overallMastery = totalOutcomes > 0 ? Math.round((masteredOutcomes / totalOutcomes) * 100) : 0;
 
     // Windows this student has completed
+    const visibleQuizWindowFilter = teacherScope ? teacherScope.quizWhere : undefined;
     const completedWindows = await prisma.testingWindow.findMany({
       where: {
         quizzes: {
           some: {
+            ...(visibleQuizWindowFilter ? { AND: [visibleQuizWindowFilter] } : {}),
             results: { some: { studentId: targetStudentId } },
           },
         },
@@ -97,6 +110,7 @@ export async function GET(req: Request) {
       },
       include: {
         quizzes: {
+          ...(visibleQuizWindowFilter ? { where: visibleQuizWindowFilter } : {}),
           include: {
             results: {
               where: { studentId: targetStudentId },
@@ -129,14 +143,16 @@ export async function GET(req: Request) {
     // Percentile calculation (simple rank within grade)
     let percentile = null;
     const latestResult = await prisma.result.findFirst({
-      where: { studentId: targetStudentId },
+      where: { studentId: targetStudentId, ...(teacherScope ? { quiz: teacherScope.quizWhere } : {}) },
       orderBy: { completedAt: "desc" },
       include: { quiz: { select: { grade: { select: { level: true } } } } },
     });
 
     if (latestResult) {
       const allScores = await prisma.result.findMany({
-        where: { quiz: { grade: { level: latestResult.quiz.grade.level } } },
+        where: { quiz: teacherScope
+          ? { AND: [teacherScope.quizWhere, { grade: { level: latestResult.quiz.grade.level } }] }
+          : { grade: { level: latestResult.quiz.grade.level } } },
         select: { score: true },
       });
       const sorted = allScores.map((r) => r.score).sort((a, b) => a - b);

@@ -1,8 +1,9 @@
 // src/app/api/students/route.ts
 import { NextResponse } from "next/server";
-import { requireRole, getTeacherGradeIds } from "@/lib/guard";
+import { requireRole } from "@/lib/guard";
 import prisma from "@/lib/prisma";
 import bcrypt from "bcrypt";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const dynamic = "force-dynamic";
 
@@ -16,10 +17,11 @@ export async function GET(req: Request) {
         const offset = parseInt(searchParams.get("offset") || "0");
 
         const where: any = { role: "STUDENT" };
+        const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
 
         // TEACHERS may only list students in the grades they are assigned to
         if (user!.role === "TEACHER") {
-            const gradeIds = await getTeacherGradeIds(user!.id);
+            const gradeIds = [...new Set(teacherScope!.assignments.map((assignment) => assignment.gradeId))];
             if (gradeIds.length === 0) {
                 return NextResponse.json({ students: [], total: 0 });
             }
@@ -44,20 +46,12 @@ export async function GET(req: Request) {
         ]);
 
         const studentIds = students.map(s => s.id);
-        const teacherAssignments = user!.role === "TEACHER"
-            ? await prisma.teacherAssignment.findMany({
-                where: { teacherId: user!.id },
-                select: { subjectId: true, gradeId: true },
-              })
-            : [];
         const avgScores = studentIds.length > 0
             ? await prisma.result.groupBy({
                 by: ["studentId"],
                 where: {
                     studentId: { in: studentIds },
-                    ...(user!.role === "TEACHER"
-                        ? { quiz: { OR: teacherAssignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) } }
-                        : {}),
+                    ...(teacherScope ? { quiz: teacherScope.quizWhere } : {}),
                 },
                 _avg: { score: true },
             })
@@ -68,6 +62,7 @@ export async function GET(req: Request) {
         const formattedStudents = students.map(s => ({
             id: s.id,
             name: s.name,
+            username: s.username,
             email: s.email,
             gradeLevel: s.grade?.level ?? null,
             gradeId: s.gradeId,
@@ -91,20 +86,23 @@ export async function POST(req: Request) {
         if (response) return response;
 
         const body = await req.json();
-        const { name, email, gradeLevel, classId, password } = body;
+        const { name, username, email, gradeLevel, classId, password } = body;
 
-        if (!name || !email || !gradeLevel) {
+        if (!name || !username || !gradeLevel) {
             return NextResponse.json(
-                { error: "Name, email, and grade level are required" },
+                { error: "Name, username, and grade level are required" },
                 { status: 400 }
             );
         }
 
-        const normalizedEmail = String(email).trim().toLowerCase();
-        const existing = await prisma.user.findUnique({ where: { email: normalizedEmail } });
+        const normalizedUsername = String(username).trim().toLowerCase();
+        if (!/^[a-z0-9][a-z0-9._-]{2,29}$/.test(normalizedUsername)) return NextResponse.json({ error: "Username must be 3–30 characters using letters, numbers, dots, underscores, or hyphens" }, { status: 400 });
+        const normalizedEmail = typeof email === "string" && email.trim() ? email.trim().toLowerCase() : `${normalizedUsername}@students.nafs.invalid`;
+        if (typeof email === "string" && email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) return NextResponse.json({ error: "Enter a valid email address or leave it blank" }, { status: 400 });
+        const existing = await prisma.user.findFirst({ where: { OR: [{ username: normalizedUsername }, { email: normalizedEmail }] } });
         if (existing) {
             return NextResponse.json(
-                { error: "A student with this email already exists" },
+                { error: "A student with this username or email already exists" },
                 { status: 409 }
             );
         }
@@ -147,6 +145,7 @@ export async function POST(req: Request) {
         const student = await prisma.user.create({
             data: {
                 name,
+                username: normalizedUsername,
                 email: normalizedEmail,
                 password: hashedPassword,
                 role: "STUDENT",
@@ -156,6 +155,7 @@ export async function POST(req: Request) {
             select: {
                 id: true,
                 name: true,
+                username: true,
                 email: true,
                 role: true,
                 gradeId: true,

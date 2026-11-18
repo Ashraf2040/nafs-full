@@ -242,7 +242,7 @@ export default function ChallengesPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       {/* Header */}
-      <header className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+      <header className="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-3xl p-5 text-white shadow-xl relative overflow-hidden sm:p-8">
         <div className="absolute -top-10 -right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
         <div className="relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white/90 text-xs font-semibold mb-4 border border-white/10">
@@ -254,7 +254,9 @@ export default function ChallengesPage() {
           <p className="text-emerald-200 mt-2">
             {isStudent
               ? "Compete with classmates and earn rewards by mastering skills."
-              : "Create challenges to motivate your students to master specific skills."}
+              : userRole === "TEACHER"
+                ? "Set skill goals for your assigned grades and track how your students progress."
+                : "Create platform-wide skill goals, assign quiz targets, and monitor student completion."}
           </p>
         </div>
       </header>

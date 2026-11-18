@@ -6,6 +6,8 @@ import {
   Lock, AlertTriangle, Mail, ChevronLeft, ChevronRight
 } from "lucide-react";
 import QuizActions from "./QuizActions";
+import { getTeacherScope } from "@/lib/teacher-scope";
+import type { Prisma } from "@prisma/client";
 
 const ITEMS_PER_PAGE = 15;
 
@@ -30,55 +32,28 @@ export default async function QuizGridSection({
   currentPage,
   assessmentType = "PRACTICE",
 }: QuizGridSectionProps) {
-  const whereClause: any = { assessmentType };
+  const quizConditions: Prisma.QuizWhereInput[] = [{ assessmentType }];
 
   if (userRole === "STUDENT") {
     const currentUser = await prisma.user.findUnique({
       where: { id: userId },
       select: { grade: { select: { id: true } } },
     });
-    if (currentUser?.grade) {
-      // Students see published quizzes for their grade
-      whereClause.isPublished = true;
-      whereClause.gradeId = currentUser.grade.id;
-    }
+    quizConditions.push({ isPublished: true, gradeId: currentUser?.grade?.id ?? "__no_student_grade__" });
   }
 
-  let teacherAssignments: any[] | null = null;
   if (userRole === "TEACHER") {
-    teacherAssignments = await prisma.teacherAssignment.findMany({
-      where: { teacherId: userId },
-      include: { subject: true, grade: true },
-    });
-
-    if (teacherAssignments.length === 0) {
-      whereClause.id = "none";
-    } else {
-      whereClause.OR = teacherAssignments.map((a) => ({
-        subjectId: a.subjectId,
-        gradeId: a.gradeId,
-      }));
-
-      if (filterSubject) {
-        const allowedSubjectIds = teacherAssignments
-          .filter((a) => a.subject.name === filterSubject)
-          .map((a) => a.subjectId);
-        if (allowedSubjectIds.length === 0) whereClause.id = "none";
-        else whereClause.subjectId = { in: allowedSubjectIds };
-      }
-      if (filterGrade) {
-        const allowedGradeIds = teacherAssignments
-          .filter((a) => a.grade.level === filterGrade)
-          .map((a) => a.gradeId);
-        if (allowedGradeIds.length === 0) whereClause.id = "none";
-        else whereClause.gradeId = { in: allowedGradeIds };
-      }
-    }
+    const teacherScope = await getTeacherScope(userId);
+    quizConditions.push(teacherScope.quizWhere);
   }
 
-  if (userRole !== "TEACHER" || !whereClause.id) {
-    if (filterSubject) whereClause.subject = { name: filterSubject };
-    if (filterGrade) whereClause.grade = { level: filterGrade };
+  if (filterSubject) {
+    const subject = await prisma.subject.findFirst({ where: { name: filterSubject }, select: { id: true } });
+    quizConditions.push({ subjectId: subject?.id ?? "__no_matching_subject__" });
+  }
+  if (filterGrade && Number.isInteger(filterGrade)) {
+    const grade = await prisma.grade.findUnique({ where: { level: filterGrade }, select: { id: true } });
+    quizConditions.push({ gradeId: grade?.id ?? "__no_matching_grade__" });
   }
 
   let learningOutcomeIds: string[] = [];
@@ -93,13 +68,11 @@ export default async function QuizGridSection({
       select: { subject: true, grade: true, outcomeText: true },
     });
 
-    if (selectedOutcome) {
+    if (!selectedOutcome) {
+      learningOutcomeIds = [];
+    } else {
       const matchingOutcomes = await prisma.learningOutcome.findMany({
-        where: {
-          subject: selectedOutcome.subject,
-          grade: selectedOutcome.grade,
-          outcomeText: selectedOutcome.outcomeText,
-        },
+        where: { subject: selectedOutcome.subject, grade: selectedOutcome.grade, outcomeText: selectedOutcome.outcomeText },
         select: { id: true },
       });
       learningOutcomeIds = matchingOutcomes.map((outcome) => outcome.id);
@@ -107,38 +80,26 @@ export default async function QuizGridSection({
   }
 
   if (filterOutcome || filterIndicator) {
-    const outcomeCondition = {
+    quizConditions.push({
       OR: [
         { outcomeId: { in: learningOutcomeIds } },
-        {
-          questions: {
-            some: { learningOutcomeId: { in: learningOutcomeIds } },
-          },
-        },
+        { questions: { some: { learningOutcomeId: { in: learningOutcomeIds } } } },
       ],
-    };
-    if (whereClause.OR) {
-      const existingOR = whereClause.OR;
-      delete whereClause.OR;
-      whereClause.AND = [{ OR: existingOR }, outcomeCondition];
-    } else {
-      whereClause.AND = [outcomeCondition];
-    }
+    });
   }
 
-  const quizWhere =
-    Object.keys(whereClause).length > 0 ? whereClause : undefined;
+  const quizWhere: Prisma.QuizWhereInput = { AND: quizConditions };
 
   const [totalCount, studentResultsData, practiceCompletionData] = await Promise.all([
     prisma.quiz.count({ where: quizWhere }),
     userRole === "STUDENT" && assessmentType === "QUIZ"
       ? prisma.result.findMany({
-          where: { studentId: userId, quiz: { assessmentType: "QUIZ" } },
+          where: { studentId: userId, quiz: quizWhere },
           select: { id: true, quizId: true, score: true },
         })
       : Promise.resolve([]),
     userRole === "STUDENT" && assessmentType === "PRACTICE"
-      ? prisma.practiceCompletion.findMany({ where: { studentId: userId }, select: { quizId: true } })
+      ? prisma.practiceCompletion.findMany({ where: { studentId: userId, quiz: quizWhere }, select: { quizId: true } })
       : Promise.resolve([]),
   ]);
 
@@ -363,19 +324,21 @@ export default async function QuizGridSection({
                       >
                         <Eye size={16} /> Preview
                       </Link>
-                      <Link
-                        href={`/dashboard/quizzes/edit/${quiz.id}`}
-                        className="flex-1 bg-slate-50 text-slate-700 py-2.5 rounded-xl font-semibold text-sm hover:bg-indigo-50 hover:text-indigo-700 transition-all flex items-center justify-center gap-1.5 border border-slate-100 hover:border-indigo-100"
-                        title="Edit Quiz"
-                      >
-                        <Edit size={16} /> Edit
-                      </Link>
-                      <div className="border-l border-slate-100 h-8 mx-1" />
-                      <QuizActions
-                        quizId={quiz.id}
-                        isPublished={quiz.isPublished}
-                        title={quiz.title}
-                      />
+                      {(userRole === "ADMIN" || quiz.creatorId === userId) && <>
+                        <Link
+                          href={`/dashboard/quizzes/edit/${quiz.id}`}
+                          className="flex-1 bg-slate-50 text-slate-700 py-2.5 rounded-xl font-semibold text-sm hover:bg-indigo-50 hover:text-indigo-700 transition-all flex items-center justify-center gap-1.5 border border-slate-100 hover:border-indigo-100"
+                          title="Edit Quiz"
+                        >
+                          <Edit size={16} /> Edit
+                        </Link>
+                        <div className="border-l border-slate-100 h-8 mx-1" />
+                        <QuizActions
+                          quizId={quiz.id}
+                          isPublished={quiz.isPublished}
+                          title={quiz.title}
+                        />
+                      </>}
                     </div>
                   )}
                 </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireRole } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(req: Request) {
   try {
@@ -14,13 +15,10 @@ export async function GET(req: Request) {
 
     const where: any = { role: "STUDENT" };
 
-    let teacherAssignments: Array<{ subjectId: string; gradeId: string }> = [];
+    const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
+    const teacherAssignments = teacherScope?.assignments ?? [];
     // TEACHERS may only report on students and results within exact assignments.
     if (user!.role === "TEACHER") {
-      teacherAssignments = await prisma.teacherAssignment.findMany({
-        where: { teacherId: user!.id },
-        select: { subjectId: true, gradeId: true },
-      });
       const gradeIds = [...new Set(teacherAssignments.map((assignment) => assignment.gradeId))];
       if (gradeIds.length === 0) {
         return NextResponse.json({ students: [] });
@@ -52,8 +50,9 @@ export async function GET(req: Request) {
     });
 
     const studentIds = students.map(s => s.id);
-    const practiceQuizWhere: any = { assessmentType: "PRACTICE", isPublished: true };
-    if (user!.role === "TEACHER") practiceQuizWhere.OR = teacherAssignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId }));
+    const practiceQuizWhere: any = user!.role === "TEACHER"
+      ? { AND: [teacherScope!.quizWhere, { assessmentType: "PRACTICE", isPublished: true }] }
+      : { assessmentType: "PRACTICE", isPublished: true };
     if (subjectName) {
       const practiceSubject = await prisma.subject.findFirst({ where: { name: subjectName }, select: { id: true } });
       if (practiceSubject) practiceQuizWhere.subjectId = practiceSubject.id;
@@ -78,10 +77,7 @@ export async function GET(req: Request) {
     if (studentIds.length > 0) {
       const resultFilter: any = { quiz: { assessmentType: "QUIZ" } };
       if (user!.role === "TEACHER") {
-        resultFilter.quiz = { AND: [
-          { assessmentType: "QUIZ" },
-          { OR: teacherAssignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) },
-        ] };
+        resultFilter.quiz = { AND: [teacherScope!.quizWhere, { assessmentType: "QUIZ" }] };
       }
       if (subjectName) {
         const subject = await prisma.subject.findFirst({ where: { name: subjectName } });

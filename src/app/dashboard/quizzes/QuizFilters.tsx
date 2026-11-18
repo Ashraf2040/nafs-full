@@ -7,6 +7,8 @@ import { Filter, GraduationCap, Target, Lightbulb, X, Search } from "lucide-reac
 
 interface QuizFiltersProps {
   subjects: { id: string; name: string }[];
+  showSubjectFilter?: boolean;
+  showGradeFilter?: boolean;
   grades: number[];
   outcomes?: { id: string; outcomeText: string; indicatorText?: string }[];
   indicators?: { id: string; indicatorText: string }[];
@@ -18,6 +20,8 @@ interface QuizFiltersProps {
 
 export default function QuizFilters({
   subjects,
+  showSubjectFilter = true,
+  showGradeFilter = true,
   grades,
   outcomes = [],
   indicators = [],
@@ -50,7 +54,7 @@ export default function QuizFilters({
       url.searchParams.delete("indicator");
     }
     url.searchParams.delete("page");
-    startTransition(() => { router.push(url.toString()); });
+    startTransition(() => { router.push(`${url.pathname}${url.search}${url.hash}`); });
   };
 
   const filteredOutcomes = outcomes.filter(o =>
@@ -66,35 +70,35 @@ export default function QuizFilters({
 
   return (
     <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2.5">
-      <div className="flex h-11 min-w-[160px] items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/70 px-3 transition-colors focus-within:border-indigo-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-100">
+      {showSubjectFilter && <div className="flex h-11 min-w-[160px] items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/70 px-3 transition-colors focus-within:border-indigo-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-100">
         <Filter size={16} className="shrink-0 text-indigo-500" />
         <select
           aria-label="Filter quizzes by subject"
           className="min-w-0 flex-1 cursor-pointer bg-transparent text-sm font-semibold text-slate-700 outline-none"
           onChange={(e) => handleFilterChange("subject", e.target.value)}
-          defaultValue={defaultSubject || "All"}
+          value={defaultSubject || "All"}
         >
           <option value="All">All Subjects</option>
           {subjects.map((s) => (
             <option key={s.id} value={s.name}>{s.name}</option>
           ))}
         </select>
-      </div>
+      </div>}
 
-      <div className="flex h-11 min-w-[145px] items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/70 px-3 transition-colors focus-within:border-indigo-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-100">
+      {showGradeFilter && <div className="flex h-11 min-w-[145px] items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/70 px-3 transition-colors focus-within:border-indigo-300 focus-within:bg-white focus-within:ring-2 focus-within:ring-indigo-100">
         <GraduationCap size={16} className="shrink-0 text-indigo-500" />
         <select
           aria-label="Filter quizzes by grade"
           className="min-w-0 flex-1 cursor-pointer bg-transparent text-sm font-semibold text-slate-700 outline-none"
           onChange={(e) => handleFilterChange("grade", e.target.value)}
-          defaultValue={defaultGrade?.toString() || "All"}
+          value={defaultGrade?.toString() || "All"}
         >
           <option value="All">All Grades</option>
           {grades.map((g) => (
             <option key={g} value={g}>Grade {g}</option>
           ))}
         </select>
-      </div>
+      </div>}
 
       {outcomes.length > 0 && (
         <div className="relative">

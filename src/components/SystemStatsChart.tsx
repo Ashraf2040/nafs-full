@@ -11,7 +11,6 @@ import {
   Tooltip,
   ResponsiveContainer,
   Cell,
-  TooltipProps,
 } from "recharts";
 import { fetcher } from "@/lib/fetcher";
 
@@ -42,8 +41,8 @@ export function SystemStatsChart() {
 
   if (!mounted || loading) {
     return (
-      <div style={{ width: '100%', height: 350 }} className="flex items-center justify-center">
-        <div className="animate-pulse bg-slate-200 rounded-xl" style={{ width: '100%', height: 350 }} />
+      <div style={{ width: '100%', height: 'clamp(270px, 38vw, 350px)' }} className="flex min-w-0 items-center justify-center">
+        <div className="animate-pulse rounded-xl bg-slate-200" style={{ width: '100%', height: '100%' }} />
       </div>
     );
   }
@@ -57,13 +56,13 @@ export function SystemStatsChart() {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: 350 }}>
-      <ResponsiveContainer width="100%" height={350}>
-        <BarChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} />
-          <XAxis dataKey="name" />
-          <YAxis domain={[0, 100]} />
-          <Tooltip />
+    <div className="min-w-0" style={{ position: 'relative', width: '100%', height: 'clamp(270px, 38vw, 350px)' }}>
+      <ResponsiveContainer width="100%" height="100%" debounce={80}>
+        <BarChart data={chartData} margin={{ top: 12, right: 8, left: -12, bottom: 4 }}>
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: "#64748b", fontSize: 11 }} tickMargin={9} interval="preserveStartEnd" />
+          <YAxis domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} tickFormatter={(value) => `${value}%`} axisLine={false} tickLine={false} tick={{ fill: "#64748b", fontSize: 10 }} width={42} />
+          <Tooltip formatter={(value) => [`${Number(value ?? 0).toFixed(0)}%`, "Average score"]} contentStyle={{ borderRadius: 12, border: "1px solid #e2e8f0", boxShadow: "0 12px 28px rgba(15,23,42,.12)" }} />
 
           <Bar dataKey="score" radius={[6, 6, 0, 0]}>
             {chartData.map((entry, index) => (

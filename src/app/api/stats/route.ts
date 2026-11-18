@@ -17,6 +17,11 @@ export async function GET() {
           WHERE ta."teacherId" = ${user!.id}
             AND ta."subjectId" = q."subjectId"
             AND ta."gradeId" = q."gradeId"
+        )
+        AND (
+          q."creatorId" = ${user!.id}
+          OR (q."isPublished" = TRUE AND q."creatorId" IN (SELECT u.id FROM "User" u WHERE u.role = 'ADMIN'))
+          OR (q."isPublished" = TRUE AND q."isShared" = TRUE)
         )`
       : Prisma.empty;
 

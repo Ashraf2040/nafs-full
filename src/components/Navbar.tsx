@@ -21,22 +21,22 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="bg-white/80 backdrop-blur-xl border-b border-slate-200/80 sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 text-indigo-600 hover:scale-105 transition-transform">
-          <div className="p-1.5 bg-indigo-600 rounded-lg">
-            <BookOpen size={20} className="text-white" />
+    <nav className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-[0_1px_8px_rgba(15,23,42,.04)] backdrop-blur-xl">
+      <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between gap-3 px-3 sm:px-5 lg:px-7">
+        <Link href="/" className="group flex shrink-0 items-center gap-2.5 text-indigo-600 transition-opacity hover:opacity-85">
+          <div className="rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 p-2 shadow-md shadow-indigo-600/20">
+            <BookOpen size={18} className="text-white" />
           </div>
-          <span className="text-xl font-bold tracking-tight">NAFS Portal</span>
+          <span className="text-base font-extrabold tracking-tight text-slate-900 sm:text-lg">NAFS <span className="font-semibold text-indigo-600">Portal</span></span>
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex min-w-0 items-center gap-2 sm:gap-3">
           {/* Student Achievement Score Badge */}
           {status === "authenticated" && userRole === "STUDENT" && studentStats && (
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="hidden md:flex items-center gap-3 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 px-4 py-2 rounded-2xl shadow-sm"
+              className="hidden items-center gap-3 rounded-xl border border-amber-200/80 bg-gradient-to-r from-amber-50 to-orange-50 px-3 py-2 shadow-sm lg:flex"
             >
               <Trophy size={18} className="text-amber-500" />
               <div className="flex flex-col">
@@ -50,7 +50,7 @@ export default function Navbar() {
 
           {/* Role Badge */}
           {status === "authenticated" && (
-            <div className="hidden md:flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
+            <div className="hidden items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 sm:flex">
               {userRole === "ADMIN" && <Shield size={14} className="text-indigo-500" />}
               {userRole === "TEACHER" && <User size={14} className="text-emerald-500" />}
               {userRole === "STUDENT" && <GraduationCap size={14} className="text-blue-500" />}
@@ -61,18 +61,18 @@ export default function Navbar() {
           )}
 
           {status === "authenticated" ? (
-            <div className="flex items-center gap-4">
-              <div className="flex flex-col items-end">
-                <span className="text-sm font-bold text-slate-800">{userName}</span>
-                <span className="text-[10px] text-slate-400 uppercase tracking-wider md:hidden">
+            <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+              <div className="flex min-w-0 flex-col items-end">
+                <span className="max-w-[34vw] truncate text-xs font-bold text-slate-800 sm:max-w-[220px] sm:text-sm">{userName}</span>
+                <span className="text-[9px] font-semibold text-slate-400 uppercase tracking-wider sm:hidden">
                   {userRole}
                 </span>
               </div>
               <button
                 onClick={() => signOut({ callbackUrl: "/" })}
-                className="flex items-center gap-2 text-sm font-bold text-red-500 hover:text-red-700 transition-colors bg-red-50 hover:bg-red-100 px-4 py-2 rounded-xl border border-red-100"
+                className="flex min-h-10 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-2.5 text-sm font-semibold text-slate-600 transition-colors hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600 sm:px-3.5"
               >
-                <LogOut size={18} /> <span className="hidden sm:inline">Sign Out</span>
+                <LogOut size={17} /> <span className="hidden sm:inline">Sign out</span>
               </button>
             </div>
           ) : (

@@ -6,10 +6,12 @@ import { CheckCircle2, Key, Loader2, Mail, Save, User } from "lucide-react";
 
 export default function SettingsForm({
   defaultName,
+  username,
   email,
   canChangePassword,
 }: {
   defaultName: string;
+  username: string;
   email: string;
   canChangePassword: boolean;
 }) {
@@ -65,8 +67,13 @@ export default function SettingsForm({
           </label>
           <label className="block text-sm font-bold text-slate-600">
             Email address
-            <div className="relative mt-2"><Mail className="absolute left-3 top-3.5 text-slate-400" size={18} /><input value={email} disabled className="w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100 p-3 pl-10 text-slate-500" /></div>
-            <span className="mt-1 block text-xs font-normal text-slate-400">Email and role changes are managed by an administrator.</span>
+            <div className="relative mt-2"><Mail className="absolute left-3 top-3.5 text-slate-400" size={18} /><input value={email.endsWith(".invalid") ? "Not provided" : email} disabled className="w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100 p-3 pl-10 text-slate-500" /></div>
+            <span className="mt-1 block text-xs font-normal text-slate-400">Email and username changes are managed by an administrator.</span>
+          </label>
+          <label className="block text-sm font-bold text-slate-600">
+            Username
+            <input value={username} disabled className="mt-2 w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100 p-3 text-slate-500" />
+            <span className="mt-1 block text-xs font-normal text-slate-400">Use this username with your password to sign in.</span>
           </label>
         </div>
       </section>
@@ -79,7 +86,7 @@ export default function SettingsForm({
             <input type="password" autoComplete="new-password" minLength={8} value={newPassword} onChange={(event) => setNewPassword(event.target.value)} placeholder="New password (8+ characters)" className="rounded-xl border border-slate-200 bg-slate-50 p-3 outline-none focus:ring-2 focus:ring-indigo-400" />
             <input type="password" autoComplete="new-password" minLength={8} value={confirmPassword} onChange={(event) => setConfirmPassword(event.target.value)} placeholder="Confirm new password" className="rounded-xl border border-slate-200 bg-slate-50 p-3 outline-none focus:ring-2 focus:ring-indigo-400" />
           </div>
-        ) : <p className="rounded-xl bg-slate-50 p-4 text-sm text-slate-500">Your password is managed by your external sign-in provider.</p>}
+        ) : <p className="rounded-xl bg-slate-50 p-4 text-sm text-slate-500">Ask an administrator to set a password for this account before signing in with a username.</p>}
       </section>
       <div className="flex justify-end border-t border-slate-100 pt-6">
         <button disabled={saving} className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-7 py-3 font-bold text-white shadow-sm hover:bg-indigo-700 disabled:opacity-60">

@@ -96,20 +96,19 @@ export default async function QuizzesPage({
 
       <div className="space-y-6">
         {/* Header Section — renders instantly (no data fetching) */}
-        <div className="flex items-center justify-between gap-5">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-              <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl border border-indigo-100/50">
+        <header className="relative flex flex-wrap items-center justify-between gap-4 overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500" />
+          <div className="flex min-w-0 items-start gap-3 sm:gap-4">
+            <span className="shrink-0 rounded-2xl border border-indigo-100 bg-indigo-50 p-3 text-indigo-700">
                 <LayoutGrid size={22} />
-              </div>
-              {userRole === "STUDENT" ? "Graded Quizzes" : "Quiz Library"}
-            </h1>
-            <p className="text-slate-500 mt-1.5 text-sm ml-[46px]">
-              Take graded quizzes and review your scores and attempts.
-            </p>
+            </span>
+            <div>
+              <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">{userRole === "STUDENT" ? "Graded Quizzes" : "Quiz Library"}</h1>
+              <p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-600">{userRole === "STUDENT" ? "Take published quizzes for your grade and review your scores and attempts." : userRole === "TEACHER" ? "Create and publish graded quizzes for your assigned classes, then review student results." : "Manage graded quizzes, publication, and student assessment access across the platform."}</p>
+            </div>
           </div>
           {(userRole === "ADMIN" || userRole === "TEACHER") && <BulkDeleteAssessmentsButton assessmentType="QUIZ" />}
-        </div>
+        </header>
 
         {/* Filters for admin/teacher — stream independently */}
         {userRole !== "STUDENT" && (

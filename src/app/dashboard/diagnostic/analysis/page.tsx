@@ -5,6 +5,7 @@ import { ArrowLeft, BarChart3, BookOpenCheck, CircleAlert, Target } from "lucide
 import prisma from "@/lib/prisma";
 import { authOptions } from "@/lib/auth";
 import GradeDiagnosticAnalysis, { type AnalysisStudent, type OutcomeSummary } from "./GradeDiagnosticAnalysis";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const dynamic = "force-dynamic";
 
@@ -77,8 +78,9 @@ export default async function DiagnosticAnalysisPage() {
     </main>;
   }
 
-  const assignments = session.user.role === "TEACHER"
-    ? await prisma.teacherAssignment.findMany({ where: { teacherId: session.user.id, grade: { level: { in: [3, 6, 9] } } }, select: { gradeId: true, subjectId: true, grade: { select: { level: true } } } })
+  const teacherScope = session.user.role === "TEACHER" ? await getTeacherScope(session.user.id) : null;
+  const assignments = teacherScope
+    ? teacherScope.assignments.filter((item) => [3, 6, 9].includes(item.grade.level))
     : await prisma.grade.findMany({ where: { level: { in: [3, 6, 9] } }, select: { id: true, level: true } }).then((grades) => grades.map((grade) => ({ gradeId: grade.id, subjectId: "", grade: { level: grade.level } })));
   const gradeIds = [...new Set(assignments.map((item) => item.gradeId))];
   const gradeLevels = [...new Set(assignments.map((item) => item.grade.level))].sort((a, b) => a - b);
@@ -92,7 +94,7 @@ export default async function DiagnosticAnalysisPage() {
       gradeId: { in: gradeIds },
       AND: [
         { OR: [{ dueDate: null }, { dueDate: { gte: now } }] },
-        ...(session.user.role === "TEACHER" ? [{ OR: assignments.map(({ gradeId, subjectId }) => ({ gradeId, subjectId })) }] : []),
+        ...(teacherScope ? [teacherScope.quizWhere, { OR: assignments.map(({ gradeId, subjectId }) => ({ gradeId, subjectId })) }] : []),
       ],
     },
     select: { id: true, gradeId: true, subject: { select: { name: true } }, grade: { select: { level: true } } },

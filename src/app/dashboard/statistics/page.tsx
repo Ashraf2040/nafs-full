@@ -11,6 +11,7 @@ import {
 import StatFilters from "./StatFilters";
 import GenerateRemediationBtn from "./GenerateRemediationBtn";
 import { ScoreTrendsChart, GradePieChart, SubjectBarChart, ProficiencyChart, GrowthWindowChart } from "./Charts";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export const revalidate = 600;
 
@@ -437,28 +438,15 @@ export default async function StatisticsPage({ searchParams }: { searchParams: P
     subject: { name: string };
     grade: { level: number };
   }> = [];
-  if (userRole === "TEACHER") {
-    assignments = await prisma.teacherAssignment.findMany({
-      where: { teacherId: userId },
-      select: {
-        subjectId: true,
-        gradeId: true,
-        subject: { select: { name: true } },
-        grade: { select: { level: true } },
-      },
-    });
-  }
+  const teacherScope = userRole === "TEACHER" ? await getTeacherScope(userId) : null;
+  assignments = teacherScope?.assignments ?? [];
 
   // ─── Build filters ───
   const selectedQuizFilters: Prisma.QuizWhereInput[] = [];
   if (filterSubject) selectedQuizFilters.push({ subject: { name: filterSubject } });
   if (filterGrade) selectedQuizFilters.push({ grade: { level: filterGrade } });
 
-  const assignmentScope: Prisma.QuizWhereInput = userRole === "TEACHER"
-    ? assignments.length > 0
-      ? { OR: assignments.map((assignment) => ({ subjectId: assignment.subjectId, gradeId: assignment.gradeId })) }
-      : { id: "__no_teacher_assignments__" }
-    : {};
+  const assignmentScope: Prisma.QuizWhereInput = teacherScope?.quizWhere ?? {};
 
   const quizFilter: Prisma.QuizWhereInput = {
     AND: [{ assessmentType: "QUIZ" }, assignmentScope, ...selectedQuizFilters],

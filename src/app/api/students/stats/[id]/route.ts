@@ -3,6 +3,7 @@
 import { NextResponse } from "next/server";
 import { requireRole, canViewStudent } from "@/lib/guard";
 import prisma from "@/lib/prisma";
+import { getTeacherScope } from "@/lib/teacher-scope";
 
 export async function GET(
   req: Request,
@@ -37,8 +38,9 @@ export async function GET(
       );
     }
 
+    const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
     const results = await prisma.result.findMany({
-      where: { studentId },
+      where: { studentId, ...(teacherScope ? { quiz: teacherScope.quizWhere } : {}) },
       include: {
         quiz: {
           include: {

@@ -11,6 +11,7 @@ type TeacherAssignmentWithSubjectAndGrade =
   }>;
 
 interface QuizFilterBarProps {
+  assessmentType?: "PRACTICE" | "QUIZ";
   userRole: string;
   userId: string;
   filterSubject?: string;
@@ -20,6 +21,7 @@ interface QuizFilterBarProps {
 }
 
 export default async function QuizFilterBar({
+  assessmentType = "QUIZ",
   userRole,
   userId,
   filterSubject,
@@ -53,9 +55,14 @@ export default async function QuizFilterBar({
 
   let filteredSubjects = allSubjects;
   let filteredGrades = allGrades;
+  let activeTeacherAssignments = teacherAssignments;
   if (userRole === "TEACHER" && teacherAssignments) {
-    const allowedSubjectIds = new Set(teacherAssignments.map((a) => a.subjectId));
-    const allowedGradeIds = new Set(teacherAssignments.map((a) => a.gradeId));
+    activeTeacherAssignments = teacherAssignments.filter((assignment) =>
+      (!filterSubject || assignment.subject.name === filterSubject) &&
+      (!filterGrade || assignment.grade.level === filterGrade)
+    );
+    const allowedSubjectIds = new Set(activeTeacherAssignments.map((a) => a.subjectId));
+    const allowedGradeIds = new Set(activeTeacherAssignments.map((a) => a.gradeId));
     filteredSubjects = allSubjects.filter((s) => allowedSubjectIds.has(s.id));
     filteredGrades = allGrades.filter((g) => allowedGradeIds.has(g.id));
   }
@@ -63,6 +70,9 @@ export default async function QuizFilterBar({
   const quizGradeLevels = filteredGrades.map((g) => g.level);
 
   const scopedOutcomes = allOutcomes.filter((o) => {
+    if (userRole === "TEACHER" && teacherAssignments && !teacherAssignments.some((assignment) =>
+      assignment.subject.name === o.subject && assignment.grade.level === o.grade
+    )) return false;
     if (filterSubject && o.subject !== filterSubject) return false;
     if (filterGrade && o.grade !== filterGrade) return false;
     return true;
@@ -91,12 +101,12 @@ export default async function QuizFilterBar({
 
   let filteredIndicators: { id: string; indicatorText: string }[] = [];
   if (filterOutcome) {
-    const selectedOutcome = allOutcomes.find((o) => o.id === filterOutcome);
+    const selectedOutcome = scopedOutcomes.find((o) => o.id === filterOutcome);
     if (selectedOutcome) {
       const outcomeText = selectedOutcome.outcomeText;
       const subject = selectedOutcome.subject;
       const grade = selectedOutcome.grade;
-      filteredIndicators = allOutcomes
+      filteredIndicators = scopedOutcomes
         .filter((o) => o.outcomeText === outcomeText && o.subject === subject && o.grade === grade)
         .map((o) => ({ id: o.id, indicatorText: o.indicatorText }));
     }
@@ -111,6 +121,8 @@ export default async function QuizFilterBar({
     <div className="flex w-full flex-col gap-3 rounded-2xl border border-slate-200/80 bg-white p-3 shadow-sm lg:flex-row lg:items-center lg:justify-between">
       <QuizFilters
         subjects={filteredSubjects}
+        showSubjectFilter={userRole !== "TEACHER" || new Set(teacherAssignments?.map((assignment) => assignment.subjectId)).size > 1}
+        showGradeFilter={userRole !== "TEACHER" || new Set(teacherAssignments?.map((assignment) => assignment.gradeId)).size > 1}
         grades={quizGradeLevels}
         outcomes={filteredOutcomes}
         indicators={filteredIndicators}
@@ -120,7 +132,7 @@ export default async function QuizFilterBar({
         defaultIndicator={filterIndicator}
       />
       <div className="flex shrink-0 flex-wrap items-start gap-2 border-t border-slate-100 pt-3 lg:border-l lg:border-t-0 lg:pl-3 lg:pt-0">
-        <CsvImportButton />
+        <CsvImportButton assessmentType={assessmentType} />
         <ExportQuizzesButton />
         {userRole === "ADMIN" && <BackfillButton />}
       </div>
