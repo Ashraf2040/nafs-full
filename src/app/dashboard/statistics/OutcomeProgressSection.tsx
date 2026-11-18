@@ -2,16 +2,19 @@ import Link from "next/link";
 import { Activity, AlertTriangle, BadgeCheck, Target } from "lucide-react";
 import prisma from "@/lib/prisma";
 import { getTeacherScope } from "@/lib/teacher-scope";
+import OutcomeProgressFilters from "./OutcomeProgressFilters";
 
 type Props = {
   userId: string;
   userRole: string;
   subject?: string;
   grade?: number | null;
+  filterSubjects: { id: string; name: string }[];
+  filterGrades: number[];
   assignments: Array<{ subject: { name: string }; grade: { level: number } }>;
 };
 
-export default async function OutcomeProgressSection({ userId, userRole, subject, grade, assignments }: Props) {
+export default async function OutcomeProgressSection({ userId, userRole, subject, grade, filterSubjects, filterGrades, assignments }: Props) {
   const scope: any = {};
   if (subject) scope.subject = subject;
   if (grade) scope.grade = grade;
@@ -76,8 +79,9 @@ export default async function OutcomeProgressSection({ userId, userRole, subject
   const mastered = rows.filter(row => row.accuracy !== null && row.accuracy >= 70).length;
   const focus = rows.filter(row => row.accuracy === null || row.accuracy < 70).length;
 
-  return <section className="space-y-5 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
-    <div className="flex flex-wrap items-start justify-between gap-4"><div><div className="flex items-center gap-2 text-indigo-700"><Target size={19}/><p className="text-xs font-extrabold uppercase tracking-[.14em]">Curriculum progress</p></div><h2 className="mt-1 text-2xl font-black text-slate-900">Outcome progress across students</h2><p className="mt-1 max-w-3xl text-sm leading-6 text-slate-600">Progress is calculated from saved answers to published quizzes. Open an outcome to check each student’s evidence and open their full quiz report.</p></div></div>
+  return <details className="group rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-7">
+    <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden"><div><div className="flex items-center gap-2 text-indigo-700"><Target size={19}/><p className="text-xs font-extrabold uppercase tracking-[.14em]">Curriculum progress</p></div><h2 className="mt-1 text-2xl font-black text-slate-900">Outcome progress across students</h2><p className="mt-1 max-w-3xl text-sm leading-6 text-slate-600">Expand to review outcome mastery and student answer evidence.</p></div><span className="mt-2 shrink-0 rounded-xl bg-indigo-50 px-3 py-2 text-xs font-bold text-indigo-700 group-open:hidden">Open</span><span className="mt-2 hidden shrink-0 rounded-xl bg-slate-100 px-3 py-2 text-xs font-bold text-slate-600 group-open:inline-flex">Close</span></summary>
+    <div className="mt-5 space-y-5"><div className="max-w-3xl text-sm leading-6 text-slate-600">Progress is calculated from saved answers to published quizzes. Open an outcome to check each student’s evidence and open their full quiz report.</div><OutcomeProgressFilters subjects={filterSubjects} grades={filterGrades}/>
     <div className="grid gap-3 sm:grid-cols-3"><Summary icon={<Activity size={18}/>} label="Outcomes in filter" value={rows.length}/><Summary icon={<BadgeCheck size={18}/>} label="Mastered · 70%+" value={mastered}/><Summary icon={<AlertTriangle size={18}/>} label="Needs focus or no evidence" value={focus}/></div>
     {!rows.length ? <p className="rounded-2xl bg-slate-50 p-6 text-center text-sm text-slate-500">No outcomes match these subject and grade filters.</p> : <div className="space-y-3">{rows.map(row => {
       const needsFocus = row.accuracy === null || row.accuracy < 70;
@@ -85,7 +89,8 @@ export default async function OutcomeProgressSection({ userId, userRole, subject
         <div className="border-t border-slate-100 px-4 py-4"><p className="mb-3 text-sm text-slate-600">{row.outcomeText}</p>{!row.students.length ? <p className="rounded-xl bg-slate-50 p-4 text-sm text-slate-500">No quiz answers are linked to this outcome yet. Check outcome links on the quiz questions.</p> : <div className="space-y-3">{row.students.map(student => <details key={student.studentId} className="rounded-xl border border-slate-200 bg-white"><summary className="flex cursor-pointer list-none flex-wrap items-center gap-3 p-3 [&::-webkit-details-marker]:hidden"><span className="min-w-0 flex-1"><b className="text-sm text-slate-900">{student.name}</b><span className="ml-2 text-xs text-slate-500">Grade {student.grade ?? "—"} · {student.total} answers · {student.results.size} quizzes</span></span><span className={`text-sm font-extrabold ${student.accuracy < 70 ? "text-amber-700" : "text-emerald-700"}`}>{student.accuracy}% ({student.correct}/{student.total})</span></summary><div className="space-y-2 border-t border-slate-100 p-3">{student.evidence.map((item, index) => <div key={`${item.resultId}-${index}`} className={`rounded-lg p-3 text-sm ${item.isCorrect ? "bg-emerald-50" : "bg-rose-50"}`}><p className="font-semibold text-slate-800">{item.question}</p><p className="mt-1 text-slate-600">Student: <b>{item.selected}</b> · Correct: <b>{item.correctAnswer}</b></p><Link href={`/dashboard/results/${item.resultId}`} className="mt-2 inline-flex text-xs font-bold text-indigo-700 underline">Open full quiz report</Link></div>)}</div></details>)}</div>}</div>
       </details>;
     })}</div>}
-  </section>;
+    </div>
+  </details>;
 }
 
 function Summary({ icon, label, value }: { icon: React.ReactNode; label: string; value: number }) {

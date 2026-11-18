@@ -50,13 +50,13 @@ export async function POST(req: Request) {
   if (isCustom) {
     if (customSubjects.length < 2 || customSubjects.length > 3 || new Set(selectedSubjectIds).size !== customSubjects.length) return NextResponse.json({ message: "Choose two or three different subjects" }, { status: 400 });
     if (customSubjects.some((group: any) => !Array.isArray(group.questions) || group.questions.length < 1 || group.questions.some((q: any) => !String(q.questionText || "").trim() || !String(q.correctAnswer || "").trim() || !Array.isArray(q.options) || q.options.length < 2))) return NextResponse.json({ message: "Every custom question needs text, at least two options, and a correct answer" }, { status: 400 });
-  } else if (!Array.isArray(quizIds) || quizIds.length < 2 || quizIds.length > 30 || new Set(quizIds).size !== quizIds.length) return NextResponse.json({ message: "Choose between two and 30 quizzes" }, { status: 400 });
+  } else if (!Array.isArray(quizIds) || quizIds.length < 2 || quizIds.length > (user!.role === "TEACHER" ? 30 : 3) || new Set(quizIds).size !== quizIds.length) return NextResponse.json({ message: user!.role === "TEACHER" ? "Choose between two and 30 quizzes" : "Choose two or three quizzes" }, { status: 400 });
   const grade = await prisma.grade.findUnique({ where: { level: Number(gradeLevel) } });
   if (!grade) return NextResponse.json({ message: "Select a valid grade" }, { status: 400 });
   const teacherScope = user!.role === "TEACHER" ? await getTeacherScope(user!.id) : null;
   const quizzes = isCustom ? [] : await prisma.quiz.findMany({ where: { id: { in: quizIds }, assessmentType: "QUIZ", gradeId: grade.id, ...(teacherScope ? { AND: [teacherScope.quizWhere] } : {}) }, include: { subject: true } });
   const subjectIds = isCustom ? selectedSubjectIds : quizzes.map(q => q.subjectId);
-  if (!isCustom && quizzes.length !== quizIds.length) return NextResponse.json({ message: "Choose available graded quizzes for the selected grade" }, { status: 400 });
+  if (!isCustom && (quizzes.length !== quizIds.length || (user!.role !== "TEACHER" && new Set(subjectIds).size !== quizzes.length))) return NextResponse.json({ message: user!.role === "TEACHER" ? "Choose available graded quizzes for the selected grade" : "Choose one graded quiz per subject for the selected grade" }, { status: 400 });
   if (isCustom) {
     const subjectCount = await prisma.subject.count({ where: { id: { in: subjectIds } } });
     if (subjectCount !== subjectIds.length) return NextResponse.json({ message: "One or more selected subjects do not exist" }, { status: 400 });

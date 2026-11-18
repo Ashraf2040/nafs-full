@@ -421,7 +421,7 @@ async function StrugglingQuizzesSection({ resultWhere }: { resultWhere: Prisma.R
 
 /* ─── Main page ─── */
 
-export default async function StatisticsPage({ searchParams }: { searchParams: Promise<{ tab?: string; subject?: string; grade?: string }> }) {
+export default async function StatisticsPage({ searchParams }: { searchParams: Promise<{ tab?: string; subject?: string; grade?: string; outcomeSubject?: string; outcomeGrade?: string }> }) {
   const session = await getServerSession(authOptions);
   if (!session?.user) redirect("/login");
   const userRole = (session.user as any).role;
@@ -429,6 +429,8 @@ export default async function StatisticsPage({ searchParams }: { searchParams: P
   const params = await searchParams;
   const filterSubject = params.subject;
   const filterGrade = params.grade ? parseInt(params.grade) : null;
+  const outcomeSubject = params.outcomeSubject;
+  const outcomeGrade = params.outcomeGrade ? parseInt(params.outcomeGrade) : null;
 
   if (userRole === "STUDENT") redirect("/dashboard");
 
@@ -512,7 +514,7 @@ export default async function StatisticsPage({ searchParams }: { searchParams: P
       </Suspense>
 
       <Suspense fallback={<div className="h-64 animate-pulse rounded-3xl bg-slate-50" />}>
-        <OutcomeProgressSection userId={userId} userRole={userRole} subject={filterSubject} grade={filterGrade} assignments={assignments} />
+        <OutcomeProgressSection userId={userId} userRole={userRole} subject={outcomeSubject} grade={outcomeGrade} filterSubjects={allSubjects} filterGrades={gradeLevels} assignments={assignments} />
       </Suspense>
 
       <Suspense fallback={<div className="h-[350px] bg-slate-50 rounded-2xl animate-pulse" />}>
