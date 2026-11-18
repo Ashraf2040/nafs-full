@@ -95,3 +95,29 @@ export async function PATCH(request: Request) {
   const updated = await prisma.studyGuide.update({ where: { id: guide.id }, data: { isPublished: body.isPublished } });
   return NextResponse.json({ guide: updated });
 }
+
+export async function DELETE(request: Request) {
+  const { user, response } = await requireRole("TEACHER", "ADMIN");
+  if (response) return response;
+  const body = await request.json().catch(() => ({}));
+  if (typeof body.id !== "string" || !body.id) {
+    return NextResponse.json({ error: "Choose a study guide to delete." }, { status: 400 });
+  }
+
+  const guide = await prisma.studyGuide.findUnique({
+    where: { id: body.id },
+    select: { id: true, creatorId: true, subjectId: true, gradeId: true },
+  });
+  if (!guide) return NextResponse.json({ error: "Study guide not found." }, { status: 404 });
+  if (user!.role === "TEACHER") {
+    if (guide.creatorId !== user!.id) return NextResponse.json({ error: "You can only delete your own study guides." }, { status: 403 });
+    const assignment = await prisma.teacherAssignment.findUnique({
+      where: { teacherId_subjectId_gradeId: { teacherId: user!.id, subjectId: guide.subjectId, gradeId: guide.gradeId } },
+      select: { id: true },
+    });
+    if (!assignment) return NextResponse.json({ error: "This guide is outside your assigned classes." }, { status: 403 });
+  }
+
+  await prisma.studyGuide.delete({ where: { id: guide.id } });
+  return NextResponse.json({ success: true });
+}

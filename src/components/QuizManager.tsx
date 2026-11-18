@@ -639,17 +639,28 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
 
       {/* Main Quiz Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white w-full max-w-7xl h-[90vh] rounded-[2rem] shadow-2xl flex flex-col relative overflow-hidden">
-            <header className="px-8 py-6 border-b border-slate-100 bg-slate-50">
-              <div className="flex justify-between items-center mb-4">
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4">
+          <div className="bg-white w-full max-w-7xl h-[calc(100dvh-1rem)] max-h-[calc(100dvh-1rem)] sm:h-[92dvh] sm:max-h-[92dvh] rounded-2xl sm:rounded-[2rem] shadow-2xl flex flex-col relative overflow-hidden">
+            <header className="shrink-0 px-4 py-4 sm:px-8 sm:py-6 border-b border-slate-100 bg-slate-50">
+              <div className="flex flex-wrap justify-between items-center gap-3 mb-4">
                 <h3 className="text-2xl font-bold text-slate-800">{assessmentType === "PRACTICE" ? "Practice" : "Quiz"} Creator Studio</h3>
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="p-2 bg-white rounded-full hover:bg-slate-200 text-slate-500 transition-colors shadow-sm"
-                >
-                  <X size={24} />
-                </button>
+                <div className="flex shrink-0 items-center gap-2">
+                  <button
+                    onClick={handleSaveAssessment}
+                    disabled={isSaving}
+                    className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 disabled:cursor-wait disabled:opacity-60"
+                  >
+                    {isSaving ? <Loader2 size={17} className="animate-spin" /> : <Save size={17} />}
+                    {isSaving ? "Saving…" : "Save"}
+                  </button>
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="p-2 bg-white rounded-full hover:bg-slate-200 text-slate-500 transition-colors shadow-sm"
+                    aria-label="Close creator"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
               </div>
 
               <div className="flex gap-4 flex-wrap items-center">
@@ -712,7 +723,7 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
               </div>
             </header>
 
-            <div className="flex-1 overflow-y-auto p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8">
               <div className="lg:col-span-4 space-y-6">
                 <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl border border-indigo-100">
                   <h4 className="font-bold text-indigo-900 mb-4 flex items-center gap-2">
@@ -968,7 +979,7 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
               </div>
             </div>
 
-            <footer className="px-8 py-4 border-t border-slate-100 bg-white flex justify-end gap-4 mt-auto">
+            <footer className="z-10 shrink-0 px-4 py-3 sm:px-8 sm:py-4 border-t border-slate-100 bg-white flex flex-wrap justify-end gap-3 shadow-[0_-8px_24px_rgba(15,23,42,0.06)]">
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="px-6 py-2.5 rounded-xl text-slate-600 font-medium hover:bg-slate-100 transition-colors"
@@ -979,10 +990,10 @@ export default function QuizManager2({ assessmentType = "PRACTICE" }: { assessme
               <button
                 onClick={handleSaveAssessment}
                 disabled={isSaving}
-                className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-2.5 rounded-xl font-bold shadow-md transition-colors flex items-center gap-2"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-3 sm:px-8 sm:py-2.5 rounded-xl font-bold shadow-md transition-colors flex items-center gap-2"
               >
                 {isSaving ? <Loader2 size={20} className="animate-spin" /> : <Save size={20} />}
-                {isSaving ? "Saving..." : "Save Assessment"}
+                {isSaving ? "Saving..." : `Save ${assessmentType === "PRACTICE" ? "Practice" : "Quiz"}`}
               </button>
             </footer>
           </div>
