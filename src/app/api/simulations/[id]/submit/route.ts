@@ -39,10 +39,10 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   });
   const correct = review.filter(answer => answer.correct).length;
   const score = questions.length ? Math.round(correct * 10000 / questions.length) / 100 : 0;
-  const subjectScores = simulation.subjects.map(section => {
-    const subjectReview = review.filter(answer => answer.subjectName === section.subject.name);
+  const subjectScores = [...new Set(simulation.subjects.map(section => section.subject.name))].map(subjectName => {
+    const subjectReview = review.filter(answer => answer.subjectName === subjectName);
     const subjectCorrect = subjectReview.filter(answer => answer.correct).length;
-    return { subjectName: section.subject.name, correct: subjectCorrect, total: subjectReview.length, score: subjectReview.length ? Math.round(subjectCorrect * 10000 / subjectReview.length) / 100 : 0 };
+    return { subjectName, correct: subjectCorrect, total: subjectReview.length, score: subjectReview.length ? Math.round(subjectCorrect * 10000 / subjectReview.length) / 100 : 0 };
   });
   const attempt = await prisma.simulationAttempt.upsert({ where: { simulationId_studentId: { simulationId: id, studentId: user!.id } }, create: { simulationId: id, studentId: user!.id, answerSheet: answers, score, totalItems: questions.length }, update: { answerSheet: answers, score, totalItems: questions.length, completedAt: new Date() } });
   return NextResponse.json({ score: attempt.score, totalItems: attempt.totalItems, correctAnswers: correct, incorrectAnswers: questions.length - correct, subjectScores, review, completedAt: attempt.completedAt });

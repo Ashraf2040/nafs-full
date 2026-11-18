@@ -110,6 +110,7 @@ export async function POST(request: Request) {
           const row = { ...source };
           for (const [field, value] of Object.entries(row)) if (value !== null && dateFields.has(field)) row[field] = new Date(String(value));
           if (table === "Question" && row.options === null) row.options = Prisma.DbNull;
+          if (table === "StudyGuide" && typeof row.fileData === "string") row.fileData = new Uint8Array(Buffer.from(row.fileData, "base64"));
           const { id, ...data } = row;
           await delegate.upsert({ where: { id: id as string }, create: { id: id as string, ...data }, update: data });
         }

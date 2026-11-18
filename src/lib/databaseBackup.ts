@@ -15,7 +15,7 @@ export const databaseBackupTableFields = {
   SimulationSubject: ["id", "simulationId", "quizId", "subjectId"],
   SimulationQuestion: ["id", "simulationSubjectId", "questionText", "options", "correctAnswer", "explanation", "imageUrl", "createdAt"],
   SimulationAttempt: ["id", "simulationId", "studentId", "answerSheet", "score", "totalItems", "completedAt"],
-  StudyGuide: ["id", "title", "fileName", "fileUrl", "isPublished", "creatorId", "subjectId", "gradeId", "createdAt"],
+  StudyGuide: ["id", "title", "fileName", "fileUrl", "fileData", "mimeType", "fileSize", "isPublished", "creatorId", "subjectId", "gradeId", "createdAt"],
   SkillMastery: ["id", "studentId", "outcomeId", "testingWindowId", "masteryLevel", "attemptsCount", "correctCount", "status", "lastAssessedAt"],
   LearningPathItem: ["id", "studentId", "outcomeId", "sequenceOrder", "status"],
   Trophy: ["id", "studentId", "subject", "domain", "tier", "name", "outcomesMastered", "earnedAt"],

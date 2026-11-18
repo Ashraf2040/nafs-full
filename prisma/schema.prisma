@@ -258,6 +258,9 @@ model StudyGuide {
   title       String
   fileName    String
   fileUrl     String
+  fileData    Bytes?
+  mimeType    String?
+  fileSize    Int?
   isPublished Boolean  @default(false)
   creatorId   String
   subjectId   String

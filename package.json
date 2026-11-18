@@ -7,6 +7,7 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "db:deploy": "prisma migrate deploy",
+    "study-guides:migrate-storage": "tsx scripts/migrate-study-guides-to-database.ts",
     "admin:recover": "tsx scripts/admin-access.ts",
     "lint": "eslint",
     "postinstall": "prisma generate"

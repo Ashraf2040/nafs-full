@@ -72,7 +72,12 @@ export async function GET(request: Request) {
       const delegateName = selection[0].toLowerCase() + selection.slice(1);
       const rows = await db[delegateName].findMany();
       const fields = databaseBackupTableFields[selection as DatabaseBackupTable] as readonly string[];
-      const data = rows.map((row) => Object.fromEntries(fields.map((field) => [field, JSON.stringify(row[field] ?? null)])));
+      const data = rows.map((row) => Object.fromEntries(fields.map((field) => {
+        const value = field === "fileData" && row[field] instanceof Uint8Array
+          ? Buffer.from(row[field] as Uint8Array).toString("base64")
+          : row[field] ?? null;
+        return [field, JSON.stringify(value)];
+      })));
       csv = Papa.unparse({ fields: [...fields], data }, { newline: "\r\n" });
     }
     const date = new Date().toISOString().slice(0, 10);

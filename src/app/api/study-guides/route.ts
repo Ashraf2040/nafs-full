@@ -1,37 +1,31 @@
 import { NextResponse } from "next/server";
 import { randomUUID } from "node:crypto";
-import { v2 as cloudinary } from "cloudinary";
 import prisma from "@/lib/prisma";
 import { requireAuth, requireRole } from "@/lib/guard";
 
 export const runtime = "nodejs";
 const MAX_FILE_BYTES = 15 * 1024 * 1024;
 
-function configureCloudinary() {
-  const cloudName = process.env.CLOUDINARY_CLOUD_NAME;
-  const apiKey = process.env.CLOUDINARY_API_KEY;
-  const apiSecret = process.env.CLOUDINARY_API_SECRET;
-  if (!cloudName || !apiKey || !apiSecret) return null;
-  cloudinary.config({ cloud_name: cloudName, api_key: apiKey, api_secret: apiSecret, secure: true });
-  return { cloudName, apiKey, apiSecret };
-}
-
 export async function POST(request: Request) {
   const { user, response } = await requireRole("TEACHER", "ADMIN");
   if (response) return response;
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (contentLength > MAX_FILE_BYTES + 256 * 1024) return NextResponse.json({ error: "Study guide uploads must be smaller than 15 MB." }, { status: 413 });
 
   try {
-    const config = configureCloudinary();
-    if (!config) return NextResponse.json({ error: "Study guide storage is not configured. Add the Cloudinary settings to the deployment." }, { status: 503 });
-
-    const body = await request.json();
-    const title = typeof body.title === "string" ? body.title.trim() : "";
-    const subjectId = typeof body.subjectId === "string" ? body.subjectId : "";
-    const gradeId = typeof body.gradeId === "string" ? body.gradeId : "";
-    const fileName = typeof body.fileName === "string" ? body.fileName.trim() : "";
-    const publicId = typeof body.publicId === "string" ? body.publicId : "";
-    const publicIdMatch = /^daily-lesson-plan\/study-guides\/([0-9a-f-]{36})\.pdf$/i.exec(publicId);
-    if (!title || title.length > 160 || !subjectId || !gradeId || !fileName || fileName.length > 255 || !publicIdMatch) {
+    const form = await request.formData();
+    const title = String(form.get("title") ?? "").trim();
+    const subjectId = String(form.get("subjectId") ?? "");
+    const gradeId = String(form.get("gradeId") ?? "");
+    const uploaded = form.get("file");
+    if (!(uploaded instanceof File) || uploaded.size <= 0 || uploaded.size > MAX_FILE_BYTES) {
+      return NextResponse.json({ error: "Choose a non-empty PDF smaller than 15 MB." }, { status: 400 });
+    }
+    const fileName = uploaded.name.trim().replace(/[\\/\r\n\0]/g, "_");
+    const fileData = new Uint8Array(await uploaded.arrayBuffer());
+    const isPdf = fileName.toLowerCase().endsWith(".pdf") && fileData.length >= 5 && new TextDecoder().decode(fileData.subarray(0, 5)) === "%PDF-";
+    if (!isPdf) return NextResponse.json({ error: "The uploaded file is not a valid PDF." }, { status: 400 });
+    if (!title || title.length > 160 || !subjectId || !gradeId || !fileName || fileName.length > 255) {
       return NextResponse.json({ error: "Add a valid title, subject, grade, and uploaded PDF." }, { status: 400 });
     }
 
@@ -45,33 +39,16 @@ export async function POST(request: Request) {
       if (!assignment) return NextResponse.json({ error: "You can only add guides for your assigned subjects and grades." }, { status: 403 });
     }
 
-    const asset = await cloudinary.api.resource(publicId, { resource_type: "raw" });
-    if (asset.bytes <= 0 || asset.bytes > MAX_FILE_BYTES || !asset.secure_url) {
-      return NextResponse.json({ error: "The uploaded PDF is empty or larger than 15 MB." }, { status: 400 });
-    }
+    const id = randomUUID();
     const guide = await prisma.studyGuide.create({
-      data: { title, fileName, fileUrl: asset.secure_url, subjectId, gradeId, creatorId: user!.id },
-      include: { subject: { select: { id: true, name: true } }, grade: { select: { id: true, level: true } } },
+      data: { id, title, fileName, fileUrl: `/api/study-guides/${id}/file`, fileData, mimeType: "application/pdf", fileSize: fileData.byteLength, subjectId, gradeId, creatorId: user!.id },
+      select: { id: true, title: true, fileName: true, fileUrl: true, fileSize: true, mimeType: true, isPublished: true, createdAt: true, subject: { select: { id: true, name: true } }, grade: { select: { id: true, level: true } } },
     });
     return NextResponse.json({ guide }, { status: 201 });
   } catch (error) {
     console.error("STUDY_GUIDE_CREATE_ERROR:", error);
     return NextResponse.json({ error: "The study guide could not be saved. Check the storage and database settings, then try again." }, { status: 500 });
   }
-}
-
-// A small authenticated endpoint signs a direct browser-to-Cloudinary upload,
-// keeping large PDFs out of Vercel's function request body limit.
-export async function PUT() {
-  const { response } = await requireRole("TEACHER", "ADMIN");
-  if (response) return response;
-  const config = configureCloudinary();
-  if (!config) return NextResponse.json({ error: "Study guide storage is not configured. Add the Cloudinary settings to the deployment." }, { status: 503 });
-  const timestamp = Math.floor(Date.now() / 1000);
-  const publicId = `daily-lesson-plan/study-guides/${randomUUID()}.pdf`;
-  const paramsToSign = { public_id: publicId, timestamp };
-  const signature = cloudinary.utils.api_sign_request(paramsToSign, config.apiSecret);
-  return NextResponse.json({ cloudName: config.cloudName, apiKey: config.apiKey, timestamp, signature, publicId });
 }
 
 export async function GET() {
@@ -86,7 +63,7 @@ export async function GET() {
   const [guides, subjects, grades] = await Promise.all([
     prisma.studyGuide.findMany({
       where,
-      include: { subject: { select: { id: true, name: true } }, grade: { select: { id: true, level: true } }, creator: { select: { name: true } } },
+      select: { id: true, title: true, fileName: true, fileUrl: true, fileSize: true, mimeType: true, isPublished: true, createdAt: true, subject: { select: { id: true, name: true } }, grade: { select: { id: true, level: true } }, creator: { select: { name: true } } },
       orderBy: { createdAt: "desc" },
     }),
     prisma.subject.findMany({
